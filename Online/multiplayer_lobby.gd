@@ -40,7 +40,7 @@ func _on_connected_to_server():
 	hide_menu.rpc()
 	change_level(level_scene)
 	
-func _on_player_connected(id):
+func _on_player_connected(_id):
 	pass
 	
 @rpc("any_peer", "call_local", "reliable")

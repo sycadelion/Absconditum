@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export var player_id := 1
-@export var _bullet_trail_prefab: PackedScene
+
 
 @onready var camera: Camera3D = $Camera3D
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
@@ -13,6 +13,7 @@ extends CharacterBody3D
 @onready var hud: Control = $CanvasLayer/HUD
 @onready var health_bar: ProgressBar = $CanvasLayer/HUD/HealthBar
 @onready var marker: Marker3D = $Camera3D/Marker3D
+@onready var bullet_trail_comp: Node3D = $BulletTrailComp
 
 var health = 3
 var sens:float = .005
@@ -86,11 +87,7 @@ func play_shoot_effects():
 	anim_player.stop()
 	anim_player.play("shoot")
 	
-	var bullet_trail:BulletTrail = _bullet_trail_prefab.instantiate()
-	bullet_trail.global_position = marker.global_position
-	var look_at_point: Vector3 = camera.global_position + (camera.global_transform.basis.z * 100)
-	marker.add_child(bullet_trail)
-	bullet_trail.look_at(look_at_point,Vector3.UP)
+	bullet_trail_comp.bulletFire(camera,marker)
 	
 	muzzle_flash.restart()
 	muzzle_flash.emitting = true
