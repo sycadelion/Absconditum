@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7b7s6cm1vqrg"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/hub.gd" id="1_ttpxj"]
+[ext_resource type="PackedScene" uid="uid://f7itocgajf8o" path="res://Scenes/player.tscn" id="2_an04p"]
+[ext_resource type="PackedScene" uid="uid://dlammbwbnr4my" path="res://Scenes/Levels/environment.tscn" id="3_0actm"]
+[ext_resource type="PackedScene" uid="uid://d3bhlb6x0ro8f" path="res://Scenes/arrow.tscn" id="4_w4bb5"]
+
+[sub_resource type="Environment" id="Environment_od2il"]
+background_mode = 1
+background_color = Color(0.203922, 0.113725, 0, 1)
+tonemap_mode = 2
+glow_enabled = true
+fog_light_color = Color(0.57, 0.343995, 0.2223, 1)
+fog_sun_scatter = 0.14
+fog_density = 0.2311
+
+[node name="Hub" type="Node3D" node_paths=PackedStringArray("players_container", "player_spawner")]
+script = ExtResource("1_ttpxj")
+players_container = NodePath("Players")
+player_scene = ExtResource("2_an04p")
+player_spawner = NodePath("MultiplayerSpawner")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_od2il")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.433013, 0.5, -0.75, -0.25, 0.866025, 0.433013, 0.866025, 0, 0.5, -6, 4, 0)
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+spawn_path = NodePath("../Players")
+spawn_limit = 4
+
+[node name="Players" type="Node3D" parent="."]
+
+[node name="Environment" parent="." instance=ExtResource("3_0actm")]
+
+[node name="Arrow" parent="." node_paths=PackedStringArray("cutMesh") instance=ExtResource("4_w4bb5")]
+cutMesh = NodePath("../Players")

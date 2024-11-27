@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://gsnjhl57qwdk"]
+
+[ext_resource type="Shader" path="res://Shaders/cut_sphere.gdshader" id="1_og3xl"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_og3xl")
+shader_parameter/spherePos = Vector3(0, 0, 0)
+shader_parameter/borderColor = Color(0.810186, 0, 0.150926, 1)
+shader_parameter/borderSize = 0.0
+shader_parameter/sphereRadius = 2.0
+shader_parameter/noiseSpeed = 0.0
+shader_parameter/noiseStrength = 0.0
+shader_parameter/noiseSize = 0.0

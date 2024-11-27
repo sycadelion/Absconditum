@@ -1,0 +1,137 @@
+[gd_scene load_steps=5 format=3 uid="uid://1vtabgmdqbya"]
+
+[ext_resource type="Script" path="res://Scenes/UI/main_menu.gd" id="1_r4jl4"]
+[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="2_x3kec"]
+[ext_resource type="Texture2D" uid="uid://cj6infinoal0i" path="res://Images/eye icon.png" id="3_snsu0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ypctj"]
+shader = ExtResource("2_x3kec")
+shader_parameter/exclude_center = null
+shader_parameter/exclude_size = null
+shader_parameter/lod = 2.247
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r4jl4")
+
+[node name="GameTitle" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -39.0
+offset_right = 40.0
+offset_bottom = 23.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GameTitle"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GameTitle/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center]Game Title[/center]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -68.0
+offset_right = 31.0
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer/CenterContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer/MarginContainer/VSplitContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="PanelContainer/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Play"
+
+[node name="Join" type="Button" parent="PanelContainer/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Join"
+
+[node name="Quit" type="Button" parent="PanelContainer/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Quit
+"
+
+[node name="icup" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="icup"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="icup/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="icup/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Your IP: "
+
+[node name="YourIp" type="Label" parent="icup/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "000.000.000.00"
+
+[node name="RevealIP" type="Button" parent="icup/MarginContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("3_snsu0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ypctj")
+layout_mode = 0
+offset_left = 71.0
+offset_top = 590.0
+offset_right = 189.0
+offset_bottom = 625.0
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="PanelContainer/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="PanelContainer/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="PanelContainer/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="icup/MarginContainer/HBoxContainer/RevealIP" to="." method="_on_reveal_ip_pressed"]

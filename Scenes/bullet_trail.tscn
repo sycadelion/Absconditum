@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://da5fc0sh7rdo8"]
+
+[ext_resource type="Script" path="res://Scenes/bullet_trail.gd" id="1_hvujq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5kcbs"]
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_60rto"]
+material = SubResource("StandardMaterial3D_5kcbs")
+radius = 0.05
+
+[node name="BulletTrail" type="Node3D" node_paths=PackedStringArray("_trail_mesh")]
+top_level = true
+script = ExtResource("1_hvujq")
+_trail_mesh = NodePath("MeshInstance3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -1)
+mesh = SubResource("CapsuleMesh_60rto")
