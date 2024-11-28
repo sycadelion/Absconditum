@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://126ih2e781un"]
+
+[ext_resource type="Shader" path="res://Shaders/cut_sphere.gdshader" id="1_c6ym5"]
+
+[resource]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_c6ym5")
+shader_parameter/spherePos = null
+shader_parameter/borderColor = null
+shader_parameter/borderSize = null
+shader_parameter/sphereRadius = null
+shader_parameter/noiseSpeed = null
+shader_parameter/noiseStrength = null
+shader_parameter/noiseSize = null
+shader_parameter/invertCut = null

@@ -1,31 +1,29 @@
-[gd_scene load_steps=9 format=3 uid="uid://d3bhlb6x0ro8f"]
+[gd_scene load_steps=12 format=3 uid="uid://d3bhlb6x0ro8f"]
 
-[ext_resource type="Material" uid="uid://cng4vjtymt6hn" path="res://arr.tres" id="1_lqbir"]
 [ext_resource type="Script" path="res://Shaders/Shader Scripts/sphereSDF.gd" id="1_t28a6"]
-[ext_resource type="Material" uid="uid://c3w6qq0qg6a6j" path="res://Shaders/Bubble_shader.tres" id="3_tig2u"]
+[ext_resource type="Material" uid="uid://126ih2e781un" path="res://Shaders/Bubble_Arrow_shader.tres" id="2_yohdm"]
+[ext_resource type="Shader" path="res://Shaders/SphereField.gdshader" id="3_shc4d"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_66oi3"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_nni2b"]
-material = ExtResource("3_tig2u")
+[sub_resource type="BoxShape3D" id="BoxShape3D_1qklc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rhqut"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_shc4d")
+shader_parameter/color = Color(0, 0.513726, 0.329412, 1)
+shader_parameter/fresnel_sharpness = 1.0
+shader_parameter/impact_points = null
+shader_parameter/impact_size = null
+shader_parameter/impact_falloff_sharpness = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_wmhj5"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_rhqut")
 flip_faces = true
 radius = 10.0
 height = 20.0
-
-[sub_resource type="Animation" id="Animation_njaer"]
-resource_name = "expand"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:sphereRadius")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 10.0]
-}
 
 [sub_resource type="Animation" id="Animation_fyja7"]
 length = 0.001
@@ -42,13 +40,36 @@ tracks/0/keys = {
 "values": [0.0]
 }
 
+[sub_resource type="Animation" id="Animation_njaer"]
+resource_name = "expand"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:sphereRadius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 10.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5gylt"]
 _data = {
 "RESET": SubResource("Animation_fyja7"),
 "expand": SubResource("Animation_njaer")
 }
 
-[node name="Skill1_Scene" type="Node3D"]
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_wadrs"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[node name="Skill1_Scene" type="CharacterBody3D"]
 script = ExtResource("1_t28a6")
 noiseSize = 2.0
 noiseSpeed = 0.9
@@ -56,20 +77,33 @@ noiseStrength = 0.5
 borderSize = 0.038
 borderColor = Color(0.992157, 0.109804, 0.592157, 1)
 
-[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
-transform = Transform3D(0.0126468, 3.34105e-08, -0.371351, 0.702063, -6.01846e-10, 0.00668941, 0, -0.764466, -1.62349e-08, 0, 0, 0.103525)
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." groups=["VisibleObjectsShader"]]
+transform = Transform3D(0.702177, 0, 0, 0, -0.764466, 3.24698e-08, 0, -6.68317e-08, -0.371411, 0, 0, 0)
+material_override = ExtResource("2_yohdm")
 mesh = SubResource("PrismMesh_66oi3")
-material = ExtResource("1_lqbir")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(-1.52713e-08, -0.371411, 0, 0.349367, -1.62349e-08, 0, 0, 0, 0.764466, 0, 0, 0.775542)
-material = ExtResource("1_lqbir")
+[node name="CSGBox3D" type="CSGBox3D" parent="." groups=["VisibleObjectsShader"]]
+transform = Transform3D(0.349367, 0, 0, 0, -1.62349e-08, -0.764466, 0, 0.371411, -3.34159e-08, 0, 0.760362, 0)
+material_override = ExtResource("2_yohdm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.475908, 0)
+shape = SubResource("BoxShape3D_1qklc")
 
 [node name="Bubble" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
-mesh = SubResource("SphereMesh_nni2b")
+mesh = SubResource("SphereMesh_wmhj5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_5gylt")
 }
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_wadrs")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -24,7 +24,7 @@ void fragment() {
 	if (invertCut) {sdfSphere = sdfSphere;}
 	else sdfSphere = -sdfSphere;
 	float borderDist = smoothstep(0.0,borderSize,sdfSphere);
-	
+
 	//cut the sphere
 	if (sdfSphere < 0.0) discard;
 	vec3 albcolor =texture(_albedo,UV).rgb;

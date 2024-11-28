@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0wl72hwaa31r"]
+[gd_scene load_steps=4 format=3 uid="uid://c0wl72hwaa31r"]
 
 [ext_resource type="Texture2D" uid="uid://c2bu67hqj86j0" path="res://addons/kenney_particle_pack/circle_05.png" id="1_i4x1t"]
 [ext_resource type="PackedScene" uid="uid://ci6rly7mcj6vl" path="res://Scenes/UI/skill.tscn" id="2_xbtso"]
+[ext_resource type="Script" path="res://Scenes/UI/fps.gd" id="3_ywnm1"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -32,3 +33,11 @@ anchor_right = 0.0
 anchor_bottom = 0.5
 grow_horizontal = 1
 scale = Vector2(2, 2)
+maxValue = 50000
+
+[node name="Fps" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "FPS: "
+script = ExtResource("3_ywnm1")

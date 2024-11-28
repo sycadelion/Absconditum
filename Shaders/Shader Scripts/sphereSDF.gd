@@ -1,4 +1,4 @@
-extends Node3D
+extends CharacterBody3D
 
 @export_range(0,2) var noiseSize:float
 @export_range(0,5) var noiseSpeed:float
@@ -7,15 +7,23 @@ extends Node3D
 @export_range(0,1) var borderSize:float
 @export_color_no_alpha var borderColor:Color
 @export var invertCut:bool
+@export var lifetime:int = 5
 @onready var bubble:MeshInstance3D = $Bubble
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
+@onready var lifetime_timer: Timer = $Timer
+
+var expanded: bool = false
 
 func _ready() -> void:
+	lifetime_timer.wait_time = lifetime
 	bubble.mesh.set_radius(sphereRadius)
 	bubble.mesh.set_height(sphereRadius*2)
-	anim_player.play("expand")
+	if not expanded:
+		anim_player.play("expand")
 	
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	if not is_on_floor():
+		velocity += get_gravity() * delta
 	var ShaderObjects = get_tree().get_nodes_in_group("VisibleObjectsShader")
 	for renderObjects in ShaderObjects:
 		if renderObjects.get("material_override") != null:
@@ -32,3 +40,14 @@ func _process(_delta: float) -> void:
 	
 	bubble.mesh.set_radius(sphereRadius)
 	bubble.mesh.set_height(sphereRadius*2)
+	move_and_slide()
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "expand" and not expanded:
+		expanded = true
+		lifetime_timer.start()
+	elif anim_name == "expand" and expanded:
+		queue_free()
+
+func _on_timer_timeout() -> void:
+	anim_player.play_backwards("expand")
