@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://dk005nbfi2jb4"]
 
 [ext_resource type="Script" path="res://Scripts/test_world.gd" id="1_ss1a7"]
-[ext_resource type="PackedScene" uid="uid://d3bhlb6x0ro8f" path="res://Scenes/arrow.tscn" id="2_ddbtc"]
+[ext_resource type="PackedScene" uid="uid://d3bhlb6x0ro8f" path="res://Scenes/Skill1_Scene.tscn" id="2_ddbtc"]
 [ext_resource type="Shader" path="res://Shaders/cut_sphere.gdshader" id="3_8ola2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rgip2"]

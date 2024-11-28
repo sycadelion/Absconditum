@@ -12,7 +12,22 @@ flip_faces = true
 radius = 10.0
 height = 20.0
 
-[sub_resource type="Animation" id="Animation_08kv7"]
+[sub_resource type="Animation" id="Animation_njaer"]
+resource_name = "expand"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:sphereRadius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 10.0]
+}
+
+[sub_resource type="Animation" id="Animation_fyja7"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -24,36 +39,20 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [10.0]
-}
-
-[sub_resource type="Animation" id="Animation_njaer"]
-resource_name = "expand"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:sphereRadius")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(2, 2),
-"update": 0,
-"values": [0.0, 10.0]
+"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5gylt"]
 _data = {
-"RESET": SubResource("Animation_08kv7"),
+"RESET": SubResource("Animation_fyja7"),
 "expand": SubResource("Animation_njaer")
 }
 
-[node name="Arrow" type="Node3D"]
+[node name="Skill1_Scene" type="Node3D"]
 script = ExtResource("1_t28a6")
 noiseSize = 2.0
 noiseSpeed = 0.9
 noiseStrength = 0.5
-sphereRadius = 10.0
 borderSize = 0.038
 borderColor = Color(0.992157, 0.109804, 0.592157, 1)
 

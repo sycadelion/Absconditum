@@ -8,10 +8,12 @@ extends Node3D
 @export_color_no_alpha var borderColor:Color
 @export var invertCut:bool
 @onready var bubble:MeshInstance3D = $Bubble
+@onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	bubble.mesh.set_radius(sphereRadius)
 	bubble.mesh.set_height(sphereRadius*2)
+	anim_player.play("expand")
 	
 func _process(_delta: float) -> void:
 	var ShaderObjects = get_tree().get_nodes_in_group("VisibleObjectsShader")

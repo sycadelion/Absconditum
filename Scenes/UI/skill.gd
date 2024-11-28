@@ -17,3 +17,6 @@ func _process(_delta: float) -> void:
 func used_skill():
 	if pBar.value <= 0:
 		pBar.value = maxValue
+		return true
+	else:
+		return false

@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7b7s6cm1vqrg"]
+[gd_scene load_steps=5 format=3 uid="uid://c7b7s6cm1vqrg"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/hub.gd" id="1_ttpxj"]
 [ext_resource type="PackedScene" uid="uid://f7itocgajf8o" path="res://Scenes/player.tscn" id="2_an04p"]
 [ext_resource type="PackedScene" uid="uid://dlammbwbnr4my" path="res://Scenes/Levels/environment.tscn" id="3_0actm"]
-[ext_resource type="PackedScene" uid="uid://d3bhlb6x0ro8f" path="res://Scenes/arrow.tscn" id="4_w4bb5"]
 
 [sub_resource type="Environment" id="Environment_od2il"]
 background_mode = 1
@@ -34,5 +33,4 @@ spawn_limit = 4
 
 [node name="Environment" parent="." instance=ExtResource("3_0actm")]
 
-[node name="Arrow" parent="." groups=["VisibleObjectsShader"] instance=ExtResource("4_w4bb5")]
-invertCut = null
+[node name="SkillContainer" type="Node3D" parent="." groups=["SkillContainer"]]

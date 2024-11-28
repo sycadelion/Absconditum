@@ -28,6 +28,7 @@ import/blender/enabled=false
 
 Players=""
 VisibleObjectsShader=""
+SkillContainer=""
 
 [input]
 

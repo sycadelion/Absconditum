@@ -12,9 +12,15 @@ extends CharacterBody3D
 @onready var bowViewmodel: Node3D = $Camera3D/bow_viewmodel
 @onready var bow: Node3D = $Camera3D/bow
 @onready var hud: Control = $CanvasLayer/HUD
-@onready var skill1: Control = $CanvasLayer/HUD/Skill
+
+#bullet marker and trail component
 @onready var marker: Marker3D = $Camera3D/Marker3D
 @onready var bullet_trail_comp: Node3D = $BulletTrailComp
+
+#skill1 marker and component
+@onready var skill1: Control = $CanvasLayer/HUD/Skill
+@onready var skill1_marker: Marker3D = $Skill1Marker
+@onready var skill1_comp: Node3D = $Skill1Comp
 
 var sens:float = .005
 
@@ -53,7 +59,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			var hit_player = raycast.get_collider()
 			hit_player.receive_damage.rpc_id(hit_player.get_multiplayer_authority())
 	if Input.is_action_just_pressed("Skill1"):
-		skill1.used_skill()
+		if skill1.used_skill():
+			play_skill1_effects.rpc()
+			
 		
 func _physics_process(delta: float) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
@@ -96,6 +104,10 @@ func play_shoot_effects():
 	
 	muzzle_flash.restart()
 	muzzle_flash.emitting = true
+
+@rpc("call_local")
+func play_skill1_effects():
+	skill1_comp.skill1_throw(skill1_marker)
 
 @rpc("any_peer")
 func receive_damage():
