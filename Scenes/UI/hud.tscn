@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0wl72hwaa31r"]
+
+[ext_resource type="Texture2D" uid="uid://c2bu67hqj86j0" path="res://addons/kenney_particle_pack/circle_05.png" id="1_i4x1t"]
+[ext_resource type="PackedScene" uid="uid://ci6rly7mcj6vl" path="res://Scenes/UI/skill.tscn" id="2_xbtso"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.03, 0.03)
+pivot_offset = Vector2(576, 324)
+texture = ExtResource("1_i4x1t")
+stretch_mode = 5
+
+[node name="Skill" parent="." instance=ExtResource("2_xbtso")]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_right = 0.0
+anchor_bottom = 0.5
+grow_horizontal = 1
+scale = Vector2(2, 2)

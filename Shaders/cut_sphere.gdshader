@@ -8,6 +8,7 @@ uniform float sphereRadius;
 uniform float noiseSpeed;
 uniform float noiseStrength;
 uniform float noiseSize;
+uniform bool invertCut;
 
 uniform sampler2D _albedo: source_color;
 varying vec3 wVex;
@@ -20,7 +21,8 @@ void fragment() {
 	vec3 p = wVex-spherePos;
 	float sdfSphere = sdSphere(p,sphereRadius);
 	sdfSphere += (snoise(p*noiseSize+TIME*noiseSpeed)*noiseStrength);
-	sdfSphere = -sdfSphere;
+	if (invertCut) {sdfSphere = sdfSphere;}
+	else sdfSphere = -sdfSphere;
 	float borderDist = smoothstep(0.0,borderSize,sdfSphere);
 	
 	//cut the sphere

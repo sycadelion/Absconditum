@@ -29,6 +29,7 @@ shader_parameter/sphereRadius = 2.0
 shader_parameter/noiseSpeed = 0.905
 shader_parameter/noiseStrength = 0.505
 shader_parameter/noiseSize = 2.0
+shader_parameter/invertCut = null
 
 [sub_resource type="SphereMesh" id="SphereMesh_0gtrj"]
 
@@ -45,6 +46,7 @@ shader_parameter/sphereRadius = 2.0
 shader_parameter/noiseSpeed = 0.905
 shader_parameter/noiseStrength = 0.505
 shader_parameter/noiseSize = 2.0
+shader_parameter/invertCut = null
 
 [sub_resource type="BoxMesh" id="BoxMesh_oj4ue"]
 

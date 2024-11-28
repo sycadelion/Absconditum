@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://ci6rly7mcj6vl"]
+
+[ext_resource type="Script" path="res://Scenes/UI/skill.gd" id="1_jxm3t"]
+[ext_resource type="Texture2D" uid="uid://b3o2xxuqee7qh" path="res://addons/kenney_particle_pack/star_09.png" id="1_so28q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5ybk"]
+bg_color = Color(0.18, 0.18, 0.18, 0.898039)
+
+[node name="Skill" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jxm3t")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="PanelContainer/MarginContainer"]
+position = Vector2(3.8147e-06, 3.8147e-06)
+scale = Vector2(0.078125, 0.078125)
+texture = ExtResource("1_so28q")
+centered = false
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_x5ybk")
+max_value = 200.0
+step = 1.0
+fill_mode = 3
+show_percentage = false

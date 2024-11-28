@@ -8,7 +8,7 @@ void fragment() {
     vec2 uv = UV;
 
     // Check if the current pixel is inside the excluded area
-    bool is_inside_exclude_area = 
+    bool is_inside_exclude_area =
         uv.x > exclude_center.x - exclude_size.x / 2.0 &&
         uv.x < exclude_center.x + exclude_size.x / 2.0 &&
         uv.y > exclude_center.y - exclude_size.y / 2.0 &&
@@ -17,7 +17,7 @@ void fragment() {
     if (is_inside_exclude_area) {
         // If inside the excluded area, just output the original texture
 		COLOR = vec4(0.0, 0.0, 0.0, 0.0);
-    } else 
+    } else
 {
 	vec4 color = texture(SCREEN_TEXTURE, SCREEN_UV, lod);
 	COLOR = color;

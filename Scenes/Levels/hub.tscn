@@ -34,5 +34,5 @@ spawn_limit = 4
 
 [node name="Environment" parent="." instance=ExtResource("3_0actm")]
 
-[node name="Arrow" parent="." node_paths=PackedStringArray("cutMesh") instance=ExtResource("4_w4bb5")]
-cutMesh = NodePath("../Players")
+[node name="Arrow" parent="." groups=["VisibleObjectsShader"] instance=ExtResource("4_w4bb5")]
+invertCut = null

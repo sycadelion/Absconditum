@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://f7itocgajf8o"]
+[gd_scene load_steps=50 format=4 uid="uid://f7itocgajf8o"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_4ht6w"]
 [ext_resource type="Material" uid="uid://gsnjhl57qwdk" path="res://Shaders/player_shader_mat.tres" id="1_fuh6j"]
@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b7037gtn7d80q" path="res://Scenes/bow_viewmodel.tscn" id="4_4w5qa"]
 [ext_resource type="Texture2D" uid="uid://pao6524wf303" path="res://addons/kenney_particle_pack/smoke_08.png" id="5_q41oh"]
 [ext_resource type="Texture2D" uid="uid://68kjn6suxq5a" path="res://addons/kenney_particle_pack/smoke_04.png" id="6_oop84"]
-[ext_resource type="Texture2D" uid="uid://c2bu67hqj86j0" path="res://addons/kenney_particle_pack/circle_05.png" id="7_c11oc"]
+[ext_resource type="PackedScene" uid="uid://c0wl72hwaa31r" path="res://Scenes/UI/hud.tscn" id="7_kc58q"]
 [ext_resource type="Script" path="res://Scenes/bullet_trail_comp.gd" id="9_aqsbj"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4jp85"]
@@ -515,6 +515,226 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector3(-0.658355, -1.5708, 3.38096e-08)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player_Body:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CollisionShape3D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CollisionShape3D:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Player_Body:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Camera3D:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.39031, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Camera3D:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Player_Body2:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Player_Body2:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qkman"]
+resource_name = "death"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/bow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [Vector3(0.45931, -0.401916, -0.316486), Vector3(1.255, -1, -0.449)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D/bow:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [Vector3(-0.658355, -1.5708, 3.38096e-08), Vector3(-1.42942, 2.92862e-07, -1.42942)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player_Body:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 1.5, 2),
+"transitions": PackedFloat32Array(2, 1, 3),
+"update": 0,
+"values": [Vector3(0, 1, 0), Vector3(0, 0.0975776, -0.902422), Vector3(0, -0.902422, -0.902422)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionShape3D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1, 1.5, 2),
+"transitions": PackedFloat32Array(2, 1, 3),
+"update": 0,
+"values": [Vector3(0, 1, 0), Vector3(0, 0.0975776, -0.902422), Vector3(0, -0.902422, -0.902422)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CollisionShape3D:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1, 1.5, 2),
+"transitions": PackedFloat32Array(2, 1, 3),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.5708, 0, 0), Vector3(-1.5708, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player_Body:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1, 1.5, 2),
+"transitions": PackedFloat32Array(2, 1, 3),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.5708, 0, 0), Vector3(-1.5708, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Camera3D:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1, 1.5, 2),
+"transitions": PackedFloat32Array(2, 1, 3),
+"update": 0,
+"values": [Vector3(0, 1.39031, 0), Vector3(0, 0.0975776, -1.29273), Vector3(0, -0.902422, -1.29273)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Camera3D:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1, 1.5, 2),
+"transitions": PackedFloat32Array(2, 1, 3),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.5708, 0, 0), Vector3(-1.5708, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Player_Body2:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.966667, 1.5, 2),
+"transitions": PackedFloat32Array(2, 1, 3),
+"update": 0,
+"values": [Vector3(0, 1, 0), Vector3(0, 0.0975776, -0.902422), Vector3(0, -0.902422, -0.902422)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Player_Body2:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.966667, 1.5, 2),
+"transitions": PackedFloat32Array(2, 1, 3),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.5708, 0, 0), Vector3(-1.5708, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_qw2dm"]
 resource_name = "idle"
@@ -654,6 +874,7 @@ tracks/3/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_demr1"]
 _data = {
 "RESET": SubResource("Animation_6woqc"),
+"death": SubResource("Animation_qkman"),
 "idle": SubResource("Animation_qw2dm"),
 "move": SubResource("Animation_0ng04"),
 "shoot": SubResource("Animation_5v340")
@@ -670,17 +891,12 @@ properties/2/path = NodePath("Camera3D:rotation")
 properties/2/spawn = true
 properties/2/replication_mode = 1
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_251vj"]
-bg_color = Color(1, 0.05, 0.05, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m84if"]
-bg_color = Color(0, 0.718612, 0.358537, 1)
-
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["Players"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.96046e-08, 0)
 collision_layer = 2
 script = ExtResource("1_4ht6w")
 
-[node name="Player_Body" type="MeshInstance3D" parent="."]
+[node name="Player_Body" type="MeshInstance3D" parent="." groups=["VisibleObjectsShader"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 material_override = ExtResource("1_fuh6j")
 mesh = SubResource("CapsuleMesh_4jp85")
@@ -753,43 +969,7 @@ replication_config = SubResource("SceneReplicationConfig_pefit")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="HUD" type="Control" parent="CanvasLayer"]
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HUD"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.03, 0.03)
-pivot_offset = Vector2(576, 324)
-texture = ExtResource("7_c11oc")
-stretch_mode = 5
-
-[node name="HealthBar" type="ProgressBar" parent="CanvasLayer/HUD"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 598.0
-offset_right = -640.0
-offset_bottom = 2.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_251vj")
-theme_override_styles/fill = SubResource("StyleBoxFlat_m84if")
-max_value = 3.0
-value = 3.0
-show_percentage = false
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("7_kc58q")]
 
 [node name="BulletTrailComp" type="Node3D" parent="."]
 script = ExtResource("9_aqsbj")
@@ -798,3 +978,4 @@ _bullet_trail_prefab = ExtResource("2_rxswk")
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
 [editable path="Camera3D/bow"]
+[editable path="CanvasLayer/HUD"]
