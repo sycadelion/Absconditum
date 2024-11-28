@@ -26,5 +26,9 @@ func _process(delta: float) -> void:
 
 
 func _on_rigid_body_3d_body_entered(body: Node) -> void:
-	if body != null:
+	if body.is_in_group("Players"):
+		#var hit_player = body.get_collider()
+		body.receive_damage.rpc_id(body.get_multiplayer_authority())
+		queue_free()
+	elif body != null and not body.is_in_group("Players"):
 		queue_free()

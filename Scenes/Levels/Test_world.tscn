@@ -67,9 +67,8 @@ transform = Transform3D(8, 0, 0, 0, 4, 0, 0, 0, 8, 0, 0, 0)
 use_collision = true
 mesh = SubResource("PlaneMesh_rijia")
 
-[node name="Arrow" parent="." node_paths=PackedStringArray("cutMesh") instance=ExtResource("2_ddbtc")]
+[node name="Arrow" parent="." instance=ExtResource("2_ddbtc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0229173, 0.882407, 0.00237012)
-cutMesh = NodePath("../Meshes")
 noiseSpeed = 0.905
 noiseStrength = 0.505
 borderColor = Color(0.810186, 0, 0.150926, 1)

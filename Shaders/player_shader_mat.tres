@@ -12,3 +12,4 @@ shader_parameter/sphereRadius = 2.0
 shader_parameter/noiseSpeed = 0.0
 shader_parameter/noiseStrength = 0.0
 shader_parameter/noiseSize = 0.0
+shader_parameter/invertCut = null

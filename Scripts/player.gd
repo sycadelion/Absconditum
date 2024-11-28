@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @export var player_id := 1
 @export var health = 1
-
+@export var _hitscan: bool
 
 @onready var camera: Camera3D = $Camera3D
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
@@ -49,7 +49,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 	if Input.is_action_just_pressed("shoot") and anim_player.current_animation != "shoot":
 		play_shoot_effects.rpc()
-		if raycast.is_colliding():
+		if raycast.is_colliding() and _hitscan:
 			var hit_player = raycast.get_collider()
 			hit_player.receive_damage.rpc_id(hit_player.get_multiplayer_authority())
 	if Input.is_action_just_pressed("Skill1"):
@@ -91,7 +91,8 @@ func play_shoot_effects():
 	anim_player.stop()
 	anim_player.play("shoot")
 	
-	bullet_trail_comp.bulletFire(camera,marker)
+	if not _hitscan:
+		bullet_trail_comp.bulletFire(camera,marker)
 	
 	muzzle_flash.restart()
 	muzzle_flash.emitting = true
