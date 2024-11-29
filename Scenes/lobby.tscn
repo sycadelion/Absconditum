@@ -1,12 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdaty1tj8c305"]
+[gd_scene load_steps=5 format=3 uid="uid://cdaty1tj8c305"]
 
 [ext_resource type="Script" path="res://Online/multiplayer_lobby.gd" id="1_lp11c"]
 [ext_resource type="PackedScene" uid="uid://c7b7s6cm1vqrg" path="res://Scenes/Levels/hub.tscn" id="2_kn1xs"]
 [ext_resource type="PackedScene" uid="uid://wlpkvyggn3ra" path="res://Scenes/UI/error_prompt.tscn" id="3_rpgj8"]
+[ext_resource type="PackedScene" uid="uid://b7kqgr0bkm3s6" path="res://Scenes/UI/background_container.tscn" id="3_ul4ju"]
 
 [node name="Lobby" type="Node"]
 script = ExtResource("1_lp11c")
 level_scene = ExtResource("2_kn1xs")
+
+[node name="Background_container" parent="." instance=ExtResource("3_ul4ju")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Level" type="Node" parent="."]
 

@@ -61,8 +61,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Skill1"):
 		if skill1.used_skill():
 			play_skill1_effects.rpc()
-			
-		
+
 func _physics_process(delta: float) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
 		return

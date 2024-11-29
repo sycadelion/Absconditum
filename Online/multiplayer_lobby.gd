@@ -5,6 +5,7 @@ class_name MultiplayerLobby
 @onready var level_container: Node = $Level
 @onready var ip_line_edit: LineEdit = $Multiplayer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/IPLineEdit
 @onready var lobby_ui: CanvasLayer = $Multiplayer
+@onready var background_container: Control = $Background_container
 
 func _ready() -> void:
 	multiplayer.connection_failed.connect(_on_connection_failed)
@@ -15,12 +16,14 @@ func _ready() -> void:
 		_host()
 	
 func _host() -> void:
+	background_container.queue_free()
 	Lobby.create_game()
 	hide_menu.rpc()
 	change_level(level_scene)
 
 func _on_connect_pressed() -> void:
 	Lobby.join_game(ip_line_edit.text)
+	background_container.queue_free()
 
 
 func _on_back_button_pressed() -> void:
@@ -45,4 +48,6 @@ func _on_player_connected(_id):
 	
 @rpc("any_peer", "call_local", "reliable")
 func hide_menu():
+	GameManager.skill_Cooldown = GameManager.skill_Cooldown
+	GameManager.skill1_radius = GameManager.skill1_radius
 	lobby_ui.hide()

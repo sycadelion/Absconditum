@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cboyxbggkvdoj"]
+
+[ext_resource type="FontFile" uid="uid://bt3eis200qlni" path="res://addons/NotJamFontPack/Not Jam Glasgow 13/Not Jam Glasgow 13.ttf" id="1_hygml"]
+
+[resource]
+default_font = ExtResource("1_hygml")
+Button/font_sizes/font_size = 25

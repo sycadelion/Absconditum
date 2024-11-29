@@ -1,52 +1,126 @@
-[gd_scene load_steps=15 format=3 uid="uid://1vtabgmdqbya"]
+[gd_scene load_steps=12 format=3 uid="uid://1vtabgmdqbya"]
 
 [ext_resource type="Script" path="res://Scenes/UI/main_menu.gd" id="1_r4jl4"]
-[ext_resource type="Shader" path="res://Shaders/Discrete_Ocean.gdshader" id="2_u0vue"]
+[ext_resource type="PackedScene" uid="uid://b7kqgr0bkm3s6" path="res://Scenes/UI/background_container.tscn" id="2_reh62"]
 [ext_resource type="FontFile" uid="uid://bt3eis200qlni" path="res://addons/NotJamFontPack/Not Jam Glasgow 13/Not Jam Glasgow 13.ttf" id="2_u8cqs"]
 [ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="2_x3kec"]
-[ext_resource type="Shader" path="res://Shaders/Vigette.gdshader" id="3_0uap7"]
-[ext_resource type="Shader" path="res://Shaders/ripple.gdshader" id="3_qd4u5"]
 [ext_resource type="Texture2D" uid="uid://cj6infinoal0i" path="res://Images/eye icon.png" id="3_snsu0"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_531bg"]
-shader = ExtResource("2_u0vue")
-shader_parameter/bottom_color = Color(0.152579, 0.00507652, 0.275761, 1)
-shader_parameter/top_color = Color(0.500945, 3.36915e-07, 0.277385, 1)
-shader_parameter/wave_amp = 0.186
-shader_parameter/wave_size = 2.301
-shader_parameter/wave_time_mul = 1.107
-shader_parameter/total_phases = 7
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_o2u5i"]
-seed = 3
-frequency = 0.0302
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cttmh"]
-seamless = true
-noise = SubResource("FastNoiseLite_o2u5i")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_p0gn2"]
-shader = ExtResource("3_qd4u5")
-shader_parameter/frequency = 10.69
-shader_parameter/amplitude = 1.1
-shader_parameter/ripple_rate = 2.0
-shader_parameter/wave_amplitude = 0.05
-shader_parameter/wave_frequency = 4.0
-shader_parameter/noise = SubResource("NoiseTexture2D_cttmh")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gsdcc"]
-shader = ExtResource("3_0uap7")
-shader_parameter/outerRadius = 1.12
-shader_parameter/MainAlpha = 1.0
-
-[sub_resource type="Theme" id="Theme_4y8uk"]
-default_font = ExtResource("2_u8cqs")
+[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://Scenes/UI/Menu.tres" id="6_x13m3"]
+[ext_resource type="PackedScene" uid="uid://cwd15gx5hshw5" path="res://Scenes/UI/game_settings.tscn" id="7_jslx7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ypctj"]
 shader = ExtResource("2_x3kec")
 shader_parameter/exclude_center = null
 shader_parameter/exclude_size = null
 shader_parameter/lod = 2.247
+
+[sub_resource type="Animation" id="Animation_f0rw8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Game_Settings:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Menu:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(509, 231)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Game_Settings:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Game_Settings:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(576, 324)]
+}
+
+[sub_resource type="Animation" id="Animation_cov4r"]
+resource_name = "Settings_open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Game_Settings:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Menu:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(509, 231), Vector2(340, 231)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Game_Settings:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Game_Settings:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(811, 324), Vector2(606, 324)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vaxh2"]
+_data = {
+"RESET": SubResource("Animation_f0rw8"),
+"Settings_open": SubResource("Animation_cov4r")
+}
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -57,30 +131,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_r4jl4")
 
-[node name="Background" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_531bg")
+[node name="Background_container" parent="." instance=ExtResource("2_reh62")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Ripple" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_p0gn2")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Vigette" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_gsdcc")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -89,8 +146,8 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -321.5
-offset_right = 321.5
+offset_left = -344.5
+offset_right = 344.5
 offset_bottom = 111.0
 grow_horizontal = 2
 
@@ -107,58 +164,66 @@ theme_override_colors/font_outline_color = Color(0.524336, 0, 0.0730928, 1)
 theme_override_fonts/normal_font = ExtResource("2_u8cqs")
 theme_override_font_sizes/normal_font_size = 100
 bbcode_enabled = true
-text = "[center][pulse freq=.5 color=#ffffff40 ease=-2.0][outline_size=9]Absconditus[/outline_size][/pulse][/center]"
+text = "[center][pulse freq=.5 color=#ffffff40 ease=-2.0][outline_size=9]Absconditum[/outline_size][/pulse][/center]"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="Menu" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -42.0
-offset_top = -71.0
-offset_right = 42.0
-offset_bottom = 71.0
+offset_left = -67.0
+offset_top = -93.0
+offset_right = 67.0
+offset_bottom = 93.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_4y8uk")
+theme = ExtResource("6_x13m3")
 
-[node name="CenterContainer" type="CenterContainer" parent="PanelContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="Menu"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/CenterContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Menu/CenterContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer/CenterContainer/MarginContainer"]
+[node name="VSplitContainer" type="VSplitContainer" parent="Menu/CenterContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer/MarginContainer/VSplitContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/CenterContainer/MarginContainer/VSplitContainer"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Play" type="Button" parent="PanelContainer/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer"]
+[node name="Play" type="Button" parent="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
 text = "Host"
 
-[node name="Join" type="Button" parent="PanelContainer/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer"]
+[node name="Join" type="Button" parent="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
 text = "Join"
 
-[node name="Quit" type="Button" parent="PanelContainer/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer"]
+[node name="Settings" type="Button" parent="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+text = "Settings"
+
+[node name="Quit" type="Button" parent="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer"]
+layout_mode = 2
 text = "Quit
 "
+
+[node name="Game_Settings" parent="." instance=ExtResource("7_jslx7")]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+offset_left = 235.0
+offset_right = 235.0
 
 [node name="icup" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -201,7 +266,13 @@ offset_right = 189.0
 offset_bottom = 625.0
 color = Color(0, 0, 0, 1)
 
-[connection signal="pressed" from="PanelContainer/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="PanelContainer/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Join" to="." method="_on_join_pressed"]
-[connection signal="pressed" from="PanelContainer/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vaxh2")
+}
+
+[connection signal="pressed" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="icup/MarginContainer/HBoxContainer/RevealIP" to="." method="_on_reveal_ip_pressed"]

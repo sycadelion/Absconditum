@@ -7,7 +7,6 @@ extends CharacterBody3D
 @export_range(0,1) var borderSize:float
 @export_color_no_alpha var borderColor:Color
 @export var invertCut:bool
-@export var lifetime:int = 5
 @onready var bubble:MeshInstance3D = $Bubble
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var lifetime_timer: Timer = $Timer
@@ -15,7 +14,8 @@ extends CharacterBody3D
 var expanded: bool = false
 
 func _ready() -> void:
-	lifetime_timer.wait_time = lifetime
+	lifetime_timer.wait_time = GameManager.skill_Cooldown
+	anim_player.get_animation("expand").track_set_key_value(0,1,GameManager.skill1_radius)
 	bubble.mesh.set_radius(sphereRadius)
 	bubble.mesh.set_height(sphereRadius*2)
 	if not expanded:

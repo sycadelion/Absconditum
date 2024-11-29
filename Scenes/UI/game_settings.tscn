@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwd15gx5hshw5"]
+
+[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://Scenes/UI/Menu.tres" id="1_4jy3i"]
+[ext_resource type="PackedScene" uid="uid://cyol5v5lpw78x" path="res://Scenes/UI/setting_slider.tscn" id="2_1d8gl"]
+[ext_resource type="Script" path="res://Scenes/UI/game_settings.gd" id="2_21xgj"]
+
+[node name="Game_Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_4jy3i")
+script = ExtResource("2_21xgj")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Skill_CD" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Skill Cooldown:"
+
+[node name="SettingSlider" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_1d8gl")]
+layout_mode = 2
+min = 1
+max = 50
+
+[node name="Skill_radius" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Skill Radius:"
+
+[node name="SettingSlider2" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_1d8gl")]
+layout_mode = 2
+settingsVar = 1
+min = 1
+max = 50

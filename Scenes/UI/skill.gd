@@ -3,11 +3,10 @@ extends Control
 @onready var pBar: ProgressBar = $PanelContainer/MarginContainer/ProgressBar
 @onready var timer: Timer = $Timer
 
-@export var maxValue = 200
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	timer.wait_time = GameManager.skill_Cooldown + 2
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
