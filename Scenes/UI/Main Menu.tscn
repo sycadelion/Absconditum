@@ -1,8 +1,46 @@
-[gd_scene load_steps=5 format=3 uid="uid://1vtabgmdqbya"]
+[gd_scene load_steps=15 format=3 uid="uid://1vtabgmdqbya"]
 
 [ext_resource type="Script" path="res://Scenes/UI/main_menu.gd" id="1_r4jl4"]
+[ext_resource type="Shader" path="res://Shaders/Discrete_Ocean.gdshader" id="2_u0vue"]
+[ext_resource type="FontFile" uid="uid://bt3eis200qlni" path="res://addons/NotJamFontPack/Not Jam Glasgow 13/Not Jam Glasgow 13.ttf" id="2_u8cqs"]
 [ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="2_x3kec"]
+[ext_resource type="Shader" path="res://Shaders/Vigette.gdshader" id="3_0uap7"]
+[ext_resource type="Shader" path="res://Shaders/ripple.gdshader" id="3_qd4u5"]
 [ext_resource type="Texture2D" uid="uid://cj6infinoal0i" path="res://Images/eye icon.png" id="3_snsu0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_531bg"]
+shader = ExtResource("2_u0vue")
+shader_parameter/bottom_color = Color(0.152579, 0.00507652, 0.275761, 1)
+shader_parameter/top_color = Color(0.500945, 3.36915e-07, 0.277385, 1)
+shader_parameter/wave_amp = 0.186
+shader_parameter/wave_size = 2.301
+shader_parameter/wave_time_mul = 1.107
+shader_parameter/total_phases = 7
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_o2u5i"]
+seed = 3
+frequency = 0.0302
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cttmh"]
+seamless = true
+noise = SubResource("FastNoiseLite_o2u5i")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p0gn2"]
+shader = ExtResource("3_qd4u5")
+shader_parameter/frequency = 10.69
+shader_parameter/amplitude = 1.1
+shader_parameter/ripple_rate = 2.0
+shader_parameter/wave_amplitude = 0.05
+shader_parameter/wave_frequency = 4.0
+shader_parameter/noise = SubResource("NoiseTexture2D_cttmh")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gsdcc"]
+shader = ExtResource("3_0uap7")
+shader_parameter/outerRadius = 1.12
+shader_parameter/MainAlpha = 1.0
+
+[sub_resource type="Theme" id="Theme_4y8uk"]
+default_font = ExtResource("2_u8cqs")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ypctj"]
 shader = ExtResource("2_x3kec")
@@ -19,14 +57,41 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_r4jl4")
 
+[node name="Background" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_531bg")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Ripple" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_p0gn2")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Vigette" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_gsdcc")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="GameTitle" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -39.0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = -321.5
+offset_right = 321.5
+offset_bottom = 111.0
 grow_horizontal = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="GameTitle"]
@@ -38,9 +103,11 @@ theme_override_constants/margin_bottom = 5
 
 [node name="RichTextLabel" type="RichTextLabel" parent="GameTitle/MarginContainer"]
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 50
+theme_override_colors/font_outline_color = Color(0.524336, 0, 0.0730928, 1)
+theme_override_fonts/normal_font = ExtResource("2_u8cqs")
+theme_override_font_sizes/normal_font_size = 100
 bbcode_enabled = true
-text = "[center]Game Title[/center]"
+text = "[center][pulse freq=.5 color=#ffffff40 ease=-2.0][outline_size=9]Absconditus[/outline_size][/pulse][/center]"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
@@ -52,33 +119,35 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -30.0
-offset_top = -68.0
-offset_right = 31.0
-offset_bottom = 69.0
+offset_left = -42.0
+offset_top = -71.0
+offset_right = 42.0
+offset_bottom = 71.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_4y8uk")
 
 [node name="CenterContainer" type="CenterContainer" parent="PanelContainer"]
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/CenterContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
 [node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer/CenterContainer/MarginContainer"]
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer/MarginContainer/VSplitContainer"]
 layout_mode = 2
+theme_override_constants/separation = 10
 
 [node name="Play" type="Button" parent="PanelContainer/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
-text = "Play"
+text = "Host"
 
 [node name="Join" type="Button" parent="PanelContainer/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer"]
 layout_mode = 2
@@ -122,7 +191,8 @@ text = "000.000.000.00"
 layout_mode = 2
 icon = ExtResource("3_snsu0")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Ip_Blur" type="ColorRect" parent="."]
+z_index = 1
 material = SubResource("ShaderMaterial_ypctj")
 layout_mode = 0
 offset_left = 71.0

@@ -1,7 +1,8 @@
 extends Control
 
 @onready var your_ip: Label = $icup/MarginContainer/HBoxContainer/YourIp
-@onready var color_rect: ColorRect = $ColorRect
+@onready var ip_blur: ColorRect = $Ip_Blur
+
 
 var hide = 2
 
@@ -23,6 +24,4 @@ func _on_quit_pressed() -> void:
 
 
 func _on_reveal_ip_pressed() -> void:
-	var shaderMat:ShaderMaterial = color_rect.material
-	hide = -hide
-	shaderMat.set_shader_parameter("lod",hide)
+	ip_blur.visible = not ip_blur.visible
