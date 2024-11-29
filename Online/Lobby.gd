@@ -11,8 +11,7 @@ const MAX_CONNECTIONS = 2
 var players = {}
 
 var player_info = {"name": "Player Name"}
-var skill1_cooldown = 0
-var skill1_radius = 0
+
 
 
 func _ready() -> void:
@@ -44,8 +43,6 @@ func _ready() -> void:
 func create_game():
 	var peer = ENetMultiplayerPeer.new()
 	var error = peer.create_server(PORT, MAX_CONNECTIONS)
-	skill1_cooldown = GameManager.skill_Cooldown
-	skill1_radius = GameManager.skill1_radius
 	if error:
 		return error
 	multiplayer.multiplayer_peer = peer
@@ -88,3 +85,8 @@ func _on_server_disconnected():
 	multiplayer.multiplayer_peer = null
 	players.clear()
 	server_disconnected.emit()
+
+@rpc("authority","call_local")
+func _update_globals(var1,var2):
+	GameManager.skill_Cooldown = var1
+	GameManager.skill1_radius = var2

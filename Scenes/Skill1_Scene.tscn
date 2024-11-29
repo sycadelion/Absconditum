@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d3bhlb6x0ro8f"]
+[gd_scene load_steps=11 format=3 uid="uid://d3bhlb6x0ro8f"]
 
 [ext_resource type="Script" path="res://Shaders/Shader Scripts/sphereSDF.gd" id="1_t28a6"]
 [ext_resource type="Material" uid="uid://126ih2e781un" path="res://Shaders/Bubble_Arrow_shader.tres" id="2_yohdm"]
@@ -61,14 +61,6 @@ _data = {
 "expand": SubResource("Animation_njaer")
 }
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_wadrs"]
-properties/0/path = NodePath(".:position")
-properties/0/spawn = true
-properties/0/replication_mode = 1
-properties/1/path = NodePath(".:rotation")
-properties/1/spawn = true
-properties/1/replication_mode = 1
-
 [node name="Skill1_Scene" type="CharacterBody3D"]
 collision_layer = 2
 script = ExtResource("1_t28a6")
@@ -102,9 +94,6 @@ libraries = {
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_wadrs")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

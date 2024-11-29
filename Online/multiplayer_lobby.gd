@@ -11,6 +11,8 @@ func _ready() -> void:
 	multiplayer.connection_failed.connect(_on_connection_failed)
 	multiplayer.connected_to_server.connect(_on_connected_to_server)
 	multiplayer.peer_connected.connect(_on_player_connected)
+	multiplayer.peer_disconnected.connect(_on_player_disconnected)
+	multiplayer.server_disconnected.connect(_on_server_disconnected)
 	
 	if GameManager.host_mode:
 		_host()
@@ -43,11 +45,15 @@ func _on_connected_to_server():
 	hide_menu.rpc()
 	change_level(level_scene)
 	
-func _on_player_connected(_id):
-	pass
+func _on_player_connected(id):
+	Lobby._update_globals.rpc_id(id,GameManager.skill_Cooldown,GameManager.skill1_radius)
+
+func _on_player_disconnected(id):
+	Lobby._on_player_disconnected(id)
 	
+func _on_server_disconnected():
+	Lobby._on_server_disconnected()
+
 @rpc("any_peer", "call_local", "reliable")
 func hide_menu():
-	GameManager.skill_Cooldown = GameManager.skill_Cooldown
-	GameManager.skill1_radius = GameManager.skill1_radius
 	lobby_ui.hide()
