@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3y2x68vul0uc"
-path.s3tc="res://.godot/imported/texture_01.png-38f28acdb9a95ea2efd835531b47e519.s3tc.ctex"
+uid="uid://bkc7v761etbna"
+path.s3tc="res://.godot/imported/dust2_de_dust2_material_5.png-95a3c8192ee6250cb1c81ad66e9fcfd9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "1352d4a124eab381f80833ed73d6c02f"
+}
 
 [deps]
 
-source_file="res://addons/kenney_prototype_textures/purple/texture_01.png"
-dest_files=["res://.godot/imported/texture_01.png-38f28acdb9a95ea2efd835531b47e519.s3tc.ctex"]
+source_file="res://Models/dust2_de_dust2_material_5.png"
+dest_files=["res://.godot/imported/dust2_de_dust2_material_5.png-95a3c8192ee6250cb1c81ad66e9fcfd9.s3tc.ctex"]
 
 [params]
 

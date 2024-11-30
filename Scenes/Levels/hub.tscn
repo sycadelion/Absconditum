@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/Levels/hub.gd" id="1_ttpxj"]
 [ext_resource type="PackedScene" uid="uid://f7itocgajf8o" path="res://Scenes/player.tscn" id="2_an04p"]
-[ext_resource type="PackedScene" uid="uid://dlammbwbnr4my" path="res://Scenes/Levels/environment.tscn" id="3_0actm"]
+[ext_resource type="PackedScene" uid="uid://lj7edg20dl3e" path="res://Scenes/Levels/dust_2.tscn" id="3_2u1b8"]
 
 [sub_resource type="Environment" id="Environment_od2il"]
 background_mode = 1
@@ -12,6 +12,7 @@ glow_enabled = true
 fog_light_color = Color(0.57, 0.343995, 0.2223, 1)
 fog_sun_scatter = 0.14
 fog_density = 0.2311
+volumetric_fog_length = 4.0
 
 [node name="Hub" type="Node3D" node_paths=PackedStringArray("players_container", "player_spawner")]
 script = ExtResource("1_ttpxj")
@@ -31,6 +32,7 @@ spawn_limit = 4
 
 [node name="Players" type="Node3D" parent="."]
 
-[node name="Environment" parent="." instance=ExtResource("3_0actm")]
-
 [node name="SkillContainer" type="Node3D" parent="." groups=["SkillContainer"]]
+
+[node name="dust2" parent="." instance=ExtResource("3_2u1b8")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -13.2573, 0, 0)
