@@ -898,21 +898,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.96046e-08, 0)
 collision_layer = 2
 script = ExtResource("1_4ht6w")
 
-[node name="Player_Body" type="MeshInstance3D" parent="." groups=["VisibleObjectsShader"]]
+[node name="Player_Body" type="MeshInstance3D" parent="." groups=["Players", "VisibleObjectsShader"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 material_override = ExtResource("1_fuh6j")
 mesh = SubResource("CapsuleMesh_4jp85")
 
-[node name="Player_Body2" type="MeshInstance3D" parent="."]
+[node name="Player_Body2" type="MeshInstance3D" parent="." groups=["Players"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 material_override = ExtResource("1_fuh6j")
 mesh = SubResource("CapsuleMesh_ghie6")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["Players"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_736cw")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." groups=["Players"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39031, 0)
 
 [node name="bow_viewmodel" parent="Camera3D" instance=ExtResource("4_4w5qa")]

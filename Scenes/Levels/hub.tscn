@@ -1,12 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7b7s6cm1vqrg"]
+[gd_scene load_steps=8 format=3 uid="uid://c7b7s6cm1vqrg"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/hub.gd" id="1_ttpxj"]
 [ext_resource type="PackedScene" uid="uid://f7itocgajf8o" path="res://Scenes/player.tscn" id="2_an04p"]
 [ext_resource type="PackedScene" uid="uid://lj7edg20dl3e" path="res://Scenes/Levels/dust_2.tscn" id="3_2u1b8"]
+[ext_resource type="Material" uid="uid://ys5y4m34ptf6" path="res://Shaders/Skybox_mat.tres" id="3_lfn30"]
+[ext_resource type="PackedScene" uid="uid://btea2veyjc17u" path="res://Scenes/SpawnPoint.tscn" id="5_o78dm"]
+
+[sub_resource type="Sky" id="Sky_8f814"]
+sky_material = ExtResource("3_lfn30")
 
 [sub_resource type="Environment" id="Environment_od2il"]
-background_mode = 1
+background_mode = 2
 background_color = Color(0.203922, 0.113725, 0, 1)
+sky = SubResource("Sky_8f814")
+ambient_light_color = Color(0.154876, 0.154876, 0.154876, 1)
 tonemap_mode = 2
 glow_enabled = true
 fog_light_color = Color(0.57, 0.343995, 0.2223, 1)
@@ -24,7 +31,7 @@ player_spawner = NodePath("MultiplayerSpawner")
 environment = SubResource("Environment_od2il")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.433013, 0.5, -0.75, -0.25, 0.866025, 0.433013, 0.866025, 0, 0.5, -6, 4, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -6, 4, 0)
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 spawn_path = NodePath("../Players")
@@ -36,3 +43,8 @@ spawn_limit = 4
 
 [node name="dust2" parent="." instance=ExtResource("3_2u1b8")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -13.2573, 0, 0)
+
+[node name="Spawn_points" type="Node3D" parent="." groups=["Spawn_container"]]
+
+[node name="SpawnPoint" parent="Spawn_points" instance=ExtResource("5_o78dm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.4746, 2.6877, 12.9937)
