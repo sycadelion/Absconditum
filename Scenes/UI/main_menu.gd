@@ -3,6 +3,7 @@ extends Control
 @onready var your_ip: Label = $icup/MarginContainer/HBoxContainer/YourIp
 @onready var ip_blur: ColorRect = $Ip_Blur
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
+@onready var player_name: LineEdit = $player_name
 
 var settings: bool = false
 
@@ -36,3 +37,8 @@ func _on_settings_pressed() -> void:
 	else:
 		anim_player.play("Settings_open")
 		settings = true
+
+
+
+func _on_player_name_focus_exited() -> void:
+	GameManager.player_name = player_name.text
