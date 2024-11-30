@@ -26,8 +26,8 @@ var sens:float = .005
 
 var owner_id = 1
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 5
+var SPEED = 5.0
+var JUMP_VELOCITY = 5
 
 func _enter_tree() -> void:
 	owner_id = name.to_int()
@@ -40,6 +40,9 @@ func _ready() -> void:
 		bow.visible = false
 		bodyInvert.visible = false
 		hud.visible = true
+		SPEED = GameManager.player_Speed
+		JUMP_VELOCITY = GameManager.player_jump
+		_hitscan = GameManager.hitscan
 	else:
 		camera.current = false
 		

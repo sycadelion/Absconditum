@@ -7,7 +7,7 @@ custom_minimum_size = Vector2(200, 0)
 offset_right = 8.0
 offset_bottom = 16.0
 value = 1.0
-tick_count = 2
+tick_count = 3
 script = ExtResource("1_y3car")
 
 [connection signal="value_changed" from="." to="." method="_on_value_changed"]

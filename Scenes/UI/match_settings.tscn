@@ -1,0 +1,129 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwd15gx5hshw5"]
+
+[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://Scenes/UI/Menu.tres" id="1_4jy3i"]
+[ext_resource type="PackedScene" uid="uid://cyol5v5lpw78x" path="res://Scenes/UI/setting_slider.tscn" id="2_1d8gl"]
+[ext_resource type="Script" path="res://Scenes/UI/game_settings.gd" id="2_21xgj"]
+
+[node name="Game_Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_4jy3i")
+script = ExtResource("2_21xgj")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="grid" type="GridContainer" parent="PanelContainer/CenterContainer/MarginContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="Skill Settings" type="VBoxContainer" parent="PanelContainer/CenterContainer/MarginContainer/grid"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="SkillSettings" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/grid/Skill Settings"]
+layout_mode = 2
+text = "----Skill 1 Settings---"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/grid/Skill Settings"]
+layout_mode = 2
+
+[node name="Skill_CD" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/grid/Skill Settings"]
+layout_mode = 2
+text = "Skill Cooldown:"
+horizontal_alignment = 1
+
+[node name="CDSlider" parent="PanelContainer/CenterContainer/MarginContainer/grid/Skill Settings" instance=ExtResource("2_1d8gl")]
+layout_mode = 2
+settingsVar = "skill_Cooldown"
+min = 1
+max = 50
+
+[node name="Skill_radius" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/grid/Skill Settings"]
+layout_mode = 2
+text = "Skill Radius:"
+horizontal_alignment = 1
+
+[node name="RadiusSlider" parent="PanelContainer/CenterContainer/MarginContainer/grid/Skill Settings" instance=ExtResource("2_1d8gl")]
+layout_mode = 2
+settingsVar = "skill1_radius"
+min = 1
+max = 50
+
+[node name="Player Settings" type="VBoxContainer" parent="PanelContainer/CenterContainer/MarginContainer/grid"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Player" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/grid/Player Settings"]
+layout_mode = 2
+text = "----Player Settings---"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/grid/Player Settings"]
+layout_mode = 2
+
+[node name="MovementSpeed" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/grid/Player Settings"]
+layout_mode = 2
+text = "Movement Speed"
+horizontal_alignment = 1
+
+[node name="MoveSlider" parent="PanelContainer/CenterContainer/MarginContainer/grid/Player Settings" instance=ExtResource("2_1d8gl")]
+layout_mode = 2
+settingsVar = "player_Speed"
+min = 1
+max = 25
+
+[node name="JumpHeight" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/grid/Player Settings"]
+layout_mode = 2
+text = "Jump Height"
+horizontal_alignment = 1
+
+[node name="JumpSlider" parent="PanelContainer/CenterContainer/MarginContainer/grid/Player Settings" instance=ExtResource("2_1d8gl")]
+layout_mode = 2
+settingsVar = "player_jump"
+min = 1
+max = 10
+
+[node name="Hitscan" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/grid/Player Settings"]
+layout_mode = 2
+text = "Hitscan"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/CenterContainer/MarginContainer/grid/Player Settings"]
+layout_mode = 2
+
+[node name="HitscanCheckBox" type="CheckBox" parent="PanelContainer/CenterContainer/MarginContainer/grid/Player Settings/CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.677173, 0.0364597, 0.267578, 1)
+theme_override_colors/icon_normal_color = Color(0.856841, 0, 0.195046, 1)
+
+[connection signal="toggled" from="PanelContainer/CenterContainer/MarginContainer/grid/Player Settings/CenterContainer/HitscanCheckBox" to="." method="_on_hitscan_check_box_toggled"]

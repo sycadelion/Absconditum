@@ -87,6 +87,9 @@ func _on_server_disconnected():
 	server_disconnected.emit()
 
 @rpc("authority","call_local")
-func _update_globals(var1,var2):
+func _update_globals(var1,var2, var3, var4,var5):
 	GameManager.skill_Cooldown = var1
 	GameManager.skill1_radius = var2
+	GameManager.player_Speed = var3
+	GameManager.player_jump = var4
+	GameManager.hitscan = var5
