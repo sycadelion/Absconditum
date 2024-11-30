@@ -12,6 +12,7 @@ extends CharacterBody3D
 @onready var bowViewmodel: Node3D = $Camera3D/bow_viewmodel
 @onready var bow: Node3D = $Camera3D/bow
 @onready var hud: Control = $CanvasLayer/HUD
+@onready var pause: Control = $CanvasLayer/Pause
 
 #bullet marker and trail component
 @onready var marker: Marker3D = $Camera3D/Marker3D
@@ -64,6 +65,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Skill1"):
 		if skill1.used_skill():
 			play_skill1_effects.rpc()
+	if Input.is_action_just_pressed("quit"):
+		pause.pause(owner_id)
 	if Input.is_action_just_pressed("test"):
 		print("CD: " + str(GameManager.skill_Cooldown) + " RD: " + str(GameManager.skill1_radius))
 
@@ -118,8 +121,11 @@ func receive_damage():
 	health -= 1
 	if health <= 0:
 		health = 1
-		position = Vector3.ZERO
-
+		var spawnPOS = GameManager.spawn_point_rng()
+		if spawnPOS.SpawnActive:
+			position = spawnPOS.SpawnPOS
+		else:
+			spawnPOS = GameManager.spawn_point_rng()
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "shoot":
 		anim_player.play("idle")

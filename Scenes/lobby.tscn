@@ -76,5 +76,6 @@ text = "Connect"
 layout_mode = 2
 text = "Back"
 
+[connection signal="text_submitted" from="Multiplayer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/IPLineEdit" to="." method="_on_ip_line_edit_text_submitted"]
 [connection signal="pressed" from="Multiplayer/PanelContainer/MarginContainer/HBoxContainer/ConnectButton" to="." method="_on_connect_pressed"]
 [connection signal="pressed" from="Multiplayer/PanelContainer/MarginContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://f7itocgajf8o"]
+[gd_scene load_steps=53 format=4 uid="uid://f7itocgajf8o"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_4ht6w"]
 [ext_resource type="Material" uid="uid://gsnjhl57qwdk" path="res://Shaders/player_shader_mat.tres" id="1_fuh6j"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://pao6524wf303" path="res://addons/kenney_particle_pack/smoke_08.png" id="5_q41oh"]
 [ext_resource type="Texture2D" uid="uid://68kjn6suxq5a" path="res://addons/kenney_particle_pack/smoke_04.png" id="6_oop84"]
 [ext_resource type="PackedScene" uid="uid://c0wl72hwaa31r" path="res://Scenes/UI/hud.tscn" id="7_kc58q"]
+[ext_resource type="PackedScene" uid="uid://ser6du4tr2cu" path="res://Scenes/UI/pause.tscn" id="8_grtv0"]
 [ext_resource type="Script" path="res://Scripts/bullet_trail_comp.gd" id="9_aqsbj"]
 [ext_resource type="Script" path="res://Scripts/skill_1_comp.gd" id="10_elnv3"]
 [ext_resource type="PackedScene" uid="uid://d3bhlb6x0ro8f" path="res://Scenes/Skill1_Scene.tscn" id="11_7l2ie"]
@@ -972,6 +973,8 @@ replication_config = SubResource("SceneReplicationConfig_pefit")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("7_kc58q")]
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("8_grtv0")]
 
 [node name="BulletTrailComp" type="Node3D" parent="."]
 script = ExtResource("9_aqsbj")

@@ -30,7 +30,8 @@ import/blender/enabled=false
 Players=""
 VisibleObjectsShader=""
 SkillContainer=""
-Spawn_container=""
+Spawn_Point=""
+Spawner=""
 
 [input]
 

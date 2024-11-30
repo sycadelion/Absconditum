@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://1vtabgmdqbya"]
+[gd_scene load_steps=13 format=3 uid="uid://1vtabgmdqbya"]
 
 [ext_resource type="Script" path="res://Scenes/UI/main_menu.gd" id="1_r4jl4"]
 [ext_resource type="PackedScene" uid="uid://b7kqgr0bkm3s6" path="res://Scenes/UI/background_container.tscn" id="2_reh62"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cj6infinoal0i" path="res://Images/eye icon.png" id="3_snsu0"]
 [ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://Scenes/UI/Menu.tres" id="6_x13m3"]
 [ext_resource type="PackedScene" uid="uid://cwd15gx5hshw5" path="res://Scenes/UI/match_settings.tscn" id="7_jslx7"]
+[ext_resource type="PackedScene" uid="uid://ibr5tw3jo2xn" path="res://Scenes/UI/disconnected_from_server.tscn" id="8_3wo6v"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ypctj"]
 shader = ExtResource("2_x3kec")
@@ -227,9 +228,7 @@ visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 offset_left = 432.0
-offset_top = 22.0
 offset_right = 432.0
-offset_bottom = 22.0
 
 [node name="icup" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -276,6 +275,14 @@ color = Color(0, 0, 0, 1)
 libraries = {
 "": SubResource("AnimationLibrary_vaxh2")
 }
+
+[node name="Disconnected_from_server" parent="." instance=ExtResource("8_3wo6v")]
+visible = false
+layout_mode = 1
+offset_left = -155.0
+offset_top = -25.0
+offset_right = -155.0
+offset_bottom = -25.0
 
 [connection signal="pressed" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Join" to="." method="_on_join_pressed"]

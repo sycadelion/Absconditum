@@ -4,9 +4,10 @@
 [ext_resource type="Script" path="res://Scenes/spawn_point_node.gd" id="1_v2i58"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_r8wp6"]
+resource_local_to_scene = true
 radius = 15.0
 
-[node name="SpawnPoint" type="Node3D"]
+[node name="SpawnPoint" type="Node3D" groups=["Spawn_Point"]]
 script = ExtResource("1_v2i58")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]

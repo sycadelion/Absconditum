@@ -6,7 +6,7 @@ signal server_disconnected
 
 
 const PORT = 7000
-const MAX_CONNECTIONS = 2
+const MAX_CONNECTIONS = 8
 
 var players = {}
 
@@ -65,11 +65,12 @@ func _register_player(new_player_info):
 	var new_player_id = multiplayer.get_remote_sender_id()
 	players[new_player_id] = new_player_info
 	player_connected.emit(new_player_id, new_player_info)
-	print("player connected")
+	print("player connected" + str(players))
 	
 func _on_player_disconnected(id):
 	players.erase(id)
 	player_disconnected.emit(id)
+	print("player DC" + str(players))
 
 func _on_connected_to_server():
 	var peer_id = multiplayer.get_unique_id()
@@ -85,6 +86,10 @@ func _on_server_disconnected():
 	multiplayer.multiplayer_peer = null
 	players.clear()
 	server_disconnected.emit()
+	GameManager.disconnected = true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	print("server DC")
+	get_tree().change_scene_to_file("res://Scenes/UI/Main Menu.tscn")
 
 @rpc("authority","call_local")
 func _update_globals(var1,var2, var3, var4,var5):

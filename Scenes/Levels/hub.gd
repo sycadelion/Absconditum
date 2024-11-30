@@ -29,17 +29,19 @@ func spawn_player(id):
 	
 	
 	#set player id
-	if id == 1:
-		player_instance.player_id = 1
-		
-	else:
-		player_instance.player_id = 2
+	player_instance.player_id = id
+
 	
 	print("player " + str(player_instance.player_id) + " Spawned")
 	
 	#set player to spawn position
 	player_instance.name = str(id)
-	player_instance.position = Vector3(0,1,0)
+	var spawnPOS = GameManager.spawn_point_rng()
+	if spawnPOS.SpawnActive:
+		player_instance.position = spawnPOS.SpawnPOS
+	else:
+		spawnPOS = GameManager.spawn_point_rng()
+	
 	return player_instance
 
 func add_player(id):
@@ -52,10 +54,11 @@ func player_joined(id):
 func _exit_tree() -> void:
 	if not multiplayer.is_server():
 		return
-	multiplayer.peer_disconnected.disconnect(delete_player)
+	multiplayer.peer_disconnected.connect(delete_player)
 	
 func delete_player(id):
 	if not players_container.has_node(str(id)):
 		return
 	
 	players_container.get_node(str(id)).queue_free()
+	

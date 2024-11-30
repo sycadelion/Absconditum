@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ser6du4tr2cu"]
+[gd_scene load_steps=4 format=3 uid="uid://ser6du4tr2cu"]
 
-[ext_resource type="Script" path="res://UI/pause.gd" id="1_ag0r8"]
+[ext_resource type="Script" path="res://Scenes/UI/pause.gd" id="1_ag0r8"]
+[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://Scenes/UI/Menu.tres" id="1_s755f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xouvt"]
 bg_color = Color(0, 0, 0, 0.65098)
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_s755f")
 script = ExtResource("1_ag0r8")
 
 [node name="Panel" type="Panel" parent="."]
@@ -76,11 +78,11 @@ text = "Resume"
 
 [node name="QuitButton" type="Button" parent="Buttons/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Quit"
+text = "Leave Game"
 
 [node name="QuitWindowsButton" type="Button" parent="Buttons/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Quit to Desktop"
+text = "Exit to Desktop"
 
 [connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

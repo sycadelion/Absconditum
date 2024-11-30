@@ -19,7 +19,10 @@ glow_enabled = true
 fog_light_color = Color(0.57, 0.343995, 0.2223, 1)
 fog_sun_scatter = 0.14
 fog_density = 0.2311
-volumetric_fog_length = 4.0
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.506346, 0.0985438, 0.548278, 1)
+volumetric_fog_emission = Color(0.276803, 0.137464, 0.273613, 1)
+volumetric_fog_length = 10.0
 
 [node name="Hub" type="Node3D" node_paths=PackedStringArray("players_container", "player_spawner")]
 script = ExtResource("1_ttpxj")
@@ -33,9 +36,9 @@ environment = SubResource("Environment_od2il")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -6, 4, 0)
 
-[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." groups=["Spawner"]]
 spawn_path = NodePath("../Players")
-spawn_limit = 4
+spawn_limit = 8
 
 [node name="Players" type="Node3D" parent="."]
 
@@ -44,7 +47,43 @@ spawn_limit = 4
 [node name="dust2" parent="." instance=ExtResource("3_2u1b8")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -13.2573, 0, 0)
 
-[node name="Spawn_points" type="Node3D" parent="." groups=["Spawn_container"]]
+[node name="Spawn_points" type="Node3D" parent="."]
 
 [node name="SpawnPoint" parent="Spawn_points" instance=ExtResource("5_o78dm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.4746, 2.6877, 12.9937)
+
+[node name="SpawnPoint2" parent="Spawn_points" instance=ExtResource("5_o78dm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.475, 0.0138651, -46.175)
+
+[node name="SpawnPoint3" parent="Spawn_points" instance=ExtResource("5_o78dm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.60482, -2.34484, -48.2102)
+
+[node name="SpawnPoint4" parent="Spawn_points" instance=ExtResource("5_o78dm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9036, 2.59617, -58.5442)
+
+[node name="SpawnPoint5" parent="Spawn_points" instance=ExtResource("5_o78dm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.578, -3.85213, -2.76457)
+
+[node name="SpawnPoint6" parent="Spawn_points" instance=ExtResource("5_o78dm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7686, 0, 0)
+
+[node name="SpawnPoint7" parent="Spawn_points" instance=ExtResource("5_o78dm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0351, 2.56242, 15.6039)
+
+[node name="SpawnPoint8" parent="Spawn_points" instance=ExtResource("5_o78dm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.5375, 0.230912, -7.04531)
+
+[node name="SpawnPoint9" parent="Spawn_points" instance=ExtResource("5_o78dm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.2988, 0.685818, -25.7462)
+
+[node name="SpawnPoint10" parent="Spawn_points" instance=ExtResource("5_o78dm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.5903, -2.14099, -48.1789)
+
+[node name="SpawnPoint11" parent="Spawn_points" instance=ExtResource("5_o78dm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.44151, 0.0470552, -29.9577)
+
+[node name="SpawnPoint12" parent="Spawn_points" instance=ExtResource("5_o78dm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5719, 0.233655, -19.068)
+
+[node name="SpawnPoint13" parent="Spawn_points" instance=ExtResource("5_o78dm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.3666, -2.26928, -28.3477)
