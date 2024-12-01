@@ -62,6 +62,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if raycast.is_colliding() and _hitscan:
 			var hit_player = raycast.get_collider()
 			hit_player.receive_damage.rpc_id(hit_player.get_multiplayer_authority())
+			LineDrawer.DrawLine(marker.global_position,hit_player.global_position,Color(1,0,0),0.5)
 	if Input.is_action_just_pressed("Skill1"):
 		if skill1.used_skill():
 			play_skill1_effects.rpc()
