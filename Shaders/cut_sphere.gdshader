@@ -1,5 +1,7 @@
 shader_type spatial;
 
+render_mode unshaded;
+
 #include "funcs.gdshaderinc"
 uniform vec3 spherePos;
 uniform vec3 borderColor: source_color;

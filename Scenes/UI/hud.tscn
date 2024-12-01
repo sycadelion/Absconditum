@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0wl72hwaa31r"]
+[gd_scene load_steps=5 format=3 uid="uid://c0wl72hwaa31r"]
 
 [ext_resource type="Texture2D" uid="uid://c2bu67hqj86j0" path="res://addons/kenney_particle_pack/circle_05.png" id="1_i4x1t"]
+[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://Scenes/UI/Menu.tres" id="1_m4xgf"]
 [ext_resource type="PackedScene" uid="uid://ci6rly7mcj6vl" path="res://Scenes/UI/skill.tscn" id="2_xbtso"]
 [ext_resource type="Script" path="res://Scenes/UI/fps.gd" id="3_ywnm1"]
 
@@ -12,6 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("1_m4xgf")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -32,10 +34,9 @@ anchor_top = 0.5
 anchor_right = 0.0
 anchor_bottom = 0.5
 grow_horizontal = 1
-scale = Vector2(2, 2)
-maxValue = 50000
 
 [node name="Fps" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0

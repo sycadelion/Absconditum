@@ -38,7 +38,8 @@ func spawn_player(id):
 	player_instance.name = str(id)
 	var spawnPOS = GameManager.spawn_point_rng()
 	if spawnPOS.SpawnActive:
-		player_instance.position = spawnPOS.SpawnPOS
+		player_instance.global_position = spawnPOS.SpawnPOS
+		print("player " + str(player_instance.player_id) + " Spawned" + " at " + str(spawnPOS.SpawnPOS))
 	else:
 		spawnPOS = GameManager.spawn_point_rng()
 	

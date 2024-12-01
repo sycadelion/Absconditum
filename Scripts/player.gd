@@ -122,18 +122,20 @@ func receive_damage():
 	health -= 1
 	if health <= 0:
 		health = 1
-		var spawnPOS = GameManager.spawn_point_rng()
-		if spawnPOS.SpawnActive:
-			position = spawnPOS.SpawnPOS
-		else:
-			spawnPOS = GameManager.spawn_point_rng()
-			
+		respawn_self()
+		#anim_player.play("death")
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "shoot":
 		shooting = false
 		anim_player.play("idle")
-		print("unshot")
 	elif  anim_name == "death":
 		health = 1
-		anim_player.play("idle")
-		position = Vector3.ZERO +Vector3(0,1,0)
+		respawn_self.rpc()
+
+@rpc("any_peer")
+func respawn_self():
+	var spawnPOS = GameManager.spawn_point_rng()
+	if spawnPOS.SpawnActive:
+		position = spawnPOS.SpawnPOS
+	else:
+		spawnPOS = GameManager.spawn_point_rng()

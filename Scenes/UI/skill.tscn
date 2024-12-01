@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://ci6rly7mcj6vl"]
+[gd_scene load_steps=5 format=3 uid="uid://ci6rly7mcj6vl"]
 
+[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://Scenes/UI/Menu.tres" id="1_g8fyt"]
 [ext_resource type="Script" path="res://Scenes/UI/skill.gd" id="1_jxm3t"]
 [ext_resource type="Texture2D" uid="uid://b3o2xxuqee7qh" path="res://addons/kenney_particle_pack/star_09.png" id="1_so28q"]
 
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_g8fyt")
 script = ExtResource("1_jxm3t")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
@@ -23,8 +25,12 @@ offset_bottom = 40.0
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
 
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+button_mask = 0
+
 [node name="Sprite2D" type="Sprite2D" parent="PanelContainer/MarginContainer"]
-position = Vector2(3.8147e-06, 3.8147e-06)
+position = Vector2(-1, 0)
 scale = Vector2(0.078125, 0.078125)
 texture = ExtResource("1_so28q")
 centered = false
