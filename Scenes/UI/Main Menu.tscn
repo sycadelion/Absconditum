@@ -32,26 +32,26 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Menu:position")
+tracks/1/path = NodePath("Match_Settings:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(509, 231)]
+"update": 1,
+"values": [false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Match_Settings:visible")
+tracks/2/path = NodePath("Menu:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(425.5, 130)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -63,7 +63,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1008, 324)]
+"values": [Vector2(1152, 324)]
 }
 
 [sub_resource type="Animation" id="Animation_cov4r"]
@@ -83,26 +83,26 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Menu:position")
+tracks/1/path = NodePath("Match_Settings:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(0.5, 0.5),
-"update": 0,
-"values": [Vector2(509, 231), Vector2(256, 231)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Match_Settings:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Menu:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(425.5, 130), Vector2(57.5, 130)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -112,9 +112,9 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(0.5, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1008, 346), Vector2(714, 346)]
+"values": [Vector2(1152, 324), Vector2(608, 324)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vaxh2"]
@@ -164,7 +164,7 @@ theme_override_constants/margin_bottom = 5
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.524336, 0, 0.0730928, 1)
 theme_override_fonts/normal_font = ExtResource("2_u8cqs")
-theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
 text = "[center][pulse freq=.5 color=#ffffff40 ease=-2.0][outline_size=9]Absconditum[/outline_size][/pulse][/center]"
 fit_content = true
@@ -178,10 +178,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -67.0
-offset_top = -93.0
-offset_right = 152.0
-offset_bottom = 137.0
+offset_left = -150.5
+offset_top = -194.0
+offset_right = 150.5
+offset_bottom = 246.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("6_x13m3")
@@ -228,16 +228,16 @@ text = "Quit
 visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-offset_left = 432.0
-offset_right = 432.0
+offset_left = 576.0
+offset_right = 576.0
 
 [node name="icup" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -40.0
-offset_right = 40.0
+offset_top = -132.0
+offset_right = 333.0
 grow_vertical = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="icup"]
@@ -261,15 +261,16 @@ text = "000.000.000.00"
 [node name="RevealIP" type="Button" parent="icup/MarginContainer/HBoxContainer"]
 layout_mode = 2
 icon = ExtResource("3_snsu0")
+icon_alignment = 1
 
 [node name="Ip_Blur" type="ColorRect" parent="."]
 z_index = 1
 material = SubResource("ShaderMaterial_ypctj")
 layout_mode = 0
-offset_left = 71.0
-offset_top = 590.0
-offset_right = 189.0
-offset_bottom = 625.0
+offset_left = 102.0
+offset_top = 571.0
+offset_right = 227.0
+offset_bottom = 591.0
 color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

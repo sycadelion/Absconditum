@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://wlpkvyggn3ra"]
+[gd_scene load_steps=3 format=3 uid="uid://wlpkvyggn3ra"]
 
+[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://Scenes/UI/Menu.tres" id="1_13cte"]
 [ext_resource type="Script" path="res://Scenes/UI/error_prompt.gd" id="1_tylvl"]
 
 [node name="ErrorPrompt" type="Control"]
@@ -11,6 +12,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_13cte")
 script = ExtResource("1_tylvl")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]

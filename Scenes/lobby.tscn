@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdaty1tj8c305"]
+[gd_scene load_steps=6 format=3 uid="uid://cdaty1tj8c305"]
 
 [ext_resource type="Script" path="res://Online/multiplayer_lobby.gd" id="1_lp11c"]
 [ext_resource type="PackedScene" uid="uid://c7b7s6cm1vqrg" path="res://Scenes/Levels/hub.tscn" id="2_kn1xs"]
 [ext_resource type="PackedScene" uid="uid://wlpkvyggn3ra" path="res://Scenes/UI/error_prompt.tscn" id="3_rpgj8"]
 [ext_resource type="PackedScene" uid="uid://b7kqgr0bkm3s6" path="res://Scenes/UI/background_container.tscn" id="3_ul4ju"]
+[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://Scenes/UI/Menu.tres" id="5_1bx7n"]
 
 [node name="Lobby" type="Node"]
 script = ExtResource("1_lp11c")
@@ -42,6 +43,7 @@ offset_right = 60.5
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("5_1bx7n")
 
 [node name="MarginContainer" type="MarginContainer" parent="Multiplayer/PanelContainer"]
 layout_mode = 2
