@@ -9,6 +9,7 @@ emission = Color(1, 0, 0, 1)
 emission_energy_multiplier = 16.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_60rto"]
+resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_5kcbs")
 radius = 0.05
 

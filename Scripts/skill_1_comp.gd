@@ -11,8 +11,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func skill1_throw(marker) ->void:
+func skill1_throw(camera,marker) ->void:
 	var skill = _skill1_prefab.instantiate()
 	var container = get_tree().get_first_node_in_group("SkillContainer")
 	container.add_child(skill)
 	skill.global_position = marker.global_position
+	
+	var force = -10
+	var updirection = 3.5
+	var playerRotation = camera.global_transform.basis.z.normalized()
+	
+	skill.apply_central_impulse(playerRotation * force + Vector3(0,updirection,0))

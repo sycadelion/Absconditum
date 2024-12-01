@@ -960,6 +960,9 @@ collision_mask = 2
 [node name="Marker3D" type="Marker3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.459592, -0.384125, -0.961462)
 
+[node name="Skill1Marker" type="Marker3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.436369, -0.0231869, -0.766952)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_demr1")
@@ -979,9 +982,6 @@ replication_config = SubResource("SceneReplicationConfig_pefit")
 [node name="BulletTrailComp" type="Node3D" parent="."]
 script = ExtResource("9_aqsbj")
 _bullet_trail_prefab = ExtResource("2_rxswk")
-
-[node name="Skill1Marker" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41884, -4.34321)
 
 [node name="Skill1Comp" type="Node3D" parent="."]
 script = ExtResource("10_elnv3")

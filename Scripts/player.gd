@@ -20,13 +20,12 @@ extends CharacterBody3D
 
 #skill1 marker and component
 @onready var skill1: Control = $CanvasLayer/HUD/Skill
-@onready var skill1_marker: Marker3D = $Skill1Marker
+@onready var skill1_marker: Marker3D = $Camera3D/Skill1Marker
 @onready var skill1_comp: Node3D = $Skill1Comp
 
 var sens:float = .005
-
 var owner_id = 1
-
+var shooting:bool = false
 var SPEED = 5.0
 var JUMP_VELOCITY = 5
 
@@ -48,6 +47,22 @@ func _ready() -> void:
 		camera.current = false
 		
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
+func _input(event: InputEvent) -> void:
+	if owner_id != multiplayer.get_unique_id(): 
+		return
+	if event.is_action_pressed("Skill1"):
+		if skill1.used_skill():
+			play_skill1_effects.rpc()
+	if Input.is_action_just_pressed("shoot") and anim_player.current_animation != "shoot" and not shooting:
+		play_shoot_effects.rpc()
+		if raycast.is_colliding() and _hitscan:
+			var hit_player = raycast.get_collider()
+			hit_player.receive_damage.rpc_id(hit_player.get_multiplayer_authority())
+			LineDrawer.DrawLine(marker.global_position,hit_player.global_position,Color(1,0,0),0.5)
+		shooting = true
+	if Input.is_action_just_pressed("quit"):
+		pause.pause(owner_id)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
@@ -56,20 +71,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		rotate_y(-event.relative.x * sens)
 		camera.rotate_x(-event.relative.y * sens)
 		camera.rotation.x = clamp(camera.rotation.x,-PI/2, PI/2)
-		
-	if Input.is_action_just_pressed("shoot") and anim_player.current_animation != "shoot":
-		play_shoot_effects.rpc()
-		if raycast.is_colliding() and _hitscan:
-			var hit_player = raycast.get_collider()
-			hit_player.receive_damage.rpc_id(hit_player.get_multiplayer_authority())
-			LineDrawer.DrawLine(marker.global_position,hit_player.global_position,Color(1,0,0),0.5)
-	if Input.is_action_just_pressed("Skill1"):
-		if skill1.used_skill():
-			play_skill1_effects.rpc()
-	if Input.is_action_just_pressed("quit"):
-		pause.pause(owner_id)
-	if Input.is_action_just_pressed("test"):
-		print("CD: " + str(GameManager.skill_Cooldown) + " RD: " + str(GameManager.skill1_radius))
 
 func _physics_process(delta: float) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
@@ -94,7 +95,7 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	if anim_player.current_animation == "shoot":
 		pass
-	if anim_player.current_animation == "death":
+	elif anim_player.current_animation == "death":
 		pass
 	elif input_dir != Vector2.ZERO and is_on_floor():
 		anim_player.play("move")
@@ -106,7 +107,6 @@ func _physics_process(delta: float) -> void:
 func play_shoot_effects():
 	anim_player.stop()
 	anim_player.play("shoot")
-	
 	if not _hitscan:
 		bullet_trail_comp.bulletFire(camera,marker)
 	
@@ -115,7 +115,7 @@ func play_shoot_effects():
 
 @rpc("call_local")
 func play_skill1_effects():
-	skill1_comp.skill1_throw(skill1_marker)
+	skill1_comp.skill1_throw(camera,skill1_marker)
 
 @rpc("any_peer")
 func receive_damage():
@@ -127,9 +127,12 @@ func receive_damage():
 			position = spawnPOS.SpawnPOS
 		else:
 			spawnPOS = GameManager.spawn_point_rng()
+			
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "shoot":
+		shooting = false
 		anim_player.play("idle")
+		print("unshot")
 	elif  anim_name == "death":
 		health = 1
 		anim_player.play("idle")

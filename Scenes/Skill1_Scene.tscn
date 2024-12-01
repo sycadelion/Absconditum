@@ -1,12 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://d3bhlb6x0ro8f"]
+[gd_scene load_steps=13 format=3 uid="uid://d3bhlb6x0ro8f"]
 
 [ext_resource type="Script" path="res://Shaders/Shader Scripts/sphereSDF.gd" id="1_t28a6"]
 [ext_resource type="Material" uid="uid://126ih2e781un" path="res://Shaders/Bubble_Arrow_shader.tres" id="2_yohdm"]
 [ext_resource type="Shader" path="res://Shaders/SphereField.gdshader" id="3_shc4d"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cofcj"]
+resource_local_to_scene = true
+bounce = 0.4
+
 [sub_resource type="PrismMesh" id="PrismMesh_66oi3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1qklc"]
+size = Vector3(0.505493, 0.504272, 0.464478)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rhqut"]
 resource_local_to_scene = true
@@ -22,6 +27,12 @@ shader_parameter/impact_falloff_sharpness = 1.0
 resource_local_to_scene = true
 material = SubResource("ShaderMaterial_rhqut")
 flip_faces = true
+radius = 10.0
+height = 20.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_mduu6"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_rhqut")
 radius = 10.0
 height = 20.0
 
@@ -61,8 +72,10 @@ _data = {
 "expand": SubResource("Animation_njaer")
 }
 
-[node name="Skill1_Scene" type="CharacterBody3D"]
+[node name="Skill1_Scene" type="RigidBody3D"]
 collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_cofcj")
+continuous_cd = true
 script = ExtResource("1_t28a6")
 noiseSize = 2.0
 noiseSpeed = 0.9
@@ -80,12 +93,16 @@ transform = Transform3D(0.349367, 0, 0, 0, -1.62349e-08, -0.764466, 0, 0.371411,
 material_override = ExtResource("2_yohdm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.475908, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00518799, 0.228044, 0.0178833)
 shape = SubResource("BoxShape3D_1qklc")
 
-[node name="Bubble" type="MeshInstance3D" parent="."]
+[node name="Bubble_in" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 mesh = SubResource("SphereMesh_wmhj5")
+
+[node name="Bubble_out" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("SphereMesh_mduu6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -95,5 +112,12 @@ libraries = {
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="Area_col" type="CollisionShape3D" parent="Area3D"]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
