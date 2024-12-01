@@ -14,6 +14,7 @@ func _on_quit_button_pressed() -> void:
 		multiplayer.multiplayer_peer.close()
 	else:
 		multiplayer.multiplayer_peer = null
+		Lobby.players = {}
 	get_tree().change_scene_to_file("res://Scenes/UI/Main Menu.tscn")
 
 
