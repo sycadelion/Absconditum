@@ -60,12 +60,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("shoot") and anim_player.current_animation != "shoot":
 		play_shoot_effects.rpc()
 		if raycast.is_colliding() and _hitscan:
-			var bullet = get_world_3d().direct_space_state
-			var query = PhysicsRayQueryParameters3D.create(marker.transform.origin,raycast.get_collision_point())
-			var collision = bullet.intersect_ray(query)
-			if collision:
-				var target = collision.collider
-				target.receive_damage.rpc_id(target.get_multiplayer_authority())
+			var hit_player = raycast.get_collider()
+			hit_player.receive_damage.rpc_id(hit_player.get_multiplayer_authority())
 	if Input.is_action_just_pressed("Skill1"):
 		if skill1.used_skill():
 			play_skill1_effects.rpc()
