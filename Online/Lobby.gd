@@ -10,7 +10,7 @@ const MAX_CONNECTIONS = 8
 
 var players = {}
 
-var player_info = {"name": GameManager.player_name}
+var player_info = {"name": ""}
 
 
 
