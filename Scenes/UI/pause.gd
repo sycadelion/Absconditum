@@ -1,8 +1,9 @@
 extends Control
 
 var id = 0
-@onready var settings_menu: Control = $Settings_menu
-@onready var buttons: PanelContainer = $Buttons
+var settings_open: bool = false
+@onready var anim_player: AnimationPlayer = $AnimationPlayer
+
 
 func _ready() -> void:
 	self.hide()
@@ -30,19 +31,19 @@ func unpause():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func pause(owner_id):
-	settings_menu.hide()
-	buttons.show()
+	anim_player.play("RESET")
 	id = owner_id
 	GameManager.mouseCap = false
+	settings_open = false
 	GameManager.paused = true
 	self.visible = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 
 func _on_setting_button_pressed() -> void:
-	settings_menu.show()
-	buttons.hide()
-
-func _on_button_pressed() -> void:
-	settings_menu.hide()
-	buttons.show()
+	if not settings_open :
+		anim_player.play("Open_settings")
+		settings_open = true
+	elif settings_open:
+		anim_player.play_backwards("Open_settings")
+		settings_open = false
