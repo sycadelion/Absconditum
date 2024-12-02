@@ -48,22 +48,6 @@ func _ready() -> void:
 		
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
-func _input(event: InputEvent) -> void:
-	if owner_id != multiplayer.get_unique_id(): 
-		return
-	if event.is_action_pressed("Skill1"):
-		if skill1.used_skill():
-			play_skill1_effects.rpc()
-	if Input.is_action_just_pressed("shoot") and anim_player.current_animation != "shoot" and not shooting:
-		play_shoot_effects.rpc()
-		if raycast.is_colliding() and _hitscan:
-			var hit_player = raycast.get_collider()
-			hit_player.receive_damage.rpc_id(hit_player.get_multiplayer_authority())
-			LineDrawer.DrawLine(marker.global_position,hit_player.global_position,Color(1,0,0),0.5)
-		shooting = true
-	if Input.is_action_just_pressed("quit"):
-		pause.pause(owner_id)
-
 func _unhandled_input(event: InputEvent) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
 		return
@@ -71,6 +55,24 @@ func _unhandled_input(event: InputEvent) -> void:
 		rotate_y(-event.relative.x * sens)
 		camera.rotate_x(-event.relative.y * sens)
 		camera.rotation.x = clamp(camera.rotation.x,-PI/2, PI/2)
+
+func _input(event: InputEvent) -> void:
+	if owner_id != multiplayer.get_unique_id(): 
+		return
+	if event.is_action_pressed("Skill1"):
+		if skill1.used_skill():
+			play_skill1_effects.rpc()
+	elif event.is_action_pressed("shoot") and anim_player.current_animation != "shoot" and not shooting:
+		play_shoot_effects.rpc()
+		if raycast.is_colliding() and _hitscan:
+			var hit_player = raycast.get_collider()
+			hit_player.receive_damage.rpc_id(hit_player.get_multiplayer_authority())
+			LineDrawer.DrawLine(marker.global_position,hit_player.global_position,Color(1,0,0),0.5)
+		shooting = true
+	elif event.is_action_pressed("quit"):
+		pause.pause(owner_id)
+	elif event.is_action_pressed("test"):
+		print(str(Lobby.players[owner_id].name))
 
 func _physics_process(delta: float) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
@@ -108,7 +110,7 @@ func play_shoot_effects():
 	anim_player.stop()
 	anim_player.play("shoot")
 	if not _hitscan:
-		bullet_trail_comp.bulletFire(camera,marker)
+		bullet_trail_comp.bulletFire(camera,marker,owner_id)
 	
 	muzzle_flash.restart()
 	muzzle_flash.emitting = true
@@ -122,6 +124,8 @@ func receive_damage():
 	health -= 1
 	if health <= 0:
 		health = 1
+		var sender_id = multiplayer.get_remote_sender_id()
+		#KillFeed.send_message(str(Lobby.players[owner_id].name),str(Lobby.players[owner_id].name)).rpc
 		respawn_self()
 		#anim_player.play("death")
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

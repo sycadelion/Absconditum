@@ -1,7 +1,7 @@
 extends Control
 
 @onready var your_ip: Label = $icup/MarginContainer/HBoxContainer/YourIp
-@onready var ip_blur: ColorRect = $Ip_Blur
+@onready var ip_blur: ColorRect = $Control/Ip_Blur
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var playerNameEdit: LineEdit = $player_name
 

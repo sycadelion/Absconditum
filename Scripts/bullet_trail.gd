@@ -3,7 +3,7 @@ class_name BulletTrail
 
 var max_distance: float
 var _trail_mesh_height: float
-
+var playerID: int
 @export var _trail_mesh: MeshInstance3D
 @export var _bullet_trail_life_time: float = 1
 @export var _bullet_trail_speed: float = 50

@@ -1,8 +1,8 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://cboyxbggkvdoj"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://cboyxbggkvdoj"]
 
 [ext_resource type="Texture2D" uid="uid://dejvxpqjy6fis" path="res://addons/kenney_fantasy-ui-borders/PNG/Default/Panel/panel-025.png" id="1_0wo74"]
 [ext_resource type="FontFile" uid="uid://bt3eis200qlni" path="res://addons/NotJamFontPack/Not Jam Glasgow 13/Not Jam Glasgow 13.ttf" id="1_hygml"]
-[ext_resource type="Texture2D" uid="uid://d4mm7gj4chgvc" path="res://addons/kenney_fantasy-ui-borders/PNG/Default/Divider/divider-005.png" id="2_5abya"]
+[ext_resource type="StyleBox" uid="uid://dg6e87x08c1ys" path="res://slider_2.tres" id="2_bgglt"]
 [ext_resource type="Texture2D" uid="uid://cro6cd7epq5jb" path="res://addons/kenney_fantasy-ui-borders/PNG/Default/Panel/panel-024.png" id="2_ugihw"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6e8ax"]
@@ -12,12 +12,6 @@ texture_margin_top = 20.0
 texture_margin_right = 20.0
 texture_margin_bottom = 20.0
 modulate_color = Color(0.205222, 6.01634e-08, 0.0900418, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_47goq"]
-texture = ExtResource("2_5abya")
-texture_margin_top = 10.0
-texture_margin_right = 25.0
-texture_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_64mic"]
 texture = ExtResource("2_ugihw")
@@ -32,5 +26,5 @@ modulate_color = Color(0, 0, 0, 0.658824)
 default_font = ExtResource("1_hygml")
 Button/font_sizes/font_size = 25
 Button/styles/normal = SubResource("StyleBoxTexture_6e8ax")
-HSlider/styles/slider = SubResource("StyleBoxTexture_47goq")
+HSlider/styles/slider = ExtResource("2_bgglt")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_64mic")

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b3o2xxuqee7qh" path="res://addons/kenney_particle_pack/star_09.png" id="1_so28q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5ybk"]
-bg_color = Color(0.18, 0.18, 0.18, 0.898039)
+bg_color = Color(0.196267, 0.1035, 0.23, 0.898039)
 
 [node name="Skill" type="Control"]
 layout_mode = 3
@@ -19,8 +19,10 @@ script = ExtResource("1_jxm3t")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 2.0
+offset_top = -91.0
+offset_right = 92.0
+offset_bottom = -1.0
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
