@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://1vtabgmdqbya"]
+[gd_scene load_steps=12 format=3 uid="uid://1vtabgmdqbya"]
 
 [ext_resource type="Script" path="res://Scenes/UI/main_menu.gd" id="1_r4jl4"]
 [ext_resource type="PackedScene" uid="uid://b7kqgr0bkm3s6" path="res://Scenes/UI/background_container.tscn" id="2_reh62"]
 [ext_resource type="FontFile" uid="uid://bt3eis200qlni" path="res://addons/NotJamFontPack/Not Jam Glasgow 13/Not Jam Glasgow 13.ttf" id="2_u8cqs"]
-[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="2_x3kec"]
-[ext_resource type="Texture2D" uid="uid://cj6infinoal0i" path="res://Images/eye icon.png" id="3_snsu0"]
 [ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://Scenes/UI/Menu.tres" id="6_x13m3"]
+[ext_resource type="PackedScene" uid="uid://bglvj405a8scx" path="res://Scenes/UI/settings.tscn" id="6_yrws1"]
 [ext_resource type="PackedScene" uid="uid://cwd15gx5hshw5" path="res://Scenes/UI/match_settings.tscn" id="7_jslx7"]
 [ext_resource type="PackedScene" uid="uid://ibr5tw3jo2xn" path="res://Scenes/UI/disconnected_from_server.tscn" id="8_3wo6v"]
 
@@ -59,9 +58,33 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(1152, 324)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Settings:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Settings:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1280, 360)]
+}
 
 [sub_resource type="Animation" id="Animation_cov4r"]
-resource_name = "Settings_open"
+resource_name = "Match_open"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -110,18 +133,101 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(1152, 324), Vector2(608, 324)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Settings:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1280, 360)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Settings:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mg2bq"]
+resource_name = "Settings_open"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Settings:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Settings:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1280, 360), Vector2(640, 360)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Menu:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(425.5, 130), Vector2(57.5, 130)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Match_Settings:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1152, 324)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Match_Settings:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vaxh2"]
 _data = {
+"Match_open": SubResource("Animation_cov4r"),
 "RESET": SubResource("Animation_f0rw8"),
-"Settings_open": SubResource("Animation_cov4r")
+"Settings_open": SubResource("Animation_mg2bq")
 }
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ypctj"]
-shader = ExtResource("2_x3kec")
-shader_parameter/exclude_center = null
-shader_parameter/exclude_size = null
-shader_parameter/lod = 2.247
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -178,10 +284,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.5
-offset_top = -194.0
-offset_right = 150.5
-offset_bottom = 246.0
+offset_left = -214.5
+offset_top = -230.0
+offset_right = 86.5
+offset_bottom = 210.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("6_x13m3")
@@ -228,40 +334,16 @@ text = "Quit
 visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-offset_left = 576.0
-offset_right = 576.0
+offset_left = 512.0
+offset_top = -36.0
+offset_right = 512.0
+offset_bottom = -36.0
 
-[node name="icup" type="PanelContainer" parent="."]
+[node name="Settings" parent="." instance=ExtResource("6_yrws1")]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -132.0
-offset_right = 333.0
-grow_vertical = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="icup"]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="HBoxContainer" type="HBoxContainer" parent="icup/MarginContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="icup/MarginContainer/HBoxContainer"]
-layout_mode = 2
-text = "Your IP: "
-
-[node name="YourIp" type="Label" parent="icup/MarginContainer/HBoxContainer"]
-layout_mode = 2
-text = "000.000.000.00"
-
-[node name="RevealIP" type="Button" parent="icup/MarginContainer/HBoxContainer"]
-layout_mode = 2
-icon = ExtResource("3_snsu0")
-icon_alignment = 1
+offset_left = 640.0
+offset_right = 640.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -276,45 +358,8 @@ offset_top = -25.0
 offset_right = -155.0
 offset_bottom = -25.0
 
-[node name="player_name" type="LineEdit" parent="."]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -67.0625
-offset_top = -31.0
-grow_horizontal = 0
-grow_vertical = 0
-placeholder_text = "Enter Name"
-alignment = 1
-max_length = 15
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 104.0
-offset_top = -58.0
-offset_right = 144.0
-offset_bottom = -18.0
-grow_vertical = 0
-
-[node name="Ip_Blur" type="ColorRect" parent="Control"]
-z_index = 1
-material = SubResource("ShaderMaterial_ypctj")
-layout_mode = 1
-offset_left = -2.0
-offset_top = -20.0
-offset_right = 123.0
-color = Color(0, 0, 0, 1)
-
 [connection signal="pressed" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Join" to="." method="_on_join_pressed"]
-[connection signal="pressed" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/MatchSettings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/MatchSettings" to="." method="_on_match_settings_pressed"]
+[connection signal="pressed" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="icup/MarginContainer/HBoxContainer/RevealIP" to="." method="_on_reveal_ip_pressed"]
-[connection signal="text_changed" from="player_name" to="." method="_on_player_name_text_changed"]

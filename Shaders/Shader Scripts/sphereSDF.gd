@@ -11,8 +11,9 @@ extends RigidBody3D
 @onready var bubble_out: MeshInstance3D = $Bubble_out
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var lifetime_timer: Timer = $Timer
-@onready var collShape: CollisionShape3D = $CollisionShape3D
 @onready var area_col: CollisionShape3D = $Area3D/Area_col
+@onready var audPlayer: AudioStreamPlayer3D = $AudioStreamPlayer3D
+
 var area_shape:SphereShape3D = SphereShape3D.new()
 var expanded: bool = false
 

@@ -17,15 +17,18 @@ extends CharacterBody3D
 #bullet marker and trail component
 @onready var marker: Marker3D = $Camera3D/Marker3D
 @onready var bullet_trail_comp: Node3D = $BulletTrailComp
+@onready var bow_audio: AudioStreamPlayer3D = $Camera3D/Bow_audio
 
 #skill1 marker and component
 @onready var skill1: Control = $CanvasLayer/HUD/Skill
 @onready var skill1_marker: Marker3D = $Camera3D/Skill1Marker
 @onready var skill1_comp: Node3D = $Skill1Comp
+@onready var skill_audio: AudioStreamPlayer3D = $Camera3D/Skill1Marker/Skill_audio
 
 @onready var killFeed: Control = $CanvasLayer/KillFeed
+@onready var foot_audio: AudioStreamPlayer3D = $Foot_audio
 
-var sens:float = .005
+var sens:float = GameManager.sensitivity
 var owner_id = 1
 var self_name:String
 var shooting:bool = false
@@ -63,17 +66,19 @@ func _unhandled_input(event: InputEvent) -> void:
 func _input(event: InputEvent) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
 		return
-	if event.is_action_pressed("Skill1"):
+	if event.is_action_pressed("Skill1") and not GameManager.paused:
 		if skill1.used_skill():
+			skill_audio.play()
 			play_skill1_effects.rpc()
-	elif event.is_action_pressed("shoot") and anim_player.current_animation != "shoot" and not shooting:
+	elif event.is_action_pressed("shoot") and anim_player.current_animation != "shoot" and not shooting and not GameManager.paused:
 		play_shoot_effects.rpc()
+		bow_audio.play()
 		if raycast.is_colliding() and _hitscan:
 			var hit_player = raycast.get_collider()
 			hit_player.receive_damage.rpc_id(hit_player.get_multiplayer_authority())
 			LineDrawer.DrawLine(marker.global_position,hit_player.global_position,Color(1,0,0),0.5)
 		shooting = true
-	elif event.is_action_pressed("quit"):
+	elif event.is_action_pressed("quit") and not GameManager.paused:
 		pause.pause(owner_id)
 	elif event.is_action_pressed("test"):
 		killFeed.send_message("killer","test")
@@ -86,24 +91,24 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and health >= 1:
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and health >= 1 and not GameManager.paused:
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction and health >= 1:
+	if direction and health >= 1 and not GameManager.paused:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
-	elif health >= 1:
+	elif health >= 1 and not GameManager.paused:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	if anim_player.current_animation == "shoot":
 		pass
 	elif anim_player.current_animation == "death":
 		pass
-	elif input_dir != Vector2.ZERO and is_on_floor():
+	elif input_dir != Vector2.ZERO and is_on_floor() and not GameManager.paused:
 		anim_player.play("move")
 	else:
 		anim_player.play("idle")

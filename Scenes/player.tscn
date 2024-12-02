@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://f7itocgajf8o"]
+[gd_scene load_steps=58 format=4 uid="uid://f7itocgajf8o"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_4ht6w"]
 [ext_resource type="Material" uid="uid://gsnjhl57qwdk" path="res://Shaders/player_shader_mat.tres" id="1_fuh6j"]
@@ -10,10 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://68kjn6suxq5a" path="res://addons/kenney_particle_pack/smoke_04.png" id="6_oop84"]
 [ext_resource type="PackedScene" uid="uid://c0wl72hwaa31r" path="res://Scenes/UI/hud.tscn" id="7_kc58q"]
 [ext_resource type="PackedScene" uid="uid://ser6du4tr2cu" path="res://Scenes/UI/pause.tscn" id="8_grtv0"]
+[ext_resource type="AudioStream" uid="uid://d26w5w3jy3qpm" path="res://Sounds/wind-up.wav" id="8_qex41"]
+[ext_resource type="AudioStream" uid="uid://dshmrqwrokx1p" path="res://Sounds/bow_shot.wav" id="9_375si"]
 [ext_resource type="Script" path="res://Scripts/bullet_trail_comp.gd" id="9_aqsbj"]
 [ext_resource type="PackedScene" uid="uid://d2ljcqlo87l2j" path="res://Scenes/UI/kill_feed.tscn" id="10_7uef7"]
 [ext_resource type="Script" path="res://Scripts/skill_1_comp.gd" id="10_elnv3"]
 [ext_resource type="PackedScene" uid="uid://d3bhlb6x0ro8f" path="res://Scenes/Skill1_Scene.tscn" id="11_7l2ie"]
+[ext_resource type="AudioStream" uid="uid://djvgp22uqogm3" path="res://Sounds/Footstep.wav" id="17_qcgfj"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4jp85"]
 material = ExtResource("3_fdipf")
@@ -874,7 +877,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39031, 0)
 
 [node name="bow_viewmodel" parent="Camera3D" instance=ExtResource("4_4w5qa")]
 transform = Transform3D(-1.07979e-06, 0.183545, -0.2373, 8.02302e-09, 0.2373, 0.183545, 0.3, 6.54288e-07, -8.59024e-07, 0.45931, -0.401916, -0.316486)
-visible = false
 
 [node name="bow" parent="Camera3D" instance=ExtResource("2_lq0x4")]
 transform = Transform3D(-1.07979e-06, 0.183545, -0.2373, 8.02302e-09, 0.2373, 0.183545, 0.3, 6.54288e-07, -8.59024e-07, 0.45931, -0.401916, -0.316486)
@@ -919,6 +921,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.459592, -0.384125, -0.96146
 [node name="Skill1Marker" type="Marker3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.436369, -0.0231869, -0.766952)
 
+[node name="Skill_audio" type="AudioStreamPlayer3D" parent="Camera3D/Skill1Marker"]
+stream = ExtResource("8_qex41")
+
+[node name="Bow_audio" type="AudioStreamPlayer3D" parent="Camera3D"]
+stream = ExtResource("9_375si")
+bus = &"SFX"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_demr1")
@@ -944,6 +953,10 @@ _bullet_trail_prefab = ExtResource("2_rxswk")
 [node name="Skill1Comp" type="Node3D" parent="."]
 script = ExtResource("10_elnv3")
 _skill1_prefab = ExtResource("11_7l2ie")
+
+[node name="Foot_audio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("17_qcgfj")
+bus = &"FootSteps"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
