@@ -76,7 +76,7 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("quit"):
 		pause.pause(owner_id)
 	elif event.is_action_pressed("test"):
-		pass
+		killFeed.send_message("killer","test")
 
 func _physics_process(delta: float) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
@@ -130,6 +130,8 @@ func receive_damage():
 		health = 1
 		var sender_id = multiplayer.get_remote_sender_id()
 		var killer = Lobby.players[sender_id].name
+		if _hitscan:
+			killFeed.send_message(killer,Lobby.players[owner_id].name)
 		respawn_self()
 		#anim_player.play("death")
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

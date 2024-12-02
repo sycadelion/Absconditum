@@ -13,10 +13,7 @@ theme = ExtResource("1_idt8j")
 script = ExtResource("1_u24lv")
 
 [node name="ChatBox" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -154.0
-offset_bottom = 67.0
+layout_mode = 2
+offset_left = -40.0
+offset_right = -40.0
 grow_horizontal = 0
