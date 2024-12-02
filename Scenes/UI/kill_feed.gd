@@ -1,6 +1,7 @@
 extends Control
 
 const MESSAGE = preload("res://Scenes/UI/message.tscn")
+@onready var chat_box: VBoxContainer = $ChatBox
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,8 +12,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-@rpc("any_peer", "call_local")
 func send_message(killer,kille):
 	var message_copy = MESSAGE.instantiate()
-	
+	chat_box.add_child(message_copy)
 	message_copy.set_data(killer,kille)
+	

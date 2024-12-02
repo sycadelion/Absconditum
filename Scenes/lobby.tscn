@@ -27,10 +27,6 @@ spawn_limit = 1
 
 [node name="Multiplayer" type="CanvasLayer" parent="."]
 
-[node name="ErrorPrompt" parent="Multiplayer" instance=ExtResource("3_rpgj8")]
-visible = false
-errorName = "Connection Failed"
-
 [node name="PanelContainer" type="PanelContainer" parent="Multiplayer"]
 anchors_preset = 8
 anchor_left = 0.5
@@ -77,6 +73,10 @@ text = "Connect"
 [node name="BackButton" type="Button" parent="Multiplayer/PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 text = "Back"
+
+[node name="ErrorPrompt" parent="Multiplayer" instance=ExtResource("3_rpgj8")]
+visible = false
+errorName = "Connection Failed"
 
 [connection signal="text_submitted" from="Multiplayer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/IPLineEdit" to="." method="_on_ip_line_edit_text_submitted"]
 [connection signal="pressed" from="Multiplayer/PanelContainer/MarginContainer/HBoxContainer/ConnectButton" to="." method="_on_connect_pressed"]

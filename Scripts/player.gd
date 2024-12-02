@@ -23,8 +23,11 @@ extends CharacterBody3D
 @onready var skill1_marker: Marker3D = $Camera3D/Skill1Marker
 @onready var skill1_comp: Node3D = $Skill1Comp
 
+@onready var killFeed: Control = $CanvasLayer/KillFeed
+
 var sens:float = .005
 var owner_id = 1
+var self_name:String
 var shooting:bool = false
 var SPEED = 5.0
 var JUMP_VELOCITY = 5
@@ -43,6 +46,7 @@ func _ready() -> void:
 		SPEED = GameManager.player_Speed
 		JUMP_VELOCITY = GameManager.player_jump
 		_hitscan = GameManager.hitscan
+		self_name = Lobby.players[owner_id].name
 	else:
 		camera.current = false
 		
@@ -72,7 +76,7 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("quit"):
 		pause.pause(owner_id)
 	elif event.is_action_pressed("test"):
-		print(str(Lobby.players[owner_id].name))
+		pass
 
 func _physics_process(delta: float) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
@@ -125,7 +129,7 @@ func receive_damage():
 	if health <= 0:
 		health = 1
 		var sender_id = multiplayer.get_remote_sender_id()
-		#KillFeed.send_message(str(Lobby.players[owner_id].name),str(Lobby.players[owner_id].name)).rpc
+		var killer = Lobby.players[sender_id].name
 		respawn_self()
 		#anim_player.play("death")
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

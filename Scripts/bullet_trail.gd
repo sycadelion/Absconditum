@@ -27,7 +27,10 @@ func _process(delta: float) -> void:
 
 func _on_rigid_body_3d_body_entered(body: Node) -> void:
 	if body.is_in_group("Players"):
-		#var hit_player = body.get_collider()
+		var feed = get_tree().get_first_node_in_group("Killfeed")
+		var hit_player = Lobby.players[body.owner_id].name
+		var owner_id = Lobby.players[playerID].name
+		feed.send_message(owner_id,hit_player)
 		body.receive_damage.rpc_id(body.get_multiplayer_authority())
 		queue_free()
 	elif body != null and not body.is_in_group("Players"):

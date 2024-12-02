@@ -24,7 +24,6 @@ config/windows_native_icon="res://Images/eye-game-icon.ico"
 GameManager="*res://Scripts/GameManager.gd"
 Lobby="*res://Online/Lobby.gd"
 LineDrawer="*res://Scripts/LineDrawer.gd"
-KillFeed="*res://Scenes/UI/kill_feed.gd"
 
 [display]
 
@@ -46,6 +45,7 @@ VisibleObjectsShader=""
 SkillContainer=""
 Spawn_Point=""
 Spawner=""
+Killfeed=""
 
 [input]
 

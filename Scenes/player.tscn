@@ -935,8 +935,7 @@ replication_config = SubResource("SceneReplicationConfig_pefit")
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource("8_grtv0")]
 
-[node name="KillFeed" parent="CanvasLayer" instance=ExtResource("10_7uef7")]
-visible = false
+[node name="KillFeed" parent="CanvasLayer" groups=["Killfeed"] instance=ExtResource("10_7uef7")]
 
 [node name="BulletTrailComp" type="Node3D" parent="."]
 script = ExtResource("9_aqsbj")

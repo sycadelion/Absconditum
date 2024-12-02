@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2ljcqlo87l2j"]
+[gd_scene load_steps=3 format=3 uid="uid://d2ljcqlo87l2j"]
 
+[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://Scenes/UI/Menu.tres" id="1_idt8j"]
 [ext_resource type="Script" path="res://Scenes/UI/kill_feed.gd" id="1_u24lv"]
 
 [node name="KillFeed" type="Control"]
@@ -8,19 +9,14 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 grow_horizontal = 0
+theme = ExtResource("1_idt8j")
 script = ExtResource("1_u24lv")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="ChatBox" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 40.0
+offset_left = -154.0
+offset_bottom = 67.0
 grow_horizontal = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
-layout_mode = 2
-
-[node name="ChatBox" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
-layout_mode = 2
