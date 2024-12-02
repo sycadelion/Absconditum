@@ -14,6 +14,8 @@ config/name="Absconditum"
 run/main_scene="res://Scenes/UI/Main Menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 run/max_fps=60
+boot_splash/bg_color=Color(0.17, 0, 0, 1)
+boot_splash/image="res://Images/splash.png"
 config/icon="res://Images/eye game icon.png"
 config/windows_native_icon="res://Images/eye game icon.ico"
 
@@ -23,6 +25,15 @@ GameManager="*res://Scripts/GameManager.gd"
 Lobby="*res://Online/Lobby.gd"
 LineDrawer="*res://Scripts/LineDrawer.gd"
 KillFeed="*res://Scenes/UI/kill_feed.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"
 
 [filesystem]
 
