@@ -3,7 +3,7 @@ extends Node
 signal player_connected(peer_id, player_info)
 signal player_disconnected(peer_id)
 signal server_disconnected
-
+var ip: String
 
 const PORT = 7000
 const MAX_CONNECTIONS = 8
@@ -31,6 +31,7 @@ func _ready() -> void:
 			
 			if not map_result_tcp == UPNP.UPNP_RESULT_SUCCESS:
 				upnp.add_port_mapping(PORT, PORT, "", "TCP")
+			ip = upnp.query_external_address()
 	
 	
 	multiplayer.peer_connected.connect(_on_player_connected)

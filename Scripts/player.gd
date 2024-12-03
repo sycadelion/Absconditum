@@ -81,7 +81,7 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("quit") and not GameManager.paused:
 		pause.pause(owner_id)
 	elif event.is_action_pressed("test"):
-		killFeed.send_message("killer","test")
+		pass
 
 func _physics_process(delta: float) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
