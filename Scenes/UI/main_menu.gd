@@ -5,8 +5,6 @@ extends Control
 var settings: bool = false
 var Matchsettings: bool = false
 
-var hide = 2
-
 func _ready() -> void:
 	pass
 
@@ -19,6 +17,7 @@ func _on_join_pressed() -> void:
 
 
 func _on_quit_pressed() -> void:
+	get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
 	get_tree().quit()
 
 func _on_match_settings_pressed() -> void:
@@ -29,10 +28,6 @@ func _on_match_settings_pressed() -> void:
 	else:
 		anim_player.play("Match_open")
 		Matchsettings = true
-
-func _on_player_name_text_changed(new_text: String) -> void:
-	Lobby.player_info["name"] = new_text
-
 
 func _on_settings_pressed() -> void:
 	Matchsettings = false

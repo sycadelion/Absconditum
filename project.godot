@@ -12,6 +12,7 @@ config_version=5
 
 config/name="Absconditum"
 run/main_scene="res://Scenes/UI/Main Menu.tscn"
+config/use_custom_user_dir=true
 config/features=PackedStringArray("4.3", "Forward Plus")
 run/max_fps=60
 boot_splash/bg_color=Color(0.17, 0, 0, 1)
@@ -24,6 +25,7 @@ config/windows_native_icon="res://Images/eye-game-icon.ico"
 GameManager="*res://Scripts/GameManager.gd"
 Lobby="*res://Online/Lobby.gd"
 LineDrawer="*res://Scripts/LineDrawer.gd"
+ConfigFileHandler="*res://Scripts/singletons/ConfigFileHandler.gd"
 
 [display]
 
