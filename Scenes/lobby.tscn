@@ -65,6 +65,7 @@ layout_mode = 2
 text = "127.0.0.1"
 placeholder_text = "  Enter IP Address"
 alignment = 1
+secret = true
 
 [node name="ConnectButton" type="Button" parent="Multiplayer/PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
