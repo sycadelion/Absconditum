@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://c7b7s6cm1vqrg"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/hub.gd" id="1_ttpxj"]
-[ext_resource type="PackedScene" uid="uid://f7itocgajf8o" path="res://Scenes/player.tscn" id="2_an04p"]
+[ext_resource type="PackedScene" uid="uid://f7itocgajf8o" path="res://Scenes/Player/player.tscn" id="2_an04p"]
 [ext_resource type="PackedScene" uid="uid://lj7edg20dl3e" path="res://Scenes/Levels/dust_2.tscn" id="3_2u1b8"]
 [ext_resource type="Material" uid="uid://ys5y4m34ptf6" path="res://Shaders/Skybox_mat.tres" id="3_lfn30"]
 [ext_resource type="PackedScene" uid="uid://btea2veyjc17u" path="res://Scenes/SpawnPoint.tscn" id="5_o78dm"]

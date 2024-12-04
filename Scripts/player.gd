@@ -9,10 +9,10 @@ extends CharacterBody3D
 @onready var muzzle_flash: GPUParticles3D = $Camera3D/MuzzleFlash
 @onready var raycast: RayCast3D = $Camera3D/RayCast3D
 @onready var bodyInvert: MeshInstance3D = $Player_Body2
-@onready var bowViewmodel: Node3D = $Camera3D/bow_viewmodel
-@onready var bow: Node3D = $Camera3D/bow
 @onready var hud: Control = $CanvasLayer/HUD
 @onready var pause: Control = $CanvasLayer/Pause
+@onready var crossbow_viewmodel: Node3D = $Camera3D/crossbow_viewmodel
+@onready var crossbow_shader: Node3D = $Camera3D/crossbow_shader
 
 #bullet marker and trail component
 @onready var marker: Marker3D = $Camera3D/Marker3D
@@ -25,6 +25,11 @@ extends CharacterBody3D
 @onready var skill1_comp: Node3D = $Skill1Comp
 @onready var skill_audio: AudioStreamPlayer3D = $Camera3D/Skill1Marker/Skill_audio
 
+#ammo stuff
+@onready var ammo_count: Label = $CanvasLayer/HUD/Ammo/Ammo_count
+var ammo_Cap = 9
+var ammo_cur = ammo_Cap
+
 @onready var killFeed: Control = $CanvasLayer/KillFeed
 @onready var foot_audio: AudioStreamPlayer3D = $Foot_audio
 
@@ -35,6 +40,7 @@ var shooting:bool = false
 var SPEED = 5.0
 var JUMP_VELOCITY = 5
 
+
 func _enter_tree() -> void:
 	owner_id = name.to_int()
 	set_multiplayer_authority(owner_id)
@@ -42,16 +48,16 @@ func _enter_tree() -> void:
 func _ready() -> void:
 	if owner_id == multiplayer.get_unique_id():
 		camera.make_current()
-		bowViewmodel.visible = true
-		bow.visible = false
 		bodyInvert.visible = false
 		hud.visible = true
 		SPEED = GameManager.player_Speed
 		JUMP_VELOCITY = GameManager.player_jump
 		_hitscan = GameManager.hitscan
 		self_name = Lobby.players[owner_id].name
+		crossbow_viewmodel.show()
 	else:
 		camera.current = false
+		crossbow_shader.show()
 		
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
@@ -70,7 +76,8 @@ func _input(event: InputEvent) -> void:
 		if skill1.used_skill():
 			skill_audio.play()
 			play_skill1_effects.rpc()
-	elif event.is_action_pressed("shoot") and anim_player.current_animation != "shoot" and not shooting and not GameManager.paused:
+	elif event.is_action_pressed("shoot") and ammo_cur > 0 and not shooting and not GameManager.paused:
+		ammo_cur -= 1 
 		play_shoot_effects.rpc()
 		bow_audio.play()
 		if raycast.is_colliding() and _hitscan:
@@ -80,6 +87,8 @@ func _input(event: InputEvent) -> void:
 		shooting = true
 	elif event.is_action_pressed("quit") and not GameManager.paused:
 		pause.pause(owner_id)
+	elif event.is_action_pressed("reload"):
+		anim_player.play("Reloading")
 	elif event.is_action_pressed("test"):
 		pass
 
@@ -108,10 +117,13 @@ func _physics_process(delta: float) -> void:
 		pass
 	elif anim_player.current_animation == "death":
 		pass
+	elif anim_player.current_animation == "Reloading":
+		pass
 	elif input_dir != Vector2.ZERO and is_on_floor() and not GameManager.paused:
 		anim_player.play("move")
 	else:
 		anim_player.play("idle")
+	ammo_count.text = str(ammo_cur) + " / " + str(ammo_Cap)
 	move_and_slide()
 
 @rpc("call_local")
@@ -146,6 +158,9 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	elif  anim_name == "death":
 		health = 1
 		respawn_self.rpc()
+	elif  anim_name == "Reloading":
+		ammo_cur = ammo_Cap
+		anim_player.play("idle")
 
 @rpc("any_peer")
 func respawn_self():

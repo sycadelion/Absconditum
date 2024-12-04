@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://d3bhlb6x0ro8f"]
 
 [ext_resource type="Script" path="res://Shaders/Shader Scripts/sphereSDF.gd" id="1_t28a6"]
-[ext_resource type="PackedScene" uid="uid://ct1bv07ecl3vk" path="res://Scenes/grenade.tscn" id="2_pxuyo"]
+[ext_resource type="PackedScene" uid="uid://ct1bv07ecl3vk" path="res://Scenes/Player/Model/grenade.tscn" id="2_pxuyo"]
 [ext_resource type="Shader" path="res://Shaders/SphereField.gdshader" id="3_shc4d"]
 [ext_resource type="AudioStream" uid="uid://bii82ggxksg5" path="res://Sounds/foot-pump-with-air.wav" id="4_3p8yc"]
 
