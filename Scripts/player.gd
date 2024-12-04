@@ -92,9 +92,9 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("quit") and not GameManager.paused:
 		pause.pause(owner_id)
 	elif event.is_action_pressed("reload"):
-		anim_player.play("Reloading")
+		play_reload_effect.rpc()
 	elif event.is_action_pressed("test"):
-		pass
+		print(str(Lobby.players))
 
 func _physics_process(delta: float) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
@@ -167,6 +167,10 @@ func play_landing_effect():
 @rpc("call_local")
 func play_skill1_effects():
 	skill1_comp.skill1_throw(camera,skill1_marker)
+
+@rpc("call_local")
+func play_reload_effect():
+	anim_player.play("Reloading")
 
 @rpc("any_peer")
 func receive_damage():

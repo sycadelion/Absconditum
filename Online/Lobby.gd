@@ -10,7 +10,7 @@ const MAX_CONNECTIONS = 8
 
 var players = {}
 
-var player_info = {"name": ""}
+var player_info = {"name": "", "kills": 0, "deaths": 0}
 
 
 
@@ -18,27 +18,7 @@ func _ready() -> void:
 	#if OS.has_feature("dedicated_server"):
 		#print("server running")
 		#create_game()
-	var upnp = UPNP.new()
-	var discover_result = upnp.discover()
-	if discover_result == UPNP.UPNP_RESULT_SUCCESS:
-		if upnp.get_gateway() and upnp.get_gateway().is_valid_gateway():
-			
-			var map_result_udp = upnp.add_port_mapping(PORT, PORT, "godot_udp", "UDP", 0)
-			var map_result_tcp = upnp.add_port_mapping(PORT, PORT, "godot_udp", "TCP", 0)
-			print("port forwarded")
-			if not map_result_udp == UPNP.UPNP_RESULT_SUCCESS:
-				upnp.add_port_mapping(PORT, PORT, "", "UDP")
-			
-			if not map_result_tcp == UPNP.UPNP_RESULT_SUCCESS:
-				upnp.add_port_mapping(PORT, PORT, "", "TCP")
-			ip = upnp.query_external_address()
-	
-	
-	multiplayer.peer_connected.connect(_on_player_connected)
-	multiplayer.peer_disconnected.connect(_on_player_disconnected)
-	multiplayer.connected_to_server.connect(_on_connected_to_server)
-	multiplayer.connection_failed.connect(_on_connection_failed)
-	multiplayer.server_disconnected.connect(_on_server_disconnected)
+	start_up()
 
 
 func create_game():
@@ -89,7 +69,6 @@ func _on_server_disconnected():
 	server_disconnected.emit()
 	GameManager.disconnected = true
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	print("server DC")
 	get_tree().change_scene_to_file("res://Scenes/UI/Main Menu.tscn")
 
 @rpc("authority","call_local")
@@ -99,3 +78,26 @@ func _update_globals(var1,var2, var3, var4,var5):
 	GameManager.player_Speed = var3
 	GameManager.player_jump = var4
 	GameManager.hitscan = var5
+	
+func start_up():
+	var upnp = UPNP.new()
+	var discover_result = upnp.discover()
+	if discover_result == UPNP.UPNP_RESULT_SUCCESS:
+		if upnp.get_gateway() and upnp.get_gateway().is_valid_gateway():
+			
+			var map_result_udp = upnp.add_port_mapping(PORT, PORT, "godot_udp", "UDP", 0)
+			var map_result_tcp = upnp.add_port_mapping(PORT, PORT, "godot_udp", "TCP", 0)
+			print("port forwarded")
+			if not map_result_udp == UPNP.UPNP_RESULT_SUCCESS:
+				upnp.add_port_mapping(PORT, PORT, "", "UDP")
+			
+			if not map_result_tcp == UPNP.UPNP_RESULT_SUCCESS:
+				upnp.add_port_mapping(PORT, PORT, "", "TCP")
+			ip = upnp.query_external_address()
+	
+	
+	multiplayer.peer_connected.connect(_on_player_connected)
+	multiplayer.peer_disconnected.connect(_on_player_disconnected)
+	multiplayer.connected_to_server.connect(_on_connected_to_server)
+	multiplayer.connection_failed.connect(_on_connection_failed)
+	multiplayer.server_disconnected.connect(_on_server_disconnected)

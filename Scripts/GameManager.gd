@@ -17,6 +17,7 @@ var player_Speed = 5
 var player_jump = 5
 var hitscan:bool = false
 
+
 #customize game settings:
 var sensitivity: float = 0.005
 var master_audio:int = 100
