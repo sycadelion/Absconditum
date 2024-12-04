@@ -31,7 +31,12 @@ var ammo_Cap = 9
 var ammo_cur = ammo_Cap
 
 @onready var killFeed: Control = $CanvasLayer/KillFeed
+
+#sound stuff
 @onready var foot_audio: AudioStreamPlayer3D = $Foot_audio
+@onready var footstep: FmodEventEmitter3D = $Footstep
+var landing: bool = false
+var impact_played: bool = false
 
 var sens:float = GameManager.sensitivity
 var owner_id = 1
@@ -79,7 +84,6 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("shoot") and ammo_cur > 0 and not shooting and not GameManager.paused:
 		ammo_cur -= 1 
 		play_shoot_effects.rpc()
-		bow_audio.play()
 		if raycast.is_colliding() and _hitscan:
 			var hit_player = raycast.get_collider()
 			hit_player.receive_damage.rpc_id(hit_player.get_multiplayer_authority())
@@ -98,7 +102,18 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+	
+	if is_on_floor():
+		if landing and !impact_played:
+			play_landing_effect.rpc()
+			landing= false
+			impact_played = true
+	else:
+		if !landing:
+			landing = true
+	
+	if velocity.y > 0:
+		impact_played = false
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and health >= 1 and not GameManager.paused:
 		velocity.y = JUMP_VELOCITY
@@ -129,6 +144,7 @@ func _physics_process(delta: float) -> void:
 @rpc("call_local")
 func play_shoot_effects():
 	anim_player.stop()
+	bow_audio.play()
 	anim_player.play("shoot")
 	if not _hitscan:
 		bullet_trail_comp.bulletFire(camera,marker,owner_id)
@@ -143,6 +159,10 @@ func play_walk_effects():
 @rpc("call_local")
 func play_idle_effects():
 	anim_player.play("idle")
+
+@rpc("call_local")
+func play_landing_effect():
+	footstep.play()
 
 @rpc("call_local")
 func play_skill1_effects():
