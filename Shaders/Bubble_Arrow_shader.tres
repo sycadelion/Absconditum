@@ -1,6 +1,7 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://126ih2e781un"]
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://126ih2e781un"]
 
 [ext_resource type="Shader" path="res://Shaders/cut_sphere.gdshader" id="1_c6ym5"]
+[ext_resource type="Texture2D" uid="uid://8ehp2v46mqxr" path="res://Models/Grenade_Untitled.png" id="2_i4jvy"]
 
 [resource]
 resource_local_to_scene = true
@@ -9,8 +10,9 @@ shader = ExtResource("1_c6ym5")
 shader_parameter/spherePos = null
 shader_parameter/borderColor = null
 shader_parameter/borderSize = null
-shader_parameter/sphereRadius = null
+shader_parameter/sphereRadius = 0.0
 shader_parameter/noiseSpeed = null
 shader_parameter/noiseStrength = null
 shader_parameter/noiseSize = null
 shader_parameter/invertCut = null
+shader_parameter/_albedo = ExtResource("2_i4jvy")
