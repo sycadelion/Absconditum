@@ -17,13 +17,13 @@ extends CharacterBody3D
 #bullet marker and trail component
 @onready var marker: Marker3D = $Camera3D/Marker3D
 @onready var bullet_trail_comp: Node3D = $BulletTrailComp
-@onready var bow_audio: AudioStreamPlayer3D = $Camera3D/Bow_audio
+@onready var bow_audio: FmodEventEmitter3D = $Camera3D/Bow_audio
 
 #skill1 marker and component
 @onready var skill1: Control = $CanvasLayer/HUD/Skill
 @onready var skill1_marker: Marker3D = $Camera3D/Skill1Marker
 @onready var skill1_comp: Node3D = $Skill1Comp
-@onready var skill_audio: AudioStreamPlayer3D = $Camera3D/Skill1Marker/Skill_audio
+@onready var skill_audio: FmodEventEmitter3D = $Camera3D/Skill1Marker/Skill_audio
 
 #ammo stuff
 @onready var ammo_count: Label = $CanvasLayer/HUD/Ammo/Ammo_count
@@ -33,7 +33,6 @@ var ammo_cur = ammo_Cap
 @onready var killFeed: Control = $CanvasLayer/KillFeed
 
 #sound stuff
-@onready var foot_audio: AudioStreamPlayer3D = $Foot_audio
 @onready var footstep: FmodEventEmitter3D = $Footstep
 var landing: bool = false
 var impact_played: bool = false
@@ -91,8 +90,9 @@ func _input(event: InputEvent) -> void:
 		shooting = true
 	elif event.is_action_pressed("quit") and not GameManager.paused:
 		pause.pause(owner_id)
-	elif event.is_action_pressed("reload"):
+	elif event.is_action_pressed("reload") and ammo_cur <= 0:
 		play_reload_effect.rpc()
+		shooting = true
 	elif event.is_action_pressed("test"):
 		print(str(Lobby.players))
 
@@ -193,6 +193,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		respawn_self.rpc()
 	elif  anim_name == "Reloading":
 		ammo_cur = ammo_Cap
+		shooting = false
 		anim_player.play("idle")
 	elif  anim_name == "move":
 		anim_player.play("idle")

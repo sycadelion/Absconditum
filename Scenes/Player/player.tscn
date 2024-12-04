@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://f7itocgajf8o"]
+[gd_scene load_steps=33 format=3 uid="uid://f7itocgajf8o"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_4ht6w"]
 [ext_resource type="Material" uid="uid://gsnjhl57qwdk" path="res://Shaders/player_shader_mat.tres" id="1_fuh6j"]
@@ -10,8 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://68kjn6suxq5a" path="res://addons/kenney_particle_pack/smoke_04.png" id="6_oop84"]
 [ext_resource type="PackedScene" uid="uid://c0wl72hwaa31r" path="res://Scenes/UI/hud.tscn" id="7_kc58q"]
 [ext_resource type="PackedScene" uid="uid://ser6du4tr2cu" path="res://Scenes/UI/pause.tscn" id="8_grtv0"]
-[ext_resource type="AudioStream" uid="uid://d26w5w3jy3qpm" path="res://Sounds/wind-up.wav" id="8_qex41"]
-[ext_resource type="AudioStream" uid="uid://dshmrqwrokx1p" path="res://Sounds/bow_shot.wav" id="9_375si"]
 [ext_resource type="Script" path="res://Scripts/bullet_trail_comp.gd" id="9_aqsbj"]
 [ext_resource type="PackedScene" uid="uid://d2ljcqlo87l2j" path="res://Scenes/UI/kill_feed.tscn" id="10_7uef7"]
 [ext_resource type="Script" path="res://Scripts/skill_1_comp.gd" id="10_elnv3"]
@@ -559,9 +557,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.96046e-08, 0)
 collision_layer = 2
 script = ExtResource("1_4ht6w")
 
-[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
-bank_paths = ["res://Sounds/Master.strings.bank", "res://Sounds/Master.bank", "res://Sounds/SFX.bank"]
-
 [node name="Player_Body" type="MeshInstance3D" parent="." groups=["Players", "VisibleObjectsShader"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 material_override = ExtResource("1_fuh6j")
@@ -609,14 +604,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.585395, -0.477487, -1.74103
 [node name="Skill1Marker" type="Marker3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.436369, -0.0231869, -0.766952)
 
-[node name="Skill_audio" type="AudioStreamPlayer3D" parent="Camera3D/Skill1Marker"]
-stream = ExtResource("8_qex41")
-
-[node name="Bow_audio" type="AudioStreamPlayer3D" parent="Camera3D"]
-stream = ExtResource("9_375si")
-bus = &"SFX"
+[node name="Skill_audio" type="FmodEventEmitter3D" parent="Camera3D/Skill1Marker"]
+event_name = "event:/Grenade"
+event_guid = "{046ab459-3359-422e-868b-1b86fdbab81f}"
+event_parameter/Grenade/id = 5065107224920233470
+event_parameter/Grenade/value = "Wind"
+event_parameter/Grenade/labels = PackedStringArray("Wind", "Drone", "Value C")
+event_parameter/Grenade/min_value = "Wind"
+event_parameter/Grenade/max_value = "Value C"
+event_parameter/Grenade/default_value = "Wind"
+event_parameter/Grenade/variant_type = 4
 
 [node name="FmodListener3D" type="FmodListener3D" parent="Camera3D"]
+
+[node name="Bow_audio" type="FmodEventEmitter3D" parent="Camera3D"]
+event_name = "event:/Shoot"
+event_guid = "{faf34613-2d5e-4f8d-996e-876fdcfc8c93}"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -669,14 +672,14 @@ bus = &"FootSteps"
 doppler_tracking = 2
 
 [node name="Footstep" type="FmodEventEmitter3D" parent="."]
-event_name = "event:/Character/Player Footsteps"
-event_guid = "{e905d401-76f5-4741-a885-f7844b244671}"
-event_parameter/Surface/id = -8832756274813665449
-event_parameter/Surface/value = "Carpet"
-event_parameter/Surface/labels = PackedStringArray("Carpet", "Grass", "Wood Floor")
-event_parameter/Surface/min_value = "Carpet"
-event_parameter/Surface/max_value = "Wood Floor"
-event_parameter/Surface/default_value = "Carpet"
+event_name = "event:/Footsteps"
+event_guid = "{f83d1858-d1b4-430c-a781-5ab547404bb1}"
+event_parameter/Surface/id = -5504228875075709698
+event_parameter/Surface/value = "Stone"
+event_parameter/Surface/labels = PackedStringArray("Stone", "Wood", "Jump")
+event_parameter/Surface/min_value = "Stone"
+event_parameter/Surface/max_value = "Jump"
+event_parameter/Surface/default_value = "Stone"
 event_parameter/Surface/variant_type = 4
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,9 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3bhlb6x0ro8f"]
+[gd_scene load_steps=12 format=3 uid="uid://d3bhlb6x0ro8f"]
 
 [ext_resource type="Script" path="res://Shaders/Shader Scripts/sphereSDF.gd" id="1_t28a6"]
 [ext_resource type="PackedScene" uid="uid://ct1bv07ecl3vk" path="res://Scenes/Player/Model/grenade.tscn" id="2_pxuyo"]
 [ext_resource type="Shader" path="res://Shaders/SphereField.gdshader" id="3_shc4d"]
-[ext_resource type="AudioStream" uid="uid://bii82ggxksg5" path="res://Sounds/foot-pump-with-air.wav" id="4_3p8yc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cofcj"]
 resource_local_to_scene = true
@@ -50,18 +49,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer3D:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_njaer"]
 resource_name = "expand"
@@ -78,17 +65,19 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0, 10.0]
 }
-tracks/1/type = "value"
+tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer3D:playing")
+tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_audio"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5gylt"]
@@ -135,11 +124,16 @@ wait_time = 5.0
 
 [node name="Area_col" type="CollisionShape3D" parent="Area3D"]
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00922269, 0)
-stream = ExtResource("4_3p8yc")
-volume_db = -16.0
-bus = &"SFX"
+[node name="Skill_audio" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/Grenade"
+event_guid = "{046ab459-3359-422e-868b-1b86fdbab81f}"
+event_parameter/Grenade/id = 5065107224920233470
+event_parameter/Grenade/value = "Drone"
+event_parameter/Grenade/labels = PackedStringArray("Wind", "Drone", "Value C")
+event_parameter/Grenade/min_value = "Wind"
+event_parameter/Grenade/max_value = "Value C"
+event_parameter/Grenade/default_value = "Wind"
+event_parameter/Grenade/variant_type = 4
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

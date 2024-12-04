@@ -10,6 +10,9 @@
 script = ExtResource("1_lp11c")
 level_scene = ExtResource("2_kn1xs")
 
+[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+bank_paths = ["res://Sounds/Master.strings.bank", "res://Sounds/Master.bank", "res://Sounds/SFX.bank"]
+
 [node name="Background_container" parent="." instance=ExtResource("3_ul4ju")]
 anchors_preset = 15
 anchor_right = 1.0

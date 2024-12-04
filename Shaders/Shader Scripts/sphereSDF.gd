@@ -12,7 +12,7 @@ extends RigidBody3D
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var lifetime_timer: Timer = $Timer
 @onready var area_col: CollisionShape3D = $Area3D/Area_col
-@onready var audPlayer: AudioStreamPlayer3D = $AudioStreamPlayer3D
+@onready var audPlayer: FmodEventEmitter3D = $Skill_audio
 
 var area_shape:SphereShape3D = SphereShape3D.new()
 var expanded: bool = false
@@ -74,3 +74,6 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.is_in_group("Players"):
 		bubble_in.hide()
 		bubble_out.show()
+		
+func play_audio():
+	audPlayer.play()
