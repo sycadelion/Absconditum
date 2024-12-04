@@ -120,9 +120,9 @@ func _physics_process(delta: float) -> void:
 	elif anim_player.current_animation == "Reloading":
 		pass
 	elif input_dir != Vector2.ZERO and is_on_floor() and not GameManager.paused:
-		anim_player.play("move")
+		play_walk_effects.rpc()
 	else:
-		anim_player.play("idle")
+		play_idle_effects.rpc()
 	ammo_count.text = str(ammo_cur) + " / " + str(ammo_Cap)
 	move_and_slide()
 
@@ -135,6 +135,14 @@ func play_shoot_effects():
 	
 	muzzle_flash.restart()
 	muzzle_flash.emitting = true
+
+@rpc("call_local")
+func play_walk_effects():
+	anim_player.play("move")
+	
+@rpc("call_local")
+func play_idle_effects():
+	anim_player.play("idle")
 
 @rpc("call_local")
 func play_skill1_effects():
@@ -151,6 +159,7 @@ func receive_damage():
 			killFeed.send_message(killer,Lobby.players[owner_id].name)
 		respawn_self()
 		#anim_player.play("death")
+
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "shoot":
 		shooting = false
@@ -160,6 +169,8 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		respawn_self.rpc()
 	elif  anim_name == "Reloading":
 		ammo_cur = ammo_Cap
+		anim_player.play("idle")
+	elif  anim_name == "move":
 		anim_player.play("idle")
 
 @rpc("any_peer")

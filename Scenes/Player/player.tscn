@@ -193,6 +193,71 @@ tracks/9/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Foot_audio:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_gjl0r"]
+resource_name = "Reloading"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/crossbow_viewmodel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.14, 0.18, 0.24, 0.28, 0.5),
+"transitions": PackedFloat32Array(1, 2, 0.5, 0.5, 0.5, 0.5, 2),
+"update": 0,
+"values": [Vector3(0.462046, -0.714712, -0.248098), Vector3(0.462046, -0.714712, -0.248098), Vector3(0.321856, -0.714712, -0.248098), Vector3(0.462046, -0.714712, -0.248098), Vector3(0.321856, -0.714712, -0.248098), Vector3(0.564851, -0.714712, -0.248098), Vector3(0.462046, -0.714712, -0.248098)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D/crossbow_viewmodel:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.14, 0.18, 0.24, 0.28, 0.5),
+"transitions": PackedFloat32Array(1, 2, 0.5, 0.5, 0.5, 0.5, 2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.158282, 0.511442, -1.24689), Vector3(-0.250239, 0.393312, -0.823015), Vector3(-0.158282, 0.511442, -1.24689), Vector3(-0.250239, 0.393312, -0.823015), Vector3(-0.141212, 0.404915, -0.984779), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D/crossbow_shader:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.14, 0.18, 0.24, 0.28, 0.5),
+"transitions": PackedFloat32Array(1, 2, 0.5, 0.5, 0.5, 0.5, 2),
+"update": 0,
+"values": [Vector3(0.462046, -0.714712, -0.248098), Vector3(0.462046, -0.714712, -0.248098), Vector3(0.321856, -0.714712, -0.248098), Vector3(0.462046, -0.714712, -0.248098), Vector3(0.321856, -0.714712, -0.248098), Vector3(0.564851, -0.714712, -0.248098), Vector3(0.462046, -0.714712, -0.248098)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera3D/crossbow_shader:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.14, 0.18, 0.24, 0.28, 0.5),
+"transitions": PackedFloat32Array(1, 2, 0.5, 0.5, 0.5, 0.5, 2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.158282, 0.511442, -1.24689), Vector3(-0.250239, 0.393312, -0.823015), Vector3(-0.158282, 0.511442, -1.24689), Vector3(-0.250239, 0.393312, -0.823015), Vector3(-0.141212, 0.404915, -0.984779), Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_qkman"]
 resource_name = "death"
@@ -322,6 +387,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0.0372977, 0, 0), Vector3(0, 0, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Foot_audio:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_0ng04"]
 resource_name = "move"
@@ -375,6 +452,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(-0.0731884, 0.108275, -0.00794829), Vector3(0, 0, 0), Vector3(0.0560333, 0.0469183, 0.00262954), Vector3(0, 0, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Foot_audio:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false]
+}
 
 [sub_resource type="Animation" id="Animation_5v340"]
 resource_name = "shoot"
@@ -426,59 +515,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 0.5, 2),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0.208864, 0, 0), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_gjl0r"]
-resource_name = "Reloading"
-length = 0.5
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D/crossbow_viewmodel:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.08, 0.14, 0.18, 0.24, 0.28, 0.5),
-"transitions": PackedFloat32Array(1, 2, 0.5, 0.5, 0.5, 0.5, 2),
-"update": 0,
-"values": [Vector3(0.462046, -0.714712, -0.248098), Vector3(0.462046, -0.714712, -0.248098), Vector3(0.321856, -0.714712, -0.248098), Vector3(0.462046, -0.714712, -0.248098), Vector3(0.321856, -0.714712, -0.248098), Vector3(0.564851, -0.714712, -0.248098), Vector3(0.462046, -0.714712, -0.248098)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D/crossbow_viewmodel:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.08, 0.14, 0.18, 0.24, 0.28, 0.5),
-"transitions": PackedFloat32Array(1, 2, 0.5, 0.5, 0.5, 0.5, 2),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.158282, 0.511442, -1.24689), Vector3(-0.250239, 0.393312, -0.823015), Vector3(-0.158282, 0.511442, -1.24689), Vector3(-0.250239, 0.393312, -0.823015), Vector3(-0.141212, 0.404915, -0.984779), Vector3(0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Camera3D/crossbow_shader:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.08, 0.14, 0.18, 0.24, 0.28, 0.5),
-"transitions": PackedFloat32Array(1, 2, 0.5, 0.5, 0.5, 0.5, 2),
-"update": 0,
-"values": [Vector3(0.462046, -0.714712, -0.248098), Vector3(0.462046, -0.714712, -0.248098), Vector3(0.321856, -0.714712, -0.248098), Vector3(0.462046, -0.714712, -0.248098), Vector3(0.321856, -0.714712, -0.248098), Vector3(0.564851, -0.714712, -0.248098), Vector3(0.462046, -0.714712, -0.248098)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Camera3D/crossbow_shader:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.08, 0.14, 0.18, 0.24, 0.28, 0.5),
-"transitions": PackedFloat32Array(1, 2, 0.5, 0.5, 0.5, 0.5, 2),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.158282, 0.511442, -1.24689), Vector3(-0.250239, 0.393312, -0.823015), Vector3(-0.158282, 0.511442, -1.24689), Vector3(-0.250239, 0.393312, -0.823015), Vector3(-0.141212, 0.404915, -0.984779), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_demr1"]
@@ -610,7 +646,9 @@ _skill1_prefab = ExtResource("11_7l2ie")
 
 [node name="Foot_audio" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("17_qcgfj")
+max_distance = 30.0
 bus = &"FootSteps"
+doppler_tracking = 2
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
