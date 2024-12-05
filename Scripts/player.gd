@@ -99,6 +99,7 @@ func _input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
 		return
+	sens = GameManager.sensitivity
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta

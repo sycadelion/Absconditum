@@ -127,6 +127,7 @@ wait_time = 5.0
 [node name="Skill_audio" type="FmodEventEmitter3D" parent="."]
 event_name = "event:/Grenade"
 event_guid = "{046ab459-3359-422e-868b-1b86fdbab81f}"
+volume = 2.0
 event_parameter/Grenade/id = 5065107224920233470
 event_parameter/Grenade/value = "Drone"
 event_parameter/Grenade/labels = PackedStringArray("Wind", "Drone", "Value C")
