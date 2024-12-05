@@ -8,7 +8,7 @@ var disconnected = false
 var paused = false
 
 #game version only changing for save files
-var version: int = 1
+var Save_version: int = 1
 
 #customize match settings:
 var skill_Cooldown = 5
