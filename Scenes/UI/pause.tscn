@@ -180,6 +180,34 @@ libraries = {
 "": SubResource("AnimationLibrary_886lv")
 }
 
+[node name="Roomcode" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Roomcode"]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Roomcode/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="roomcode_label" type="Label" parent="Roomcode/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Roomcode"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Code" type="TextEdit" parent="Roomcode/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Place"
+editable = false
+
 [connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/SettingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

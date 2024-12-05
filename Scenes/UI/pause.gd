@@ -3,6 +3,9 @@ extends Control
 var id = 0
 var settings_open: bool = false
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
+@onready var roomcode: Control = $Roomcode
+@onready var roomcode_label: Label = $Roomcode/PanelContainer/VBoxContainer/roomcode_label
+@onready var code: TextEdit = $Roomcode/PanelContainer/VBoxContainer/Code
 
 
 func _ready() -> void:
@@ -29,6 +32,7 @@ func unpause():
 	GameManager.paused = false
 	self.visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 
 func pause(owner_id):
 	anim_player.play("RESET")
@@ -38,7 +42,10 @@ func pause(owner_id):
 	GameManager.paused = true
 	self.visible = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
+	if GameManager.host_mode:
+		roomcode.show()
+		roomcode_label.text = "Roomcode: "
+		code.text = RoomGen.IPtoCode(Lobby.ip)
 
 func _on_setting_button_pressed() -> void:
 	if not settings_open :
