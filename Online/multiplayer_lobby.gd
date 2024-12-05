@@ -24,7 +24,7 @@ func _host() -> void:
 	change_level(level_scene)
 
 func _on_connect_pressed() -> void:
-	Lobby.join_game(ip_line_edit.text)
+	Lobby.join_game(RoomGen.codeToIP(ip_line_edit.text))
 	background_container.hide()
 
 

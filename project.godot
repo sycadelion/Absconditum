@@ -45,6 +45,7 @@ Lobby="*res://Online/Lobby.gd"
 LineDrawer="*res://Scripts/LineDrawer.gd"
 ConfigFileHandler="*res://Scripts/singletons/ConfigFileHandler.gd"
 FmodManager="*res://addons/fmod/FmodManager.gd"
+RoomGen="*res://Scripts/singletons/Roomcode_gen.gd"
 
 [display]
 

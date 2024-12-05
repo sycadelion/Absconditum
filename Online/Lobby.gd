@@ -94,6 +94,7 @@ func start_up():
 			if not map_result_tcp == UPNP.UPNP_RESULT_SUCCESS:
 				upnp.add_port_mapping(PORT, PORT, "", "TCP")
 			ip = upnp.query_external_address()
+			print(RoomGen.IPtoCode(ip))
 	
 	
 	multiplayer.peer_connected.connect(_on_player_connected)
