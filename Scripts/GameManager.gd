@@ -19,21 +19,29 @@ var hitscan:bool = false
 
 
 #customize game settings:
-var sensitivity: float = 0.005
-var master_audio:int = 100
-var music_audio:int = 100
-var sfx_audio:int = 100
-var foot_audio:int = 100
+var sensitivity: float = 0
+var master_audio:int = 0
+var music_audio:int = 0
+var sfx_audio:int = 0
+var foot_audio:int = 0
 
 func _ready() -> void:
 	if FileAccess.file_exists(save_path):
 		var mouse_settings = ConfigFileHandler.load_mouse_settings()
 		var audio_settings = ConfigFileHandler.load_audio_settings()
+		var user_settings = ConfigFileHandler.load_user_settings()
+		Lobby.player_info.name = user_settings.name
 		sensitivity = mouse_settings.sensitivity
 		master_audio = audio_settings.master_audio
 		music_audio = audio_settings.music_audio
 		sfx_audio = audio_settings.sfx_audio
 		foot_audio = audio_settings.foot_audio
+	else:
+		sensitivity = 0.005
+		master_audio = 100
+		music_audio = 100
+		sfx_audio = 100
+		foot_audio = 100
 
 func spawn_point_rng():
 	randomize()
@@ -44,6 +52,7 @@ func spawn_point_rng():
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		ConfigFileHandler.save_user_settings()
 		ConfigFileHandler.save_mouse_settings("sensitivity", sensitivity)
 		ConfigFileHandler.save_audio_settings("master_audio",master_audio)
 		ConfigFileHandler.save_audio_settings("music_audio",music_audio)
