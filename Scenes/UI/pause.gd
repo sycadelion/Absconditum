@@ -2,7 +2,6 @@ extends Control
 
 var id = 0
 var settings_open: bool = false
-@onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var roomcode: Control = $Roomcode
 @onready var roomcode_label: Label = $Roomcode/PanelContainer/VBoxContainer/roomcode_label
 @onready var code: TextEdit = $Roomcode/PanelContainer/VBoxContainer/Code
