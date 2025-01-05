@@ -50,7 +50,7 @@ theme_override_constants/separation = 10
 
 [node name="SkillSettings" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/grid/Skill Settings"]
 layout_mode = 2
-text = "----Skill 1 Settings---"
+text = "Skill 1 Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -85,7 +85,7 @@ theme_override_constants/separation = 10
 
 [node name="Player" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/grid/Player Settings"]
 layout_mode = 2
-text = "----Player Settings---"
+text = "Player Settings"
 horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/grid/Player Settings"]
@@ -125,5 +125,13 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.677173, 0.0364597, 0.267578, 1)
 theme_override_colors/icon_normal_color = Color(0.856841, 0, 0.195046, 1)
+
+[node name="Match_Back_button" type="Button" parent="PanelContainer/CenterContainer/MarginContainer/grid"]
+layout_mode = 2
+text = "Back"
+
+[node name="Host_game_button" type="Button" parent="PanelContainer/CenterContainer/MarginContainer/grid"]
+layout_mode = 2
+text = "Host"
 
 [connection signal="toggled" from="PanelContainer/CenterContainer/MarginContainer/grid/Player Settings/CenterContainer/HitscanCheckBox" to="." method="_on_hitscan_check_box_toggled"]

@@ -35,7 +35,6 @@ func unpause():
 	
 
 func pause(owner_id):
-	anim_player.play("RESET")
 	id = owner_id
 	GameManager.mouseCap = false
 	settings_open = false
@@ -48,9 +47,9 @@ func pause(owner_id):
 		code.text = RoomGen.IPtoCode(Lobby.ip)
 
 func _on_setting_button_pressed() -> void:
-	if not settings_open :
-		anim_player.play("Open_settings")
-		settings_open = true
-	elif settings_open:
-		anim_player.play_backwards("Open_settings")
-		settings_open = false
+	$Settings_menu.show()
+	$Buttons.hide()
+
+func _on_settings_back_button_pressed() -> void:
+	$Buttons.show()
+	$Settings_menu.hide()

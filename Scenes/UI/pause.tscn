@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ser6du4tr2cu"]
+[gd_scene load_steps=5 format=3 uid="uid://ser6du4tr2cu"]
 
 [ext_resource type="Script" path="res://Scenes/UI/pause.gd" id="1_ag0r8"]
 [ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://Scenes/UI/Menu.tres" id="1_s755f"]
@@ -6,68 +6,6 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xouvt"]
 bg_color = Color(0, 0, 0, 0.65098)
-
-[sub_resource type="Animation" id="Animation_7j320"]
-resource_name = "Open_settings"
-length = 0.5
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Settings_menu:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1240, 340), Vector2(962, 340)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Settings_menu:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_rjddf"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Settings_menu:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1240, 340)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Settings_menu:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_886lv"]
-_data = {
-"Open_settings": SubResource("Animation_7j320"),
-"RESET": SubResource("Animation_rjddf")
-}
 
 [node name="Pause" type="Control"]
 layout_mode = 3
@@ -152,35 +90,28 @@ layout_mode = 2
 text = "Exit to Desktop"
 
 [node name="Settings_menu" type="Control" parent="."]
-modulate = Color(1, 1, 1, 0)
+visible = false
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -40.0
+offset_left = -20.0
 offset_top = -20.0
+offset_right = 20.0
 offset_bottom = 20.0
-grow_horizontal = 0
+grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Settings" parent="Settings_menu" instance=ExtResource("3_i0jyf")]
-layout_mode = 2
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 40.0
+layout_mode = 1
+offset_left = -20.0
+offset_right = 20.0
 edit_name = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_886lv")
-}
-
 [node name="Roomcode" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 0
 offset_right = 40.0
@@ -212,3 +143,6 @@ editable = false
 [connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/SettingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/QuitWindowsButton" to="." method="_on_quit_windows_button_pressed"]
+[connection signal="pressed" from="Settings_menu/Settings/PanelContainer/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Settings_Back_Button" to="." method="_on_settings_back_button_pressed"]
+
+[editable path="Settings_menu/Settings"]

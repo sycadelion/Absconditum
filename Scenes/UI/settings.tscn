@@ -126,4 +126,8 @@ max = 1
 is_audio = true
 bus_name = "FootSteps"
 
+[node name="Settings_Back_Button" type="Button" parent="PanelContainer/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
 [connection signal="text_changed" from="PanelContainer/CenterContainer/MarginContainer/GridContainer/VBoxContainer/player_name" to="." method="_on_player_name_text_changed"]
