@@ -59,6 +59,7 @@ func _ready() -> void:
 		_hitscan = GameManager.hitscan
 		self_name = Lobby.players[owner_id].name
 		crossbow_viewmodel.show()
+		FmodServer.add_listener(0,camera) #adds fmod listening
 	else:
 		camera.current = false
 		crossbow_shader.show()

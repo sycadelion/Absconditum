@@ -6,7 +6,7 @@ extends HSlider
 @export var is_audio: bool
 @export var bus_name: String
 var bus_index: int
-var setValue: int
+var setValue: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
