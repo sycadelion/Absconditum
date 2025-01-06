@@ -1,6 +1,10 @@
 extends Node
 
 const save_path = "user://settings.ini"
+const FMOD_BANKS = preload("res://Scenes/fmod_banks.tscn")
+
+#fmod busses
+var fmodbuses = {MasterBus=null,FootBus=null,SFXBus=null,MusicBus=null}
 
 var host_mode = false
 var mouseCap = true
@@ -26,22 +30,31 @@ var sfx_audio:int = 0
 var foot_audio:int = 0
 
 func _ready() -> void:
+	var fmod_banks_add = FMOD_BANKS.instantiate()
+	add_child(fmod_banks_add)
+	fmodbuses[0] = FmodServer.get_bus("bus:/Master")
+	fmodbuses[1] = FmodServer.get_bus("bus:/Master/Footsteps")
+	fmodbuses[2] = FmodServer.get_bus("bus:/Master/SFX")
+	fmodbuses[3] = FmodServer.get_bus("bus:/Master/Music")
+	
+	master_audio = fmodbuses[0].volume
+	
 	if FileAccess.file_exists(save_path):
 		var mouse_settings = ConfigFileHandler.load_mouse_settings()
 		var audio_settings = ConfigFileHandler.load_audio_settings()
 		var user_settings = ConfigFileHandler.load_user_settings()
 		Lobby.player_info.name = user_settings.name
 		sensitivity = mouse_settings.sensitivity
-		master_audio = audio_settings.master_audio
-		music_audio = audio_settings.music_audio
-		sfx_audio = audio_settings.sfx_audio
-		foot_audio = audio_settings.foot_audio
+		fmodbuses[0].volume = audio_settings.master_audio
+		fmodbuses[3].volume = audio_settings.music_audio
+		fmodbuses[2].volume = audio_settings.sfx_audio
+		fmodbuses[1].volume = audio_settings.foot_audio
 	else:
 		sensitivity = 0.005
-		master_audio = 100
-		music_audio = 100
-		sfx_audio = 100
-		foot_audio = 100
+		fmodbuses[0].volume = 1
+		fmodbuses[3].volume = 1
+		fmodbuses[2].volume = 1
+		fmodbuses[1].volume = 1
 
 func spawn_point_rng():
 	randomize()
@@ -54,8 +67,8 @@ func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		ConfigFileHandler.save_user_settings()
 		ConfigFileHandler.save_mouse_settings("sensitivity", sensitivity)
-		ConfigFileHandler.save_audio_settings("master_audio",master_audio)
-		ConfigFileHandler.save_audio_settings("music_audio",music_audio)
-		ConfigFileHandler.save_audio_settings("sfx_audio",sfx_audio)
-		ConfigFileHandler.save_audio_settings("foot_audio",foot_audio)
+		ConfigFileHandler.save_audio_settings("master_audio",fmodbuses[0].volume)
+		ConfigFileHandler.save_audio_settings("music_audio",fmodbuses[3].volume)
+		ConfigFileHandler.save_audio_settings("sfx_audio",fmodbuses[2].volume)
+		ConfigFileHandler.save_audio_settings("foot_audio",fmodbuses[1].volume)
 		get_tree().quit()

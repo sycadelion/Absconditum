@@ -128,13 +128,10 @@ wait_time = 5.0
 event_name = "event:/Grenade"
 event_guid = "{046ab459-3359-422e-868b-1b86fdbab81f}"
 volume = 2.0
-event_parameter/Grenade/id = 5065107224920233470
-event_parameter/Grenade/value = "Drone"
-event_parameter/Grenade/labels = PackedStringArray("Wind", "Drone", "Value C")
-event_parameter/Grenade/min_value = "Wind"
-event_parameter/Grenade/max_value = "Value C"
-event_parameter/Grenade/default_value = "Wind"
-event_parameter/Grenade/variant_type = 4
+fmod_parameters/Grenade/id = 5065107224920233470
+fmod_parameters/Grenade = "Drone"
+fmod_parameters/Grenade/labels = PackedStringArray("Wind", "Drone", "Value C")
+fmod_parameters/Grenade/variant_type = 4
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

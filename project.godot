@@ -40,9 +40,9 @@ config/windows_native_icon="res://Images/eye game icon.ico"
 
 [autoload]
 
-GameManager="*res://Scripts/GameManager.gd"
+GameManager="*res://Scripts/singletons/GameManager.gd"
 Lobby="*res://Online/Lobby.gd"
-LineDrawer="*res://Scripts/LineDrawer.gd"
+LineDrawer="*res://Scripts/singletons/LineDrawer.gd"
 ConfigFileHandler="*res://Scripts/singletons/ConfigFileHandler.gd"
 FmodManager="*res://addons/fmod/FmodManager.gd"
 RoomGen="*res://Scripts/singletons/Roomcode_gen.gd"

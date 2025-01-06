@@ -669,6 +669,10 @@ doppler_tracking = 2
 [node name="Footstep" type="FmodEventEmitter3D" parent="."]
 event_name = "event:/Footsteps"
 event_guid = "{f83d1858-d1b4-430c-a781-5ab547404bb1}"
+fmod_parameters/Surface/id = -5504228875075709698
+fmod_parameters/Surface = "Stone"
+fmod_parameters/Surface/labels = PackedStringArray("Stone", "Wood", "Jump")
+fmod_parameters/Surface/variant_type = 4
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
