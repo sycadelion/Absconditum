@@ -64,6 +64,6 @@ func _notification(what):
 		get_tree().quit() # default behavior
 
 
-func _on_ip_line_edit_text_submitted(new_text: String) -> void:
+func _on_ip_line_edit_text_submitted(_new_text: String) -> void:
 	Lobby.join_game(ip_line_edit.text)
 	background_container.hide()

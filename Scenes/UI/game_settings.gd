@@ -15,7 +15,7 @@ func _ready() -> void:
 	hitscanCheck.button_pressed = GameManager.hitscan
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	skill_cd.text = "Skill Cooldown: " + str(GameManager.skill_Cooldown)
 	skill_radius.text = "Skill radius: " + str(GameManager.skill1_radius)
 	movement_speed.text = "Movement Speed: " + str(GameManager.player_Speed)

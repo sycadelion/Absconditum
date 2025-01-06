@@ -29,7 +29,7 @@ func _ready() -> void:
 	if not expanded:
 		anim_player.play("expand")
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var ShaderObjects = get_tree().get_nodes_in_group("VisibleObjectsShader")
 	for renderObjects in ShaderObjects:
 		if renderObjects.get("material_override") != null:
@@ -60,7 +60,7 @@ func _on_timer_timeout() -> void:
 	anim_player.play_backwards("expand")
 
 
-func _on_body_entered(body: Node) -> void:
+func _on_body_entered(_body: Node) -> void:
 	linear_damp = 0.3
 	angular_damp = 1.5
 

@@ -574,6 +574,8 @@ shape = SubResource("CapsuleShape3D_736cw")
 [node name="Camera3D" type="Camera3D" parent="." groups=["Players"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39031, 0)
 
+[node name="FmodListener3D" type="FmodListener3D" parent="Camera3D"]
+
 [node name="crossbow_viewmodel" parent="Camera3D" instance=ExtResource("4_abpq6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.462046, -0.714712, -0.248098)
 visible = false
@@ -607,15 +609,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.436369, -0.0231869, -0.766
 [node name="Skill_audio" type="FmodEventEmitter3D" parent="Camera3D/Skill1Marker"]
 event_name = "event:/Grenade"
 event_guid = "{046ab459-3359-422e-868b-1b86fdbab81f}"
-event_parameter/Grenade/id = 5065107224920233470
-event_parameter/Grenade/value = "Wind"
-event_parameter/Grenade/labels = PackedStringArray("Wind", "Drone", "Value C")
-event_parameter/Grenade/min_value = "Wind"
-event_parameter/Grenade/max_value = "Value C"
-event_parameter/Grenade/default_value = "Wind"
-event_parameter/Grenade/variant_type = 4
-
-[node name="FmodListener3D" type="FmodListener3D" parent="Camera3D"]
+fmod_parameters/Grenade/id = 5065107224920233470
+fmod_parameters/Grenade = "Wind"
+fmod_parameters/Grenade/labels = PackedStringArray("Wind", "Drone", "Value C")
+fmod_parameters/Grenade/variant_type = 4
 
 [node name="Bow_audio" type="FmodEventEmitter3D" parent="Camera3D"]
 event_name = "event:/Shoot"
@@ -674,13 +671,6 @@ doppler_tracking = 2
 [node name="Footstep" type="FmodEventEmitter3D" parent="."]
 event_name = "event:/Footsteps"
 event_guid = "{f83d1858-d1b4-430c-a781-5ab547404bb1}"
-event_parameter/Surface/id = -5504228875075709698
-event_parameter/Surface/value = "Stone"
-event_parameter/Surface/labels = PackedStringArray("Stone", "Wood", "Jump")
-event_parameter/Surface/min_value = "Stone"
-event_parameter/Surface/max_value = "Jump"
-event_parameter/Surface/default_value = "Stone"
-event_parameter/Surface/variant_type = 4
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
