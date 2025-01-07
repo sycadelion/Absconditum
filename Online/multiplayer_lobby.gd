@@ -24,7 +24,10 @@ func _host() -> void:
 	change_level(level_scene)
 
 func _on_connect_pressed() -> void:
-	Lobby.join_game(RoomGen.codeToIP(ip_line_edit.text))
+	if ip_line_edit.text == GameManager.LOCAL_HOST:
+		Lobby.join_game(ip_line_edit.text)
+	else:
+		Lobby.join_game(RoomGen.codeToIP(ip_line_edit.text))
 	background_container.hide()
 
 
@@ -65,5 +68,8 @@ func _notification(what):
 
 
 func _on_ip_line_edit_text_submitted(_new_text: String) -> void:
-	Lobby.join_game(ip_line_edit.text)
+	if ip_line_edit.text == GameManager.LOCAL_HOST:
+		Lobby.join_game(ip_line_edit.text)
+	else:
+		Lobby.join_game(RoomGen.codeToIP(ip_line_edit.text))
 	background_container.hide()

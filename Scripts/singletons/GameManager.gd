@@ -2,6 +2,7 @@ extends Node
 
 const save_path = "user://settings.ini"
 const FMOD_BANKS = preload("res://Scenes/fmod_banks.tscn")
+const LOCAL_HOST = "127.0.0.1"
 
 #fmod busses
 var fmodbuses = {MasterBus=null,FootBus=null,SFXBus=null,MusicBus=null}
