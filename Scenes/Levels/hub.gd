@@ -7,9 +7,11 @@ extends Node3D
 var player_count = 0
 
 func _enter_tree() -> void:
-	player_spawner.spawn_function = spawn_player
+	pass
 
 func _ready() -> void:
+	await get_tree().process_frame
+	player_spawner.spawn_function = spawn_player
 	player_count = 0
 	
 	if not multiplayer.is_server():
@@ -30,10 +32,9 @@ func spawn_player(id):
 	
 	#set player id
 	player_instance.player_id = id
-
+	
 	
 	print("player " + str(player_instance.player_id) + " Spawned")
-	
 	#set player to spawn position
 	player_instance.name = str(id)
 	var spawnPOS = GameManager.spawn_point_rng()

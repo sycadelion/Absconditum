@@ -50,7 +50,8 @@ func _on_connected_to_server():
 	change_level(level_scene)
 	
 func _on_player_connected(id):
-	Lobby._update_globals.rpc_id(id,GameManager.skill_Cooldown,GameManager.skill1_radius,GameManager.player_Speed, GameManager.player_jump,GameManager.hitscan)
+	if multiplayer.is_server():
+		Lobby._update_globals.rpc_id(id,GameManager.skill_Cooldown,GameManager.skill1_radius,GameManager.player_Speed, GameManager.player_jump,GameManager.hitscan)
 
 func _on_player_disconnected(id):
 	Lobby._on_player_disconnected(id)

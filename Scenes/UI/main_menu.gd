@@ -8,7 +8,8 @@ var Matchsettings: bool = false
 const GAME_SCENE = "res://Scenes/lobby.tscn"
 
 func _ready() -> void:
-	pass
+	GameManager.paused = false
+	GameManager.host_mode = false
 
 func _on_host_pressed() -> void:
 	$Match_Settings.show()

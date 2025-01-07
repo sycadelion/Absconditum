@@ -19,7 +19,8 @@ func _on_quit_button_pressed() -> void:
 		multiplayer.multiplayer_peer.close()
 		get_tree().change_scene_to_file("res://Scenes/UI/Main Menu.tscn")
 	else:
-		Lobby._on_server_disconnected()
+		Lobby._on_player_disconnected(id)
+		get_tree().change_scene_to_file("res://Scenes/UI/Main Menu.tscn")
 
 
 func _on_quit_windows_button_pressed() -> void:
