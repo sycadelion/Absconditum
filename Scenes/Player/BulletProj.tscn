@@ -1,0 +1,103 @@
+[gd_scene load_steps=13 format=3 uid="uid://da5fc0sh7rdo8"]
+
+[ext_resource type="Script" path="res://Scripts/bullet_proj.gd" id="1_dxgf3"]
+[ext_resource type="PackedScene" uid="uid://vfkwq3moisud" path="res://Scenes/Player/Weapons/bolt.tscn" id="2_cr6c0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5kcbs"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_60rto"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_5kcbs")
+radius = 0.05
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8qby6"]
+radius = 0.05
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1c7wd"]
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4tk4u"]
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qahsm"]
+material = SubResource("StandardMaterial3D_4tk4u")
+top_radius = 0.03
+bottom_radius = 0.03
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2de38"]
+albedo_color = Color(0.9, 1, 0, 1)
+emission_enabled = true
+emission = Color(0.9, 1, 0, 1)
+emission_energy_multiplier = 8.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_itjs6"]
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 3.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jqoxu"]
+size = Vector3(0.04, 0.04, 0.04)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dy5on"]
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 8.0
+
+[node name="BulletProj" type="Node3D" node_paths=PackedStringArray("_bullet_mesh")]
+top_level = true
+script = ExtResource("1_dxgf3")
+_bullet_mesh = NodePath("MeshInstance3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 1)
+mesh = SubResource("CapsuleMesh_60rto")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 4.37114e-08)
+contact_monitor = true
+max_contacts_reported = 10
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/RigidBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, 0.5, 0, -0.5, -2.18557e-08, 0, 0, 1)
+shape = SubResource("CapsuleShape3D_8qby6")
+
+[node name="Tail particles" type="GPUParticles3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.99926, 8.73904e-08)
+visible = false
+amount = 80
+lifetime = 2.0
+speed_scale = 1.5
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_1c7wd")
+draw_pass_1 = SubResource("CylinderMesh_qahsm")
+
+[node name="bolt" parent="MeshInstance3D" instance=ExtResource("2_cr6c0")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1.72057, 0, -1, -7.52085e-08, 0, 0.978153, 4.27564e-08)
+
+[node name="Wall hit particles" type="GPUParticles3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18747, 5.19058e-08)
+material_override = SubResource("StandardMaterial3D_2de38")
+emitting = false
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_itjs6")
+draw_pass_1 = SubResource("BoxMesh_jqoxu")
+
+[node name="Player hit particles" type="GPUParticles3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18747, 5.19058e-08)
+material_override = SubResource("StandardMaterial3D_dy5on")
+emitting = false
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_itjs6")
+draw_pass_1 = SubResource("BoxMesh_jqoxu")
+
+[connection signal="body_entered" from="MeshInstance3D/RigidBody3D" to="." method="_on_rigid_body_3d_body_entered"]

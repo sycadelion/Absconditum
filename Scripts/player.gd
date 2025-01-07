@@ -16,8 +16,9 @@ extends CharacterBody3D
 
 #bullet marker and trail component
 @onready var marker: Marker3D = $Camera3D/Marker3D
-@onready var bullet_trail_comp: Node3D = $BulletTrailComp
+@onready var bullet_proj_comp: Node3D = $BulletProjComp
 @onready var bow_audio: FmodEventEmitter3D = $Camera3D/Bow_audio
+@onready var raycast_end: Marker3D = $Camera3D/RayCast3D/RaycastEnd
 
 #skill1 marker and component
 @onready var skill1: Control = $CanvasLayer/HUD/Skill
@@ -149,7 +150,7 @@ func play_shoot_effects():
 	bow_audio.play()
 	anim_player.play("shoot")
 	if not _hitscan:
-		bullet_trail_comp.bulletFire(camera,marker,owner_id)
+		bullet_proj_comp.bulletFire(raycast,marker,raycast_end,owner_id)
 	
 	muzzle_flash.restart()
 	muzzle_flash.emitting = true

@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_4ht6w"]
 [ext_resource type="Material" uid="uid://gsnjhl57qwdk" path="res://Shaders/player_shader_mat.tres" id="1_fuh6j"]
-[ext_resource type="PackedScene" uid="uid://da5fc0sh7rdo8" path="res://Scenes/Player/bullet_trail.tscn" id="2_rxswk"]
 [ext_resource type="Material" uid="uid://d0pvmiwy55gkj" path="res://Images/blank_mat.tres" id="3_fdipf"]
 [ext_resource type="PackedScene" uid="uid://bnrhdm2pom8cm" path="res://Scenes/Player/Model/crossbow.tscn" id="4_abpq6"]
 [ext_resource type="PackedScene" uid="uid://cr1br4blceokm" path="res://Scenes/Player/Weapons/crossbow_Shader.tscn" id="5_bmnt7"]
@@ -10,10 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://68kjn6suxq5a" path="res://addons/kenney_particle_pack/smoke_04.png" id="6_oop84"]
 [ext_resource type="PackedScene" uid="uid://c0wl72hwaa31r" path="res://Scenes/UI/hud.tscn" id="7_kc58q"]
 [ext_resource type="PackedScene" uid="uid://ser6du4tr2cu" path="res://Scenes/UI/pause.tscn" id="8_grtv0"]
-[ext_resource type="Script" path="res://Scripts/bullet_trail_comp.gd" id="9_aqsbj"]
 [ext_resource type="PackedScene" uid="uid://d2ljcqlo87l2j" path="res://Scenes/UI/kill_feed.tscn" id="10_7uef7"]
 [ext_resource type="Script" path="res://Scripts/skill_1_comp.gd" id="10_elnv3"]
 [ext_resource type="PackedScene" uid="uid://d3bhlb6x0ro8f" path="res://Scenes/Player/Skill1_Scene.tscn" id="11_7l2ie"]
+[ext_resource type="Script" path="res://Scripts/bullet_proj_comp.gd" id="11_no44j"]
+[ext_resource type="PackedScene" uid="uid://da5fc0sh7rdo8" path="res://Scenes/Player/BulletProj.tscn" id="12_qi8gg"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4jp85"]
 material = ExtResource("3_fdipf")
@@ -598,6 +598,9 @@ draw_pass_2 = SubResource("PlaneMesh_sl2x1")
 target_position = Vector3(0, 0, -50)
 collision_mask = 2
 
+[node name="RaycastEnd" type="Marker3D" parent="Camera3D/RayCast3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -51)
+
 [node name="Marker3D" type="Marker3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.585395, -0.477487, -1.74103)
 
@@ -653,9 +656,9 @@ vertical_alignment = 1
 
 [node name="KillFeed" parent="CanvasLayer" groups=["Killfeed"] instance=ExtResource("10_7uef7")]
 
-[node name="BulletTrailComp" type="Node3D" parent="."]
-script = ExtResource("9_aqsbj")
-_bullet_trail_prefab = ExtResource("2_rxswk")
+[node name="BulletProjComp" type="Node3D" parent="."]
+script = ExtResource("11_no44j")
+_bullet_proj_prefab = ExtResource("12_qi8gg")
 
 [node name="Skill1Comp" type="Node3D" parent="."]
 script = ExtResource("10_elnv3")
