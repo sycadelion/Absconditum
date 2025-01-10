@@ -16,14 +16,13 @@ func _ready() -> void:
 
 
 @rpc("any_peer")
-func receive_damage(damage_value:int):
+func receive_damage(damage_value:int, attacker:int):
 	health -= damage_value
 	if health <= 0:
+		Lobby.players[Player.owner_id].deaths += 1
+		Lobby.players[attacker].kills += 1
+	
 		health = MAX_HEALTH
-		if Player._hitscan:
-			var sender_id = multiplayer.get_remote_sender_id()
-			var killer = Lobby.players[sender_id].name
-			killfeed.send_message(killer,Lobby.players[Player.owner_id].name)
 		respawn_self()
 
 @rpc("any_peer")

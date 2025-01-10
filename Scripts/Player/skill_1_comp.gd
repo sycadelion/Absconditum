@@ -5,16 +5,16 @@ class_name Skill1Comp extends Node
 @onready var skill_marker: Marker3D = $"../Camera3D/Skill1Marker"
 @onready var skill_ui: Control = $"../CanvasLayer/HUD/Skill"
 
-var Player: Player
+var player: Player
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Player = owner
+	player = owner
 
 @rpc("call_local")
 func Use_skill():
 	if skill_ui.used_skill():
-		Player.audio_comp.Play_Throw_Skill()
+		player.audio_comp.Play_Throw_Skill()
 		skill_throw()
 
 func skill_throw() ->void:
@@ -25,6 +25,6 @@ func skill_throw() ->void:
 	
 	var force = -10
 	var updirection = 3.5
-	var playerRotation = Player.camera.global_transform.basis.z.normalized()
+	var playerRotation = player.camera.global_transform.basis.z.normalized()
 	
 	skill.apply_central_impulse(playerRotation * force + Vector3(0,updirection,0))

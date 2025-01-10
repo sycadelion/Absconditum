@@ -1,32 +1,23 @@
 class_name Player extends CharacterBody3D
 
+
 @export var player_id := 1
-@export var _hitscan: bool
+@export var SPEED = 5.0
+@export var JUMP_VELOCITY = 5
 
 #components
-@onready var audio_comp: Node = $Audio_Component
-@onready var skill1_comp: Node = $Skill1_Component
-@onready var health_comp: Node = $Health_Component
+@onready var audio_comp: AudioComp = $Audio_Component
+@onready var skill1_comp: Skill1Comp = $Skill1_Component
+@onready var health_comp: HealthComp = $Health_Component
+@onready var bullet_proj_comp: BulletProjComp = $BulletProjComp
+@onready var weapon_manger: WeaponManager = $WeaponManger
 
 @onready var camera: Camera3D = $Camera3D
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
-@onready var muzzle_flash: GPUParticles3D = $Camera3D/MuzzleFlash
-@onready var raycast: RayCast3D = $Camera3D/RayCast3D
 @onready var bodyInvert: MeshInstance3D = $Player_Body2
 @onready var hud: Control = $CanvasLayer/HUD
 @onready var pause: Control = $CanvasLayer/Pause
-
-#bullet marker and trail component
-@onready var marker: Marker3D = $Camera3D/Marker3D
-@onready var bullet_proj_comp: Node3D = $BulletProjComp
-@onready var raycast_end: Marker3D = $Camera3D/RayCast3D/RaycastEnd
-
-#ammo stuff
-@onready var ammo_count: Label = $CanvasLayer/HUD/Ammo/Ammo_count
-var ammo_Cap = 9
-var ammo_cur = ammo_Cap
-
-@onready var killFeed: Control = $CanvasLayer/KillFeed
+@onready var killfeed: KillFeed = $CanvasLayer/KillFeed
 
 #jump vars for landing audio
 var landing: bool = false
@@ -36,8 +27,6 @@ var sens:float = GameManager.sensitivity
 var owner_id = 1
 var self_name:String
 var shooting:bool = false
-var SPEED = 5.0
-var JUMP_VELOCITY = 5
 
 
 func _enter_tree() -> void:
@@ -51,7 +40,6 @@ func _ready() -> void:
 		hud.visible = true
 		SPEED = GameManager.player_Speed
 		JUMP_VELOCITY = GameManager.player_jump
-		_hitscan = GameManager.hitscan
 		self_name = Lobby.players[owner_id].name
 		$Camera3D/crossbow_viewmodel.show()
 		FmodServer.add_listener(0,camera) #adds fmod listening
@@ -74,19 +62,12 @@ func _input(event: InputEvent) -> void:
 		return
 	if event.is_action_pressed("Skill1") and not GameManager.paused:
 		skill1_comp.Use_skill.rpc()
-	elif event.is_action_pressed("shoot") and ammo_cur > 0 and not shooting and not GameManager.paused:
-		ammo_cur -= 1 
-		play_shoot_effects.rpc()
-		if raycast.is_colliding() and _hitscan:
-			var hit_player = raycast.get_collider()
-			hit_player.receive_damage.rpc_id(hit_player.get_multiplayer_authority())
-			LineDrawer.DrawLine(marker.global_position,hit_player.global_position,Color(1,0,0),0.5)
-		shooting = true
+	elif event.is_action_pressed("shoot") and not shooting and not GameManager.paused:
+		weapon_manger.shoot.rpc()
 	elif event.is_action_pressed("quit") and not GameManager.paused:
 		pause.pause(owner_id)
-	elif event.is_action_pressed("reload") and ammo_cur <= 0:
-		play_reload_effect.rpc()
-		shooting = true
+	elif event.is_action_pressed("reload"):
+		weapon_manger.reload.rpc()
 	elif event.is_action_pressed("test"):
 		print(str(Lobby.players))
 
@@ -129,23 +110,13 @@ func _physics_process(delta: float) -> void:
 		pass
 	elif anim_player.current_animation == "Reloading":
 		pass
+	elif anim_player.current_animation == "Gun_empty":
+		pass
 	elif input_dir != Vector2.ZERO and is_on_floor() and not GameManager.paused:
 		play_walk_effects.rpc()
 	else:
 		play_idle_effects.rpc()
-	ammo_count.text = str(ammo_cur) + " / " + str(ammo_Cap)
 	move_and_slide()
-
-@rpc("call_local")
-func play_shoot_effects():
-	anim_player.stop()
-	audio_comp.Play_bow()
-	anim_player.play("shoot")
-	if not _hitscan:
-		bullet_proj_comp.bulletFire(raycast,marker,raycast_end,owner_id)
-	
-	muzzle_flash.restart()
-	muzzle_flash.emitting = true
 
 @rpc("call_local")
 func play_walk_effects():
@@ -155,20 +126,9 @@ func play_walk_effects():
 func play_idle_effects():
 	anim_player.play("idle")
 
-@rpc("call_local")
-func play_reload_effect():
-	anim_player.play("Reloading")
-
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	if anim_name == "shoot":
-		shooting = false
-		anim_player.play("idle")
-	elif  anim_name == "death":
+	if  anim_name == "death":
 		health_comp.health = 1
 		health_comp.respawn_self.rpc()
-	elif  anim_name == "Reloading":
-		ammo_cur = ammo_Cap
-		shooting = false
-		anim_player.play("idle")
 	elif  anim_name == "move":
 		anim_player.play("idle")
