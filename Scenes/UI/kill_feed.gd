@@ -14,7 +14,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-@rpc("any_peer")
+@rpc("call_local")
 func send_message(killer,killed):
 	var message_copy = MESSAGE.instantiate()
 	chat_box.add_child(message_copy)

@@ -32,7 +32,8 @@ func _on_rigid_body_3d_body_entered(body: Player) -> void:
 		var owner_id = Lobby.players[playerID].name
 		
 		body.health_comp.receive_damage.rpc_id(body.get_multiplayer_authority(),_bullet_dmg,playerID)
-		
+		if body.health_comp.health <=0:
+			body.killfeed.send_message(owner_id,hit_player)
 		bolt.hide()
 		player_particles.emitting = true
 		await get_tree().create_timer(1.0).timeout

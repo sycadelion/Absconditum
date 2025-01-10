@@ -79,6 +79,13 @@ func _update_globals(var1,var2, var3, var4,var5):
 	GameManager.player_jump = var4
 	GameManager.hitscan = var5
 	
+func player_died(killer,killed):
+	var Killer_name = players[killer].name
+	players[killer].kills += 1
+	var killed_name = players[killed].name
+	players[killed].deaths += 1
+	GameManager.PLAYER.killfeed.send_message.rpc(Killer_name,killed_name)
+	
 func start_up():
 	var upnp = UPNP.new()
 	var discover_result = upnp.discover()

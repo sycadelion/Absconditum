@@ -43,6 +43,7 @@ func _ready() -> void:
 		self_name = Lobby.players[owner_id].name
 		$Camera3D/crossbow_viewmodel.show()
 		FmodServer.add_listener(0,camera) #adds fmod listening
+		GameManager.PLAYER = self
 	else:
 		camera.current = false
 		$Camera3D/crossbow_shader.show()
@@ -69,7 +70,7 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("reload"):
 		weapon_manger.reload.rpc()
 	elif event.is_action_pressed("test"):
-		print(str(Lobby.players))
+		pass
 
 func _physics_process(delta: float) -> void:
 	if owner_id != multiplayer.get_unique_id(): 

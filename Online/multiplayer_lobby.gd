@@ -1,5 +1,4 @@
-extends Node
-class_name MultiplayerLobby
+class_name MultiplayerLobby extends Node
 
 var level_scene: PackedScene = preload("res://Scenes/Levels/hub.tscn")
 @onready var level_container: Node = $Level
