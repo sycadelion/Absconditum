@@ -1,8 +1,12 @@
-extends CharacterBody3D
+class_name Player extends CharacterBody3D
 
 @export var player_id := 1
-@export var health = 1
 @export var _hitscan: bool
+
+#components
+@onready var audio_comp: Node = $Audio_Component
+@onready var skill1_comp: Node = $Skill1_Component
+@onready var health_comp: Node = $Health_Component
 
 @onready var camera: Camera3D = $Camera3D
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
@@ -11,20 +15,11 @@ extends CharacterBody3D
 @onready var bodyInvert: MeshInstance3D = $Player_Body2
 @onready var hud: Control = $CanvasLayer/HUD
 @onready var pause: Control = $CanvasLayer/Pause
-@onready var crossbow_viewmodel: Node3D = $Camera3D/crossbow_viewmodel
-@onready var crossbow_shader: Node3D = $Camera3D/crossbow_shader
 
 #bullet marker and trail component
 @onready var marker: Marker3D = $Camera3D/Marker3D
 @onready var bullet_proj_comp: Node3D = $BulletProjComp
-@onready var bow_audio: FmodEventEmitter3D = $Camera3D/Bow_audio
 @onready var raycast_end: Marker3D = $Camera3D/RayCast3D/RaycastEnd
-
-#skill1 marker and component
-@onready var skill1: Control = $CanvasLayer/HUD/Skill
-@onready var skill1_marker: Marker3D = $Camera3D/Skill1Marker
-@onready var skill1_comp: Node3D = $Skill1Comp
-@onready var skill_audio: FmodEventEmitter3D = $Camera3D/Skill1Marker/Skill_audio
 
 #ammo stuff
 @onready var ammo_count: Label = $CanvasLayer/HUD/Ammo/Ammo_count
@@ -33,8 +28,7 @@ var ammo_cur = ammo_Cap
 
 @onready var killFeed: Control = $CanvasLayer/KillFeed
 
-#sound stuff
-@onready var footstep: FmodEventEmitter3D = $Footstep
+#jump vars for landing audio
 var landing: bool = false
 var impact_played: bool = false
 
@@ -59,18 +53,18 @@ func _ready() -> void:
 		JUMP_VELOCITY = GameManager.player_jump
 		_hitscan = GameManager.hitscan
 		self_name = Lobby.players[owner_id].name
-		crossbow_viewmodel.show()
+		$Camera3D/crossbow_viewmodel.show()
 		FmodServer.add_listener(0,camera) #adds fmod listening
 	else:
 		camera.current = false
-		crossbow_shader.show()
+		$Camera3D/crossbow_shader.show()
 		
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
 		return
-	if event is InputEventMouseMotion and health >= 1:
+	if event is InputEventMouseMotion and health_comp.health >= 1:
 		rotate_y(-event.relative.x * sens)
 		camera.rotate_x(-event.relative.y * sens)
 		camera.rotation.x = clamp(camera.rotation.x,-PI/2, PI/2)
@@ -79,9 +73,7 @@ func _input(event: InputEvent) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
 		return
 	if event.is_action_pressed("Skill1") and not GameManager.paused:
-		if skill1.used_skill():
-			skill_audio.play()
-			play_skill1_effects.rpc()
+		skill1_comp.Use_skill.rpc()
 	elif event.is_action_pressed("shoot") and ammo_cur > 0 and not shooting and not GameManager.paused:
 		ammo_cur -= 1 
 		play_shoot_effects.rpc()
@@ -108,7 +100,7 @@ func _physics_process(delta: float) -> void:
 	
 	if is_on_floor():
 		if landing and !impact_played:
-			play_landing_effect.rpc()
+			audio_comp.Play_land.rpc()
 			landing= false
 			impact_played = true
 	else:
@@ -118,17 +110,17 @@ func _physics_process(delta: float) -> void:
 	if velocity.y > 0:
 		impact_played = false
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and health >= 1 and not GameManager.paused:
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and health_comp.health >= 1 and not GameManager.paused:
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction and health >= 1 and not GameManager.paused:
+	if direction and health_comp.health >= 1 and not GameManager.paused:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
-	elif health >= 1 and not GameManager.paused:
+	elif health_comp.health >= 1 and not GameManager.paused:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	if anim_player.current_animation == "shoot":
@@ -147,7 +139,7 @@ func _physics_process(delta: float) -> void:
 @rpc("call_local")
 func play_shoot_effects():
 	anim_player.stop()
-	bow_audio.play()
+	audio_comp.Play_bow()
 	anim_player.play("shoot")
 	if not _hitscan:
 		bullet_proj_comp.bulletFire(raycast,marker,raycast_end,owner_id)
@@ -164,47 +156,19 @@ func play_idle_effects():
 	anim_player.play("idle")
 
 @rpc("call_local")
-func play_landing_effect():
-	footstep.play()
-
-@rpc("call_local")
-func play_skill1_effects():
-	skill1_comp.skill1_throw(camera,skill1_marker)
-
-@rpc("call_local")
 func play_reload_effect():
 	anim_player.play("Reloading")
-
-@rpc("any_peer")
-func receive_damage():
-	health -= 1
-	if health <= 0:
-		health = 1
-		var sender_id = multiplayer.get_remote_sender_id()
-		var killer = Lobby.players[sender_id].name
-		if _hitscan:
-			killFeed.send_message(killer,Lobby.players[owner_id].name)
-		respawn_self()
-		#anim_player.play("death")
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "shoot":
 		shooting = false
 		anim_player.play("idle")
 	elif  anim_name == "death":
-		health = 1
-		respawn_self.rpc()
+		health_comp.health = 1
+		health_comp.respawn_self.rpc()
 	elif  anim_name == "Reloading":
 		ammo_cur = ammo_Cap
 		shooting = false
 		anim_player.play("idle")
 	elif  anim_name == "move":
 		anim_player.play("idle")
-
-@rpc("any_peer")
-func respawn_self():
-	var spawnPOS = GameManager.spawn_point_rng()
-	if spawnPOS.SpawnActive:
-		position = spawnPOS.SpawnPOS
-	else:
-		spawnPOS = GameManager.spawn_point_rng()

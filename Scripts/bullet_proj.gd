@@ -33,7 +33,7 @@ func _on_rigid_body_3d_body_entered(body: Node) -> void:
 		var owner_id = Lobby.players[playerID].name
 		feed.send_message(owner_id,hit_player)
 		Lobby.players[body.owner_id].deaths += 1
-		body.receive_damage.rpc_id(body.get_multiplayer_authority())
+		body.health_comp.receive_damage.rpc_id(body.get_multiplayer_authority(),1)
 		Lobby.players[playerID].kills += 1
 		bolt.hide()
 		player_particles.emitting = true
