@@ -1,9 +1,13 @@
-[gd_scene load_steps=37 format=3 uid="uid://f7itocgajf8o"]
+[gd_scene load_steps=41 format=3 uid="uid://f7itocgajf8o"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_4ht6w"]
 [ext_resource type="Material" uid="uid://gsnjhl57qwdk" path="res://Shaders/player_shader_mat.tres" id="1_fuh6j"]
+[ext_resource type="Script" path="res://Scripts/States/StateMachine.gd" id="2_6egf1"]
 [ext_resource type="Material" uid="uid://d0pvmiwy55gkj" path="res://Images/blank_mat.tres" id="3_fdipf"]
+[ext_resource type="Script" path="res://Scripts/States/Player/PlayerIdleState.gd" id="3_ix7v3"]
+[ext_resource type="Script" path="res://Scripts/States/Player/PlayerWalkState.gd" id="4_525u1"]
 [ext_resource type="PackedScene" uid="uid://bnrhdm2pom8cm" path="res://Scenes/Player/Model/crossbow.tscn" id="4_abpq6"]
+[ext_resource type="Script" path="res://Scripts/States/Player/PlayerRunState.gd" id="5_0iglv"]
 [ext_resource type="PackedScene" uid="uid://cr1br4blceokm" path="res://Scenes/Player/Weapons/crossbow_Shader.tscn" id="5_bmnt7"]
 [ext_resource type="Texture2D" uid="uid://pao6524wf303" path="res://addons/kenney_particle_pack/smoke_08.png" id="5_q41oh"]
 [ext_resource type="Texture2D" uid="uid://68kjn6suxq5a" path="res://addons/kenney_particle_pack/smoke_04.png" id="6_oop84"]
@@ -589,6 +593,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.96046e-08, 0)
 collision_layer = 2
 script = ExtResource("1_4ht6w")
 
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_6egf1")
+initial_state = NodePath("PlayerIdleState")
+
+[node name="PlayerIdleState" type="Node" parent="StateMachine"]
+script = ExtResource("3_ix7v3")
+
+[node name="PlayerWalkState" type="Node" parent="StateMachine"]
+script = ExtResource("4_525u1")
+
+[node name="PlayerRunState" type="Node" parent="StateMachine"]
+script = ExtResource("5_0iglv")
+
 [node name="Player_Body" type="MeshInstance3D" parent="." groups=["Players", "VisibleObjectsShader"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 material_override = ExtResource("1_fuh6j")
@@ -655,7 +672,6 @@ event_guid = "{faf34613-2d5e-4f8d-996e-876fdcfc8c93}"
 libraries = {
 "": SubResource("AnimationLibrary_demr1")
 }
-autoplay = "idle"
 playback_default_blend_time = 0.05
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]

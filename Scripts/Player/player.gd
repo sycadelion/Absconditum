@@ -11,6 +11,7 @@ class_name Player extends CharacterBody3D
 @onready var health_comp: HealthComp = $Health_Component
 @onready var bullet_proj_comp: BulletProjComp = $BulletProjComp
 @onready var weapon_manger: WeaponManager = $WeaponManger
+@onready var state_machine: StateMachine = $StateMachine
 
 @onready var camera: Camera3D = $Camera3D
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
@@ -27,6 +28,7 @@ var sens:float = GameManager.sensitivity
 var owner_id = 1
 var self_name:String
 var shooting:bool = false
+var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
 func _enter_tree() -> void:
@@ -70,15 +72,12 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("reload"):
 		weapon_manger.reload.rpc()
 	elif event.is_action_pressed("test"):
-		pass
+		print(str(state_machine.current_state))
 
 func _physics_process(delta: float) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
 		return
 	sens = GameManager.sensitivity
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
 	
 	if is_on_floor():
 		if landing and !impact_played:
@@ -94,17 +93,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and health_comp.health >= 1 and not GameManager.paused:
 		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("left", "right", "up", "down")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction and health_comp.health >= 1 and not GameManager.paused:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	elif health_comp.health >= 1 and not GameManager.paused:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		
 	if anim_player.current_animation == "shoot":
 		pass
 	elif anim_player.current_animation == "death":
@@ -113,19 +102,30 @@ func _physics_process(delta: float) -> void:
 		pass
 	elif anim_player.current_animation == "Gun_empty":
 		pass
-	elif input_dir != Vector2.ZERO and is_on_floor() and not GameManager.paused:
-		play_walk_effects.rpc()
-	else:
-		play_idle_effects.rpc()
-	move_and_slide()
 
-@rpc("call_local")
-func play_walk_effects():
-	anim_player.play("move")
-	
-@rpc("call_local")
-func play_idle_effects():
-	anim_player.play("idle")
+func update_input(speed: float, acceleration: float, deceleration: float) ->void:
+	if owner_id != multiplayer.get_unique_id(): 
+		return
+	var input_dir: Vector2 = Input.get_vector("left", "right", "up", "down")
+	var direction: Vector3 = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+
+	if direction:
+		velocity.x = lerp(velocity.x, direction.x * speed, acceleration)
+		velocity.z = lerp(velocity.z, direction.z * speed, acceleration)
+	else:
+		velocity.x = move_toward(velocity.x, 0, deceleration)
+		velocity.z = move_toward(velocity.z, 0, deceleration)
+
+func update_gravity(delta: float) -> void:
+	if owner_id != multiplayer.get_unique_id(): 
+		return
+	velocity.y -= gravity * delta
+
+
+func update_velocity() -> void:
+	if owner_id != multiplayer.get_unique_id(): 
+		return
+	move_and_slide()
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if  anim_name == "death":
