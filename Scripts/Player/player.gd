@@ -26,7 +26,7 @@ var impact_played: bool = false
 
 var sens:float = GameManager.sensitivity
 var owner_id = 1
-var self_name:String
+var User_name:String
 var shooting:bool = false
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -42,7 +42,7 @@ func _ready() -> void:
 		hud.visible = true
 		SPEED = GameManager.player_Speed
 		JUMP_VELOCITY = GameManager.player_jump
-		self_name = Lobby.players[owner_id].name
+		User_name = Lobby.players[owner_id].name
 		$Camera3D/crossbow_viewmodel.show()
 		FmodServer.add_listener(0,camera) #adds fmod listening
 		GameManager.PLAYER = self
@@ -66,7 +66,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Skill1") and not GameManager.paused:
 		skill1_comp.Use_skill.rpc()
 	elif event.is_action_pressed("shoot") and not shooting and not GameManager.paused:
-		weapon_manger.shoot.rpc()
+		pass
 	elif event.is_action_pressed("quit") and not GameManager.paused:
 		pause.pause(owner_id)
 	elif event.is_action_pressed("reload"):

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=2 format=3 uid="uid://qlokx0okiea7"]
+
+[ext_resource type="Script" path="res://Scripts/Weapon_Resource.gd" id="1_v15cq"]
+
+[resource]
+script = ExtResource("1_v15cq")
+Weapon_name = "Crossbow"
+Anim_activate = "Take_out"
+Anim_shoot = "shoot"
+Anim_empty = "Gun_empty"
+Anim_reload = "Reloading"
+Anim_deactivate = "Put_away"
+Current_ammo = 9
+Reload_ammo = 9
+Reserve_ammo = 18
+Max_reserve = 18
+Full_auto = false
+Manual = false

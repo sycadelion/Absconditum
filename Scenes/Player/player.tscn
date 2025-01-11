@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://f7itocgajf8o"]
+[gd_scene load_steps=46 format=3 uid="uid://f7itocgajf8o"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_4ht6w"]
 [ext_resource type="Material" uid="uid://gsnjhl57qwdk" path="res://Shaders/player_shader_mat.tres" id="1_fuh6j"]
@@ -21,6 +21,9 @@
 [ext_resource type="Script" path="res://Scripts/Player/audio_component.gd" id="15_tld0y"]
 [ext_resource type="Script" path="res://Scripts/Player/health_component.gd" id="16_fwst1"]
 [ext_resource type="Script" path="res://Scripts/Player/weapon_manger.gd" id="17_ln4bi"]
+[ext_resource type="Script" path="res://Scripts/Weapon_Resource.gd" id="22_dho8y"]
+[ext_resource type="Resource" uid="uid://qlokx0okiea7" path="res://Resources/Weapons/Crossbow.tres" id="23_6wyhl"]
+[ext_resource type="Resource" uid="uid://c6ue1n7mh4we8" path="res://Resources/Weapons/Crossbow_m.tres" id="24_h1ljr"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4jp85"]
 material = ExtResource("3_fdipf")
@@ -566,11 +569,79 @@ tracks/3/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0.208864, 0, 0), Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_hsecg"]
+resource_name = "Take_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/crossbow_viewmodel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.462046, -0.714712, -0.248098)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D/crossbow_viewmodel:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 2),
+"update": 0,
+"values": [Vector3(-1.62028, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D/crossbow_shader:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0333333, 1.03333),
+"transitions": PackedFloat32Array(0.5, 2),
+"update": 0,
+"values": [Vector3(-1.62028, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rukxb"]
+resource_name = "Put_away"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/crossbow_viewmodel:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2, 0.5),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.62028, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D/crossbow_shader:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2, 0.5),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.62028, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_demr1"]
 _data = {
 "Gun_empty": SubResource("Animation_grxd7"),
+"Put_away": SubResource("Animation_rukxb"),
 "RESET": SubResource("Animation_6woqc"),
 "Reloading": SubResource("Animation_gjl0r"),
+"Take_out": SubResource("Animation_hsecg"),
 "death": SubResource("Animation_qkman"),
 "idle": SubResource("Animation_qw2dm"),
 "move": SubResource("Animation_0ng04"),
@@ -734,8 +805,10 @@ _skill_prefab = ExtResource("11_7l2ie")
 
 [node name="WeaponManger" type="Node" parent="."]
 script = ExtResource("17_ln4bi")
+_weapon_resouces = Array[ExtResource("22_dho8y")]([ExtResource("23_6wyhl"), ExtResource("24_h1ljr")])
+Start_weapons = Array[String](["Crossbow", "Crossbow_m"])
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="animation_finished" from="AnimationPlayer" to="WeaponManger" method="_on_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="WeaponManger" method="_on_animation_player_animation_finished"]
 
 [editable path="CanvasLayer/HUD"]
