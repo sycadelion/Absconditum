@@ -31,7 +31,6 @@ func _on_connect_pressed() -> void:
 
 
 func _on_back_button_pressed() -> void:
-	Lobby.disconnect_everything()
 	get_tree().change_scene_to_file("res://Scenes/UI/Main Menu.tscn")
 
 

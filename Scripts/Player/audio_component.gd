@@ -8,11 +8,11 @@ var Surface: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Surface = "Stone"
+	Surface = "Metal Grate"
 
 @rpc("call_local")
-func Play_footstep():
-	footstep.set_parameter("Surface",Surface)
+func Play_footstep(_surface:= Surface):
+	footstep.set_parameter("Surface",_surface)
 	footstep.play()
 
 @rpc("call_local")

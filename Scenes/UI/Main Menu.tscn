@@ -130,11 +130,25 @@ offset_bottom = -25.0
 
 [node name="FmodListener2D" type="FmodListener2D" parent="."]
 
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/GUI"
+event_guid = "{b30ec14e-a1c1-4edd-bf70-d86813e75e6b}"
+"fmod_parameters/Parameter 1/id" = 4341872072101764862
+"fmod_parameters/Parameter 1" = "Hover"
+"fmod_parameters/Parameter 1/labels" = PackedStringArray("Hover", "Click")
+"fmod_parameters/Parameter 1/variant_type" = 4
+
+[connection signal="mouse_entered" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Host" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Host" to="." method="_on_host_pressed"]
+[connection signal="mouse_entered" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Join" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Join" to="." method="_on_join_pressed"]
+[connection signal="mouse_entered" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Settings" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="mouse_entered" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Quit" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="Match_Settings/PanelContainer/CenterContainer/MarginContainer/grid/Match_Back_button" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="Match_Settings/PanelContainer/CenterContainer/MarginContainer/grid/Match_Back_button" to="." method="_on_match_back_button_pressed"]
+[connection signal="mouse_entered" from="Match_Settings/PanelContainer/CenterContainer/MarginContainer/grid/Host_game_button" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="Match_Settings/PanelContainer/CenterContainer/MarginContainer/grid/Host_game_button" to="." method="_on_host_game_button_pressed"]
 [connection signal="pressed" from="Settings/PanelContainer/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Settings_Back_Button" to="." method="_on_settings_back_button_pressed"]
 
