@@ -1,0 +1,814 @@
+[gd_scene load_steps=46 format=3 uid="uid://f7itocgajf8o"]
+
+[ext_resource type="Script" path="res://1 Player/player.gd" id="1_4ht6w"]
+[ext_resource type="Material" uid="uid://gsnjhl57qwdk" path="res://4 Resources/Shaders/player_shader_mat.tres" id="1_fuh6j"]
+[ext_resource type="Script" path="res://4 Resources/States/StateMachine.gd" id="2_6egf1"]
+[ext_resource type="Material" uid="uid://d0pvmiwy55gkj" path="res://8 Assets/Images/blank_mat.tres" id="3_fdipf"]
+[ext_resource type="Script" path="res://1 Player/States/PlayerIdleState.gd" id="3_ix7v3"]
+[ext_resource type="Script" path="res://1 Player/States/PlayerWalkState.gd" id="4_525u1"]
+[ext_resource type="PackedScene" uid="uid://bnrhdm2pom8cm" path="res://1 Player/Model/crossbow.tscn" id="4_abpq6"]
+[ext_resource type="Script" path="res://1 Player/States/PlayerRunState.gd" id="5_0iglv"]
+[ext_resource type="PackedScene" uid="uid://cr1br4blceokm" path="res://1 Player/Weapons/crossbow_Shader.tscn" id="5_bmnt7"]
+[ext_resource type="Texture2D" uid="uid://pao6524wf303" path="res://addons/kenney_particle_pack/smoke_08.png" id="5_q41oh"]
+[ext_resource type="Texture2D" uid="uid://68kjn6suxq5a" path="res://addons/kenney_particle_pack/smoke_04.png" id="6_oop84"]
+[ext_resource type="PackedScene" uid="uid://c0wl72hwaa31r" path="res://1 Player/GUI/hud.tscn" id="7_kc58q"]
+[ext_resource type="PackedScene" uid="uid://ser6du4tr2cu" path="res://1 Player/GUI/pause.tscn" id="8_grtv0"]
+[ext_resource type="PackedScene" uid="uid://d2ljcqlo87l2j" path="res://1 Player/GUI/kill_feed.tscn" id="10_7uef7"]
+[ext_resource type="Script" path="res://1 Player/Components/skill_1_comp.gd" id="10_elnv3"]
+[ext_resource type="PackedScene" uid="uid://d3bhlb6x0ro8f" path="res://1 Player/Weapons/Skill1_Scene.tscn" id="11_7l2ie"]
+[ext_resource type="Script" path="res://1 Player/Components/bullet_proj_comp.gd" id="11_no44j"]
+[ext_resource type="PackedScene" uid="uid://da5fc0sh7rdo8" path="res://1 Player/Weapons/BulletProj.tscn" id="12_qi8gg"]
+[ext_resource type="Script" path="res://1 Player/Components/audio_component.gd" id="15_tld0y"]
+[ext_resource type="Script" path="res://1 Player/Components/health_component.gd" id="16_fwst1"]
+[ext_resource type="Script" path="res://1 Player/Components/weapon_manger.gd" id="17_ln4bi"]
+[ext_resource type="Script" path="res://4 Resources/Weapon_Resource.gd" id="22_dho8y"]
+[ext_resource type="Resource" uid="uid://qlokx0okiea7" path="res://4 Resources/Weapons/Crossbow.tres" id="23_6wyhl"]
+[ext_resource type="Resource" uid="uid://c6ue1n7mh4we8" path="res://4 Resources/Weapons/Crossbow_m.tres" id="24_h1ljr"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4jp85"]
+material = ExtResource("3_fdipf")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ghie6"]
+material = ExtResource("3_fdipf")
+flip_faces = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_736cw"]
+
+[sub_resource type="Gradient" id="Gradient_hotdi"]
+offsets = PackedFloat32Array(0, 0.236364, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hk4rl"]
+gradient = SubResource("Gradient_hotdi")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yeulb"]
+lifetime_randomness = 0.13
+initial_velocity_max = 17.24
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_hk4rl")
+turbulence_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_16m3v"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("5_q41oh")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_h67n3"]
+material = SubResource("StandardMaterial3D_16m3v")
+size = Vector2(0.5, 0.5)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cs3jb"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("6_oop84")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sl2x1"]
+material = SubResource("StandardMaterial3D_cs3jb")
+size = Vector2(0.5, 0.5)
+orientation = 2
+
+[sub_resource type="Animation" id="Animation_grxd7"]
+resource_name = "Gun_empty"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/crossbow_viewmodel:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.366667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.282656), Vector3(0, 0, -0.279253), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D/crossbow_shader:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.366667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.282656), Vector3(0, 0, -0.279253), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rukxb"]
+resource_name = "Put_away"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/crossbow_viewmodel:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2, 0.5),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.62028, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D/crossbow_shader:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2, 0.5),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.62028, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6woqc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player_Body:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player_Body:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.39031, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera3D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player_Body2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player_Body2:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Camera3D/crossbow_viewmodel:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.462046, -0.714712, -0.248098)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Camera3D/crossbow_viewmodel:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Camera3D/crossbow_shader:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.462046, -0.714712, -0.248098)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Camera3D/crossbow_shader:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Foot_audio:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_gjl0r"]
+resource_name = "Reloading"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/crossbow_viewmodel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.14, 0.18, 0.24, 0.28, 0.5),
+"transitions": PackedFloat32Array(1, 2, 0.5, 0.5, 0.5, 0.5, 2),
+"update": 0,
+"values": [Vector3(0.462046, -0.714712, -0.248098), Vector3(0.462046, -0.714712, -0.248098), Vector3(0.321856, -0.714712, -0.248098), Vector3(0.462046, -0.714712, -0.248098), Vector3(0.321856, -0.714712, -0.248098), Vector3(0.564851, -0.714712, -0.248098), Vector3(0.462046, -0.714712, -0.248098)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D/crossbow_viewmodel:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.14, 0.18, 0.24, 0.28, 0.5),
+"transitions": PackedFloat32Array(1, 2, 0.5, 0.5, 0.5, 0.5, 2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.158282, 0.511442, -1.24689), Vector3(-0.250239, 0.393312, -0.823015), Vector3(-0.158282, 0.511442, -1.24689), Vector3(-0.250239, 0.393312, -0.823015), Vector3(-0.141212, 0.404915, -0.984779), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D/crossbow_shader:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.14, 0.18, 0.24, 0.28, 0.5),
+"transitions": PackedFloat32Array(1, 2, 0.5, 0.5, 0.5, 0.5, 2),
+"update": 0,
+"values": [Vector3(0.462046, -0.714712, -0.248098), Vector3(0.462046, -0.714712, -0.248098), Vector3(0.321856, -0.714712, -0.248098), Vector3(0.462046, -0.714712, -0.248098), Vector3(0.321856, -0.714712, -0.248098), Vector3(0.564851, -0.714712, -0.248098), Vector3(0.462046, -0.714712, -0.248098)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera3D/crossbow_shader:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.14, 0.18, 0.24, 0.28, 0.5),
+"transitions": PackedFloat32Array(1, 2, 0.5, 0.5, 0.5, 0.5, 2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.158282, 0.511442, -1.24689), Vector3(-0.250239, 0.393312, -0.823015), Vector3(-0.158282, 0.511442, -1.24689), Vector3(-0.250239, 0.393312, -0.823015), Vector3(-0.141212, 0.404915, -0.984779), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hsecg"]
+resource_name = "Take_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/crossbow_viewmodel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.462046, -0.714712, -0.248098)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D/crossbow_viewmodel:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 2),
+"update": 0,
+"values": [Vector3(-1.62028, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D/crossbow_shader:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0333333, 1.03333),
+"transitions": PackedFloat32Array(0.5, 2),
+"update": 0,
+"values": [Vector3(-1.62028, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qkman"]
+resource_name = "death"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player_Body:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 1.5, 2),
+"transitions": PackedFloat32Array(2, 1, 3),
+"update": 0,
+"values": [Vector3(0, 1, 0), Vector3(0, 0.0975776, -0.902422), Vector3(0, -0.902422, -0.902422)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player_Body:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 1.5, 2),
+"transitions": PackedFloat32Array(2, 1, 3),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.5708, 0, 0), Vector3(-1.5708, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 1.5, 2),
+"transitions": PackedFloat32Array(2, 1, 3),
+"update": 0,
+"values": [Vector3(0, 1.39031, 0), Vector3(0, 0.0975776, -1.29273), Vector3(0, -0.902422, -1.29273)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera3D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1, 1.5, 2),
+"transitions": PackedFloat32Array(2, 1, 3),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.5708, 0, 0), Vector3(-1.5708, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player_Body2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.966667, 1.5, 2),
+"transitions": PackedFloat32Array(2, 1, 3),
+"update": 0,
+"values": [Vector3(0, 1, 0), Vector3(0, 0.0975776, -0.902422), Vector3(0, -0.902422, -0.902422)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player_Body2:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.966667, 1.5, 2),
+"transitions": PackedFloat32Array(2, 1, 3),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.5708, 0, 0), Vector3(-1.5708, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qw2dm"]
+resource_name = "idle"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/crossbow_viewmodel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 2, 1),
+"update": 0,
+"values": [Vector3(0.462046, -0.714712, -0.248098), Vector3(0.462046, -0.812658, -0.248098), Vector3(0.462046, -0.714712, -0.248098)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D/crossbow_viewmodel:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.0372977, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D/crossbow_shader:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 2, 1),
+"update": 0,
+"values": [Vector3(0.462046, -0.714712, -0.248098), Vector3(0.462046, -0.812658, -0.248098), Vector3(0.462046, -0.714712, -0.248098)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera3D/crossbow_shader:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.0372977, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Foot_audio:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_0ng04"]
+resource_name = "move"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/crossbow_viewmodel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.462046, -0.714712, -0.248098), Vector3(0.280787, -0.80869, -0.248098), Vector3(0.462046, -0.714712, -0.248098), Vector3(0.771578, -0.846004, -0.248098), Vector3(0.462046, -0.714712, -0.248098)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D/crossbow_viewmodel:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.0731884, 0.108275, -0.00794829), Vector3(0, 0, 0), Vector3(0.0560333, 0.0469183, 0.00262954), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D/crossbow_shader:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.462046, -0.714712, -0.248098), Vector3(0.280787, -0.80869, -0.248098), Vector3(0.462046, -0.714712, -0.248098), Vector3(0.771578, -0.846004, -0.248098), Vector3(0.462046, -0.714712, -0.248098)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera3D/crossbow_shader:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.0731884, 0.108275, -0.00794829), Vector3(0, 0, 0), Vector3(0.0560333, 0.0469183, 0.00262954), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Foot_audio:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Audio_Component")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.25, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"Play_footstep"
+}, {
+"args": [],
+"method": &"Play_footstep"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_5v340"]
+resource_name = "shoot"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/crossbow_viewmodel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 0.5, 2),
+"update": 0,
+"values": [Vector3(0.462046, -0.714712, -0.248098), Vector3(0.462046, -0.714712, 0.1808), Vector3(0.462046, -0.714712, -0.248098)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D/crossbow_viewmodel:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 0.5, 2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.208864, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D/crossbow_shader:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 0.5, 2),
+"update": 0,
+"values": [Vector3(0.462046, -0.714712, -0.248098), Vector3(0.462046, -0.714712, 0.1808), Vector3(0.462046, -0.714712, -0.248098)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera3D/crossbow_shader:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 0.5, 2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.208864, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_demr1"]
+_data = {
+"Gun_empty": SubResource("Animation_grxd7"),
+"Put_away": SubResource("Animation_rukxb"),
+"RESET": SubResource("Animation_6woqc"),
+"Reloading": SubResource("Animation_gjl0r"),
+"Take_out": SubResource("Animation_hsecg"),
+"death": SubResource("Animation_qkman"),
+"idle": SubResource("Animation_qw2dm"),
+"move": SubResource("Animation_0ng04"),
+"shoot": SubResource("Animation_5v340")
+}
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_pefit"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("Camera3D:rotation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+
+[node name="Player" type="CharacterBody3D" groups=["Players"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.96046e-08, 0)
+collision_layer = 2
+script = ExtResource("1_4ht6w")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_6egf1")
+initial_state = NodePath("PlayerIdleState")
+
+[node name="PlayerIdleState" type="Node" parent="StateMachine"]
+script = ExtResource("3_ix7v3")
+
+[node name="PlayerWalkState" type="Node" parent="StateMachine"]
+script = ExtResource("4_525u1")
+
+[node name="PlayerRunState" type="Node" parent="StateMachine"]
+script = ExtResource("5_0iglv")
+
+[node name="Player_Body" type="MeshInstance3D" parent="." groups=["Players", "VisibleObjectsShader"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = ExtResource("1_fuh6j")
+mesh = SubResource("CapsuleMesh_4jp85")
+
+[node name="Player_Body2" type="MeshInstance3D" parent="." groups=["Players"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = ExtResource("1_fuh6j")
+mesh = SubResource("CapsuleMesh_ghie6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["Players"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_736cw")
+
+[node name="Camera3D" type="Camera3D" parent="." groups=["Players"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39031, 0)
+
+[node name="crossbow_viewmodel" parent="Camera3D" instance=ExtResource("4_abpq6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.462046, -0.714712, -0.248098)
+visible = false
+
+[node name="crossbow_shader" parent="Camera3D" instance=ExtResource("5_bmnt7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.462046, -0.714712, -0.248098)
+visible = false
+
+[node name="MuzzleFlash" type="GPUParticles3D" parent="Camera3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.582622, -0.488644, -1.74872)
+emitting = false
+amount = 6
+lifetime = 0.25
+one_shot = true
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_yeulb")
+draw_passes = 2
+draw_pass_1 = SubResource("PlaneMesh_h67n3")
+draw_pass_2 = SubResource("PlaneMesh_sl2x1")
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+target_position = Vector3(0, 0, -50)
+collision_mask = 2
+
+[node name="RaycastEnd" type="Marker3D" parent="Camera3D/RayCast3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -51)
+
+[node name="Marker3D" type="Marker3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.585395, -0.477487, -1.74103)
+
+[node name="Skill1Marker" type="Marker3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.436369, -0.0231869, -0.766952)
+
+[node name="Skill_audio" type="FmodEventEmitter3D" parent="Camera3D/Skill1Marker"]
+event_name = "event:/Grenade"
+event_guid = "{046ab459-3359-422e-868b-1b86fdbab81f}"
+fmod_parameters/Grenade/id = 5065107224920233470
+fmod_parameters/Grenade = "Wind"
+fmod_parameters/Grenade/labels = PackedStringArray("Wind", "Drone", "Value C")
+fmod_parameters/Grenade/variant_type = 4
+
+[node name="Bow_audio" type="FmodEventEmitter3D" parent="Camera3D"]
+event_name = "event:/Shoot"
+event_guid = "{faf34613-2d5e-4f8d-996e-876fdcfc8c93}"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_demr1")
+}
+playback_default_blend_time = 0.05
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_pefit")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("7_kc58q")]
+
+[node name="Ammo" type="Control" parent="CanvasLayer/HUD"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Ammo_count" type="Label" parent="CanvasLayer/HUD/Ammo"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 17.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("8_grtv0")]
+
+[node name="KillFeed" parent="CanvasLayer" groups=["Killfeed"] instance=ExtResource("10_7uef7")]
+
+[node name="Foot_audio" type="AudioStreamPlayer3D" parent="."]
+max_distance = 30.0
+bus = &"FootSteps"
+doppler_tracking = 2
+
+[node name="Footstep" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/Footsteps"
+event_guid = "{f83d1858-d1b4-430c-a781-5ab547404bb1}"
+fmod_parameters/Surface/id = -5504228875075709698
+fmod_parameters/Surface = "Stone"
+fmod_parameters/Surface/labels = PackedStringArray("Stone", "Wood", "Jump")
+fmod_parameters/Surface/variant_type = 4
+
+[node name="Audio_Component" type="Node" parent="."]
+script = ExtResource("15_tld0y")
+
+[node name="Health_Component" type="Node" parent="."]
+script = ExtResource("16_fwst1")
+MAX_HEALTH = 1
+
+[node name="BulletProjComp" type="Node" parent="."]
+script = ExtResource("11_no44j")
+_bullet_proj_prefab = ExtResource("12_qi8gg")
+
+[node name="Skill1_Component" type="Node" parent="."]
+script = ExtResource("10_elnv3")
+_skill_prefab = ExtResource("11_7l2ie")
+
+[node name="WeaponManger" type="Node" parent="."]
+script = ExtResource("17_ln4bi")
+_weapon_resouces = Array[ExtResource("22_dho8y")]([ExtResource("23_6wyhl"), ExtResource("24_h1ljr")])
+Start_weapons = Array[String](["Crossbow", "Crossbow_m"])
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="WeaponManger" method="_on_animation_player_animation_finished"]
+
+[editable path="CanvasLayer/HUD"]

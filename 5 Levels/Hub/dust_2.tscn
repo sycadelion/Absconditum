@@ -1,0 +1,66 @@
+[gd_scene load_steps=12 format=3 uid="uid://lj7edg20dl3e"]
+
+[ext_resource type="PackedScene" uid="uid://bacfi7yrsr7n8" path="res://8 Assets/Models/dust2.glb" id="1_lur7d"]
+[ext_resource type="Material" uid="uid://b1jxe5l5an6df" path="res://5 Levels/Hub/dust_2_wall.tres" id="2_sy2q0"]
+[ext_resource type="Material" uid="uid://bvb1ki0apmgll" path="res://5 Levels/Hub/dust_2_objects.tres" id="3_mkro1"]
+[ext_resource type="Texture2D" uid="uid://beyfcire07jt5" path="res://addons/kenney_prototype_textures/red/texture_08.png" id="4_3hvlg"]
+[ext_resource type="Texture2D" uid="uid://d3y2x68vul0uc" path="res://addons/kenney_prototype_textures/purple/texture_01.png" id="5_r0udp"]
+[ext_resource type="Texture2D" uid="uid://cc3evbpowm3fi" path="res://addons/kenney_prototype_textures/light/texture_08.png" id="6_223u7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rdoty"]
+shading_mode = 0
+albedo_texture = ExtResource("4_3hvlg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_74x44"]
+shading_mode = 0
+albedo_texture = ExtResource("5_r0udp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hhrnt"]
+shading_mode = 0
+albedo_texture = ExtResource("5_r0udp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_60ad4"]
+shading_mode = 0
+albedo_texture = ExtResource("6_223u7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b5is4"]
+shading_mode = 0
+albedo_texture = ExtResource("6_223u7")
+
+[node name="dust2" instance=ExtResource("1_lur7d")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 0)
+
+[node name="de_dust2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_sy2q0")
+surface_material_override/1 = ExtResource("2_sy2q0")
+surface_material_override/2 = ExtResource("3_mkro1")
+surface_material_override/4 = ExtResource("2_sy2q0")
+surface_material_override/5 = ExtResource("2_sy2q0")
+surface_material_override/6 = ExtResource("2_sy2q0")
+surface_material_override/7 = ExtResource("3_mkro1")
+surface_material_override/8 = ExtResource("2_sy2q0")
+surface_material_override/9 = ExtResource("3_mkro1")
+surface_material_override/10 = ExtResource("2_sy2q0")
+surface_material_override/11 = SubResource("StandardMaterial3D_rdoty")
+surface_material_override/12 = ExtResource("3_mkro1")
+surface_material_override/13 = ExtResource("2_sy2q0")
+surface_material_override/14 = ExtResource("2_sy2q0")
+surface_material_override/15 = ExtResource("2_sy2q0")
+surface_material_override/16 = ExtResource("2_sy2q0")
+surface_material_override/17 = ExtResource("3_mkro1")
+surface_material_override/18 = ExtResource("3_mkro1")
+surface_material_override/19 = SubResource("StandardMaterial3D_74x44")
+surface_material_override/20 = ExtResource("3_mkro1")
+surface_material_override/21 = ExtResource("3_mkro1")
+surface_material_override/22 = ExtResource("2_sy2q0")
+surface_material_override/23 = ExtResource("3_mkro1")
+surface_material_override/24 = SubResource("StandardMaterial3D_hhrnt")
+surface_material_override/25 = ExtResource("2_sy2q0")
+surface_material_override/26 = ExtResource("3_mkro1")
+surface_material_override/27 = ExtResource("2_sy2q0")
+surface_material_override/28 = ExtResource("3_mkro1")
+surface_material_override/29 = ExtResource("3_mkro1")
+surface_material_override/30 = ExtResource("3_mkro1")
+surface_material_override/31 = ExtResource("3_mkro1")
+surface_material_override/32 = SubResource("StandardMaterial3D_60ad4")
+surface_material_override/33 = SubResource("StandardMaterial3D_b5is4")

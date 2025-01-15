@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmpg0e1bgrgwo"]
+
+[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu.tres" id="1_3e6no"]
+[ext_resource type="Script" path="res://1 Player/GUI/message_data.gd" id="1_o1sdv"]
+[ext_resource type="Texture2D" uid="uid://c3wm8ug5snfil" path="res://8 Assets/Images/magic_03.png" id="2_8u8oc"]
+
+[node name="Message" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_3e6no")
+script = ExtResource("1_o1sdv")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="killer" type="Label" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+text = "Syca"
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_8u8oc")
+stretch_mode = 2
+
+[node name="Killed" type="Label" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+text = "billy"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

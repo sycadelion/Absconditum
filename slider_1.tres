@@ -1,9 +1,0 @@
-[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://wg6hnqcp3yd2"]
-
-[ext_resource type="Texture2D" uid="uid://d4mm7gj4chgvc" path="res://addons/kenney_fantasy-ui-borders/PNG/Default/Divider/divider-005.png" id="1_unbwr"]
-
-[resource]
-texture = ExtResource("1_unbwr")
-texture_margin_top = 9.0
-texture_margin_right = 25.0
-texture_margin_bottom = 9.0

@@ -18,7 +18,7 @@ General/is_memory_tracking_enabled=false
 "Software Format/speaker_mode"=3
 "Software Format/raw_speaker_count"=0
 General/default_listener_count=1
-General/banks_path="res://Sounds"
+General/banks_path="res://3 Sounds"
 General/should_load_by_name=false
 DSP/dsp_buffer_size=512
 DSP/dsp_buffer_count=4
@@ -29,23 +29,27 @@ DSP/dsp_buffer_count=4
 [application]
 
 config/name="Absconditum"
-run/main_scene="res://Scenes/UI/Main Menu.tscn"
+run/main_scene="res://7 GUI/Menus/Main Menu.tscn"
 config/use_custom_user_dir=true
 config/features=PackedStringArray("4.3", "Forward Plus")
 run/max_fps=60
 boot_splash/bg_color=Color(0.17, 0, 0, 1)
-boot_splash/image="res://Images/splash.png"
-config/icon="res://Images/eye game icon.png"
+boot_splash/image="res://8 Assets/Images/splash.png"
+config/icon="res://8 Assets/Images/eye game icon.png"
 config/windows_native_icon="res://Images/eye game icon.ico"
+
+[audio]
+
+buses/default_bus_layout=""
 
 [autoload]
 
-GameManager="*res://Scripts/singletons/GameManager.gd"
-Lobby="*res://Online/Lobby.gd"
-LineDrawer="*res://Scripts/singletons/LineDrawer.gd"
-ConfigFileHandler="*res://Scripts/singletons/ConfigFileHandler.gd"
+GameManager="*res://0 Master/GameManager.gd"
+Lobby="*res://6 Online/Lobby.gd"
+LineDrawer="*res://0 Master/LineDrawer.gd"
+ConfigFileHandler="*res://0 Master/ConfigFileHandler.gd"
 FmodManager="*res://addons/fmod/FmodManager.gd"
-RoomGen="*res://Scripts/singletons/Roomcode_gen.gd"
+RoomGen="*res://0 Master/Roomcode_gen.gd"
 
 [display]
 
@@ -63,16 +67,14 @@ enabled=PackedStringArray("res://addons/fmod/plugin.cfg")
 [file_customization]
 
 folder_colors={
-"res://Images/": "purple",
-"res://Models/": "purple",
-"res://Online/": "green",
-"res://Resources/": "red",
-"res://Scenes/": "blue",
-"res://Scripts/": "green",
-"res://Shaders/": "green",
-"res://Sounds/": "orange",
-"res://addons/": "gray",
-"res://godot-jolt/": "gray"
+"res://0 Master/": "gray",
+"res://1 Player/": "green",
+"res://3 Sounds/": "orange",
+"res://4 Resources/": "gray",
+"res://5 Levels/": "blue",
+"res://6 Online/": "red",
+"res://7 GUI/": "red",
+"res://8 Assets/": "blue"
 }
 
 [filesystem]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr1br4blceokm"]
+
+[ext_resource type="PackedScene" uid="uid://klqc73v81t4l" path="res://8 Assets/Models/crossbow.glb" id="1_cd808"]
+[ext_resource type="Material" uid="uid://gsnjhl57qwdk" path="res://4 Resources/Shaders/player_shader_mat.tres" id="2_unhwn"]
+
+[node name="crossbow" instance=ExtResource("1_cd808")]
+
+[node name="Cube" parent="." index="0"]
+material_override = ExtResource("2_unhwn")
+
+[node name="Cylinder" parent="." index="1"]
+material_override = ExtResource("2_unhwn")
+
+[node name="Cylinder_001" parent="." index="2"]
+material_override = ExtResource("2_unhwn")

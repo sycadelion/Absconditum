@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bii82ggxksg5"
+path="res://.godot/imported/foot-pump-with-air.wav-bba88ca571477fcdd336b60281034dcd.sample"
+
+[deps]
+
+source_file="res://3 Sounds/foot-pump-with-air.wav"
+dest_files=["res://.godot/imported/foot-pump-with-air.wav-bba88ca571477fcdd336b60281034dcd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
