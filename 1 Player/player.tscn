@@ -255,18 +255,6 @@ tracks/9/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Foot_audio:playing")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_gjl0r"]
 resource_name = "Reloading"
@@ -488,18 +476,6 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0.0372977, 0, 0), Vector3(0, 0, 0)]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Foot_audio:playing")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_0ng04"]
 resource_name = "move"
@@ -553,25 +529,13 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(-0.0731884, 0.108275, -0.00794829), Vector3(0, 0, 0), Vector3(0.0560333, 0.0469183, 0.00262954), Vector3(0, 0, 0)]
 }
-tracks/4/type = "value"
+tracks/4/type = "method"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Foot_audio:playing")
+tracks/4/path = NodePath("Audio_Component")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, true, false, true, false]
-}
-tracks/5/type = "method"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Audio_Component")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0.25, 0.75),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
@@ -665,6 +629,7 @@ collision_layer = 2
 script = ExtResource("1_4ht6w")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+unique_name_in_owner = true
 script = ExtResource("2_6egf1")
 initial_state = NodePath("PlayerIdleState")
 
@@ -703,6 +668,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.462046, -0.714712, -0.24809
 visible = false
 
 [node name="MuzzleFlash" type="GPUParticles3D" parent="Camera3D"]
+unique_name_in_owner = true
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.582622, -0.488644, -1.74872)
 emitting = false
 amount = 6
@@ -734,12 +700,15 @@ fmod_parameters/Grenade/id = 5065107224920233470
 fmod_parameters/Grenade = "Wind"
 fmod_parameters/Grenade/labels = PackedStringArray("Wind", "Drone", "Value C")
 fmod_parameters/Grenade/variant_type = 4
+unique_name_in_owner = true
 
 [node name="Bow_audio" type="FmodEventEmitter3D" parent="Camera3D"]
 event_name = "event:/Shoot"
 event_guid = "{faf34613-2d5e-4f8d-996e-876fdcfc8c93}"
+unique_name_in_owner = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_demr1")
 }
@@ -774,11 +743,7 @@ vertical_alignment = 1
 [node name="Pause" parent="CanvasLayer" instance=ExtResource("8_grtv0")]
 
 [node name="KillFeed" parent="CanvasLayer" groups=["Killfeed"] instance=ExtResource("10_7uef7")]
-
-[node name="Foot_audio" type="AudioStreamPlayer3D" parent="."]
-max_distance = 30.0
-bus = &"FootSteps"
-doppler_tracking = 2
+unique_name_in_owner = true
 
 [node name="Footstep" type="FmodEventEmitter3D" parent="."]
 event_name = "event:/Footsteps"
@@ -787,23 +752,29 @@ fmod_parameters/Surface/id = -5504228875075709698
 fmod_parameters/Surface = "Stone"
 fmod_parameters/Surface/labels = PackedStringArray("Stone", "Wood", "Jump")
 fmod_parameters/Surface/variant_type = 4
+unique_name_in_owner = true
 
 [node name="Audio_Component" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("15_tld0y")
 
 [node name="Health_Component" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("16_fwst1")
 MAX_HEALTH = 1
 
 [node name="BulletProjComp" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("11_no44j")
 _bullet_proj_prefab = ExtResource("12_qi8gg")
 
 [node name="Skill1_Component" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("10_elnv3")
 _skill_prefab = ExtResource("11_7l2ie")
 
 [node name="WeaponManger" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("17_ln4bi")
 _weapon_resouces = Array[ExtResource("22_dho8y")]([ExtResource("23_6wyhl"), ExtResource("24_h1ljr")])
 Start_weapons = Array[String](["Crossbow", "Crossbow_m"])

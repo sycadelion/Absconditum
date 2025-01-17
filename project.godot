@@ -36,7 +36,7 @@ run/max_fps=60
 boot_splash/bg_color=Color(0.17, 0, 0, 1)
 boot_splash/image="res://8 Assets/Images/splash.png"
 config/icon="res://8 Assets/Images/eye game icon.png"
-config/windows_native_icon="res://Images/eye game icon.ico"
+config/windows_native_icon="res://8 Assets/Images/eye game icon.ico"
 
 [audio]
 
@@ -44,11 +44,11 @@ buses/default_bus_layout=""
 
 [autoload]
 
+FmodManager="*res://addons/fmod/FmodManager.gd"
 GameManager="*res://0 Master/GameManager.gd"
 Lobby="*res://6 Online/Lobby.gd"
 LineDrawer="*res://0 Master/LineDrawer.gd"
 ConfigFileHandler="*res://0 Master/ConfigFileHandler.gd"
-FmodManager="*res://addons/fmod/FmodManager.gd"
 RoomGen="*res://0 Master/Roomcode_gen.gd"
 
 [display]

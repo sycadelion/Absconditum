@@ -1,8 +1,8 @@
 class_name AudioComp extends Node
 
-@onready var footstep: FmodEventEmitter3D = $"../Footstep"
-@onready var skill_audio: FmodEventEmitter3D = $"../Camera3D/Skill1Marker/Skill_audio"
-@onready var bow_audio: FmodEventEmitter3D = $"../Camera3D/Bow_audio"
+@onready var footstep: FmodEventEmitter3D = %Footstep
+@onready var skill_audio: FmodEventEmitter3D = %Skill_audio
+@onready var bow_audio: FmodEventEmitter3D = %Bow_audio
 
 var Surface: String
 

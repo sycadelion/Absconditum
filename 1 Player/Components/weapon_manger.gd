@@ -4,9 +4,9 @@ signal Weapon_changed
 signal Update_ammo
 signal update_weapon_stack
 
-@onready var muzzle_flash: GPUParticles3D = $"../Camera3D/MuzzleFlash"
+@onready var muzzle_flash: GPUParticles3D = %MuzzleFlash
 @onready var ammo_count: Label = $"../CanvasLayer/HUD/Ammo/Ammo_count"
-@onready var anim_player: AnimationPlayer = $"../AnimationPlayer"
+@onready var anim_player: AnimationPlayer = %AnimationPlayer
 
 var Player: Player
 var Current_weapon = null

@@ -20,7 +20,7 @@ func _on_quit_button_pressed() -> void:
 		multiplayer.multiplayer_peer.close()
 		get_tree().change_scene_to_file(Menu_scene)
 	else:
-		Lobby._on_player_disconnected(id)
+		multiplayer.peer_disconnected.emit(id)
 		get_tree().change_scene_to_file(Menu_scene)
 
 
@@ -37,6 +37,7 @@ func unpause():
 
 func pause(owner_id):
 	id = owner_id
+	print(str(id))
 	GameManager.mouseCap = false
 	settings_open = false
 	GameManager.paused = true

@@ -5,7 +5,7 @@ signal died
 @export var MAX_HEALTH:int = 10.0
 var health: int
 
-@onready var killfeed: Control = $"../CanvasLayer/KillFeed"
+@onready var killfeed: Control = %KillFeed
 
 var Player: Player
 

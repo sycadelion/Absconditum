@@ -6,19 +6,19 @@ class_name Player extends CharacterBody3D
 @export var JUMP_VELOCITY = 5
 
 #components
-@onready var audio_comp: AudioComp = $Audio_Component
-@onready var skill1_comp: Skill1Comp = $Skill1_Component
-@onready var health_comp: HealthComp = $Health_Component
-@onready var bullet_proj_comp: BulletProjComp = $BulletProjComp
-@onready var weapon_manger: WeaponManager = $WeaponManger
-@onready var state_machine: StateMachine = $StateMachine
+@onready var audio_comp: AudioComp = %Audio_Component
+@onready var skill1_comp: Skill1Comp = %Skill1_Component
+@onready var health_comp: HealthComp = %Health_Component
+@onready var bullet_proj_comp: BulletProjComp = %BulletProjComp
+@onready var weapon_manger: WeaponManager = %WeaponManger
+@onready var state_machine: StateMachine = %StateMachine
 
 @onready var camera: Camera3D = $Camera3D
-@onready var anim_player: AnimationPlayer = $AnimationPlayer
+@onready var anim_player: AnimationPlayer = %AnimationPlayer
 @onready var bodyInvert: MeshInstance3D = $Player_Body2
 @onready var hud: Control = $CanvasLayer/HUD
 @onready var pause: Control = $CanvasLayer/Pause
-@onready var killfeed: KillFeed = $CanvasLayer/KillFeed
+@onready var killfeed: KillFeed = %KillFeed
 
 #jump vars for landing audio
 var landing: bool = false
@@ -72,7 +72,7 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("reload"):
 		weapon_manger.reload.rpc()
 	elif event.is_action_pressed("test"):
-		print(str(state_machine.current_state))
+		print(str(owner_id))
 
 func _physics_process(delta: float) -> void:
 	if owner_id != multiplayer.get_unique_id(): 

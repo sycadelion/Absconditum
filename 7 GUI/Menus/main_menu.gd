@@ -6,11 +6,12 @@ extends Control
 var settings: bool = false
 var Matchsettings: bool = false
 
-const GAME_SCENE = "res://6 Online/lobby.tscn"
+const GAME_SCENE = "uid://cdaty1tj8c305"
 
 func _ready() -> void:
 	GameManager.paused = false
 	GameManager.host_mode = false
+	Lobby.players = {}
 
 func _on_host_pressed() -> void:
 	_on_click()
