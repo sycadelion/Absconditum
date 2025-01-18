@@ -29,7 +29,7 @@ DSP/dsp_buffer_count=4
 [application]
 
 config/name="Absconditum"
-run/main_scene="res://7 GUI/Menus/Main Menu.tscn"
+run/main_scene="res://0 Master/null_starter.tscn"
 config/use_custom_user_dir=true
 config/features=PackedStringArray("4.3", "Forward Plus")
 run/max_fps=60
@@ -46,9 +46,10 @@ buses/default_bus_layout=""
 
 FmodManager="*res://addons/fmod/FmodManager.gd"
 GameManager="*res://0 Master/GameManager.gd"
+ConfigFileHandler="*res://0 Master/ConfigFileHandler.gd"
+SceneLoad="*res://0 Master/scene_loader.tscn"
 Lobby="*res://6 Online/Lobby.gd"
 LineDrawer="*res://0 Master/LineDrawer.gd"
-ConfigFileHandler="*res://0 Master/ConfigFileHandler.gd"
 RoomGen="*res://0 Master/Roomcode_gen.gd"
 
 [display]

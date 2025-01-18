@@ -4,41 +4,57 @@ class_name SceneLoader extends Node
 @export_group("Scenes and Transitions")
 @export var Default_Scene: PackedScene ##The Scene that is loaded on runtime
 @export var Current_Scene: Node ##The Scene that is currently active and shown
-@export var Next_Scene: PackedScene ##The next Scene that is loading
+@export var Fade_Scene: PackedScene ##The Scene that fades the screen
 @export var Load_Scene: PackedScene ##The loading screen scene
 
 ##Component Scenes
 @export_group("Component Scenes")
 @export var online_connection: PackedScene ##Online script component node
 @export var Fmod_Component: PackedScene ##Fmod banks component
+@export var Settings_component: PackedScene ##Node that loads all the game settings
 
 ##Container Nodes
-@onready var Components: Node =  %"Component Container"
-@onready var Scenes: Node = %Scene
-@onready var players_container: Node = %"Players Container"
-@onready var effect_container: Node = %"Effect Container"
-@onready var menus: CanvasLayer = %Menus
+@onready var Components: Node =  $"Component Container"
+@onready var Scenes: Node = $Scene
+@onready var players_container: Node = $"Players Container"
+@onready var effect_container: Node = $"Effect Container"
+@onready var menus: CanvasLayer = $Menus
+@onready var effects: CanvasLayer = $Effects
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#load_component(Fmod_Component)
-	load_scene(Default_Scene)
+	Load_Component(Fmod_Component)
+	Load_Component(Settings_component)
+	Change_Scene(Default_Scene)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("test"):
+		pass
 
 ##Load a component and add it to the component container
-func load_component(_component) -> void:
+func Load_Component(_component) -> void:
 	Components.add_child(_component.instantiate())
 
-##loads scene, deletes previous scene, updates current scene
-func load_scene(_scene) -> void:
-	var to_load_scene = _scene.instantiate()
-	if to_load_scene != Current_Scene:
-		for c in Scenes.get_children():
-			Scenes.remove_child(c)
+##Deletes a component from Scene Tree
+func Remove_Component(_component: PackedScene) -> void:
+	var Scene_to_remove = _component.instantiate()
+	
+	for c in Components.get_children():
+		if c.name == Scene_to_remove.name:
+			Components.remove_child(c)
 			c.queue_free()
-		Scenes.add_child(to_load_scene)
-		Current_Scene = to_load_scene
+			Scene_to_remove = null
+			return
+
+##changes scene, deletes previous scene, updates current scene
+func Change_Scene(_scene: PackedScene) -> void:
+	var Next_Scene = _scene.instantiate()
+	
+	if Next_Scene == Current_Scene:
+		return
+	for c in Scenes.get_children():
+		Scenes.remove_child(c)
+		c.queue_free()
+	Scenes.add_child(Next_Scene)
+	Current_Scene = Next_Scene
+	Next_Scene = null

@@ -1,6 +1,6 @@
 extends Node
 
-const save_path = GameManager.save_path
+const save_path = "user://settings.ini"
 
 var config = ConfigFile.new()
 
