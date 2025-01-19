@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0wl72hwaa31r"]
+[gd_scene load_steps=8 format=3 uid="uid://c0wl72hwaa31r"]
 
 [ext_resource type="Texture2D" uid="uid://c2bu67hqj86j0" path="res://addons/kenney_particle_pack/circle_05.png" id="1_i4x1t"]
 [ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu.tres" id="1_m4xgf"]
 [ext_resource type="PackedScene" uid="uid://ci6rly7mcj6vl" path="res://1 Player/GUI/skill.tscn" id="2_xbtso"]
 [ext_resource type="Script" path="res://1 Player/GUI/fps.gd" id="3_ywnm1"]
+[ext_resource type="PackedScene" uid="uid://bnrhdm2pom8cm" path="res://1 Player/Model/crossbow.tscn" id="5_dgofl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q1jip"]
+bg_color = Color(0.15, 0.15, 0.15, 0.545098)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5ayb"]
+bg_color = Color(1, 0, 0, 1)
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -20,6 +27,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_right = 0.0
+offset_left = 66.0
+offset_top = 1.0
+offset_right = 66.0
+offset_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
@@ -31,8 +42,7 @@ offset_bottom = 23.0
 text = "FPS: "
 script = ExtResource("3_ywnm1")
 
-[node name="Control" type="Control" parent="."]
-process_mode = 4
+[node name="Crosshair" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -47,10 +57,271 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
+[node name="TextureRect" type="TextureRect" parent="Crosshair"]
 layout_mode = 0
 offset_right = 512.0
 offset_bottom = 512.0
 scale = Vector2(0.07, 0.07)
 mouse_filter = 2
 texture = ExtResource("1_i4x1t")
+
+[node name="HealthBar" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HealthBar"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -173.0
+offset_right = 67.0
+grow_vertical = 0
+
+[node name="ProgressBar" type="ProgressBar" parent="HealthBar/PanelContainer"]
+layout_direction = 1
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_q1jip")
+theme_override_styles/fill = SubResource("StyleBoxFlat_s5ayb")
+step = 1.0
+fill_mode = 3
+show_percentage = false
+
+[node name="HealthText" type="Label" parent="HealthBar/PanelContainer"]
+layout_mode = 2
+text = "15"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Weapon1" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -50.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Weapon1"]
+layout_mode = 0
+offset_left = -172.0
+offset_top = -39.0
+offset_right = 50.0
+offset_bottom = 50.0
+
+[node name="AmmoCount" type="Label" parent="Weapon1"]
+layout_mode = 0
+offset_left = -154.0
+offset_top = -21.0
+offset_right = -114.0
+offset_bottom = 36.0
+text = "256"
+vertical_alignment = 2
+
+[node name="Slot" type="Label" parent="Weapon1"]
+layout_mode = 0
+offset_left = -158.0
+offset_top = -21.0
+offset_right = -142.0
+offset_bottom = -4.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.470588)
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Weapon1"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -353.0
+offset_top = -275.0
+offset_right = 159.0
+offset_bottom = 237.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="SubViewport" type="SubViewport" parent="Weapon1/SubViewportContainer"]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+
+[node name="Camera3D" type="Camera3D" parent="Weapon1/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.63207)
+
+[node name="crossbow" parent="Weapon1/SubViewportContainer/SubViewport" instance=ExtResource("5_dgofl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0.5, 0.866025, 2.18557e-08, -0.866025, 0.5, -3.78552e-08, 0.777464, 0, -1.25757)
+
+[node name="Weapon2" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -139.0
+offset_right = -10.0
+offset_bottom = -99.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Weapon2"]
+layout_mode = 0
+offset_left = -117.0
+offset_top = -17.0
+offset_right = 50.0
+offset_bottom = 50.0
+
+[node name="AmmoCount" type="Label" parent="Weapon2"]
+layout_mode = 0
+offset_left = -99.0
+offset_top = 1.0
+offset_right = -59.0
+offset_bottom = 36.0
+text = "256"
+vertical_alignment = 2
+
+[node name="Slot" type="Label" parent="Weapon2"]
+layout_mode = 0
+offset_left = -103.0
+offset_top = -1.0
+offset_right = -87.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.470588)
+theme_override_font_sizes/font_size = 12
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="Weapon2"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -321.0
+offset_top = -270.0
+offset_right = 191.0
+offset_bottom = 242.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="SubViewport" type="SubViewport" parent="Weapon2/SubViewportContainer2"]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="Weapon2/SubViewportContainer2/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.98543)
+
+[node name="crossbow" parent="Weapon2/SubViewportContainer2/SubViewport" instance=ExtResource("5_dgofl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0.5, 0.866025, 2.18557e-08, -0.866025, 0.5, -3.78552e-08, 0.777464, 0, -1.25757)
+
+[node name="AmmoType_A" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Loaded" type="Label" parent="AmmoType_A"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = -31.5
+offset_right = 64.0
+offset_bottom = 25.5
+grow_vertical = 2
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AmmoType_M" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Chambered" type="Label" parent="AmmoType_M"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = -54.5
+offset_right = 64.0
+offset_bottom = 2.5
+grow_vertical = 2
+text = "1
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="plus sign" type="Label" parent="AmmoType_M"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = -31.5
+offset_right = 64.0
+offset_bottom = 25.5
+grow_vertical = 2
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mag" type="Label" parent="AmmoType_M"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = -7.5
+offset_right = 64.0
+offset_bottom = 49.5
+grow_vertical = 2
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1

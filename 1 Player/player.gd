@@ -19,6 +19,9 @@ class_name Player extends CharacterBody3D
 @onready var hud: Control = $CanvasLayer/HUD
 @onready var pause: Control = $CanvasLayer/Pause
 @onready var killfeed: KillFeed = %KillFeed
+@onready var Health_bar: ProgressBar = $CanvasLayer/HUD/HealthBar/PanelContainer/ProgressBar
+@onready var Health_Label: Label = $CanvasLayer/HUD/HealthBar/PanelContainer/HealthText
+
 
 #jump vars for landing audio
 var landing: bool = false
@@ -38,6 +41,9 @@ func _ready() -> void:
 		camera.make_current()
 		bodyInvert.visible = false
 		hud.visible = true
+		Health_bar.max_value = health_comp.MAX_HEALTH
+		Health_bar.value = health_comp.health
+		Health_Label.text = str(health_comp.health)
 		sens = GameManager.sensitivity
 		SPEED = GameManager.player_Speed
 		JUMP_VELOCITY = GameManager.player_jump
@@ -72,7 +78,10 @@ func _input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
 		return
+		
 	sens = GameManager.sensitivity
+	Health_bar.value = health_comp.health
+	Health_Label.text = str(health_comp.health)
 	
 	if is_on_floor():
 		if landing and !impact_played:

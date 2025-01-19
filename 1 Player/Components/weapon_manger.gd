@@ -8,6 +8,22 @@ signal update_weapon_stack
 @onready var ammo_count: Label = $"../CanvasLayer/HUD/Ammo/Ammo_count"
 @onready var anim_player: AnimationPlayer = %AnimationPlayer
 
+#HUD ammo counts:
+#Not Manual:
+@onready var Type_A_Node: Control = $"../CanvasLayer/HUD/AmmoType_A"
+@onready var type_A_loaded: Label = $"../CanvasLayer/HUD/AmmoType_A/Loaded"
+
+#Manual:
+@onready var Type_M_Node: Control = $"../CanvasLayer/HUD/AmmoType_M"
+@onready var Type_M_chambered: Label = $"../CanvasLayer/HUD/AmmoType_M/Chambered"
+@onready var Type_M_mag: Label = $"../CanvasLayer/HUD/AmmoType_M/Mag"
+
+#weapon slot 1
+@onready var Weapon_Slot1: Label = $"../CanvasLayer/HUD/Weapon1/AmmoCount"
+#weapon slot 2 
+@onready var Weapon_Slot2: Label = $"../CanvasLayer/HUD/Weapon2/AmmoCount"
+
+
 var Player: Player
 var Current_weapon = null
 var Weapon_stack = []
@@ -26,8 +42,14 @@ func _ready() -> void:
 	Initialize.rpc(Start_weapons)
 
 func _process(_delta: float) -> void:
-	if Current_weapon:
-		ammo_count.text = str(Current_weapon.Current_ammo) + " / " + str(Current_weapon.Reserve_ammo)
+	if Current_weapon.Manual:
+		Type_M_chambered.text = str(1)
+		Type_M_mag.text = str(Current_weapon.Current_ammo)
+	else:
+		type_A_loaded.text = str(Current_weapon.Current_ammo)
+	if Weapon_stack[1] != null:
+		Weapon_Slot1.text = str(Weapon_list[Weapon_stack[0]].Reserve_ammo)
+		Weapon_Slot2.text = str(Weapon_list[Weapon_stack[1]].Reserve_ammo)
 
 func _input(event: InputEvent) -> void:
 	if Player.owner_id != multiplayer.get_unique_id(): 
@@ -60,7 +82,15 @@ func Initialize(_Start_weapons):
 func Enter():
 	if Current_weapon.Anim_activate:
 		anim_player.play(Current_weapon.Anim_activate)
-		ammo_count.text = str(Current_weapon.Current_ammo) + " / " + str(Current_weapon.Reserve_ammo)
+		if Current_weapon.Manual:
+			Type_A_Node.hide()
+			Type_M_Node.show()
+			Type_M_chambered.text = str(1)
+			Type_M_mag.text = str(Current_weapon.Current_ammo)
+		else:
+			Type_M_Node.hide()
+			Type_A_Node.show()
+			type_A_loaded.text = str(Current_weapon.Current_ammo)
 
 @rpc("call_local")
 func Change_Weapon(weapon_name: String):
