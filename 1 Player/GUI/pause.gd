@@ -16,12 +16,9 @@ func _on_resume_button_pressed() -> void:
 
 
 func _on_quit_button_pressed() -> void:
-	if GameManager.host_mode:
-		multiplayer.multiplayer_peer.close()
-		get_tree().change_scene_to_file(Menu_scene)
-	else:
-		multiplayer.peer_disconnected.emit(id)
-		get_tree().change_scene_to_file(Menu_scene)
+	multiplayer.peer_disconnected.emit(id)
+	SceneLoad.Remove_Component(SceneLoad.online_connection)
+	SceneLoad.Change_Scene(SceneLoad.Default_Scene)
 
 
 func _on_quit_windows_button_pressed() -> void:
@@ -46,7 +43,7 @@ func pause(owner_id):
 	if GameManager.host_mode:
 		roomcode.show()
 		roomcode_label.text = "Roomcode: "
-		code.text = RoomGen.IPtoCode(Lobby.ip)
+		code.text = RoomGen.IPtoCode(OnlineMang.Host_IP)
 
 func _on_setting_button_pressed() -> void:
 	$Settings_menu.show()

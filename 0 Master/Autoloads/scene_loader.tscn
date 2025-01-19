@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://do52lhycu35qs"]
+[gd_scene load_steps=6 format=3 uid="uid://do52lhycu35qs"]
 
-[ext_resource type="Script" path="res://0 Master/scene_loader.gd" id="1_2rhko"]
+[ext_resource type="Script" path="res://0 Master/Autoloads/scene_loader.gd" id="1_2rhko"]
 [ext_resource type="PackedScene" uid="uid://1vtabgmdqbya" path="res://7 GUI/Menus/Main Menu.tscn" id="2_7wpev"]
-[ext_resource type="PackedScene" uid="uid://doa16v2jqrj70" path="res://0 Master/fmod_banks.tscn" id="3_6oce6"]
-[ext_resource type="PackedScene" uid="uid://bt5ncyv5cuca7" path="res://0 Master/settings_load.tscn" id="4_p02ir"]
+[ext_resource type="PackedScene" uid="uid://doa16v2jqrj70" path="res://0 Master/Components/fmod_banks.tscn" id="3_6oce6"]
+[ext_resource type="PackedScene" uid="uid://i1t0cs56ewv7" path="res://0 Master/Components/online_component.tscn" id="3_bgfes"]
+[ext_resource type="PackedScene" uid="uid://bt5ncyv5cuca7" path="res://0 Master/Components/settings_load.tscn" id="4_p02ir"]
 
 [node name="Scene Loader" type="Node"]
 script = ExtResource("1_2rhko")
 Default_Scene = ExtResource("2_7wpev")
+online_connection = ExtResource("3_bgfes")
 Fmod_Component = ExtResource("3_6oce6")
 Settings_component = ExtResource("4_p02ir")
 
@@ -20,5 +22,7 @@ Settings_component = ExtResource("4_p02ir")
 [node name="Effect Container" type="Node" parent="."]
 
 [node name="Menus" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Effects" type="CanvasLayer" parent="."]
+visible = false

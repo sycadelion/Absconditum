@@ -10,6 +10,7 @@ var host_mode = false
 var mouseCap = true
 var disconnected = false
 var paused = false
+var UserName: String
 
 #game version only changing for save files
 var Save_version: int = 1

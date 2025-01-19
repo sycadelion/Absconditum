@@ -8,7 +8,7 @@ class_name SceneLoader extends Node
 @export var Load_Scene: PackedScene ##The loading screen scene
 
 ##Component Scenes
-@export_group("Component Scenes")
+@export_group("Default Component Scenes")
 @export var online_connection: PackedScene ##Online script component node
 @export var Fmod_Component: PackedScene ##Fmod banks component
 @export var Settings_component: PackedScene ##Node that loads all the game settings
@@ -26,10 +26,6 @@ func _ready() -> void:
 	Load_Component(Fmod_Component)
 	Load_Component(Settings_component)
 	Change_Scene(Default_Scene)
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("test"):
-		pass
 
 ##Load a component and add it to the component container
 func Load_Component(_component) -> void:

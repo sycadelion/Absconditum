@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://i1t0cs56ewv7"]
+
+[ext_resource type="Script" path="res://0 Master/Components/online_component.gd" id="1_phamr"]
+
+[node name="Online_Component" type="Node"]
+script = ExtResource("1_phamr")

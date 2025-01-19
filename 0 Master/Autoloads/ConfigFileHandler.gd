@@ -7,7 +7,7 @@ var config = ConfigFile.new()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if !FileAccess.file_exists(save_path):
-		config.set_value("User","name",Lobby.player_info.name)
+		config.set_value("User","name",GameManager.UserName)
 		config.set_value("User","save_version",GameManager.Save_version)
 		config.set_value("Mouse","sensitivity",GameManager.sensitivity)
 		config.set_value("Audio","master_audio",GameManager.master_audio)
@@ -42,7 +42,7 @@ func load_audio_settings():
 	return audio_settings
 	
 func save_user_settings():
-	config.set_value("User","name",Lobby.player_info.name)
+	config.set_value("User","name",GameManager.UserName)
 	config.save(save_path)
 	
 func load_user_settings():

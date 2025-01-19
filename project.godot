@@ -45,12 +45,12 @@ buses/default_bus_layout=""
 [autoload]
 
 FmodManager="*res://addons/fmod/FmodManager.gd"
-GameManager="*res://0 Master/GameManager.gd"
-ConfigFileHandler="*res://0 Master/ConfigFileHandler.gd"
-SceneLoad="*res://0 Master/scene_loader.tscn"
-Lobby="*res://6 Online/Lobby.gd"
-LineDrawer="*res://0 Master/LineDrawer.gd"
-RoomGen="*res://0 Master/Roomcode_gen.gd"
+GameManager="*res://0 Master/Autoloads/GameManager.gd"
+OnlineMang="*res://0 Master/Autoloads/OnlineManager.gd"
+ConfigFileHandler="*res://0 Master/Autoloads/ConfigFileHandler.gd"
+SceneLoad="*res://0 Master/Autoloads/scene_loader.tscn"
+LineDrawer="*res://0 Master/Autoloads/LineDrawer.gd"
+RoomGen="*res://0 Master/Autoloads/Roomcode_gen.gd"
 
 [display]
 

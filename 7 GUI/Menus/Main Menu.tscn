@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://1vtabgmdqbya"]
+[gd_scene load_steps=10 format=3 uid="uid://1vtabgmdqbya"]
 
 [ext_resource type="Script" path="res://7 GUI/Menus/main_menu.gd" id="1_r4jl4"]
 [ext_resource type="PackedScene" uid="uid://b7kqgr0bkm3s6" path="res://7 GUI/background_container.tscn" id="2_reh62"]
 [ext_resource type="FontFile" uid="uid://bt3eis200qlni" path="res://addons/NotJamFontPack/Not Jam Glasgow 13/Not Jam Glasgow 13.ttf" id="2_u8cqs"]
+[ext_resource type="PackedScene" uid="uid://cdaty1tj8c305" path="res://6 Online/lobby.tscn" id="3_ic32f"]
 [ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu.tres" id="6_x13m3"]
 [ext_resource type="PackedScene" uid="uid://bglvj405a8scx" path="res://7 GUI/Menus/settings.tscn" id="6_yrws1"]
 [ext_resource type="PackedScene" uid="uid://cwd15gx5hshw5" path="res://7 GUI/Menus/match_settings.tscn" id="7_jslx7"]
@@ -19,6 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("6_x13m3")
 script = ExtResource("1_r4jl4")
+GAME_SCENE = ExtResource("3_ic32f")
 
 [node name="Background_container" parent="." instance=ExtResource("2_reh62")]
 layout_mode = 1

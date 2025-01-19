@@ -26,7 +26,6 @@ var impact_played: bool = false
 
 var sens:float = GameManager.sensitivity
 var owner_id = 1
-var User_name:String
 var shooting:bool = false
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -42,16 +41,14 @@ func _ready() -> void:
 		hud.visible = true
 		SPEED = GameManager.player_Speed
 		JUMP_VELOCITY = GameManager.player_jump
-		User_name = Lobby.players[owner_id].name
 		$Camera3D/crossbow_viewmodel.show()
 		FmodServer.add_listener(0,camera) #adds fmod listening
 		GameManager.PLAYER = self
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	else:
 		camera.current = false
 		$Camera3D/crossbow_shader.show()
-		
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	
+
 func _unhandled_input(event: InputEvent) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
 		return

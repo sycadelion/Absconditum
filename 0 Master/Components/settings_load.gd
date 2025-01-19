@@ -15,7 +15,7 @@ func _ready() -> void:
 		var mouse_settings = ConfigFileHandler.load_mouse_settings()
 		var audio_settings = ConfigFileHandler.load_audio_settings()
 		var user_settings = ConfigFileHandler.load_user_settings()
-		Lobby.player_info.name = user_settings.name
+		GameManager.UserName = user_settings.name
 		GameManager.sensitivity = mouse_settings.sensitivity
 		GameManager.fmodbuses[0].volume = audio_settings.master_audio
 		GameManager.fmodbuses[3].volume = audio_settings.music_audio

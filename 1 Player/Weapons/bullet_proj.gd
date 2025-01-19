@@ -28,8 +28,8 @@ func _process(delta: float) -> void:
 
 func _on_rigid_body_3d_body_entered(body: Player) -> void:
 	if body.is_in_group("Players"):
-		var hit_player = Lobby.players[body.owner_id].name
-		var owner_id = Lobby.players[playerID].name
+		var hit_player = OnlineMang.onlineComp.players[body.owner_id].name
+		var owner_id = OnlineMang.onlineComp.players[playerID].name
 		
 		body.health_comp.receive_damage.rpc_id(body.get_multiplayer_authority(),_bullet_dmg,playerID)
 		if body.health_comp.health <=0:

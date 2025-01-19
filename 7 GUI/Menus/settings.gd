@@ -10,7 +10,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	player_name.text = Lobby.player_info["name"]
+	player_name.text = GameManager.UserName
 	player_name.editable = edit_name
 	update_text()
 
@@ -21,7 +21,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_player_name_text_changed(new_text: String) -> void:
-	Lobby.player_info["name"] = new_text
+	GameManager.UserName = new_text
 
 
 func update_text():

@@ -6,12 +6,12 @@ extends Control
 var settings: bool = false
 var Matchsettings: bool = false
 
-const GAME_SCENE = "uid://cdaty1tj8c305"
+@export var GAME_SCENE: PackedScene
 
 func _ready() -> void:
 	GameManager.paused = false
 	GameManager.host_mode = false
-	Lobby.players = {}
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _on_host_pressed() -> void:
 	_on_click()
@@ -20,7 +20,7 @@ func _on_host_pressed() -> void:
 
 func _on_join_pressed() -> void:
 	_on_click()
-	get_tree().call_deferred(&"change_scene_to_packed",preload(GAME_SCENE))
+	SceneLoad.Change_Scene(GAME_SCENE)
 
 
 func _on_quit_pressed() -> void:
@@ -46,7 +46,7 @@ func _on_match_back_button_pressed() -> void:
 
 func _on_host_game_button_pressed() -> void:
 	GameManager.host_mode = true
-	get_tree().call_deferred(&"change_scene_to_packed",preload(GAME_SCENE))
+	SceneLoad.Change_Scene(GAME_SCENE)
 
 
 func _on_mouse_entered() -> void:
