@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu.tres" id="5_1bx7n"]
 
 [node name="Lobby" type="Node"]
+process_mode = 3
 script = ExtResource("1_lp11c")
 
 [node name="Background_container" parent="." instance=ExtResource("3_ul4ju")]

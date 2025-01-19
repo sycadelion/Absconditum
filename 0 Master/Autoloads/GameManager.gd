@@ -48,4 +48,5 @@ func _notification(what: int) -> void:
 		ConfigFileHandler.save_audio_settings("music_audio",fmodbuses[3].volume)
 		ConfigFileHandler.save_audio_settings("sfx_audio",fmodbuses[2].volume)
 		ConfigFileHandler.save_audio_settings("foot_audio",fmodbuses[1].volume)
+		await get_tree().create_timer(0.01).timeout
 		get_tree().quit()

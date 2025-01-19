@@ -26,7 +26,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	position += velocity * delta
 
-func _on_rigid_body_3d_body_entered(body: Player) -> void:
+func _on_rigid_body_3d_body_entered(body: Node) -> void:
 	if body.is_in_group("Players"):
 		var hit_player = OnlineMang.onlineComp.players[body.owner_id].name
 		var owner_id = OnlineMang.onlineComp.players[playerID].name

@@ -18,8 +18,6 @@ class_name SceneLoader extends Node
 @onready var Scenes: Node = $Scene
 @onready var players_container: Node = $"Players Container"
 @onready var effect_container: Node = $"Effect Container"
-@onready var menus: CanvasLayer = $Menus
-@onready var effects: CanvasLayer = $Effects
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

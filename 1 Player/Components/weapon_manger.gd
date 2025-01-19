@@ -16,12 +16,18 @@ var Next_Weapon: String
 
 var Weapon_list = {}
 
+var shooting:bool = false
+
 @export var _weapon_resouces: Array[WeaponResource]
 @export var Start_weapons: Array[String]
 
 func _ready() -> void:
 	Player = owner
-	Initialize(Start_weapons)
+	Initialize.rpc(Start_weapons)
+
+func _process(_delta: float) -> void:
+	if Current_weapon:
+		ammo_count.text = str(Current_weapon.Current_ammo) + " / " + str(Current_weapon.Reserve_ammo)
 
 func _input(event: InputEvent) -> void:
 	if Player.owner_id != multiplayer.get_unique_id(): 
@@ -32,11 +38,13 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Weapon2") and not GameManager.paused:  ##Switch to slot 2
 		Weapon_indicator = 1
 		Exit.rpc(Weapon_stack[Weapon_indicator])
-	if event.is_action_pressed("shoot") and not GameManager.paused:
+	if event.is_action_pressed("shoot") and not shooting \
+	 and not GameManager.paused and Current_weapon.Current_ammo >0:
 		shoot.rpc()
 	if event.is_action_pressed("reload") and not GameManager.paused:
 		reload.rpc()
 
+@rpc("call_local")
 func Initialize(_Start_weapons):
 	#create dictionary to refer to weapons
 	for weapon in _weapon_resouces:
@@ -52,6 +60,7 @@ func Initialize(_Start_weapons):
 func Enter():
 	if Current_weapon.Anim_activate:
 		anim_player.play(Current_weapon.Anim_activate)
+		ammo_count.text = str(Current_weapon.Current_ammo) + " / " + str(Current_weapon.Reserve_ammo)
 
 @rpc("call_local")
 func Change_Weapon(weapon_name: String):
@@ -70,14 +79,21 @@ func Exit(_next_weapon: String):
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == Current_weapon.Anim_deactivate:
 		Change_Weapon.rpc(Next_Weapon)
+	if anim_name == Current_weapon.Anim_shoot:
+		shooting = false
+	if anim_name == Current_weapon.Anim_reload:
+		Current_weapon.Current_ammo = Current_weapon.Reload_ammo
+		Current_weapon.Reserve_ammo -= Current_weapon.Reload_ammo
 
 @rpc("call_local")
 func shoot():
+	shooting = true
 	anim_player.play(Current_weapon.Anim_shoot)
 	Player.audio_comp.Play_bow()
 	Player.bullet_proj_comp.bulletFire()
 	muzzle_flash.restart()
 	muzzle_flash.emitting = true
+	Current_weapon.Current_ammo -= 1
 
 @rpc("call_local")
 func reload():

@@ -20,9 +20,3 @@ Settings_component = ExtResource("4_p02ir")
 [node name="Players Container" type="Node" parent="."]
 
 [node name="Effect Container" type="Node" parent="."]
-
-[node name="Menus" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="Effects" type="CanvasLayer" parent="."]
-visible = false

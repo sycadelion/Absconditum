@@ -26,7 +26,6 @@ var impact_played: bool = false
 
 var sens:float = GameManager.sensitivity
 var owner_id = 1
-var shooting:bool = false
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
@@ -39,6 +38,7 @@ func _ready() -> void:
 		camera.make_current()
 		bodyInvert.visible = false
 		hud.visible = true
+		sens = GameManager.sensitivity
 		SPEED = GameManager.player_Speed
 		JUMP_VELOCITY = GameManager.player_jump
 		$Camera3D/crossbow_viewmodel.show()
@@ -52,7 +52,7 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
 		return
-	if event is InputEventMouseMotion and health_comp.health >= 1:
+	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * sens)
 		camera.rotate_x(-event.relative.y * sens)
 		camera.rotation.x = clamp(camera.rotation.x,-PI/2, PI/2)
@@ -62,14 +62,12 @@ func _input(event: InputEvent) -> void:
 		return
 	if event.is_action_pressed("Skill1") and not GameManager.paused:
 		skill1_comp.Use_skill.rpc()
-	elif event.is_action_pressed("shoot") and not shooting and not GameManager.paused:
-		pass
 	elif event.is_action_pressed("quit") and not GameManager.paused:
 		pause.pause(owner_id)
 	elif event.is_action_pressed("reload"):
 		weapon_manger.reload.rpc()
 	elif event.is_action_pressed("test"):
-		print(str(owner_id))
+		print(str(health_comp.health))
 
 func _physics_process(delta: float) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
