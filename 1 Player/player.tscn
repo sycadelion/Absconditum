@@ -721,6 +721,9 @@ replication_config = SubResource("SceneReplicationConfig_pefit")
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("7_kc58q")]
 
+[node name="SubViewport" parent="CanvasLayer/HUD/Weapon1/SubViewportContainer" index="0"]
+render_target_update_mode = 4
+
 [node name="Ammo" type="Control" parent="CanvasLayer/HUD"]
 layout_mode = 1
 anchors_preset = 3

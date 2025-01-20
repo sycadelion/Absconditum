@@ -22,7 +22,7 @@ func _ready() -> void:
 		GameManager.fmodbuses[2].volume = audio_settings.sfx_audio
 		GameManager.fmodbuses[1].volume = audio_settings.foot_audio
 	else:
-		GameManager.sensitivity = 0.005
+		GameManager.sensitivity = 5
 		GameManager.fmodbuses[0].volume = 1
 		GameManager.fmodbuses[3].volume = 1
 		GameManager.fmodbuses[2].volume = 1

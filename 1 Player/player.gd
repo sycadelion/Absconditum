@@ -44,7 +44,7 @@ func _ready() -> void:
 		Health_bar.max_value = health_comp.MAX_HEALTH
 		Health_bar.value = health_comp.health
 		Health_Label.text = str(health_comp.health)
-		sens = GameManager.sensitivity
+		sens = GameManager.sensitivity / 1000
 		SPEED = GameManager.player_Speed
 		JUMP_VELOCITY = GameManager.player_jump
 		$Camera3D/crossbow_viewmodel.show()
@@ -79,7 +79,7 @@ func _physics_process(delta: float) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
 		return
 		
-	sens = GameManager.sensitivity
+	sens = GameManager.sensitivity / 1000
 	Health_bar.value = health_comp.health
 	Health_Label.text = str(health_comp.health)
 	

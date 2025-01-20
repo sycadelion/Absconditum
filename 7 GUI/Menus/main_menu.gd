@@ -32,10 +32,12 @@ func _on_settings_pressed() -> void:
 	_on_click()
 	$Settings.show()
 	$Menu.hide()
+	$GameTitle.hide()
 	
 func _on_settings_back_button_pressed() -> void:
 	_on_click()
 	$Menu.show()
+	$GameTitle.show()
 	$Settings.hide()
 
 func _on_match_back_button_pressed() -> void:

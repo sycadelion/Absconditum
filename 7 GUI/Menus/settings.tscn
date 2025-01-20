@@ -16,108 +16,337 @@ grow_vertical = 2
 theme = ExtResource("1_talt2")
 script = ExtResource("2_supjv")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -25.0
-offset_top = -25.0
-offset_right = 25.0
-offset_bottom = 25.0
+offset_left = -300.5
+offset_top = -320.0
+offset_right = 300.5
+offset_bottom = 320.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
 
-[node name="CenterContainer" type="CenterContainer" parent="PanelContainer"]
+[node name="Menu" type="PanelContainer" parent="GridContainer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/CenterContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer/Menu"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Audio" type="Button" parent="GridContainer/Menu/HBoxContainer"]
+layout_mode = 2
+text = "Audio"
+
+[node name="Graphics" type="Button" parent="GridContainer/Menu/HBoxContainer"]
+layout_mode = 2
+text = "Graphics"
+
+[node name="Keybinds" type="Button" parent="GridContainer/Menu/HBoxContainer"]
+layout_mode = 2
+text = "Keybinds"
+
+[node name="User" type="Button" parent="GridContainer/Menu/HBoxContainer"]
+layout_mode = 2
+text = "User"
+
+[node name="Audio" type="PanelContainer" parent="GridContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 388)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="GridContainer/Audio"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/Audio/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer/Audio/CenterContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+
+[node name="AudioSettings" type="Label" parent="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Audio Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Master Text" type="CenterContainer" parent="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Master Text"]
+layout_mode = 2
+columns = 2
+
+[node name="AudioMaster" type="Label" parent="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Master Text/GridContainer"]
+layout_mode = 2
+text = "Master: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MasterEdit" type="LineEdit" parent="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Master Text/GridContainer"]
+layout_mode = 2
+placeholder_text = "100"
+alignment = 1
+max_length = 3
+context_menu_enabled = false
+shortcut_keys_enabled = false
+flat = true
+select_all_on_focus = true
+
+[node name="SettingSlider2" parent="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer" instance=ExtResource("3_gs1v7")]
+layout_mode = 2
+is_audio = true
+
+[node name="HSeparator2" type="HSeparator" parent="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Music Text" type="CenterContainer" parent="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Music Text"]
+layout_mode = 2
+columns = 2
+
+[node name="AudioMusic" type="Label" parent="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Music Text/GridContainer"]
+layout_mode = 2
+text = "Music: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicEdit" type="LineEdit" parent="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Music Text/GridContainer"]
+layout_mode = 2
+placeholder_text = "100"
+alignment = 1
+max_length = 3
+context_menu_enabled = false
+shortcut_keys_enabled = false
+flat = true
+select_all_on_focus = true
+
+[node name="SettingSlider3" parent="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer" instance=ExtResource("3_gs1v7")]
+layout_mode = 2
+is_audio = true
+bus_index = 3
+
+[node name="HSeparator3" type="HSeparator" parent="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="SFX Text" type="CenterContainer" parent="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/SFX Text"]
+layout_mode = 2
+columns = 2
+
+[node name="AudioSFX" type="Label" parent="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/SFX Text/GridContainer"]
+layout_mode = 2
+text = "SFX: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFXEdit" type="LineEdit" parent="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/SFX Text/GridContainer"]
+layout_mode = 2
+placeholder_text = "100"
+alignment = 1
+max_length = 3
+context_menu_enabled = false
+shortcut_keys_enabled = false
+flat = true
+select_all_on_focus = true
+
+[node name="SettingSlider4" parent="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer" instance=ExtResource("3_gs1v7")]
+layout_mode = 2
+is_audio = true
+bus_index = 2
+
+[node name="HSeparator4" type="HSeparator" parent="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Foot Text" type="CenterContainer" parent="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Foot Text"]
+layout_mode = 2
+columns = 2
+
+[node name="AudioFoot" type="Label" parent="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Foot Text/GridContainer"]
+layout_mode = 2
+text = "Footsteps: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FootEdit" type="LineEdit" parent="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Foot Text/GridContainer"]
+layout_mode = 2
+placeholder_text = "100"
+alignment = 1
+max_length = 3
+context_menu_enabled = false
+shortcut_keys_enabled = false
+flat = true
+select_all_on_focus = true
+
+[node name="SettingSlider5" parent="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer" instance=ExtResource("3_gs1v7")]
+layout_mode = 2
+is_audio = true
+bus_index = 1
+
+[node name="HSeparator5" type="HSeparator" parent="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Graphics" type="PanelContainer" parent="GridContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 388)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer/Graphics"]
+layout_mode = 2
+text = "Coming soon"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Keybinds" type="PanelContainer" parent="GridContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 388)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer/Keybinds"]
+layout_mode = 2
+text = "Coming soon"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="User" type="PanelContainer" parent="GridContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 388)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="GridContainer/User"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/User/CenterContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 
-[node name="GridContainer" type="GridContainer" parent="PanelContainer/CenterContainer/MarginContainer"]
+[node name="GridContainer" type="GridContainer" parent="GridContainer/User/CenterContainer/MarginContainer"]
 layout_mode = 2
 columns = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer/MarginContainer/GridContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Username" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+[node name="UserSettings" type="Label" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "User Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Username" type="Label" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
 layout_mode = 2
 text = "Username"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="player_name" type="LineEdit" parent="PanelContainer/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+[node name="player_name" type="LineEdit" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 placeholder_text = "Enter Name"
 alignment = 1
 max_length = 15
 
-[node name="MouseSens" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+[node name="HSeparator2" type="HSeparator" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="MouseSens" type="Label" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 text = "Mouse Sensitivity "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SettingSlider" parent="PanelContainer/CenterContainer/MarginContainer/GridContainer/VBoxContainer" instance=ExtResource("3_gs1v7")]
+[node name="LineEdit" type="LineEdit" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
-step = 0.001
+placeholder_text = "100"
+alignment = 1
+max_length = 3
+context_menu_enabled = false
+shortcut_keys_enabled = false
+flat = true
+select_all_on_focus = true
+
+[node name="SettingSlider" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer" instance=ExtResource("3_gs1v7")]
+layout_mode = 2
+step = 0.01
 value = 0.0
 settingsVar = "sensitivity"
+maxV = 10
 
-[node name="AudioMaster" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+[node name="HSeparator3" type="HSeparator" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
 layout_mode = 2
-text = "Master: "
-horizontal_alignment = 1
-vertical_alignment = 1
+theme_override_constants/separation = 20
 
-[node name="SettingSlider2" parent="PanelContainer/CenterContainer/MarginContainer/GridContainer/VBoxContainer" instance=ExtResource("3_gs1v7")]
+[node name="BackButton" type="PanelContainer" parent="."]
 layout_mode = 2
-is_audio = true
+offset_left = -300.5
+offset_top = 204.0
+offset_right = 300.5
+offset_bottom = 320.0
+grow_horizontal = 2
 
-[node name="AudioMusic" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
-layout_mode = 2
-text = "Music: "
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SettingSlider3" parent="PanelContainer/CenterContainer/MarginContainer/GridContainer/VBoxContainer" instance=ExtResource("3_gs1v7")]
-layout_mode = 2
-is_audio = true
-bus_index = 3
-
-[node name="AudioSFX" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
-layout_mode = 2
-text = "SFX: "
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SettingSlider4" parent="PanelContainer/CenterContainer/MarginContainer/GridContainer/VBoxContainer" instance=ExtResource("3_gs1v7")]
-layout_mode = 2
-is_audio = true
-bus_index = 2
-
-[node name="AudioFoot" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
-layout_mode = 2
-text = "Footsteps: "
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SettingSlider5" parent="PanelContainer/CenterContainer/MarginContainer/GridContainer/VBoxContainer" instance=ExtResource("3_gs1v7")]
-layout_mode = 2
-is_audio = true
-bus_index = 1
-
-[node name="Settings_Back_Button" type="Button" parent="PanelContainer/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+[node name="Settings_Back_Button" type="Button" parent="BackButton"]
 layout_mode = 2
 text = "Back"
 
-[connection signal="text_changed" from="PanelContainer/CenterContainer/MarginContainer/GridContainer/VBoxContainer/player_name" to="." method="_on_player_name_text_changed"]
+[connection signal="pressed" from="GridContainer/Menu/HBoxContainer/Audio" to="." method="_audio_pressed"]
+[connection signal="pressed" from="GridContainer/Menu/HBoxContainer/Graphics" to="." method="_graphics_pressed"]
+[connection signal="pressed" from="GridContainer/Menu/HBoxContainer/Keybinds" to="." method="_keybinds_pressed"]
+[connection signal="pressed" from="GridContainer/Menu/HBoxContainer/User" to="." method="_user_pressed"]
+[connection signal="focus_entered" from="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Master Text/GridContainer/MasterEdit" to="." method="_on_edit_focus_entered"]
+[connection signal="focus_exited" from="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Master Text/GridContainer/MasterEdit" to="." method="_on_edit_focus_exited"]
+[connection signal="text_submitted" from="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Master Text/GridContainer/MasterEdit" to="." method="_on_edit_text_submitted"]
+[connection signal="focus_entered" from="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Music Text/GridContainer/MusicEdit" to="." method="_on_edit_focus_entered"]
+[connection signal="focus_exited" from="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Music Text/GridContainer/MusicEdit" to="." method="_on_edit_focus_exited"]
+[connection signal="text_submitted" from="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Music Text/GridContainer/MusicEdit" to="." method="_on_edit_text_submitted"]
+[connection signal="focus_entered" from="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/SFX Text/GridContainer/SFXEdit" to="." method="_on_edit_focus_entered"]
+[connection signal="focus_exited" from="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/SFX Text/GridContainer/SFXEdit" to="." method="_on_edit_focus_exited"]
+[connection signal="text_submitted" from="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/SFX Text/GridContainer/SFXEdit" to="." method="_on_edit_text_submitted"]
+[connection signal="focus_entered" from="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Foot Text/GridContainer/FootEdit" to="." method="_on_edit_focus_entered"]
+[connection signal="focus_exited" from="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Foot Text/GridContainer/FootEdit" to="." method="_on_edit_focus_exited"]
+[connection signal="text_submitted" from="GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Foot Text/GridContainer/FootEdit" to="." method="_on_edit_text_submitted"]
+[connection signal="text_changed" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/player_name" to="." method="_on_player_name_text_changed"]
+[connection signal="focus_entered" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/LineEdit" to="." method="_on_edit_focus_entered"]
+[connection signal="focus_exited" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/LineEdit" to="." method="_on_edit_focus_exited"]
+[connection signal="text_submitted" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/LineEdit" to="." method="_on_edit_text_submitted"]

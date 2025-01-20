@@ -143,6 +143,6 @@ editable = false
 [connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/SettingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/QuitWindowsButton" to="." method="_on_quit_windows_button_pressed"]
-[connection signal="pressed" from="Settings_menu/Settings/PanelContainer/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Settings_Back_Button" to="." method="_on_settings_back_button_pressed"]
+[connection signal="pressed" from="Settings_menu/Settings/BackButton/Settings_Back_Button" to="." method="_on_settings_back_button_pressed"]
 
 [editable path="Settings_menu/Settings"]
