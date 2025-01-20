@@ -14,5 +14,7 @@ Current_ammo = 9
 Reload_ammo = 9
 Reserve_ammo = 18
 Max_reserve = 18
+Chambered_ammo = 1
 Full_auto = false
 Manual = true
+Firerate = 0.8

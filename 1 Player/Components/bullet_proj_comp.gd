@@ -2,9 +2,9 @@ class_name BulletProjComp extends Node
 
 @export var _bullet_proj_prefab: PackedScene
 
-@onready var raycast: RayCast3D = $"../Camera3D/RayCast3D"
-@onready var marker: Marker3D = $"../Camera3D/Marker3D"
-@onready var markerEnd: Marker3D = $"../Camera3D/RayCast3D/RaycastEnd"
+@onready var raycast: RayCast3D = $"../Head/Camera3D/RayCast3D"
+@onready var marker: Marker3D = $"../Head/Camera3D/Marker3D"
+@onready var markerEnd: Marker3D = $"../Head/Camera3D/RayCast3D/RaycastEnd"
 
 var Player: Player
 

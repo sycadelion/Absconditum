@@ -2,7 +2,7 @@ class_name Skill1Comp extends Node
 
 @export var _skill_prefab: PackedScene
 
-@onready var skill_marker: Marker3D = $"../Camera3D/Skill1Marker"
+@onready var skill_marker: Marker3D = $"../Head/Camera3D/Skill1Marker"
 @onready var skill_ui: Control = $"../CanvasLayer/HUD/Skill"
 
 var player: Player

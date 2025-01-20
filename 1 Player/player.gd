@@ -13,8 +13,10 @@ class_name Player extends CharacterBody3D
 @onready var weapon_manger: WeaponManager = %WeaponManger
 @onready var state_machine: StateMachine = %StateMachine
 
-@onready var camera: Camera3D = $Camera3D
+@onready var camera: Camera3D = $Head/Camera3D
+@onready var head: Node3D = $Head
 @onready var anim_player: AnimationPlayer = %AnimationPlayer
+@onready var anim_tree: AnimationTree = $AnimationTree
 @onready var bodyInvert: MeshInstance3D = $Player_Body2
 @onready var hud: Control = $CanvasLayer/HUD
 @onready var pause: Control = $CanvasLayer/Pause
@@ -47,21 +49,21 @@ func _ready() -> void:
 		sens = GameManager.sensitivity / 1000
 		SPEED = GameManager.player_Speed
 		JUMP_VELOCITY = GameManager.player_jump
-		$Camera3D/crossbow_viewmodel.show()
+		$Head/Camera3D/crossbow_viewmodel.show()
 		FmodServer.add_listener(0,camera) #adds fmod listening
 		GameManager.PLAYER = self
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	else:
 		camera.current = false
-		$Camera3D/crossbow_shader.show()
+		$Head/Camera3D/crossbow_shader.show()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
 		return
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * sens)
-		camera.rotate_x(-event.relative.y * sens)
-		camera.rotation.x = clamp(camera.rotation.x,-PI/2, PI/2)
+		head.rotate_x(-event.relative.y * sens)
+		head.rotation.x = clamp(head.rotation.x,-PI/2, PI/2)
 
 func _input(event: InputEvent) -> void:
 	if owner_id != multiplayer.get_unique_id(): 

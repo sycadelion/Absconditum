@@ -16,3 +16,4 @@ Reserve_ammo = 18
 Max_reserve = 18
 Full_auto = false
 Manual = false
+Firerate = 0.5

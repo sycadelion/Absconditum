@@ -6,11 +6,7 @@ class_name PlayerWalkState extends PlayerMovementState
 
 @rpc("call_local")
 func Enter():
-	if ANIMATION.is_playing():
-		ANIMATION.stop()
-		ANIMATION.play("move")
-	else:
-		ANIMATION.play("move")
+	PLAYER.anim_tree["parameters/FallAndFloor/transition_request"] = "Move"
 
 func Update(delta: float):
 	PLAYER.update_gravity(delta)

@@ -16,8 +16,10 @@ class_name WeaponResource extends Resource
 @export var Reload_ammo: int ##Amount of ammo to be added on reload
 @export var Reserve_ammo: int ##Spare unloaded ammo
 @export var Max_reserve: int ##Max amount of spare unloaded ammo
+@export var Chambered_ammo: int ##The bullets in the chamber
 
 
 @export_group("Fire Mode")
 @export var Full_auto: bool ##Toggle for full auto fire
 @export var Manual: bool ##Toggle for needing to chamber each round
+@export var Firerate: float ##Rate you can shoot

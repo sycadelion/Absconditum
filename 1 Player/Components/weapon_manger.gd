@@ -63,7 +63,8 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("shoot") and not shooting \
 	 and not GameManager.paused and Current_weapon.Current_ammo >0:
 		shoot.rpc()
-	if event.is_action_pressed("reload") and not GameManager.paused:
+	if event.is_action_pressed("reload") and Current_weapon.Reserve_ammo > 0 \
+	 and not GameManager.paused:
 		reload.rpc()
 
 @rpc("call_local")
@@ -109,21 +110,26 @@ func Exit(_next_weapon: String):
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == Current_weapon.Anim_deactivate:
 		Change_Weapon.rpc(Next_Weapon)
-	if anim_name == Current_weapon.Anim_shoot:
-		shooting = false
 	if anim_name == Current_weapon.Anim_reload:
-		Current_weapon.Current_ammo = Current_weapon.Reload_ammo
-		Current_weapon.Reserve_ammo -= Current_weapon.Reload_ammo
+		var reload_amount = Current_weapon.Reload_ammo - Current_weapon.Current_ammo
+		if Current_weapon.Reserve_ammo - reload_amount > 0:
+			Current_weapon.Current_ammo += reload_amount
+			Current_weapon.Reserve_ammo -= reload_amount
+		else:
+			Current_weapon.Current_ammo += Current_weapon.Reserve_ammo
+			Current_weapon.Reserve_ammo = 0
 
 @rpc("call_local")
 func shoot():
 	shooting = true
-	anim_player.play(Current_weapon.Anim_shoot)
+	Player.anim_tree["parameters/Shooting/transition_request"] = "true"
 	Player.audio_comp.Play_bow()
 	Player.bullet_proj_comp.bulletFire()
 	muzzle_flash.restart()
 	muzzle_flash.emitting = true
 	Current_weapon.Current_ammo -= 1
+	await get_tree().create_timer(Current_weapon.Firerate).timeout
+	shooting = false
 
 @rpc("call_local")
 func reload():

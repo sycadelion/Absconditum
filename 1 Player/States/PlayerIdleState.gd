@@ -6,11 +6,7 @@ class_name PlayerIdleState extends PlayerMovementState
 
 @rpc("call_local")
 func Enter():
-	if ANIMATION.is_playing():
-		ANIMATION.stop()
-		ANIMATION.play("idle")
-	else:
-		ANIMATION.play("idle")
+	PLAYER.anim_tree["parameters/FallAndFloor/transition_request"] = "Idle"
 
 func Update(delta: float):
 	PLAYER.update_gravity(delta)
