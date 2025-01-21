@@ -110,7 +110,7 @@ input_1/break_loop_at_end = false
 input_1/reset = true
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ld7nr"]
-graph_offset = Vector2(-474, -105)
+graph_offset = Vector2(-507.109, -12.7017)
 nodes/FallAndFloor/node = SubResource("AnimationNodeTransition_gflx4")
 nodes/FallAndFloor/position = Vector2(-81.191, 196.988)
 nodes/Idle/node = SubResource("AnimationNodeAnimation_52w8c")
@@ -733,9 +733,6 @@ replication_config = SubResource("SceneReplicationConfig_pefit")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("7_kc58q")]
-
-[node name="SubViewport" parent="CanvasLayer/HUD/Weapon1/SubViewportContainer" index="0"]
-render_target_update_mode = 4
 
 [node name="Ammo" type="Control" parent="CanvasLayer/HUD"]
 layout_mode = 1
