@@ -64,9 +64,13 @@ func _input(event: InputEvent) -> void:
 		if Current_weapon.Manual:
 			if Current_weapon.Chambered_ammo == 1:
 				shoot_manual.rpc()
+			else:
+				shoot_empty.rpc()
 		else:
 			if Current_weapon.Current_ammo >0:
 				shoot.rpc()
+			else:
+				shoot_empty.rpc()
 	if event.is_action_pressed("reload") and Current_weapon.Reserve_ammo > 0 \
 	 and not GameManager.paused:
 		reload.rpc()
@@ -150,6 +154,13 @@ func shoot_manual():
 	muzzle_flash.emitting = true
 	Current_weapon.Chambered_ammo -= 1
 	await get_tree().create_timer(Current_weapon.Firerate).timeout
+	shooting = false
+
+@rpc("call_local")
+func shoot_empty():
+	shooting = true
+	Player.anim_tree["parameters/DryFire/transition_request"] = "True"
+	await get_tree().create_timer(.01).timeout
 	shooting = false
 
 @rpc("call_local")

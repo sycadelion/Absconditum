@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://f7itocgajf8o"]
+[gd_scene load_steps=55 format=3 uid="uid://f7itocgajf8o"]
 
 [ext_resource type="Script" path="res://1 Player/player.gd" id="1_4ht6w"]
 [ext_resource type="Material" uid="uid://gsnjhl57qwdk" path="res://4 Resources/Shaders/player_shader_mat.tres" id="1_fuh6j"]
@@ -79,6 +79,20 @@ material = SubResource("StandardMaterial3D_cs3jb")
 size = Vector2(0.5, 0.5)
 orientation = 2
 
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_42o4i"]
+xfade_time = 0.05
+input_0/name = "True"
+input_0/auto_advance = true
+input_0/break_loop_at_end = false
+input_0/reset = true
+input_1/name = "False"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oxg2c"]
+animation = &"Gun_empty"
+
 [sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_gflx4"]
 input_0/name = "Idle"
 input_0/auto_advance = false
@@ -110,7 +124,11 @@ input_1/break_loop_at_end = false
 input_1/reset = true
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ld7nr"]
-graph_offset = Vector2(-507.109, -12.7017)
+graph_offset = Vector2(-80, 12)
+nodes/DryFire/node = SubResource("AnimationNodeTransition_42o4i")
+nodes/DryFire/position = Vector2(400, 80)
+nodes/EmptyShoot/node = SubResource("AnimationNodeAnimation_oxg2c")
+nodes/EmptyShoot/position = Vector2(160, -40)
 nodes/FallAndFloor/node = SubResource("AnimationNodeTransition_gflx4")
 nodes/FallAndFloor/position = Vector2(-81.191, 196.988)
 nodes/Idle/node = SubResource("AnimationNodeAnimation_52w8c")
@@ -121,8 +139,8 @@ nodes/Shoot/node = SubResource("AnimationNodeAnimation_3ay3x")
 nodes/Shoot/position = Vector2(-380, -60)
 nodes/Shooting/node = SubResource("AnimationNodeTransition_yqtjs")
 nodes/Shooting/position = Vector2(160, 120)
-nodes/output/position = Vector2(420, 120)
-node_connections = [&"FallAndFloor", 0, &"Idle", &"FallAndFloor", 1, &"Move", &"Shooting", 0, &"Shoot", &"Shooting", 1, &"FallAndFloor", &"output", 0, &"Shooting"]
+nodes/output/position = Vector2(600, 120)
+node_connections = [&"DryFire", 0, &"EmptyShoot", &"DryFire", 1, &"Shooting", &"FallAndFloor", 0, &"Idle", &"FallAndFloor", 1, &"Move", &"Shooting", 0, &"Shoot", &"Shooting", 1, &"FallAndFloor", &"output", 0, &"DryFire"]
 
 [sub_resource type="Animation" id="Animation_grxd7"]
 resource_name = "Gun_empty"
@@ -713,6 +731,9 @@ unique_name_in_owner = true
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeBlendTree_ld7nr")
 anim_player = NodePath("../AnimationPlayer")
+parameters/DryFire/current_state = "False"
+parameters/DryFire/transition_request = ""
+parameters/DryFire/current_index = 1
 parameters/FallAndFloor/current_state = "Idle"
 parameters/FallAndFloor/transition_request = ""
 parameters/FallAndFloor/current_index = 0

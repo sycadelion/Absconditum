@@ -17,4 +17,4 @@ Max_reserve = 18
 Chambered_ammo = 1
 Full_auto = false
 Manual = true
-Firerate = 0.8
+Firerate = 0.3
