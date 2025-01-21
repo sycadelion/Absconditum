@@ -124,7 +124,6 @@ input_1/break_loop_at_end = false
 input_1/reset = true
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ld7nr"]
-graph_offset = Vector2(-80, 12)
 nodes/DryFire/node = SubResource("AnimationNodeTransition_42o4i")
 nodes/DryFire/position = Vector2(400, 80)
 nodes/EmptyShoot/node = SubResource("AnimationNodeAnimation_oxg2c")
@@ -632,10 +631,10 @@ _data = {
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
-properties/1/path = NodePath(".:rotation")
+properties/1/path = NodePath("Head:rotation")
 properties/1/spawn = true
 properties/1/replication_mode = 1
-properties/2/path = NodePath("Camera3D:rotation")
+properties/2/path = NodePath(".:rotation")
 properties/2/spawn = true
 properties/2/replication_mode = 1
 
@@ -754,6 +753,13 @@ replication_config = SubResource("SceneReplicationConfig_pefit")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("7_kc58q")]
+visible = false
+
+[node name="SubViewport" parent="CanvasLayer/HUD/Weapon1/SubViewportContainer" index="0"]
+render_target_update_mode = 0
+
+[node name="SubViewport" parent="CanvasLayer/HUD/Weapon2/SubViewportContainer2" index="0"]
+render_target_update_mode = 0
 
 [node name="Ammo" type="Control" parent="CanvasLayer/HUD"]
 layout_mode = 1
@@ -790,26 +796,21 @@ fmod_parameters/Surface/variant_type = 4
 unique_name_in_owner = true
 
 [node name="Audio_Component" type="Node" parent="."]
-unique_name_in_owner = true
 script = ExtResource("15_tld0y")
 
 [node name="Health_Component" type="Node" parent="."]
-unique_name_in_owner = true
 script = ExtResource("16_fwst1")
 MAX_HEALTH = 1
 
 [node name="BulletProjComp" type="Node" parent="."]
-unique_name_in_owner = true
 script = ExtResource("11_no44j")
 _bullet_proj_prefab = ExtResource("12_qi8gg")
 
 [node name="Skill1_Component" type="Node" parent="."]
-unique_name_in_owner = true
 script = ExtResource("10_elnv3")
 _skill_prefab = ExtResource("11_7l2ie")
 
 [node name="WeaponManger" type="Node" parent="."]
-unique_name_in_owner = true
 script = ExtResource("17_ln4bi")
 _weapon_resouces = Array[ExtResource("22_dho8y")]([ExtResource("23_6wyhl"), ExtResource("24_h1ljr")])
 Start_weapons = Array[String](["Crossbow", "Crossbow_m"])

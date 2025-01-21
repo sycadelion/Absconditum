@@ -12,6 +12,7 @@ class_name WeaponResource extends Resource
 
 #ammo
 @export_group("Ammo")
+@export var Damage: int ##Amount of damage the bullets deal
 @export var Current_ammo: int ##Current ammo loaded in the weapon
 @export var Reload_ammo: int ##Amount of ammo to be added on reload
 @export var Reserve_ammo: int ##Spare unloaded ammo

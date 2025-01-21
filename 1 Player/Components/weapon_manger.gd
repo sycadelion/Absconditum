@@ -42,6 +42,8 @@ func _ready() -> void:
 	Initialize.rpc(Start_weapons)
 
 func _process(_delta: float) -> void:
+	if Player.owner_id != multiplayer.get_unique_id(): 
+		return
 	if Current_weapon.Manual:
 		Type_M_chambered.text = str(Current_weapon.Chambered_ammo)
 		Type_M_mag.text = str(Current_weapon.Current_ammo)
@@ -124,6 +126,8 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == Current_weapon.Anim_deactivate:
 		Change_Weapon.rpc(Next_Weapon)
 	if anim_name == Current_weapon.Anim_reload:
+		if Player.owner_id != multiplayer.get_unique_id(): 
+			return
 		var reload_amount = Current_weapon.Reload_ammo - Current_weapon.Current_ammo
 		if Current_weapon.Reserve_ammo - reload_amount > 0:
 			Current_weapon.Current_ammo += reload_amount
@@ -137,9 +141,11 @@ func shoot():
 	shooting = true
 	Player.anim_tree["parameters/Shooting/transition_request"] = "True"
 	Player.audio_comp.Play_bow()
-	Player.bullet_proj_comp.bulletFire()
+	Player.bullet_proj_comp.bulletFire(Current_weapon.Damage)
 	muzzle_flash.restart()
 	muzzle_flash.emitting = true
+	if Player.owner_id != multiplayer.get_unique_id(): 
+		return
 	Current_weapon.Current_ammo -= 1
 	await get_tree().create_timer(Current_weapon.Firerate).timeout
 	shooting = false
@@ -149,9 +155,11 @@ func shoot_manual():
 	shooting = true
 	Player.anim_tree["parameters/Shooting/transition_request"] = "True"
 	Player.audio_comp.Play_bow()
-	Player.bullet_proj_comp.bulletFire()
+	Player.bullet_proj_comp.bulletFire.rpc(Current_weapon.Damage)
 	muzzle_flash.restart()
 	muzzle_flash.emitting = true
+	if Player.owner_id != multiplayer.get_unique_id(): 
+		return
 	Current_weapon.Chambered_ammo -= 1
 	await get_tree().create_timer(Current_weapon.Firerate).timeout
 	shooting = false

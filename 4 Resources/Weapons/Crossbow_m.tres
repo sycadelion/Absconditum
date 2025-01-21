@@ -10,6 +10,7 @@ Anim_shoot = "shoot"
 Anim_empty = "Gun_empty"
 Anim_reload = "Reloading"
 Anim_deactivate = "Put_away"
+Damage = 1
 Current_ammo = 9
 Reload_ammo = 9
 Reserve_ammo = 18

@@ -12,10 +12,12 @@ var Player: Player
 func _ready() -> void:
 	Player = owner
 
-func bulletFire() ->void:
+@rpc("call_local")
+func bulletFire(_damage) ->void:
 	var bullet_proj:BulletProj = _bullet_proj_prefab.instantiate()
 	marker.add_child(bullet_proj)
 	bullet_proj.playerID = Player.owner_id
+	bullet_proj._bullet_dmg = _damage
 	bullet_proj.global_position = marker.global_position
 	if raycast.is_colliding():
 		bullet_proj.set_velocity(raycast.get_collision_point())
