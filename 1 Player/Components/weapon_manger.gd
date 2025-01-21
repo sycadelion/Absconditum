@@ -125,6 +125,9 @@ func Exit(_next_weapon: String):
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == Current_weapon.Anim_deactivate:
 		Change_Weapon.rpc(Next_Weapon)
+	if anim_name == Current_weapon.Anim_shoot and Current_weapon.Full_auto:
+		if Input.is_action_pressed("shoot") and Current_weapon.Current_ammo > 0:
+			shoot.rpc()
 	if anim_name == Current_weapon.Anim_reload:
 		if Player.owner_id != multiplayer.get_unique_id(): 
 			return

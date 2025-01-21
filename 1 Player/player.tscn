@@ -815,6 +815,7 @@ script = ExtResource("17_ln4bi")
 _weapon_resouces = Array[ExtResource("22_dho8y")]([ExtResource("23_6wyhl"), ExtResource("24_h1ljr")])
 Start_weapons = Array[String](["Crossbow", "Crossbow_m"])
 
+[connection signal="animation_finished" from="AnimationTree" to="WeaponManger" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="WeaponManger" method="_on_animation_player_animation_finished"]
 
