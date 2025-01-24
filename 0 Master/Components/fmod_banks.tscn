@@ -3,4 +3,4 @@
 [node name="Fmod_Banks" type="Node"]
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
-bank_paths = ["res://3 Sounds/Master.strings.bank", "res://3 Sounds/Master.bank", "res://3 Sounds/SFX.bank"]
+bank_paths = ["res://3 Sounds/Master.strings.bank", "res://3 Sounds/Master.bank", "res://3 Sounds/Desktop/SFX.bank"]

@@ -10,6 +10,9 @@ var Surface: String
 func _ready() -> void:
 	Surface = "Metal Grate"
 
+func _physics_process(_delta: float) -> void:
+	pass
+
 @rpc("call_local")
 func Play_footstep(_surface:= Surface):
 	footstep.set_parameter("Surface",_surface)

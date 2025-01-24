@@ -32,6 +32,7 @@ var impact_played: bool = false
 var sens:float = GameManager.sensitivity
 var owner_id = 1
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
+var AudioRay: bool = false
 
 
 func _enter_tree() -> void:
@@ -40,6 +41,7 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	if owner_id == multiplayer.get_unique_id():
+		GameManager.PLAYER = self
 		camera.make_current()
 		bodyInvert.visible = false
 		hud.visible = true
@@ -51,11 +53,11 @@ func _ready() -> void:
 		JUMP_VELOCITY = GameManager.player_jump
 		$Head/Camera3D/crossbow_viewmodel.show()
 		FmodServer.add_listener(0,camera) #adds fmod listening
-		GameManager.PLAYER = self
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	else:
 		camera.current = false
 		$Head/Camera3D/crossbow_shader.show()
+		AudioRay = true
 
 func _unhandled_input(event: InputEvent) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
@@ -75,7 +77,7 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("reload"):
 		weapon_manger.reload.rpc()
 	elif event.is_action_pressed("test"):
-		print(str(health_comp.health))
+		print(str(audio_comp.footstep.paraValue))
 
 func _physics_process(delta: float) -> void:
 	if owner_id != multiplayer.get_unique_id(): 

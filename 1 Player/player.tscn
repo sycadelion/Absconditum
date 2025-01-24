@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://f7itocgajf8o"]
+[gd_scene load_steps=56 format=3 uid="uid://f7itocgajf8o"]
 
 [ext_resource type="Script" path="res://1 Player/player.gd" id="1_4ht6w"]
 [ext_resource type="Material" uid="uid://gsnjhl57qwdk" path="res://4 Resources/Shaders/player_shader_mat.tres" id="1_fuh6j"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" path="res://1 Player/Components/bullet_proj_comp.gd" id="11_no44j"]
 [ext_resource type="PackedScene" uid="uid://da5fc0sh7rdo8" path="res://1 Player/Weapons/BulletProj.tscn" id="12_qi8gg"]
 [ext_resource type="Script" path="res://1 Player/Components/audio_component.gd" id="15_tld0y"]
+[ext_resource type="Script" path="res://1 Player/Fmod_Raycast.gd" id="16_077gp"]
 [ext_resource type="Script" path="res://1 Player/Components/health_component.gd" id="16_fwst1"]
 [ext_resource type="Script" path="res://1 Player/Components/weapon_manger.gd" id="17_ln4bi"]
 [ext_resource type="Script" path="res://4 Resources/Weapon_Resource.gd" id="22_dho8y"]
@@ -637,6 +638,9 @@ properties/1/replication_mode = 1
 properties/2/path = NodePath(".:rotation")
 properties/2/spawn = true
 properties/2/replication_mode = 1
+properties/3/path = NodePath("Footstep:position")
+properties/3/spawn = true
+properties/3/replication_mode = 1
 
 [node name="Player" type="CharacterBody3D" groups=["Players"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.96046e-08, 0)
@@ -790,10 +794,15 @@ unique_name_in_owner = true
 event_name = "event:/Footsteps"
 event_guid = "{f83d1858-d1b4-430c-a781-5ab547404bb1}"
 fmod_parameters/Surface/id = -5504228875075709698
-fmod_parameters/Surface = "Stone"
-fmod_parameters/Surface/labels = PackedStringArray("Stone", "Wood", "Jump")
+fmod_parameters/Surface = "Metal Grate"
+fmod_parameters/Surface/labels = PackedStringArray("Metal Grate", "Metal Steps", "Metal Low", "Glass", "Jump")
 fmod_parameters/Surface/variant_type = 4
+fmod_parameters/Occlusion/id = -9199801627215947433
+fmod_parameters/Occlusion = 0.0
+fmod_parameters/Occlusion/variant_type = 3
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.157895, 0)
+script = ExtResource("16_077gp")
 
 [node name="Audio_Component" type="Node" parent="."]
 script = ExtResource("15_tld0y")

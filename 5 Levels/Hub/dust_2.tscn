@@ -64,3 +64,6 @@ surface_material_override/30 = ExtResource("3_mkro1")
 surface_material_override/31 = ExtResource("3_mkro1")
 surface_material_override/32 = SubResource("StandardMaterial3D_60ad4")
 surface_material_override/33 = SubResource("StandardMaterial3D_b5is4")
+
+[node name="StaticBody3D" parent="de_dust2" index="0"]
+collision_mask = 3
