@@ -33,6 +33,7 @@ var Next_Weapon: String
 var Weapon_list = {}
 
 var shooting:bool = false
+var can_shoot:bool = false
 
 @export var _weapon_resouces: Array[WeaponResource]
 @export var Start_weapons: Array[String]
@@ -62,7 +63,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Weapon2") and not GameManager.paused:  ##Switch to slot 2
 		Weapon_indicator = 1
 		Exit.rpc(Weapon_stack[Weapon_indicator])
-	if event.is_action_pressed("shoot") and not shooting and not GameManager.paused:
+	if event.is_action_pressed("shoot") and not shooting and can_shoot and not GameManager.paused:
 		if Current_weapon.Manual:
 			if Current_weapon.Chambered_ammo == 1:
 				shoot_manual.rpc()
@@ -73,9 +74,14 @@ func _input(event: InputEvent) -> void:
 				shoot.rpc()
 			else:
 				shoot_empty.rpc()
-	if event.is_action_pressed("reload") and Current_weapon.Reserve_ammo > 0 \
-	 and not GameManager.paused:
+	if event.is_action_pressed("reload") and Current_weapon.Reserve_ammo >= 1 \
+	 and not GameManager.paused and Current_weapon.Current_ammo < Current_weapon.Reload_ammo:
 		reload.rpc()
+		Current_weapon.Reserve_ammo -= 1
+		Current_weapon.Current_ammo += 1
+	if Input.is_action_pressed("reload") and Current_weapon.Reserve_ammo <= 0 \
+	and not GameManager.paused:
+		shoot_empty.rpc()
 	if event.is_action_pressed("altFire"):
 		if Current_weapon.Manual:
 			if Current_weapon.Chambered_ammo <= 0 and Current_weapon.Current_ammo > 0:
@@ -118,6 +124,7 @@ func Change_Weapon(weapon_name: String):
 func Exit(_next_weapon: String):
 	if _next_weapon != Current_weapon.Weapon_name:	
 		if Current_weapon.Anim_deactivate:
+			can_shoot = false
 			anim_player.play(Current_weapon.Anim_deactivate)
 			Next_Weapon = _next_weapon
 
@@ -125,19 +132,31 @@ func Exit(_next_weapon: String):
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == Current_weapon.Anim_deactivate:
 		Change_Weapon.rpc(Next_Weapon)
+	if anim_name == Current_weapon.Anim_activate:
+		can_shoot = true
 	if anim_name == Current_weapon.Anim_shoot and Current_weapon.Full_auto:
 		if Input.is_action_pressed("shoot") and Current_weapon.Current_ammo > 0:
 			shoot.rpc()
 	if anim_name == Current_weapon.Anim_reload:
 		if Player.owner_id != multiplayer.get_unique_id(): 
 			return
-		var reload_amount = Current_weapon.Reload_ammo - Current_weapon.Current_ammo
-		if Current_weapon.Reserve_ammo - reload_amount > 0:
-			Current_weapon.Current_ammo += reload_amount
-			Current_weapon.Reserve_ammo -= reload_amount
+		if not Current_weapon.Manual:
+			var reload_amount = Current_weapon.Reload_ammo - Current_weapon.Current_ammo
+			if Current_weapon.Reserve_ammo - reload_amount > 0:
+				Current_weapon.Current_ammo += reload_amount
+				Current_weapon.Reserve_ammo -= reload_amount
+			else:
+				Current_weapon.Current_ammo += Current_weapon.Reserve_ammo
+				Current_weapon.Reserve_ammo = 0
 		else:
-			Current_weapon.Current_ammo += Current_weapon.Reserve_ammo
-			Current_weapon.Reserve_ammo = 0
+			if Input.is_action_pressed("reload") and Current_weapon.Reserve_ammo >= 1 \
+			and not GameManager.paused and Current_weapon.Current_ammo < Current_weapon.Reload_ammo:
+				reload.rpc()
+				Current_weapon.Reserve_ammo -= 1
+				Current_weapon.Current_ammo += 1
+			elif Input.is_action_pressed("reload") and Current_weapon.Reserve_ammo <= 0 \
+			and not GameManager.paused:
+				shoot_empty.rpc()
 
 @rpc("call_local")
 func shoot():
