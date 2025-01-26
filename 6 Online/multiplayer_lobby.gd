@@ -1,6 +1,6 @@
 class_name MultiplayerLobby extends Node
 
-var level_scene: PackedScene = preload("res://5 Levels/Hub/hub.tscn")
+var level_scene: PackedScene = preload("res://5 Levels/Drop_pod_hanger/Level_Drop_pod_hanger.tscn")
 @onready var level_container: Node = $Level
 @onready var ip_line_edit: LineEdit = $Multiplayer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/IPLineEdit
 @onready var lobby_ui: CanvasLayer = $Multiplayer

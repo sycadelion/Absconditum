@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://co2o06cabp8pr"]
+
+[ext_resource type="Texture2D" uid="uid://d0iltyagov377" path="res://addons/kenney_prototype_textures/dark/texture_07.png" id="1_kx4gf"]
+
+[resource]
+resource_name = "Floor"
+cull_mode = 2
+albedo_texture = ExtResource("1_kx4gf")
+roughness = 0.5

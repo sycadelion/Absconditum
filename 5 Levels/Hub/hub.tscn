@@ -6,13 +6,13 @@
 [ext_resource type="Material" uid="uid://ys5y4m34ptf6" path="res://4 Resources/Shaders/Skybox_mat.tres" id="3_lfn30"]
 [ext_resource type="PackedScene" uid="uid://btea2veyjc17u" path="res://6 Online/SpawnPoint.tscn" id="5_o78dm"]
 
-[sub_resource type="Sky" id="Sky_8f814"]
+[sub_resource type="Sky" id="Sky_stnlc"]
 sky_material = ExtResource("3_lfn30")
 
 [sub_resource type="Environment" id="Environment_od2il"]
 background_mode = 2
 background_color = Color(0.203922, 0.113725, 0, 1)
-sky = SubResource("Sky_8f814")
+sky = SubResource("Sky_stnlc")
 ambient_light_color = Color(0.154876, 0.154876, 0.154876, 1)
 tonemap_mode = 2
 glow_enabled = true

@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://ddut4ym5suydp"]
+
+[ext_resource type="Material" uid="uid://ys5y4m34ptf6" path="res://4 Resources/Shaders/Skybox_mat.tres" id="1_fm5q2"]
+[ext_resource type="Script" path="res://5 Levels/Hub/hub.gd" id="1_xthv6"]
+[ext_resource type="PackedScene" uid="uid://by2l3c5hf85wk" path="res://5 Levels/Drop_pod_hanger/import/drop_pod_hanger.tscn" id="2_7rrye"]
+[ext_resource type="PackedScene" uid="uid://f7itocgajf8o" path="res://1 Player/player.tscn" id="2_iocvr"]
+[ext_resource type="PackedScene" uid="uid://btea2veyjc17u" path="res://6 Online/SpawnPoint.tscn" id="3_ku60f"]
+
+[sub_resource type="Sky" id="Sky_8f814"]
+sky_material = ExtResource("1_fm5q2")
+
+[sub_resource type="Environment" id="Environment_yn00g"]
+background_mode = 2
+background_color = Color(0.203922, 0.113725, 0, 1)
+sky = SubResource("Sky_8f814")
+ambient_light_color = Color(0.154876, 0.154876, 0.154876, 1)
+tonemap_mode = 2
+glow_enabled = true
+fog_light_color = Color(0.57, 0.343995, 0.2223, 1)
+fog_sun_scatter = 0.14
+fog_density = 0.2311
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.506346, 0.0985438, 0.548278, 1)
+volumetric_fog_emission = Color(0.276803, 0.137464, 0.273613, 1)
+volumetric_fog_length = 10.0
+
+[node name="LevelDropPodHanger" type="Node3D" node_paths=PackedStringArray("players_container", "player_spawner")]
+script = ExtResource("1_xthv6")
+players_container = NodePath("Players")
+player_scene = ExtResource("2_iocvr")
+player_spawner = NodePath("MultiplayerSpawner")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_yn00g")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -6, 4, 0)
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." groups=["Spawner"]]
+spawn_path = NodePath("../Players")
+spawn_limit = 8
+
+[node name="Players" type="Node3D" parent="."]
+
+[node name="SkillContainer" type="Node3D" parent="." groups=["SkillContainer"]]
+
+[node name="Drop_pod_Hanger" parent="." instance=ExtResource("2_7rrye")]
+
+[node name="Spawn_points" type="Node3D" parent="."]
+
+[node name="SpawnPoint" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56044, 1, 50)
+
+[node name="SpawnPoint2" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7875, 1, 42.9123)
+
+[node name="SpawnPoint3" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7875, 3.87525, 72.9058)
+
+[node name="SpawnPoint4" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7177, 3.87525, 77.7482)
+
+[node name="SpawnPoint5" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.130496, 3.87525, 74.0555)
