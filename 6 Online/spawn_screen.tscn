@@ -34,9 +34,11 @@ text = "Spawn Menu"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Gun slot 1" type="MenuButton" parent="PanelContainer/VBoxContainer"]
+[node name="Slot 1" type="OptionButton" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "Gun 1"
+alignment = 1
+selected = 1
+allow_reselect = true
 item_count = 3
 popup/item_0/text = "Trauma"
 popup/item_1/text = "Malice"
@@ -44,9 +46,11 @@ popup/item_1/id = 1
 popup/item_2/text = "Salvation"
 popup/item_2/id = 2
 
-[node name="Gun slot 2" type="MenuButton" parent="PanelContainer/VBoxContainer"]
+[node name="Slot 2" type="OptionButton" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "Gun 2"
+alignment = 1
+selected = 0
+allow_reselect = true
 item_count = 3
 popup/item_0/text = "Trauma"
 popup/item_1/text = "Malice"

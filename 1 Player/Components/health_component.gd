@@ -18,7 +18,8 @@ func receive_damage(damage_value:int, attacker:int):
 	if health <= 0:
 		OnlineMang.PlayerDied.emit(attacker,Player.owner_id)
 		health = MAX_HEALTH
-		respawn_self()
+		GameManager.dead = true
+		Player.queue_free()
 
 @rpc("any_peer")
 func respawn_self():
