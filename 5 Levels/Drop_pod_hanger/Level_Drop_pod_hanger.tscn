@@ -99,12 +99,10 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.5390
 
 [node name="Spawning Cam" type="Camera3D" parent="."]
 transform = Transform3D(-3.72577e-08, -0.52296, 0.852357, -2.28593e-08, 0.852357, 0.52296, -1, 0, -4.37114e-08, 45.7677, 17, 0)
-current = true
 
 [node name="Ingame Stuff" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Spawn Screen" parent="Ingame Stuff" instance=ExtResource("6_46imq")]
-
-[connection signal="pressed" from="Ingame Stuff/Spawn Screen/PanelContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 
 [editable path="Ingame Stuff/Spawn Screen"]
