@@ -104,11 +104,16 @@ func update_globals(var1,var2, var3, var4,var5):
 	GameManager.hitscan = var5
 	
 func player_died(killer,killed):
-	var Killer_name = players[killer].name
-	players[killer].kills += 1
-	var killed_name = players[killed].name
-	players[killed].deaths += 1
-	GameManager.PLAYER.killfeed.send_message.rpc(Killer_name,killed_name)
+	if killer == -1:
+		var killed_name = players[killed].name
+		players[killed].deaths += 1
+		GameManager.PLAYER.killfeed.send_message.rpc("Environment",killed_name)
+	else:
+		var Killer_name = players[killer].name
+		players[killer].kills += 1
+		var killed_name = players[killed].name
+		players[killed].deaths += 1
+		GameManager.PLAYER.killfeed.send_message.rpc(Killer_name,killed_name)
 
 func _exit_tree() -> void:
 	OnlineMang.onlineComp = null

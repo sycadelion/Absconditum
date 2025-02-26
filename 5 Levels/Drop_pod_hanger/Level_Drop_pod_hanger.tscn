@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://ddut4ym5suydp"]
+[gd_scene load_steps=9 format=3 uid="uid://ddut4ym5suydp"]
 
 [ext_resource type="Material" uid="uid://ys5y4m34ptf6" path="res://4 Resources/Shaders/Skybox_mat.tres" id="1_fm5q2"]
 [ext_resource type="Script" path="res://5 Levels/Hub/hub.gd" id="1_xthv6"]
 [ext_resource type="PackedScene" uid="uid://c33psuu1qtqd3" path="res://5 Levels/Drop_pod_hanger/import/drop_pod_hanger.tscn" id="2_7rrye"]
 [ext_resource type="PackedScene" uid="uid://f7itocgajf8o" path="res://1 Player/player.tscn" id="2_iocvr"]
 [ext_resource type="PackedScene" uid="uid://btea2veyjc17u" path="res://6 Online/SpawnPoint.tscn" id="3_ku60f"]
+[ext_resource type="PackedScene" uid="uid://d4ckpg8arvmqx" path="res://6 Online/spawn_screen.tscn" id="6_46imq"]
 
 [sub_resource type="Sky" id="Sky_8f814"]
 sky_material = ExtResource("1_fm5q2")
@@ -95,3 +96,13 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -45.67
 
 [node name="SpawnPoint16" parent="Spawn_points" instance=ExtResource("3_ku60f")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.539011, 0.956946, 0.317714)
+
+[node name="Spawning Cam" type="Camera3D" parent="."]
+transform = Transform3D(-3.72577e-08, -0.52296, 0.852357, -2.28593e-08, 0.852357, 0.52296, -1, 0, -4.37114e-08, 45.7677, 17, 0)
+
+[node name="Ingame Stuff" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Spawn Screen" parent="Ingame Stuff" instance=ExtResource("6_46imq")]
+
+[editable path="Ingame Stuff/Spawn Screen"]

@@ -1241,6 +1241,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39031, 0)
 [node name="Camera3D" type="Camera3D" parent="Head" groups=["Players"]]
 
 [node name="Hand" type="Node3D" parent="Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Malice_typeM" parent="Head/Camera3D/Hand" instance=ExtResource("9_2r2es")]
 transform = Transform3D(-1.81e-06, 0, 0.5, 0, 0.5, 0, -0.5, 0, -1.81e-06, 0.38927, -0.434237, 0.130601)
@@ -1378,7 +1379,7 @@ script = ExtResource("15_tld0y")
 
 [node name="Health_Component" type="Node" parent="."]
 script = ExtResource("16_fwst1")
-MAX_HEALTH = 1
+MAX_HEALTH = 100
 
 [node name="BulletProjComp" type="Node" parent="."]
 script = ExtResource("11_no44j")

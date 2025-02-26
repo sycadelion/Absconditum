@@ -33,8 +33,6 @@ func spawn_player(id):
 	#set player id
 	player_instance.player_id = id
 	
-	
-	print("player " + str(player_instance.player_id) + " Spawned")
 	#set player to spawn position
 	player_instance.name = str(id)
 	var spawnPOS = GameManager.spawn_point_rng()

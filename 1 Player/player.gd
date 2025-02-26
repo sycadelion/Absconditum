@@ -81,7 +81,8 @@ func _input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
 		return
-		
+	if self.global_position.y <= -15:
+		health_comp.receive_damage(health_comp.MAX_HEALTH,-1)
 	sens = GameManager.sensitivity / 1000
 	Health_bar.value = health_comp.health
 	Health_Label.text = str(health_comp.health)

@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4ckpg8arvmqx"]
+
+[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu.tres" id="1_cxiog"]
+
+[node name="Spawn Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_cxiog")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.5
+offset_top = -33.5
+offset_right = 77.5
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Spawn Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gun slot 1" type="MenuButton" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Gun 1"
+item_count = 3
+popup/item_0/text = "Trauma"
+popup/item_1/text = "Malice"
+popup/item_1/id = 1
+popup/item_2/text = "Salvation"
+popup/item_2/id = 2
+
+[node name="Gun slot 2" type="MenuButton" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Gun 2"
+item_count = 3
+popup/item_0/text = "Trauma"
+popup/item_1/text = "Malice"
+popup/item_1/id = 1
+popup/item_2/text = "Salvation"
+popup/item_2/id = 2
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Spawn"
