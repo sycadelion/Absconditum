@@ -1392,7 +1392,6 @@ _skill_prefab = ExtResource("11_7l2ie")
 [node name="WeaponManger" type="Node" parent="."]
 script = ExtResource("17_ln4bi")
 _weapon_resouces = Array[ExtResource("22_dho8y")]([ExtResource("28_bme5i"), ExtResource("29_6fwx1"), ExtResource("30_wo1cl")])
-Start_weapons = Array[String](["Malice", "Trauma"])
 
 [connection signal="animation_finished" from="AnimationTree" to="WeaponManger" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
