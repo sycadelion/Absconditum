@@ -44,9 +44,6 @@ var can_shoot:bool = false
 @export var Start_weapons: Array[String]
 
 func _ready() -> void:
-	Start_weapons.append(GameManager.slot_1)
-	Start_weapons.append(GameManager.slot_2)
-	print(str(Start_weapons))
 	Player = owner
 	Initialize.rpc(Start_weapons)
 

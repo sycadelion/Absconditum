@@ -76,7 +76,7 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("reload"):
 		weapon_manger.reload.rpc()
 	elif event.is_action_pressed("test"):
-		print(weapon_manger.Start_weapons[0])
+		print(str(audio_comp.footstep.paraValue))
 
 func _physics_process(delta: float) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
