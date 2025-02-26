@@ -10,6 +10,10 @@ class_name WeaponResource extends Resource
 @export var Anim_reload: String ##String name for the animation of reloading
 @export var Anim_deactivate: String ##String name for the animation of putting away the weapon
 
+#images
+@export_group("Weapon Images")
+@export var Weapon_Image: Texture
+
 #ammo
 @export_group("Ammo")
 @export var Damage: int ##Amount of damage the bullets deal
@@ -23,4 +27,5 @@ class_name WeaponResource extends Resource
 @export_group("Fire Mode")
 @export var Full_auto: bool ##Toggle for full auto fire
 @export var Manual: bool ##Toggle for needing to chamber each round
+@export var Launcher: bool ##toggle for making launcher
 @export var Firerate: float ##Rate you can shoot

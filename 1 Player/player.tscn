@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://f7itocgajf8o"]
+[gd_scene load_steps=73 format=3 uid="uid://f7itocgajf8o"]
 
 [ext_resource type="Script" path="res://1 Player/player.gd" id="1_4ht6w"]
 [ext_resource type="Material" uid="uid://gsnjhl57qwdk" path="res://4 Resources/Shaders/player_shader_mat.tres" id="1_fuh6j"]
@@ -14,9 +14,12 @@
 [ext_resource type="Texture2D" uid="uid://68kjn6suxq5a" path="res://addons/kenney_particle_pack/smoke_04.png" id="6_oop84"]
 [ext_resource type="PackedScene" uid="uid://c0wl72hwaa31r" path="res://1 Player/GUI/hud.tscn" id="7_kc58q"]
 [ext_resource type="PackedScene" uid="uid://ser6du4tr2cu" path="res://1 Player/GUI/pause.tscn" id="8_grtv0"]
+[ext_resource type="PackedScene" uid="uid://c4juwh1tsimcx" path="res://1 Player/Weapons/malice_type_m.tscn" id="9_2r2es"]
 [ext_resource type="PackedScene" uid="uid://d2ljcqlo87l2j" path="res://1 Player/GUI/kill_feed.tscn" id="10_7uef7"]
 [ext_resource type="Script" path="res://1 Player/Components/skill_1_comp.gd" id="10_elnv3"]
+[ext_resource type="PackedScene" uid="uid://dr380cr6se6rc" path="res://1 Player/Weapons/salvation_2_type_n.tscn" id="10_vg1fo"]
 [ext_resource type="PackedScene" uid="uid://d3bhlb6x0ro8f" path="res://1 Player/Weapons/Skill1_Scene.tscn" id="11_7l2ie"]
+[ext_resource type="PackedScene" uid="uid://b0oppry2iydfe" path="res://1 Player/Weapons/trauma_type_n.tscn" id="11_cghwp"]
 [ext_resource type="Script" path="res://1 Player/Components/bullet_proj_comp.gd" id="11_no44j"]
 [ext_resource type="PackedScene" uid="uid://da5fc0sh7rdo8" path="res://1 Player/Weapons/BulletProj.tscn" id="12_qi8gg"]
 [ext_resource type="Script" path="res://1 Player/Components/audio_component.gd" id="15_tld0y"]
@@ -24,8 +27,9 @@
 [ext_resource type="Script" path="res://1 Player/Components/health_component.gd" id="16_fwst1"]
 [ext_resource type="Script" path="res://1 Player/Components/weapon_manger.gd" id="17_ln4bi"]
 [ext_resource type="Script" path="res://4 Resources/Weapon_Resource.gd" id="22_dho8y"]
-[ext_resource type="Resource" uid="uid://qlokx0okiea7" path="res://4 Resources/Weapons/Crossbow.tres" id="23_6wyhl"]
-[ext_resource type="Resource" uid="uid://c6ue1n7mh4we8" path="res://4 Resources/Weapons/Crossbow_m.tres" id="24_h1ljr"]
+[ext_resource type="Resource" uid="uid://vrc4parm6311" path="res://4 Resources/Weapons/Malice.tres" id="28_bme5i"]
+[ext_resource type="Resource" uid="uid://bme5b2ty1ti5b" path="res://4 Resources/Weapons/Salvation.tres" id="29_6fwx1"]
+[ext_resource type="Resource" uid="uid://bt37yoot0xdu4" path="res://4 Resources/Weapons/trauma.tres" id="30_wo1cl"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4jp85"]
 material = ExtResource("3_fdipf")
@@ -94,6 +98,24 @@ input_1/reset = true
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oxg2c"]
 animation = &"Gun_empty"
 
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_3y35m"]
+input_0/name = "no gun"
+input_0/auto_advance = false
+input_0/break_loop_at_end = false
+input_0/reset = false
+input_1/name = "Trauma"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = false
+input_2/name = "Malice"
+input_2/auto_advance = false
+input_2/break_loop_at_end = false
+input_2/reset = false
+input_3/name = "Salvation"
+input_3/auto_advance = false
+input_3/break_loop_at_end = false
+input_3/reset = false
+
 [sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_gflx4"]
 input_0/name = "Idle"
 input_0/auto_advance = false
@@ -107,8 +129,14 @@ input_1/reset = true
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_52w8c"]
 animation = &"idle"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tl38f"]
+animation = &"malice_equip"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ie8ji"]
 animation = &"move"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sxkt1"]
+animation = &"Salvation_equip"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3ay3x"]
 animation = &"shoot"
@@ -124,23 +152,44 @@ input_1/auto_advance = false
 input_1/break_loop_at_end = false
 input_1/reset = true
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gq8kr"]
+animation = &"Trauma_equip"
+
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_qqfpc"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_q3vbx"]
+animation = &"move"
+
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ld7nr"]
+graph_offset = Vector2(-450.432, -30.9803)
 nodes/DryFire/node = SubResource("AnimationNodeTransition_42o4i")
-nodes/DryFire/position = Vector2(400, 80)
+nodes/DryFire/position = Vector2(500, 80)
 nodes/EmptyShoot/node = SubResource("AnimationNodeAnimation_oxg2c")
-nodes/EmptyShoot/position = Vector2(160, -40)
+nodes/EmptyShoot/position = Vector2(260, -40)
+nodes/Equip/node = SubResource("AnimationNodeTransition_3y35m")
+nodes/Equip/position = Vector2(-300, 440)
 nodes/FallAndFloor/node = SubResource("AnimationNodeTransition_gflx4")
-nodes/FallAndFloor/position = Vector2(-81.191, 196.988)
+nodes/FallAndFloor/position = Vector2(-160, 200)
 nodes/Idle/node = SubResource("AnimationNodeAnimation_52w8c")
 nodes/Idle/position = Vector2(-380, 100)
+"nodes/Malice equip/node" = SubResource("AnimationNodeAnimation_tl38f")
+"nodes/Malice equip/position" = Vector2(-740, 620)
 nodes/Move/node = SubResource("AnimationNodeAnimation_ie8ji")
 nodes/Move/position = Vector2(-380, 240)
+"nodes/Salvation equip/node" = SubResource("AnimationNodeAnimation_sxkt1")
+"nodes/Salvation equip/position" = Vector2(-740, 780)
 nodes/Shoot/node = SubResource("AnimationNodeAnimation_3ay3x")
 nodes/Shoot/position = Vector2(-380, -60)
 nodes/Shooting/node = SubResource("AnimationNodeTransition_yqtjs")
-nodes/Shooting/position = Vector2(160, 120)
-nodes/output/position = Vector2(600, 120)
-node_connections = [&"DryFire", 0, &"EmptyShoot", &"DryFire", 1, &"Shooting", &"FallAndFloor", 0, &"Idle", &"FallAndFloor", 1, &"Move", &"Shooting", 0, &"Shoot", &"Shooting", 1, &"FallAndFloor", &"output", 0, &"DryFire"]
+nodes/Shooting/position = Vector2(260, 120)
+"nodes/Trauma equip/node" = SubResource("AnimationNodeAnimation_gq8kr")
+"nodes/Trauma equip/position" = Vector2(-740, 460)
+nodes/gunEquip/node = SubResource("AnimationNodeAdd2_qqfpc")
+nodes/gunEquip/position = Vector2(40, 300)
+"nodes/no gun/node" = SubResource("AnimationNodeAnimation_q3vbx")
+"nodes/no gun/position" = Vector2(-720, 300)
+nodes/output/position = Vector2(700, 120)
+node_connections = [&"DryFire", 0, &"EmptyShoot", &"DryFire", 1, &"Shooting", &"Equip", 0, &"no gun", &"Equip", 1, &"Trauma equip", &"Equip", 2, &"Malice equip", &"Equip", 3, &"Salvation equip", &"FallAndFloor", 0, &"Idle", &"FallAndFloor", 1, &"Move", &"Shooting", 0, &"Shoot", &"Shooting", 1, &"gunEquip", &"gunEquip", 0, &"FallAndFloor", &"gunEquip", 1, &"Equip", &"output", 0, &"DryFire"]
 
 [sub_resource type="Animation" id="Animation_grxd7"]
 resource_name = "Gun_empty"
@@ -168,6 +217,30 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 0.282656), Vector3(0, 0, -0.279253), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Head/Camera3D/Hand:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Head/Camera3D/Hand:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.366667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.158319), Vector3(0, 0, -0.282126), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_rukxb"]
@@ -295,6 +368,138 @@ tracks/7/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Head/Camera3D/Hand/Malice_typeM:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.38927, -0.434237, 0.130601)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Head/Camera3D/Hand/Malice_typeM:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Head/Camera3D/Hand/Malice_typeM:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Head/Camera3D/Hand:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Head/Camera3D/Hand:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Head/Camera3D/Hand/Salvation2_typeN:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Head/Camera3D/Hand/Salvation2_typeN:rotation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Head/Camera3D/Hand/Salvation2_typeN:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.469697, -0.497225, -0.323395)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Head/Camera3D/Hand/Trauma_typeN:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.51685, -0.64943, -0.056298)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Head/Camera3D/Hand/Trauma_typeN:rotation")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Head/Camera3D/Hand/Trauma_typeN:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_gjl0r"]
 resource_name = "Reloading"
@@ -347,6 +552,30 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 2, 0.5, 0.5, 0.5, 0.5, 2),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(-0.158282, 0.511442, -1.24689), Vector3(-0.250239, 0.393312, -0.823015), Vector3(-0.158282, 0.511442, -1.24689), Vector3(-0.250239, 0.393312, -0.823015), Vector3(-0.141212, 0.404915, -0.984779), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Head/Camera3D/Hand:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Head/Camera3D/Hand:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.14, 0.24, 0.28, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.448166), Vector3(0, 0, -0.257995), Vector3(0, 0, -0.711675), Vector3(0, 0, -0.393799), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_hsecg"]
@@ -492,6 +721,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0.0372977, 0, 0), Vector3(0, 0, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Head/Camera3D/Hand:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.0240259, 0), Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Head/Camera3D/Hand:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.118368, 0, 0), Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_0ng04"]
 resource_name = "move"
@@ -562,6 +815,30 @@ tracks/4/keys = {
 "method": &"Play_footstep"
 }]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Head/Camera3D/Hand:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.130926, 0), Vector3(0, 0, 0), Vector3(0, 0.0523593, 0), Vector3(0, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Head/Camera3D/Hand:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.134931, 0, 0), Vector3(0, 0, 0), Vector3(0.0621337, 0, 0), Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_5v340"]
 resource_name = "shoot"
@@ -614,6 +891,278 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0.208864, 0, 0), Vector3(0, 0, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Head/Camera3D/Hand:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.189889), Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Head/Camera3D/Hand:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.0742289, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_scqn5"]
+resource_name = "malice_equip"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Camera3D/Hand/Malice_typeM:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.38927, -0.434237, 0.130601), Vector3(0.38927, -0.434237, 0.130601)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/Camera3D/Hand/Malice_typeM:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.037904, 1.88469, -0.588862), Vector3(0, 1.5708, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Head/Camera3D/Hand/Malice_typeM:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_3lvqf"]
+resource_name = "malice_unequip"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Camera3D/Hand/Malice_typeM:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.38927, -0.434237, 0.130601), Vector3(0.38927, -0.434237, 0.130601)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/Camera3D/Hand/Malice_typeM:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0), Vector3(0.037904, 1.88469, -0.588862)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Head/Camera3D/Hand/Malice_typeM:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_auwjt"]
+resource_name = "Salvation_equip"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Camera3D/Hand/Salvation2_typeN:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.03, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/Camera3D/Hand/Salvation2_typeN:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.171153, 1.97942, -1.01389), Vector3(0, 1.5708, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Head/Camera3D/Hand/Salvation2_typeN:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.469697, -0.497225, -0.323395), Vector3(0.469697, -0.497225, -0.323395)]
+}
+
+[sub_resource type="Animation" id="Animation_llvb0"]
+resource_name = "Salvation_unequip"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Camera3D/Hand/Salvation2_typeN:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.469697, -0.497225, -0.323395), Vector3(0.469697, -0.497225, -0.323395)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/Camera3D/Hand/Salvation2_typeN:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0), Vector3(0.171153, 1.97942, -1.01389)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Head/Camera3D/Hand/Salvation2_typeN:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_ct8el"]
+resource_name = "Trauma_equip"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Camera3D/Hand/Trauma_typeN:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.51685, -0.64943, -0.056298), Vector3(0.51685, -0.64943, -0.056298)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/Camera3D/Hand/Trauma_typeN:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.21737, 2.10387, -0.709705), Vector3(0, 1.5708, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Head/Camera3D/Hand/Trauma_typeN:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_7h1qu"]
+resource_name = "Trauma_unequip"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Camera3D/Hand/Trauma_typeN:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.51685, -0.64943, -0.056298), Vector3(0.51685, -0.64943, -0.056298)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/Camera3D/Hand/Trauma_typeN:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0), Vector3(0.21737, 2.10387, -0.709705)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Head/Camera3D/Hand/Trauma_typeN:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.48),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_qeuk3"]
+resource_name = "no_gun"
+step = 0.01
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_demr1"]
 _data = {
@@ -621,10 +1170,17 @@ _data = {
 "Put_away": SubResource("Animation_rukxb"),
 "RESET": SubResource("Animation_6woqc"),
 "Reloading": SubResource("Animation_gjl0r"),
+"Salvation_equip": SubResource("Animation_auwjt"),
+"Salvation_unequip": SubResource("Animation_llvb0"),
 "Take_out": SubResource("Animation_hsecg"),
+"Trauma_equip": SubResource("Animation_ct8el"),
+"Trauma_unequip": SubResource("Animation_7h1qu"),
 "death": SubResource("Animation_qkman"),
 "idle": SubResource("Animation_qw2dm"),
+"malice_equip": SubResource("Animation_scqn5"),
+"malice_unequip": SubResource("Animation_3lvqf"),
 "move": SubResource("Animation_0ng04"),
+"no_gun": SubResource("Animation_qeuk3"),
 "shoot": SubResource("Animation_5v340")
 }
 
@@ -684,6 +1240,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39031, 0)
 [node name="Camera3D" type="Camera3D" parent="Head" groups=["Players"]]
 
 [node name="Hand" type="Node3D" parent="Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Malice_typeM" parent="Head/Camera3D/Hand" instance=ExtResource("9_2r2es")]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0.38927, -0.434237, 0.130601)
+visible = false
+
+[node name="Salvation2_typeN" parent="Head/Camera3D/Hand" instance=ExtResource("10_vg1fo")]
+transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 0.469697, -0.497225, -0.323395)
+visible = false
+
+[node name="Trauma_typeN" parent="Head/Camera3D/Hand" instance=ExtResource("11_cghwp")]
+transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 0.51685, -0.64943, -0.056298)
+visible = false
 
 [node name="crossbow_viewmodel" parent="Head/Camera3D" instance=ExtResource("4_abpq6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.462046, -0.714712, -0.248098)
@@ -739,12 +1308,16 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/DryFire/current_state = "False"
 parameters/DryFire/transition_request = ""
 parameters/DryFire/current_index = 1
+parameters/Equip/current_state = "no gun"
+parameters/Equip/transition_request = ""
+parameters/Equip/current_index = 0
 parameters/FallAndFloor/current_state = "Idle"
 parameters/FallAndFloor/transition_request = ""
 parameters/FallAndFloor/current_index = 0
 parameters/Shooting/current_state = "False"
 parameters/Shooting/transition_request = ""
 parameters/Shooting/current_index = 1
+parameters/gunEquip/add_amount = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
@@ -760,12 +1333,6 @@ replication_config = SubResource("SceneReplicationConfig_pefit")
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("7_kc58q")]
 visible = false
-
-[node name="SubViewport" parent="CanvasLayer/HUD/Weapon1/SubViewportContainer" index="0"]
-render_target_update_mode = 0
-
-[node name="SubViewport" parent="CanvasLayer/HUD/Weapon2/SubViewportContainer2" index="0"]
-render_target_update_mode = 0
 
 [node name="Ammo" type="Control" parent="CanvasLayer/HUD"]
 layout_mode = 1
@@ -823,8 +1390,8 @@ _skill_prefab = ExtResource("11_7l2ie")
 
 [node name="WeaponManger" type="Node" parent="."]
 script = ExtResource("17_ln4bi")
-_weapon_resouces = Array[ExtResource("22_dho8y")]([ExtResource("23_6wyhl"), ExtResource("24_h1ljr")])
-Start_weapons = Array[String](["Crossbow", "Crossbow_m"])
+_weapon_resouces = Array[ExtResource("22_dho8y")]([ExtResource("28_bme5i"), ExtResource("29_6fwx1"), ExtResource("30_wo1cl")])
+Start_weapons = Array[String](["Malice", "Trauma"])
 
 [connection signal="animation_finished" from="AnimationTree" to="WeaponManger" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -7,6 +7,7 @@ signal update_weapon_stack
 @onready var muzzle_flash: GPUParticles3D = %MuzzleFlash
 @onready var ammo_count: Label = $"../CanvasLayer/HUD/Ammo/Ammo_count"
 @onready var anim_player: AnimationPlayer = %AnimationPlayer
+@onready var anim_tree: AnimationTree = $"../AnimationTree"
 
 #HUD ammo counts:
 #Not Manual:
@@ -20,8 +21,12 @@ signal update_weapon_stack
 
 #weapon slot 1
 @onready var Weapon_Slot1: Label = $"../CanvasLayer/HUD/Weapon1/AmmoCount"
+@onready var weapon1_image: TextureRect = $"../CanvasLayer/HUD/Weapon1/PanelContainer/weapon1_image"
+
 #weapon slot 2 
 @onready var Weapon_Slot2: Label = $"../CanvasLayer/HUD/Weapon2/AmmoCount"
+@onready var weapon2_image: TextureRect = $"../CanvasLayer/HUD/Weapon2/PanelContainer/weapon2_image"
+
 
 
 var Player: Player
@@ -52,7 +57,9 @@ func _process(_delta: float) -> void:
 		type_A_loaded.text = str(Current_weapon.Current_ammo)
 	if Weapon_stack[1] != null:
 		Weapon_Slot1.text = str(Weapon_list[Weapon_stack[0]].Reserve_ammo)
+		weapon1_image.texture = Weapon_list[Weapon_stack[0]].Weapon_Image
 		Weapon_Slot2.text = str(Weapon_list[Weapon_stack[1]].Reserve_ammo)
+		weapon2_image.texture = Weapon_list[Weapon_stack[1]].Weapon_Image
 
 func _input(event: InputEvent) -> void:
 	if Player.owner_id != multiplayer.get_unique_id(): 
@@ -103,7 +110,7 @@ func Initialize(_Start_weapons):
 @rpc("call_local")
 func Enter():
 	if Current_weapon.Anim_activate:
-		anim_player.play(Current_weapon.Anim_activate)
+		anim_tree["parameters/Equip/transition_request"] = Current_weapon.Weapon_name
 		if Current_weapon.Manual:
 			Type_A_Node.hide()
 			Type_M_Node.show()

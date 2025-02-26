@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://cksvtv65v3yj1"]
+
+[ext_resource type="Script" path="res://4 Resources/Weapon_Resource.gd" id="1_h3pey"]
+[ext_resource type="Texture2D" uid="uid://cvgq251xak6s0" path="res://8 Assets/Images/Grenade_launcher.png" id="1_hdmet"]
+
+[resource]
+script = ExtResource("1_h3pey")
+Weapon_name = "Void Launcher"
+Anim_activate = ""
+Anim_shoot = ""
+Anim_empty = ""
+Anim_reload = ""
+Anim_deactivate = ""
+Weapon_Image = ExtResource("1_hdmet")
+Damage = 33
+Current_ammo = 3
+Reload_ammo = 3
+Reserve_ammo = 60
+Max_reserve = 60
+Chambered_ammo = 3
+Full_auto = false
+Manual = true
+Launcher = true
+Firerate = 0.0

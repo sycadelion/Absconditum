@@ -51,7 +51,6 @@ func _ready() -> void:
 		sens = GameManager.sensitivity / 1000
 		SPEED = GameManager.player_Speed
 		JUMP_VELOCITY = GameManager.player_jump
-		$Head/Camera3D/crossbow_viewmodel.show()
 		FmodServer.add_listener(0,camera) #adds fmod listening
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	else:
