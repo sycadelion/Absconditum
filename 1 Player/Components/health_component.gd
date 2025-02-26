@@ -12,7 +12,7 @@ func _ready() -> void:
 	Player = owner
 	health = MAX_HEALTH
 
-@rpc("any_peer")
+@rpc("call_local","any_peer")
 func receive_damage(damage_value:int, attacker:int):
 	health -= damage_value
 	if health <= 0:
@@ -20,7 +20,7 @@ func receive_damage(damage_value:int, attacker:int):
 		health = MAX_HEALTH
 		respawn_self()
 
-@rpc("any_peer")
+@rpc("call_local","any_peer")
 func respawn_self():
 	var spawnPOS = GameManager.spawn_point_rng()
 	if spawnPOS.SpawnActive:
