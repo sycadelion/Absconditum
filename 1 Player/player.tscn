@@ -683,6 +683,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39031, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" groups=["Players"]]
 
+[node name="Hand" type="Node3D" parent="Head/Camera3D"]
+
 [node name="crossbow_viewmodel" parent="Head/Camera3D" instance=ExtResource("4_abpq6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.462046, -0.714712, -0.248098)
 visible = false

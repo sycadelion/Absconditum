@@ -4,4 +4,5 @@
 
 [resource]
 resource_name = "Wall"
+shading_mode = 0
 albedo_texture = ExtResource("1_tc0vy")

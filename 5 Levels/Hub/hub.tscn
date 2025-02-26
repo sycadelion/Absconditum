@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://c7b7s6cm1vqrg"]
+[gd_scene load_steps=7 format=3 uid="uid://c7b7s6cm1vqrg"]
 
 [ext_resource type="Script" path="res://5 Levels/Hub/hub.gd" id="1_ttpxj"]
 [ext_resource type="PackedScene" uid="uid://f7itocgajf8o" path="res://1 Player/player.tscn" id="2_an04p"]
-[ext_resource type="PackedScene" uid="uid://lj7edg20dl3e" path="res://5 Levels/Hub/dust_2.tscn" id="3_2u1b8"]
 [ext_resource type="Material" uid="uid://ys5y4m34ptf6" path="res://4 Resources/Shaders/Skybox_mat.tres" id="3_lfn30"]
 [ext_resource type="PackedScene" uid="uid://btea2veyjc17u" path="res://6 Online/SpawnPoint.tscn" id="5_o78dm"]
 
@@ -43,9 +42,6 @@ spawn_limit = 8
 [node name="Players" type="Node3D" parent="."]
 
 [node name="SkillContainer" type="Node3D" parent="." groups=["SkillContainer"]]
-
-[node name="dust2" parent="." instance=ExtResource("3_2u1b8")]
-transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -13.2573, 0, 0)
 
 [node name="Spawn_points" type="Node3D" parent="."]
 

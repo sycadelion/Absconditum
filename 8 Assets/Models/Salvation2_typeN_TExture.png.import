@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lfmiphanktt8"
-path.s3tc="res://.godot/imported/texture_07.png-ab5f4a6ad655d06104ea7939a06ec496.s3tc.ctex"
+uid="uid://gwib2uichfw6"
+path.s3tc="res://.godot/imported/Salvation2_typeN_TExture.png-54b4e43c50837b43328dfa4f7140e1b1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "aa157c2d600cbdd7b0e62410c726f184"
+}
 
 [deps]
 
-source_file="res://addons/kenney_prototype_textures/light/texture_07.png"
-dest_files=["res://.godot/imported/texture_07.png-ab5f4a6ad655d06104ea7939a06ec496.s3tc.ctex"]
+source_file="res://8 Assets/Models/Salvation2_typeN_TExture.png"
+dest_files=["res://.godot/imported/Salvation2_typeN_TExture.png-54b4e43c50837b43328dfa4f7140e1b1.s3tc.ctex"]
 
 [params]
 

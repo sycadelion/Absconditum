@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://ys5y4m34ptf6" path="res://4 Resources/Shaders/Skybox_mat.tres" id="1_fm5q2"]
 [ext_resource type="Script" path="res://5 Levels/Hub/hub.gd" id="1_xthv6"]
-[ext_resource type="PackedScene" uid="uid://by2l3c5hf85wk" path="res://5 Levels/Drop_pod_hanger/import/drop_pod_hanger.tscn" id="2_7rrye"]
+[ext_resource type="PackedScene" uid="uid://c33psuu1qtqd3" path="res://5 Levels/Drop_pod_hanger/import/drop_pod_hanger.tscn" id="2_7rrye"]
 [ext_resource type="PackedScene" uid="uid://f7itocgajf8o" path="res://1 Player/player.tscn" id="2_iocvr"]
 [ext_resource type="PackedScene" uid="uid://btea2veyjc17u" path="res://6 Online/SpawnPoint.tscn" id="3_ku60f"]
 
@@ -40,11 +40,11 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -6, 4,
 spawn_path = NodePath("../Players")
 spawn_limit = 8
 
+[node name="Level_Drop_pod_Hanger" parent="." instance=ExtResource("2_7rrye")]
+
 [node name="Players" type="Node3D" parent="."]
 
 [node name="SkillContainer" type="Node3D" parent="." groups=["SkillContainer"]]
-
-[node name="Drop_pod_Hanger" parent="." instance=ExtResource("2_7rrye")]
 
 [node name="Spawn_points" type="Node3D" parent="."]
 
@@ -62,3 +62,36 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7177, 3.87525, 77.7482)
 
 [node name="SpawnPoint5" parent="Spawn_points" instance=ExtResource("3_ku60f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.130496, 3.87525, 74.0555)
+
+[node name="SpawnPoint6" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 30.6011, 1, -42.6674)
+
+[node name="SpawnPoint7" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.746796, 1, -42.4561)
+
+[node name="SpawnPoint8" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.746793, 3.87525, -72.4496)
+
+[node name="SpawnPoint9" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.323, 3.87525, -77.292)
+
+[node name="SpawnPoint10" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 29.1712, 3.87525, -73.5993)
+
+[node name="SpawnPoint11" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -45.1442, 7.79445, -67.383)
+
+[node name="SpawnPoint12" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -52.9031, 14.3551, -25.7756)
+
+[node name="SpawnPoint13" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -52.9031, 14.3551, 25.4324)
+
+[node name="SpawnPoint14" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -52.9031, 20.2425, 0.274902)
+
+[node name="SpawnPoint15" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -45.6724, 7.82345, 67.9353)
+
+[node name="SpawnPoint16" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.539011, 0.956946, 0.317714)
