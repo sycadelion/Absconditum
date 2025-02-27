@@ -431,7 +431,7 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_top = -173.0
-offset_right = 67.0
+offset_right = 66.0
 grow_vertical = 0
 
 [node name="ProgressBar" type="ProgressBar" parent="HealthBar/PanelContainer"]
@@ -446,10 +446,12 @@ fill_mode = 3
 show_percentage = false
 
 [node name="HealthText" type="Label" parent="HealthBar/PanelContainer"]
+custom_minimum_size = Vector2(1, 0)
 layout_mode = 2
-text = "15"
+text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 1
 
 [node name="Weapon1" type="Control" parent="."]
 layout_mode = 1

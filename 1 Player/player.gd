@@ -76,7 +76,7 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("reload"):
 		weapon_manger.reload.rpc()
 	elif event.is_action_pressed("test"):
-		print(str(audio_comp.footstep.paraValue))
+		$CanvasLayer/HUD/Fps.visible = not $CanvasLayer/HUD/Fps.visible
 
 func _physics_process(delta: float) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
