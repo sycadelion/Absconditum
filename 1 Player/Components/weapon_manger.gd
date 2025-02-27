@@ -45,6 +45,8 @@ var can_shoot:bool = false
 
 func _ready() -> void:
 	Player = owner
+	if Player.owner_id != multiplayer.get_unique_id(): 
+		return
 	Initialize.rpc(Start_weapons)
 
 func _process(_delta: float) -> void:
@@ -64,10 +66,10 @@ func _process(_delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if Player.owner_id != multiplayer.get_unique_id(): 
 		return
-	if event.is_action_pressed("Weapon1") and not GameManager.paused: ##Switch to slot 1
+	if event.is_action_pressed("Weapon1") and not shooting and not GameManager.paused: ##Switch to slot 1
 		Weapon_indicator = 0
 		Exit.rpc(Weapon_stack[Weapon_indicator])
-	if event.is_action_pressed("Weapon2") and not GameManager.paused:  ##Switch to slot 2
+	if event.is_action_pressed("Weapon2") and not shooting and not GameManager.paused:  ##Switch to slot 2
 		Weapon_indicator = 1
 		Exit.rpc(Weapon_stack[Weapon_indicator])
 	if event.is_action_pressed("shoot") and not shooting and can_shoot and not GameManager.paused:
@@ -116,10 +118,12 @@ func Enter():
 			Type_M_Node.show()
 			Type_M_chambered.text = str(1)
 			Type_M_mag.text = str(Current_weapon.Current_ammo)
+			can_shoot = true
 		else:
 			Type_M_Node.hide()
 			Type_A_Node.show()
 			type_A_loaded.text = str(Current_weapon.Current_ammo)
+			can_shoot = true
 
 @rpc("call_local")
 func Change_Weapon(weapon_name: String):
