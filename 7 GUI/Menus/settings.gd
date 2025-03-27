@@ -41,10 +41,10 @@ func _on_player_name_text_changed(new_text: String) -> void:
 
 func update_text():
 	mouse_sens.text = str(GameManager.sensitivity)
-	audio_master.text = str(round(100*GameManager.fmodbuses[0].volume))
-	audio_music.text = str(round(100*GameManager.fmodbuses[3].volume))
-	audio_sfx.text = str(round(100*GameManager.fmodbuses[2].volume))
-	audio_foot.text = str(round(100*GameManager.fmodbuses[1].volume))
+	audio_master.text = str(GameManager.master_audio)
+	audio_music.text = str(GameManager.music_audio)
+	audio_sfx.text = str(GameManager.sfx_audio)
+	audio_foot.text = str(GameManager.foot_audio)
 
 
 func _audio_pressed() -> void:

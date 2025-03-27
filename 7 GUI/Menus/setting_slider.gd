@@ -12,7 +12,7 @@ func _ready() -> void:
 	if not is_audio:
 		setValue = GameManager.get(settingsVar)
 	elif is_audio:
-		setValue = 100*GameManager.fmodbuses[bus_index].volume
+		setValue = Wwise.get_rtpc_value_id(bus_index,null)
 	value = setValue
 	min_value = minV
 	max_value = maxV
@@ -21,4 +21,4 @@ func _on_value_changed(valueVar: float) -> void:
 	if not is_audio:
 		GameManager.set(settingsVar, valueVar)
 	else:
-		GameManager.fmodbuses[bus_index].volume = value / 100
+		Wwise.set_rtpc_value_id(bus_index,valueVar,null)

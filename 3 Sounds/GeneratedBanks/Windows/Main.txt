@@ -1,0 +1,74 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1551306167	UI			\Default Work Unit\UI	
+	2108779966	Walk			\Default Work Unit\Walk	
+	3038207054	Shoot			\Default Work Unit\Shoot	
+	4161132316	Skill			\Default Work Unit\Skill	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	915214409	Gun			\Default Work Unit\Gun	
+	2604644515	Menus			\Default Work Unit\Menus	
+	4161132316	Skill			\Default Work Unit\Skill	
+	4216705946	MaterialFeet			\Default Work Unit\MaterialFeet	
+
+Switch	ID	Name	Switch Group			Notes
+	546945295	Bow	Gun			
+	1584507803	Click	Menus			
+	3753593413	Hover	Menus			
+	3255686181	Grenade	Skill			
+	136358821	Lino	MaterialFeet			
+	903661822	LowMetal	MaterialFeet			
+	2305815328	Boots	MaterialFeet			
+	2449969375	Glass	MaterialFeet			
+	3762184421	HollowMetal	MaterialFeet			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	191739755	MenuVol			\Default Work Unit\MenuVol	
+	736504446	MasterVol			\Default Work Unit\MasterVol	
+	2782620904	FootVol			\Default Work Unit\FootVol	
+	3325673733	MusicVol			\Default Work Unit\MusicVol	
+	3432874653	SFXVol			\Default Work Unit\SFXVol	
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	393239870	SFX			\Default Work Unit\Master Audio Bus\SFX	
+	1551306167	UI			\Default Work Unit\Master Audio Bus\UI	
+	2385628198	Footsteps			\Default Work Unit\Master Audio Bus\Footsteps	
+	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	167312	LowMetal_Mono_02	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\F0\{F012D4E7-768A-792C-DD4E-2CEE3EB1E0B7}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\LowMetal\LowMetal_Mono_02		110344
+	9438588	Glass_Grit_Mono_02	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\B8\{B83C272A-F14C-6C02-9B2F-45825B33A0C0}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Glass\Glass_Grit_Mono_02		110344
+	109353821	Linoleum_Mono_01	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\C0\{C098DF41-1048-C294-611D-2088F6F56213}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Lino\Linoleum_Mono_01		110344
+	120073318	Abstract1	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\01\{018BFC39-3CDD-F99E-6478-1544CCCFE4A7}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Hover\Abstract1		132564
+	127469203	BootsLinoleum_02	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\06\{06FCFF13-AE9E-DBE0-33F1-67E9DFD0D5DE}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Boots\BootsLinoleum_02		144096
+	134191246	Linoleum_Mono_02	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\93\{932A8E83-9AED-1BA1-8A62-7CE7F43AF43B}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Lino\Linoleum_Mono_02		110344
+	204201908	Linoleum_Mono_05	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\59\{59A9D1C3-4B16-1593-3BC1-A64B216DC366}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Lino\Linoleum_Mono_05		110344
+	270836268	Minimalist4	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\08\{084C6493-D7CB-DDE0-83D1-08150122B6B0}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Click\Minimalist4		132564
+	281285885	Glass_Grit_Mono_03	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\74\{74663678-7CB4-9990-9249-BD452482D888}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Glass\Glass_Grit_Mono_03		110344
+	283265812	Linoleum_Mono_04	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\B4\{B4B4A74F-9226-0268-988D-D043A85AD3F0}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Lino\Linoleum_Mono_04		110344
+	311318493	Abstract2	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\B1\{B13D8503-9DE1-DD06-E292-6D14894B6094}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Hover\Abstract2		132564
+	320875992	Glass_Grit_Mono_05	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\75\{758A1510-D932-19C5-0D04-487DA87D46B2}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Glass\Glass_Grit_Mono_05		110344
+	381079448	LowMetal_Mono_05	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\50\{50CF3AA1-A9F3-B658-2075-C3DBDE0AA903}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\LowMetal\LowMetal_Mono_05		110344
+	387459409	Minimalist5	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\20\{20AF7999-C480-5A56-197D-1008B9CE7612}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Click\Minimalist5		132564
+	397573128	wind-up	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\55\{5594C9FE-3BDA-8D57-5183-9A474F019E7C}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Skill\grenade\wind-up		200812
+	397859966	MetalSteps_04	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\E0\{E097930D-B849-5F91-8775-00BC60B51045}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\HollowMetal\MetalSteps_04		88296
+	502935267	Glass_Grit_Mono_01	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\D9\{D9D4F74C-95CF-DCEC-185E-4F8DC749594D}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Glass\Glass_Grit_Mono_01		110344
+	550553015	foot-pump-with-air	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\EB\{EB60988F-FDE9-ACE5-5C8C-73EF9DF5FB79}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Skill\grenade\foot-pump-with-air		2646112
+	562333728	Minimalist6	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\32\{3281BA8B-D743-A5EF-83A5-34A5C971C518}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Click\Minimalist6		132564
+	641298461	MetalSteps_02	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\83\{835871E5-0BE9-6729-7A5A-618410E815FC}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\HollowMetal\MetalSteps_02		88296
+	652602769	Minimalist3	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\9F\{9FDE50D6-DCBF-633D-2178-9481DDEE90FD}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Click\Minimalist3		132564
+	676421312	LowMetal_Mono_03	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\F4\{F45E1D96-C9EC-6E0E-FBEC-55CDD010F438}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\LowMetal\LowMetal_Mono_03		110344
+	733604107	LowMetal_Mono_01	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\CE\{CED7F852-B4EF-4AF5-F878-713B93371BE6}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\LowMetal\LowMetal_Mono_01		110344
+	751484774	Linoleum_Mono_03	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\ED\{ED626203-DE97-E739-CD94-A749036226BA}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Lino\Linoleum_Mono_03		110344
+	809280269	BootsLinoleum_03	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\F7\{F7B253EB-DC1D-5E8B-1A08-2BD912D1B434}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Boots\BootsLinoleum_03		144096
+	844195858	MetalSteps_01	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\2B\{2B72AF00-C15F-1A6F-84B9-F9DF7BD0CE0D}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\HollowMetal\MetalSteps_01		88296
+	878851868	MetalSteps_03	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\66\{66C09484-993A-91AB-7370-C45BC69845D7}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\HollowMetal\MetalSteps_03		88296
+	889608281	BootsLinoleum_04	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\6D\{6DA8C7A1-80DD-EF94-A51A-996CF2813D11}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Boots\BootsLinoleum_04		144096
+	920116644	LowMetal_Mono_04	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\14\{14EEFE7B-A83C-D74A-A38E-DBBEA062B280}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\LowMetal\LowMetal_Mono_04		110344
+	968241875	MetalSteps_05	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\EE\{EE812E2E-F581-C534-885E-4F0A8277ED4D}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\HollowMetal\MetalSteps_05		88296
+	971638791	BootsLinoleum_05	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\80\{80FE1688-E73A-A727-7C65-7720CFF459C9}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Boots\BootsLinoleum_05		144096
+	1005560515	Glass_Grit_Mono_04	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\45\{45421411-3374-8A73-E9DE-584B8EB5E9B3}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Glass\Glass_Grit_Mono_04		110344
+	1007809921	bow_2	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\35\{3553DA8C-568C-824A-8C75-48DDF80B4AE6}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gunshots\Bow\bow_2		66228
+	1023057159	bow_1	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\78\{789FA49C-7CD4-5CAD-8552-402B2E75D40E}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gunshots\Bow\bow_1		73796
+	1073196964	BootsLinoleum_01	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\30\{305A1203-61FC-EAB2-9099-534C992826CF}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Boots\BootsLinoleum_01		144096
+

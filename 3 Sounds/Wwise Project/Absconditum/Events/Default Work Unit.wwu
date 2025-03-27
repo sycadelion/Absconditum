@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{7F3DAC90-E421-4FAB-AEEB-44CB0FEB024D}" SchemaVersion="123">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{7F3DAC90-E421-4FAB-AEEB-44CB0FEB024D}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Walk" ID="{BF8C47E3-7FB7-4A96-9087-30E26825A77B}">
+					<ChildrenList>
+						<Action Name="" ID="{F5C28704-6E9C-40F0-A2FF-1387D0CEB3E2}" ShortID="126411873">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Footsteps" ID="{EDAC211D-C443-4A33-A1EE-C8DADC703955}" WorkUnitID="{D1BAD11F-0083-404B-AA79-15730CB6E4DC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Shoot" ID="{CEB512F3-2A96-476F-BF95-C309FCB953DE}">
+					<ChildrenList>
+						<Action Name="" ID="{6728D39A-74A5-4B66-A8D6-E40127C1B137}" ShortID="1051419609">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Gunshots" ID="{EFBD7EE7-A3BE-4106-B2DA-D3662858D28C}" WorkUnitID="{D1BAD11F-0083-404B-AA79-15730CB6E4DC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="UI" ID="{1D0D8EA8-D697-496F-AEEA-239402382028}">
+					<ChildrenList>
+						<Action Name="" ID="{AFABBB81-241C-4F31-B3A4-64B3C82E8DEA}" ShortID="946963597">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Menu" ID="{DA332328-15BB-4331-A11A-D110A81B24E5}" WorkUnitID="{D1BAD11F-0083-404B-AA79-15730CB6E4DC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Skill" ID="{5703BB24-BD9C-48BE-902D-F00553BB8BBB}">
+					<ChildrenList>
+						<Action Name="" ID="{B666FAFA-1E9E-4D23-8927-9EC472A4AD14}" ShortID="603216451">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Skill" ID="{0EA50E5D-F786-4CDE-A805-EDBB30DFE518}" WorkUnitID="{D1BAD11F-0083-404B-AA79-15730CB6E4DC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

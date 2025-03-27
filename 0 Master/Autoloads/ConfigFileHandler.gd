@@ -14,6 +14,7 @@ func _ready() -> void:
 		config.set_value("Audio","music_audio",GameManager.music_audio)
 		config.set_value("Audio","sfx_audio",GameManager.sfx_audio)
 		config.set_value("Audio","foot_audio",GameManager.foot_audio)
+		config.set_value("Audio","menu_audio",GameManager.menu_audio)
 		
 		config.save(save_path)
 	else:

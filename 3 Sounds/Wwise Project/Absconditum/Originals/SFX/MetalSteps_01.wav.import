@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ctmgb3jb1hwn5"
+path="res://.godot/imported/MetalSteps_01.wav-f7ef1408b49728389971f832a299840e.sample"
+
+[deps]
+
+source_file="res://3 Sounds/Wwise Project/Absconditum/Originals/SFX/MetalSteps_01.wav"
+dest_files=["res://.godot/imported/MetalSteps_01.wav-f7ef1408b49728389971f832a299840e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

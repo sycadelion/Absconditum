@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://30bfpeixyxu7"
+path="res://.godot/imported/wind-up.wav-a79cd025cb79f4356f4875d6e3b6787d.sample"
+
+[deps]
+
+source_file="res://3 Sounds/Wwise Project/Absconditum/Originals/SFX/wind-up.wav"
+dest_files=["res://.godot/imported/wind-up.wav-a79cd025cb79f4356f4875d6e3b6787d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

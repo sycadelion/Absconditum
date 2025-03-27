@@ -1,0 +1,8 @@
+[gd_resource type="WwiseEvent" format=3 uid="uid://bhq7qwjnhvura"]
+
+[resource]
+is_in_user_defined_sound_bank = true
+name = "Skill"
+id = 4161132316
+guid = "{5703BB24-BD9C-48BE-902D-F00553BB8BBB}"
+dummy = true

@@ -1,0 +1,18 @@
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	191739755	MenuVol			\Default Work Unit\MenuVol	
+	736504446	MasterVol			\Default Work Unit\MasterVol	
+	2782620904	FootVol			\Default Work Unit\FootVol	
+	3325673733	MusicVol			\Default Work Unit\MusicVol	
+	3432874653	SFXVol			\Default Work Unit\SFXVol	
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	393239870	SFX			\Default Work Unit\Master Audio Bus\SFX	
+	1551306167	UI			\Default Work Unit\Master Audio Bus\UI	
+	2385628198	Footsteps			\Default Work Unit\Master Audio Bus\Footsteps	
+	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
+
+Audio Devices	ID	Name	Type				Notes
+	2317455096	No_Output	No Output			
+	3859886410	System	System			
+

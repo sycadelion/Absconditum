@@ -51,7 +51,7 @@ func _ready() -> void:
 		sens = GameManager.sensitivity / 1000
 		SPEED = GameManager.player_Speed
 		JUMP_VELOCITY = GameManager.player_jump
-		FmodServer.add_listener(0,camera) #adds fmod listening
+		Wwise.add_default_listener(camera) #adds a listener
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	else:
 		camera.current = false

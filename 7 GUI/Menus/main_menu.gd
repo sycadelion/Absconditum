@@ -1,7 +1,6 @@
 extends Control
 
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
-@onready var audio_player: FmodEventEmitter2D = $FmodEventEmitter2D
 
 var settings: bool = false
 var Matchsettings: bool = false
@@ -52,9 +51,11 @@ func _on_host_game_button_pressed() -> void:
 
 
 func _on_mouse_entered() -> void:
-	audio_player.set_parameter("GUI","Hover")
-	audio_player.play()
+	pass
+	#audio_player.set_parameter("GUI","Hover")
+	#audio_player.play()
 
 func _on_click() -> void:
-	audio_player.set_parameter("GUI","Click")
-	audio_player.play()
+	pass
+	#audio_player.set_parameter("GUI","Click")
+	#audio_player.play()

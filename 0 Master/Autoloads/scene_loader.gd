@@ -10,7 +10,7 @@ class_name SceneLoader extends Node
 ##Component Scenes
 @export_group("Default Component Scenes")
 @export var online_connection: PackedScene ##Online script component node
-@export var Fmod_Component: PackedScene ##Fmod banks component
+@export var Wwise_Component: PackedScene ##Wwise banks component
 @export var Settings_component: PackedScene ##Node that loads all the game settings
 
 ##Container Nodes
@@ -21,7 +21,7 @@ class_name SceneLoader extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Load_Component(Fmod_Component)
+	Load_Component(Wwise_Component)
 	Load_Component(Settings_component)
 	Change_Scene(Default_Scene)
 

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dlx3y1ccfiwt5"
+path="res://.godot/imported/Minimalist6.wav-08e0364a71421329815e065a7661f66c.sample"
+
+[deps]
+
+source_file="res://3 Sounds/Wwise Project/Absconditum/Originals/SFX/Minimalist6.wav"
+dest_files=["res://.godot/imported/Minimalist6.wav-08e0364a71421329815e065a7661f66c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

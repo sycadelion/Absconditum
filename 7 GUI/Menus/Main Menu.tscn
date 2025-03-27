@@ -130,16 +130,6 @@ offset_top = -25.0
 offset_right = -155.0
 offset_bottom = -25.0
 
-[node name="FmodListener2D" type="FmodListener2D" parent="."]
-
-[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
-event_name = "event:/GUI"
-event_guid = "{b30ec14e-a1c1-4edd-bf70-d86813e75e6b}"
-"fmod_parameters/Parameter 1/id" = 4341872072101764862
-"fmod_parameters/Parameter 1" = "Hover"
-"fmod_parameters/Parameter 1/labels" = PackedStringArray("Hover", "Click")
-"fmod_parameters/Parameter 1/variant_type" = 4
-
 [connection signal="mouse_entered" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Host" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Host" to="." method="_on_host_pressed"]
 [connection signal="mouse_entered" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Join" to="." method="_on_mouse_entered"]

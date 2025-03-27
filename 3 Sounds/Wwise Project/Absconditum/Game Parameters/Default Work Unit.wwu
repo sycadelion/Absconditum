@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{41F0E813-870A-4F09-9B57-F9C67F301101}" SchemaVersion="123">
+	<GameParameters>
+		<WorkUnit Name="Default Work Unit" ID="{41F0E813-870A-4F09-9B57-F9C67F301101}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="MasterVol" ID="{A16CEE03-88B4-4AF2-9B36-6B2ACA3BDD7B}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="FootVol" ID="{60EC2E15-EC89-45CC-9B57-964132C59275}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="SFXVol" ID="{852CA5A6-BDC4-4524-A202-53A4B7E5BB7C}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="MusicVol" ID="{E0C5842D-2A51-4838-9C18-2C0BEC753C06}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="MenuVol" ID="{B701AA3F-1CBD-488A-B85A-953C9D0F45A9}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://doa16v2jqrj70"]
+
+[ext_resource type="WwiseBank" uid="uid://xv283e8aeby2" path="res://Wwise/resources/SoundBank/{9B9BB11E-F8B2-4541-BC2B-42D2D9A82CF8}.tres" id="1_e2bpd"]
+
+[node name="Audio_Banks" type="Node"]
+
+[node name="AkBank" type="AkBank" parent="."]
+bank = ExtResource("1_e2bpd")
+load_on = 1

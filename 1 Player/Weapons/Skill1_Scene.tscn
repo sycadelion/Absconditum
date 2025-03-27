@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://d3bhlb6x0ro8f"]
+[gd_scene load_steps=13 format=3 uid="uid://d3bhlb6x0ro8f"]
 
 [ext_resource type="Script" path="res://4 Resources/Shaders/Shader Scripts/sphereSDF.gd" id="1_t28a6"]
 [ext_resource type="PackedScene" uid="uid://ct1bv07ecl3vk" path="res://1 Player/Model/grenade.tscn" id="2_pxuyo"]
 [ext_resource type="Shader" path="res://4 Resources/Shaders/SphereField.gdshader" id="3_shc4d"]
+[ext_resource type="WwiseEvent" uid="uid://bhq7qwjnhvura" path="res://Wwise/resources/Event/{5703BB24-BD9C-48BE-902D-F00553BB8BBB}.tres" id="4_2yio7"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cofcj"]
 resource_local_to_scene = true
@@ -65,20 +66,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0, 10.0]
 }
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"play_audio"
-}]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5gylt"]
 _data = {
@@ -124,14 +111,8 @@ wait_time = 5.0
 
 [node name="Area_col" type="CollisionShape3D" parent="Area3D"]
 
-[node name="Skill_audio" type="FmodEventEmitter3D" parent="."]
-event_name = "event:/Grenade"
-event_guid = "{046ab459-3359-422e-868b-1b86fdbab81f}"
-volume = 2.0
-fmod_parameters/Grenade/id = 5065107224920233470
-fmod_parameters/Grenade = "Drone"
-fmod_parameters/Grenade/labels = PackedStringArray("Wind", "Drone", "Value C")
-fmod_parameters/Grenade/variant_type = 4
+[node name="AkEvent3D" type="AkEvent3D" parent="."]
+event = ExtResource("4_2yio7")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

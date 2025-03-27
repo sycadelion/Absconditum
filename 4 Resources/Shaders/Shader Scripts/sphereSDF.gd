@@ -12,7 +12,7 @@ extends RigidBody3D
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var lifetime_timer: Timer = $Timer
 @onready var area_col: CollisionShape3D = $Area3D/Area_col
-@onready var audPlayer: FmodEventEmitter3D = $Skill_audio
+@onready var audPlayer: AkEvent3D = $AkEvent3D
 
 var area_shape:SphereShape3D = SphereShape3D.new()
 var expanded: bool = false
@@ -76,4 +76,4 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 		bubble_out.show()
 		
 func play_audio():
-	audPlayer.play()
+	audPlayer.post_event()

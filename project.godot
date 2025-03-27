@@ -44,13 +44,13 @@ buses/default_bus_layout=""
 
 [autoload]
 
-FmodManager="*res://addons/fmod/FmodManager.gd"
 GameManager="*res://0 Master/Autoloads/GameManager.gd"
 OnlineMang="*res://0 Master/Autoloads/OnlineManager.gd"
 ConfigFileHandler="*res://0 Master/Autoloads/ConfigFileHandler.gd"
 SceneLoad="*res://0 Master/Autoloads/scene_loader.tscn"
 LineDrawer="*res://0 Master/Autoloads/LineDrawer.gd"
 RoomGen="*res://0 Master/Autoloads/Roomcode_gen.gd"
+WwiseRuntimeManager="*res://addons/Wwise/runtime/wwise_runtime_manager.gd"
 
 [display]
 
@@ -63,7 +63,7 @@ window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/fmod/plugin.cfg")
+enabled=PackedStringArray()
 
 [file_customization]
 
@@ -171,3 +171,8 @@ Weapon2={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+
+[wwise]
+
+common_user_settings/root_output_path="res://3 Sounds/GeneratedBanks"
+project_settings/windows_platform_info="res://Wwise/resources/Windows.tres"

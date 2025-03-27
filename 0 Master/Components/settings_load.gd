@@ -4,12 +4,11 @@ const save_path = "user://settings.ini"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	GameManager.fmodbuses[0] = FmodServer.get_bus("bus:/Master")
-	GameManager.fmodbuses[1] = FmodServer.get_bus("bus:/Master/Footsteps")
-	GameManager.fmodbuses[2] = FmodServer.get_bus("bus:/Master/SFX")
-	GameManager.fmodbuses[3] = FmodServer.get_bus("bus:/Master/Music")
-	
-	GameManager.master_audio = GameManager.fmodbuses[0].volume
+	GameManager.master_audio = Wwise.get_rtpc_value("MasterVol", null)
+	GameManager.foot_audio = Wwise.get_rtpc_value("FootVol", null)
+	GameManager.sfx_audio = Wwise.get_rtpc_value("SFXVol", null)
+	GameManager.music_audio = Wwise.get_rtpc_value("MusicVol", null)
+	GameManager.menu_audio = Wwise.get_rtpc_value("MenuVol", null)
 	
 	if FileAccess.file_exists(save_path):
 		var mouse_settings = ConfigFileHandler.load_mouse_settings()
@@ -17,13 +16,15 @@ func _ready() -> void:
 		var user_settings = ConfigFileHandler.load_user_settings()
 		GameManager.UserName = user_settings.name
 		GameManager.sensitivity = mouse_settings.sensitivity
-		GameManager.fmodbuses[0].volume = audio_settings.master_audio
-		GameManager.fmodbuses[3].volume = audio_settings.music_audio
-		GameManager.fmodbuses[2].volume = audio_settings.sfx_audio
-		GameManager.fmodbuses[1].volume = audio_settings.foot_audio
+		GameManager.master_audio = audio_settings.master_audio
+		GameManager.music_audio = audio_settings.music_audio
+		GameManager.sfx_audio = audio_settings.sfx_audio
+		GameManager.foot_audio = audio_settings.foot_audio
+		GameManager.menu_audio = audio_settings.menu_audio
 	else:
 		GameManager.sensitivity = 5
-		GameManager.fmodbuses[0].volume = 1
-		GameManager.fmodbuses[3].volume = 1
-		GameManager.fmodbuses[2].volume = 1
-		GameManager.fmodbuses[1].volume = 1
+		GameManager.master_audio = 100
+		GameManager.music_audio = 100
+		GameManager.sfx_audio = 100
+		GameManager.foot_audio = 100
+		GameManager.menu_audio = 100

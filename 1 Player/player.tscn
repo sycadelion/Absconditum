@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://f7itocgajf8o"]
+[gd_scene load_steps=75 format=3 uid="uid://f7itocgajf8o"]
 
 [ext_resource type="Script" path="res://1 Player/player.gd" id="1_4ht6w"]
 [ext_resource type="Material" uid="uid://gsnjhl57qwdk" path="res://4 Resources/Shaders/player_shader_mat.tres" id="1_fuh6j"]
@@ -22,13 +22,15 @@
 [ext_resource type="PackedScene" uid="uid://b0oppry2iydfe" path="res://1 Player/Weapons/trauma_type_n.tscn" id="11_cghwp"]
 [ext_resource type="Script" path="res://1 Player/Components/bullet_proj_comp.gd" id="11_no44j"]
 [ext_resource type="PackedScene" uid="uid://da5fc0sh7rdo8" path="res://1 Player/Weapons/BulletProj.tscn" id="12_qi8gg"]
+[ext_resource type="WwiseEvent" uid="uid://b3hn2bx8rqd7j" path="res://Wwise/resources/Event/{CEB512F3-2A96-476F-BF95-C309FCB953DE}.tres" id="12_rvfjf"]
 [ext_resource type="Script" path="res://1 Player/Components/audio_component.gd" id="15_tld0y"]
-[ext_resource type="Script" path="res://1 Player/Fmod_Raycast.gd" id="16_077gp"]
 [ext_resource type="Script" path="res://1 Player/Components/health_component.gd" id="16_fwst1"]
+[ext_resource type="WwiseEvent" uid="uid://bhq7qwjnhvura" path="res://Wwise/resources/Event/{5703BB24-BD9C-48BE-902D-F00553BB8BBB}.tres" id="17_c3cwb"]
 [ext_resource type="Script" path="res://1 Player/Components/weapon_manger.gd" id="17_ln4bi"]
 [ext_resource type="Script" path="res://4 Resources/Weapon_Resource.gd" id="22_dho8y"]
 [ext_resource type="Resource" uid="uid://vrc4parm6311" path="res://4 Resources/Weapons/Malice.tres" id="28_bme5i"]
 [ext_resource type="Resource" uid="uid://bme5b2ty1ti5b" path="res://4 Resources/Weapons/Salvation.tres" id="29_6fwx1"]
+[ext_resource type="WwiseEvent" uid="uid://bd3fbawv0fm0b" path="res://Wwise/resources/Event/{BF8C47E3-7FB7-4A96-9087-30E26825A77B}.tres" id="30_376c3"]
 [ext_resource type="Resource" uid="uid://bt37yoot0xdu4" path="res://4 Resources/Weapons/trauma.tres" id="30_wo1cl"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4jp85"]
@@ -1254,6 +1256,10 @@ visible = false
 transform = Transform3D(-7.23998e-07, 0, 0.2, 0, 0.2, 0, -0.2, 0, -7.23998e-07, 0.51685, -0.64943, -0.056298)
 visible = false
 
+[node name="GunAudio" type="AkEvent3D" parent="Head/Camera3D/Hand"]
+event = ExtResource("12_rvfjf")
+unique_name_in_owner = true
+
 [node name="crossbow_viewmodel" parent="Head/Camera3D" instance=ExtResource("4_abpq6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.462046, -0.714712, -0.248098)
 visible = false
@@ -1288,18 +1294,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.585395, -0.477487, -1.74103
 [node name="Skill1Marker" type="Marker3D" parent="Head/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.436369, -0.0231869, -0.766952)
 
-[node name="Skill_audio" type="FmodEventEmitter3D" parent="Head/Camera3D/Skill1Marker"]
-event_name = "event:/Grenade"
-event_guid = "{046ab459-3359-422e-868b-1b86fdbab81f}"
-fmod_parameters/Grenade/id = 5065107224920233470
-fmod_parameters/Grenade = "Wind"
-fmod_parameters/Grenade/labels = PackedStringArray("Wind", "Drone", "Value C")
-fmod_parameters/Grenade/variant_type = 4
-unique_name_in_owner = true
-
-[node name="Bow_audio" type="FmodEventEmitter3D" parent="Head/Camera3D"]
-event_name = "event:/Shoot"
-event_guid = "{faf34613-2d5e-4f8d-996e-876fdcfc8c93}"
+[node name="Skillaudio" type="AkEvent3D" parent="Head/Camera3D/Skill1Marker"]
+event = ExtResource("17_c3cwb")
 unique_name_in_owner = true
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
@@ -1359,20 +1355,6 @@ vertical_alignment = 1
 [node name="KillFeed" parent="CanvasLayer" groups=["Killfeed"] instance=ExtResource("10_7uef7")]
 unique_name_in_owner = true
 
-[node name="Footstep" type="FmodEventEmitter3D" parent="."]
-event_name = "event:/Footsteps"
-event_guid = "{f83d1858-d1b4-430c-a781-5ab547404bb1}"
-fmod_parameters/Surface/id = -5504228875075709698
-fmod_parameters/Surface = "Metal Grate"
-fmod_parameters/Surface/labels = PackedStringArray("Metal Grate", "Metal Steps", "Metal Low", "Glass", "Jump")
-fmod_parameters/Surface/variant_type = 4
-fmod_parameters/Occlusion/id = -9199801627215947433
-fmod_parameters/Occlusion = 0.0
-fmod_parameters/Occlusion/variant_type = 3
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.157895, 0)
-script = ExtResource("16_077gp")
-
 [node name="Audio_Component" type="Node" parent="."]
 script = ExtResource("15_tld0y")
 
@@ -1392,6 +1374,10 @@ _skill_prefab = ExtResource("11_7l2ie")
 script = ExtResource("17_ln4bi")
 _weapon_resouces = Array[ExtResource("22_dho8y")]([ExtResource("28_bme5i"), ExtResource("29_6fwx1"), ExtResource("30_wo1cl")])
 Start_weapons = Array[String](["Malice", "Trauma"])
+
+[node name="Footsteps" type="AkEvent3D" parent="."]
+event = ExtResource("30_376c3")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40389, 0)
 
 [connection signal="animation_finished" from="AnimationTree" to="WeaponManger" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -173,7 +173,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 func shoot():
 	shooting = true
 	Player.anim_tree["parameters/Shooting/transition_request"] = "True"
-	Player.audio_comp.Play_bow()
+	Player.audio_comp.Play_shoot()
 	Player.bullet_proj_comp.bulletFire(Current_weapon.Damage)
 	muzzle_flash.restart()
 	muzzle_flash.emitting = true
@@ -187,7 +187,7 @@ func shoot():
 func shoot_manual():
 	shooting = true
 	Player.anim_tree["parameters/Shooting/transition_request"] = "True"
-	Player.audio_comp.Play_bow()
+	Player.audio_comp.Play_shoot()
 	Player.bullet_proj_comp.bulletFire.rpc(Current_weapon.Damage)
 	muzzle_flash.restart()
 	muzzle_flash.emitting = true

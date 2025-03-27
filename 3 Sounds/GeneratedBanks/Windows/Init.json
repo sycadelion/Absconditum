@@ -1,0 +1,193 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "1355168291",
+    "Type": "User",
+    "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
+    "Language": "SFX",
+    "Hash": "{E679D110-F5B4-AAC3-1D3F-916C825460AE}",
+    "ObjectPath": "Init",
+    "ShortName": "Init",
+    "Path": "Init.bnk",
+    "Plugins": {
+     "AudioDevices": [
+      {
+       "Id": "2317455096",
+       "Name": "No_Output",
+       "ObjectPath": "\\Audio Devices\\Default Work Unit\\No_Output",
+       "GUID": "{7BD2E3D8-30A6-467E-BD4C-82A7A711457D}",
+       "LibName": "No Output",
+       "LibId": "11862023"
+      },
+      {
+       "Id": "3859886410",
+       "Name": "System",
+       "ObjectPath": "\\Audio Devices\\Default Work Unit\\System",
+       "GUID": "{D06EA8F3-4676-4311-A539-495BD5F679CB}",
+       "LibName": "System",
+       "LibId": "11403271"
+      }
+     ]
+    },
+    "Busses": [
+     {
+      "Id": "393239870",
+      "Name": "SFX",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX",
+      "GUID": "{04312408-C43F-4AD4-B818-DECF781E2289}"
+     },
+     {
+      "Id": "1551306167",
+      "Name": "UI",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\UI",
+      "GUID": "{42BE07BD-4FD3-43B9-9CA8-8E1E2EFE2120}"
+     },
+     {
+      "Id": "2385628198",
+      "Name": "Footsteps",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Footsteps",
+      "GUID": "{3AA89E7C-2792-4048-A98A-2A996BDC5670}"
+     },
+     {
+      "Id": "3803692087",
+      "Name": "Master Audio Bus",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus",
+      "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
+     },
+     {
+      "Id": "3991942870",
+      "Name": "Music",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Music",
+      "GUID": "{6E751908-B6AE-4AD2-9C21-4EB0A6DF11B7}"
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "191739755",
+      "Name": "MenuVol",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\MenuVol",
+      "GUID": "{B701AA3F-1CBD-488A-B85A-953C9D0F45A9}"
+     },
+     {
+      "Id": "736504446",
+      "Name": "MasterVol",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\MasterVol",
+      "GUID": "{A16CEE03-88B4-4AF2-9B36-6B2ACA3BDD7B}"
+     },
+     {
+      "Id": "2782620904",
+      "Name": "FootVol",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\FootVol",
+      "GUID": "{60EC2E15-EC89-45CC-9B57-964132C59275}"
+     },
+     {
+      "Id": "3325673733",
+      "Name": "MusicVol",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\MusicVol",
+      "GUID": "{E0C5842D-2A51-4838-9C18-2C0BEC753C06}"
+     },
+     {
+      "Id": "3432874653",
+      "Name": "SFXVol",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\SFXVol",
+      "GUID": "{852CA5A6-BDC4-4524-A202-53A4B7E5BB7C}"
+     }
+    ],
+    "SwitchGroups": [
+     {
+      "Id": "915214409",
+      "Name": "Gun",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Gun",
+      "GUID": "{D11084CE-7C28-4EEA-8B3D-92420FC125EF}",
+      "Switches": [
+       {
+        "Id": "546945295",
+        "Name": "Bow",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Gun\\Bow",
+        "GUID": "{D52EC367-ABD0-4B16-8A65-3450794ADFDC}"
+       }
+      ]
+     },
+     {
+      "Id": "2604644515",
+      "Name": "Menus",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Menus",
+      "GUID": "{93C5D5E1-3C7E-473D-BD8A-7790C3BE6EEB}",
+      "Switches": [
+       {
+        "Id": "1584507803",
+        "Name": "Click",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Menus\\Click",
+        "GUID": "{5CBFD4DE-5331-4813-810C-826CE21E4DE8}"
+       },
+       {
+        "Id": "3753593413",
+        "Name": "Hover",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Menus\\Hover",
+        "GUID": "{5F02E8D1-38D2-409B-9A2A-BFC85D8304DA}"
+       }
+      ]
+     },
+     {
+      "Id": "4161132316",
+      "Name": "Skill",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Skill",
+      "GUID": "{9ABBE966-6D7F-4E36-BF54-7B1AD9D511EC}",
+      "Switches": [
+       {
+        "Id": "3255686181",
+        "Name": "Grenade",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Skill\\Grenade",
+        "GUID": "{5D7286B2-63EA-49CE-AEAC-2D13FF034A9B}"
+       }
+      ]
+     },
+     {
+      "Id": "4216705946",
+      "Name": "MaterialFeet",
+      "ObjectPath": "\\Switches\\Default Work Unit\\MaterialFeet",
+      "GUID": "{5B9B04BD-FD03-46F9-B4E5-3BEA51C3D28A}",
+      "Switches": [
+       {
+        "Id": "136358821",
+        "Name": "Lino",
+        "ObjectPath": "\\Switches\\Default Work Unit\\MaterialFeet\\Lino",
+        "GUID": "{2790EC8F-8523-4762-8472-DDEC129A2EF5}"
+       },
+       {
+        "Id": "903661822",
+        "Name": "LowMetal",
+        "ObjectPath": "\\Switches\\Default Work Unit\\MaterialFeet\\LowMetal",
+        "GUID": "{E9F48228-2CDE-4CFA-970B-F235B65482FA}"
+       },
+       {
+        "Id": "2305815328",
+        "Name": "Boots",
+        "ObjectPath": "\\Switches\\Default Work Unit\\MaterialFeet\\Boots",
+        "GUID": "{9D50E2B9-6CCE-48C9-8246-259397CB103B}"
+       },
+       {
+        "Id": "2449969375",
+        "Name": "Glass",
+        "ObjectPath": "\\Switches\\Default Work Unit\\MaterialFeet\\Glass",
+        "GUID": "{61E1B399-856C-4ED0-91C8-6A8A26BB2F23}"
+       },
+       {
+        "Id": "3762184421",
+        "Name": "HollowMetal",
+        "ObjectPath": "\\Switches\\Default Work Unit\\MaterialFeet\\HollowMetal",
+        "GUID": "{1458BD1A-B11D-484C-A5B1-7528C818FEA4}"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{5B68E642-3919-C4BD-79D2-523CC94FB972}"
+ }
+}

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c8piahx5atvu1"
+path="res://.godot/imported/LowMetal_Mono_03.wav-221af1f17488d8da90d5cdb8140f4c3d.sample"
+
+[deps]
+
+source_file="res://3 Sounds/Wwise Project/Absconditum/Originals/SFX/LowMetal_Mono_03.wav"
+dest_files=["res://.godot/imported/LowMetal_Mono_03.wav-221af1f17488d8da90d5cdb8140f4c3d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

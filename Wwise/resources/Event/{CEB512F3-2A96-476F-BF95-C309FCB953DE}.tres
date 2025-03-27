@@ -1,0 +1,8 @@
+[gd_resource type="WwiseEvent" format=3 uid="uid://b3hn2bx8rqd7j"]
+
+[resource]
+is_in_user_defined_sound_bank = true
+name = "Shoot"
+id = 3038207054
+guid = "{CEB512F3-2A96-476F-BF95-C309FCB953DE}"
+dummy = true

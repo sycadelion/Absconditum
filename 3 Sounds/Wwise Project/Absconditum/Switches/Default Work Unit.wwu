@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{BD305427-CAF9-4437-8900-7FBD9CE3A77A}" SchemaVersion="123">
+	<Switches>
+		<WorkUnit Name="Default Work Unit" ID="{BD305427-CAF9-4437-8900-7FBD9CE3A77A}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="MaterialFeet" ID="{5B9B04BD-FD03-46F9-B4E5-3BEA51C3D28A}">
+					<ChildrenList>
+						<Switch Name="Lino" ID="{2790EC8F-8523-4762-8472-DDEC129A2EF5}"/>
+						<Switch Name="Glass" ID="{61E1B399-856C-4ED0-91C8-6A8A26BB2F23}"/>
+						<Switch Name="HollowMetal" ID="{1458BD1A-B11D-484C-A5B1-7528C818FEA4}"/>
+						<Switch Name="LowMetal" ID="{E9F48228-2CDE-4CFA-970B-F235B65482FA}"/>
+						<Switch Name="Boots" ID="{9D50E2B9-6CCE-48C9-8246-259397CB103B}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="Gun" ID="{D11084CE-7C28-4EEA-8B3D-92420FC125EF}">
+					<ChildrenList>
+						<Switch Name="Bow" ID="{D52EC367-ABD0-4B16-8A65-3450794ADFDC}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="Menus" ID="{93C5D5E1-3C7E-473D-BD8A-7790C3BE6EEB}">
+					<ChildrenList>
+						<Switch Name="Hover" ID="{5F02E8D1-38D2-409B-9A2A-BFC85D8304DA}"/>
+						<Switch Name="Click" ID="{5CBFD4DE-5331-4813-810C-826CE21E4DE8}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="Skill" ID="{9ABBE966-6D7F-4E36-BF54-7B1AD9D511EC}">
+					<ChildrenList>
+						<Switch Name="Grenade" ID="{5D7286B2-63EA-49CE-AEAC-2D13FF034A9B}"/>
+					</ChildrenList>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</Switches>
+</WwiseDocument>
