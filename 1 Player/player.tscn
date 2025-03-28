@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://f7itocgajf8o"]
+[gd_scene load_steps=78 format=3 uid="uid://f7itocgajf8o"]
 
 [ext_resource type="Script" uid="uid://cf0owk1iydspc" path="res://1 Player/player.gd" id="1_4ht6w"]
 [ext_resource type="Material" uid="uid://gsnjhl57qwdk" path="res://4 Resources/Shaders/player_shader_mat.tres" id="1_fuh6j"]
@@ -27,6 +27,7 @@
 [ext_resource type="Script" uid="uid://bhl0gklund2py" path="res://1 Player/Components/health_component.gd" id="16_fwst1"]
 [ext_resource type="WwiseEvent" uid="uid://bhq7qwjnhvura" path="res://Wwise/resources/Event/{5703BB24-BD9C-48BE-902D-F00553BB8BBB}.tres" id="17_c3cwb"]
 [ext_resource type="Script" uid="uid://hql62yn8p8mc" path="res://1 Player/Components/weapon_manger.gd" id="17_ln4bi"]
+[ext_resource type="WwiseEvent" uid="uid://pixq1cigj6qc" path="res://Wwise/resources/Event/{90163899-6434-4758-83D0-BF16752D4064}.tres" id="18_2lknx"]
 [ext_resource type="Script" uid="uid://c0g5u0tdm4bfa" path="res://4 Resources/Weapon_Resource.gd" id="22_dho8y"]
 [ext_resource type="Resource" uid="uid://vrc4parm6311" path="res://4 Resources/Weapons/Malice.tres" id="28_bme5i"]
 [ext_resource type="Resource" uid="uid://bme5b2ty1ti5b" path="res://4 Resources/Weapons/Salvation.tres" id="29_6fwx1"]
@@ -88,6 +89,9 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_cs3jb")
 size = Vector2(0.5, 0.5)
 orientation = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ggn5"]
+size = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_42o4i"]
 xfade_time = 0.05
@@ -1246,7 +1250,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39031, 0)
 [node name="Camera3D" type="Camera3D" parent="Head" groups=["Players"]]
 
 [node name="Hand" type="Node3D" parent="Head/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Malice_typeM" parent="Head/Camera3D/Hand" instance=ExtResource("9_2r2es")]
 transform = Transform3D(-1.81e-06, 0, 0.5, 0, 0.5, 0, -0.5, 0, -1.81e-06, 0.38927, -0.434237, 0.130601)
@@ -1312,13 +1315,21 @@ unique_name_in_owner = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera3D/Skill1Marker/Skillaudio/Area3D"]
 shape = SubResource("BoxShape3D_ulbgw")
 
-[node name="AkListener3D" type="AkListener3D" parent="Head"]
+[node name="AkListener3D" type="AkListener3D" parent="Head/Camera3D"]
 is_default_listener = false
 
-[node name="ListenerArea" type="Area3D" parent="Head/AkListener3D"]
+[node name="ListenerArea" type="Area3D" parent="Head/Camera3D/AkListener3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/AkListener3D/ListenerArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera3D/AkListener3D/ListenerArea"]
 shape = SubResource("BoxShape3D_ulbgw")
+
+[node name="Voice" type="AkEvent3D" parent="Head/Camera3D"]
+event = ExtResource("18_2lknx")
+
+[node name="Area3D" type="Area3D" parent="Head/Camera3D/Voice"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera3D/Voice/Area3D"]
+shape = SubResource("BoxShape3D_1ggn5")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeBlendTree_ld7nr")

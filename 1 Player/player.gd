@@ -52,11 +52,11 @@ func _ready() -> void:
 		sens = GameManager.sensitivity / 1000
 		SPEED = GameManager.player_Speed
 		JUMP_VELOCITY = GameManager.player_jump
-		$Head/AkListener3D.is_default_listener = true
+		$Head/Camera3D/AkListener3D.is_default_listener = true
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	else:
 		camera.current = false
-		$Head/AkListener3D.is_default_listener = false
+		$Head/Camera3D/AkListener3D.is_default_listener = false
 		$Head/Camera3D/crossbow_shader.show()
 		AudioRay = true
 
@@ -102,7 +102,8 @@ func _physics_process(delta: float) -> void:
 	if velocity.y > 0:
 		impact_played = false
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and health_comp.health >= 1 and not GameManager.paused:
+	if Input.is_action_just_pressed("jump") and is_on_floor() and health_comp.health >= 1 and not GameManager.paused:
+		audio_comp.Play_jump.rpc()
 		velocity.y = JUMP_VELOCITY
 		
 	if anim_player.current_animation == "shoot":

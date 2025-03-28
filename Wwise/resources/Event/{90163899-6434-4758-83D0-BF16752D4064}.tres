@@ -1,0 +1,8 @@
+[gd_resource type="WwiseEvent" format=3 uid="uid://pixq1cigj6qc"]
+
+[resource]
+is_in_user_defined_sound_bank = true
+name = "PlayerAudio"
+id = 1256345528
+guid = "{90163899-6434-4758-83D0-BF16752D4064}"
+dummy = true
