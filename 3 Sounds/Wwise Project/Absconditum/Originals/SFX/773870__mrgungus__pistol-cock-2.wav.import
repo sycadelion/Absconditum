@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://6r8c37qdwkh3"
+path="res://.godot/imported/773870__mrgungus__pistol-cock-2.wav-8f5d5d75a30022ef25acc264c3684737.sample"
+
+[deps]
+
+source_file="res://3 Sounds/Wwise Project/Absconditum/Originals/SFX/773870__mrgungus__pistol-cock-2.wav"
+dest_files=["res://.godot/imported/773870__mrgungus__pistol-cock-2.wav-8f5d5d75a30022ef25acc264c3684737.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

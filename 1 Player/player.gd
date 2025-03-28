@@ -78,7 +78,7 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("reload"):
 		weapon_manger.reload.rpc()
 	elif event.is_action_pressed("test"):
-		print(str(listener))
+		audio_comp.Play_ammo("Rifle")
 		#$CanvasLayer/HUD/Fps.visible = not $CanvasLayer/HUD/Fps.visible
 
 func _physics_process(delta: float) -> void:

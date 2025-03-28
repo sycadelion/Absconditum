@@ -94,6 +94,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("altFire"):
 		if Current_weapon.Manual:
 			if Current_weapon.Chambered_ammo <= 0 and Current_weapon.Current_ammo > 0:
+				Player.audio_comp.Play_reload(Current_weapon.Audio_Name,true)
 				Current_weapon.Current_ammo -= 1
 				Current_weapon.Chambered_ammo = 1
 
@@ -173,7 +174,8 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 func shoot():
 	shooting = true
 	Player.anim_tree["parameters/Shooting/transition_request"] = "True"
-	Player.audio_comp.Play_shoot()
+	Player.audio_comp.Play_shoot(Current_weapon.Audio_Name)
+	Player.audio_comp.Play_ammo(Current_weapon.Audio_Name)
 	Player.bullet_proj_comp.bulletFire(Current_weapon.Damage)
 	muzzle_flash.restart()
 	muzzle_flash.emitting = true
@@ -187,7 +189,7 @@ func shoot():
 func shoot_manual():
 	shooting = true
 	Player.anim_tree["parameters/Shooting/transition_request"] = "True"
-	Player.audio_comp.Play_shoot()
+	Player.audio_comp.Play_shoot(Current_weapon.Audio_Name)
 	Player.bullet_proj_comp.bulletFire.rpc(Current_weapon.Damage)
 	muzzle_flash.restart()
 	muzzle_flash.emitting = true
@@ -206,4 +208,5 @@ func shoot_empty():
 
 @rpc("call_local")
 func reload():
+	Player.audio_comp.Play_reload(Current_weapon.Audio_Name,false)
 	anim_player.play(Current_weapon.Anim_reload)

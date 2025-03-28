@@ -10,6 +10,10 @@ class_name WeaponResource extends Resource
 @export var Anim_reload: String ##String name for the animation of reloading
 @export var Anim_deactivate: String ##String name for the animation of putting away the weapon
 
+#audio
+@export_group("Weapon Audio")
+@export var Audio_Name: String ##String name for Wwise variables
+
 #images
 @export_group("Weapon Images")
 @export var Weapon_Image: Texture

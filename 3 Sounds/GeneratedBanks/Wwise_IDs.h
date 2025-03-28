@@ -13,8 +13,10 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID AMMO = 3554434311U;
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID PLAYERAUDIO = 1256345528U;
+        static const AkUniqueID RELOAD = 456382354U;
         static const AkUniqueID SHOOT = 3038207054U;
         static const AkUniqueID SKILL = 4161132316U;
         static const AkUniqueID UI = 1551306167U;
@@ -23,6 +25,18 @@ namespace AK
 
     namespace SWITCHES
     {
+        namespace AMMO
+        {
+            static const AkUniqueID GROUP = 3554434311U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID PISTOL = 324443136U;
+                static const AkUniqueID RIFLE = 4262674733U;
+                static const AkUniqueID RIFLESEMI = 1096740251U;
+            } // namespace SWITCH
+        } // namespace AMMO
+
         namespace GUN
         {
             static const AkUniqueID GROUP = 915214409U;
@@ -30,6 +44,9 @@ namespace AK
             namespace SWITCH
             {
                 static const AkUniqueID BOW = 546945295U;
+                static const AkUniqueID PISTOL = 324443136U;
+                static const AkUniqueID RIFLE = 4262674733U;
+                static const AkUniqueID RIFLESEMI = 1096740251U;
             } // namespace SWITCH
         } // namespace GUN
 
@@ -68,6 +85,30 @@ namespace AK
                 static const AkUniqueID LAND = 674522502U;
             } // namespace SWITCH
         } // namespace PLAYERVOICE
+
+        namespace RELOAD
+        {
+            static const AkUniqueID GROUP = 456382354U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID PISTOL = 324443136U;
+                static const AkUniqueID RIFLE = 4262674733U;
+                static const AkUniqueID RIFLESEMI = 1096740251U;
+            } // namespace SWITCH
+        } // namespace RELOAD
+
+        namespace RIFLESEMI
+        {
+            static const AkUniqueID GROUP = 1096740251U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID LOADING = 3573931707U;
+                static const AkUniqueID REBOLT = 1993628331U;
+                static const AkUniqueID UNBOLT = 3958385377U;
+            } // namespace SWITCH
+        } // namespace RIFLESEMI
 
         namespace SKILL
         {

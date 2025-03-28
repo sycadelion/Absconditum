@@ -11,6 +11,7 @@ Anim_shoot = "shoot"
 Anim_empty = "Gun_empty"
 Anim_reload = "Reloading"
 Anim_deactivate = "Salvation_unequip"
+Audio_Name = "Pistol"
 Weapon_Image = ExtResource("1_nffjk")
 Damage = 2
 Current_ammo = 18

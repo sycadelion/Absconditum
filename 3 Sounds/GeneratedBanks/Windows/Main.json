@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{9B9BB11E-F8B2-4541-BC2B-42D2D9A82CF8}",
     "Language": "SFX",
-    "Hash": "{D0D404D4-6681-964A-1622-51AA6C6A8A4F}",
+    "Hash": "{AE615D10-1E4F-8064-9971-25DED611FD7A}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -38,6 +38,22 @@
       "Location": "Memory",
       "ShortName": "Quiet Times, Soft Waves.wav",
       "CachePath": "43/{436DA077-180D-F73F-D207-45480EC7FF78}.wem"
+     },
+     {
+      "Id": "51211207",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "773859__mrgungus__223-remington-casing-drop.wav",
+      "CachePath": "E8/{E868A1F6-A589-0ED0-7E67-E54463FB5F49}.wem"
+     },
+     {
+      "Id": "85366372",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "231245__augustsandberg__fn-scar-h-7.wav",
+      "CachePath": "E9/{E9799958-06F0-F8B9-89C8-956A3837E6F3}.wem"
      },
      {
       "Id": "109353821",
@@ -86,6 +102,38 @@
       "Location": "Memory",
       "ShortName": "Linoleum_Mono_05.wav",
       "CachePath": "59/{59A9D1C3-4B16-1593-3BC1-A64B216DC366}.wem"
+     },
+     {
+      "Id": "226604641",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "773871__mrgungus__pistol-cock-3.wav",
+      "CachePath": "DC/{DCEE9B82-99F4-CD58-D8A4-00394C15994D}.wem"
+     },
+     {
+      "Id": "253093012",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "508747__augustsandberg__bolt-action-rifle-reload.wav",
+      "CachePath": "05/{053D0CFE-5E9C-8B5D-3991-CF01F93EFFC0}.wem"
+     },
+     {
+      "Id": "260605844",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "231245__augustsandberg__fn-scar-h-7.wav",
+      "CachePath": "53/{53EF141F-221B-24C6-761B-5F0F354F6CC8}.wem"
+     },
+     {
+      "Id": "266637744",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "231244__augustsandberg__smith-wesson.wav",
+      "CachePath": "66/{66EACD25-AB14-B3FB-C8FB-58FEBF69137E}.wem"
      },
      {
       "Id": "270836268",
@@ -144,6 +192,14 @@
       "CachePath": "A4/{A4B9B1EF-35E2-0C2C-C04A-9AE6B78532C3}.wem"
      },
      {
+      "Id": "376470486",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "231244__augustsandberg__smith-wesson.wav",
+      "CachePath": "9E/{9E228175-431C-80E2-DF38-321667B6281F}.wem"
+     },
+     {
       "Id": "381079448",
       "Language": "SFX",
       "Streaming": "false",
@@ -158,6 +214,14 @@
       "Location": "Memory",
       "ShortName": "Minimalist5.wav",
       "CachePath": "20/{20AF7999-C480-5A56-197D-1008B9CE7612}.wem"
+     },
+     {
+      "Id": "388912180",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "508747__augustsandberg__bolt-action-rifle-reload.wav",
+      "CachePath": "7F/{7FBDDCB2-87E6-FD0A-5AC5-D7070EBD4321}.wem"
      },
      {
       "Id": "397573128",
@@ -176,6 +240,30 @@
       "CachePath": "E0/{E097930D-B849-5F91-8775-00BC60B51045}.wem"
      },
      {
+      "Id": "410898943",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "508747__augustsandberg__bolt-action-rifle-reload.wav",
+      "CachePath": "0A/{0ABDCA18-6CBA-C106-1B21-7250AB2BBAAF}.wem"
+     },
+     {
+      "Id": "422708308",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "773869__mrgungus__pistol-cock-1.wav",
+      "CachePath": "22/{22ACFB69-E289-02AE-3547-9E39B4046C9A}.wem"
+     },
+     {
+      "Id": "453219213",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "231244__augustsandberg__smith-wesson.wav",
+      "CachePath": "E9/{E996883A-C89D-EDAF-2662-67119B92F24B}.wem"
+     },
+     {
       "Id": "491162418",
       "Language": "SFX",
       "Streaming": "false",
@@ -184,12 +272,28 @@
       "CachePath": "51/{51C271C0-2A2F-4792-AD0E-39EBABD66716}.wem"
      },
      {
+      "Id": "500920095",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "773870__mrgungus__pistol-cock-2.wav",
+      "CachePath": "2E/{2E8834E6-CE0C-73D0-C8F6-5B0AB7F52E86}.wem"
+     },
+     {
       "Id": "502935267",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Glass_Grit_Mono_01.wav",
       "CachePath": "D9/{D9D4F74C-95CF-DCEC-185E-4F8DC749594D}.wem"
+     },
+     {
+      "Id": "542156035",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "773857__mrgungus__357-magnum-casing-drop.wav",
+      "CachePath": "88/{8850BCDD-F4B8-AAB9-8BFB-FBAF422B71BA}.wem"
      },
      {
       "Id": "550553015",
@@ -208,12 +312,28 @@
       "CachePath": "32/{3281BA8B-D743-A5EF-83A5-34A5C971C518}.wem"
      },
      {
+      "Id": "588207548",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "508747__augustsandberg__bolt-action-rifle-reload.wav",
+      "CachePath": "C6/{C6B06625-53E0-2441-421C-258D197B72D5}.wem"
+     },
+     {
       "Id": "628993159",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "667292__pekena_larva__voc_male_jump_02.wav",
       "CachePath": "0F/{0FA84586-F398-D1C2-82CE-ACCAC44656A3}.wem"
+     },
+     {
+      "Id": "638701609",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "508747__augustsandberg__bolt-action-rifle-reload.wav",
+      "CachePath": "3A/{3A12E59D-CCF2-4A8C-1ECC-AC510645ED04}.wem"
      },
      {
       "Id": "641298461",
@@ -230,6 +350,22 @@
       "Location": "Memory",
       "ShortName": "Minimalist3.wav",
       "CachePath": "9F/{9FDE50D6-DCBF-633D-2178-9481DDEE90FD}.wem"
+     },
+     {
+      "Id": "665091579",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "773858__mrgungus__22lr-casing-drop.wav",
+      "CachePath": "E8/{E8253EA7-A3C1-1DFB-1503-8DDA2CA786C3}.wem"
+     },
+     {
+      "Id": "675694933",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "231246__augustsandberg__ps-90.wav",
+      "CachePath": "3B/{3BA2853C-186E-2203-DC01-58AB51467F95}.wem"
      },
      {
       "Id": "676421312",
@@ -256,6 +392,14 @@
       "CachePath": "32/{32749484-C8CA-A9BA-2DC4-8BCEDDF2E4D2}.wem"
      },
      {
+      "Id": "704253414",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "ak-47-assault-rifle-being-unloaded-and-reloaded.wav",
+      "CachePath": "14/{14FE27E6-98E9-8CD5-ED86-E619DF52240A}.wem"
+     },
+     {
       "Id": "733604107",
       "Language": "SFX",
       "Streaming": "false",
@@ -278,6 +422,14 @@
       "Location": "Memory",
       "ShortName": "667295__pekena_larva__voc_male_land_01.wav",
       "CachePath": "19/{196D4DC5-49FB-83C0-6182-002349265224}.wem"
+     },
+     {
+      "Id": "794714009",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "231244__augustsandberg__smith-wesson.wav",
+      "CachePath": "22/{22AF22F1-51CC-EFC6-BA45-765DE56A5293}.wem"
      },
      {
       "Id": "809280269",
@@ -310,6 +462,14 @@
       "Location": "Memory",
       "ShortName": "BootsLinoleum_04.wav",
       "CachePath": "6D/{6DA8C7A1-80DD-EF94-A51A-996CF2813D11}.wem"
+     },
+     {
+      "Id": "910657870",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "231245__augustsandberg__fn-scar-h-7.wav",
+      "CachePath": "10/{10E7A5EE-2231-2739-5EC4-430CCBA8CCA4}.wem"
      },
      {
       "Id": "920116644",
@@ -360,6 +520,22 @@
       "CachePath": "35/{3553DA8C-568C-824A-8C75-48DDF80B4AE6}.wem"
      },
      {
+      "Id": "1011227344",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "508747__augustsandberg__bolt-action-rifle-reload.wav",
+      "CachePath": "48/{4872D89E-59C1-BE19-87D8-678B3ACEBA85}.wem"
+     },
+     {
+      "Id": "1013353729",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "508747__augustsandberg__bolt-action-rifle-reload.wav",
+      "CachePath": "87/{87DD6DE9-D292-BF83-AE1F-9388E00EF13A}.wem"
+     },
+     {
       "Id": "1023057159",
       "Language": "SFX",
       "Streaming": "false",
@@ -405,6 +581,57 @@
      ]
     },
     "Events": [
+     {
+      "Id": "3554434311",
+      "Name": "Ammo",
+      "ObjectPath": "\\Events\\Default Work Unit\\Ammo",
+      "GUID": "{8390F816-397E-4A3F-9DCA-D0F764C99F1C}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.8737415",
+      "DurationMax": "1.3932426",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3554434311",
+         "Id": "324443136",
+         "GUID": "{CAE7E928-891B-4BDD-81F5-8797905C35D5}",
+         "Default": "true"
+        },
+        "MediaRefs": [
+         {
+          "Id": "665091579"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3554434311",
+         "Id": "1096740251",
+         "GUID": "{A7390F7B-D29E-424D-9CCF-5396A9C2925A}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "542156035"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3554434311",
+         "Id": "4262674733",
+         "GUID": "{75BCD1D1-EB1D-4CE9-8F34-EFBC4CD1E01E}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "51211207"
+         }
+        ]
+       }
+      ]
+     },
      {
       "Id": "3991942870",
       "Name": "Music",
@@ -483,14 +710,133 @@
       ]
      },
      {
+      "Id": "456382354",
+      "Name": "Reload",
+      "ObjectPath": "\\Events\\Default Work Unit\\Reload",
+      "GUID": "{05DC4E5A-889A-42B2-91CF-FAD159142676}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.3257823",
+      "DurationMax": "2.5626357",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "456382354",
+         "Id": "324443136",
+         "GUID": "{338E8EAD-0F1A-4E9A-B242-843DC66CF62C}",
+         "Default": "true"
+        },
+        "MediaRefs": [
+         {
+          "Id": "226604641"
+         },
+         {
+          "Id": "422708308"
+         },
+         {
+          "Id": "500920095"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "456382354",
+         "Id": "4262674733",
+         "GUID": "{EB3DFBE5-DB33-4D7C-93C7-C3F6217FD53B}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "704253414"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "456382354",
+         "Id": "1096740251",
+         "GUID": "{F7F3BCFC-1EA7-4D97-92D3-DF127CEDD843}"
+        },
+        "Children": [
+         {
+          "SwitchValue": {
+           "GroupType": "Switch",
+           "GroupId": "1096740251",
+           "Id": "3958385377",
+           "GUID": "{15A3E61D-FB2A-4ABB-A9D4-8E3B0C9DB661}",
+           "Default": "true"
+          },
+          "MediaRefs": [
+           {
+            "Id": "388912180"
+           }
+          ]
+         },
+         {
+          "SwitchValue": {
+           "GroupType": "Switch",
+           "GroupId": "1096740251",
+           "Id": "3573931707",
+           "GUID": "{067C3C82-BD7A-4AAB-9708-22FF715377BB}"
+          },
+          "MediaRefs": [
+           {
+            "Id": "253093012"
+           },
+           {
+            "Id": "410898943"
+           },
+           {
+            "Id": "638701609"
+           },
+           {
+            "Id": "1011227344"
+           },
+           {
+            "Id": "1013353729"
+           }
+          ]
+         },
+         {
+          "SwitchValue": {
+           "GroupType": "Switch",
+           "GroupId": "1096740251",
+           "Id": "1993628331",
+           "GUID": "{9A19A1B8-2D51-4572-95AF-A9BBD16E28D6}"
+          },
+          "MediaRefs": [
+           {
+            "Id": "588207548"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
       "Id": "3038207054",
       "Name": "Shoot",
       "ObjectPath": "\\Events\\Default Work Unit\\Shoot",
       "GUID": "{CEB512F3-2A96-476F-BF95-C309FCB953DE}",
       "DurationType": "OneShot",
       "DurationMin": "0.7497959",
-      "DurationMax": "0.8356009",
+      "DurationMax": "1.5795981",
       "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "915214409",
+         "Id": "324443136",
+         "GUID": "{A87BDE0C-E279-43E9-8017-4A200728FFD9}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "675694933"
+         }
+        ]
+       },
        {
         "SwitchValue": {
          "GroupType": "Switch",
@@ -505,6 +851,47 @@
          },
          {
           "Id": "1023057159"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "915214409",
+         "Id": "1096740251",
+         "GUID": "{2799626E-3126-4757-A212-FE075EEDE7C2}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "266637744"
+         },
+         {
+          "Id": "376470486"
+         },
+         {
+          "Id": "453219213"
+         },
+         {
+          "Id": "794714009"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "915214409",
+         "Id": "4262674733",
+         "GUID": "{063C20D7-2981-4470-A344-A450790235A0}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "85366372"
+         },
+         {
+          "Id": "260605844"
+         },
+         {
+          "Id": "910657870"
          }
         ]
        }
@@ -858,16 +1245,86 @@
       ]
      },
      {
+      "Id": "456382354",
+      "Name": "Reload",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Reload",
+      "GUID": "{AE0E4935-6099-4093-9712-AFE2652BB1B7}",
+      "Switches": [
+       {
+        "Id": "324443136",
+        "Name": "Pistol",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Reload\\Pistol",
+        "GUID": "{338E8EAD-0F1A-4E9A-B242-843DC66CF62C}"
+       },
+       {
+        "Id": "1096740251",
+        "Name": "RifleSemi",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Reload\\RifleSemi",
+        "GUID": "{F7F3BCFC-1EA7-4D97-92D3-DF127CEDD843}"
+       },
+       {
+        "Id": "4262674733",
+        "Name": "Rifle",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Reload\\Rifle",
+        "GUID": "{EB3DFBE5-DB33-4D7C-93C7-C3F6217FD53B}"
+       }
+      ]
+     },
+     {
       "Id": "915214409",
       "Name": "Gun",
       "ObjectPath": "\\Switches\\Default Work Unit\\Gun",
       "GUID": "{D11084CE-7C28-4EEA-8B3D-92420FC125EF}",
       "Switches": [
        {
+        "Id": "324443136",
+        "Name": "Pistol",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Gun\\Pistol",
+        "GUID": "{A87BDE0C-E279-43E9-8017-4A200728FFD9}"
+       },
+       {
         "Id": "546945295",
         "Name": "Bow",
         "ObjectPath": "\\Switches\\Default Work Unit\\Gun\\Bow",
         "GUID": "{D52EC367-ABD0-4B16-8A65-3450794ADFDC}"
+       },
+       {
+        "Id": "1096740251",
+        "Name": "RifleSemi",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Gun\\RifleSemi",
+        "GUID": "{2799626E-3126-4757-A212-FE075EEDE7C2}"
+       },
+       {
+        "Id": "4262674733",
+        "Name": "Rifle",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Gun\\Rifle",
+        "GUID": "{063C20D7-2981-4470-A344-A450790235A0}"
+       }
+      ]
+     },
+     {
+      "Id": "1096740251",
+      "Name": "RifleSemi",
+      "ObjectPath": "\\Switches\\Default Work Unit\\RifleSemi",
+      "GUID": "{AAD53836-83AB-4B32-9137-675425CF1E30}",
+      "Switches": [
+       {
+        "Id": "1993628331",
+        "Name": "Rebolt",
+        "ObjectPath": "\\Switches\\Default Work Unit\\RifleSemi\\Rebolt",
+        "GUID": "{9A19A1B8-2D51-4572-95AF-A9BBD16E28D6}"
+       },
+       {
+        "Id": "3573931707",
+        "Name": "Loading",
+        "ObjectPath": "\\Switches\\Default Work Unit\\RifleSemi\\Loading",
+        "GUID": "{067C3C82-BD7A-4AAB-9708-22FF715377BB}"
+       },
+       {
+        "Id": "3958385377",
+        "Name": "Unbolt",
+        "ObjectPath": "\\Switches\\Default Work Unit\\RifleSemi\\Unbolt",
+        "GUID": "{15A3E61D-FB2A-4ABB-A9D4-8E3B0C9DB661}"
        }
       ]
      },
@@ -888,6 +1345,32 @@
         "Name": "Hover",
         "ObjectPath": "\\Switches\\Default Work Unit\\Menus\\Hover",
         "GUID": "{5F02E8D1-38D2-409B-9A2A-BFC85D8304DA}"
+       }
+      ]
+     },
+     {
+      "Id": "3554434311",
+      "Name": "Ammo",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Ammo",
+      "GUID": "{4D335E37-90F7-4CCD-95B8-600258C1F59A}",
+      "Switches": [
+       {
+        "Id": "324443136",
+        "Name": "Pistol",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Ammo\\Pistol",
+        "GUID": "{CAE7E928-891B-4BDD-81F5-8797905C35D5}"
+       },
+       {
+        "Id": "1096740251",
+        "Name": "RifleSemi",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Ammo\\RifleSemi",
+        "GUID": "{A7390F7B-D29E-424D-9CCF-5396A9C2925A}"
+       },
+       {
+        "Id": "4262674733",
+        "Name": "Rifle",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Ammo\\Rifle",
+        "GUID": "{75BCD1D1-EB1D-4CE9-8F34-EFBC4CD1E01E}"
        }
       ]
      },
@@ -946,6 +1429,6 @@
     ]
    }
   ],
-  "FileHash": "{8685BA05-E51F-48A9-6129-EB8D87789454}"
+  "FileHash": "{240AF4E7-2666-42C7-98D1-0323740263B5}"
  }
 }

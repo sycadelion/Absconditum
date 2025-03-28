@@ -166,16 +166,86 @@
       ]
      },
      {
+      "Id": "456382354",
+      "Name": "Reload",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Reload",
+      "GUID": "{AE0E4935-6099-4093-9712-AFE2652BB1B7}",
+      "Switches": [
+       {
+        "Id": "324443136",
+        "Name": "Pistol",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Reload\\Pistol",
+        "GUID": "{338E8EAD-0F1A-4E9A-B242-843DC66CF62C}"
+       },
+       {
+        "Id": "1096740251",
+        "Name": "RifleSemi",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Reload\\RifleSemi",
+        "GUID": "{F7F3BCFC-1EA7-4D97-92D3-DF127CEDD843}"
+       },
+       {
+        "Id": "4262674733",
+        "Name": "Rifle",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Reload\\Rifle",
+        "GUID": "{EB3DFBE5-DB33-4D7C-93C7-C3F6217FD53B}"
+       }
+      ]
+     },
+     {
       "Id": "915214409",
       "Name": "Gun",
       "ObjectPath": "\\Switches\\Default Work Unit\\Gun",
       "GUID": "{D11084CE-7C28-4EEA-8B3D-92420FC125EF}",
       "Switches": [
        {
+        "Id": "324443136",
+        "Name": "Pistol",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Gun\\Pistol",
+        "GUID": "{A87BDE0C-E279-43E9-8017-4A200728FFD9}"
+       },
+       {
         "Id": "546945295",
         "Name": "Bow",
         "ObjectPath": "\\Switches\\Default Work Unit\\Gun\\Bow",
         "GUID": "{D52EC367-ABD0-4B16-8A65-3450794ADFDC}"
+       },
+       {
+        "Id": "1096740251",
+        "Name": "RifleSemi",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Gun\\RifleSemi",
+        "GUID": "{2799626E-3126-4757-A212-FE075EEDE7C2}"
+       },
+       {
+        "Id": "4262674733",
+        "Name": "Rifle",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Gun\\Rifle",
+        "GUID": "{063C20D7-2981-4470-A344-A450790235A0}"
+       }
+      ]
+     },
+     {
+      "Id": "1096740251",
+      "Name": "RifleSemi",
+      "ObjectPath": "\\Switches\\Default Work Unit\\RifleSemi",
+      "GUID": "{AAD53836-83AB-4B32-9137-675425CF1E30}",
+      "Switches": [
+       {
+        "Id": "1993628331",
+        "Name": "Rebolt",
+        "ObjectPath": "\\Switches\\Default Work Unit\\RifleSemi\\Rebolt",
+        "GUID": "{9A19A1B8-2D51-4572-95AF-A9BBD16E28D6}"
+       },
+       {
+        "Id": "3573931707",
+        "Name": "Loading",
+        "ObjectPath": "\\Switches\\Default Work Unit\\RifleSemi\\Loading",
+        "GUID": "{067C3C82-BD7A-4AAB-9708-22FF715377BB}"
+       },
+       {
+        "Id": "3958385377",
+        "Name": "Unbolt",
+        "ObjectPath": "\\Switches\\Default Work Unit\\RifleSemi\\Unbolt",
+        "GUID": "{15A3E61D-FB2A-4ABB-A9D4-8E3B0C9DB661}"
        }
       ]
      },
@@ -196,6 +266,32 @@
         "Name": "Hover",
         "ObjectPath": "\\Switches\\Default Work Unit\\Menus\\Hover",
         "GUID": "{5F02E8D1-38D2-409B-9A2A-BFC85D8304DA}"
+       }
+      ]
+     },
+     {
+      "Id": "3554434311",
+      "Name": "Ammo",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Ammo",
+      "GUID": "{4D335E37-90F7-4CCD-95B8-600258C1F59A}",
+      "Switches": [
+       {
+        "Id": "324443136",
+        "Name": "Pistol",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Ammo\\Pistol",
+        "GUID": "{CAE7E928-891B-4BDD-81F5-8797905C35D5}"
+       },
+       {
+        "Id": "1096740251",
+        "Name": "RifleSemi",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Ammo\\RifleSemi",
+        "GUID": "{A7390F7B-D29E-424D-9CCF-5396A9C2925A}"
+       },
+       {
+        "Id": "4262674733",
+        "Name": "Rifle",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Ammo\\Rifle",
+        "GUID": "{75BCD1D1-EB1D-4CE9-8F34-EFBC4CD1E01E}"
        }
       ]
      },
@@ -254,6 +350,6 @@
     ]
    }
   ],
-  "FileHash": "{09E23B33-B499-6BD9-9423-21542E3CD12E}"
+  "FileHash": "{580CFC7E-8715-96A4-6020-77034DC62BC0}"
  }
 }

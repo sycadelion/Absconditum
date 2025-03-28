@@ -1,0 +1,8 @@
+[gd_resource type="WwiseEvent" format=3 uid="uid://dirdvou130tvi"]
+
+[resource]
+is_in_user_defined_sound_bank = true
+name = "Ammo"
+id = 3554434311
+guid = "{8390F816-397E-4A3F-9DCA-D0F764C99F1C}"
+dummy = true

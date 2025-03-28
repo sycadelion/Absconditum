@@ -4,6 +4,9 @@
 		<WorkUnit Name="Default Work Unit" ID="{7F3DAC90-E421-4FAB-AEEB-44CB0FEB024D}" PersistMode="Standalone">
 			<ChildrenList>
 				<Event Name="Walk" ID="{BF8C47E3-7FB7-4A96-9087-30E26825A77B}">
+					<PropertyList>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
 					<ChildrenList>
 						<Action Name="" ID="{F5C28704-6E9C-40F0-A2FF-1387D0CEB3E2}" ShortID="126411873">
 							<ReferenceList>
@@ -64,6 +67,28 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Menu" ID="{74DF25EB-C320-4A8C-866E-6A24065F868D}" WorkUnitID="{98744DD5-B908-40A9-98B8-96C679B8628B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Reload" ID="{05DC4E5A-889A-42B2-91CF-FAD159142676}">
+					<ChildrenList>
+						<Action Name="" ID="{55B5D143-478A-4BAB-AC53-FD457DB5DD48}" ShortID="524686668">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Reload" ID="{8459E082-9EFB-40C1-A2D2-9333B5083A1B}" WorkUnitID="{D1BAD11F-0083-404B-AA79-15730CB6E4DC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Ammo" ID="{8390F816-397E-4A3F-9DCA-D0F764C99F1C}">
+					<ChildrenList>
+						<Action Name="" ID="{848C7B82-5CFF-4C51-B63E-C8D06CF32147}" ShortID="136450964">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ammo" ID="{1E968E0E-4238-4AEF-8C2A-F2C240DC830A}" WorkUnitID="{D1BAD11F-0083-404B-AA79-15730CB6E4DC}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

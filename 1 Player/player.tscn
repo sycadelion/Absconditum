@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://f7itocgajf8o"]
+[gd_scene load_steps=80 format=3 uid="uid://f7itocgajf8o"]
 
 [ext_resource type="Script" uid="uid://cf0owk1iydspc" path="res://1 Player/player.gd" id="1_4ht6w"]
 [ext_resource type="Material" uid="uid://gsnjhl57qwdk" path="res://4 Resources/Shaders/player_shader_mat.tres" id="1_fuh6j"]
@@ -23,6 +23,8 @@
 [ext_resource type="Script" uid="uid://dedfq2hei2r88" path="res://1 Player/Components/bullet_proj_comp.gd" id="11_no44j"]
 [ext_resource type="PackedScene" uid="uid://da5fc0sh7rdo8" path="res://1 Player/Weapons/BulletProj.tscn" id="12_qi8gg"]
 [ext_resource type="WwiseEvent" uid="uid://b3hn2bx8rqd7j" path="res://Wwise/resources/Event/{CEB512F3-2A96-476F-BF95-C309FCB953DE}.tres" id="12_rvfjf"]
+[ext_resource type="WwiseEvent" uid="uid://bye8i6fpqmsic" path="res://Wwise/resources/Event/{05DC4E5A-889A-42B2-91CF-FAD159142676}.tres" id="13_bo3ew"]
+[ext_resource type="WwiseEvent" uid="uid://dirdvou130tvi" path="res://Wwise/resources/Event/{8390F816-397E-4A3F-9DCA-D0F764C99F1C}.tres" id="14_28efx"]
 [ext_resource type="Script" uid="uid://st4fb1i2rna7" path="res://1 Player/Components/audio_component.gd" id="15_tld0y"]
 [ext_resource type="Script" uid="uid://bhl0gklund2py" path="res://1 Player/Components/health_component.gd" id="16_fwst1"]
 [ext_resource type="WwiseEvent" uid="uid://bhq7qwjnhvura" path="res://Wwise/resources/Event/{5703BB24-BD9C-48BE-902D-F00553BB8BBB}.tres" id="17_c3cwb"]
@@ -1270,6 +1272,22 @@ unique_name_in_owner = true
 [node name="Area3D" type="Area3D" parent="Head/Camera3D/Hand/GunAudio"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera3D/Hand/GunAudio/Area3D"]
+shape = SubResource("BoxShape3D_ulbgw")
+
+[node name="GunReload" type="AkEvent3D" parent="Head/Camera3D/Hand"]
+event = ExtResource("13_bo3ew")
+
+[node name="Area3D" type="Area3D" parent="Head/Camera3D/Hand/GunReload"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera3D/Hand/GunReload/Area3D"]
+shape = SubResource("BoxShape3D_ulbgw")
+
+[node name="GunAmmo" type="AkEvent3D" parent="Head/Camera3D/Hand"]
+event = ExtResource("14_28efx")
+
+[node name="Area3D" type="Area3D" parent="Head/Camera3D/Hand/GunAmmo"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera3D/Hand/GunAmmo/Area3D"]
 shape = SubResource("BoxShape3D_ulbgw")
 
 [node name="crossbow_viewmodel" parent="Head/Camera3D" instance=ExtResource("4_abpq6")]

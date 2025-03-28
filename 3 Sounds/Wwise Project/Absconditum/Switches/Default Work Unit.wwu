@@ -15,6 +15,9 @@
 				<SwitchGroup Name="Gun" ID="{D11084CE-7C28-4EEA-8B3D-92420FC125EF}">
 					<ChildrenList>
 						<Switch Name="Bow" ID="{D52EC367-ABD0-4B16-8A65-3450794ADFDC}"/>
+						<Switch Name="Pistol" ID="{A87BDE0C-E279-43E9-8017-4A200728FFD9}"/>
+						<Switch Name="Rifle" ID="{063C20D7-2981-4470-A344-A450790235A0}"/>
+						<Switch Name="RifleSemi" ID="{2799626E-3126-4757-A212-FE075EEDE7C2}"/>
 					</ChildrenList>
 				</SwitchGroup>
 				<SwitchGroup Name="Menus" ID="{93C5D5E1-3C7E-473D-BD8A-7790C3BE6EEB}">
@@ -32,6 +35,27 @@
 					<ChildrenList>
 						<Switch Name="Jump" ID="{098700A0-B1EB-4DDF-B527-79766CE4634F}"/>
 						<Switch Name="Land" ID="{A2898C1F-6EC9-45A2-9842-9F6ABFA8973B}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="Ammo" ID="{4D335E37-90F7-4CCD-95B8-600258C1F59A}">
+					<ChildrenList>
+						<Switch Name="Pistol" ID="{CAE7E928-891B-4BDD-81F5-8797905C35D5}"/>
+						<Switch Name="Rifle" ID="{75BCD1D1-EB1D-4CE9-8F34-EFBC4CD1E01E}"/>
+						<Switch Name="RifleSemi" ID="{A7390F7B-D29E-424D-9CCF-5396A9C2925A}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="Reload" ID="{AE0E4935-6099-4093-9712-AFE2652BB1B7}">
+					<ChildrenList>
+						<Switch Name="Pistol" ID="{338E8EAD-0F1A-4E9A-B242-843DC66CF62C}"/>
+						<Switch Name="Rifle" ID="{EB3DFBE5-DB33-4D7C-93C7-C3F6217FD53B}"/>
+						<Switch Name="RifleSemi" ID="{F7F3BCFC-1EA7-4D97-92D3-DF127CEDD843}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="RifleSemi" ID="{AAD53836-83AB-4B32-9137-675425CF1E30}">
+					<ChildrenList>
+						<Switch Name="Rebolt" ID="{9A19A1B8-2D51-4572-95AF-A9BBD16E28D6}"/>
+						<Switch Name="Unbolt" ID="{15A3E61D-FB2A-4ABB-A9D4-8E3B0C9DB661}"/>
+						<Switch Name="Loading" ID="{067C3C82-BD7A-4AAB-9708-22FF715377BB}"/>
 					</ChildrenList>
 				</SwitchGroup>
 			</ChildrenList>

@@ -767,18 +767,305 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="RifleSemi" ID="{A66AEAD1-7F65-4DFA-A30F-17949B2A8CB0}" ShortID="758609765">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="231244__augustsandberg__smith-wesson" ID="{2023BF77-AEEA-4F16-BB5B-FC1BB499767D}" ShortID="105580442">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="231244__augustsandberg__smith-wesson" ID="{8CC28D8A-EE1C-470C-8732-9E9BA20F7561}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0247844114303589"/>
+												<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.987"/>
+												<Property Name="TrimEnd" Type="Real64" Value="2.45159391403198"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>231244__augustsandberg__smith-wesson.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="266637744"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="231244__augustsandberg__smith-wesson" ID="{8CC28D8A-EE1C-470C-8732-9E9BA20F7561}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="231244__augustsandberg__smith-wesson_01" ID="{6B658E39-0B15-45E4-B3FB-D6AB90AECDEE}" ShortID="708899500">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="231244__augustsandberg__smith-wesson" ID="{F8324E44-3EC5-469D-A325-B2822DDE1B27}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0247844114303589"/>
+												<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="2.53653002929688"/>
+												<Property Name="TrimEnd" Type="Real64" Value="3.57137147426605"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>231244__augustsandberg__smith-wesson.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="453219213"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="231244__augustsandberg__smith-wesson" ID="{F8324E44-3EC5-469D-A325-B2822DDE1B27}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="231244__augustsandberg__smith-wesson_02" ID="{EAB3292B-CAC5-4D7F-A70F-80FE9221C0D5}" ShortID="1029489413">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="231244__augustsandberg__smith-wesson" ID="{AE4B92B5-E3D7-4E14-9570-3FA784994B91}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0247844114303589"/>
+												<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="3.58367336940765"/>
+												<Property Name="TrimEnd" Type="Real64" Value="4.69114903450012"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>231244__augustsandberg__smith-wesson.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="794714009"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="231244__augustsandberg__smith-wesson" ID="{AE4B92B5-E3D7-4E14-9570-3FA784994B91}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="231244__augustsandberg__smith-wesson_03" ID="{62E588AF-8E35-4DE5-8094-87AC2864D941}" ShortID="581201285">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="231244__augustsandberg__smith-wesson" ID="{D5B0AB76-8FCB-4D0C-834F-3828425467B9}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0247844114303589"/>
+												<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="4.67923952293396"/>
+												<Property Name="TrimEnd" Type="Real64" Value="6.25883761882782"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>231244__augustsandberg__smith-wesson.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="376470486"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="231244__augustsandberg__smith-wesson" ID="{D5B0AB76-8FCB-4D0C-834F-3828425467B9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Pistol" ID="{F84DF182-6E72-4EF7-B8A6-F91EA734A89F}" ShortID="287285006">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="231246__augustsandberg__ps-90" ID="{4908B7DC-612E-4C3F-A6A1-D454BB2C865B}" ShortID="224067729">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="231246__augustsandberg__ps-90" ID="{37E6F897-21BB-44B1-8936-5A1601A8319C}">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="0.332542571528205"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.332542571528205"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>231246__augustsandberg__ps-90.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="675694933"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="231246__augustsandberg__ps-90" ID="{37E6F897-21BB-44B1-8936-5A1601A8319C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Rifle" ID="{F3C49CDE-E118-4D04-802B-C5E59A6DABDF}" ShortID="515942375">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="231245__augustsandberg__fn-scar-h-7" ID="{36E5B2EB-D11A-4753-B857-CA1A52A67A6C}" ShortID="878738818">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="231245__augustsandberg__fn-scar-h-7" ID="{35900A0C-29F5-40AE-9943-8D2E81FEDB79}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.604677547440218"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.56045810047603"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>231245__augustsandberg__fn-scar-h-7.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="260605844"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="231245__augustsandberg__fn-scar-h-7" ID="{35900A0C-29F5-40AE-9943-8D2E81FEDB79}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="231245__augustsandberg__fn-scar-h-7_01" ID="{78F8608C-13FC-4F17-B93B-5DA3BF1E12B7}" ShortID="349410169">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="231245__augustsandberg__fn-scar-h-7" ID="{79892168-97C2-434C-A899-10EBCB43BCF4}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="5.94586154619702"/>
+												<Property Name="TrimEnd" Type="Real64" Value="7.35365911950005"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>231245__augustsandberg__fn-scar-h-7.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="910657870"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="231245__augustsandberg__fn-scar-h-7" ID="{79892168-97C2-434C-A899-10EBCB43BCF4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="231245__augustsandberg__fn-scar-h-7_02" ID="{1A58F1DF-6CDF-4FD2-A965-B6EA1CAECD64}" ShortID="31728070">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="231245__augustsandberg__fn-scar-h-7" ID="{B782BDB1-6322-446D-AA73-B3A68C00CB0B}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="7.97445718922227"/>
+												<Property Name="TrimEnd" Type="Real64" Value="9.29447898950979"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>231245__augustsandberg__fn-scar-h-7.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="85366372"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="231245__augustsandberg__fn-scar-h-7" ID="{B782BDB1-6322-446D-AA73-B3A68C00CB0B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
 					</ChildrenList>
 					<GroupingInfo>
 						<GroupingBehaviorList>
 							<GroupingBehavior>
 								<ItemRef Name="Bow" ID="{314E852C-329B-4984-A918-1AD77A996873}"/>
 							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Pistol" ID="{F84DF182-6E72-4EF7-B8A6-F91EA734A89F}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="RifleSemi" ID="{A66AEAD1-7F65-4DFA-A30F-17949B2A8CB0}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Rifle" ID="{F3C49CDE-E118-4D04-802B-C5E59A6DABDF}"/>
+							</GroupingBehavior>
 						</GroupingBehaviorList>
 						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="Pistol" ID="{A87BDE0C-E279-43E9-8017-4A200728FFD9}"/>
+								<ItemList>
+									<ItemRef Name="Pistol" ID="{F84DF182-6E72-4EF7-B8A6-F91EA734A89F}"/>
+								</ItemList>
+							</Grouping>
 							<Grouping>
 								<SwitchRef Name="Bow" ID="{D52EC367-ABD0-4B16-8A65-3450794ADFDC}"/>
 								<ItemList>
 									<ItemRef Name="Bow" ID="{314E852C-329B-4984-A918-1AD77A996873}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="RifleSemi" ID="{2799626E-3126-4757-A212-FE075EEDE7C2}"/>
+								<ItemList>
+									<ItemRef Name="RifleSemi" ID="{A66AEAD1-7F65-4DFA-A30F-17949B2A8CB0}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Rifle" ID="{063C20D7-2981-4470-A344-A450790235A0}"/>
+								<ItemList>
+									<ItemRef Name="Rifle" ID="{F3C49CDE-E118-4D04-802B-C5E59A6DABDF}"/>
 								</ItemList>
 							</Grouping>
 						</GroupingList>
@@ -1398,6 +1685,616 @@
 								<SwitchRef Name="Jump" ID="{098700A0-B1EB-4DDF-B527-79766CE4634F}"/>
 								<ItemList>
 									<ItemRef Name="Jump" ID="{C7944F7C-B340-46E1-A6E4-17FCB236CF12}"/>
+								</ItemList>
+							</Grouping>
+						</GroupingList>
+					</GroupingInfo>
+				</SwitchContainer>
+				<SwitchContainer Name="Ammo" ID="{1E968E0E-4238-4AEF-8C2A-F2C240DC830A}" ShortID="879885013">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="EnableDiffraction" Type="bool" Value="True"/>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+						</Reference>
+						<Reference Name="DefaultSwitchOrState">
+							<ObjectRef Name="Pistol" ID="{CAE7E928-891B-4BDD-81F5-8797905C35D5}" WorkUnitID="{BD305427-CAF9-4437-8900-7FBD9CE3A77A}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{04312408-C43F-4AD4-B818-DECF781E2289}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+						</Reference>
+						<Reference Name="SwitchGroupOrStateGroup">
+							<ObjectRef Name="Ammo" ID="{4D335E37-90F7-4CCD-95B8-600258C1F59A}" WorkUnitID="{BD305427-CAF9-4437-8900-7FBD9CE3A77A}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="Pistol" ID="{54FA667A-084E-438B-8396-B17D55ADD1CC}" ShortID="1034951189">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="773858__mrgungus__22lr-casing-drop" ID="{49DB9E60-C0AD-442D-8E97-91B30E69A2DB}" ShortID="990461398">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="773858__mrgungus__22lr-casing-drop" ID="{ED9449A3-24B9-4853-8581-70C947345DF2}">
+											<Language>SFX</Language>
+											<AudioFile>773858__mrgungus__22lr-casing-drop.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="665091579"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="773858__mrgungus__22lr-casing-drop" ID="{ED9449A3-24B9-4853-8581-70C947345DF2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Rifle" ID="{9DD3B144-B0B6-40F1-A4A7-943011C2F569}" ShortID="149426295">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="773859__mrgungus__223-remington-casing-drop" ID="{F32926AB-111B-496C-8FE0-95D8135A7118}" ShortID="379935073">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="773859__mrgungus__223-remington-casing-drop" ID="{BB923D84-E24C-43D5-82B6-EA64B7AEB78C}">
+											<Language>SFX</Language>
+											<AudioFile>773859__mrgungus__223-remington-casing-drop.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="51211207"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="773859__mrgungus__223-remington-casing-drop" ID="{BB923D84-E24C-43D5-82B6-EA64B7AEB78C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="RifleSemi" ID="{3A0BCBD5-F692-4507-9B08-0AC2D6F6CDC7}" ShortID="907409663">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="773857__mrgungus__357-magnum-casing-drop" ID="{B0783BD1-261E-46EB-913D-66F8F11E3DCB}" ShortID="678625947">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="773857__mrgungus__357-magnum-casing-drop" ID="{4C8E0DCF-0D82-4691-B29A-70A26E7D2EA7}">
+											<Language>SFX</Language>
+											<AudioFile>773857__mrgungus__357-magnum-casing-drop.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="542156035"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="773857__mrgungus__357-magnum-casing-drop" ID="{4C8E0DCF-0D82-4691-B29A-70A26E7D2EA7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+					</ChildrenList>
+					<GroupingInfo>
+						<GroupingBehaviorList>
+							<GroupingBehavior>
+								<ItemRef Name="Rifle" ID="{9DD3B144-B0B6-40F1-A4A7-943011C2F569}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Pistol" ID="{54FA667A-084E-438B-8396-B17D55ADD1CC}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="RifleSemi" ID="{3A0BCBD5-F692-4507-9B08-0AC2D6F6CDC7}"/>
+							</GroupingBehavior>
+						</GroupingBehaviorList>
+						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="Pistol" ID="{CAE7E928-891B-4BDD-81F5-8797905C35D5}"/>
+								<ItemList>
+									<ItemRef Name="Pistol" ID="{54FA667A-084E-438B-8396-B17D55ADD1CC}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="RifleSemi" ID="{A7390F7B-D29E-424D-9CCF-5396A9C2925A}"/>
+								<ItemList>
+									<ItemRef Name="RifleSemi" ID="{3A0BCBD5-F692-4507-9B08-0AC2D6F6CDC7}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Rifle" ID="{75BCD1D1-EB1D-4CE9-8F34-EFBC4CD1E01E}"/>
+								<ItemList>
+									<ItemRef Name="Rifle" ID="{9DD3B144-B0B6-40F1-A4A7-943011C2F569}"/>
+								</ItemList>
+							</Grouping>
+						</GroupingList>
+					</GroupingInfo>
+				</SwitchContainer>
+				<SwitchContainer Name="Reload" ID="{8459E082-9EFB-40C1-A2D2-9333B5083A1B}" ShortID="399519091">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="EnableDiffraction" Type="bool" Value="True"/>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+						</Reference>
+						<Reference Name="DefaultSwitchOrState">
+							<ObjectRef Name="Pistol" ID="{338E8EAD-0F1A-4E9A-B242-843DC66CF62C}" WorkUnitID="{BD305427-CAF9-4437-8900-7FBD9CE3A77A}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{04312408-C43F-4AD4-B818-DECF781E2289}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+						</Reference>
+						<Reference Name="SwitchGroupOrStateGroup">
+							<ObjectRef Name="Reload" ID="{AE0E4935-6099-4093-9712-AFE2652BB1B7}" WorkUnitID="{BD305427-CAF9-4437-8900-7FBD9CE3A77A}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="Pistol" ID="{DE782981-EE14-4EFE-A37D-56757001BA0E}" ShortID="197252474">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="773869__mrgungus__pistol-cock-1" ID="{02492830-D2DC-478C-AE4C-534D6CFFB5ED}" ShortID="453838509">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="773869__mrgungus__pistol-cock-1" ID="{8EC5E8B8-0871-4AB2-8B7C-EC152D07406F}">
+											<Language>SFX</Language>
+											<AudioFile>773869__mrgungus__pistol-cock-1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="422708308"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="773869__mrgungus__pistol-cock-1" ID="{8EC5E8B8-0871-4AB2-8B7C-EC152D07406F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="773870__mrgungus__pistol-cock-2" ID="{A27BD12F-3A64-42A3-82E1-C85D4A50CBBC}" ShortID="251184235">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="773870__mrgungus__pistol-cock-2" ID="{F3999424-B2BC-4DC0-8B50-C80ED4DD12D0}">
+											<Language>SFX</Language>
+											<AudioFile>773870__mrgungus__pistol-cock-2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="500920095"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="773870__mrgungus__pistol-cock-2" ID="{F3999424-B2BC-4DC0-8B50-C80ED4DD12D0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="773871__mrgungus__pistol-cock-3" ID="{62A5831A-0FEA-4430-B5BB-85E532C1DC0A}" ShortID="1029249548">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="773871__mrgungus__pistol-cock-3" ID="{5034D469-B39F-4D16-87D1-8EABAC308BA9}">
+											<Language>SFX</Language>
+											<AudioFile>773871__mrgungus__pistol-cock-3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="226604641"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="773871__mrgungus__pistol-cock-3" ID="{5034D469-B39F-4D16-87D1-8EABAC308BA9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Rifle" ID="{D5607459-CE0E-43DB-B977-16BB4A9A159F}" ShortID="72689324">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="ak-47-assault-rifle-being-unloaded-and-reloaded" ID="{1ACF6E9B-63CD-49B1-BE66-3E300934E52F}" ShortID="4605006">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="ak-47-assault-rifle-being-unloaded-and-reloaded" ID="{D2DDBF0F-EDE6-4599-8CE3-C0674FD0E763}">
+											<Language>SFX</Language>
+											<AudioFile>ak-47-assault-rifle-being-unloaded-and-reloaded.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="704253414"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="ak-47-assault-rifle-being-unloaded-and-reloaded" ID="{D2DDBF0F-EDE6-4599-8CE3-C0674FD0E763}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<SwitchContainer Name="RifleSemi" ID="{2C23B899-C05A-4131-857E-00458DE142FD}" ShortID="749409978">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+								</Reference>
+								<Reference Name="DefaultSwitchOrState">
+									<ObjectRef Name="Unbolt" ID="{15A3E61D-FB2A-4ABB-A9D4-8E3B0C9DB661}" WorkUnitID="{BD305427-CAF9-4437-8900-7FBD9CE3A77A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+								</Reference>
+								<Reference Name="SwitchGroupOrStateGroup">
+									<ObjectRef Name="RifleSemi" ID="{AAD53836-83AB-4B32-9137-675425CF1E30}" WorkUnitID="{BD305427-CAF9-4437-8900-7FBD9CE3A77A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="Loading" ID="{34081A6C-57FA-48F7-B953-37A792F9AB30}" ShortID="728685384">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="508747__augustsandberg__bolt-action-rifle-reload" ID="{CD5C887B-7F8D-491E-945F-3A601564E565}" ShortID="716039302">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="508747__augustsandberg__bolt-action-rifle-reload" ID="{51AD7380-0FB9-4C25-ABFD-2CCA6260999D}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="5.02564787098682"/>
+														<Property Name="TrimEnd" Type="Real64" Value="6.67763851205234"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>508747__augustsandberg__bolt-action-rifle-reload.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1011227344"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="508747__augustsandberg__bolt-action-rifle-reload" ID="{51AD7380-0FB9-4C25-ABFD-2CCA6260999D}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="508747__augustsandberg__bolt-action-rifle-reload_01" ID="{24BCA279-731A-4147-840F-4B3E9A88AF3B}" ShortID="352045720">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="508747__augustsandberg__bolt-action-rifle-reload" ID="{D2809C0B-B0FD-471C-9F09-9EF35C525356}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="7.77173666903728"/>
+														<Property Name="TrimEnd" Type="Real64" Value="10.0287785452919"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>508747__augustsandberg__bolt-action-rifle-reload.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="638701609"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="508747__augustsandberg__bolt-action-rifle-reload" ID="{D2809C0B-B0FD-471C-9F09-9EF35C525356}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="508747__augustsandberg__bolt-action-rifle-reload_02" ID="{0AD5DDD3-1AE5-4198-9BCA-BD893AEB0FB5}" ShortID="551480979">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="508747__augustsandberg__bolt-action-rifle-reload" ID="{D36B95AB-B083-4DAA-9927-185FB4DD2621}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="10.9651273146443"/>
+														<Property Name="TrimEnd" Type="Real64" Value="13.5277629917627"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>508747__augustsandberg__bolt-action-rifle-reload.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1013353729"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="508747__augustsandberg__bolt-action-rifle-reload" ID="{D36B95AB-B083-4DAA-9927-185FB4DD2621}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="508747__augustsandberg__bolt-action-rifle-reload_03" ID="{A128056D-82FA-47F4-B70B-F86897565888}" ShortID="448198695">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="508747__augustsandberg__bolt-action-rifle-reload" ID="{5F46E394-08EE-4319-B1C2-8A71E0A15D61}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="15.0536239737395"/>
+														<Property Name="TrimEnd" Type="Real64" Value="16.115040223308"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>508747__augustsandberg__bolt-action-rifle-reload.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="410898943"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="508747__augustsandberg__bolt-action-rifle-reload" ID="{5F46E394-08EE-4319-B1C2-8A71E0A15D61}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="508747__augustsandberg__bolt-action-rifle-reload_04" ID="{F84FD854-8498-4488-80AF-52847804EE03}" ShortID="121365132">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="508747__augustsandberg__bolt-action-rifle-reload" ID="{83A40722-03ED-4EA0-BC3C-A08EE870C7E4}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="17.7070272787292"/>
+														<Property Name="TrimEnd" Type="Real64" Value="19.7618690830099"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>508747__augustsandberg__bolt-action-rifle-reload.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="253093012"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="508747__augustsandberg__bolt-action-rifle-reload" ID="{83A40722-03ED-4EA0-BC3C-A08EE870C7E4}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Unbolt" ID="{4938F306-DA55-4018-8D72-925F0FF54119}" ShortID="800158961">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="508747__augustsandberg__bolt-action-rifle-reload_01" ID="{D996A5C6-BCF8-4C78-AAB2-4CF6C896158E}" ShortID="367111013">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{04312408-C43F-4AD4-B818-DECF781E2289}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="508747__augustsandberg__bolt-action-rifle-reload" ID="{621E3D31-EF76-4A36-82BC-43F6C96E7F81}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="1.25667751246485"/>
+														<Property Name="TrimEnd" Type="Real64" Value="3.69610951189063"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>508747__augustsandberg__bolt-action-rifle-reload.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="388912180"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="508747__augustsandberg__bolt-action-rifle-reload" ID="{621E3D31-EF76-4A36-82BC-43F6C96E7F81}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Rebolt" ID="{7F5EF85E-66CB-4683-9FFF-349674F4DA4B}" ShortID="752120844">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="508747__augustsandberg__bolt-action-rifle-reload" ID="{12E29404-1F0E-4083-B7F2-359E38D9C51E}" ShortID="438923640">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{04312408-C43F-4AD4-B818-DECF781E2289}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="508747__augustsandberg__bolt-action-rifle-reload" ID="{B9B0D4CC-BFF3-449D-8C6B-23200B326D91}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="19.9589957862065"/>
+														<Property Name="TrimEnd" Type="Real64" Value="20.8214207111666"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>508747__augustsandberg__bolt-action-rifle-reload.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="588207548"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="508747__augustsandberg__bolt-action-rifle-reload" ID="{B9B0D4CC-BFF3-449D-8C6B-23200B326D91}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+							</ChildrenList>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="Unbolt" ID="{4938F306-DA55-4018-8D72-925F0FF54119}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Rebolt" ID="{7F5EF85E-66CB-4683-9FFF-349674F4DA4B}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Loading" ID="{34081A6C-57FA-48F7-B953-37A792F9AB30}"/>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+								<GroupingList>
+									<Grouping>
+										<SwitchRef Name="Unbolt" ID="{15A3E61D-FB2A-4ABB-A9D4-8E3B0C9DB661}"/>
+										<ItemList>
+											<ItemRef Name="Unbolt" ID="{4938F306-DA55-4018-8D72-925F0FF54119}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Loading" ID="{067C3C82-BD7A-4AAB-9708-22FF715377BB}"/>
+										<ItemList>
+											<ItemRef Name="Loading" ID="{34081A6C-57FA-48F7-B953-37A792F9AB30}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Rebolt" ID="{9A19A1B8-2D51-4572-95AF-A9BBD16E28D6}"/>
+										<ItemList>
+											<ItemRef Name="Rebolt" ID="{7F5EF85E-66CB-4683-9FFF-349674F4DA4B}"/>
+										</ItemList>
+									</Grouping>
+								</GroupingList>
+							</GroupingInfo>
+						</SwitchContainer>
+					</ChildrenList>
+					<GroupingInfo>
+						<GroupingBehaviorList>
+							<GroupingBehavior>
+								<ItemRef Name="Rifle" ID="{D5607459-CE0E-43DB-B977-16BB4A9A159F}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Pistol" ID="{DE782981-EE14-4EFE-A37D-56757001BA0E}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="RifleSemi" ID="{2C23B899-C05A-4131-857E-00458DE142FD}"/>
+							</GroupingBehavior>
+						</GroupingBehaviorList>
+						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="Pistol" ID="{338E8EAD-0F1A-4E9A-B242-843DC66CF62C}"/>
+								<ItemList>
+									<ItemRef Name="Pistol" ID="{DE782981-EE14-4EFE-A37D-56757001BA0E}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Rifle" ID="{EB3DFBE5-DB33-4D7C-93C7-C3F6217FD53B}"/>
+								<ItemList>
+									<ItemRef Name="Rifle" ID="{D5607459-CE0E-43DB-B977-16BB4A9A159F}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="RifleSemi" ID="{F7F3BCFC-1EA7-4D97-92D3-DF127CEDD843}"/>
+								<ItemList>
+									<ItemRef Name="RifleSemi" ID="{2C23B899-C05A-4131-857E-00458DE142FD}"/>
 								</ItemList>
 							</Grouping>
 						</GroupingList>
