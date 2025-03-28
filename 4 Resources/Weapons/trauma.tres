@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://bt37yoot0xdu4"]
 
-[ext_resource type="Script" path="res://4 Resources/Weapon_Resource.gd" id="1_861ew"]
+[ext_resource type="Script" uid="uid://c0g5u0tdm4bfa" path="res://4 Resources/Weapon_Resource.gd" id="1_861ew"]
 [ext_resource type="Texture2D" uid="uid://bgidboctel5iw" path="res://8 Assets/Images/Trauma.png" id="1_vjmeg"]
 
 [resource]

@@ -1,33 +1,33 @@
 [gd_scene load_steps=75 format=3 uid="uid://f7itocgajf8o"]
 
-[ext_resource type="Script" path="res://1 Player/player.gd" id="1_4ht6w"]
+[ext_resource type="Script" uid="uid://cf0owk1iydspc" path="res://1 Player/player.gd" id="1_4ht6w"]
 [ext_resource type="Material" uid="uid://gsnjhl57qwdk" path="res://4 Resources/Shaders/player_shader_mat.tres" id="1_fuh6j"]
-[ext_resource type="Script" path="res://4 Resources/States/StateMachine.gd" id="2_6egf1"]
+[ext_resource type="Script" uid="uid://bg6to2usmqm5q" path="res://4 Resources/States/StateMachine.gd" id="2_6egf1"]
 [ext_resource type="Material" uid="uid://d0pvmiwy55gkj" path="res://8 Assets/Images/blank_mat.tres" id="3_fdipf"]
-[ext_resource type="Script" path="res://1 Player/States/PlayerIdleState.gd" id="3_ix7v3"]
-[ext_resource type="Script" path="res://1 Player/States/PlayerWalkState.gd" id="4_525u1"]
+[ext_resource type="Script" uid="uid://ljcmwjikxtp7" path="res://1 Player/States/PlayerIdleState.gd" id="3_ix7v3"]
+[ext_resource type="Script" uid="uid://bs43hw5nhhqx6" path="res://1 Player/States/PlayerWalkState.gd" id="4_525u1"]
 [ext_resource type="PackedScene" uid="uid://bnrhdm2pom8cm" path="res://1 Player/Model/crossbow.tscn" id="4_abpq6"]
-[ext_resource type="Script" path="res://1 Player/States/PlayerRunState.gd" id="5_0iglv"]
+[ext_resource type="Script" uid="uid://bpn43mfrvkkb1" path="res://1 Player/States/PlayerRunState.gd" id="5_0iglv"]
 [ext_resource type="PackedScene" uid="uid://cr1br4blceokm" path="res://1 Player/Weapons/crossbow_Shader.tscn" id="5_bmnt7"]
 [ext_resource type="Texture2D" uid="uid://pao6524wf303" path="res://addons/kenney_particle_pack/smoke_08.png" id="5_q41oh"]
-[ext_resource type="Script" path="res://1 Player/States/PlayerShootState.gd" id="6_fngw5"]
+[ext_resource type="Script" uid="uid://c4urkupki16kx" path="res://1 Player/States/PlayerShootState.gd" id="6_fngw5"]
 [ext_resource type="Texture2D" uid="uid://68kjn6suxq5a" path="res://addons/kenney_particle_pack/smoke_04.png" id="6_oop84"]
 [ext_resource type="PackedScene" uid="uid://c0wl72hwaa31r" path="res://1 Player/GUI/hud.tscn" id="7_kc58q"]
 [ext_resource type="PackedScene" uid="uid://ser6du4tr2cu" path="res://1 Player/GUI/pause.tscn" id="8_grtv0"]
 [ext_resource type="PackedScene" uid="uid://c4juwh1tsimcx" path="res://1 Player/Weapons/malice_type_m.tscn" id="9_2r2es"]
 [ext_resource type="PackedScene" uid="uid://d2ljcqlo87l2j" path="res://1 Player/GUI/kill_feed.tscn" id="10_7uef7"]
-[ext_resource type="Script" path="res://1 Player/Components/skill_1_comp.gd" id="10_elnv3"]
+[ext_resource type="Script" uid="uid://cjbee27b6itpm" path="res://1 Player/Components/skill_1_comp.gd" id="10_elnv3"]
 [ext_resource type="PackedScene" uid="uid://dr380cr6se6rc" path="res://1 Player/Weapons/salvation_2_type_n.tscn" id="10_vg1fo"]
 [ext_resource type="PackedScene" uid="uid://d3bhlb6x0ro8f" path="res://1 Player/Weapons/Skill1_Scene.tscn" id="11_7l2ie"]
 [ext_resource type="PackedScene" uid="uid://b0oppry2iydfe" path="res://1 Player/Weapons/trauma_type_n.tscn" id="11_cghwp"]
-[ext_resource type="Script" path="res://1 Player/Components/bullet_proj_comp.gd" id="11_no44j"]
+[ext_resource type="Script" uid="uid://dedfq2hei2r88" path="res://1 Player/Components/bullet_proj_comp.gd" id="11_no44j"]
 [ext_resource type="PackedScene" uid="uid://da5fc0sh7rdo8" path="res://1 Player/Weapons/BulletProj.tscn" id="12_qi8gg"]
 [ext_resource type="WwiseEvent" uid="uid://b3hn2bx8rqd7j" path="res://Wwise/resources/Event/{CEB512F3-2A96-476F-BF95-C309FCB953DE}.tres" id="12_rvfjf"]
-[ext_resource type="Script" path="res://1 Player/Components/audio_component.gd" id="15_tld0y"]
-[ext_resource type="Script" path="res://1 Player/Components/health_component.gd" id="16_fwst1"]
+[ext_resource type="Script" uid="uid://st4fb1i2rna7" path="res://1 Player/Components/audio_component.gd" id="15_tld0y"]
+[ext_resource type="Script" uid="uid://bhl0gklund2py" path="res://1 Player/Components/health_component.gd" id="16_fwst1"]
 [ext_resource type="WwiseEvent" uid="uid://bhq7qwjnhvura" path="res://Wwise/resources/Event/{5703BB24-BD9C-48BE-902D-F00553BB8BBB}.tres" id="17_c3cwb"]
-[ext_resource type="Script" path="res://1 Player/Components/weapon_manger.gd" id="17_ln4bi"]
-[ext_resource type="Script" path="res://4 Resources/Weapon_Resource.gd" id="22_dho8y"]
+[ext_resource type="Script" uid="uid://hql62yn8p8mc" path="res://1 Player/Components/weapon_manger.gd" id="17_ln4bi"]
+[ext_resource type="Script" uid="uid://c0g5u0tdm4bfa" path="res://4 Resources/Weapon_Resource.gd" id="22_dho8y"]
 [ext_resource type="Resource" uid="uid://vrc4parm6311" path="res://4 Resources/Weapons/Malice.tres" id="28_bme5i"]
 [ext_resource type="Resource" uid="uid://bme5b2ty1ti5b" path="res://4 Resources/Weapons/Salvation.tres" id="29_6fwx1"]
 [ext_resource type="WwiseEvent" uid="uid://bd3fbawv0fm0b" path="res://Wwise/resources/Event/{BF8C47E3-7FB7-4A96-9087-30E26825A77B}.tres" id="30_376c3"]
@@ -1168,22 +1168,22 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_demr1"]
 _data = {
-"Gun_empty": SubResource("Animation_grxd7"),
-"Put_away": SubResource("Animation_rukxb"),
-"RESET": SubResource("Animation_6woqc"),
-"Reloading": SubResource("Animation_gjl0r"),
-"Salvation_equip": SubResource("Animation_auwjt"),
-"Salvation_unequip": SubResource("Animation_llvb0"),
-"Take_out": SubResource("Animation_hsecg"),
-"Trauma_equip": SubResource("Animation_ct8el"),
-"Trauma_unequip": SubResource("Animation_7h1qu"),
-"death": SubResource("Animation_qkman"),
-"idle": SubResource("Animation_qw2dm"),
-"malice_equip": SubResource("Animation_scqn5"),
-"malice_unequip": SubResource("Animation_3lvqf"),
-"move": SubResource("Animation_0ng04"),
-"no_gun": SubResource("Animation_qeuk3"),
-"shoot": SubResource("Animation_5v340")
+&"Gun_empty": SubResource("Animation_grxd7"),
+&"Put_away": SubResource("Animation_rukxb"),
+&"RESET": SubResource("Animation_6woqc"),
+&"Reloading": SubResource("Animation_gjl0r"),
+&"Salvation_equip": SubResource("Animation_auwjt"),
+&"Salvation_unequip": SubResource("Animation_llvb0"),
+&"Take_out": SubResource("Animation_hsecg"),
+&"Trauma_equip": SubResource("Animation_ct8el"),
+&"Trauma_unequip": SubResource("Animation_7h1qu"),
+&"death": SubResource("Animation_qkman"),
+&"idle": SubResource("Animation_qw2dm"),
+&"malice_equip": SubResource("Animation_scqn5"),
+&"malice_unequip": SubResource("Animation_3lvqf"),
+&"move": SubResource("Animation_0ng04"),
+&"no_gun": SubResource("Animation_qeuk3"),
+&"shoot": SubResource("Animation_5v340")
 }
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_pefit"]
@@ -1318,7 +1318,7 @@ parameters/gunEquip/add_amount = 1.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 libraries = {
-"": SubResource("AnimationLibrary_demr1")
+&"": SubResource("AnimationLibrary_demr1")
 }
 playback_default_blend_time = 0.05
 

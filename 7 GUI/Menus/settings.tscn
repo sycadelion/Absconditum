@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bglvj405a8scx"]
 
 [ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu.tres" id="1_talt2"]
-[ext_resource type="Script" path="res://7 GUI/Menus/settings.gd" id="2_supjv"]
+[ext_resource type="Script" uid="uid://f8mlw7kacjfj" path="res://7 GUI/Menus/settings.gd" id="2_supjv"]
 [ext_resource type="PackedScene" uid="uid://cyol5v5lpw78x" path="res://7 GUI/Menus/setting_slider.tscn" id="3_gs1v7"]
 
 [node name="Settings" type="Control"]

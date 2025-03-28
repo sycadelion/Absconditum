@@ -31,7 +31,7 @@ General/banks_path="res://3 Sounds"
 config/name="Absconditum"
 run/main_scene="res://0 Master/null_starter.tscn"
 config/use_custom_user_dir=true
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 run/max_fps=60
 boot_splash/bg_color=Color(0.17, 0, 0, 1)
 boot_splash/image="res://8 Assets/Images/splash.png"
@@ -167,6 +167,10 @@ Weapon2={
 [layer_names]
 
 3d_physics/layer_2="Player"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
 
 [rendering]
 

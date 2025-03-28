@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://vrc4parm6311"]
 
 [ext_resource type="Texture2D" uid="uid://dmfdum33w0jls" path="res://8 Assets/Images/malice.png" id="1_82qbe"]
-[ext_resource type="Script" path="res://4 Resources/Weapon_Resource.gd" id="1_hc4s8"]
+[ext_resource type="Script" uid="uid://c0g5u0tdm4bfa" path="res://4 Resources/Weapon_Resource.gd" id="1_hc4s8"]
 
 [resource]
 script = ExtResource("1_hc4s8")

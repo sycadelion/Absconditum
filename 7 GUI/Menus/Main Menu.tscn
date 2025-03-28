@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://1vtabgmdqbya"]
 
-[ext_resource type="Script" path="res://7 GUI/Menus/main_menu.gd" id="1_r4jl4"]
+[ext_resource type="Script" uid="uid://dkmriobqrw3jy" path="res://7 GUI/Menus/main_menu.gd" id="1_r4jl4"]
 [ext_resource type="PackedScene" uid="uid://b7kqgr0bkm3s6" path="res://7 GUI/background_container.tscn" id="2_reh62"]
 [ext_resource type="FontFile" uid="uid://bt3eis200qlni" path="res://addons/NotJamFontPack/Not Jam Glasgow 13/Not Jam Glasgow 13.ttf" id="2_u8cqs"]
 [ext_resource type="PackedScene" uid="uid://cdaty1tj8c305" path="res://6 Online/lobby.tscn" id="3_ic32f"]
@@ -119,7 +119,7 @@ layout_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_vaxh2")
+&"": SubResource("AnimationLibrary_vaxh2")
 }
 
 [node name="Disconnected_from_server" parent="." instance=ExtResource("8_3wo6v")]

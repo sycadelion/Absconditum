@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://ddut4ym5suydp"]
 
 [ext_resource type="Material" uid="uid://ys5y4m34ptf6" path="res://4 Resources/Shaders/Skybox_mat.tres" id="1_fm5q2"]
-[ext_resource type="Script" path="res://5 Levels/Hub/hub.gd" id="1_xthv6"]
+[ext_resource type="Script" uid="uid://78x7jvl31pcx" path="res://5 Levels/Hub/hub.gd" id="1_xthv6"]
 [ext_resource type="PackedScene" uid="uid://c33psuu1qtqd3" path="res://5 Levels/Drop_pod_hanger/import/drop_pod_hanger.tscn" id="2_7rrye"]
 [ext_resource type="PackedScene" uid="uid://f7itocgajf8o" path="res://1 Player/player.tscn" id="2_iocvr"]
 [ext_resource type="PackedScene" uid="uid://btea2veyjc17u" path="res://6 Online/SpawnPoint.tscn" id="3_ku60f"]
@@ -104,5 +104,11 @@ transform = Transform3D(-3.72577e-08, -0.52296, 0.852357, -2.28593e-08, 0.852357
 visible = false
 
 [node name="Spawn Screen" parent="Ingame Stuff" instance=ExtResource("6_46imq")]
+
+[node name="Gun slot 1" parent="Ingame Stuff/Spawn Screen/PanelContainer/VBoxContainer" index="3"]
+popup/item_0/id = 0
+
+[node name="Gun slot 2" parent="Ingame Stuff/Spawn Screen/PanelContainer/VBoxContainer" index="6"]
+popup/item_0/id = 0
 
 [editable path="Ingame Stuff/Spawn Screen"]

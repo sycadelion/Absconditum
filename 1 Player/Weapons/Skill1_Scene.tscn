@@ -1,8 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3bhlb6x0ro8f"]
+[gd_scene load_steps=13 format=4 uid="uid://d3bhlb6x0ro8f"]
 
-[ext_resource type="Script" path="res://4 Resources/Shaders/Shader Scripts/sphereSDF.gd" id="1_t28a6"]
+[ext_resource type="Script" uid="uid://bgtfk7mcp1sfo" path="res://4 Resources/Shaders/Shader Scripts/sphereSDF.gd" id="1_t28a6"]
 [ext_resource type="PackedScene" uid="uid://ct1bv07ecl3vk" path="res://1 Player/Model/grenade.tscn" id="2_pxuyo"]
-[ext_resource type="Shader" path="res://4 Resources/Shaders/SphereField.gdshader" id="3_shc4d"]
+[ext_resource type="Shader" uid="uid://dedi187ubsflk" path="res://4 Resources/Shaders/SphereField.gdshader" id="3_shc4d"]
 [ext_resource type="WwiseEvent" uid="uid://bhq7qwjnhvura" path="res://Wwise/resources/Event/{5703BB24-BD9C-48BE-902D-F00553BB8BBB}.tres" id="4_2yio7"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cofcj"]
@@ -19,8 +19,8 @@ render_priority = 0
 shader = ExtResource("3_shc4d")
 shader_parameter/color = Color(0, 0.513726, 0.329412, 1)
 shader_parameter/fresnel_sharpness = 1.0
-shader_parameter/impact_points = null
-shader_parameter/impact_size = null
+shader_parameter/impact_points = PackedVector4Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/impact_size = 0.0
 shader_parameter/impact_falloff_sharpness = 1.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_wmhj5"]
@@ -69,8 +69,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5gylt"]
 _data = {
-"RESET": SubResource("Animation_fyja7"),
-"expand": SubResource("Animation_njaer")
+&"RESET": SubResource("Animation_fyja7"),
+&"expand": SubResource("Animation_njaer")
 }
 
 [node name="Skill1_Scene" type="RigidBody3D"]
@@ -101,7 +101,7 @@ mesh = SubResource("SphereMesh_mduu6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_5gylt")
+&"": SubResource("AnimationLibrary_5gylt")
 }
 
 [node name="Timer" type="Timer" parent="."]
