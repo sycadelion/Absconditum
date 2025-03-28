@@ -10,7 +10,7 @@ var paused = false
 var UserName: String
 
 #game version only changing for save files
-var Save_version: int = 1
+var Save_version: int = 2
 
 #customize match settings:
 var skill_Cooldown = 5

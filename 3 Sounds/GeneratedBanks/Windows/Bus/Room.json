@@ -1,0 +1,48 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "2077253480",
+    "Type": "Bus",
+    "GUID": "{473BA46A-C8E9-40A4-AC90-E207E8CA32FA}",
+    "Language": "SFX",
+    "Hash": "{2AAD05C8-F238-EE88-F958-8D3F21E820CF}",
+    "ObjectPath": "Room",
+    "ShortName": "Room",
+    "Path": "Bus/Room.bnk",
+    "Plugins": {
+     "ShareSets": [
+      {
+       "Id": "1990128658",
+       "Name": "Room_Medium",
+       "ObjectPath": "\\Effects\\Factory Effects\\RoomVerb\\Rooms\\Room_Medium",
+       "GUID": "{F5C06EC1-E4A4-4332-A7D3-A89E2986B74F}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
+      }
+     ]
+    },
+    "AuxBusses": [
+     {
+      "Id": "2077253480",
+      "Name": "Room",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Room",
+      "GUID": "{473BA46A-C8E9-40A4-AC90-E207E8CA32FA}",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "1990128658"
+        }
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "FileHash": "{2744327E-C8F7-70F3-A12D-02A16DEFD0B5}"
+ }
+}

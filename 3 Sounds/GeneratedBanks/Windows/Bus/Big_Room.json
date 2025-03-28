@@ -1,0 +1,48 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "4202071913",
+    "Type": "Bus",
+    "GUID": "{BDA45880-AFFB-4C92-B1CB-D625CA3527EE}",
+    "Language": "SFX",
+    "Hash": "{CC07A3EE-F22E-2034-20C3-6EA5CE99C3C3}",
+    "ObjectPath": "Big_Room",
+    "ShortName": "Big_Room",
+    "Path": "Bus/Big_Room.bnk",
+    "Plugins": {
+     "ShareSets": [
+      {
+       "Id": "3900114836",
+       "Name": "Metal_Hangar",
+       "ObjectPath": "\\Effects\\Factory Effects\\RoomVerb\\Huge Spaces\\Metal_Hangar",
+       "GUID": "{C4A4605C-42EF-476A-B53C-E31C7A442C24}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
+      }
+     ]
+    },
+    "AuxBusses": [
+     {
+      "Id": "4202071913",
+      "Name": "Big_Room",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Big_Room",
+      "GUID": "{BDA45880-AFFB-4C92-B1CB-D625CA3527EE}",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "3900114836"
+        }
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "FileHash": "{ED04AE87-0A63-5336-E643-883562E59BA7}"
+ }
+}

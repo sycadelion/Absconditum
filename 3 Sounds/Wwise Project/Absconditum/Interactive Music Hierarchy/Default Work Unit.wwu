@@ -1,6 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{98744DD5-B908-40A9-98B8-96C679B8628B}" SchemaVersion="123">
 	<InteractiveMusic>
-		<WorkUnit Name="Default Work Unit" ID="{98744DD5-B908-40A9-98B8-96C679B8628B}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{98744DD5-B908-40A9-98B8-96C679B8628B}" PersistMode="Standalone">
+			<ChildrenList>
+				<MusicSegment Name="Menu" ID="{74DF25EB-C320-4A8C-866E-6A24065F868D}" ShortID="758124493">
+					<PropertyList>
+						<Property Name="EndPosition" Type="Real64" Value="103472.222222222"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-1</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Music" ID="{6E751908-B6AE-4AD2-9C21-4EB0A6DF11B7}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicTrack Name="Quiet Times, Soft Waves" ID="{74C9DE8E-B5F4-4276-827A-83AC3A739B54}" ShortID="695419220">
+							<ReferenceList>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+								</Reference>
+								<Reference Name="TransitionRoot">
+									<Custom>
+										<MusicTransition Name="Root" ID="{BBBDDCBE-2D46-48BF-844F-6963E14A2880}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</Custom>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Quiet Times, Soft Waves" ID="{B04C6C7C-C582-4452-980B-7C9BE4A5B1C0}">
+									<Language>SFX</Language>
+									<AudioFile>Quiet Times, Soft Waves.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="34700422"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Sequences">
+									<Reference>
+										<Local>
+											<MusicTrackSequence Name="" ID="{17485CAB-44AB-406E-ADFC-24B64D43D87E}">
+												<ObjectLists>
+													<ObjectList Name="Clips">
+														<Reference>
+															<Local>
+																<MusicClip Name="Quiet Times, Soft Waves" ID="{74432AD8-D4A9-465F-B6C2-DC8DF6720555}">
+																	<PropertyList>
+																		<Property Name="EndTrimOffset" Type="Real64" Value="102000"/>
+																		<Property Name="FadeInDuration" Type="Real64" Value="646.799879096595"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="5350.7989997991"/>
+																	</PropertyList>
+																	<AudioSourceRef Name="Quiet Times, Soft Waves" ID="{B04C6C7C-C582-4452-980B-7C9BE4A5B1C0}"/>
+																</MusicClip>
+															</Local>
+														</Reference>
+													</ObjectList>
+												</ObjectLists>
+											</MusicTrackSequence>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicTrack>
+					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="Cues">
+							<Reference>
+								<Local>
+									<MusicCue Name="Entry Cue" ID="{A58D2D63-D95F-4A6F-839B-4BA7094DD57A}"/>
+								</Local>
+							</Reference>
+							<Reference>
+								<Local>
+									<MusicCue Name="Exit Cue" ID="{59DF802D-2091-4283-B6F0-94533B967DB9}">
+										<PropertyList>
+											<Property Name="CueType" Type="int16" Value="1"/>
+											<Property Name="TimeMs" Type="Real64" Value="101972.458053711"/>
+										</PropertyList>
+									</MusicCue>
+								</Local>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
+				</MusicSegment>
+			</ChildrenList>
+		</WorkUnit>
 	</InteractiveMusic>
 </WwiseDocument>

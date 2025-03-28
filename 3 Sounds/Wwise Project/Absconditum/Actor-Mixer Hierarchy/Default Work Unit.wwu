@@ -694,6 +694,7 @@
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="2"/>
 						<Property Name="EnableDiffraction" Type="bool" Value="True"/>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -784,6 +785,13 @@
 					</GroupingInfo>
 				</SwitchContainer>
 				<SwitchContainer Name="Menu" ID="{DA332328-15BB-4331-A11A-D110A81B24E5}" ShortID="565909542">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>5</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
@@ -982,6 +990,9 @@
 					</GroupingInfo>
 				</SwitchContainer>
 				<SwitchContainer Name="Skill" ID="{0EA50E5D-F786-4CDE-A805-EDBB30DFE518}" ShortID="1023960303">
+					<PropertyList>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
@@ -1079,6 +1090,314 @@
 								<SwitchRef Name="Grenade" ID="{5D7286B2-63EA-49CE-AEAC-2D13FF034A9B}"/>
 								<ItemList>
 									<ItemRef Name="grenade" ID="{E749D358-DF52-442C-8D2A-E8857EF48991}"/>
+								</ItemList>
+							</Grouping>
+						</GroupingList>
+					</GroupingInfo>
+				</SwitchContainer>
+				<SwitchContainer Name="PlayerVoice" ID="{0E13E1F8-FAA2-448F-9879-4AA8E6E12A89}" ShortID="927554974">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="EnableDiffraction" Type="bool" Value="True"/>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Footsteps" ID="{BDAC828B-AD8E-4EEA-AB10-338870EE325B}" WorkUnitID="{9F2E41A8-F3D2-453C-A8F7-0A86F33AA113}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+						</Reference>
+						<Reference Name="DefaultSwitchOrState">
+							<ObjectRef Name="Jump" ID="{098700A0-B1EB-4DDF-B527-79766CE4634F}" WorkUnitID="{BD305427-CAF9-4437-8900-7FBD9CE3A77A}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{04312408-C43F-4AD4-B818-DECF781E2289}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+						</Reference>
+						<Reference Name="SwitchGroupOrStateGroup">
+							<ObjectRef Name="PlayerVoice" ID="{7288A79A-F5E7-410F-8432-B454EDF6CC43}" WorkUnitID="{BD305427-CAF9-4437-8900-7FBD9CE3A77A}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="Jump" ID="{C7944F7C-B340-46E1-A6E4-17FCB236CF12}" ShortID="1038708665">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>7</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="667290__pekena_larva__voc_male_jump_04" ID="{209B602A-3B66-41D1-96B9-ADCF0F341E9A}" ShortID="851902544">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="667290__pekena_larva__voc_male_jump_04" ID="{6ACA2AB3-8704-44DA-9A9D-E20ADB010872}">
+											<Language>SFX</Language>
+											<AudioFile>667290__pekena_larva__voc_male_jump_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="693918980"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="667290__pekena_larva__voc_male_jump_04" ID="{6ACA2AB3-8704-44DA-9A9D-E20ADB010872}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="667291__pekena_larva__voc_male_jump_03" ID="{C38A0C9D-9F6D-4978-8AAC-564A1BD256E4}" ShortID="398176943">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="667291__pekena_larva__voc_male_jump_03" ID="{A81046C6-5820-4210-BCF1-B0A8722F0BE6}">
+											<Language>SFX</Language>
+											<AudioFile>667291__pekena_larva__voc_male_jump_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="491162418"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="667291__pekena_larva__voc_male_jump_03" ID="{A81046C6-5820-4210-BCF1-B0A8722F0BE6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="667292__pekena_larva__voc_male_jump_02" ID="{E4366780-5256-4DD2-A903-5D6D91BCB802}" ShortID="627360621">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="667292__pekena_larva__voc_male_jump_02" ID="{3A09A0DA-9957-44A3-A774-DEF1C52E1BE2}">
+											<Language>SFX</Language>
+											<AudioFile>667292__pekena_larva__voc_male_jump_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="628993159"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="667292__pekena_larva__voc_male_jump_02" ID="{3A09A0DA-9957-44A3-A774-DEF1C52E1BE2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="667293__pekena_larva__voc_male_jump_01" ID="{CD31717A-DAF2-4E2F-A931-1C4BFBE3838F}" ShortID="219130901">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="667293__pekena_larva__voc_male_jump_01" ID="{C9029BDE-AAE5-4D05-AA91-13A8E83D0D26}">
+											<Language>SFX</Language>
+											<AudioFile>667293__pekena_larva__voc_male_jump_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="684002994"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="667293__pekena_larva__voc_male_jump_01" ID="{C9029BDE-AAE5-4D05-AA91-13A8E83D0D26}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="667296__pekena_larva__voc_male_jump_06" ID="{ADA21D2D-C49F-4488-BB8F-CC6D51574A22}" ShortID="280900456">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="667296__pekena_larva__voc_male_jump_06" ID="{6B51D8B3-F046-414E-BCD9-01EF5087113B}">
+											<Language>SFX</Language>
+											<AudioFile>667296__pekena_larva__voc_male_jump_06.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="111453331"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="667296__pekena_larva__voc_male_jump_06" ID="{6B51D8B3-F046-414E-BCD9-01EF5087113B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="667297__pekena_larva__voc_male_jump_05" ID="{692D04BA-EB09-4B0C-A309-2B3469384E2D}" ShortID="26642996">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="667297__pekena_larva__voc_male_jump_05" ID="{BED943AE-8C44-4CEC-9E16-1F079A458AF8}">
+											<Language>SFX</Language>
+											<AudioFile>667297__pekena_larva__voc_male_jump_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="290019238"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="667297__pekena_larva__voc_male_jump_05" ID="{BED943AE-8C44-4CEC-9E16-1F079A458AF8}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Land" ID="{187D8E83-21D2-442E-B489-B4DAE599C53D}" ShortID="889217172">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="667294__pekena_larva__voc_male_land_02" ID="{8C3745E8-09CE-48EF-8697-C0AB0F417EB5}" ShortID="687224874">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="667294__pekena_larva__voc_male_land_02" ID="{85025789-4ED7-4447-A750-802AAC10A57B}">
+											<Language>SFX</Language>
+											<AudioFile>667294__pekena_larva__voc_male_land_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1040374593"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="667294__pekena_larva__voc_male_land_02" ID="{85025789-4ED7-4447-A750-802AAC10A57B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="667295__pekena_larva__voc_male_land_01" ID="{847FD88A-8901-4AA5-97C5-B592CC67AC91}" ShortID="21910517">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="667295__pekena_larva__voc_male_land_01" ID="{758AEC2B-56E2-45F4-84E3-65F38A41ECD4}">
+											<Language>SFX</Language>
+											<AudioFile>667295__pekena_larva__voc_male_land_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="756635627"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="667295__pekena_larva__voc_male_land_01" ID="{758AEC2B-56E2-45F4-84E3-65F38A41ECD4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="667298__pekena_larva__voc_male_land_04" ID="{237E1E93-C800-4D27-9A7B-DE0E070402A3}" ShortID="236651551">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="667298__pekena_larva__voc_male_land_04" ID="{F132E80D-9326-44EE-99C8-32D16D00440F}">
+											<Language>SFX</Language>
+											<AudioFile>667298__pekena_larva__voc_male_land_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="968601989"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="667298__pekena_larva__voc_male_land_04" ID="{F132E80D-9326-44EE-99C8-32D16D00440F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="667299__pekena_larva__voc_male_land_03" ID="{08C3156B-65F9-4A81-8D79-8B3523396537}" ShortID="272523180">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="667299__pekena_larva__voc_male_land_03" ID="{A9A18A85-15C7-4D84-81E7-309E6B76F8B1}">
+											<Language>SFX</Language>
+											<AudioFile>667299__pekena_larva__voc_male_land_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="360279878"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="667299__pekena_larva__voc_male_land_03" ID="{A9A18A85-15C7-4D84-81E7-309E6B76F8B1}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+					</ChildrenList>
+					<GroupingInfo>
+						<GroupingBehaviorList>
+							<GroupingBehavior>
+								<ItemRef Name="Jump" ID="{C7944F7C-B340-46E1-A6E4-17FCB236CF12}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Land" ID="{187D8E83-21D2-442E-B489-B4DAE599C53D}"/>
+							</GroupingBehavior>
+						</GroupingBehaviorList>
+						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="Land" ID="{A2898C1F-6EC9-45A2-9842-9F6ABFA8973B}"/>
+								<ItemList>
+									<ItemRef Name="Land" ID="{187D8E83-21D2-442E-B489-B4DAE599C53D}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Jump" ID="{098700A0-B1EB-4DDF-B527-79766CE4634F}"/>
+								<ItemList>
+									<ItemRef Name="Jump" ID="{C7944F7C-B340-46E1-A6E4-17FCB236CF12}"/>
 								</ItemList>
 							</Grouping>
 						</GroupingList>

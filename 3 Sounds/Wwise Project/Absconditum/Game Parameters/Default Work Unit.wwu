@@ -3,11 +3,7 @@
 	<GameParameters>
 		<WorkUnit Name="Default Work Unit" ID="{41F0E813-870A-4F09-9B57-F9C67F301101}" PersistMode="Standalone">
 			<ChildrenList>
-				<GameParameter Name="MasterVol" ID="{A16CEE03-88B4-4AF2-9B36-6B2ACA3BDD7B}">
-					<PropertyList>
-						<Property Name="InitialValue" Type="Real64" Value="100"/>
-					</PropertyList>
-				</GameParameter>
+				<GameParameter Name="MasterVol" ID="{A16CEE03-88B4-4AF2-9B36-6B2ACA3BDD7B}"/>
 				<GameParameter Name="FootVol" ID="{60EC2E15-EC89-45CC-9B57-964132C59275}">
 					<PropertyList>
 						<Property Name="InitialValue" Type="Real64" Value="100"/>

@@ -10,11 +10,29 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{E679D110-F5B4-AAC3-1D3F-916C825460AE}",
+    "Hash": "{8A046650-216D-80BE-A1A0-DD4176CE0A97}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
     "Plugins": {
+     "ShareSets": [
+      {
+       "Id": "1990128658",
+       "Name": "Room_Medium",
+       "ObjectPath": "\\Effects\\Factory Effects\\RoomVerb\\Rooms\\Room_Medium",
+       "GUID": "{F5C06EC1-E4A4-4332-A7D3-A89E2986B74F}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
+      },
+      {
+       "Id": "3900114836",
+       "Name": "Metal_Hangar",
+       "ObjectPath": "\\Effects\\Factory Effects\\RoomVerb\\Huge Spaces\\Metal_Hangar",
+       "GUID": "{C4A4605C-42EF-476A-B53C-E31C7A442C24}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
+      }
+     ],
      "AudioDevices": [
       {
        "Id": "2317455096",
@@ -66,6 +84,34 @@
       "GUID": "{6E751908-B6AE-4AD2-9C21-4EB0A6DF11B7}"
      }
     ],
+    "AuxBusses": [
+     {
+      "Id": "2077253480",
+      "Name": "Room",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Room",
+      "GUID": "{473BA46A-C8E9-40A4-AC90-E207E8CA32FA}",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "1990128658"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "4202071913",
+      "Name": "Big_Room",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Big_Room",
+      "GUID": "{BDA45880-AFFB-4C92-B1CB-D625CA3527EE}",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "3900114836"
+        }
+       ]
+      }
+     }
+    ],
     "GameParameters": [
      {
       "Id": "191739755",
@@ -99,6 +145,26 @@
      }
     ],
     "SwitchGroups": [
+     {
+      "Id": "47937584",
+      "Name": "PlayerVoice",
+      "ObjectPath": "\\Switches\\Default Work Unit\\PlayerVoice",
+      "GUID": "{7288A79A-F5E7-410F-8432-B454EDF6CC43}",
+      "Switches": [
+       {
+        "Id": "674522502",
+        "Name": "Land",
+        "ObjectPath": "\\Switches\\Default Work Unit\\PlayerVoice\\Land",
+        "GUID": "{A2898C1F-6EC9-45A2-9842-9F6ABFA8973B}"
+       },
+       {
+        "Id": "3833651337",
+        "Name": "Jump",
+        "ObjectPath": "\\Switches\\Default Work Unit\\PlayerVoice\\Jump",
+        "GUID": "{098700A0-B1EB-4DDF-B527-79766CE4634F}"
+       }
+      ]
+     },
      {
       "Id": "915214409",
       "Name": "Gun",
@@ -188,6 +254,6 @@
     ]
    }
   ],
-  "FileHash": "{5B68E642-3919-C4BD-79D2-523CC94FB972}"
+  "FileHash": "{09E23B33-B499-6BD9-9423-21542E3CD12E}"
  }
 }

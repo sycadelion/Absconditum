@@ -11,9 +11,7 @@
 					</ReferenceList>
 					<ChildrenList>
 						<Bus Name="Footsteps" ID="{3AA89E7C-2792-4048-A98A-2A996BDC5670}">
-							<PropertyList>
-								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
-							</PropertyList>
+							<ReferenceList/>
 							<ObjectLists>
 								<ObjectList Name="RTPC">
 									<Reference>
@@ -177,6 +175,46 @@
 								</ObjectList>
 							</ObjectLists>
 						</Bus>
+						<AuxBus Name="Big_Room" ID="{BDA45880-AFFB-4C92-B1CB-D625CA3527EE}">
+							<PropertyList>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+							</PropertyList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{4C8EEAA9-28AC-43E1-AD18-E7F3ADFEAAAD}" ShortID="143046923">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+														<ObjectRef Name="Metal_Hangar" ID="{C4A4605C-42EF-476A-B53C-E31C7A442C24}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AuxBus>
+						<AuxBus Name="Room" ID="{473BA46A-C8E9-40A4-AC90-E207E8CA32FA}">
+							<PropertyList>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+							</PropertyList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{8739B427-5F8F-496D-8DAF-6DD27EDE0DAF}" ShortID="181524641">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+														<ObjectRef Name="Room_Medium" ID="{F5C06EC1-E4A4-4332-A7D3-A89E2986B74F}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AuxBus>
 					</ChildrenList>
 					<ObjectLists>
 						<ObjectList Name="RTPC">

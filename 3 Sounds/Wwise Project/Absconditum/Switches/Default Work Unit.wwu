@@ -28,6 +28,12 @@
 						<Switch Name="Grenade" ID="{5D7286B2-63EA-49CE-AEAC-2D13FF034A9B}"/>
 					</ChildrenList>
 				</SwitchGroup>
+				<SwitchGroup Name="PlayerVoice" ID="{7288A79A-F5E7-410F-8432-B454EDF6CC43}">
+					<ChildrenList>
+						<Switch Name="Jump" ID="{098700A0-B1EB-4DDF-B527-79766CE4634F}"/>
+						<Switch Name="Land" ID="{A2898C1F-6EC9-45A2-9842-9F6ABFA8973B}"/>
+					</ChildrenList>
+				</SwitchGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</Switches>

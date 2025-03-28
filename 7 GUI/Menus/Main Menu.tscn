@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://1vtabgmdqbya"]
+[gd_scene load_steps=11 format=3 uid="uid://1vtabgmdqbya"]
 
 [ext_resource type="Script" uid="uid://dkmriobqrw3jy" path="res://7 GUI/Menus/main_menu.gd" id="1_r4jl4"]
 [ext_resource type="PackedScene" uid="uid://b7kqgr0bkm3s6" path="res://7 GUI/background_container.tscn" id="2_reh62"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bglvj405a8scx" path="res://7 GUI/Menus/settings.tscn" id="6_yrws1"]
 [ext_resource type="PackedScene" uid="uid://cwd15gx5hshw5" path="res://7 GUI/Menus/match_settings.tscn" id="7_jslx7"]
 [ext_resource type="PackedScene" uid="uid://ibr5tw3jo2xn" path="res://7 GUI/disconnected_from_server.tscn" id="8_3wo6v"]
+[ext_resource type="WwiseEvent" uid="uid://dk2wdc7661f3o" path="res://Wwise/resources/Event/{53037DEB-F63C-4710-8072-54EFD294BCB0}.tres" id="9_sjt0m"]
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vaxh2"]
 
@@ -130,6 +131,13 @@ offset_top = -25.0
 offset_right = -155.0
 offset_bottom = -25.0
 
+[node name="AkListener2D" type="AkListener2D" parent="."]
+
+[node name="Music" type="AkEvent2D" parent="."]
+event = ExtResource("9_sjt0m")
+trigger_on = 2
+stop_on = 3
+
 [connection signal="mouse_entered" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Host" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Host" to="." method="_on_host_pressed"]
 [connection signal="mouse_entered" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Join" to="." method="_on_mouse_entered"]
@@ -143,6 +151,7 @@ offset_bottom = -25.0
 [connection signal="mouse_entered" from="Match_Settings/PanelContainer/CenterContainer/MarginContainer/grid/Host_game_button" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="Match_Settings/PanelContainer/CenterContainer/MarginContainer/grid/Host_game_button" to="." method="_on_host_game_button_pressed"]
 [connection signal="pressed" from="Settings/BackButton/Settings_Back_Button" to="." method="_on_settings_back_button_pressed"]
+[connection signal="music_sync_exit" from="Music" to="." method="_on_music_music_sync_exit"]
 
 [editable path="Match_Settings"]
 [editable path="Settings"]

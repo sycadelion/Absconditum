@@ -59,3 +59,7 @@ func _on_click() -> void:
 	pass
 	#audio_player.set_parameter("GUI","Click")
 	#audio_player.play()
+
+
+func _on_music_music_sync_exit(data: Dictionary) -> void:
+	$Music.post_event()

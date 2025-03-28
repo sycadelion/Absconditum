@@ -12,6 +12,14 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
 
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	2077253480	Room			\Default Work Unit\Master Audio Bus\Room	
+	4202071913	Big_Room			\Default Work Unit\Master Audio Bus\Big_Room	
+
+Effect plug-ins	ID	Name	Type				Notes
+	1990128658	Room_Medium	Wwise RoomVerb			
+	3900114836	Metal_Hangar	Wwise RoomVerb			
+
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			
 	3859886410	System	System			

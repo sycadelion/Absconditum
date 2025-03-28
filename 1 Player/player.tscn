@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://f7itocgajf8o"]
+[gd_scene load_steps=76 format=3 uid="uid://f7itocgajf8o"]
 
 [ext_resource type="Script" uid="uid://cf0owk1iydspc" path="res://1 Player/player.gd" id="1_4ht6w"]
 [ext_resource type="Material" uid="uid://gsnjhl57qwdk" path="res://4 Resources/Shaders/player_shader_mat.tres" id="1_fuh6j"]
@@ -41,6 +41,9 @@ material = ExtResource("3_fdipf")
 flip_faces = true
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_736cw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ulbgw"]
+size = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="Gradient" id="Gradient_hotdi"]
 offsets = PackedFloat32Array(0, 0.236364, 1)
@@ -1243,6 +1246,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39031, 0)
 [node name="Camera3D" type="Camera3D" parent="Head" groups=["Players"]]
 
 [node name="Hand" type="Node3D" parent="Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Malice_typeM" parent="Head/Camera3D/Hand" instance=ExtResource("9_2r2es")]
 transform = Transform3D(-1.81e-06, 0, 0.5, 0, 0.5, 0, -0.5, 0, -1.81e-06, 0.38927, -0.434237, 0.130601)
@@ -1259,6 +1263,11 @@ visible = false
 [node name="GunAudio" type="AkEvent3D" parent="Head/Camera3D/Hand"]
 event = ExtResource("12_rvfjf")
 unique_name_in_owner = true
+
+[node name="Area3D" type="Area3D" parent="Head/Camera3D/Hand/GunAudio"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera3D/Hand/GunAudio/Area3D"]
+shape = SubResource("BoxShape3D_ulbgw")
 
 [node name="crossbow_viewmodel" parent="Head/Camera3D" instance=ExtResource("4_abpq6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.462046, -0.714712, -0.248098)
@@ -1297,6 +1306,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.436369, -0.0231869, -0.766
 [node name="Skillaudio" type="AkEvent3D" parent="Head/Camera3D/Skill1Marker"]
 event = ExtResource("17_c3cwb")
 unique_name_in_owner = true
+
+[node name="Area3D" type="Area3D" parent="Head/Camera3D/Skill1Marker/Skillaudio"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera3D/Skill1Marker/Skillaudio/Area3D"]
+shape = SubResource("BoxShape3D_ulbgw")
+
+[node name="AkListener3D" type="AkListener3D" parent="Head"]
+is_default_listener = false
+
+[node name="ListenerArea" type="Area3D" parent="Head/AkListener3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/AkListener3D/ListenerArea"]
+shape = SubResource("BoxShape3D_ulbgw")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeBlendTree_ld7nr")
@@ -1378,6 +1400,11 @@ Start_weapons = Array[String](["Malice", "Trauma"])
 [node name="Footsteps" type="AkEvent3D" parent="."]
 event = ExtResource("30_376c3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40389, 0)
+
+[node name="Area3D" type="Area3D" parent="Footsteps"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Footsteps/Area3D"]
+shape = SubResource("BoxShape3D_ulbgw")
 
 [connection signal="animation_finished" from="AnimationTree" to="WeaponManger" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

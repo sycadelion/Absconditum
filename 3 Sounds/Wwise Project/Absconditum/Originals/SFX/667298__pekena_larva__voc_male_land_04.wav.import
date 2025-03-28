@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bd7lxduug8h24"
+path="res://.godot/imported/667298__pekena_larva__voc_male_land_04.wav-737da00e3f26cc481f7b9c3acee20ca6.sample"
+
+[deps]
+
+source_file="res://3 Sounds/Wwise Project/Absconditum/Originals/SFX/667298__pekena_larva__voc_male_land_04.wav"
+dest_files=["res://.godot/imported/667298__pekena_larva__voc_male_land_04.wav-737da00e3f26cc481f7b9c3acee20ca6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

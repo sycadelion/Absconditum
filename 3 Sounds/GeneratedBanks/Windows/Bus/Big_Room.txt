@@ -1,0 +1,6 @@
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	4202071913	Big_Room			\Default Work Unit\Master Audio Bus\Big_Room	
+
+Effect plug-ins	ID	Name	Type				Notes
+	3900114836	Metal_Hangar	Wwise RoomVerb			
+

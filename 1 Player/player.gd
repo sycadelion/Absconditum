@@ -14,6 +14,7 @@ class_name Player extends CharacterBody3D
 @onready var state_machine: StateMachine = %StateMachine
 
 @onready var camera: Camera3D = $Head/Camera3D
+@onready var listener_area: Area3D = $Head/Camera3D/ListenerArea
 @onready var head: Node3D = $Head
 @onready var anim_player: AnimationPlayer = %AnimationPlayer
 @onready var anim_tree: AnimationTree = $AnimationTree
@@ -23,7 +24,7 @@ class_name Player extends CharacterBody3D
 @onready var killfeed: KillFeed = %KillFeed
 @onready var Health_bar: ProgressBar = $CanvasLayer/HUD/HealthBar/PanelContainer/ProgressBar
 @onready var Health_Label: Label = $CanvasLayer/HUD/HealthBar/PanelContainer/HealthText
-
+var listener
 
 #jump vars for landing audio
 var landing: bool = false
@@ -51,10 +52,11 @@ func _ready() -> void:
 		sens = GameManager.sensitivity / 1000
 		SPEED = GameManager.player_Speed
 		JUMP_VELOCITY = GameManager.player_jump
-		Wwise.add_default_listener(camera) #adds a listener
+		$Head/AkListener3D.is_default_listener = true
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	else:
 		camera.current = false
+		$Head/AkListener3D.is_default_listener = false
 		$Head/Camera3D/crossbow_shader.show()
 		AudioRay = true
 
@@ -76,7 +78,8 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("reload"):
 		weapon_manger.reload.rpc()
 	elif event.is_action_pressed("test"):
-		$CanvasLayer/HUD/Fps.visible = not $CanvasLayer/HUD/Fps.visible
+		print(str(listener))
+		#$CanvasLayer/HUD/Fps.visible = not $CanvasLayer/HUD/Fps.visible
 
 func _physics_process(delta: float) -> void:
 	if owner_id != multiplayer.get_unique_id(): 

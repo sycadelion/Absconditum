@@ -47,6 +47,28 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="PlayerAudio" ID="{90163899-6434-4758-83D0-BF16752D4064}">
+					<ChildrenList>
+						<Action Name="" ID="{CE04A870-F92E-4E83-AD7F-3A256A37020E}" ShortID="619513788">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerVoice" ID="{0E13E1F8-FAA2-448F-9879-4AA8E6E12A89}" WorkUnitID="{D1BAD11F-0083-404B-AA79-15730CB6E4DC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Music" ID="{53037DEB-F63C-4710-8072-54EFD294BCB0}">
+					<ChildrenList>
+						<Action Name="" ID="{7F7ABFC8-77A1-4BE8-900F-AB7A8EC62B64}" ShortID="231600310">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Menu" ID="{74DF25EB-C320-4A8C-866E-6A24065F868D}" WorkUnitID="{98744DD5-B908-40A9-98B8-96C679B8628B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

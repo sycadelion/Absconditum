@@ -375,599 +375,987 @@ albedo_texture = ExtResource("10_70juu")
 
 [node name="Level_Drop_pod_Hanger" instance=ExtResource("1_d8ucl")]
 
-[node name="Oct_hole" parent="." index="0"]
+[node name="Oct_hole" parent="." index="4"]
 mesh = SubResource("ArrayMesh_s2gx5")
 
-[node name="DropPod_Crane" parent="." index="1"]
+[node name="AkGeometry" type="AkGeometry" parent="Oct_hole" index="1"]
+
+[node name="DropPod_Crane" parent="." index="5"]
 surface_material_override/0 = ExtResource("3_wuirp")
 
-[node name="Crane_Rail" parent="." index="2"]
+[node name="AkGeometry" type="AkGeometry" parent="DropPod_Crane" index="1"]
+
+[node name="Crane_Rail" parent="." index="6"]
 surface_material_override/0 = ExtResource("3_wuirp")
 
-[node name="Floor" parent="." index="3"]
+[node name="AkGeometry" type="AkGeometry" parent="Crane_Rail" index="1"]
+
+[node name="Floor" parent="." index="7"]
 mesh = SubResource("ArrayMesh_sii7r")
 
-[node name="Floor_001" parent="." index="4"]
+[node name="AkGeometry" type="AkGeometry" parent="Floor" index="1"]
+
+[node name="Floor_001" parent="." index="8"]
 mesh = SubResource("ArrayMesh_hbhfn")
 
-[node name="Center_Wall2" parent="." index="5"]
+[node name="AkGeometry" type="AkGeometry" parent="Floor_001" index="1"]
+
+[node name="Center_Wall2" parent="." index="9"]
 mesh = SubResource("ArrayMesh_cp1us")
 
-[node name="Center_control_room" parent="." index="6"]
+[node name="AkGeometry" type="AkGeometry" parent="Center_Wall2" index="1"]
+
+[node name="Center_control_room" parent="." index="10"]
 mesh = SubResource("ArrayMesh_cecwx")
 
-[node name="Center_control_window" parent="." index="7"]
+[node name="AkGeometry" type="AkGeometry" parent="Center_control_room" index="1"]
+
+[node name="Center_control_window" parent="." index="11"]
 mesh = SubResource("ArrayMesh_2gwp8")
 
-[node name="Center_Controll_Wall" parent="." index="8"]
+[node name="AkGeometry" type="AkGeometry" parent="Center_control_window" index="1"]
+
+[node name="Center_Controll_Wall" parent="." index="12"]
 mesh = SubResource("ArrayMesh_36twt")
 
-[node name="Center_Controll_Wall_001" parent="." index="9"]
+[node name="AkGeometry" type="AkGeometry" parent="Center_Controll_Wall" index="1"]
+
+[node name="Center_Controll_Wall_001" parent="." index="13"]
 mesh = SubResource("ArrayMesh_64efv")
 surface_material_override/0 = ExtResource("3_ut620")
 
-[node name="Center_Controll_Wall_002" parent="." index="10"]
+[node name="AkGeometry" type="AkGeometry" parent="Center_Controll_Wall_001" index="1"]
+
+[node name="Center_Controll_Wall_002" parent="." index="14"]
 mesh = SubResource("ArrayMesh_lswqs")
 surface_material_override/0 = ExtResource("3_ut620")
 
-[node name="Center_Controll_Wall_003" parent="." index="11"]
+[node name="AkGeometry" type="AkGeometry" parent="Center_Controll_Wall_002" index="1"]
+
+[node name="Center_Controll_Wall_003" parent="." index="15"]
 surface_material_override/0 = ExtResource("3_ut620")
 
-[node name="Center_Controll_Wall_004" parent="." index="12"]
+[node name="AkGeometry" type="AkGeometry" parent="Center_Controll_Wall_003" index="1"]
+
+[node name="Center_Controll_Wall_004" parent="." index="16"]
 surface_material_override/0 = ExtResource("3_ut620")
 
-[node name="Center_Controll_Wall_005" parent="." index="13"]
+[node name="AkGeometry" type="AkGeometry" parent="Center_Controll_Wall_004" index="1"]
+
+[node name="Center_Controll_Wall_005" parent="." index="17"]
 surface_material_override/0 = ExtResource("3_ut620")
 
-[node name="Center_Controll_Wall_006" parent="." index="14"]
+[node name="AkGeometry" type="AkGeometry" parent="Center_Controll_Wall_005" index="1"]
+
+[node name="Center_Controll_Wall_006" parent="." index="18"]
 surface_material_override/0 = ExtResource("3_ut620")
 
-[node name="Center_Controll_Wall_007" parent="." index="15"]
+[node name="AkGeometry" type="AkGeometry" parent="Center_Controll_Wall_006" index="1"]
+
+[node name="Center_Controll_Wall_007" parent="." index="19"]
 surface_material_override/0 = ExtResource("3_ut620")
 
-[node name="Center_Controll_Wall_008" parent="." index="16"]
+[node name="AkGeometry" type="AkGeometry" parent="Center_Controll_Wall_007" index="1"]
+
+[node name="Center_Controll_Wall_008" parent="." index="20"]
 surface_material_override/0 = ExtResource("3_ut620")
 
-[node name="Center_Controll_Wall_009" parent="." index="17"]
+[node name="AkGeometry" type="AkGeometry" parent="Center_Controll_Wall_008" index="1"]
+
+[node name="Center_Controll_Wall_009" parent="." index="21"]
 surface_material_override/0 = ExtResource("3_ut620")
 
-[node name="Center_Controll_Wall_010" parent="." index="18"]
+[node name="AkGeometry" type="AkGeometry" parent="Center_Controll_Wall_009" index="1"]
+
+[node name="Center_Controll_Wall_010" parent="." index="22"]
 surface_material_override/0 = ExtResource("3_ut620")
 
-[node name="Center_Controll_Wall_011" parent="." index="19"]
+[node name="AkGeometry" type="AkGeometry" parent="Center_Controll_Wall_010" index="1"]
+
+[node name="Center_Controll_Wall_011" parent="." index="23"]
 surface_material_override/0 = ExtResource("3_ut620")
 
-[node name="Center_Controll_Wall_012" parent="." index="20"]
+[node name="AkGeometry" type="AkGeometry" parent="Center_Controll_Wall_011" index="1"]
+
+[node name="Center_Controll_Wall_012" parent="." index="24"]
 surface_material_override/0 = ExtResource("3_ut620")
 
-[node name="Center_Controll_Wall_013" parent="." index="21"]
+[node name="AkGeometry" type="AkGeometry" parent="Center_Controll_Wall_012" index="1"]
+
+[node name="Center_Controll_Wall_013" parent="." index="25"]
 surface_material_override/0 = ExtResource("3_ut620")
 
-[node name="Center_Controll_Wall_014" parent="." index="22"]
+[node name="AkGeometry" type="AkGeometry" parent="Center_Controll_Wall_013" index="1"]
+
+[node name="Center_Controll_Wall_014" parent="." index="26"]
 surface_material_override/0 = ExtResource("3_ut620")
 
-[node name="TeamA" parent="." index="23"]
+[node name="AkGeometry" type="AkGeometry" parent="Center_Controll_Wall_014" index="1"]
+
+[node name="TeamA" parent="." index="27"]
 surface_material_override/0 = ExtResource("2_gbxe4")
 surface_material_override/1 = ExtResource("3_ut620")
 
-[node name="TeamA_Wall_001" parent="." index="24"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA" index="1"]
+
+[node name="TeamA_Wall_001" parent="." index="28"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_002" parent="." index="25"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_001" index="1"]
+
+[node name="TeamA_Wall_002" parent="." index="29"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_003" parent="." index="26"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_002" index="1"]
+
+[node name="TeamA_Wall_003" parent="." index="30"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_004" parent="." index="27"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_003" index="1"]
+
+[node name="TeamA_Wall_004" parent="." index="31"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_005" parent="." index="28"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_004" index="1"]
+
+[node name="TeamA_Wall_005" parent="." index="32"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_006" parent="." index="29"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_005" index="1"]
+
+[node name="TeamA_Wall_006" parent="." index="33"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_007" parent="." index="30"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_006" index="1"]
+
+[node name="TeamA_Wall_007" parent="." index="34"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_008" parent="." index="31"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_007" index="1"]
+
+[node name="TeamA_Wall_008" parent="." index="35"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_009" parent="." index="32"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_008" index="1"]
+
+[node name="TeamA_Wall_009" parent="." index="36"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_010" parent="." index="33"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_009" index="1"]
+
+[node name="TeamA_Wall_010" parent="." index="37"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_011" parent="." index="34"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_010" index="1"]
+
+[node name="TeamA_Wall_011" parent="." index="38"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_012" parent="." index="35"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_011" index="1"]
+
+[node name="TeamA_Wall_012" parent="." index="39"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_013" parent="." index="36"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_012" index="1"]
+
+[node name="TeamA_Wall_013" parent="." index="40"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_014" parent="." index="37"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_013" index="1"]
+
+[node name="TeamA_Wall_014" parent="." index="41"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_015" parent="." index="38"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_014" index="1"]
+
+[node name="TeamA_Wall_015" parent="." index="42"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_016" parent="." index="39"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_015" index="1"]
+
+[node name="TeamA_Wall_016" parent="." index="43"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_017" parent="." index="40"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_016" index="1"]
+
+[node name="TeamA_Wall_017" parent="." index="44"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_018" parent="." index="41"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_017" index="1"]
+
+[node name="TeamA_Wall_018" parent="." index="45"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_019" parent="." index="42"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_018" index="1"]
+
+[node name="TeamA_Wall_019" parent="." index="46"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_020" parent="." index="43"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_019" index="1"]
+
+[node name="TeamA_Wall_020" parent="." index="47"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_021" parent="." index="44"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_020" index="1"]
+
+[node name="TeamA_Wall_021" parent="." index="48"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_022" parent="." index="45"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_021" index="1"]
+
+[node name="TeamA_Wall_022" parent="." index="49"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_023" parent="." index="46"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_022" index="1"]
+
+[node name="TeamA_Wall_023" parent="." index="50"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_024" parent="." index="47"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_023" index="1"]
+
+[node name="TeamA_Wall_024" parent="." index="51"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_025" parent="." index="48"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_024" index="1"]
+
+[node name="TeamA_Wall_025" parent="." index="52"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_026" parent="." index="49"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_025" index="1"]
+
+[node name="TeamA_Wall_026" parent="." index="53"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_027" parent="." index="50"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_026" index="1"]
+
+[node name="TeamA_Wall_027" parent="." index="54"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_028" parent="." index="51"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_027" index="1"]
+
+[node name="TeamA_Wall_028" parent="." index="55"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_029" parent="." index="52"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_028" index="1"]
+
+[node name="TeamA_Wall_029" parent="." index="56"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_030" parent="." index="53"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_029" index="1"]
+
+[node name="TeamA_Wall_030" parent="." index="57"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_031" parent="." index="54"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_030" index="1"]
+
+[node name="TeamA_Wall_031" parent="." index="58"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_032" parent="." index="55"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_031" index="1"]
+
+[node name="TeamA_Wall_032" parent="." index="59"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_033" parent="." index="56"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_032" index="1"]
+
+[node name="TeamA_Wall_033" parent="." index="60"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_034" parent="." index="57"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_033" index="1"]
+
+[node name="TeamA_Wall_034" parent="." index="61"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_035" parent="." index="58"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_034" index="1"]
+
+[node name="TeamA_Wall_035" parent="." index="62"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall_036" parent="." index="59"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_035" index="1"]
+
+[node name="TeamA_Wall_036" parent="." index="63"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_Wall" parent="." index="60"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall_036" index="1"]
+
+[node name="TeamA_Wall" parent="." index="64"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_001" parent="." index="61"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_Wall" index="1"]
+
+[node name="TeamA_001" parent="." index="65"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="TeamA_002" parent="." index="62"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_001" index="1"]
+
+[node name="TeamA_002" parent="." index="66"]
 surface_material_override/0 = ExtResource("4_nrevo")
 
-[node name="Roof" parent="." index="63"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamA_002" index="1"]
+
+[node name="Roof" parent="." index="67"]
 surface_material_override/0 = ExtResource("2_gbxe4")
 
-[node name="TeamA_Roof" parent="." index="64"]
+[node name="TeamA_Roof" parent="." index="68"]
 surface_material_override/0 = ExtResource("2_gbxe4")
 
-[node name="TeamB_Roof" parent="." index="65"]
+[node name="TeamB_Roof" parent="." index="69"]
 surface_material_override/0 = ExtResource("2_gbxe4")
 
-[node name="Center_control_room_Roof" parent="." index="66"]
+[node name="Center_control_room_Roof" parent="." index="70"]
 surface_material_override/0 = ExtResource("2_gbxe4")
 
-[node name="TeamB" parent="." index="67"]
+[node name="TeamB" parent="." index="71"]
 surface_material_override/0 = ExtResource("2_gbxe4")
 surface_material_override/1 = ExtResource("3_ut620")
 
-[node name="TeamB_Wall" parent="." index="68"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB" index="1"]
+
+[node name="TeamB_Wall" parent="." index="72"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_001" parent="." index="69"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall" index="1"]
+
+[node name="TeamB_Wall_001" parent="." index="73"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_002" parent="." index="70"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_001" index="1"]
+
+[node name="TeamB_Wall_002" parent="." index="74"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_003" parent="." index="71"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_002" index="1"]
+
+[node name="TeamB_Wall_003" parent="." index="75"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_004" parent="." index="72"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_003" index="1"]
+
+[node name="TeamB_Wall_004" parent="." index="76"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_005" parent="." index="73"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_004" index="1"]
+
+[node name="TeamB_Wall_005" parent="." index="77"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_006" parent="." index="74"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_005" index="1"]
+
+[node name="TeamB_Wall_006" parent="." index="78"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_007" parent="." index="75"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_006" index="1"]
+
+[node name="TeamB_Wall_007" parent="." index="79"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_008" parent="." index="76"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_007" index="1"]
+
+[node name="TeamB_Wall_008" parent="." index="80"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_009" parent="." index="77"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_008" index="1"]
+
+[node name="TeamB_Wall_009" parent="." index="81"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_010" parent="." index="78"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_009" index="1"]
+
+[node name="TeamB_Wall_010" parent="." index="82"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_011" parent="." index="79"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_010" index="1"]
+
+[node name="TeamB_Wall_011" parent="." index="83"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_012" parent="." index="80"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_011" index="1"]
+
+[node name="TeamB_Wall_012" parent="." index="84"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_013" parent="." index="81"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_012" index="1"]
+
+[node name="TeamB_Wall_013" parent="." index="85"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_014" parent="." index="82"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_013" index="1"]
+
+[node name="TeamB_Wall_014" parent="." index="86"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_015" parent="." index="83"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_014" index="1"]
+
+[node name="TeamB_Wall_015" parent="." index="87"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_016" parent="." index="84"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_015" index="1"]
+
+[node name="TeamB_Wall_016" parent="." index="88"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_017" parent="." index="85"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_016" index="1"]
+
+[node name="TeamB_Wall_017" parent="." index="89"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_018" parent="." index="86"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_017" index="1"]
+
+[node name="TeamB_Wall_018" parent="." index="90"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_019" parent="." index="87"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_018" index="1"]
+
+[node name="TeamB_Wall_019" parent="." index="91"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_020" parent="." index="88"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_019" index="1"]
+
+[node name="TeamB_Wall_020" parent="." index="92"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_021" parent="." index="89"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_020" index="1"]
+
+[node name="TeamB_Wall_021" parent="." index="93"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_022" parent="." index="90"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_021" index="1"]
+
+[node name="TeamB_Wall_022" parent="." index="94"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_023" parent="." index="91"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_022" index="1"]
+
+[node name="TeamB_Wall_023" parent="." index="95"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_024" parent="." index="92"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_023" index="1"]
+
+[node name="TeamB_Wall_024" parent="." index="96"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_025" parent="." index="93"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_024" index="1"]
+
+[node name="TeamB_Wall_025" parent="." index="97"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_026" parent="." index="94"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_025" index="1"]
+
+[node name="TeamB_Wall_026" parent="." index="98"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_027" parent="." index="95"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_026" index="1"]
+
+[node name="TeamB_Wall_027" parent="." index="99"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_028" parent="." index="96"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_027" index="1"]
+
+[node name="TeamB_Wall_028" parent="." index="100"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_029" parent="." index="97"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_028" index="1"]
+
+[node name="TeamB_Wall_029" parent="." index="101"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_030" parent="." index="98"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_029" index="1"]
+
+[node name="TeamB_Wall_030" parent="." index="102"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_031" parent="." index="99"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_030" index="1"]
+
+[node name="TeamB_Wall_031" parent="." index="103"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_032" parent="." index="100"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_031" index="1"]
+
+[node name="TeamB_Wall_032" parent="." index="104"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_033" parent="." index="101"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_032" index="1"]
+
+[node name="TeamB_Wall_033" parent="." index="105"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_034" parent="." index="102"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_033" index="1"]
+
+[node name="TeamB_Wall_034" parent="." index="106"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_035" parent="." index="103"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_034" index="1"]
+
+[node name="TeamB_Wall_035" parent="." index="107"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_040" parent="." index="104"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_035" index="1"]
+
+[node name="TeamB_Wall_040" parent="." index="108"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_036" parent="." index="105"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_040" index="1"]
+
+[node name="TeamB_Wall_036" parent="." index="109"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_037" parent="." index="106"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_036" index="1"]
+
+[node name="TeamB_Wall_037" parent="." index="110"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_038" parent="." index="107"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_037" index="1"]
+
+[node name="TeamB_Wall_038" parent="." index="111"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="TeamB_Wall_039" parent="." index="108"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_038" index="1"]
+
+[node name="TeamB_Wall_039" parent="." index="112"]
 surface_material_override/0 = ExtResource("5_t4v3s")
 
-[node name="Big_Box" parent="." index="110"]
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_039" index="1"]
+
+[node name="AkGeometry" type="AkGeometry" parent="TeamB_001" index="1"]
+
+[node name="Big_Box" parent="." index="114"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Big_Box_001" parent="." index="111"]
+[node name="AkGeometry" type="AkGeometry" parent="Big_Box" index="1"]
+
+[node name="Big_Box_001" parent="." index="115"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Big_Box_002" parent="." index="112"]
+[node name="AkGeometry" type="AkGeometry" parent="Big_Box_001" index="1"]
+
+[node name="Big_Box_002" parent="." index="116"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Big_Box_003" parent="." index="113"]
+[node name="AkGeometry" type="AkGeometry" parent="Big_Box_002" index="1"]
+
+[node name="Big_Box_003" parent="." index="117"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Big_Box_004" parent="." index="114"]
+[node name="AkGeometry" type="AkGeometry" parent="Big_Box_003" index="1"]
+
+[node name="Big_Box_004" parent="." index="118"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Big_Box_005" parent="." index="115"]
+[node name="AkGeometry" type="AkGeometry" parent="Big_Box_004" index="1"]
+
+[node name="Big_Box_005" parent="." index="119"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Big_Box_006" parent="." index="116"]
+[node name="AkGeometry" type="AkGeometry" parent="Big_Box_005" index="1"]
+
+[node name="Big_Box_006" parent="." index="120"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Container" parent="." index="117"]
+[node name="AkGeometry" type="AkGeometry" parent="Big_Box_006" index="1"]
+
+[node name="Container" parent="." index="121"]
 surface_material_override/0 = ExtResource("7_yeq2b")
 
-[node name="Container_001" parent="." index="118"]
+[node name="AkGeometry" type="AkGeometry" parent="Container" index="1"]
+
+[node name="Container_001" parent="." index="122"]
 surface_material_override/0 = ExtResource("7_yeq2b")
 
-[node name="Container_002" parent="." index="119"]
+[node name="AkGeometry" type="AkGeometry" parent="Container_001" index="1"]
+
+[node name="Container_002" parent="." index="123"]
 surface_material_override/0 = ExtResource("7_yeq2b")
 
-[node name="Container_003" parent="." index="120"]
+[node name="AkGeometry" type="AkGeometry" parent="Container_002" index="1"]
+
+[node name="Container_003" parent="." index="124"]
 surface_material_override/0 = ExtResource("7_yeq2b")
 
-[node name="Metal_sheet" parent="." index="121"]
+[node name="AkGeometry" type="AkGeometry" parent="Container_003" index="1"]
+
+[node name="Metal_sheet" parent="." index="125"]
 surface_material_override/0 = ExtResource("8_ujoaa")
 
-[node name="Metal_sheet_001" parent="." index="122"]
+[node name="AkGeometry" type="AkGeometry" parent="Metal_sheet" index="1"]
+
+[node name="Metal_sheet_001" parent="." index="126"]
 surface_material_override/0 = ExtResource("8_ujoaa")
 
-[node name="Small_Box_001" parent="." index="123"]
+[node name="AkGeometry" type="AkGeometry" parent="Metal_sheet_001" index="1"]
+
+[node name="Small_Box_001" parent="." index="127"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Small_Box_002" parent="." index="124"]
+[node name="AkGeometry" type="AkGeometry" parent="Small_Box_001" index="1"]
+
+[node name="Small_Box_002" parent="." index="128"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Small_Box_003" parent="." index="125"]
+[node name="AkGeometry" type="AkGeometry" parent="Small_Box_002" index="1"]
+
+[node name="Small_Box_003" parent="." index="129"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Small_Box_004" parent="." index="126"]
+[node name="AkGeometry" type="AkGeometry" parent="Small_Box_003" index="1"]
+
+[node name="Small_Box_004" parent="." index="130"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Small_Box_005" parent="." index="127"]
+[node name="AkGeometry" type="AkGeometry" parent="Small_Box_004" index="1"]
+
+[node name="Small_Box_005" parent="." index="131"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Small_Box_006" parent="." index="128"]
+[node name="AkGeometry" type="AkGeometry" parent="Small_Box_005" index="1"]
+
+[node name="Small_Box_006" parent="." index="132"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Small_Box_007" parent="." index="129"]
+[node name="AkGeometry" type="AkGeometry" parent="Small_Box_006" index="1"]
+
+[node name="Small_Box_007" parent="." index="133"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Small_Box_008" parent="." index="130"]
+[node name="AkGeometry" type="AkGeometry" parent="Small_Box_007" index="1"]
+
+[node name="Small_Box_008" parent="." index="134"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Small_Box_009" parent="." index="131"]
+[node name="AkGeometry" type="AkGeometry" parent="Small_Box_008" index="1"]
+
+[node name="Small_Box_009" parent="." index="135"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Small_Box" parent="." index="132"]
+[node name="AkGeometry" type="AkGeometry" parent="Small_Box_009" index="1"]
+
+[node name="Small_Box" parent="." index="136"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Small_Box_010" parent="." index="133"]
+[node name="AkGeometry" type="AkGeometry" parent="Small_Box" index="1"]
+
+[node name="Small_Box_010" parent="." index="137"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Small_Box_011" parent="." index="134"]
+[node name="AkGeometry" type="AkGeometry" parent="Small_Box_010" index="1"]
+
+[node name="Small_Box_011" parent="." index="138"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Small_Box_013" parent="." index="135"]
+[node name="AkGeometry" type="AkGeometry" parent="Small_Box_011" index="1"]
+
+[node name="Small_Box_013" parent="." index="139"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Big_Box_007" parent="." index="136"]
+[node name="AkGeometry" type="AkGeometry" parent="Small_Box_013" index="1"]
+
+[node name="Big_Box_007" parent="." index="140"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Big_Box_008" parent="." index="137"]
+[node name="AkGeometry" type="AkGeometry" parent="Big_Box_007" index="1"]
+
+[node name="Big_Box_008" parent="." index="141"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Big_Box_009" parent="." index="138"]
+[node name="AkGeometry" type="AkGeometry" parent="Big_Box_008" index="1"]
+
+[node name="Big_Box_009" parent="." index="142"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Small_Box_014" parent="." index="139"]
+[node name="AkGeometry" type="AkGeometry" parent="Big_Box_009" index="1"]
+
+[node name="Small_Box_014" parent="." index="143"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Small_Box_015" parent="." index="140"]
+[node name="AkGeometry" type="AkGeometry" parent="Small_Box_014" index="1"]
+
+[node name="Small_Box_015" parent="." index="144"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Small_Box_016" parent="." index="141"]
+[node name="AkGeometry" type="AkGeometry" parent="Small_Box_015" index="1"]
+
+[node name="Small_Box_016" parent="." index="145"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Big_Box_010" parent="." index="142"]
+[node name="AkGeometry" type="AkGeometry" parent="Small_Box_016" index="1"]
+
+[node name="Big_Box_010" parent="." index="146"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Big_Box_011" parent="." index="143"]
+[node name="AkGeometry" type="AkGeometry" parent="Big_Box_010" index="1"]
+
+[node name="Big_Box_011" parent="." index="147"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Small_Box_017" parent="." index="144"]
+[node name="AkGeometry" type="AkGeometry" parent="Big_Box_011" index="1"]
+
+[node name="Small_Box_017" parent="." index="148"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Big_Box_012" parent="." index="145"]
+[node name="AkGeometry" type="AkGeometry" parent="Small_Box_017" index="1"]
+
+[node name="Big_Box_012" parent="." index="149"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Barrel" parent="." index="146"]
+[node name="AkGeometry" type="AkGeometry" parent="Big_Box_012" index="1"]
+
+[node name="Barrel" parent="." index="150"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Barrel_001" parent="." index="147"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel" index="1"]
+
+[node name="Barrel_001" parent="." index="151"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Barrel_002" parent="." index="148"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_001" index="1"]
+
+[node name="Barrel_002" parent="." index="152"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Barrel_003" parent="." index="149"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_002" index="1"]
+
+[node name="Barrel_003" parent="." index="153"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Barrel_004" parent="." index="150"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_003" index="1"]
+
+[node name="Barrel_004" parent="." index="154"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Barrel_005" parent="." index="151"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_004" index="1"]
+
+[node name="Barrel_005" parent="." index="155"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Barrel_006" parent="." index="152"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_005" index="1"]
+
+[node name="Barrel_006" parent="." index="156"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Barrel_007" parent="." index="153"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_006" index="1"]
+
+[node name="Barrel_007" parent="." index="157"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Barrel_008" parent="." index="154"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_007" index="1"]
+
+[node name="Barrel_008" parent="." index="158"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Barrel_009" parent="." index="155"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_008" index="1"]
+
+[node name="Barrel_009" parent="." index="159"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Barrel_010" parent="." index="156"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_009" index="1"]
+
+[node name="Barrel_010" parent="." index="160"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Barrel_011" parent="." index="157"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_010" index="1"]
+
+[node name="Barrel_011" parent="." index="161"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Barrel_012" parent="." index="158"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_011" index="1"]
+
+[node name="Barrel_012" parent="." index="162"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Barrel_013" parent="." index="159"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_012" index="1"]
+
+[node name="Barrel_013" parent="." index="163"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Barrel_014" parent="." index="160"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_013" index="1"]
+
+[node name="Barrel_014" parent="." index="164"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Barrel_015" parent="." index="161"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_014" index="1"]
+
+[node name="Barrel_015" parent="." index="165"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Barrel_016" parent="." index="162"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_015" index="1"]
+
+[node name="Barrel_016" parent="." index="166"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Barrel_017" parent="." index="163"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_016" index="1"]
+
+[node name="Barrel_017" parent="." index="167"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Barrel_018" parent="." index="164"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_017" index="1"]
+
+[node name="Barrel_018" parent="." index="168"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Barrel_019" parent="." index="165"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_018" index="1"]
+
+[node name="Barrel_019" parent="." index="169"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Barrel_020" parent="." index="166"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_019" index="1"]
+
+[node name="Barrel_020" parent="." index="170"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Barrel_021" parent="." index="167"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_020" index="1"]
+
+[node name="Barrel_021" parent="." index="171"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Barrel_022" parent="." index="168"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_021" index="1"]
+
+[node name="Barrel_022" parent="." index="172"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Barrel_023" parent="." index="169"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_022" index="1"]
+
+[node name="Barrel_023" parent="." index="173"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Barrel_024" parent="." index="170"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_023" index="1"]
+
+[node name="Barrel_024" parent="." index="174"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Barrel_025" parent="." index="171"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_024" index="1"]
+
+[node name="Barrel_025" parent="." index="175"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Big_Box_013" parent="." index="172"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_025" index="1"]
+
+[node name="Big_Box_013" parent="." index="176"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Small_Box_012" parent="." index="173"]
+[node name="AkGeometry" type="AkGeometry" parent="Big_Box_013" index="1"]
+
+[node name="Small_Box_012" parent="." index="177"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Small_Box_018" parent="." index="174"]
+[node name="AkGeometry" type="AkGeometry" parent="Small_Box_012" index="1"]
+
+[node name="Small_Box_018" parent="." index="178"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Small_Box_019" parent="." index="175"]
+[node name="AkGeometry" type="AkGeometry" parent="Small_Box_018" index="1"]
+
+[node name="Small_Box_019" parent="." index="179"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Barrel_026" parent="." index="176"]
+[node name="AkGeometry" type="AkGeometry" parent="Small_Box_019" index="1"]
+
+[node name="Barrel_026" parent="." index="180"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Barrel_027" parent="." index="177"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_026" index="1"]
+
+[node name="Barrel_027" parent="." index="181"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Small_Box_020" parent="." index="178"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_027" index="1"]
+
+[node name="Small_Box_020" parent="." index="182"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Small_Box_021" parent="." index="179"]
+[node name="AkGeometry" type="AkGeometry" parent="Small_Box_020" index="1"]
+
+[node name="Small_Box_021" parent="." index="183"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="Desk" parent="." index="180"]
+[node name="AkGeometry" type="AkGeometry" parent="Small_Box_021" index="1"]
+
+[node name="Desk" parent="." index="184"]
 surface_material_override/0 = SubResource("StandardMaterial3D_7jyla")
 surface_material_override/1 = SubResource("StandardMaterial3D_c6jd1")
 
-[node name="Barrel_028" parent="." index="181"]
+[node name="AkGeometry" type="AkGeometry" parent="Desk" index="1"]
+
+[node name="Barrel_028" parent="." index="185"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Barrel_029" parent="." index="182"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_028" index="1"]
+
+[node name="Barrel_029" parent="." index="186"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
-[node name="Small_Box_022" parent="." index="183"]
+[node name="AkGeometry" type="AkGeometry" parent="Barrel_029" index="1"]
+
+[node name="Small_Box_022" parent="." index="187"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
-[node name="DropPod" parent="." index="184"]
+[node name="AkGeometry" type="AkGeometry" parent="Small_Box_022" index="1"]
+
+[node name="DropPod" parent="." index="188"]
 surface_material_override/0 = SubResource("StandardMaterial3D_ymyro")
 surface_material_override/1 = ExtResource("11_fue28")
 
-[node name="DropPod_001" parent="." index="185"]
+[node name="AkGeometry" type="AkGeometry" parent="DropPod" index="1"]
+
+[node name="DropPod_001" parent="." index="189"]
 surface_material_override/0 = ExtResource("11_fue28")
 
-[node name="DropPod_002" parent="." index="186"]
+[node name="AkGeometry" type="AkGeometry" parent="DropPod_001" index="1"]
+
+[node name="DropPod_002" parent="." index="190"]
 surface_material_override/0 = ExtResource("11_fue28")
 
-[node name="DropPod_003" parent="." index="187"]
+[node name="AkGeometry" type="AkGeometry" parent="DropPod_002" index="1"]
+
+[node name="DropPod_003" parent="." index="191"]
 surface_material_override/0 = ExtResource("11_fue28")
 
-[node name="DropPod_004" parent="." index="188"]
+[node name="AkGeometry" type="AkGeometry" parent="DropPod_003" index="1"]
+
+[node name="DropPod_004" parent="." index="192"]
 surface_material_override/0 = ExtResource("11_fue28")
 
-[node name="DropPod_005" parent="." index="189"]
+[node name="AkGeometry" type="AkGeometry" parent="DropPod_004" index="1"]
+
+[node name="DropPod_005" parent="." index="193"]
 surface_material_override/0 = ExtResource("11_fue28")
 
-[node name="DropPod_006" parent="." index="190"]
+[node name="AkGeometry" type="AkGeometry" parent="DropPod_005" index="1"]
+
+[node name="DropPod_006" parent="." index="194"]
 surface_material_override/0 = ExtResource("11_fue28")
 
-[node name="DropPod_007" parent="." index="191"]
+[node name="AkGeometry" type="AkGeometry" parent="DropPod_006" index="1"]
+
+[node name="DropPod_007" parent="." index="195"]
 surface_material_override/0 = ExtResource("11_fue28")
 
-[node name="DropPod_008" parent="." index="192"]
+[node name="AkGeometry" type="AkGeometry" parent="DropPod_007" index="1"]
+
+[node name="DropPod_008" parent="." index="196"]
 surface_material_override/0 = ExtResource("11_fue28")
 
-[node name="DropPod_009" parent="." index="193"]
+[node name="AkGeometry" type="AkGeometry" parent="DropPod_008" index="1"]
+
+[node name="DropPod_009" parent="." index="197"]
 surface_material_override/0 = ExtResource("11_fue28")
 
-[node name="DropPod_010" parent="." index="194"]
+[node name="AkGeometry" type="AkGeometry" parent="DropPod_009" index="1"]
+
+[node name="DropPod_010" parent="." index="198"]
 surface_material_override/0 = ExtResource("11_fue28")
 
-[node name="DropPod_011" parent="." index="195"]
+[node name="AkGeometry" type="AkGeometry" parent="DropPod_010" index="1"]
+
+[node name="DropPod_011" parent="." index="199"]
 surface_material_override/0 = ExtResource("11_fue28")
 
-[node name="DropPod_012" parent="." index="196"]
+[node name="AkGeometry" type="AkGeometry" parent="DropPod_011" index="1"]
+
+[node name="DropPod_012" parent="." index="200"]
 surface_material_override/0 = ExtResource("11_fue28")
 
-[node name="DropPod_door" parent="." index="197"]
+[node name="AkGeometry" type="AkGeometry" parent="DropPod_012" index="1"]
+
+[node name="DropPod_door" parent="." index="201"]
 surface_material_override/0 = ExtResource("11_fue28")
+
+[node name="AkGeometry" type="AkGeometry" parent="DropPod_door" index="1"]

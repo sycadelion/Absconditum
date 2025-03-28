@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{9B9BB11E-F8B2-4541-BC2B-42D2D9A82CF8}",
     "Language": "SFX",
-    "Hash": "{CFD77694-0863-95C8-94D1-BE62CDE41A40}",
+    "Hash": "{D0D404D4-6681-964A-1622-51AA6C6A8A4F}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -32,12 +32,28 @@
       "CachePath": "B8/{B83C272A-F14C-6C02-9B2F-45825B33A0C0}.wem"
      },
      {
+      "Id": "34700422",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Quiet Times, Soft Waves.wav",
+      "CachePath": "43/{436DA077-180D-F73F-D207-45480EC7FF78}.wem"
+     },
+     {
       "Id": "109353821",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Linoleum_Mono_01.wav",
       "CachePath": "C0/{C098DF41-1048-C294-611D-2088F6F56213}.wem"
+     },
+     {
+      "Id": "111453331",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "667296__pekena_larva__voc_male_jump_06.wav",
+      "CachePath": "DF/{DFB16F98-6614-1D51-8CDE-BE5D4D3D2E5F}.wem"
      },
      {
       "Id": "120073318",
@@ -96,6 +112,14 @@
       "CachePath": "B4/{B4B4A74F-9226-0268-988D-D043A85AD3F0}.wem"
      },
      {
+      "Id": "290019238",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "667297__pekena_larva__voc_male_jump_05.wav",
+      "CachePath": "2E/{2E226E30-1A27-D87C-E280-E5CE065B741A}.wem"
+     },
+     {
       "Id": "311318493",
       "Language": "SFX",
       "Streaming": "false",
@@ -110,6 +134,14 @@
       "Location": "Memory",
       "ShortName": "Glass_Grit_Mono_05.wav",
       "CachePath": "75/{758A1510-D932-19C5-0D04-487DA87D46B2}.wem"
+     },
+     {
+      "Id": "360279878",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "667299__pekena_larva__voc_male_land_03.wav",
+      "CachePath": "A4/{A4B9B1EF-35E2-0C2C-C04A-9AE6B78532C3}.wem"
      },
      {
       "Id": "381079448",
@@ -144,6 +176,14 @@
       "CachePath": "E0/{E097930D-B849-5F91-8775-00BC60B51045}.wem"
      },
      {
+      "Id": "491162418",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "667291__pekena_larva__voc_male_jump_03.wav",
+      "CachePath": "51/{51C271C0-2A2F-4792-AD0E-39EBABD66716}.wem"
+     },
+     {
       "Id": "502935267",
       "Language": "SFX",
       "Streaming": "false",
@@ -166,6 +206,14 @@
       "Location": "Memory",
       "ShortName": "Minimalist6.wav",
       "CachePath": "32/{3281BA8B-D743-A5EF-83A5-34A5C971C518}.wem"
+     },
+     {
+      "Id": "628993159",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "667292__pekena_larva__voc_male_jump_02.wav",
+      "CachePath": "0F/{0FA84586-F398-D1C2-82CE-ACCAC44656A3}.wem"
      },
      {
       "Id": "641298461",
@@ -192,6 +240,22 @@
       "CachePath": "F4/{F45E1D96-C9EC-6E0E-FBEC-55CDD010F438}.wem"
      },
      {
+      "Id": "684002994",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "667293__pekena_larva__voc_male_jump_01.wav",
+      "CachePath": "85/{85D95867-1CE1-60EE-109E-F379F961F665}.wem"
+     },
+     {
+      "Id": "693918980",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "667290__pekena_larva__voc_male_jump_04.wav",
+      "CachePath": "32/{32749484-C8CA-A9BA-2DC4-8BCEDDF2E4D2}.wem"
+     },
+     {
       "Id": "733604107",
       "Language": "SFX",
       "Streaming": "false",
@@ -206,6 +270,14 @@
       "Location": "Memory",
       "ShortName": "Linoleum_Mono_03.wav",
       "CachePath": "ED/{ED626203-DE97-E739-CD94-A749036226BA}.wem"
+     },
+     {
+      "Id": "756635627",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "667295__pekena_larva__voc_male_land_01.wav",
+      "CachePath": "19/{196D4DC5-49FB-83C0-6182-002349265224}.wem"
      },
      {
       "Id": "809280269",
@@ -256,6 +328,14 @@
       "CachePath": "EE/{EE812E2E-F581-C534-885E-4F0A8277ED4D}.wem"
      },
      {
+      "Id": "968601989",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "667298__pekena_larva__voc_male_land_04.wav",
+      "CachePath": "F7/{F76BDD08-787A-8467-0391-1230A993F940}.wem"
+     },
+     {
       "Id": "971638791",
       "Language": "SFX",
       "Streaming": "false",
@@ -288,6 +368,14 @@
       "CachePath": "78/{789FA49C-7CD4-5CAD-8552-402B2E75D40E}.wem"
      },
      {
+      "Id": "1040374593",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "667294__pekena_larva__voc_male_land_02.wav",
+      "CachePath": "D1/{D117A3A7-FEDD-E9E0-0725-74243FD57EEB}.wem"
+     },
+     {
       "Id": "1073196964",
       "Language": "SFX",
       "Streaming": "false",
@@ -296,7 +384,104 @@
       "CachePath": "30/{305A1203-61FC-EAB2-9099-534C992826CF}.wem"
      }
     ],
+    "Plugins": {
+     "ShareSets": [
+      {
+       "Id": "1990128658",
+       "Name": "Room_Medium",
+       "ObjectPath": "\\Effects\\Factory Effects\\RoomVerb\\Rooms\\Room_Medium",
+       "GUID": "{F5C06EC1-E4A4-4332-A7D3-A89E2986B74F}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
+      },
+      {
+       "Id": "3900114836",
+       "Name": "Metal_Hangar",
+       "ObjectPath": "\\Effects\\Factory Effects\\RoomVerb\\Huge Spaces\\Metal_Hangar",
+       "GUID": "{C4A4605C-42EF-476A-B53C-E31C7A442C24}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
+      }
+     ]
+    },
     "Events": [
+     {
+      "Id": "3991942870",
+      "Name": "Music",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music",
+      "GUID": "{53037DEB-F63C-4710-8072-54EFD294BCB0}",
+      "DurationType": "OneShot",
+      "DurationMin": "102",
+      "DurationMax": "102",
+      "MediaRefs": [
+       {
+        "Id": "34700422"
+       }
+      ]
+     },
+     {
+      "Id": "1256345528",
+      "Name": "PlayerAudio",
+      "ObjectPath": "\\Events\\Default Work Unit\\PlayerAudio",
+      "GUID": "{90163899-6434-4758-83D0-BF16752D4064}",
+      "MaxAttenuation": "40",
+      "DurationType": "OneShot",
+      "DurationMin": "1.5",
+      "DurationMax": "1.5",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "47937584",
+         "Id": "674522502",
+         "GUID": "{A2898C1F-6EC9-45A2-9842-9F6ABFA8973B}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "360279878"
+         },
+         {
+          "Id": "756635627"
+         },
+         {
+          "Id": "968601989"
+         },
+         {
+          "Id": "1040374593"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "47937584",
+         "Id": "3833651337",
+         "GUID": "{098700A0-B1EB-4DDF-B527-79766CE4634F}",
+         "Default": "true"
+        },
+        "MediaRefs": [
+         {
+          "Id": "111453331"
+         },
+         {
+          "Id": "290019238"
+         },
+         {
+          "Id": "491162418"
+         },
+         {
+          "Id": "628993159"
+         },
+         {
+          "Id": "684002994"
+         },
+         {
+          "Id": "693918980"
+         }
+        ]
+       }
+      ]
+     },
      {
       "Id": "3038207054",
       "Name": "Shoot",
@@ -591,6 +776,34 @@
       "GUID": "{6E751908-B6AE-4AD2-9C21-4EB0A6DF11B7}"
      }
     ],
+    "AuxBusses": [
+     {
+      "Id": "2077253480",
+      "Name": "Room",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Room",
+      "GUID": "{473BA46A-C8E9-40A4-AC90-E207E8CA32FA}",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "1990128658"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "4202071913",
+      "Name": "Big_Room",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Big_Room",
+      "GUID": "{BDA45880-AFFB-4C92-B1CB-D625CA3527EE}",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "3900114836"
+        }
+       ]
+      }
+     }
+    ],
     "GameParameters": [
      {
       "Id": "191739755",
@@ -624,6 +837,26 @@
      }
     ],
     "SwitchGroups": [
+     {
+      "Id": "47937584",
+      "Name": "PlayerVoice",
+      "ObjectPath": "\\Switches\\Default Work Unit\\PlayerVoice",
+      "GUID": "{7288A79A-F5E7-410F-8432-B454EDF6CC43}",
+      "Switches": [
+       {
+        "Id": "674522502",
+        "Name": "Land",
+        "ObjectPath": "\\Switches\\Default Work Unit\\PlayerVoice\\Land",
+        "GUID": "{A2898C1F-6EC9-45A2-9842-9F6ABFA8973B}"
+       },
+       {
+        "Id": "3833651337",
+        "Name": "Jump",
+        "ObjectPath": "\\Switches\\Default Work Unit\\PlayerVoice\\Jump",
+        "GUID": "{098700A0-B1EB-4DDF-B527-79766CE4634F}"
+       }
+      ]
+     },
      {
       "Id": "915214409",
       "Name": "Gun",
@@ -713,6 +946,6 @@
     ]
    }
   ],
-  "FileHash": "{BE4A303D-9C46-0A6F-C42D-F8A5B4D9B843}"
+  "FileHash": "{8685BA05-E51F-48A9-6129-EB8D87789454}"
  }
 }

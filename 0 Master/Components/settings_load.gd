@@ -23,8 +23,3 @@ func _ready() -> void:
 		GameManager.menu_audio = audio_settings.menu_audio
 	else:
 		GameManager.sensitivity = 5
-		GameManager.master_audio = 100
-		GameManager.music_audio = 100
-		GameManager.sfx_audio = 100
-		GameManager.foot_audio = 100
-		GameManager.menu_audio = 100

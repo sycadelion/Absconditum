@@ -1,0 +1,7 @@
+[gd_resource type="WwiseAuxBus" format=3 uid="uid://d31bi64c126h7"]
+
+[resource]
+name = "Room"
+id = 2077253480
+guid = "{473BA46A-C8E9-40A4-AC90-E207E8CA32FA}"
+dummy = true

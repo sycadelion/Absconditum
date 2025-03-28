@@ -6,10 +6,13 @@
 				<SoundBank Name="Main" ID="{9B9BB11E-F8B2-4541-BC2B-42D2D9A82CF8}">
 					<ObjectInclusionList>
 						<ObjectRef Name="Footsteps" ID="{3AA89E7C-2792-4048-A98A-2A996BDC5670}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Room" ID="{473BA46A-C8E9-40A4-AC90-E207E8CA32FA}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Gunshots" ID="{EFBD7EE7-A3BE-4106-B2DA-D3662858D28C}" WorkUnitID="{D1BAD11F-0083-404B-AA79-15730CB6E4DC}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Menu" ID="{DA332328-15BB-4331-A11A-D110A81B24E5}" WorkUnitID="{D1BAD11F-0083-404B-AA79-15730CB6E4DC}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="UI" ID="{42BE07BD-4FD3-43B9-9CA8-8E1E2EFE2120}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Music" ID="{53037DEB-F63C-4710-8072-54EFD294BCB0}" WorkUnitID="{7F3DAC90-E421-4FAB-AEEB-44CB0FEB024D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayerAudio" ID="{90163899-6434-4758-83D0-BF16752D4064}" WorkUnitID="{7F3DAC90-E421-4FAB-AEEB-44CB0FEB024D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Shoot" ID="{CEB512F3-2A96-476F-BF95-C309FCB953DE}" WorkUnitID="{7F3DAC90-E421-4FAB-AEEB-44CB0FEB024D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Skill" ID="{5703BB24-BD9C-48BE-902D-F00553BB8BBB}" WorkUnitID="{7F3DAC90-E421-4FAB-AEEB-44CB0FEB024D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="UI" ID="{1D0D8EA8-D697-496F-AEEA-239402382028}" WorkUnitID="{7F3DAC90-E421-4FAB-AEEB-44CB0FEB024D}" Origin="Manual" Filter="7"/>
@@ -17,6 +20,7 @@
 						<ObjectRef Name="Walk" ID="{BF8C47E3-7FB7-4A96-9087-30E26825A77B}" WorkUnitID="{7F3DAC90-E421-4FAB-AEEB-44CB0FEB024D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Music" ID="{6E751908-B6AE-4AD2-9C21-4EB0A6DF11B7}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="SFX" ID="{04312408-C43F-4AD4-B818-DECF781E2289}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Big_Room" ID="{BDA45880-AFFB-4C92-B1CB-D625CA3527EE}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Skill" ID="{0EA50E5D-F786-4CDE-A805-EDBB30DFE518}" WorkUnitID="{D1BAD11F-0083-404B-AA79-15730CB6E4DC}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>

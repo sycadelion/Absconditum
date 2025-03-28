@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddut4ym5suydp"]
+[gd_scene load_steps=14 format=3 uid="uid://ddut4ym5suydp"]
 
 [ext_resource type="Material" uid="uid://ys5y4m34ptf6" path="res://4 Resources/Shaders/Skybox_mat.tres" id="1_fm5q2"]
 [ext_resource type="Script" uid="uid://78x7jvl31pcx" path="res://5 Levels/Hub/hub.gd" id="1_xthv6"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://f7itocgajf8o" path="res://1 Player/player.tscn" id="2_iocvr"]
 [ext_resource type="PackedScene" uid="uid://btea2veyjc17u" path="res://6 Online/SpawnPoint.tscn" id="3_ku60f"]
 [ext_resource type="PackedScene" uid="uid://d4ckpg8arvmqx" path="res://6 Online/spawn_screen.tscn" id="6_46imq"]
+[ext_resource type="WwiseAuxBus" uid="uid://chdq4cvfbqh4h" path="res://Wwise/resources/Aux Bus/{BDA45880-AFFB-4C92-B1CB-D625CA3527EE}.tres" id="7_2q5xx"]
+[ext_resource type="WwiseAuxBus" uid="uid://d31bi64c126h7" path="res://Wwise/resources/Aux Bus/{473BA46A-C8E9-40A4-AC90-E207E8CA32FA}.tres" id="8_ece8c"]
 
 [sub_resource type="Sky" id="Sky_8f814"]
 sky_material = ExtResource("1_fm5q2")
@@ -24,6 +26,15 @@ volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(0.506346, 0.0985438, 0.548278, 1)
 volumetric_fog_emission = Color(0.276803, 0.137464, 0.273613, 1)
 volumetric_fog_length = 10.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yedmx"]
+size = Vector3(90, 70, 60)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x2o1t"]
+size = Vector3(108.016, 50, 50.2852)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2q5xx"]
+size = Vector3(24.9996, 20, 62.1086)
 
 [node name="LevelDropPodHanger" type="Node3D" node_paths=PackedStringArray("players_container", "player_spawner")]
 script = ExtResource("1_xthv6")
@@ -110,5 +121,35 @@ popup/item_0/id = 0
 
 [node name="Gun slot 2" parent="Ingame Stuff/Spawn Screen/PanelContainer/VBoxContainer" index="6"]
 popup/item_0/id = 0
+
+[node name="Big_Room" type="AkRoom" parent="."]
+aux_bus = ExtResource("7_2q5xx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Big_Room"]
+shape = SubResource("BoxShape3D_yedmx")
+
+[node name="TeamA_Room" type="AkRoom" parent="."]
+aux_bus = ExtResource("8_ece8c")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -70)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TeamA_Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.13049, 0, 14.8262)
+shape = SubResource("BoxShape3D_x2o1t")
+
+[node name="Control_Room" type="AkRoom" parent="."]
+aux_bus = ExtResource("8_ece8c")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.8318, 21.156, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control_Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.49982, 0, -0.428345)
+shape = SubResource("BoxShape3D_2q5xx")
+
+[node name="TeamB_Room" type="AkRoom" parent="."]
+aux_bus = ExtResource("8_ece8c")
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 70)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TeamB_Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.13049, 0, 14.8262)
+shape = SubResource("BoxShape3D_x2o1t")
 
 [editable path="Ingame Stuff/Spawn Screen"]
