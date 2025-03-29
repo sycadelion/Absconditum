@@ -51,15 +51,16 @@ SceneLoad="*res://0 Master/Autoloads/scene_loader.tscn"
 LineDrawer="*res://0 Master/Autoloads/LineDrawer.gd"
 RoomGen="*res://0 Master/Autoloads/Roomcode_gen.gd"
 WwiseRuntimeManager="*res://addons/Wwise/runtime/wwise_runtime_manager.gd"
+SettingsManager="*res://0 Master/Autoloads/SettingsManager.gd"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/resizable=false
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/aspect="expand"
-window/stretch/scale_mode="integer"
 
 [editor_plugins]
 

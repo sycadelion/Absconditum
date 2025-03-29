@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://c2bu67hqj86j0" path="res://addons/kenney_particle_pack/circle_05.png" id="1_i4x1t"]
 [ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu.tres" id="1_m4xgf"]
-[ext_resource type="Script" path="res://1 Player/GUI/hud.gd" id="2_w8eom"]
+[ext_resource type="Script" uid="uid://cujhe3nuo5vm4" path="res://1 Player/GUI/hud.gd" id="2_w8eom"]
 [ext_resource type="PackedScene" uid="uid://ci6rly7mcj6vl" path="res://1 Player/GUI/skill.tscn" id="2_xbtso"]
-[ext_resource type="Script" path="res://1 Player/GUI/fps.gd" id="3_ywnm1"]
+[ext_resource type="Script" uid="uid://dgkavh4t5h318" path="res://1 Player/GUI/fps.gd" id="3_ywnm1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q1jip"]
 bg_color = Color(0.15, 0.15, 0.15, 0.545098)
@@ -12,353 +12,114 @@ bg_color = Color(0.15, 0.15, 0.15, 0.545098)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5ayb"]
 bg_color = Color(1, 0, 0, 1)
 
-[sub_resource type="Animation" id="Animation_bbtvb"]
+[sub_resource type="Animation" id="Animation_1q2tj"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Weapon1:position")
+tracks/0/path = NodePath("WeaponRoot/Weapon1:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1230, 670)]
+"values": [Vector2(-9, -10)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Weapon2:position")
+tracks/1/path = NodePath("WeaponRoot/Weapon2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1230, 581)]
+"values": [Vector2(14, -78)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Weapon1/PanelContainer:size")
+tracks/2/path = NodePath("WeaponRoot/Weapon1:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(222, 89)]
+"values": [Vector2(1, 1)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Weapon2/PanelContainer:size")
+tracks/3/path = NodePath("WeaponRoot/Weapon2:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(167, 67)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Weapon1/PanelContainer:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-172, -39)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Weapon2/PanelContainer:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-117, -17)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Weapon1/AmmoCount:size")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(40, 57)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Weapon1/AmmoCount:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-154, -21)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Weapon2/AmmoCount:size")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(40, 35)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Weapon2/AmmoCount:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-99, 1)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Weapon2/Slot:size")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(16, 17)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Weapon2/Slot:position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-103, -1)]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("Weapon1/Slot:size")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(16, 17)]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("Weapon1/Slot:position")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-158, -21)]
+"values": [Vector2(0.5, 0.5)]
 }
 
-[sub_resource type="Animation" id="Animation_o46v8"]
+[sub_resource type="Animation" id="Animation_vkgl8"]
 resource_name = "Swap"
-length = 0.1
+length = 0.2
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Weapon1:position")
+tracks/0/path = NodePath("WeaponRoot/Weapon1:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1230, 670), Vector2(1230, 581)]
+"values": [Vector2(1, 1), Vector2(0.5, 0.5)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Weapon2:position")
+tracks/1/path = NodePath("WeaponRoot/Weapon1:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1230, 581), Vector2(1230, 670)]
+"values": [Vector2(-9, -10), Vector2(14, -78)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Weapon1/PanelContainer:size")
+tracks/2/path = NodePath("WeaponRoot/Weapon2:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(222, 89), Vector2(167, 67)]
+"values": [Vector2(0.5, 0.5), Vector2(1, 1)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Weapon2/PanelContainer:size")
+tracks/3/path = NodePath("WeaponRoot/Weapon2:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(167, 67), Vector2(222, 89)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Weapon1/PanelContainer:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-172, -39), Vector2(-117, -17)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Weapon2/PanelContainer:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-117, -17), Vector2(-172, -39)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Weapon1/AmmoCount:size")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(40, 57), Vector2(40, 35)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Weapon1/AmmoCount:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-154, -21), Vector2(-99, 1)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Weapon2/AmmoCount:size")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(40, 35), Vector2(40, 57)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Weapon2/AmmoCount:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-99, 1), Vector2(-154, -21)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Weapon2/Slot:size")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(16, 17)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Weapon2/Slot:position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-103, -1), Vector2(-158, -21)]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("Weapon1/Slot:size")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(16, 17), Vector2(16, 17)]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("Weapon1/Slot:position")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-158, -21), Vector2(-103, -1)]
+"values": [Vector2(14, -78), Vector2(-9, -10)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_klo0t"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v41ln"]
 _data = {
-"RESET": SubResource("Animation_bbtvb"),
-"Swap": SubResource("Animation_o46v8")
+&"RESET": SubResource("Animation_1q2tj"),
+&"Swap": SubResource("Animation_vkgl8")
 }
 
 [node name="HUD" type="Control"]
@@ -453,33 +214,38 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="Weapon1" type="Control" parent="."]
+[node name="WeaponRoot" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -50.0
-offset_top = -50.0
-offset_right = -10.0
-offset_bottom = -10.0
+offset_left = -40.0
+offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
+
+[node name="Weapon1" type="Control" parent="WeaponRoot"]
+anchors_preset = 0
+offset_left = -9.0
+offset_top = -10.0
+offset_right = 31.0
+offset_bottom = 30.0
 mouse_filter = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="Weapon1"]
+[node name="PanelContainer" type="PanelContainer" parent="WeaponRoot/Weapon1"]
 layout_mode = 0
 offset_left = -172.0
 offset_top = -39.0
 offset_right = 50.0
 offset_bottom = 50.0
 
-[node name="weapon1_image" type="TextureRect" parent="Weapon1/PanelContainer"]
+[node name="weapon1_image" type="TextureRect" parent="WeaponRoot/Weapon1/PanelContainer"]
 layout_mode = 2
 expand_mode = 1
 
-[node name="AmmoCount" type="Label" parent="Weapon1"]
+[node name="AmmoCount" type="Label" parent="WeaponRoot/Weapon1"]
 layout_mode = 0
 offset_left = -154.0
 offset_top = -21.0
@@ -488,7 +254,7 @@ offset_bottom = 36.0
 text = "256"
 vertical_alignment = 2
 
-[node name="Slot" type="Label" parent="Weapon1"]
+[node name="Slot" type="Label" parent="WeaponRoot/Weapon1"]
 layout_mode = 0
 offset_left = -158.0
 offset_top = -21.0
@@ -499,47 +265,41 @@ text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Weapon2" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -50.0
-offset_top = -139.0
-offset_right = -10.0
-offset_bottom = -99.0
-grow_horizontal = 0
-grow_vertical = 0
+[node name="Weapon2" type="Control" parent="WeaponRoot"]
+anchors_preset = 0
+offset_left = 14.0
+offset_top = -78.0
+offset_right = 54.0
+offset_bottom = -38.0
+scale = Vector2(0.5, 0.5)
 mouse_filter = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="Weapon2"]
+[node name="PanelContainer" type="PanelContainer" parent="WeaponRoot/Weapon2"]
 layout_mode = 0
-offset_left = -117.0
-offset_top = -17.0
+offset_left = -172.0
+offset_top = -39.0
 offset_right = 50.0
 offset_bottom = 50.0
 
-[node name="weapon2_image" type="TextureRect" parent="Weapon2/PanelContainer"]
+[node name="weapon2_image" type="TextureRect" parent="WeaponRoot/Weapon2/PanelContainer"]
 layout_mode = 2
 expand_mode = 1
 
-[node name="AmmoCount" type="Label" parent="Weapon2"]
+[node name="AmmoCount" type="Label" parent="WeaponRoot/Weapon2"]
 layout_mode = 0
-offset_left = -99.0
-offset_top = 1.0
-offset_right = -59.0
+offset_left = -154.0
+offset_top = -21.0
+offset_right = -114.0
 offset_bottom = 36.0
 text = "256"
 vertical_alignment = 2
 
-[node name="Slot" type="Label" parent="Weapon2"]
+[node name="Slot" type="Label" parent="WeaponRoot/Weapon2"]
 layout_mode = 0
-offset_left = -103.0
-offset_top = -1.0
-offset_right = -87.0
-offset_bottom = 16.0
+offset_left = -158.0
+offset_top = -21.0
+offset_right = -142.0
+offset_bottom = -4.0
 theme_override_colors/font_color = Color(1, 1, 1, 0.470588)
 theme_override_font_sizes/font_size = 12
 text = "2"
@@ -637,5 +397,5 @@ vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_klo0t")
+&"": SubResource("AnimationLibrary_v41ln")
 }

@@ -78,10 +78,10 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("reload"):
 		weapon_manger.reload.rpc()
 	elif event.is_action_pressed("test"):
-		audio_comp.Play_ammo("Rifle")
+		print(str(SettingsManager.current_res))
 		#$CanvasLayer/HUD/Fps.visible = not $CanvasLayer/HUD/Fps.visible
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
 		return
 	if self.global_position.y <= -15:

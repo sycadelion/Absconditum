@@ -19,6 +19,18 @@ var Text_Focused = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var index = 0
+	#adds list of resolutions
+	for r in SettingsManager.resolutions_dic:
+		%resoDrop.add_item(r,index)
+		index += 1
+	
+	#adds list of screens
+	index = 0
+	for d in DisplayServer.get_screen_count():
+		%PrimaryDrop.add_item("Screen " + str(d+1),index)
+		index += 1
+	
 	player_name.text = GameManager.UserName
 	player_name.editable = edit_name
 	active_menu = audio
@@ -27,10 +39,12 @@ func _ready() -> void:
 	keybinds.hide()
 	user.hide()
 	update_text()
+	_check_settings()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	_check_settings()
 	if not Text_Focused:
 		update_text()
 
@@ -73,3 +87,28 @@ func _user_pressed() -> void:
 		active_menu.hide()
 		user.show()
 		active_menu = user
+
+func _change_resolution(index):
+	SettingsManager.current_res = SettingsManager.resolutions_dic.get(%resoDrop.get_item_text(index))
+
+func _change_screen(index):
+	SettingsManager.screen_focus = index
+
+func _check_settings():
+	# Visuals
+	var index = 0
+	for r in SettingsManager.resolutions_dic:
+		if SettingsManager.resolutions_dic[r] == SettingsManager.current_res:
+			%resoDrop.select(index)
+		index += 1
+	#%ModeDrop.selected = SettingsManager.screen_mod
+	%PrimaryDrop.selected = SettingsManager.screen_focus
+	%FullscreenCheck.button_pressed = SettingsManager.FullscreenBool
+
+
+func _on_fullscreen_check_toggled(toggled_on: bool) -> void:
+	SettingsManager.FullscreenBool = toggled_on
+	if toggled_on:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)

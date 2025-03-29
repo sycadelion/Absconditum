@@ -61,5 +61,5 @@ func _on_click() -> void:
 	#audio_player.play()
 
 
-func _on_music_music_sync_exit(data: Dictionary) -> void:
+func _on_music_music_sync_exit(_data: Dictionary) -> void:
 	$Music.post_event()

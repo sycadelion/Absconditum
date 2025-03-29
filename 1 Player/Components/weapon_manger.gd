@@ -20,12 +20,12 @@ signal update_weapon_stack
 @onready var Type_M_mag: Label = $"../CanvasLayer/HUD/AmmoType_M/Mag"
 
 #weapon slot 1
-@onready var Weapon_Slot1: Label = $"../CanvasLayer/HUD/Weapon1/AmmoCount"
-@onready var weapon1_image: TextureRect = $"../CanvasLayer/HUD/Weapon1/PanelContainer/weapon1_image"
+@onready var Weapon_Slot1: Label = $"../CanvasLayer/HUD/WeaponRoot/Weapon1/AmmoCount"
+@onready var weapon1_image: TextureRect = $"../CanvasLayer/HUD/WeaponRoot/Weapon1/PanelContainer/weapon1_image"
 
 #weapon slot 2 
-@onready var Weapon_Slot2: Label = $"../CanvasLayer/HUD/Weapon2/AmmoCount"
-@onready var weapon2_image: TextureRect = $"../CanvasLayer/HUD/Weapon2/PanelContainer/weapon2_image"
+@onready var Weapon_Slot2: Label = $"../CanvasLayer/HUD/WeaponRoot/Weapon2/AmmoCount"
+@onready var weapon2_image: TextureRect = $"../CanvasLayer/HUD/WeaponRoot/Weapon2/PanelContainer/weapon2_image"
 
 
 

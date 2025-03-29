@@ -48,12 +48,16 @@ func spawn_point_rng():
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
-		ConfigFileHandler.save_user_settings()
+		ConfigFileHandler.save_user_settings("name",GameManager.UserName)
+		ConfigFileHandler.save_user_settings("save_version",GameManager.Save_version)
 		ConfigFileHandler.save_mouse_settings("sensitivity", sensitivity)
 		ConfigFileHandler.save_audio_settings("master_audio",master_audio)
 		ConfigFileHandler.save_audio_settings("music_audio",music_audio)
 		ConfigFileHandler.save_audio_settings("sfx_audio",sfx_audio)
 		ConfigFileHandler.save_audio_settings("foot_audio",foot_audio)
 		ConfigFileHandler.save_audio_settings("menu_audio",menu_audio)
+		ConfigFileHandler.save_graphic_settings("resolution",SettingsManager.current_res)
+		ConfigFileHandler.save_graphic_settings("screen_focus",SettingsManager.screen_focus)
+		ConfigFileHandler.save_graphic_settings("fullscreen",SettingsManager.FullscreenBool)
 		await get_tree().create_timer(0.01).timeout
 		get_tree().quit()
