@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://gsnjhl57qwdk"]
 
-[ext_resource type="Shader" path="res://4 Resources/Shaders/cut_sphere.gdshader" id="1_og3xl"]
+[ext_resource type="Shader" uid="uid://dew15oesvk6o6" path="res://4 Resources/Shaders/cut_sphere.gdshader" id="1_og3xl"]
 
 [resource]
 render_priority = 0
@@ -12,4 +12,4 @@ shader_parameter/sphereRadius = 0.0
 shader_parameter/noiseSpeed = 0.0
 shader_parameter/noiseStrength = 0.0
 shader_parameter/noiseSize = 0.0
-shader_parameter/invertCut = null
+shader_parameter/invertCut = false

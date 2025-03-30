@@ -6,6 +6,7 @@ class_name AudioComp extends Node
 @onready var gun_reload: AkEvent3D = $"../Head/Camera3D/Hand/GunReload"
 @onready var gun_ammo: AkEvent3D = $"../Head/Camera3D/Hand/GunAmmo"
 @onready var voice: AkEvent3D = $"../Head/Camera3D/Voice"
+@onready var feet_cast: RayCast3D = $"../FeetCast"
 
 var Surface: String
 
@@ -14,7 +15,9 @@ func _ready() -> void:
 	Surface = "Lino"
 
 func _physics_process(_delta: float) -> void:
-	pass
+	#assign material to whats under the player
+	if feet_cast.get_collider() and feet_cast.get_collider().materialName != null:
+		Surface = feet_cast.get_collider().materialName
 
 @rpc("call_local")
 func Play_footstep(_surface:= Surface):

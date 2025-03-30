@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dr380cr6se6rc"]
+[gd_scene load_steps=3 format=3 uid="uid://dr380cr6se6rc"]
 
 [ext_resource type="PackedScene" uid="uid://4ikel0crfreq" path="res://8 Assets/Models/Salvation2_typeN.glb" id="1_4s5cy"]
+[ext_resource type="Material" uid="uid://gsnjhl57qwdk" path="res://4 Resources/Shaders/player_shader_mat.tres" id="2_aiqtf"]
 
 [node name="Salvation2_typeN" instance=ExtResource("1_4s5cy")]
 transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 0, 0, 0)
+
+[node name="Mag" parent="." index="0"]
+material_override = ExtResource("2_aiqtf")
+
+[node name="Salvation_001" parent="." index="1"]
+material_override = ExtResource("2_aiqtf")

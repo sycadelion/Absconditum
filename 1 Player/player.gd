@@ -24,7 +24,6 @@ class_name Player extends CharacterBody3D
 @onready var killfeed: KillFeed = %KillFeed
 @onready var Health_bar: ProgressBar = $CanvasLayer/HUD/HealthBar/PanelContainer/ProgressBar
 @onready var Health_Label: Label = $CanvasLayer/HUD/HealthBar/PanelContainer/HealthText
-var listener
 
 #jump vars for landing audio
 var landing: bool = false
@@ -45,6 +44,8 @@ func _ready() -> void:
 		GameManager.PLAYER = self
 		camera.make_current()
 		bodyInvert.visible = false
+		var shaderMat:ShaderMaterial = bodyInvert.material_override
+		shaderMat.set_shader_parameter("enabled", false)
 		hud.visible = true
 		Health_bar.max_value = health_comp.MAX_HEALTH
 		Health_bar.value = health_comp.health
@@ -58,7 +59,8 @@ func _ready() -> void:
 		camera.current = false
 		$Head/Camera3D/AkListener3D.is_default_listener = false
 		$Head/Camera3D/crossbow_shader.show()
-		AudioRay = true
+		var shaderMat:ShaderMaterial = bodyInvert.material_override
+		shaderMat.set_shader_parameter("enabled", true)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if owner_id != multiplayer.get_unique_id(): 

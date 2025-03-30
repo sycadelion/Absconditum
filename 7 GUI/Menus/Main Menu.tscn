@@ -114,6 +114,12 @@ text = "Quit
 visible = false
 layout_mode = 1
 
+[node name="Hitscan" parent="Match_Settings/PanelContainer/CenterContainer/MarginContainer/grid/Player Settings" index="6"]
+visible = false
+
+[node name="CenterContainer" parent="Match_Settings/PanelContainer/CenterContainer/MarginContainer/grid/Player Settings" index="7"]
+visible = false
+
 [node name="Settings" parent="." instance=ExtResource("6_yrws1")]
 visible = false
 layout_mode = 1

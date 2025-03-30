@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0oppry2iydfe"]
+[gd_scene load_steps=3 format=3 uid="uid://b0oppry2iydfe"]
 
 [ext_resource type="PackedScene" uid="uid://bjmiusjfoowok" path="res://8 Assets/Models/Trauma_typeN.glb" id="1_mxt8a"]
+[ext_resource type="Material" uid="uid://gsnjhl57qwdk" path="res://4 Resources/Shaders/player_shader_mat.tres" id="2_dwof8"]
 
 [node name="Trauma_typeN" instance=ExtResource("1_mxt8a")]
 transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 0, 0, 0)
+
+[node name="Cube_003" parent="." index="0"]
+material_override = ExtResource("2_dwof8")

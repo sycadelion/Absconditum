@@ -1,6 +1,7 @@
-[gd_scene load_steps=36 format=4 uid="uid://c33psuu1qtqd3"]
+[gd_scene load_steps=37 format=4 uid="uid://c33psuu1qtqd3"]
 
 [ext_resource type="PackedScene" uid="uid://bshc4v2fv676g" path="res://5 Levels/Drop_pod_hanger/import/Level_Drop_pod_Hanger.glb" id="1_d8ucl"]
+[ext_resource type="Script" uid="uid://ywjj5jyr5g0o" path="res://5 Levels/objMaterial.gd" id="2_3kp6s"]
 [ext_resource type="Material" uid="uid://co2o06cabp8pr" path="res://5 Levels/Drop_pod_hanger/import/Floor.tres" id="2_gbxe4"]
 [ext_resource type="Material" uid="uid://d0ro7itfg5e8l" path="res://5 Levels/Drop_pod_hanger/import/Wall.tres" id="3_ut620"]
 [ext_resource type="Material" uid="uid://bqk0eokekd1r" path="res://5 Levels/Drop_pod_hanger/import/crane.tres" id="3_wuirp"]
@@ -378,25 +379,45 @@ albedo_texture = ExtResource("10_70juu")
 [node name="Oct_hole" parent="." index="4"]
 mesh = SubResource("ArrayMesh_s2gx5")
 
+[node name="StaticBody3D" parent="Oct_hole" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "Lino"
+
 [node name="AkGeometry" type="AkGeometry" parent="Oct_hole" index="1"]
 
 [node name="DropPod_Crane" parent="." index="5"]
 surface_material_override/0 = ExtResource("3_wuirp")
+
+[node name="StaticBody3D" parent="DropPod_Crane" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="DropPod_Crane" index="1"]
 
 [node name="Crane_Rail" parent="." index="6"]
 surface_material_override/0 = ExtResource("3_wuirp")
 
+[node name="StaticBody3D" parent="Crane_Rail" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Crane_Rail" index="1"]
 
 [node name="Floor" parent="." index="7"]
 mesh = SubResource("ArrayMesh_sii7r")
 
+[node name="StaticBody3D" parent="Floor" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "Lino"
+
 [node name="AkGeometry" type="AkGeometry" parent="Floor" index="1"]
 
 [node name="Floor_001" parent="." index="8"]
 mesh = SubResource("ArrayMesh_hbhfn")
+
+[node name="StaticBody3D" parent="Floor_001" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "Lino"
 
 [node name="AkGeometry" type="AkGeometry" parent="Floor_001" index="1"]
 
@@ -408,10 +429,18 @@ mesh = SubResource("ArrayMesh_cp1us")
 [node name="Center_control_room" parent="." index="10"]
 mesh = SubResource("ArrayMesh_cecwx")
 
+[node name="StaticBody3D" parent="Center_control_room" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "Lino"
+
 [node name="AkGeometry" type="AkGeometry" parent="Center_control_room" index="1"]
 
 [node name="Center_control_window" parent="." index="11"]
 mesh = SubResource("ArrayMesh_2gwp8")
+
+[node name="StaticBody3D" parent="Center_control_window" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "Glass"
 
 [node name="AkGeometry" type="AkGeometry" parent="Center_control_window" index="1"]
 
@@ -495,6 +524,10 @@ surface_material_override/0 = ExtResource("3_ut620")
 [node name="TeamA" parent="." index="27"]
 surface_material_override/0 = ExtResource("2_gbxe4")
 surface_material_override/1 = ExtResource("3_ut620")
+
+[node name="StaticBody3D" parent="TeamA" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "Lino"
 
 [node name="AkGeometry" type="AkGeometry" parent="TeamA" index="1"]
 
@@ -696,18 +729,38 @@ surface_material_override/0 = ExtResource("4_nrevo")
 [node name="Roof" parent="." index="67"]
 surface_material_override/0 = ExtResource("2_gbxe4")
 
+[node name="StaticBody3D" parent="Roof" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "Lino"
+
 [node name="TeamA_Roof" parent="." index="68"]
 surface_material_override/0 = ExtResource("2_gbxe4")
+
+[node name="StaticBody3D" parent="TeamA_Roof" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "Lino"
 
 [node name="TeamB_Roof" parent="." index="69"]
 surface_material_override/0 = ExtResource("2_gbxe4")
 
+[node name="StaticBody3D" parent="TeamB_Roof" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "Lino"
+
 [node name="Center_control_room_Roof" parent="." index="70"]
 surface_material_override/0 = ExtResource("2_gbxe4")
+
+[node name="StaticBody3D" parent="Center_control_room_Roof" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "Lino"
 
 [node name="TeamB" parent="." index="71"]
 surface_material_override/0 = ExtResource("2_gbxe4")
 surface_material_override/1 = ExtResource("3_ut620")
+
+[node name="StaticBody3D" parent="TeamB" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "Lino"
 
 [node name="AkGeometry" type="AkGeometry" parent="TeamB" index="1"]
 
@@ -916,355 +969,639 @@ surface_material_override/0 = ExtResource("5_t4v3s")
 
 [node name="AkGeometry" type="AkGeometry" parent="TeamB_Wall_039" index="1"]
 
+[node name="StaticBody3D" parent="TeamB_001" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "Lino"
+
 [node name="AkGeometry" type="AkGeometry" parent="TeamB_001" index="1"]
 
 [node name="Big_Box" parent="." index="114"]
 surface_material_override/0 = ExtResource("6_g2mhg")
+
+[node name="StaticBody3D" parent="Big_Box" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box" index="1"]
 
 [node name="Big_Box_001" parent="." index="115"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
+[node name="StaticBody3D" parent="Big_Box_001" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box_001" index="1"]
 
 [node name="Big_Box_002" parent="." index="116"]
 surface_material_override/0 = ExtResource("6_g2mhg")
+
+[node name="StaticBody3D" parent="Big_Box_002" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box_002" index="1"]
 
 [node name="Big_Box_003" parent="." index="117"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
+[node name="StaticBody3D" parent="Big_Box_003" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box_003" index="1"]
 
 [node name="Big_Box_004" parent="." index="118"]
 surface_material_override/0 = ExtResource("6_g2mhg")
+
+[node name="StaticBody3D" parent="Big_Box_004" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box_004" index="1"]
 
 [node name="Big_Box_005" parent="." index="119"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
+[node name="StaticBody3D" parent="Big_Box_005" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box_005" index="1"]
 
 [node name="Big_Box_006" parent="." index="120"]
 surface_material_override/0 = ExtResource("6_g2mhg")
+
+[node name="StaticBody3D" parent="Big_Box_006" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box_006" index="1"]
 
 [node name="Container" parent="." index="121"]
 surface_material_override/0 = ExtResource("7_yeq2b")
 
+[node name="StaticBody3D" parent="Container" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "HollowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Container" index="1"]
 
 [node name="Container_001" parent="." index="122"]
 surface_material_override/0 = ExtResource("7_yeq2b")
+
+[node name="StaticBody3D" parent="Container_001" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "HollowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Container_001" index="1"]
 
 [node name="Container_002" parent="." index="123"]
 surface_material_override/0 = ExtResource("7_yeq2b")
 
+[node name="StaticBody3D" parent="Container_002" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "HollowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Container_002" index="1"]
 
 [node name="Container_003" parent="." index="124"]
 surface_material_override/0 = ExtResource("7_yeq2b")
+
+[node name="StaticBody3D" parent="Container_003" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "HollowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Container_003" index="1"]
 
 [node name="Metal_sheet" parent="." index="125"]
 surface_material_override/0 = ExtResource("8_ujoaa")
 
+[node name="StaticBody3D" parent="Metal_sheet" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "HollowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Metal_sheet" index="1"]
 
 [node name="Metal_sheet_001" parent="." index="126"]
 surface_material_override/0 = ExtResource("8_ujoaa")
+
+[node name="StaticBody3D" parent="Metal_sheet_001" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "HollowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Metal_sheet_001" index="1"]
 
 [node name="Small_Box_001" parent="." index="127"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
+[node name="StaticBody3D" parent="Small_Box_001" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_001" index="1"]
 
 [node name="Small_Box_002" parent="." index="128"]
 surface_material_override/0 = ExtResource("6_g2mhg")
+
+[node name="StaticBody3D" parent="Small_Box_002" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_002" index="1"]
 
 [node name="Small_Box_003" parent="." index="129"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
+[node name="StaticBody3D" parent="Small_Box_003" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_003" index="1"]
 
 [node name="Small_Box_004" parent="." index="130"]
 surface_material_override/0 = ExtResource("6_g2mhg")
+
+[node name="StaticBody3D" parent="Small_Box_004" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_004" index="1"]
 
 [node name="Small_Box_005" parent="." index="131"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
+[node name="StaticBody3D" parent="Small_Box_005" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_005" index="1"]
 
 [node name="Small_Box_006" parent="." index="132"]
 surface_material_override/0 = ExtResource("6_g2mhg")
+
+[node name="StaticBody3D" parent="Small_Box_006" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_006" index="1"]
 
 [node name="Small_Box_007" parent="." index="133"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
+[node name="StaticBody3D" parent="Small_Box_007" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_007" index="1"]
 
 [node name="Small_Box_008" parent="." index="134"]
 surface_material_override/0 = ExtResource("6_g2mhg")
+
+[node name="StaticBody3D" parent="Small_Box_008" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_008" index="1"]
 
 [node name="Small_Box_009" parent="." index="135"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
+[node name="StaticBody3D" parent="Small_Box_009" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_009" index="1"]
 
 [node name="Small_Box" parent="." index="136"]
 surface_material_override/0 = ExtResource("6_g2mhg")
+
+[node name="StaticBody3D" parent="Small_Box" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box" index="1"]
 
 [node name="Small_Box_010" parent="." index="137"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
+[node name="StaticBody3D" parent="Small_Box_010" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_010" index="1"]
 
 [node name="Small_Box_011" parent="." index="138"]
 surface_material_override/0 = ExtResource("6_g2mhg")
+
+[node name="StaticBody3D" parent="Small_Box_011" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_011" index="1"]
 
 [node name="Small_Box_013" parent="." index="139"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
+[node name="StaticBody3D" parent="Small_Box_013" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_013" index="1"]
 
 [node name="Big_Box_007" parent="." index="140"]
 surface_material_override/0 = ExtResource("6_g2mhg")
+
+[node name="StaticBody3D" parent="Big_Box_007" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box_007" index="1"]
 
 [node name="Big_Box_008" parent="." index="141"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
+[node name="StaticBody3D" parent="Big_Box_008" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box_008" index="1"]
 
 [node name="Big_Box_009" parent="." index="142"]
 surface_material_override/0 = ExtResource("6_g2mhg")
+
+[node name="StaticBody3D" parent="Big_Box_009" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box_009" index="1"]
 
 [node name="Small_Box_014" parent="." index="143"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
+[node name="StaticBody3D" parent="Small_Box_014" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_014" index="1"]
 
 [node name="Small_Box_015" parent="." index="144"]
 surface_material_override/0 = ExtResource("6_g2mhg")
+
+[node name="StaticBody3D" parent="Small_Box_015" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_015" index="1"]
 
 [node name="Small_Box_016" parent="." index="145"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
+[node name="StaticBody3D" parent="Small_Box_016" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_016" index="1"]
 
 [node name="Big_Box_010" parent="." index="146"]
 surface_material_override/0 = ExtResource("6_g2mhg")
+
+[node name="StaticBody3D" parent="Big_Box_010" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box_010" index="1"]
 
 [node name="Big_Box_011" parent="." index="147"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
+[node name="StaticBody3D" parent="Big_Box_011" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box_011" index="1"]
 
 [node name="Small_Box_017" parent="." index="148"]
 surface_material_override/0 = ExtResource("6_g2mhg")
+
+[node name="StaticBody3D" parent="Small_Box_017" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_017" index="1"]
 
 [node name="Big_Box_012" parent="." index="149"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
+[node name="StaticBody3D" parent="Big_Box_012" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box_012" index="1"]
 
 [node name="Barrel" parent="." index="150"]
 surface_material_override/0 = ExtResource("9_fqfe5")
+
+[node name="StaticBody3D" parent="Barrel" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Barrel" index="1"]
 
 [node name="Barrel_001" parent="." index="151"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
+[node name="StaticBody3D" parent="Barrel_001" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_001" index="1"]
 
 [node name="Barrel_002" parent="." index="152"]
 surface_material_override/0 = ExtResource("9_fqfe5")
+
+[node name="StaticBody3D" parent="Barrel_002" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_002" index="1"]
 
 [node name="Barrel_003" parent="." index="153"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
+[node name="StaticBody3D" parent="Barrel_003" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_003" index="1"]
 
 [node name="Barrel_004" parent="." index="154"]
 surface_material_override/0 = ExtResource("9_fqfe5")
+
+[node name="StaticBody3D" parent="Barrel_004" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_004" index="1"]
 
 [node name="Barrel_005" parent="." index="155"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
+[node name="StaticBody3D" parent="Barrel_005" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_005" index="1"]
 
 [node name="Barrel_006" parent="." index="156"]
 surface_material_override/0 = ExtResource("9_fqfe5")
+
+[node name="StaticBody3D" parent="Barrel_006" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_006" index="1"]
 
 [node name="Barrel_007" parent="." index="157"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
+[node name="StaticBody3D" parent="Barrel_007" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_007" index="1"]
 
 [node name="Barrel_008" parent="." index="158"]
 surface_material_override/0 = ExtResource("9_fqfe5")
+
+[node name="StaticBody3D" parent="Barrel_008" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_008" index="1"]
 
 [node name="Barrel_009" parent="." index="159"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
+[node name="StaticBody3D" parent="Barrel_009" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_009" index="1"]
 
 [node name="Barrel_010" parent="." index="160"]
 surface_material_override/0 = ExtResource("9_fqfe5")
+
+[node name="StaticBody3D" parent="Barrel_010" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_010" index="1"]
 
 [node name="Barrel_011" parent="." index="161"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
+[node name="StaticBody3D" parent="Barrel_011" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_011" index="1"]
 
 [node name="Barrel_012" parent="." index="162"]
 surface_material_override/0 = ExtResource("9_fqfe5")
+
+[node name="StaticBody3D" parent="Barrel_012" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_012" index="1"]
 
 [node name="Barrel_013" parent="." index="163"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
+[node name="StaticBody3D" parent="Barrel_013" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_013" index="1"]
 
 [node name="Barrel_014" parent="." index="164"]
 surface_material_override/0 = ExtResource("9_fqfe5")
+
+[node name="StaticBody3D" parent="Barrel_014" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_014" index="1"]
 
 [node name="Barrel_015" parent="." index="165"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
+[node name="StaticBody3D" parent="Barrel_015" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_015" index="1"]
 
 [node name="Barrel_016" parent="." index="166"]
 surface_material_override/0 = ExtResource("9_fqfe5")
+
+[node name="StaticBody3D" parent="Barrel_016" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_016" index="1"]
 
 [node name="Barrel_017" parent="." index="167"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
+[node name="StaticBody3D" parent="Barrel_017" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_017" index="1"]
 
 [node name="Barrel_018" parent="." index="168"]
 surface_material_override/0 = ExtResource("9_fqfe5")
+
+[node name="StaticBody3D" parent="Barrel_018" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_018" index="1"]
 
 [node name="Barrel_019" parent="." index="169"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
+[node name="StaticBody3D" parent="Barrel_019" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_019" index="1"]
 
 [node name="Barrel_020" parent="." index="170"]
 surface_material_override/0 = ExtResource("9_fqfe5")
+
+[node name="StaticBody3D" parent="Barrel_020" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_020" index="1"]
 
 [node name="Barrel_021" parent="." index="171"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
+[node name="StaticBody3D" parent="Barrel_021" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_021" index="1"]
 
 [node name="Barrel_022" parent="." index="172"]
 surface_material_override/0 = ExtResource("9_fqfe5")
+
+[node name="StaticBody3D" parent="Barrel_022" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_022" index="1"]
 
 [node name="Barrel_023" parent="." index="173"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
+[node name="StaticBody3D" parent="Barrel_023" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_023" index="1"]
 
 [node name="Barrel_024" parent="." index="174"]
 surface_material_override/0 = ExtResource("9_fqfe5")
+
+[node name="StaticBody3D" parent="Barrel_024" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_024" index="1"]
 
 [node name="Barrel_025" parent="." index="175"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
+[node name="StaticBody3D" parent="Barrel_025" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_025" index="1"]
 
 [node name="Big_Box_013" parent="." index="176"]
 surface_material_override/0 = ExtResource("6_g2mhg")
+
+[node name="StaticBody3D" parent="Big_Box_013" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box_013" index="1"]
 
 [node name="Small_Box_012" parent="." index="177"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
+[node name="StaticBody3D" parent="Small_Box_012" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_012" index="1"]
 
 [node name="Small_Box_018" parent="." index="178"]
 surface_material_override/0 = ExtResource("6_g2mhg")
+
+[node name="StaticBody3D" parent="Small_Box_018" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_018" index="1"]
 
 [node name="Small_Box_019" parent="." index="179"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
+[node name="StaticBody3D" parent="Small_Box_019" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_019" index="1"]
 
 [node name="Barrel_026" parent="." index="180"]
 surface_material_override/0 = ExtResource("9_fqfe5")
+
+[node name="StaticBody3D" parent="Barrel_026" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_026" index="1"]
 
 [node name="Barrel_027" parent="." index="181"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
+[node name="StaticBody3D" parent="Barrel_027" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_027" index="1"]
 
 [node name="Small_Box_020" parent="." index="182"]
 surface_material_override/0 = ExtResource("6_g2mhg")
 
+[node name="StaticBody3D" parent="Small_Box_020" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_020" index="1"]
 
 [node name="Small_Box_021" parent="." index="183"]
 surface_material_override/0 = ExtResource("6_g2mhg")
+
+[node name="StaticBody3D" parent="Small_Box_021" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_021" index="1"]
 
@@ -1272,20 +1609,36 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 surface_material_override/0 = SubResource("StandardMaterial3D_7jyla")
 surface_material_override/1 = SubResource("StandardMaterial3D_c6jd1")
 
+[node name="StaticBody3D" parent="Desk" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Desk" index="1"]
 
 [node name="Barrel_028" parent="." index="185"]
 surface_material_override/0 = ExtResource("9_fqfe5")
+
+[node name="StaticBody3D" parent="Barrel_028" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_028" index="1"]
 
 [node name="Barrel_029" parent="." index="186"]
 surface_material_override/0 = ExtResource("9_fqfe5")
 
+[node name="StaticBody3D" parent="Barrel_029" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="Barrel_029" index="1"]
 
 [node name="Small_Box_022" parent="." index="187"]
 surface_material_override/0 = ExtResource("6_g2mhg")
+
+[node name="StaticBody3D" parent="Small_Box_022" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_022" index="1"]
 
@@ -1293,69 +1646,125 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 surface_material_override/0 = SubResource("StandardMaterial3D_ymyro")
 surface_material_override/1 = ExtResource("11_fue28")
 
+[node name="StaticBody3D" parent="DropPod" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "HollowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="DropPod" index="1"]
 
 [node name="DropPod_001" parent="." index="189"]
 surface_material_override/0 = ExtResource("11_fue28")
+
+[node name="StaticBody3D" parent="DropPod_001" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "HollowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="DropPod_001" index="1"]
 
 [node name="DropPod_002" parent="." index="190"]
 surface_material_override/0 = ExtResource("11_fue28")
 
+[node name="StaticBody3D" parent="DropPod_002" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "HollowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="DropPod_002" index="1"]
 
 [node name="DropPod_003" parent="." index="191"]
 surface_material_override/0 = ExtResource("11_fue28")
+
+[node name="StaticBody3D" parent="DropPod_003" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "HollowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="DropPod_003" index="1"]
 
 [node name="DropPod_004" parent="." index="192"]
 surface_material_override/0 = ExtResource("11_fue28")
 
+[node name="StaticBody3D" parent="DropPod_004" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "HollowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="DropPod_004" index="1"]
 
 [node name="DropPod_005" parent="." index="193"]
 surface_material_override/0 = ExtResource("11_fue28")
+
+[node name="StaticBody3D" parent="DropPod_005" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "HollowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="DropPod_005" index="1"]
 
 [node name="DropPod_006" parent="." index="194"]
 surface_material_override/0 = ExtResource("11_fue28")
 
+[node name="StaticBody3D" parent="DropPod_006" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "HollowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="DropPod_006" index="1"]
 
 [node name="DropPod_007" parent="." index="195"]
 surface_material_override/0 = ExtResource("11_fue28")
+
+[node name="StaticBody3D" parent="DropPod_007" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "HollowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="DropPod_007" index="1"]
 
 [node name="DropPod_008" parent="." index="196"]
 surface_material_override/0 = ExtResource("11_fue28")
 
+[node name="StaticBody3D" parent="DropPod_008" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "HollowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="DropPod_008" index="1"]
 
 [node name="DropPod_009" parent="." index="197"]
 surface_material_override/0 = ExtResource("11_fue28")
+
+[node name="StaticBody3D" parent="DropPod_009" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "HollowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="DropPod_009" index="1"]
 
 [node name="DropPod_010" parent="." index="198"]
 surface_material_override/0 = ExtResource("11_fue28")
 
+[node name="StaticBody3D" parent="DropPod_010" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "HollowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="DropPod_010" index="1"]
 
 [node name="DropPod_011" parent="." index="199"]
 surface_material_override/0 = ExtResource("11_fue28")
+
+[node name="StaticBody3D" parent="DropPod_011" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "HollowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="DropPod_011" index="1"]
 
 [node name="DropPod_012" parent="." index="200"]
 surface_material_override/0 = ExtResource("11_fue28")
 
+[node name="StaticBody3D" parent="DropPod_012" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "HollowMetal"
+
 [node name="AkGeometry" type="AkGeometry" parent="DropPod_012" index="1"]
 
 [node name="DropPod_door" parent="." index="201"]
 surface_material_override/0 = ExtResource("11_fue28")
+
+[node name="StaticBody3D" parent="DropPod_door" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "HollowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="DropPod_door" index="1"]

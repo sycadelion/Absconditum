@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4juwh1tsimcx"]
+[gd_scene load_steps=3 format=3 uid="uid://c4juwh1tsimcx"]
 
 [ext_resource type="PackedScene" uid="uid://bxs6at26ch0so" path="res://8 Assets/Models/Malice_typeM.glb" id="1_nyhy8"]
+[ext_resource type="Material" uid="uid://gsnjhl57qwdk" path="res://4 Resources/Shaders/player_shader_mat.tres" id="2_4le47"]
 
 [node name="Malice_typeM" instance=ExtResource("1_nyhy8")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="Cube_001" parent="." index="0"]
+material_override = ExtResource("2_4le47")

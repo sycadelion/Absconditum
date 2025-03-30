@@ -3,6 +3,7 @@ shader_type spatial;
 render_mode unshaded;
 
 #include "funcs.gdshaderinc"
+uniform bool enabled = true;
 uniform vec3 spherePos;
 uniform vec3 borderColor: source_color;
 uniform float borderSize;
@@ -20,6 +21,7 @@ void vertex() {
 }
 
 void fragment() {
+	if (enabled){
 	vec3 p = wVex-spherePos;
 	float sdfSphere = sdSphere(p,sphereRadius);
 	sdfSphere += (snoise(p*noiseSize+TIME*noiseSpeed)*noiseStrength);
@@ -33,4 +35,5 @@ void fragment() {
 	vec3 bcol = borderColor;
 	ALBEDO = (mix(bcol,albcolor,borderDist));
 	EMISSION = (mix(bcol * 7.0,vec3(0.0),borderDist));
+	}
 }
