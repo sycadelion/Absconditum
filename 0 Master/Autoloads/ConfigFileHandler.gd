@@ -7,6 +7,7 @@ var config = ConfigFile.new()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if !FileAccess.file_exists(save_path):
+		GameManager.emptyConfig = true
 		set_defaults()
 		config.save(save_path)
 	else:
@@ -14,10 +15,12 @@ func _ready() -> void:
 		var save_ver = ConfigFileHandler.load_user_settings()
 		if save_ver.save_version != GameManager.Save_version:
 			config.clear()
+			GameManager.emptyConfig = true
 			set_defaults()
 			config.save(save_path)
 			config.load(save_path)
 		else:
+			GameManager.emptyConfig = false
 			return
 
 func save_mouse_settings(key: String, value):

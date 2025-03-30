@@ -5,6 +5,7 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_og3xl")
+shader_parameter/enabled = true
 shader_parameter/spherePos = Vector3(0, 0, 0)
 shader_parameter/borderColor = Color(0.810186, 0, 0.150926, 1)
 shader_parameter/borderSize = 0.0

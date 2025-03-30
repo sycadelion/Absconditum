@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://1vtabgmdqbya"]
+[gd_scene load_steps=12 format=3 uid="uid://1vtabgmdqbya"]
 
 [ext_resource type="Script" uid="uid://dkmriobqrw3jy" path="res://7 GUI/Menus/main_menu.gd" id="1_r4jl4"]
 [ext_resource type="PackedScene" uid="uid://b7kqgr0bkm3s6" path="res://7 GUI/background_container.tscn" id="2_reh62"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cwd15gx5hshw5" path="res://7 GUI/Menus/match_settings.tscn" id="7_jslx7"]
 [ext_resource type="PackedScene" uid="uid://ibr5tw3jo2xn" path="res://7 GUI/disconnected_from_server.tscn" id="8_3wo6v"]
 [ext_resource type="WwiseEvent" uid="uid://dk2wdc7661f3o" path="res://Wwise/resources/Event/{53037DEB-F63C-4710-8072-54EFD294BCB0}.tres" id="9_sjt0m"]
+[ext_resource type="WwiseEvent" uid="uid://bpc3mfvfm1yrq" path="res://Wwise/resources/Event/{1D0D8EA8-D697-496F-AEEA-239402382028}.tres" id="10_sbu0f"]
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vaxh2"]
 
@@ -143,6 +144,9 @@ offset_bottom = -25.0
 event = ExtResource("9_sjt0m")
 trigger_on = 2
 stop_on = 3
+
+[node name="UiAudio" type="AkEvent2D" parent="."]
+event = ExtResource("10_sbu0f")
 
 [connection signal="mouse_entered" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Host" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Host" to="." method="_on_host_pressed"]

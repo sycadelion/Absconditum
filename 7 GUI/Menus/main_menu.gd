@@ -1,6 +1,7 @@
 extends Control
 
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
+@onready var ui_audio: AkEvent2D = $UiAudio
 
 var settings: bool = false
 var Matchsettings: bool = false
@@ -11,7 +12,9 @@ func _ready() -> void:
 	GameManager.paused = false
 	GameManager.host_mode = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-
+	if GameManager.emptyConfig:
+		GameManager.fire_prompt("Your Settings Have Been Reset",self)
+		
 func _on_host_pressed() -> void:
 	_on_click()
 	$Match_Settings.show()
@@ -46,19 +49,18 @@ func _on_match_back_button_pressed() -> void:
 
 
 func _on_host_game_button_pressed() -> void:
+	_on_click()
 	GameManager.host_mode = true
 	SceneLoad.Change_Scene(GAME_SCENE)
 
 
 func _on_mouse_entered() -> void:
-	pass
-	#audio_player.set_parameter("GUI","Hover")
-	#audio_player.play()
+	Wwise.set_switch("Menus","Hover",ui_audio)
+	ui_audio.post_event()
 
 func _on_click() -> void:
-	pass
-	#audio_player.set_parameter("GUI","Click")
-	#audio_player.play()
+	Wwise.set_switch("Menus","Click",ui_audio)
+	ui_audio.post_event()
 
 
 func _on_music_music_sync_exit(_data: Dictionary) -> void:

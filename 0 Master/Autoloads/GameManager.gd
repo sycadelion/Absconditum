@@ -1,6 +1,7 @@
 extends Node
 
 const LOCAL_HOST = "127.0.0.1"
+const promptObj = preload("res://7 GUI/Menus/prompt.tscn")
 var PLAYER: Player
 
 var host_mode = false
@@ -11,6 +12,7 @@ var UserName: String
 
 #game version only changing for save files
 var Save_version: int = 2
+var emptyConfig: bool = true
 
 #customize match settings:
 var skill_Cooldown = 5
@@ -61,3 +63,8 @@ func _notification(what: int) -> void:
 		ConfigFileHandler.save_graphic_settings("fullscreen",SettingsManager.FullscreenBool)
 		await get_tree().create_timer(0.01).timeout
 		get_tree().quit()
+
+func fire_prompt(text:String, parent:Node):
+	var promptCopy = promptObj.instantiate()
+	parent.add_child(promptCopy)
+	promptCopy.set_data(text)

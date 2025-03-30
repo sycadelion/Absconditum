@@ -1,5 +1,6 @@
 extends Control
 
+@onready var menu_audio: AkEvent2D = $MenuAudio
 @export var edit_name: bool = true
 @onready var audio_master: LineEdit = $"GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Master Text/GridContainer/MasterEdit"
 @onready var audio_music: LineEdit = $"GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Music Text/GridContainer/MusicEdit"
@@ -7,6 +8,7 @@ extends Control
 @onready var audio_foot: LineEdit = $"GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Foot Text/GridContainer/FootEdit"
 @onready var player_name: LineEdit = $GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/player_name
 @onready var mouse_sens: LineEdit = $GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/LineEdit
+
 
 #menus
 @onready var audio: PanelContainer = $GridContainer/Audio
@@ -62,6 +64,7 @@ func update_text():
 
 
 func _audio_pressed() -> void:
+	mouse_click()
 	if active_menu != null:
 		active_menu.hide()
 		audio.show()
@@ -69,6 +72,7 @@ func _audio_pressed() -> void:
 
 
 func _graphics_pressed() -> void:
+	mouse_click()
 	if active_menu != null:
 		active_menu.hide()
 		graphics.show()
@@ -76,6 +80,7 @@ func _graphics_pressed() -> void:
 
 
 func _keybinds_pressed() -> void:
+	mouse_click()
 	if active_menu != null:
 		active_menu.hide()
 		keybinds.show()
@@ -83,6 +88,7 @@ func _keybinds_pressed() -> void:
 
 
 func _user_pressed() -> void:
+	mouse_click()
 	if active_menu != null:
 		active_menu.hide()
 		user.show()
@@ -107,8 +113,19 @@ func _check_settings():
 
 
 func _on_fullscreen_check_toggled(toggled_on: bool) -> void:
+	mouse_click()
 	SettingsManager.FullscreenBool = toggled_on
 	if toggled_on:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+func mouse_hover():
+	if menu_audio:
+		Wwise.set_switch("Menus","Hover",menu_audio)
+		menu_audio.post_event()
+
+func mouse_click():
+	if menu_audio:
+		Wwise.set_switch("Menus","Click",menu_audio)
+		menu_audio.post_event()
