@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b14r1ojvpc7ou"
+path="res://.godot/imported/Parquet_Floor_Mono_03.wav-658b85a92ca6ac92d2ff9eb6a89173b3.sample"
+
+[deps]
+
+source_file="res://3 Sounds/Wwise Project/Absconditum/Originals/SFX/Parquet_Floor_Mono_03.wav"
+dest_files=["res://.godot/imported/Parquet_Floor_Mono_03.wav-658b85a92ca6ac92d2ff9eb6a89173b3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

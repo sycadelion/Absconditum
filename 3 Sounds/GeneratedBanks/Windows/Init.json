@@ -328,6 +328,12 @@
         "GUID": "{E9F48228-2CDE-4CFA-970B-F235B65482FA}"
        },
        {
+        "Id": "2058049674",
+        "Name": "Wood",
+        "ObjectPath": "\\Switches\\Default Work Unit\\MaterialFeet\\Wood",
+        "GUID": "{3FF60EA8-69A8-40A8-98A3-081691369967}"
+       },
+       {
         "Id": "2305815328",
         "Name": "Boots",
         "ObjectPath": "\\Switches\\Default Work Unit\\MaterialFeet\\Boots",
@@ -350,6 +356,6 @@
     ]
    }
   ],
-  "FileHash": "{580CFC7E-8715-96A4-6020-77034DC62BC0}"
+  "FileHash": "{4F57B50D-AFDE-2931-2BE9-E456654A29FE}"
  }
 }

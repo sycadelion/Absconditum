@@ -10,6 +10,7 @@
 						<Switch Name="HollowMetal" ID="{1458BD1A-B11D-484C-A5B1-7528C818FEA4}"/>
 						<Switch Name="LowMetal" ID="{E9F48228-2CDE-4CFA-970B-F235B65482FA}"/>
 						<Switch Name="Boots" ID="{9D50E2B9-6CCE-48C9-8246-259397CB103B}"/>
+						<Switch Name="Wood" ID="{3FF60EA8-69A8-40A8-98A3-081691369967}"/>
 					</ChildrenList>
 				</SwitchGroup>
 				<SwitchGroup Name="Gun" ID="{D11084CE-7C28-4EEA-8B3D-92420FC125EF}">

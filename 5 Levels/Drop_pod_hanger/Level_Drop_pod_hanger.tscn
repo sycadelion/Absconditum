@@ -1,18 +1,27 @@
-[gd_scene load_steps=14 format=3 uid="uid://ddut4ym5suydp"]
+[gd_scene load_steps=17 format=3 uid="uid://ddut4ym5suydp"]
 
 [ext_resource type="Material" uid="uid://ys5y4m34ptf6" path="res://4 Resources/Shaders/Skybox_mat.tres" id="1_fm5q2"]
 [ext_resource type="Script" uid="uid://78x7jvl31pcx" path="res://5 Levels/Hub/hub.gd" id="1_xthv6"]
 [ext_resource type="PackedScene" uid="uid://c33psuu1qtqd3" path="res://5 Levels/Drop_pod_hanger/import/drop_pod_hanger.tscn" id="2_7rrye"]
 [ext_resource type="PackedScene" uid="uid://f7itocgajf8o" path="res://1 Player/player.tscn" id="2_iocvr"]
+[ext_resource type="Shader" uid="uid://cjdb02g73oelo" path="res://4 Resources/Shaders/Grad_dither.gdshader" id="3_ew54u"]
 [ext_resource type="PackedScene" uid="uid://btea2veyjc17u" path="res://6 Online/SpawnPoint.tscn" id="3_ku60f"]
 [ext_resource type="PackedScene" uid="uid://d4ckpg8arvmqx" path="res://6 Online/spawn_screen.tscn" id="6_46imq"]
 [ext_resource type="WwiseAuxBus" uid="uid://chdq4cvfbqh4h" path="res://Wwise/resources/Aux Bus/{BDA45880-AFFB-4C92-B1CB-D625CA3527EE}.tres" id="7_2q5xx"]
 [ext_resource type="WwiseAuxBus" uid="uid://d31bi64c126h7" path="res://Wwise/resources/Aux Bus/{473BA46A-C8E9-40A4-AC90-E207E8CA32FA}.tres" id="8_ece8c"]
+[ext_resource type="PackedScene" uid="uid://nxibb70kqrmn" path="res://8 Assets/Props/item_spawn_point.tscn" id="10_hj0wa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2q5xx"]
+shader = ExtResource("3_ew54u")
+shader_parameter/enabled = true
+shader_parameter/dithering = true
+shader_parameter/colors = 8
+shader_parameter/dither_size = 2
 
 [sub_resource type="Sky" id="Sky_8f814"]
 sky_material = ExtResource("1_fm5q2")
 
-[sub_resource type="Environment" id="Environment_yn00g"]
+[sub_resource type="Environment" id="Environment_2q5xx"]
 background_mode = 2
 background_color = Color(0.203922, 0.113725, 0, 1)
 sky = SubResource("Sky_8f814")
@@ -23,9 +32,11 @@ fog_light_color = Color(0.57, 0.343995, 0.2223, 1)
 fog_sun_scatter = 0.14
 fog_density = 0.2311
 volumetric_fog_enabled = true
-volumetric_fog_albedo = Color(0.506346, 0.0985438, 0.548278, 1)
+volumetric_fog_density = 0.08
+volumetric_fog_albedo = Color(0.2754, 0.054, 0.3, 1)
 volumetric_fog_emission = Color(0.276803, 0.137464, 0.273613, 1)
 volumetric_fog_length = 10.0
+adjustment_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yedmx"]
 size = Vector3(90, 70, 60)
@@ -38,118 +49,173 @@ size = Vector3(24.9996, 20, 62.1086)
 
 [node name="LevelDropPodHanger" type="Node3D" node_paths=PackedStringArray("players_container", "player_spawner")]
 script = ExtResource("1_xthv6")
-players_container = NodePath("Players")
+players_container = NodePath("SubViewportContainer/SubViewport/Players")
 player_scene = ExtResource("2_iocvr")
-player_spawner = NodePath("MultiplayerSpawner")
+player_spawner = NodePath("SubViewportContainer/SubViewport/MultiplayerSpawner")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_yn00g")
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_2q5xx")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+stretch = true
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
+environment = SubResource("Environment_2q5xx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -6, 4, 0)
 
-[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." groups=["Spawner"]]
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="SubViewportContainer/SubViewport" groups=["Spawner"]]
 spawn_path = NodePath("../Players")
 spawn_limit = 8
 
-[node name="Level_Drop_pod_Hanger" parent="." instance=ExtResource("2_7rrye")]
+[node name="Level_Drop_pod_Hanger" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_7rrye")]
 
-[node name="Players" type="Node3D" parent="."]
+[node name="Players" type="Node3D" parent="SubViewportContainer/SubViewport"]
 
-[node name="SkillContainer" type="Node3D" parent="." groups=["SkillContainer"]]
+[node name="SkillContainer" type="Node3D" parent="SubViewportContainer/SubViewport" groups=["SkillContainer"]]
 
-[node name="Spawn_points" type="Node3D" parent="."]
+[node name="Spawn_points" type="Node3D" parent="SubViewportContainer/SubViewport"]
 
-[node name="SpawnPoint" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+[node name="SpawnPoint" parent="SubViewportContainer/SubViewport/Spawn_points" instance=ExtResource("3_ku60f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56044, 1, 50)
 
-[node name="SpawnPoint2" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+[node name="SpawnPoint2" parent="SubViewportContainer/SubViewport/Spawn_points" instance=ExtResource("3_ku60f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7875, 1, 42.9123)
 
-[node name="SpawnPoint3" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+[node name="SpawnPoint3" parent="SubViewportContainer/SubViewport/Spawn_points" instance=ExtResource("3_ku60f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7875, 3.87525, 72.9058)
 
-[node name="SpawnPoint4" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+[node name="SpawnPoint4" parent="SubViewportContainer/SubViewport/Spawn_points" instance=ExtResource("3_ku60f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7177, 3.87525, 77.7482)
 
-[node name="SpawnPoint5" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+[node name="SpawnPoint5" parent="SubViewportContainer/SubViewport/Spawn_points" instance=ExtResource("3_ku60f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.130496, 3.87525, 74.0555)
 
-[node name="SpawnPoint6" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+[node name="SpawnPoint6" parent="SubViewportContainer/SubViewport/Spawn_points" instance=ExtResource("3_ku60f")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 30.6011, 1, -42.6674)
 
-[node name="SpawnPoint7" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+[node name="SpawnPoint7" parent="SubViewportContainer/SubViewport/Spawn_points" instance=ExtResource("3_ku60f")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.746796, 1, -42.4561)
 
-[node name="SpawnPoint8" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+[node name="SpawnPoint8" parent="SubViewportContainer/SubViewport/Spawn_points" instance=ExtResource("3_ku60f")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.746793, 3.87525, -72.4496)
 
-[node name="SpawnPoint9" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+[node name="SpawnPoint9" parent="SubViewportContainer/SubViewport/Spawn_points" instance=ExtResource("3_ku60f")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.323, 3.87525, -77.292)
 
-[node name="SpawnPoint10" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+[node name="SpawnPoint10" parent="SubViewportContainer/SubViewport/Spawn_points" instance=ExtResource("3_ku60f")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 29.1712, 3.87525, -73.5993)
 
-[node name="SpawnPoint11" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+[node name="SpawnPoint11" parent="SubViewportContainer/SubViewport/Spawn_points" instance=ExtResource("3_ku60f")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -45.1442, 7.79445, -67.383)
 
-[node name="SpawnPoint12" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+[node name="SpawnPoint12" parent="SubViewportContainer/SubViewport/Spawn_points" instance=ExtResource("3_ku60f")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -52.9031, 14.3551, -25.7756)
 
-[node name="SpawnPoint13" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+[node name="SpawnPoint13" parent="SubViewportContainer/SubViewport/Spawn_points" instance=ExtResource("3_ku60f")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -52.9031, 14.3551, 25.4324)
 
-[node name="SpawnPoint14" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+[node name="SpawnPoint14" parent="SubViewportContainer/SubViewport/Spawn_points" instance=ExtResource("3_ku60f")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -52.9031, 20.2425, 0.274902)
 
-[node name="SpawnPoint15" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+[node name="SpawnPoint15" parent="SubViewportContainer/SubViewport/Spawn_points" instance=ExtResource("3_ku60f")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -45.6724, 7.82345, 67.9353)
 
-[node name="SpawnPoint16" parent="Spawn_points" instance=ExtResource("3_ku60f")]
+[node name="SpawnPoint16" parent="SubViewportContainer/SubViewport/Spawn_points" instance=ExtResource("3_ku60f")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.539011, 0.956946, 0.317714)
 
-[node name="Spawning Cam" type="Camera3D" parent="."]
-transform = Transform3D(-3.72577e-08, -0.52296, 0.852357, -2.28593e-08, 0.852357, 0.52296, -1, 0, -4.37114e-08, 45.7677, 17, 0)
+[node name="Spawning Cam" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(-3.72577e-08, -0.52296, 0.852357, -2.28593e-08, 0.852357, 0.52296, -1, 1.77636e-15, -4.37114e-08, 45.7677, 17, 0)
 
-[node name="Ingame Stuff" type="CanvasLayer" parent="."]
+[node name="Ingame Stuff" type="CanvasLayer" parent="SubViewportContainer/SubViewport"]
 visible = false
 
-[node name="Spawn Screen" parent="Ingame Stuff" instance=ExtResource("6_46imq")]
+[node name="Spawn Screen" parent="SubViewportContainer/SubViewport/Ingame Stuff" instance=ExtResource("6_46imq")]
 
-[node name="Gun slot 1" parent="Ingame Stuff/Spawn Screen/PanelContainer/VBoxContainer" index="3"]
+[node name="Gun slot 1" parent="SubViewportContainer/SubViewport/Ingame Stuff/Spawn Screen/PanelContainer/VBoxContainer" index="3"]
 popup/item_0/id = 0
 
-[node name="Gun slot 2" parent="Ingame Stuff/Spawn Screen/PanelContainer/VBoxContainer" index="6"]
+[node name="Gun slot 2" parent="SubViewportContainer/SubViewport/Ingame Stuff/Spawn Screen/PanelContainer/VBoxContainer" index="6"]
 popup/item_0/id = 0
 
-[node name="Big_Room" type="AkRoom" parent="."]
+[node name="Big_Room" type="AkRoom" parent="SubViewportContainer/SubViewport"]
 aux_bus = ExtResource("7_2q5xx")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Big_Room"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Big_Room"]
 shape = SubResource("BoxShape3D_yedmx")
 
-[node name="TeamA_Room" type="AkRoom" parent="."]
+[node name="TeamA_Room" type="AkRoom" parent="SubViewportContainer/SubViewport"]
 aux_bus = ExtResource("8_ece8c")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -70)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TeamA_Room"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/TeamA_Room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.13049, 0, 14.8262)
 shape = SubResource("BoxShape3D_x2o1t")
 
-[node name="Control_Room" type="AkRoom" parent="."]
+[node name="Control_Room" type="AkRoom" parent="SubViewportContainer/SubViewport"]
 aux_bus = ExtResource("8_ece8c")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.8318, 21.156, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Control_Room"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Control_Room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.49982, 0, -0.428345)
 shape = SubResource("BoxShape3D_2q5xx")
 
-[node name="TeamB_Room" type="AkRoom" parent="."]
+[node name="TeamB_Room" type="AkRoom" parent="SubViewportContainer/SubViewport"]
 aux_bus = ExtResource("8_ece8c")
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 70)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TeamB_Room"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/TeamB_Room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.13049, 0, 14.8262)
 shape = SubResource("BoxShape3D_x2o1t")
 
-[editable path="Ingame Stuff/Spawn Screen"]
+[node name="Item_SpawnPoint" parent="SubViewportContainer/SubViewport" instance=ExtResource("10_hj0wa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4531, 0, 0)
+HealthDrop = true
+
+[node name="Item_SpawnPoint11" parent="SubViewportContainer/SubViewport" instance=ExtResource("10_hj0wa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9025, 13.9941, 28.8627)
+HealthDrop = true
+
+[node name="Item_SpawnPoint12" parent="SubViewportContainer/SubViewport" instance=ExtResource("10_hj0wa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9025, 13.9941, -29.0022)
+HealthDrop = true
+
+[node name="Item_SpawnPoint5" parent="SubViewportContainer/SubViewport" instance=ExtResource("10_hj0wa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.3842, 0, -18.3195)
+
+[node name="Item_SpawnPoint9" parent="SubViewportContainer/SubViewport" instance=ExtResource("10_hj0wa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12052, 0.372382, -48.2768)
+
+[node name="Item_SpawnPoint10" parent="SubViewportContainer/SubViewport" instance=ExtResource("10_hj0wa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0013, 3.37089, -70.6201)
+
+[node name="Item_SpawnPoint4" parent="SubViewportContainer/SubViewport" instance=ExtResource("10_hj0wa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5299, 0, 19.9243)
+
+[node name="Item_SpawnPoint7" parent="SubViewportContainer/SubViewport" instance=ExtResource("10_hj0wa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13777, 0.355501, 45.4746)
+
+[node name="Item_SpawnPoint8" parent="SubViewportContainer/SubViewport" instance=ExtResource("10_hj0wa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9393, 3.40428, 71.3799)
+
+[node name="Item_SpawnPoint3" parent="SubViewportContainer/SubViewport" instance=ExtResource("10_hj0wa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.4191, 6.30822, 9.0965)
+
+[node name="Item_SpawnPoint6" parent="SubViewportContainer/SubViewport" instance=ExtResource("10_hj0wa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.1297, 20.0096, 1.80632)
+HealthDrop = true
+
+[node name="Item_SpawnPoint2" parent="SubViewportContainer/SubViewport" instance=ExtResource("10_hj0wa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.6205, 6.29896, -11.6252)
+
+[editable path="SubViewportContainer/SubViewport/Ingame Stuff/Spawn Screen"]

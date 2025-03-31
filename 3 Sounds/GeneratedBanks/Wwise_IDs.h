@@ -61,6 +61,7 @@ namespace AK
                 static const AkUniqueID HOLLOWMETAL = 3762184421U;
                 static const AkUniqueID LINO = 136358821U;
                 static const AkUniqueID LOWMETAL = 903661822U;
+                static const AkUniqueID WOOD = 2058049674U;
             } // namespace SWITCH
         } // namespace MATERIALFEET
 

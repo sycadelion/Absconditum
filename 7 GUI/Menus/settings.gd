@@ -1,6 +1,7 @@
 extends Control
 
 @onready var menu_audio: AkEvent2D = $MenuAudio
+@export var palettes = []
 @export var edit_name: bool = true
 @onready var audio_master: LineEdit = $"GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Master Text/GridContainer/MasterEdit"
 @onready var audio_music: LineEdit = $"GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Music Text/GridContainer/MusicEdit"
@@ -8,7 +9,7 @@ extends Control
 @onready var audio_foot: LineEdit = $"GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Foot Text/GridContainer/FootEdit"
 @onready var player_name: LineEdit = $GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/player_name
 @onready var mouse_sens: LineEdit = $GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/LineEdit
-
+@onready var palette_button: OptionButton = $GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/PaletteSelc/palette_button
 
 #menus
 @onready var audio: PanelContainer = $GridContainer/Audio
@@ -21,6 +22,7 @@ var Text_Focused = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameManager.palette = palettes[palette_button.selected]
 	var index = 0
 	#adds list of resolutions
 	for r in SettingsManager.resolutions_dic:
@@ -129,3 +131,7 @@ func mouse_click():
 	if menu_audio:
 		Wwise.set_switch("Menus","Click",menu_audio)
 		menu_audio.post_event()
+
+
+func _on_palette_button_item_selected(index: int) -> void:
+	GameManager.palette = palettes[index]

@@ -637,11 +637,143 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Wood" ID="{B5659D37-079D-4766-933F-D9E2C6AF2DB0}" ShortID="927232134">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>7</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Parquet_Floor_Mono_01" ID="{2E225E95-03E3-4D13-9A2B-4B646CFED3B7}" ShortID="405734699">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Parquet_Floor_Mono_01" ID="{41CDB447-BFDC-4897-8FEE-567F81CDDE82}">
+											<Language>SFX</Language>
+											<AudioFile>Parquet_Floor_Mono_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="143200575"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Parquet_Floor_Mono_01" ID="{41CDB447-BFDC-4897-8FEE-567F81CDDE82}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Parquet_Floor_Mono_02" ID="{63D1BB01-B5B9-4111-824E-86F6FC976C06}" ShortID="343842136">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Parquet_Floor_Mono_02" ID="{C76AB421-056C-4BE1-AE1C-5DE04040D091}">
+											<Language>SFX</Language>
+											<AudioFile>Parquet_Floor_Mono_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="212203323"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Parquet_Floor_Mono_02" ID="{C76AB421-056C-4BE1-AE1C-5DE04040D091}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Parquet_Floor_Mono_03" ID="{A53D9A26-71FA-45C2-AC2E-41C55A276D67}" ShortID="882997309">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Parquet_Floor_Mono_03" ID="{DF372276-E6C2-46AB-AFE8-2276E98D3789}">
+											<Language>SFX</Language>
+											<AudioFile>Parquet_Floor_Mono_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="588762390"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Parquet_Floor_Mono_03" ID="{DF372276-E6C2-46AB-AFE8-2276E98D3789}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Parquet_Floor_Mono_04" ID="{60606004-1375-43E0-9AF9-299914AB2482}" ShortID="907872195">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Parquet_Floor_Mono_04" ID="{B4416A36-0499-421E-9322-81D77BED3082}">
+											<Language>SFX</Language>
+											<AudioFile>Parquet_Floor_Mono_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="295811300"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Parquet_Floor_Mono_04" ID="{B4416A36-0499-421E-9322-81D77BED3082}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Parquet_Floor_Mono_05" ID="{804A3511-4F2B-4F31-AFA7-6360CBEDB4C6}" ShortID="543899885">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Parquet_Floor_Mono_05" ID="{80A072F5-6897-47A9-815B-6CCB9ADD4A78}">
+											<Language>SFX</Language>
+											<AudioFile>Parquet_Floor_Mono_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="353233643"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Parquet_Floor_Mono_05" ID="{80A072F5-6897-47A9-815B-6CCB9ADD4A78}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
 					</ChildrenList>
 					<GroupingInfo>
 						<GroupingBehaviorList>
 							<GroupingBehavior>
 								<ItemRef Name="HollowMetal" ID="{63226B17-FDE8-46D8-AE93-4F5D52A4A8B1}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Wood" ID="{B5659D37-079D-4766-933F-D9E2C6AF2DB0}"/>
 							</GroupingBehavior>
 							<GroupingBehavior>
 								<ItemRef Name="LowMetal" ID="{58F7A579-1379-4DEC-A913-86099C850D35}"/>
@@ -679,6 +811,12 @@
 								<SwitchRef Name="Glass" ID="{61E1B399-856C-4ED0-91C8-6A8A26BB2F23}"/>
 								<ItemList>
 									<ItemRef Name="Glass" ID="{A81CB7F2-251F-4856-9B5A-0184374DFE6C}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Wood" ID="{3FF60EA8-69A8-40A8-98A3-081691369967}"/>
+								<ItemList>
+									<ItemRef Name="Wood" ID="{B5659D37-079D-4766-933F-D9E2C6AF2DB0}"/>
 								</ItemList>
 							</Grouping>
 							<Grouping>

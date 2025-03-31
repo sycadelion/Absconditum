@@ -376,6 +376,22 @@ albedo_texture = ExtResource("10_70juu")
 
 [node name="Level_Drop_pod_Hanger" instance=ExtResource("1_d8ucl")]
 
+[node name="StaticBody3D" parent="Step" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "Lino"
+
+[node name="StaticBody3D" parent="Step_001" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "Lino"
+
+[node name="StaticBody3D" parent="Step_002" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "Lino"
+
+[node name="StaticBody3D" parent="Step_003" index="0"]
+script = ExtResource("2_3kp6s")
+materialName = "Lino"
+
 [node name="Oct_hole" parent="." index="4"]
 mesh = SubResource("ArrayMesh_s2gx5")
 
@@ -980,7 +996,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Big_Box" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box" index="1"]
 
@@ -989,7 +1005,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Big_Box_001" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box_001" index="1"]
 
@@ -998,7 +1014,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Big_Box_002" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box_002" index="1"]
 
@@ -1007,7 +1023,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Big_Box_003" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box_003" index="1"]
 
@@ -1016,7 +1032,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Big_Box_004" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box_004" index="1"]
 
@@ -1025,7 +1041,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Big_Box_005" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box_005" index="1"]
 
@@ -1034,7 +1050,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Big_Box_006" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box_006" index="1"]
 
@@ -1079,7 +1095,7 @@ surface_material_override/0 = ExtResource("8_ujoaa")
 
 [node name="StaticBody3D" parent="Metal_sheet" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "HollowMetal"
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Metal_sheet" index="1"]
 
@@ -1088,7 +1104,7 @@ surface_material_override/0 = ExtResource("8_ujoaa")
 
 [node name="StaticBody3D" parent="Metal_sheet_001" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "HollowMetal"
+materialName = "LowMetal"
 
 [node name="AkGeometry" type="AkGeometry" parent="Metal_sheet_001" index="1"]
 
@@ -1097,7 +1113,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Small_Box_001" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_001" index="1"]
 
@@ -1106,7 +1122,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Small_Box_002" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_002" index="1"]
 
@@ -1115,7 +1131,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Small_Box_003" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_003" index="1"]
 
@@ -1124,7 +1140,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Small_Box_004" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_004" index="1"]
 
@@ -1133,7 +1149,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Small_Box_005" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_005" index="1"]
 
@@ -1142,7 +1158,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Small_Box_006" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_006" index="1"]
 
@@ -1151,7 +1167,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Small_Box_007" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_007" index="1"]
 
@@ -1160,7 +1176,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Small_Box_008" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_008" index="1"]
 
@@ -1169,7 +1185,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Small_Box_009" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_009" index="1"]
 
@@ -1178,7 +1194,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Small_Box" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box" index="1"]
 
@@ -1187,7 +1203,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Small_Box_010" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_010" index="1"]
 
@@ -1196,7 +1212,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Small_Box_011" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_011" index="1"]
 
@@ -1205,7 +1221,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Small_Box_013" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_013" index="1"]
 
@@ -1214,7 +1230,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Big_Box_007" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box_007" index="1"]
 
@@ -1223,7 +1239,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Big_Box_008" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box_008" index="1"]
 
@@ -1232,7 +1248,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Big_Box_009" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box_009" index="1"]
 
@@ -1241,7 +1257,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Small_Box_014" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_014" index="1"]
 
@@ -1250,7 +1266,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Small_Box_015" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_015" index="1"]
 
@@ -1259,7 +1275,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Small_Box_016" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_016" index="1"]
 
@@ -1268,7 +1284,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Big_Box_010" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box_010" index="1"]
 
@@ -1277,7 +1293,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Big_Box_011" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box_011" index="1"]
 
@@ -1286,7 +1302,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Small_Box_017" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_017" index="1"]
 
@@ -1295,7 +1311,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Big_Box_012" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box_012" index="1"]
 
@@ -1538,7 +1554,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Big_Box_013" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Big_Box_013" index="1"]
 
@@ -1547,7 +1563,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Small_Box_012" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_012" index="1"]
 
@@ -1556,7 +1572,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Small_Box_018" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_018" index="1"]
 
@@ -1565,7 +1581,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Small_Box_019" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_019" index="1"]
 
@@ -1592,7 +1608,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Small_Box_020" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_020" index="1"]
 
@@ -1601,7 +1617,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Small_Box_021" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_021" index="1"]
 
@@ -1638,7 +1654,7 @@ surface_material_override/0 = ExtResource("6_g2mhg")
 
 [node name="StaticBody3D" parent="Small_Box_022" index="0"]
 script = ExtResource("2_3kp6s")
-materialName = "LowMetal"
+materialName = "Wood"
 
 [node name="AkGeometry" type="AkGeometry" parent="Small_Box_022" index="1"]
 

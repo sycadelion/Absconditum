@@ -27,3 +27,7 @@ func respawn_self():
 		Player.position = spawnPOS.SpawnPOS
 	else:
 		spawnPOS = GameManager.spawn_point_rng()
+
+@rpc("call_local","any_peer")
+func Heal_self():
+	health = MAX_HEALTH

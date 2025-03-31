@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bglvj405a8scx"]
+[gd_scene load_steps=7 format=3 uid="uid://bglvj405a8scx"]
 
 [ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu.tres" id="1_talt2"]
 [ext_resource type="Script" uid="uid://f8mlw7kacjfj" path="res://7 GUI/Menus/settings.gd" id="2_supjv"]
 [ext_resource type="PackedScene" uid="uid://cyol5v5lpw78x" path="res://7 GUI/Menus/setting_slider.tscn" id="3_gs1v7"]
+[ext_resource type="Texture2D" uid="uid://d321ejt6bigvh" path="res://8 Assets/Palettes/curiosities-8x.png" id="3_h00h5"]
 [ext_resource type="WwiseEvent" uid="uid://bpc3mfvfm1yrq" path="res://Wwise/resources/Event/{1D0D8EA8-D697-496F-AEEA-239402382028}.tres" id="4_p0ldj"]
+[ext_resource type="Texture2D" uid="uid://b5rv4mmsvj7w7" path="res://8 Assets/Palettes/slso8-8x.png" id="4_sblu0"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -16,6 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_talt2")
 script = ExtResource("2_supjv")
+palettes = [ExtResource("3_h00h5"), ExtResource("4_sblu0")]
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
@@ -313,6 +316,30 @@ layout_mode = 2
 alignment = 1
 allow_reselect = true
 
+[node name="HSeparator5" type="HSeparator" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="HSeparator6" type="HSeparator" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="PaletteLabel" type="Label" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Palette : "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PaletteSelc" type="CenterContainer" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="palette_button" type="OptionButton" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/PaletteSelc"]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/icon = ExtResource("3_h00h5")
+popup/item_0/id = 0
+popup/item_1/icon = ExtResource("4_sblu0")
+popup/item_1/id = 1
+
 [node name="Keybinds" type="PanelContainer" parent="GridContainer"]
 visible = false
 custom_minimum_size = Vector2(0, 388)
@@ -457,6 +484,9 @@ event = ExtResource("4_p0ldj")
 [connection signal="item_selected" from="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/PrimarySelect/PrimaryDrop" to="." method="_change_screen"]
 [connection signal="mouse_entered" from="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/PrimarySelect/PrimaryDrop" to="." method="mouse_hover"]
 [connection signal="pressed" from="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/PrimarySelect/PrimaryDrop" to="." method="mouse_click"]
+[connection signal="item_selected" from="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/PaletteSelc/palette_button" to="." method="_on_palette_button_item_selected"]
+[connection signal="mouse_entered" from="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/PaletteSelc/palette_button" to="." method="mouse_hover"]
+[connection signal="pressed" from="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/PaletteSelc/palette_button" to="." method="mouse_click"]
 [connection signal="mouse_entered" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/player_name" to="." method="mouse_hover"]
 [connection signal="text_changed" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/player_name" to="." method="_on_player_name_text_changed"]
 [connection signal="focus_entered" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/LineEdit" to="." method="_on_edit_focus_entered"]

@@ -29,6 +29,7 @@ var music_audio:int = 0
 var sfx_audio:int = 0
 var foot_audio:int = 0
 var menu_audio:int = 0
+var palette
 
 func _ready() -> void:
 	pass

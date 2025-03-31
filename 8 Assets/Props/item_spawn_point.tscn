@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://nxibb70kqrmn"]
+
+[ext_resource type="PackedScene" uid="uid://cftnpvmh3t3y3" path="res://8 Assets/Models/Item_SpawnPoint.glb" id="1_v6rmh"]
+[ext_resource type="Texture2D" uid="uid://c6qy0ruiuhq7h" path="res://8 Assets/Images/Free-Skill-32x32-Icons-for-Cyberpunk-Game/ammo.png" id="2_aa7rc"]
+[ext_resource type="Script" uid="uid://bswkc75nhmxfw" path="res://8 Assets/Props/item_spawn_point.gd" id="2_vq8su"]
+[ext_resource type="Script" uid="uid://ywjj5jyr5g0o" path="res://5 Levels/objMaterial.gd" id="3_p1462"]
+[ext_resource type="Texture2D" uid="uid://d3k4xbhpxc2fe" path="res://8 Assets/Images/Free-Skill-32x32-Icons-for-Cyberpunk-Game/health.png" id="3_vq8su"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_p1462"]
+
+[node name="Item_SpawnPoint" instance=ExtResource("1_v6rmh")]
+script = ExtResource("2_vq8su")
+
+[node name="StaticBody3D" parent="ItemSpawnPoint" index="0"]
+script = ExtResource("3_p1462")
+
+[node name="AkGeometry" type="AkGeometry" parent="ItemSpawnPoint/StaticBody3D" index="1"]
+
+[node name="AmmoIcon" type="Sprite3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375745, 0)
+billboard = 2
+texture = ExtResource("2_aa7rc")
+
+[node name="HealthIcon" type="Sprite3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375745, 0)
+visible = false
+billboard = 2
+texture = ExtResource("3_vq8su")
+
+[node name="Area3D" type="Area3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375745, 0)
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+shape = SubResource("SphereShape3D_p1462")
+
+[node name="Timer" type="Timer" parent="." index="4"]
+wait_time = 30.0
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

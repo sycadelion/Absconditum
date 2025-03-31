@@ -210,3 +210,7 @@ func shoot_empty():
 func reload():
 	Player.audio_comp.Play_reload(Current_weapon.Audio_Name,false)
 	anim_player.play(Current_weapon.Anim_reload)
+
+@rpc("call_local")
+func refill_ammo():
+	Current_weapon.Reserve_ammo = Current_weapon.Max_reserve

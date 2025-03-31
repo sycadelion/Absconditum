@@ -7,7 +7,7 @@ extends Node3D
 var player_count = 0
 
 func _enter_tree() -> void:
-	pass
+	update_enviro()
 
 func _ready() -> void:
 	await get_tree().process_frame
@@ -24,7 +24,10 @@ func _ready() -> void:
 	
 	for id in multiplayer.get_peers():
 		add_player(id)
-		
+
+func _process(_delta: float) -> void:
+	if Engine.get_process_frames() % 5 == 0:
+		update_enviro()
 
 func spawn_player(id):
 	var player_instance = player_scene.instantiate()
@@ -61,4 +64,7 @@ func delete_player(id):
 		return
 	
 	players_container.get_node(str(id)).queue_free()
-	
+
+func update_enviro():
+	var enviro:Environment = $SubViewportContainer/SubViewport/WorldEnvironment.environment
+	enviro.adjustment_color_correction = GameManager.palette
