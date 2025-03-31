@@ -24,6 +24,7 @@ func receive_damage(damage_value:int, attacker:int):
 func respawn_self():
 	var spawnPOS = GameManager.spawn_point_rng()
 	if spawnPOS.SpawnActive:
+		Player.weapon_manger.respawn_ammo.rpc()
 		Player.position = spawnPOS.SpawnPOS
 	else:
 		spawnPOS = GameManager.spawn_point_rng()

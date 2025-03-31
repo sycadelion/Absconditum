@@ -1350,6 +1350,11 @@ event = ExtResource("18_2lknx")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera3D/Voice/Area3D"]
 shape = SubResource("BoxShape3D_1ggn5")
 
+[node name="Flashlight" type="SpotLight3D" parent="Head/Camera3D"]
+visible = false
+spot_range = 7.9396
+spot_angle = 63.8852
+
 [node name="FeetCast" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.341633, 0)
 

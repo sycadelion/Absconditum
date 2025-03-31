@@ -100,6 +100,8 @@ func _input(event: InputEvent) -> void:
 
 @rpc("call_local")
 func Initialize(_Start_weapons):
+	Weapon_list.clear()
+	Current_weapon = null
 	#create dictionary to refer to weapons
 	for weapon in _weapon_resouces:
 		Weapon_list[weapon.Weapon_name] = weapon
@@ -214,3 +216,14 @@ func reload():
 @rpc("call_local")
 func refill_ammo():
 	Current_weapon.Reserve_ammo = Current_weapon.Max_reserve
+
+@rpc("call_local")
+func respawn_ammo():
+	if Player.owner_id != multiplayer.get_unique_id(): 
+		return
+	Weapon_list[Weapon_stack[0]].Current_ammo = Weapon_list[Weapon_stack[0]].Reload_ammo
+	Weapon_list[Weapon_stack[0]].Reserve_ammo = Weapon_list[Weapon_stack[0]].Max_reserve
+	Weapon_list[Weapon_stack[0]].Chambered_ammo = Weapon_list[Weapon_stack[0]].Max_Chambered_ammo
+	Weapon_list[Weapon_stack[1]].Current_ammo = Weapon_list[Weapon_stack[1]].Reload_ammo
+	Weapon_list[Weapon_stack[1]].Reserve_ammo = Weapon_list[Weapon_stack[1]].Max_reserve
+	Weapon_list[Weapon_stack[1]].Chambered_ammo = Weapon_list[Weapon_stack[1]].Max_Chambered_ammo

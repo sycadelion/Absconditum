@@ -17,12 +17,18 @@ func _ready() -> void:
 		
 func _on_host_pressed() -> void:
 	_on_click()
-	$Match_Settings.show()
-	$Menu.hide()
+	if GameManager.UserName == "":
+		GameManager.fire_prompt("Please enter a user name first under user settings",self)
+	else:
+		$Match_Settings.show()
+		$Menu.hide()
 
 func _on_join_pressed() -> void:
 	_on_click()
-	SceneLoad.Change_Scene(GAME_SCENE)
+	if GameManager.UserName == "":
+		GameManager.fire_prompt("Please enter a user name first under user settings",self)
+	else:
+		SceneLoad.Change_Scene(GAME_SCENE)
 
 
 func _on_quit_pressed() -> void:

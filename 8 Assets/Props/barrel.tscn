@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhduxadeknllw"]
+
+[ext_resource type="PackedScene" uid="uid://bjqsb5nyep5ts" path="res://8 Assets/Models/Barrel.glb" id="1_wgd1u"]
+[ext_resource type="Script" uid="uid://ywjj5jyr5g0o" path="res://5 Levels/objMaterial.gd" id="2_dvmbs"]
+
+[node name="Barrel" instance=ExtResource("1_wgd1u")]
+
+[node name="StaticBody3D" parent="Barrel" index="0"]
+script = ExtResource("2_dvmbs")
+materialName = "LowMetal"
+
+[node name="AkGeometry" type="AkGeometry" parent="Barrel" index="1"]

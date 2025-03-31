@@ -26,6 +26,7 @@ class_name WeaponResource extends Resource
 @export var Reserve_ammo: int ##Spare unloaded ammo
 @export var Max_reserve: int ##Max amount of spare unloaded ammo
 @export var Chambered_ammo: int ##The bullets in the chamber
+@export var Max_Chambered_ammo: int ##The max amount of bullets in the chamber
 
 
 @export_group("Fire Mode")

@@ -14,6 +14,7 @@ class_name Player extends CharacterBody3D
 @onready var state_machine: StateMachine = %StateMachine
 
 @onready var camera: Camera3D = $Head/Camera3D
+@onready var flashlight: SpotLight3D = $Head/Camera3D/Flashlight
 @onready var listener_area: Area3D = $Head/Camera3D/ListenerArea
 @onready var head: Node3D = $Head
 @onready var anim_player: AnimationPlayer = %AnimationPlayer
@@ -44,6 +45,7 @@ func _ready() -> void:
 		GameManager.PLAYER = self
 		camera.make_current()
 		bodyInvert.visible = false
+		flashlight.visible = true
 		var shaderMat:ShaderMaterial = bodyInvert.material_override
 		shaderMat.set_shader_parameter("enabled", false)
 		hud.visible = true
@@ -57,6 +59,7 @@ func _ready() -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	else:
 		camera.current = false
+		flashlight.visible = false
 		$Head/Camera3D/AkListener3D.is_default_listener = false
 		$Head/Camera3D/crossbow_shader.show()
 		var shaderMat:ShaderMaterial = bodyInvert.material_override
