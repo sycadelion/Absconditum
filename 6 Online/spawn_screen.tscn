@@ -30,7 +30,14 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 25
 text = "Spawn Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -42,16 +49,29 @@ layout_mode = 2
 text = "Weapon Slot 1"
 horizontal_alignment = 1
 
+[node name="Label3" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Gun slot 1" type="OptionButton" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 alignment = 1
 selected = 0
 item_count = 3
 popup/item_0/text = "Trauma"
+popup/item_0/id = 0
 popup/item_1/text = "Malice"
 popup/item_1/id = 1
 popup/item_2/text = "Salvation"
 popup/item_2/id = 2
+
+[node name="Label6" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HSeparator2" type="HSeparator" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -62,19 +82,38 @@ text = "Weapon Slot 2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Label4" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Gun slot 2" type="OptionButton" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 alignment = 1
 selected = 1
 item_count = 3
 popup/item_0/text = "Trauma"
+popup/item_0/id = 0
 popup/item_1/text = "Malice"
 popup/item_1/id = 1
 popup/item_2/text = "Salvation"
 popup/item_2/id = 2
 
+[node name="Label5" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="HSeparator3" type="HSeparator" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="Label7" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Button" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2

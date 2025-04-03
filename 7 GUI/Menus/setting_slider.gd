@@ -26,3 +26,8 @@ func _on_value_changed(valueVar: float) -> void:
 	elif MatchSetting and not is_audio:
 		if OnlineMang.serverInfo:
 			OnlineMang.serverInfo.matchSettings[settingsVar] = valueVar
+
+
+
+func _on_mouse_exited() -> void:
+	self.release_focus()

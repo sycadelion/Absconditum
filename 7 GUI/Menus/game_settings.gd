@@ -7,14 +7,16 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	skill_cd.text = "Skill Cooldown: " + str(GameManager.skill_Cooldown)
-	skill_radius.text = "Skill radius: " + str(GameManager.skill1_radius)
-	movement_speed.text = "Movement Speed: " + str(GameManager.player_Speed)
-	jump_height.text = "Jump Height: " + str(GameManager.player_jump)
+	if OnlineMang.serverInfo:
+		skill_cd.text = "Skill Cooldown: " + str(OnlineMang.serverInfo.matchSettings.skill_Cooldown)
+		skill_radius.text = "Skill radius: " + str(OnlineMang.serverInfo.matchSettings.skill1_radius)
+		movement_speed.text = "Movement Speed: " + str(OnlineMang.serverInfo.matchSettings.player_Speed)
+		jump_height.text = "Jump Height: " + str(OnlineMang.serverInfo.matchSettings.player_jump)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	skill_cd.text = "Skill Cooldown: " + str(GameManager.skill_Cooldown)
-	skill_radius.text = "Skill radius: " + str(GameManager.skill1_radius)
-	movement_speed.text = "Movement Speed: " + str(GameManager.player_Speed)
-	jump_height.text = "Jump Height: " + str(GameManager.player_jump)
+	if OnlineMang.serverInfo:
+		skill_cd.text = "Skill Cooldown: " + str(OnlineMang.serverInfo.matchSettings.skill_Cooldown)
+		skill_radius.text = "Skill radius: " + str(OnlineMang.serverInfo.matchSettings.skill1_radius)
+		movement_speed.text = "Movement Speed: " + str(OnlineMang.serverInfo.matchSettings.player_Speed)
+		jump_height.text = "Jump Height: " + str(OnlineMang.serverInfo.matchSettings.player_jump)

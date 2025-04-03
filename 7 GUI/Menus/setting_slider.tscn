@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cyol5v5lpw78x"]
 
-[ext_resource type="Script" path="res://7 GUI/Menus/setting_slider.gd" id="1_y3car"]
+[ext_resource type="Script" uid="uid://bg40c8dkfh1o6" path="res://7 GUI/Menus/setting_slider.gd" id="1_y3car"]
 
 [node name="SettingSlider" type="HSlider"]
 custom_minimum_size = Vector2(200, 0)
@@ -10,4 +10,5 @@ value = 1.0
 tick_count = 3
 script = ExtResource("1_y3car")
 
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="value_changed" from="." to="." method="_on_value_changed"]

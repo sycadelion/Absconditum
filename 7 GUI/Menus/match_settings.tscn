@@ -55,6 +55,9 @@ text = "Skill 1 Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/CenterContainer/MarginContainer/grid/Skill Settings"]
+layout_mode = 2
+
 [node name="Label2" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/grid/Skill Settings"]
 layout_mode = 2
 
@@ -68,6 +71,9 @@ layout_mode = 2
 settingsVar = "skill_Cooldown"
 MatchSetting = true
 
+[node name="HSeparator4" type="HSeparator" parent="PanelContainer/CenterContainer/MarginContainer/grid/Skill Settings"]
+layout_mode = 2
+
 [node name="Skill_radius" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/grid/Skill Settings"]
 layout_mode = 2
 text = "Skill Radius:"
@@ -77,6 +83,9 @@ horizontal_alignment = 1
 layout_mode = 2
 settingsVar = "skill1_radius"
 MatchSetting = true
+
+[node name="HSeparator5" type="HSeparator" parent="PanelContainer/CenterContainer/MarginContainer/grid/Skill Settings"]
+layout_mode = 2
 
 [node name="HSeparator" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/grid/Skill Settings"]
 layout_mode = 2
@@ -89,6 +98,9 @@ theme_override_constants/separation = 10
 layout_mode = 2
 text = "Player Settings"
 horizontal_alignment = 1
+
+[node name="HSeparator3" type="HSeparator" parent="PanelContainer/CenterContainer/MarginContainer/grid/Player Settings"]
+layout_mode = 2
 
 [node name="Label" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/grid/Player Settings"]
 layout_mode = 2
@@ -103,6 +115,9 @@ layout_mode = 2
 settingsVar = "player_Speed"
 MatchSetting = true
 
+[node name="HSeparator4" type="HSeparator" parent="PanelContainer/CenterContainer/MarginContainer/grid/Player Settings"]
+layout_mode = 2
+
 [node name="JumpHeight" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/grid/Player Settings"]
 layout_mode = 2
 text = "Jump Height"
@@ -112,6 +127,9 @@ horizontal_alignment = 1
 layout_mode = 2
 settingsVar = "player_jump"
 MatchSetting = true
+
+[node name="HSeparator5" type="HSeparator" parent="PanelContainer/CenterContainer/MarginContainer/grid/Player Settings"]
+layout_mode = 2
 
 [node name="HSeparator" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/grid/Player Settings"]
 layout_mode = 2
