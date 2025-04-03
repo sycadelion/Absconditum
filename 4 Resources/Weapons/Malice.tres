@@ -1,6 +1,5 @@
-[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://vrc4parm6311"]
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=2 format=3 uid="uid://vrc4parm6311"]
 
-[ext_resource type="Texture2D" uid="uid://dmfdum33w0jls" path="res://8 Assets/Images/malice.png" id="1_82qbe"]
 [ext_resource type="Script" uid="uid://c0g5u0tdm4bfa" path="res://4 Resources/Weapon_Resource.gd" id="1_hc4s8"]
 
 [resource]
@@ -12,7 +11,7 @@ Anim_empty = "Gun_empty"
 Anim_reload = "Reloading"
 Anim_deactivate = "malice_unequip"
 Audio_Name = "RifleSemi"
-Weapon_Image = ExtResource("1_82qbe")
+Weapon_Image_Path = "res://8 Assets/Images/malice.png"
 Damage = 11
 Current_ammo = 9
 Reload_ammo = 9

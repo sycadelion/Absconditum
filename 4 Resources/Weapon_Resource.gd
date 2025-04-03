@@ -16,7 +16,7 @@ class_name WeaponResource extends Resource
 
 #images
 @export_group("Weapon Images")
-@export var Weapon_Image: Texture
+@export var Weapon_Image_Path: String
 
 #ammo
 @export_group("Ammo")

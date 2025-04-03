@@ -10,7 +10,7 @@ const MAX_CONNECTIONS = 8
 
 var players = {}
 
-var player_info = {"name": "", "kills": 0, "deaths": 0}
+var player_info = {"name": "", "kills": 0, "deaths": 0, "current_weapon": 0, "weapon_slot1": 0, "weapon_slot2": 0}
 
 
 
@@ -85,6 +85,9 @@ func player_died(killer,killed):
 	var killed_name = players[killed].name
 	players[killed].deaths += 1
 	GameManager.PLAYER.killfeed.send_message.rpc(Killer_name,killed_name)
+
+func get_players():
+	return players
 	
 func start_up():
 	var upnp = UPNP.new()

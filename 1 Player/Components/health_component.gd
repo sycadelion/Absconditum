@@ -1,6 +1,6 @@
 class_name HealthComp extends Node
 
-@export var MAX_HEALTH:int = 10.0
+@export var MAX_HEALTH:int = 10
 var health: int
 
 @onready var killfeed: Control = %KillFeed

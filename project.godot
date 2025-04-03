@@ -32,7 +32,6 @@ config/name="Absconditum"
 run/main_scene="res://0 Master/null_starter.tscn"
 config/use_custom_user_dir=true
 config/features=PackedStringArray("4.4", "Forward Plus")
-run/max_fps=60
 boot_splash/bg_color=Color(0.17, 0, 0, 1)
 boot_splash/image="res://8 Assets/Images/splash.png"
 config/icon="res://8 Assets/Images/eye game icon.png"
@@ -61,6 +60,7 @@ window/size/resizable=false
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
 
 [editor_plugins]
 
@@ -91,6 +91,7 @@ SkillContainer=""
 Spawn_Point=""
 Spawner=""
 Killfeed=""
+Lobby=""
 
 [input]
 
@@ -192,3 +193,4 @@ textures/canvas_textures/default_texture_filter=0
 
 common_user_settings/root_output_path="res://3 Sounds/GeneratedBanks"
 project_settings/windows_platform_info="res://Wwise/resources/Windows.tres"
+common_user_settings/engine_logging=false

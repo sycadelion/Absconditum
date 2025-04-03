@@ -11,6 +11,7 @@ class_name SceneLoader extends Node
 @export_group("Default Component Scenes")
 @export var online_connection: PackedScene ##Online script component node
 @export var Wwise_Component: PackedScene ##Wwise banks component
+@export var Server_info: PackedScene ##scene that contains server info
 
 ##Container Nodes
 @onready var Components: Node =  $"Component Container"

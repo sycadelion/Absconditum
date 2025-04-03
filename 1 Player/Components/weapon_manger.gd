@@ -30,17 +30,20 @@ signal update_weapon_stack
 
 
 var Player: Player
-var Current_weapon = null
-var Weapon_stack = []
+@export var Current_weapon = {}
+@export var Weapon_slot1 = {}
+var slot1_texture
+@export var Weapon_slot2 = {}
+var slot2_texture
+@export var Weapon_stack = []
 var Weapon_indicator = 0
 var Next_Weapon: String
 
-var Weapon_list = {}
+
 
 var shooting:bool = false
 var can_shoot:bool = false
 
-@export var _weapon_resouces: Array[WeaponResource]
 @export var Start_weapons: Array[String]
 
 func _ready() -> void:
@@ -58,10 +61,10 @@ func _process(_delta: float) -> void:
 	else:
 		type_A_loaded.text = str(Current_weapon.Current_ammo)
 	if Weapon_stack[1] != null:
-		Weapon_Slot1.text = str(Weapon_list[Weapon_stack[0]].Reserve_ammo)
-		weapon1_image.texture = Weapon_list[Weapon_stack[0]].Weapon_Image
-		Weapon_Slot2.text = str(Weapon_list[Weapon_stack[1]].Reserve_ammo)
-		weapon2_image.texture = Weapon_list[Weapon_stack[1]].Weapon_Image
+		Weapon_Slot1.text = str(OnlineMang.onlineComp.weaponList[Weapon_stack[0]].Reserve_ammo)
+		weapon1_image.texture = slot1_texture
+		Weapon_Slot2.text = str(OnlineMang.onlineComp.weaponList[Weapon_stack[1]].Reserve_ammo)
+		weapon2_image.texture = slot2_texture
 
 func _input(event: InputEvent) -> void:
 	if Player.owner_id != multiplayer.get_unique_id(): 
@@ -100,16 +103,15 @@ func _input(event: InputEvent) -> void:
 
 @rpc("call_local")
 func Initialize(_Start_weapons):
-	Weapon_list.clear()
-	Current_weapon = null
-	#create dictionary to refer to weapons
-	for weapon in _weapon_resouces:
-		Weapon_list[weapon.Weapon_name] = weapon
 	
 	for i in _Start_weapons:
 		Weapon_stack.push_back(i)
 	
-	Current_weapon = Weapon_list[Weapon_stack[0]]
+	var slot1_image = Image.load_from_file(OnlineMang.onlineComp.weaponList[Weapon_stack[0]].Weapon_Image_Path)
+	slot1_texture = ImageTexture.create_from_image(slot1_image)
+	var slot2_image = Image.load_from_file(OnlineMang.onlineComp.weaponList[Weapon_stack[1]].Weapon_Image_Path)
+	slot2_texture = ImageTexture.create_from_image(slot2_image)
+	Current_weapon = OnlineMang.onlineComp.weaponList[Weapon_stack[0]]
 	Enter.rpc()
 
 @rpc("call_local")
@@ -129,8 +131,12 @@ func Enter():
 			can_shoot = true
 
 @rpc("call_local")
-func Change_Weapon(weapon_name: String):
-	Current_weapon = Weapon_list[weapon_name]
+func Change_Weapon(_weapon_name: String):
+	if Weapon_indicator == 0:
+		Current_weapon = OnlineMang.onlineComp.weaponList[Weapon_stack[0]]
+	elif Weapon_indicator == 1:
+		Current_weapon = OnlineMang.onlineComp.weaponList[Weapon_stack[1]]
+	#set_Weaponslot(Current_weapon,OnlineMang.onlineComp.weaponList[weapon_name])
 	Next_Weapon = ""        
 	Enter.rpc()
 
@@ -221,9 +227,30 @@ func refill_ammo():
 func respawn_ammo():
 	if Player.owner_id != multiplayer.get_unique_id(): 
 		return
-	Weapon_list[Weapon_stack[0]].Current_ammo = Weapon_list[Weapon_stack[0]].Reload_ammo
-	Weapon_list[Weapon_stack[0]].Reserve_ammo = Weapon_list[Weapon_stack[0]].Max_reserve
-	Weapon_list[Weapon_stack[0]].Chambered_ammo = Weapon_list[Weapon_stack[0]].Max_Chambered_ammo
-	Weapon_list[Weapon_stack[1]].Current_ammo = Weapon_list[Weapon_stack[1]].Reload_ammo
-	Weapon_list[Weapon_stack[1]].Reserve_ammo = Weapon_list[Weapon_stack[1]].Max_reserve
-	Weapon_list[Weapon_stack[1]].Chambered_ammo = Weapon_list[Weapon_stack[1]].Max_Chambered_ammo
+	OnlineMang.onlineComp.weaponList[Weapon_stack[0]].Current_ammo = OnlineMang.onlineComp.weaponList[Weapon_stack[0]].Reload_ammo
+	OnlineMang.onlineComp.weaponList[Weapon_stack[0]].Reserve_ammo = OnlineMang.onlineComp.weaponList[Weapon_stack[0]].Max_reserve
+	OnlineMang.onlineComp.weaponList[Weapon_stack[0]].Chambered_ammo = OnlineMang.onlineComp.weaponList[Weapon_stack[0]].Max_Chambered_ammo
+	OnlineMang.onlineComp.weaponList[Weapon_stack[1]].Current_ammo = OnlineMang.onlineComp.weaponList[Weapon_stack[1]].Reload_ammo
+	OnlineMang.onlineComp.weaponList[Weapon_stack[1]].Reserve_ammo = OnlineMang.onlineComp.weaponList[Weapon_stack[1]].Max_reserve
+	OnlineMang.onlineComp.weaponList[Weapon_stack[1]].Chambered_ammo = OnlineMang.onlineComp.weaponList[Weapon_stack[1]].Max_Chambered_ammo
+
+func set_Weaponslot(weaponSlot,weaponRes):
+	weaponSlot.Weapon_name = weaponRes.Weapon_name
+	weaponSlot.Anim_activate = weaponRes.Anim_activate
+	weaponSlot.Anim_shoot = weaponRes.Anim_shoot
+	weaponSlot.Anim_empty = weaponRes.Anim_empty
+	weaponSlot.Anim_reload = weaponRes.Anim_reload
+	weaponSlot.Anim_deactivate = weaponRes.Anim_deactivate
+	weaponSlot.Audio_Name = weaponRes.Audio_Name
+	weaponSlot.Weapon_Image_Path = weaponRes.Weapon_Image_Path
+	weaponSlot.Damage = weaponRes.Damage
+	weaponSlot.Current_ammo = weaponRes.Current_ammo
+	weaponSlot.Reload_ammo = weaponRes.Reload_ammo
+	weaponSlot.Reserve_ammo = weaponRes.Reserve_ammo
+	weaponSlot.Max_reserve = weaponRes.Max_reserve
+	weaponSlot.Chambered_ammo = weaponRes.Chambered_ammo
+	weaponSlot.Max_Chambered_ammo = weaponRes.Max_Chambered_ammo
+	weaponSlot.Full_auto = weaponRes.Full_auto
+	weaponSlot.Manual = weaponRes.Manual
+	weaponSlot.Launcher = weaponRes.Launcher
+	weaponSlot.Firerate = weaponRes.Firerate

@@ -148,9 +148,13 @@ grow_vertical = 0
 [node name="Fps" type="Label" parent="."]
 visible = false
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 4.0
+offset_top = 6.0
+offset_right = 44.0
+offset_bottom = 29.0
 text = "FPS: "
+horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("3_ywnm1")
 
 [node name="Crosshair" type="Control" parent="."]

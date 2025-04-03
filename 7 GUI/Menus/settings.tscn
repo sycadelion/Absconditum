@@ -352,7 +352,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="User" type="PanelContainer" parent="GridContainer"]
-visible = false
 custom_minimum_size = Vector2(0, 388)
 layout_mode = 2
 
@@ -412,7 +411,8 @@ text = "Mouse Sensitivity "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer"]
+[node name="sensText" type="LineEdit" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 placeholder_text = "100"
 alignment = 1
@@ -489,8 +489,8 @@ event = ExtResource("4_p0ldj")
 [connection signal="pressed" from="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/PaletteSelc/palette_button" to="." method="mouse_click"]
 [connection signal="mouse_entered" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/player_name" to="." method="mouse_hover"]
 [connection signal="text_changed" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/player_name" to="." method="_on_player_name_text_changed"]
-[connection signal="focus_entered" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/LineEdit" to="." method="_on_edit_focus_entered"]
-[connection signal="focus_exited" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/LineEdit" to="." method="_on_edit_focus_exited"]
-[connection signal="text_submitted" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/LineEdit" to="." method="_on_edit_text_submitted"]
+[connection signal="focus_entered" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/sensText" to="." method="_on_edit_focus_entered"]
+[connection signal="focus_exited" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/sensText" to="." method="_on_edit_focus_exited"]
+[connection signal="text_submitted" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/sensText" to="." method="_on_edit_text_submitted"]
 [connection signal="changed" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/SettingSlider" to="." method="mouse_click"]
 [connection signal="mouse_entered" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/SettingSlider" to="." method="mouse_hover"]

@@ -6,3 +6,4 @@ signal PlayerDied
 
 var Host_IP: String
 var onlineComp
+var serverInfo

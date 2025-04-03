@@ -4,6 +4,7 @@ extends HSlider
 @export var minV = 0
 @export var maxV = 100
 @export var is_audio: bool
+@export var MatchSetting: bool
 @export var bus_index: int
 var setValue: float
 
@@ -18,7 +19,10 @@ func _ready() -> void:
 	max_value = maxV
 
 func _on_value_changed(valueVar: float) -> void:
-	if not is_audio:
+	if not is_audio and not MatchSetting:
 		GameManager.set(settingsVar, valueVar)
-	else:
+	elif is_audio and not MatchSetting:
 		Wwise.set_rtpc_value_id(bus_index,valueVar,null)
+	elif MatchSetting and not is_audio:
+		if OnlineMang.serverInfo:
+			OnlineMang.serverInfo.matchSettings[settingsVar] = valueVar

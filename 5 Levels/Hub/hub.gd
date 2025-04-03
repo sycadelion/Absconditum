@@ -5,6 +5,7 @@ extends Node3D
 @export var player_spawner: MultiplayerSpawner
 
 var player_count = 0
+var playerList
 
 func _enter_tree() -> void:
 	update_enviro()
@@ -41,7 +42,7 @@ func spawn_player(id):
 	var spawnPOS = GameManager.spawn_point_rng()
 	if spawnPOS.SpawnActive:
 		player_instance.global_position = spawnPOS.SpawnPOS
-		print("player " + str(player_instance.player_id) + " Spawned" + " at " + str(spawnPOS.SpawnPOS))
+		#print("player " + str(OnlineMang.onlineComp.players[player_instance.player_id].name) + " Spawned" + " at " + str(spawnPOS.SpawnPOS))
 	else:
 		spawnPOS = GameManager.spawn_point_rng()
 	

@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://cdaty1tj8c305"]
 
-[ext_resource type="Script" path="res://6 Online/multiplayer_lobby.gd" id="1_lp11c"]
+[ext_resource type="Script" uid="uid://k05m2141b4lw" path="res://6 Online/multiplayer_lobby.gd" id="1_lp11c"]
 [ext_resource type="PackedScene" uid="uid://wlpkvyggn3ra" path="res://7 GUI/error_prompt.tscn" id="3_rpgj8"]
 [ext_resource type="PackedScene" uid="uid://b7kqgr0bkm3s6" path="res://7 GUI/background_container.tscn" id="3_ul4ju"]
 [ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu.tres" id="5_1bx7n"]
 
-[node name="Lobby" type="Node"]
+[node name="Lobby" type="Node" groups=["Lobby"]]
 process_mode = 3
 script = ExtResource("1_lp11c")
 
@@ -21,7 +21,7 @@ grow_vertical = 2
 [node name="Level" type="Node" parent="."]
 
 [node name="LevelSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("res://5 Levels/Hub/hub.tscn")
+_spawnable_scenes = PackedStringArray("uid://c7b7s6cm1vqrg")
 spawn_path = NodePath("../Level")
 spawn_limit = 1
 

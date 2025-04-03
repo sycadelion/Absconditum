@@ -18,10 +18,10 @@ var area_shape:SphereShape3D = SphereShape3D.new()
 var expanded: bool = false
 
 func _ready() -> void:
-	area_shape.radius = GameManager.skill1_radius - 1
+	area_shape.radius = OnlineMang.onlineComp.matchSettings.skill1_radius - 1
 	area_col.shape = area_shape
-	lifetime_timer.wait_time = GameManager.skill_Cooldown
-	anim_player.get_animation("expand").track_set_key_value(0,1,GameManager.skill1_radius)
+	lifetime_timer.wait_time = OnlineMang.onlineComp.matchSettings.skill_Cooldown
+	anim_player.get_animation("expand").track_set_key_value(0,1,OnlineMang.onlineComp.matchSettings.skill1_radius)
 	bubble_in.mesh.set_radius(sphereRadius)
 	bubble_out.mesh.set_radius(sphereRadius)
 	bubble_in.mesh.set_height(sphereRadius*2)

@@ -20,6 +20,7 @@ func _on_host_pressed() -> void:
 	if GameManager.UserName == "":
 		GameManager.fire_prompt("Please enter a user name first under user settings",self)
 	else:
+		SceneLoad.Load_Component(SceneLoad.Server_info)
 		$Match_Settings.show()
 		$Menu.hide()
 
@@ -50,6 +51,7 @@ func _on_settings_back_button_pressed() -> void:
 
 func _on_match_back_button_pressed() -> void:
 	_on_click()
+	SceneLoad.Remove_Component(SceneLoad.Server_info)
 	$Menu.show()
 	$Match_Settings.hide()
 

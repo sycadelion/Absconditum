@@ -1,6 +1,5 @@
-[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://bme5b2ty1ti5b"]
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=2 format=3 uid="uid://bme5b2ty1ti5b"]
 
-[ext_resource type="Texture2D" uid="uid://dbtqmg6nynkc8" path="res://8 Assets/Images/salvation.png" id="1_nffjk"]
 [ext_resource type="Script" uid="uid://c0g5u0tdm4bfa" path="res://4 Resources/Weapon_Resource.gd" id="1_xrb6j"]
 
 [resource]
@@ -12,13 +11,14 @@ Anim_empty = "Gun_empty"
 Anim_reload = "Reloading"
 Anim_deactivate = "Salvation_unequip"
 Audio_Name = "Pistol"
-Weapon_Image = ExtResource("1_nffjk")
+Weapon_Image_Path = ""
 Damage = 2
 Current_ammo = 18
 Reload_ammo = 18
 Reserve_ammo = 108
 Max_reserve = 108
 Chambered_ammo = 0
+Max_Chambered_ammo = 0
 Full_auto = false
 Manual = false
 Launcher = false

@@ -1,17 +1,17 @@
 [gd_scene load_steps=6 format=3 uid="uid://do52lhycu35qs"]
 
-[ext_resource type="Script" path="res://0 Master/Autoloads/scene_loader.gd" id="1_2rhko"]
+[ext_resource type="Script" uid="uid://ccjfwe63nhn6r" path="res://0 Master/Autoloads/scene_loader.gd" id="1_2rhko"]
 [ext_resource type="PackedScene" uid="uid://1vtabgmdqbya" path="res://7 GUI/Menus/Main Menu.tscn" id="2_7wpev"]
 [ext_resource type="PackedScene" uid="uid://doa16v2jqrj70" path="res://0 Master/Components/Audio_banks.tscn" id="3_6oce6"]
 [ext_resource type="PackedScene" uid="uid://i1t0cs56ewv7" path="res://0 Master/Components/online_component.tscn" id="3_bgfes"]
-[ext_resource type="PackedScene" uid="uid://bt5ncyv5cuca7" path="res://0 Master/Components/settings_load.tscn" id="4_p02ir"]
+[ext_resource type="PackedScene" uid="uid://dbf76fc5p2i2" path="res://0 Master/Components/ServerInfo.tscn" id="5_7x7d2"]
 
 [node name="Scene Loader" type="Node"]
 script = ExtResource("1_2rhko")
 Default_Scene = ExtResource("2_7wpev")
 online_connection = ExtResource("3_bgfes")
 Wwise_Component = ExtResource("3_6oce6")
-Settings_component = ExtResource("4_p02ir")
+Server_info = ExtResource("5_7x7d2")
 
 [node name="Component Container" type="Node" parent="."]
 

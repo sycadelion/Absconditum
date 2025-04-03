@@ -7,6 +7,7 @@ class_name Player extends CharacterBody3D
 
 #components
 @onready var audio_comp: AudioComp = $Audio_Component
+@export var listener_comp: PackedScene
 @onready var skill1_comp: Skill1Comp = $Skill1_Component
 @onready var health_comp: HealthComp = $Health_Component
 @onready var bullet_proj_comp: BulletProjComp = $BulletProjComp
@@ -15,7 +16,6 @@ class_name Player extends CharacterBody3D
 
 @onready var camera: Camera3D = $Head/Camera3D
 @onready var flashlight: SpotLight3D = $Head/Camera3D/Flashlight
-@onready var listener_area: Area3D = $Head/Camera3D/ListenerArea
 @onready var head: Node3D = $Head
 @onready var anim_player: AnimationPlayer = %AnimationPlayer
 @onready var anim_tree: AnimationTree = $AnimationTree
@@ -26,9 +26,15 @@ class_name Player extends CharacterBody3D
 @onready var Health_bar: ProgressBar = $CanvasLayer/HUD/HealthBar/PanelContainer/ProgressBar
 @onready var Health_Label: Label = $CanvasLayer/HUD/HealthBar/PanelContainer/HealthText
 
+#guns
+@onready var hand: Node3D = $Head/Camera3D/Hand
+@onready var hand_2: Node3D = $Head/Camera3D/Hand2
+
+
 #jump vars for landing audio
 var landing: bool = false
 var impact_played: bool = false
+var playerList
 
 var sens:float = GameManager.sensitivity
 var owner_id = 1
@@ -42,28 +48,27 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	if owner_id == multiplayer.get_unique_id():
+		var listner_node = listener_comp.instantiate()
+		camera.add_child(listner_node)
 		GameManager.PLAYER = self
 		camera.make_current()
 		bodyInvert.visible = false
 		flashlight.visible = true
-		var shaderMat:ShaderMaterial = bodyInvert.material_override
-		shaderMat.set_shader_parameter("enabled", false)
 		hud.visible = true
+		hand.visible = false
+		hand_2.visible = true
 		Health_bar.max_value = health_comp.MAX_HEALTH
 		Health_bar.value = health_comp.health
 		Health_Label.text = str(health_comp.health)
 		sens = GameManager.sensitivity / 1000
-		SPEED = GameManager.player_Speed
-		JUMP_VELOCITY = GameManager.player_jump
-		$Head/Camera3D/AkListener3D.is_default_listener = true
+		SPEED = OnlineMang.onlineComp.matchSettings.player_Speed
+		JUMP_VELOCITY = OnlineMang.onlineComp.matchSettings.player_jump
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	else:
 		camera.current = false
 		flashlight.visible = false
-		$Head/Camera3D/AkListener3D.is_default_listener = false
-		$Head/Camera3D/crossbow_shader.show()
-		var shaderMat:ShaderMaterial = bodyInvert.material_override
-		shaderMat.set_shader_parameter("enabled", true)
+		bodyInvert.visible = true
+		hand.visible = true
 
 func _unhandled_input(event: InputEvent) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
@@ -83,8 +88,7 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("reload"):
 		weapon_manger.reload.rpc()
 	elif event.is_action_pressed("test"):
-		health_comp.health -= 15
-		#$CanvasLayer/HUD/Fps.visible = not $CanvasLayer/HUD/Fps.visible
+		$CanvasLayer/HUD/Fps.visible = not $CanvasLayer/HUD/Fps.visible
 
 func _physics_process(_delta: float) -> void:
 	if owner_id != multiplayer.get_unique_id(): 

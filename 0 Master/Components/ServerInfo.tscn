@@ -1,0 +1,11 @@
+[gd_scene load_steps=6 format=3 uid="uid://dbf76fc5p2i2"]
+
+[ext_resource type="Script" uid="uid://bl2jxfcviunor" path="res://0 Master/Components/server_info.gd" id="1_qbrtt"]
+[ext_resource type="Script" uid="uid://c0g5u0tdm4bfa" path="res://4 Resources/Weapon_Resource.gd" id="2_f5r1n"]
+[ext_resource type="Resource" uid="uid://vrc4parm6311" path="res://4 Resources/Weapons/Malice.tres" id="3_iw5a6"]
+[ext_resource type="Resource" uid="uid://bt37yoot0xdu4" path="res://4 Resources/Weapons/trauma.tres" id="4_fwd7o"]
+[ext_resource type="Resource" uid="uid://bme5b2ty1ti5b" path="res://4 Resources/Weapons/Salvation.tres" id="5_vhmrs"]
+
+[node name="ServerInfo" type="Node"]
+script = ExtResource("1_qbrtt")
+weapon_resouces = Array[ExtResource("2_f5r1n")]([ExtResource("3_iw5a6"), ExtResource("4_fwd7o"), ExtResource("5_vhmrs")])

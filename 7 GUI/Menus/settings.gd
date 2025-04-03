@@ -8,7 +8,7 @@ extends Control
 @onready var audio_sfx: LineEdit = $"GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/SFX Text/GridContainer/SFXEdit"
 @onready var audio_foot: LineEdit = $"GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Foot Text/GridContainer/FootEdit"
 @onready var player_name: LineEdit = $GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/player_name
-@onready var mouse_sens: LineEdit = $GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/LineEdit
+@onready var mouse_sens: LineEdit = %sensText
 @onready var palette_button: OptionButton = $GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/PaletteSelc/palette_button
 
 #menus
@@ -58,6 +58,7 @@ func _on_player_name_text_changed(new_text: String) -> void:
 
 
 func update_text():
+	player_name.text = GameManager.UserName
 	mouse_sens.text = str(GameManager.sensitivity)
 	audio_master.text = str(GameManager.master_audio)
 	audio_music.text = str(GameManager.music_audio)

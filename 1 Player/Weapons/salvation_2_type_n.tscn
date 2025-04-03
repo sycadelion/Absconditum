@@ -1,13 +1,43 @@
-[gd_scene load_steps=3 format=3 uid="uid://dr380cr6se6rc"]
+[gd_scene load_steps=6 format=3 uid="uid://dr380cr6se6rc"]
 
 [ext_resource type="PackedScene" uid="uid://4ikel0crfreq" path="res://8 Assets/Models/Salvation2_typeN.glb" id="1_4s5cy"]
-[ext_resource type="Material" uid="uid://gsnjhl57qwdk" path="res://4 Resources/Shaders/player_shader_mat.tres" id="2_aiqtf"]
+[ext_resource type="Shader" uid="uid://dew15oesvk6o6" path="res://4 Resources/Shaders/cut_sphere.gdshader" id="2_aiqtf"]
+[ext_resource type="Script" uid="uid://cui0wm2k8trsu" path="res://1 Player/Weapons/WeaponShaderEnable.gd" id="2_cnptw"]
 
-[node name="Salvation2_typeN" instance=ExtResource("1_4s5cy")]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cnptw"]
+render_priority = 0
+shader = ExtResource("2_aiqtf")
+shader_parameter/enabled = true
+shader_parameter/spherePos = Vector3(0, 0, 0)
+shader_parameter/borderColor = Color(0.810186, 0, 0.150926, 1)
+shader_parameter/borderSize = 0.0
+shader_parameter/sphereRadius = 0.0
+shader_parameter/noiseSpeed = 0.0
+shader_parameter/noiseStrength = 0.0
+shader_parameter/noiseSize = 0.0
+shader_parameter/invertCut = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1erya"]
+render_priority = 0
+shader = ExtResource("2_aiqtf")
+shader_parameter/enabled = true
+shader_parameter/spherePos = Vector3(0, 0, 0)
+shader_parameter/borderColor = Color(0.810186, 0, 0.150926, 1)
+shader_parameter/borderSize = 0.0
+shader_parameter/sphereRadius = 0.0
+shader_parameter/noiseSpeed = 0.0
+shader_parameter/noiseStrength = 0.0
+shader_parameter/noiseSize = 0.0
+shader_parameter/invertCut = false
+
+[node name="Salvation2_typeN" node_paths=PackedStringArray("object1", "object2") instance=ExtResource("1_4s5cy")]
 transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 0, 0, 0)
+script = ExtResource("2_cnptw")
+object1 = NodePath("Mag")
+object2 = NodePath("Salvation_001")
 
-[node name="Mag" parent="." index="0"]
-material_override = ExtResource("2_aiqtf")
+[node name="Mag" parent="." index="0" groups=["VisibleObjectsShader"]]
+material_override = SubResource("ShaderMaterial_cnptw")
 
-[node name="Salvation_001" parent="." index="1"]
-material_override = ExtResource("2_aiqtf")
+[node name="Salvation_001" parent="." index="1" groups=["VisibleObjectsShader"]]
+material_override = SubResource("ShaderMaterial_1erya")
