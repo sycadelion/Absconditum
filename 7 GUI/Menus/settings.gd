@@ -38,7 +38,7 @@ func _ready() -> void:
 	player_name.text = GameManager.UserName
 	player_name.editable = edit_name
 	active_menu = audio
-	audio.hide()
+	audio.show()
 	graphics.hide()
 	keybinds.hide()
 	user.hide()

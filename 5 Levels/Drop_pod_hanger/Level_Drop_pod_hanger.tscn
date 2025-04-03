@@ -143,12 +143,6 @@ visible = false
 
 [node name="Spawn Screen" parent="SubViewportContainer/SubViewport/Ingame Stuff" instance=ExtResource("6_46imq")]
 
-[node name="Gun slot 1" parent="SubViewportContainer/SubViewport/Ingame Stuff/Spawn Screen/PanelContainer/VBoxContainer" index="3"]
-popup/item_0/id = 0
-
-[node name="Gun slot 2" parent="SubViewportContainer/SubViewport/Ingame Stuff/Spawn Screen/PanelContainer/VBoxContainer" index="6"]
-popup/item_0/id = 0
-
 [node name="Big_Room" type="AkRoom" parent="SubViewportContainer/SubViewport"]
 aux_bus = ExtResource("7_2q5xx")
 

@@ -115,21 +115,6 @@ text = "Quit
 visible = false
 layout_mode = 1
 
-[node name="CDSlider" parent="Match_Settings/PanelContainer/CenterContainer/MarginContainer/grid/Skill Settings" index="3"]
-step = 0.1
-maxV = 15
-
-[node name="RadiusSlider" parent="Match_Settings/PanelContainer/CenterContainer/MarginContainer/grid/Skill Settings" index="5"]
-step = 0.1
-maxV = 20
-
-[node name="MoveSlider" parent="Match_Settings/PanelContainer/CenterContainer/MarginContainer/grid/Player Settings" index="3"]
-step = 0.1
-maxV = 20
-
-[node name="JumpSlider" parent="Match_Settings/PanelContainer/CenterContainer/MarginContainer/grid/Player Settings" index="5"]
-maxV = 10
-
 [node name="Settings" parent="." instance=ExtResource("6_yrws1")]
 visible = false
 layout_mode = 1
@@ -181,10 +166,8 @@ event = ExtResource("10_sbu0f")
 [connection signal="pressed" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="mouse_entered" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Quit" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="mouse_entered" from="Match_Settings/PanelContainer/CenterContainer/MarginContainer/grid/Match_Back_button" to="." method="_on_mouse_entered"]
-[connection signal="pressed" from="Match_Settings/PanelContainer/CenterContainer/MarginContainer/grid/Match_Back_button" to="." method="_on_match_back_button_pressed"]
-[connection signal="mouse_entered" from="Match_Settings/PanelContainer/CenterContainer/MarginContainer/grid/Host_game_button" to="." method="_on_mouse_entered"]
-[connection signal="pressed" from="Match_Settings/PanelContainer/CenterContainer/MarginContainer/grid/Host_game_button" to="." method="_on_host_game_button_pressed"]
+[connection signal="pressed" from="Match_Settings/Back_host/MarginContainer/CenterContainer/GridContainer/Match_Back_button" to="." method="_on_match_back_button_pressed"]
+[connection signal="pressed" from="Match_Settings/Back_host/MarginContainer/CenterContainer/GridContainer/Host_game_button" to="." method="_on_host_game_button_pressed"]
 [connection signal="pressed" from="Settings/BackButton/Settings_Back_Button" to="." method="_on_settings_back_button_pressed"]
 [connection signal="music_sync_exit" from="Music" to="." method="_on_music_music_sync_exit"]
 
