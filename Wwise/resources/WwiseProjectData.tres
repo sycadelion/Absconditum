@@ -20,32 +20,32 @@ guid = "{3AA89E7C-2792-4048-A98A-2A996BDC5670}"
 id = 2385628198
 
 [sub_resource type="WwiseTreeObject" id="WwiseTreeObject_n4jq4"]
-path = "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Music"
-type = 2
-name = "Music"
-guid = "{6E751908-B6AE-4AD2-9C21-4EB0A6DF11B7}"
-id = 3991942870
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_2b7v5"]
-path = "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Room"
-type = 1
-name = "Room"
-guid = "{473BA46A-C8E9-40A4-AC90-E207E8CA32FA}"
-id = 2077253480
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_yty4k"]
 path = "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\UI"
 type = 2
 name = "UI"
 guid = "{42BE07BD-4FD3-43B9-9CA8-8E1E2EFE2120}"
 id = 1551306167
 
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_rq3ka"]
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_2b7v5"]
 path = "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Big_Room"
 type = 1
 name = "Big_Room"
 guid = "{BDA45880-AFFB-4C92-B1CB-D625CA3527EE}"
 id = 4202071913
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_yty4k"]
+path = "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Room"
+type = 1
+name = "Room"
+guid = "{473BA46A-C8E9-40A4-AC90-E207E8CA32FA}"
+id = 2077253480
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_rq3ka"]
+path = "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Music"
+type = 2
+name = "Music"
+guid = "{6E751908-B6AE-4AD2-9C21-4EB0A6DF11B7}"
+id = 3991942870
 
 [sub_resource type="WwiseTreeObject" id="WwiseTreeObject_tfk2a"]
 path = "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX"
@@ -193,221 +193,218 @@ name = "Default Work Unit"
 id = 125608783
 
 [sub_resource type="WwiseTreeObject" id="WwiseTreeObject_26l8v"]
-path = "\\Switches\\Default Work Unit\\Ammo\\Pistol"
-type = 10
-name = "Pistol"
-guid = "{CAE7E928-891B-4BDD-81F5-8797905C35D5}"
-id = 324443136
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_hir8t"]
-path = "\\Switches\\Default Work Unit\\Ammo\\Rifle"
-type = 10
-name = "Rifle"
-guid = "{75BCD1D1-EB1D-4CE9-8F34-EFBC4CD1E01E}"
-id = 4262674733
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_viedb"]
-path = "\\Switches\\Default Work Unit\\Ammo\\RifleSemi"
-type = 10
-name = "RifleSemi"
-guid = "{A7390F7B-D29E-424D-9CCF-5396A9C2925A}"
-id = 1096740251
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_bq6kk"]
-path = "\\Switches\\Default Work Unit\\Ammo"
-children = [SubResource("WwiseTreeObject_26l8v"), SubResource("WwiseTreeObject_hir8t"), SubResource("WwiseTreeObject_viedb")]
-type = 11
-name = "Ammo"
-guid = "{4D335E37-90F7-4CCD-95B8-600258C1F59A}"
-id = 3554434311
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_hssb3"]
-path = "\\Switches\\Default Work Unit\\Gun\\Bow"
-type = 10
-name = "Bow"
-guid = "{D52EC367-ABD0-4B16-8A65-3450794ADFDC}"
-id = 546945295
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_0g3k4"]
-path = "\\Switches\\Default Work Unit\\Gun\\Pistol"
-type = 10
-name = "Pistol"
-guid = "{A87BDE0C-E279-43E9-8017-4A200728FFD9}"
-id = 324443136
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_5ppdk"]
-path = "\\Switches\\Default Work Unit\\Gun\\Rifle"
-type = 10
-name = "Rifle"
-guid = "{063C20D7-2981-4470-A344-A450790235A0}"
-id = 4262674733
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_l65hi"]
-path = "\\Switches\\Default Work Unit\\Gun\\RifleSemi"
-type = 10
-name = "RifleSemi"
-guid = "{2799626E-3126-4757-A212-FE075EEDE7C2}"
-id = 1096740251
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_63ewg"]
-path = "\\Switches\\Default Work Unit\\Gun"
-children = [SubResource("WwiseTreeObject_hssb3"), SubResource("WwiseTreeObject_0g3k4"), SubResource("WwiseTreeObject_5ppdk"), SubResource("WwiseTreeObject_l65hi")]
-type = 11
-name = "Gun"
-guid = "{D11084CE-7C28-4EEA-8B3D-92420FC125EF}"
-id = 915214409
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_myib7"]
-path = "\\Switches\\Default Work Unit\\MaterialFeet\\Boots"
-type = 10
-name = "Boots"
-guid = "{9D50E2B9-6CCE-48C9-8246-259397CB103B}"
-id = 2305815328
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_gv40o"]
-path = "\\Switches\\Default Work Unit\\MaterialFeet\\Glass"
-type = 10
-name = "Glass"
-guid = "{61E1B399-856C-4ED0-91C8-6A8A26BB2F23}"
-id = 2449969375
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_0hqp2"]
-path = "\\Switches\\Default Work Unit\\MaterialFeet\\HollowMetal"
-type = 10
-name = "HollowMetal"
-guid = "{1458BD1A-B11D-484C-A5B1-7528C818FEA4}"
-id = 3762184421
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_h61g6"]
-path = "\\Switches\\Default Work Unit\\MaterialFeet\\Lino"
-type = 10
-name = "Lino"
-guid = "{2790EC8F-8523-4762-8472-DDEC129A2EF5}"
-id = 136358821
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_q407k"]
-path = "\\Switches\\Default Work Unit\\MaterialFeet\\LowMetal"
-type = 10
-name = "LowMetal"
-guid = "{E9F48228-2CDE-4CFA-970B-F235B65482FA}"
-id = 903661822
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_o561g"]
-path = "\\Switches\\Default Work Unit\\MaterialFeet\\Wood"
-type = 10
-name = "Wood"
-guid = "{3FF60EA8-69A8-40A8-98A3-081691369967}"
-id = 2058049674
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_dipfp"]
-path = "\\Switches\\Default Work Unit\\MaterialFeet"
-children = [SubResource("WwiseTreeObject_myib7"), SubResource("WwiseTreeObject_gv40o"), SubResource("WwiseTreeObject_0hqp2"), SubResource("WwiseTreeObject_h61g6"), SubResource("WwiseTreeObject_q407k"), SubResource("WwiseTreeObject_o561g")]
-type = 11
-name = "MaterialFeet"
-guid = "{5B9B04BD-FD03-46F9-B4E5-3BEA51C3D28A}"
-id = 4216705946
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_orwwv"]
-path = "\\Switches\\Default Work Unit\\Menus\\Click"
-type = 10
-name = "Click"
-guid = "{5CBFD4DE-5331-4813-810C-826CE21E4DE8}"
-id = 1584507803
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_4owox"]
-path = "\\Switches\\Default Work Unit\\Menus\\Hover"
-type = 10
-name = "Hover"
-guid = "{5F02E8D1-38D2-409B-9A2A-BFC85D8304DA}"
-id = 3753593413
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_d4u1n"]
-path = "\\Switches\\Default Work Unit\\Menus"
-children = [SubResource("WwiseTreeObject_orwwv"), SubResource("WwiseTreeObject_4owox")]
-type = 11
-name = "Menus"
-guid = "{93C5D5E1-3C7E-473D-BD8A-7790C3BE6EEB}"
-id = 2604644515
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_2m8v7"]
-path = "\\Switches\\Default Work Unit\\PlayerVoice\\Jump"
-type = 10
-name = "Jump"
-guid = "{098700A0-B1EB-4DDF-B527-79766CE4634F}"
-id = 3833651337
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_wchpu"]
-path = "\\Switches\\Default Work Unit\\PlayerVoice\\Land"
-type = 10
-name = "Land"
-guid = "{A2898C1F-6EC9-45A2-9842-9F6ABFA8973B}"
-id = 674522502
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_ujawv"]
-path = "\\Switches\\Default Work Unit\\PlayerVoice"
-children = [SubResource("WwiseTreeObject_2m8v7"), SubResource("WwiseTreeObject_wchpu")]
-type = 11
-name = "PlayerVoice"
-guid = "{7288A79A-F5E7-410F-8432-B454EDF6CC43}"
-id = 47937584
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_8ttr2"]
-path = "\\Switches\\Default Work Unit\\Reload\\Pistol"
-type = 10
-name = "Pistol"
-guid = "{338E8EAD-0F1A-4E9A-B242-843DC66CF62C}"
-id = 324443136
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_85ijg"]
-path = "\\Switches\\Default Work Unit\\Reload\\Rifle"
-type = 10
-name = "Rifle"
-guid = "{EB3DFBE5-DB33-4D7C-93C7-C3F6217FD53B}"
-id = 4262674733
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_x2q8b"]
-path = "\\Switches\\Default Work Unit\\Reload\\RifleSemi"
-type = 10
-name = "RifleSemi"
-guid = "{F7F3BCFC-1EA7-4D97-92D3-DF127CEDD843}"
-id = 1096740251
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_t5yhp"]
-path = "\\Switches\\Default Work Unit\\Reload"
-children = [SubResource("WwiseTreeObject_8ttr2"), SubResource("WwiseTreeObject_85ijg"), SubResource("WwiseTreeObject_x2q8b")]
-type = 11
-name = "Reload"
-guid = "{AE0E4935-6099-4093-9712-AFE2652BB1B7}"
-id = 456382354
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_3v8cc"]
 path = "\\Switches\\Default Work Unit\\RifleSemi\\Loading"
 type = 10
 name = "Loading"
 guid = "{067C3C82-BD7A-4AAB-9708-22FF715377BB}"
 id = 3573931707
 
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_7f6pv"]
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_hir8t"]
 path = "\\Switches\\Default Work Unit\\RifleSemi\\Rebolt"
 type = 10
 name = "Rebolt"
 guid = "{9A19A1B8-2D51-4572-95AF-A9BBD16E28D6}"
 id = 1993628331
 
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_2bj2c"]
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_viedb"]
 path = "\\Switches\\Default Work Unit\\RifleSemi\\Unbolt"
 type = 10
 name = "Unbolt"
 guid = "{15A3E61D-FB2A-4ABB-A9D4-8E3B0C9DB661}"
 id = 3958385377
 
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_bq6kk"]
+children = [SubResource("WwiseTreeObject_26l8v"), SubResource("WwiseTreeObject_hir8t"), SubResource("WwiseTreeObject_viedb")]
+name = "RifleSemi"
+id = 1096740251
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_hssb3"]
+path = "\\Switches\\Default Work Unit\\Ammo\\Pistol"
+type = 10
+name = "Pistol"
+guid = "{CAE7E928-891B-4BDD-81F5-8797905C35D5}"
+id = 324443136
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_0g3k4"]
+path = "\\Switches\\Default Work Unit\\Ammo\\Rifle"
+type = 10
+name = "Rifle"
+guid = "{75BCD1D1-EB1D-4CE9-8F34-EFBC4CD1E01E}"
+id = 4262674733
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_5ppdk"]
+path = "\\Switches\\Default Work Unit\\Ammo\\RifleSemi"
+type = 10
+name = "RifleSemi"
+guid = "{A7390F7B-D29E-424D-9CCF-5396A9C2925A}"
+id = 1096740251
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_l65hi"]
+path = "\\Switches\\Default Work Unit\\Ammo"
+children = [SubResource("WwiseTreeObject_hssb3"), SubResource("WwiseTreeObject_0g3k4"), SubResource("WwiseTreeObject_5ppdk")]
+type = 11
+name = "Ammo"
+guid = "{4D335E37-90F7-4CCD-95B8-600258C1F59A}"
+id = 3554434311
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_63ewg"]
+path = "\\Switches\\Default Work Unit\\Gun\\Bow"
+type = 10
+name = "Bow"
+guid = "{D52EC367-ABD0-4B16-8A65-3450794ADFDC}"
+id = 546945295
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_myib7"]
+path = "\\Switches\\Default Work Unit\\Gun\\Pistol"
+type = 10
+name = "Pistol"
+guid = "{A87BDE0C-E279-43E9-8017-4A200728FFD9}"
+id = 324443136
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_gv40o"]
+path = "\\Switches\\Default Work Unit\\Gun\\Rifle"
+type = 10
+name = "Rifle"
+guid = "{063C20D7-2981-4470-A344-A450790235A0}"
+id = 4262674733
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_0hqp2"]
+path = "\\Switches\\Default Work Unit\\Gun\\RifleSemi"
+type = 10
+name = "RifleSemi"
+guid = "{2799626E-3126-4757-A212-FE075EEDE7C2}"
+id = 1096740251
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_h61g6"]
+path = "\\Switches\\Default Work Unit\\Gun"
+children = [SubResource("WwiseTreeObject_63ewg"), SubResource("WwiseTreeObject_myib7"), SubResource("WwiseTreeObject_gv40o"), SubResource("WwiseTreeObject_0hqp2")]
+type = 11
+name = "Gun"
+guid = "{D11084CE-7C28-4EEA-8B3D-92420FC125EF}"
+id = 915214409
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_q407k"]
+path = "\\Switches\\Default Work Unit\\MaterialFeet\\Boots"
+type = 10
+name = "Boots"
+guid = "{9D50E2B9-6CCE-48C9-8246-259397CB103B}"
+id = 2305815328
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_o561g"]
+path = "\\Switches\\Default Work Unit\\MaterialFeet\\Glass"
+type = 10
+name = "Glass"
+guid = "{61E1B399-856C-4ED0-91C8-6A8A26BB2F23}"
+id = 2449969375
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_dipfp"]
+path = "\\Switches\\Default Work Unit\\MaterialFeet\\HollowMetal"
+type = 10
+name = "HollowMetal"
+guid = "{1458BD1A-B11D-484C-A5B1-7528C818FEA4}"
+id = 3762184421
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_orwwv"]
+path = "\\Switches\\Default Work Unit\\MaterialFeet\\Lino"
+type = 10
+name = "Lino"
+guid = "{2790EC8F-8523-4762-8472-DDEC129A2EF5}"
+id = 136358821
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_4owox"]
+path = "\\Switches\\Default Work Unit\\MaterialFeet\\LowMetal"
+type = 10
+name = "LowMetal"
+guid = "{E9F48228-2CDE-4CFA-970B-F235B65482FA}"
+id = 903661822
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_d4u1n"]
+path = "\\Switches\\Default Work Unit\\MaterialFeet\\Wood"
+type = 10
+name = "Wood"
+guid = "{3FF60EA8-69A8-40A8-98A3-081691369967}"
+id = 2058049674
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_2m8v7"]
+path = "\\Switches\\Default Work Unit\\MaterialFeet"
+children = [SubResource("WwiseTreeObject_q407k"), SubResource("WwiseTreeObject_o561g"), SubResource("WwiseTreeObject_dipfp"), SubResource("WwiseTreeObject_orwwv"), SubResource("WwiseTreeObject_4owox"), SubResource("WwiseTreeObject_d4u1n")]
+type = 11
+name = "MaterialFeet"
+guid = "{5B9B04BD-FD03-46F9-B4E5-3BEA51C3D28A}"
+id = 4216705946
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_wchpu"]
+path = "\\Switches\\Default Work Unit\\Menus\\Click"
+type = 10
+name = "Click"
+guid = "{5CBFD4DE-5331-4813-810C-826CE21E4DE8}"
+id = 1584507803
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_ujawv"]
+path = "\\Switches\\Default Work Unit\\Menus\\Hover"
+type = 10
+name = "Hover"
+guid = "{5F02E8D1-38D2-409B-9A2A-BFC85D8304DA}"
+id = 3753593413
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_8ttr2"]
+path = "\\Switches\\Default Work Unit\\Menus"
+children = [SubResource("WwiseTreeObject_wchpu"), SubResource("WwiseTreeObject_ujawv")]
+type = 11
+name = "Menus"
+guid = "{93C5D5E1-3C7E-473D-BD8A-7790C3BE6EEB}"
+id = 2604644515
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_85ijg"]
+path = "\\Switches\\Default Work Unit\\PlayerVoice\\Jump"
+type = 10
+name = "Jump"
+guid = "{098700A0-B1EB-4DDF-B527-79766CE4634F}"
+id = 3833651337
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_x2q8b"]
+path = "\\Switches\\Default Work Unit\\PlayerVoice\\Land"
+type = 10
+name = "Land"
+guid = "{A2898C1F-6EC9-45A2-9842-9F6ABFA8973B}"
+id = 674522502
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_t5yhp"]
+path = "\\Switches\\Default Work Unit\\PlayerVoice"
+children = [SubResource("WwiseTreeObject_85ijg"), SubResource("WwiseTreeObject_x2q8b")]
+type = 11
+name = "PlayerVoice"
+guid = "{7288A79A-F5E7-410F-8432-B454EDF6CC43}"
+id = 47937584
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_3v8cc"]
+path = "\\Switches\\Default Work Unit\\Reload\\Pistol"
+type = 10
+name = "Pistol"
+guid = "{338E8EAD-0F1A-4E9A-B242-843DC66CF62C}"
+id = 324443136
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_7f6pv"]
+path = "\\Switches\\Default Work Unit\\Reload\\Rifle"
+type = 10
+name = "Rifle"
+guid = "{EB3DFBE5-DB33-4D7C-93C7-C3F6217FD53B}"
+id = 4262674733
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_2bj2c"]
+path = "\\Switches\\Default Work Unit\\Reload\\RifleSemi"
+type = 10
+name = "RifleSemi"
+guid = "{F7F3BCFC-1EA7-4D97-92D3-DF127CEDD843}"
+id = 1096740251
+
 [sub_resource type="WwiseTreeObject" id="WwiseTreeObject_31b5r"]
-path = "\\Switches\\Default Work Unit\\RifleSemi"
+path = "\\Switches\\Default Work Unit\\Reload"
 children = [SubResource("WwiseTreeObject_3v8cc"), SubResource("WwiseTreeObject_7f6pv"), SubResource("WwiseTreeObject_2bj2c")]
 type = 11
-name = "RifleSemi"
-guid = "{AAD53836-83AB-4B32-9137-675425CF1E30}"
-id = 1096740251
+name = "Reload"
+guid = "{AE0E4935-6099-4093-9712-AFE2652BB1B7}"
+id = 456382354
 
 [sub_resource type="WwiseTreeObject" id="WwiseTreeObject_o035g"]
 path = "\\Switches\\Default Work Unit\\Skill\\Grenade"
@@ -425,7 +422,7 @@ guid = "{9ABBE966-6D7F-4E36-BF54-7B1AD9D511EC}"
 id = 4161132316
 
 [sub_resource type="WwiseTreeObject" id="WwiseTreeObject_ypbh6"]
-children = [SubResource("WwiseTreeObject_bq6kk"), SubResource("WwiseTreeObject_63ewg"), SubResource("WwiseTreeObject_dipfp"), SubResource("WwiseTreeObject_d4u1n"), SubResource("WwiseTreeObject_ujawv"), SubResource("WwiseTreeObject_t5yhp"), SubResource("WwiseTreeObject_31b5r"), SubResource("WwiseTreeObject_eobpg")]
+children = [SubResource("WwiseTreeObject_bq6kk"), SubResource("WwiseTreeObject_l65hi"), SubResource("WwiseTreeObject_h61g6"), SubResource("WwiseTreeObject_2m8v7"), SubResource("WwiseTreeObject_8ttr2"), SubResource("WwiseTreeObject_t5yhp"), SubResource("WwiseTreeObject_31b5r"), SubResource("WwiseTreeObject_eobpg")]
 name = "Default Work Unit"
 id = 125608783
 

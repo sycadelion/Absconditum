@@ -1368,9 +1368,6 @@ properties/2/replication_mode = 1
 properties/3/path = NodePath("WeaponManger:Current_weapon")
 properties/3/spawn = true
 properties/3/replication_mode = 1
-properties/4/path = NodePath("WeaponManger:Weapon_stack")
-properties/4/spawn = true
-properties/4/replication_mode = 1
 
 [node name="Player" type="CharacterBody3D" groups=["Players"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.96046e-08, 0)
@@ -1637,7 +1634,6 @@ _skill_prefab = ExtResource("11_7l2ie")
 
 [node name="WeaponManger" type="Node" parent="."]
 script = ExtResource("17_ln4bi")
-Start_weapons = Array[String](["Malice", "Trauma"])
 
 [node name="Footsteps" type="AkEvent3D" parent="."]
 event = ExtResource("30_376c3")
