@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://da5fc0sh7rdo8"]
 
-[ext_resource type="Script" path="res://1 Player/Weapons/bullet_proj.gd" id="1_dxgf3"]
+[ext_resource type="Script" uid="uid://doeo2g7wgd57h" path="res://1 Player/Weapons/bullet_proj.gd" id="1_dxgf3"]
 [ext_resource type="PackedScene" uid="uid://vfkwq3moisud" path="res://1 Player/Weapons/bolt.tscn" id="2_cr6c0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5kcbs"]
@@ -62,8 +62,9 @@ mesh = SubResource("CapsuleMesh_60rto")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 4.37114e-08)
+collision_mask = 2
 contact_monitor = true
-max_contacts_reported = 10
+max_contacts_reported = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/RigidBody3D"]
 transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, 0.5, 0, -0.5, -2.18557e-08, 0, 0, 1)
@@ -101,3 +102,4 @@ process_material = SubResource("ParticleProcessMaterial_itjs6")
 draw_pass_1 = SubResource("BoxMesh_jqoxu")
 
 [connection signal="body_entered" from="MeshInstance3D/RigidBody3D" to="." method="_on_rigid_body_3d_body_entered"]
+[connection signal="body_exited" from="MeshInstance3D/RigidBody3D" to="." method="_on_rigid_body_3d_body_exited"]

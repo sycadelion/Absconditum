@@ -1402,17 +1402,17 @@ SPEED_MULTI = 2.0
 [node name="PlayerShootState" type="Node" parent="StateMachine"]
 script = ExtResource("6_fngw5")
 
-[node name="Player_Body" type="MeshInstance3D" parent="." groups=["Players", "VisibleObjectsShader"]]
+[node name="Player_Body" type="MeshInstance3D" parent="." groups=["VisibleObjectsShader"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 material_override = SubResource("ShaderMaterial_2lknx")
 mesh = SubResource("CapsuleMesh_4jp85")
 
-[node name="Player_Body2" type="MeshInstance3D" parent="." groups=["Players"]]
+[node name="Player_Body2" type="MeshInstance3D" parent="." groups=["VisibleObjectsShader"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 material_override = SubResource("ShaderMaterial_1ggn5")
 mesh = SubResource("CapsuleMesh_ghie6")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["Players"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_736cw")
 
@@ -1443,6 +1443,8 @@ event = ExtResource("12_rvfjf")
 unique_name_in_owner = true
 
 [node name="Area3D" type="Area3D" parent="Head/Camera3D/Hand/GunAudio"]
+collision_layer = 512
+collision_mask = 512
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera3D/Hand/GunAudio/Area3D"]
 shape = SubResource("BoxShape3D_ulbgw")
@@ -1451,6 +1453,8 @@ shape = SubResource("BoxShape3D_ulbgw")
 event = ExtResource("13_bo3ew")
 
 [node name="Area3D" type="Area3D" parent="Head/Camera3D/Hand/GunReload"]
+collision_layer = 512
+collision_mask = 512
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera3D/Hand/GunReload/Area3D"]
 shape = SubResource("BoxShape3D_ulbgw")
@@ -1459,6 +1463,8 @@ shape = SubResource("BoxShape3D_ulbgw")
 event = ExtResource("14_28efx")
 
 [node name="Area3D" type="Area3D" parent="Head/Camera3D/Hand/GunAmmo"]
+collision_layer = 512
+collision_mask = 512
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera3D/Hand/GunAmmo/Area3D"]
 shape = SubResource("BoxShape3D_ulbgw")
@@ -1541,6 +1547,8 @@ shape = SubResource("BoxShape3D_ulbgw")
 event = ExtResource("18_2lknx")
 
 [node name="Area3D" type="Area3D" parent="Head/Camera3D/Voice"]
+collision_layer = 512
+collision_mask = 512
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera3D/Voice/Area3D"]
 shape = SubResource("BoxShape3D_1ggn5")
@@ -1634,6 +1642,8 @@ event = ExtResource("30_376c3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40389, 0)
 
 [node name="Area3D" type="Area3D" parent="Footsteps"]
+collision_layer = 512
+collision_mask = 512
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Footsteps/Area3D"]
 shape = SubResource("BoxShape3D_ulbgw")

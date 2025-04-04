@@ -101,7 +101,7 @@ func _input(event: InputEvent) -> void:
 				Current_weapon.Current_ammo -= 1
 				Current_weapon.Chambered_ammo = 1
 
-@rpc("call_local")
+@rpc("any_peer","call_local")
 func Initialize(_Start_weapons):
 	
 	for i in _Start_weapons:
@@ -114,7 +114,7 @@ func Initialize(_Start_weapons):
 	Current_weapon = OnlineMang.onlineComp.weaponList[Weapon_stack[0]]
 	Enter.rpc()
 
-@rpc("call_local")
+@rpc("any_peer","call_local")
 func Enter():
 	if Current_weapon.Anim_activate:
 		anim_tree["parameters/Equip/transition_request"] = Current_weapon.Weapon_name
@@ -130,7 +130,7 @@ func Enter():
 			type_A_loaded.text = str(Current_weapon.Current_ammo)
 			can_shoot = true
 
-@rpc("call_local")
+@rpc("any_peer","call_local")
 func Change_Weapon(_weapon_name: String):
 	if Weapon_indicator == 0:
 		Current_weapon = OnlineMang.onlineComp.weaponList[Weapon_stack[0]]
@@ -140,7 +140,7 @@ func Change_Weapon(_weapon_name: String):
 	Next_Weapon = ""        
 	Enter.rpc()
 
-@rpc("call_local")
+@rpc("any_peer","call_local")
 func Exit(_next_weapon: String):
 	if _next_weapon != Current_weapon.Weapon_name:	
 		if Current_weapon.Anim_deactivate:
@@ -178,7 +178,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 			and not GameManager.paused:
 				shoot_empty.rpc()
 
-@rpc("call_local")
+@rpc("any_peer","call_local")
 func shoot():
 	shooting = true
 	Player.anim_tree["parameters/Shooting/transition_request"] = "True"
@@ -193,7 +193,7 @@ func shoot():
 	await get_tree().create_timer(Current_weapon.Firerate).timeout
 	shooting = false
 
-@rpc("call_local")
+@rpc("any_peer","call_local")
 func shoot_manual():
 	shooting = true
 	Player.anim_tree["parameters/Shooting/transition_request"] = "True"
@@ -207,14 +207,14 @@ func shoot_manual():
 	await get_tree().create_timer(Current_weapon.Firerate).timeout
 	shooting = false
 
-@rpc("call_local")
+@rpc("any_peer","call_local")
 func shoot_empty():
 	shooting = true
 	Player.anim_tree["parameters/DryFire/transition_request"] = "True"
 	await get_tree().create_timer(.01).timeout
 	shooting = false
 
-@rpc("call_local")
+@rpc("any_peer","call_local")
 func reload():
 	Player.audio_comp.Play_reload(Current_weapon.Audio_Name,false)
 	anim_player.play(Current_weapon.Anim_reload)

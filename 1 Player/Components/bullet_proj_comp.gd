@@ -12,7 +12,7 @@ var Player: Player
 func _ready() -> void:
 	Player = owner
 
-@rpc("call_local")
+@rpc("any_peer","call_local")
 func bulletFire(_damage) ->void:
 	var bullet_proj:BulletProj = _bullet_proj_prefab.instantiate()
 	marker.add_child(bullet_proj)
