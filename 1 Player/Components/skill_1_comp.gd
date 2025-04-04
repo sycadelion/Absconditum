@@ -23,7 +23,7 @@ func skill_throw() ->void:
 	container.add_child(skill)
 	skill.global_position = skill_marker.global_position
 	
-	var force = -10
+	var force = -15
 	var updirection = 3.5
 	var playerRotation = player.camera.global_transform.basis.z.normalized()
 	

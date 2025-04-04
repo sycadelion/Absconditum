@@ -27,8 +27,6 @@ func _ready() -> void:
 	bubble_in.mesh.set_height(sphereRadius*2)
 	bubble_out.mesh.set_height(sphereRadius*2)
 	play_audio()
-	if not expanded:
-		anim_player.play("expand")
 	
 func _process(_delta: float) -> void:
 	var ShaderObjects = get_tree().get_nodes_in_group("VisibleObjectsShader")
@@ -62,6 +60,8 @@ func _on_timer_timeout() -> void:
 
 
 func _on_body_entered(_body: Node) -> void:
+	if not expanded:
+		anim_player.play("expand")
 	linear_damp = 0.3
 	angular_damp = 1.5
 

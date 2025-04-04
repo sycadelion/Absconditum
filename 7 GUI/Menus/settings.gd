@@ -17,6 +17,7 @@ extends Control
 @onready var keybinds: PanelContainer = $GridContainer/Keybinds
 @onready var user: PanelContainer = $GridContainer/User
 
+var pause_updates: bool = false
 var active_menu = null
 var Text_Focused = false
 
@@ -136,3 +137,15 @@ func mouse_click():
 
 func _on_palette_button_item_selected(index: int) -> void:
 	GameManager.palette = palettes[index]
+
+
+func _on_player_name_focus_entered() -> void:
+	Text_Focused = true
+
+
+func _on_player_name_focus_exited() -> void:
+	Text_Focused = false
+
+
+func _on_player_name_text_submitted(_new_text: String) -> void:
+	Text_Focused = false
