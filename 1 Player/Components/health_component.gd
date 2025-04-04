@@ -2,8 +2,9 @@ class_name HealthComp extends Node
 
 @export var MAX_HEALTH:int = 10
 var health: int
-
+var hit = false
 @onready var killfeed: Control = %KillFeed
+@onready var hurtbox: Area3D = $"../Hurtbox"
 
 var Player: Player
 
@@ -14,10 +15,16 @@ func _ready() -> void:
 
 @rpc("call_local","any_peer")
 func receive_damage(damage_value:int, attacker:int):
-	health -= damage_value
-	if health <= 0:
-		OnlineMang.PlayerDied.emit(attacker,Player.owner_id)
-		respawn_self()
+	if !hit:
+		hit = true
+		hurtbox.monitoring = false
+		health -= damage_value
+		await get_tree().create_timer(0.1).timeout
+		hurtbox.monitoring = true
+		hit = false
+		if health <= 0:
+			OnlineMang.PlayerDied.emit(attacker,Player.owner_id)
+			respawn_self()
 
 @rpc("call_local","any_peer")
 func respawn_self():

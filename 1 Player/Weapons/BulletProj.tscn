@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://da5fc0sh7rdo8"]
+[gd_scene load_steps=12 format=3 uid="uid://da5fc0sh7rdo8"]
 
 [ext_resource type="Script" uid="uid://doeo2g7wgd57h" path="res://1 Player/Weapons/bullet_proj.gd" id="1_dxgf3"]
 [ext_resource type="PackedScene" uid="uid://vfkwq3moisud" path="res://1 Player/Weapons/bolt.tscn" id="2_cr6c0"]
@@ -13,9 +13,6 @@ emission_energy_multiplier = 16.0
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_60rto"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_5kcbs")
-radius = 0.05
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8qby6"]
 radius = 0.05
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1c7wd"]
@@ -60,16 +57,6 @@ _bullet_mesh = NodePath("MeshInstance3D")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 1)
 mesh = SubResource("CapsuleMesh_60rto")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 4.37114e-08)
-collision_mask = 2
-contact_monitor = true
-max_contacts_reported = 1
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/RigidBody3D"]
-transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, 0.5, 0, -0.5, -2.18557e-08, 0, 0, 1)
-shape = SubResource("CapsuleShape3D_8qby6")
-
 [node name="Tail particles" type="GPUParticles3D" parent="MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.99926, 8.73904e-08)
 visible = false
@@ -101,5 +88,15 @@ explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_itjs6")
 draw_pass_1 = SubResource("BoxMesh_jqoxu")
 
-[connection signal="body_entered" from="MeshInstance3D/RigidBody3D" to="." method="_on_rigid_body_3d_body_entered"]
-[connection signal="body_exited" from="MeshInstance3D/RigidBody3D" to="." method="_on_rigid_body_3d_body_exited"]
+[node name="RayCast3D" type="RayCast3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47789, 2.08892e-08)
+collision_mask = 16
+hit_back_faces = false
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
