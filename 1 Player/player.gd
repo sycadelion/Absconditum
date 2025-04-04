@@ -37,7 +37,7 @@ var impact_played: bool = false
 var playerList
 
 var sens:float = GameManager.sensitivity
-var owner_id = 1
+var owner_id: int = 1
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var AudioRay: bool = false
 

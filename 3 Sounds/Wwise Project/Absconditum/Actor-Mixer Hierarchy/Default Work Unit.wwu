@@ -916,6 +916,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="231244__augustsandberg__smith-wesson" ID="{2023BF77-AEEA-4F16-BB5B-FC1BB499767D}" ShortID="105580442">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>300</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
@@ -974,6 +981,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="231244__augustsandberg__smith-wesson_02" ID="{EAB3292B-CAC5-4D7F-A70F-80FE9221C0D5}" ShortID="1029489413">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-200</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
@@ -1448,6 +1462,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="wind-up" ID="{FF6EF4EC-F8D3-44E2-BB34-99A2B81C7430}" ShortID="843291252">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>10</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
@@ -1470,6 +1491,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="foot-pump-with-air" ID="{F26AABB6-BCDB-4E65-A275-189323547FEB}" ShortID="262673366">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
@@ -1928,6 +1956,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="773857__mrgungus__357-magnum-casing-drop" ID="{B0783BD1-261E-46EB-913D-66F8F11E3DCB}" ShortID="678625947">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
@@ -2438,6 +2473,50 @@
 						</GroupingList>
 					</GroupingInfo>
 				</SwitchContainer>
+				<RandomSequenceContainer Name="Pick_up" ID="{0CEF49CB-DEC4-4160-9584-C86588AED564}" ShortID="1017309997">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="EnableDiffraction" Type="bool" Value="True"/>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>5</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{04312408-C43F-4AD4-B818-DECF781E2289}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="pickup_ammo" ID="{ABF4C6E2-BC3D-4872-BD06-29E7F06A0C96}" ShortID="728366088">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D00B33EF-A614-42CF-8CC4-1C29650A951D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="pickup_ammo" ID="{FFA034E6-0591-41F1-B6CC-C54CEF487EC1}">
+									<Language>SFX</Language>
+									<AudioFile>pickup_ammo.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="850362719"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="pickup_ammo" ID="{FFA034E6-0591-41F1-B6CC-C54CEF487EC1}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

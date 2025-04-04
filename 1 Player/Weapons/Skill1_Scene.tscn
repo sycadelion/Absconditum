@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://d3bhlb6x0ro8f"]
+[gd_scene load_steps=14 format=4 uid="uid://d3bhlb6x0ro8f"]
 
 [ext_resource type="Script" uid="uid://bgtfk7mcp1sfo" path="res://4 Resources/Shaders/Shader Scripts/sphereSDF.gd" id="1_t28a6"]
 [ext_resource type="PackedScene" uid="uid://ct1bv07ecl3vk" path="res://1 Player/Model/grenade.tscn" id="2_pxuyo"]
@@ -73,6 +73,9 @@ _data = {
 &"expand": SubResource("Animation_njaer")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_230v6"]
+size = Vector3(0.2, 0.2, 0.2)
+
 [node name="Skill1_Scene" type="RigidBody3D"]
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_cofcj")
@@ -108,11 +111,19 @@ libraries = {
 wait_time = 5.0
 
 [node name="Area3D" type="Area3D" parent="."]
+collision_mask = 2
 
 [node name="Area_col" type="CollisionShape3D" parent="Area3D"]
 
 [node name="AkEvent3D" type="AkEvent3D" parent="."]
 event = ExtResource("4_2yio7")
+
+[node name="Area3D" type="Area3D" parent="AkEvent3D"]
+collision_layer = 512
+collision_mask = 512
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AkEvent3D/Area3D"]
+shape = SubResource("BoxShape3D_230v6")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ddut4ym5suydp"]
+[gd_scene load_steps=20 format=3 uid="uid://ddut4ym5suydp"]
 
 [ext_resource type="Material" uid="uid://ys5y4m34ptf6" path="res://4 Resources/Shaders/Skybox_mat.tres" id="1_fm5q2"]
 [ext_resource type="Script" uid="uid://78x7jvl31pcx" path="res://5 Levels/Hub/hub.gd" id="1_xthv6"]
@@ -47,6 +47,12 @@ size = Vector3(108.016, 50, 50.2852)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2q5xx"]
 size = Vector3(24.9996, 20, 62.1086)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ew54u"]
+size = Vector3(6.83924, 4.70435, 0.999316)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ag3dr"]
+size = Vector3(1.07974, 4.71997, 5.75847)
 
 [node name="LevelDropPodHanger" type="Node3D" node_paths=PackedStringArray("players_container", "player_spawner")]
 script = ExtResource("1_xthv6")
@@ -181,31 +187,91 @@ collision_mask = 512
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.13049, 0, 14.8262)
 shape = SubResource("BoxShape3D_x2o1t")
 
+[node name="AkPortal_B1" type="AkPortal" parent="SubViewportContainer/SubViewport"]
+front_room = NodePath("../Big_Room")
+back_room = NodePath("../TeamB_Room")
+enabled = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.9884, 2.67795, 30.4736)
+
+[node name="Shape" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/AkPortal_B1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0694084, -0.0567627, -0.14292)
+shape = SubResource("BoxShape3D_ew54u")
+debug_color = Color(0, 0.395517, 0.163556, 0.42)
+
+[node name="AkPortal_B2" type="AkPortal" parent="SubViewportContainer/SubViewport"]
+front_room = NodePath("../Big_Room")
+back_room = NodePath("../TeamB_Room")
+enabled = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.9925, 2.67795, 30.4736)
+
+[node name="Shape" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/AkPortal_B2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0694084, -0.0567627, -0.14292)
+shape = SubResource("BoxShape3D_ew54u")
+debug_color = Color(0, 0.395517, 0.163556, 0.42)
+
+[node name="AkPortal_A1" type="AkPortal" parent="SubViewportContainer/SubViewport"]
+front_room = NodePath("../Big_Room")
+back_room = NodePath("../TeamA_Room")
+enabled = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.9884, 2.67795, -30.1915)
+
+[node name="Shape" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/AkPortal_A1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0694084, -0.0567627, -0.14292)
+shape = SubResource("BoxShape3D_ew54u")
+debug_color = Color(0, 0.395517, 0.163556, 0.42)
+
+[node name="AkPortal_A2" type="AkPortal" parent="SubViewportContainer/SubViewport"]
+front_room = NodePath("../Big_Room")
+back_room = NodePath("../TeamA_Room")
+enabled = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.9925, 2.67795, -30.1915)
+
+[node name="Shape" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/AkPortal_A2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0694084, -0.0567627, -0.14292)
+shape = SubResource("BoxShape3D_ew54u")
+debug_color = Color(0, 0.395517, 0.163556, 0.42)
+
+[node name="AkPortal_control" type="AkPortal" parent="SubViewportContainer/SubViewport"]
+front_room = NodePath("../Big_Room")
+back_room = NodePath("../Control_Room")
+enabled = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.8548, 16.5715, -25.6011)
+
+[node name="Shape" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/AkPortal_control"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.396801, -0.422974, 0.0706425)
+shape = SubResource("BoxShape3D_ag3dr")
+debug_color = Color(0, 0.395517, 0.163556, 0.42)
+
+[node name="AkPortal_control2" type="AkPortal" parent="SubViewportContainer/SubViewport"]
+front_room = NodePath("../Big_Room")
+back_room = NodePath("../Control_Room")
+enabled = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.8548, 16.5715, 25.5009)
+
+[node name="Shape" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/AkPortal_control2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.396801, -0.422974, 0.0706425)
+shape = SubResource("BoxShape3D_ag3dr")
+debug_color = Color(0, 0.395517, 0.163556, 0.42)
+
 [node name="Item Spawners" type="Node3D" parent="SubViewportContainer/SubViewport"]
 
 [node name="Item_SpawnPoint" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4531, 0, 0)
-HealthDrop = true
 
-[node name="Item_SpawnPoint11" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9025, 13.9941, 28.8627)
-HealthDrop = true
+[node name="Item_SpawnPoint2" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.6205, 6.29896, -11.6252)
 
-[node name="Item_SpawnPoint12" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9025, 13.9941, -29.0022)
-HealthDrop = true
+[node name="Item_SpawnPoint3" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.4191, 6.30822, 9.0965)
+
+[node name="Item_SpawnPoint4" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5299, 0, 19.9243)
 
 [node name="Item_SpawnPoint5" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.3842, 0, -18.3195)
 
-[node name="Item_SpawnPoint9" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12052, 0.372382, -48.2768)
-
-[node name="Item_SpawnPoint10" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0013, 3.37089, -70.6201)
-
-[node name="Item_SpawnPoint4" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5299, 0, 19.9243)
+[node name="Item_SpawnPoint6" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.1297, 20.0096, 1.80632)
 
 [node name="Item_SpawnPoint7" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13777, 0.355501, 45.4746)
@@ -213,15 +279,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13777, 0.355501, 45.4746)
 [node name="Item_SpawnPoint8" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9393, 3.40428, 71.3799)
 
-[node name="Item_SpawnPoint3" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.4191, 6.30822, 9.0965)
+[node name="Item_SpawnPoint9" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12052, 0.372382, -48.2768)
 
-[node name="Item_SpawnPoint6" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.1297, 20.0096, 1.80632)
-HealthDrop = true
+[node name="Item_SpawnPoint10" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0013, 3.37089, -70.6201)
 
-[node name="Item_SpawnPoint2" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.6205, 6.29896, -11.6252)
+[node name="Item_SpawnPoint11" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9025, 13.9941, 28.8627)
+
+[node name="Item_SpawnPoint12" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9025, 13.9941, -29.0022)
 
 [node name="Barrel" parent="SubViewportContainer/SubViewport" instance=ExtResource("11_ew54u")]
 transform = Transform3D(0.244207, 0, -0.969723, 0, 1, 0, 0.969723, 0, 0.244207, 31.7924, 0, 0)

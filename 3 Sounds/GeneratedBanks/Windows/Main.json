@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{9B9BB11E-F8B2-4541-BC2B-42D2D9A82CF8}",
     "Language": "SFX",
-    "Hash": "{D60BDFA5-FB1E-7EB7-C75E-0F327069F6D1}",
+    "Hash": "{34EB7E30-52A5-19F6-1246-4CF900D70915}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -488,6 +488,14 @@
       "CachePath": "2B/{2B72AF00-C15F-1A6F-84B9-F9DF7BD0CE0D}.wem"
      },
      {
+      "Id": "850362719",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "pickup_ammo.wav",
+      "CachePath": "37/{37668B00-FAD8-345E-76FF-57AAC6D901F3}.wem"
+     },
+     {
       "Id": "878851868",
       "Language": "SFX",
       "Streaming": "false",
@@ -683,6 +691,20 @@
       "MediaRefs": [
        {
         "Id": "34700422"
+       }
+      ]
+     },
+     {
+      "Id": "3978245845",
+      "Name": "pickUP",
+      "ObjectPath": "\\Events\\Default Work Unit\\pickUP",
+      "GUID": "{E4D22EA9-5C43-4DB9-86D4-6FE25D0A40F4}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.72535145",
+      "DurationMax": "0.72535145",
+      "MediaRefs": [
+       {
+        "Id": "850362719"
        }
       ]
      },
@@ -1500,6 +1522,6 @@
     ]
    }
   ],
-  "FileHash": "{0B6683B9-DED4-B585-CAFE-1F2BDE8FACD5}"
+  "FileHash": "{6E3C68DF-D80E-9A0E-CE98-8FC5172C265A}"
  }
 }

@@ -1,0 +1,8 @@
+[gd_resource type="WwiseEvent" format=3 uid="uid://crn2xc3dse356"]
+
+[resource]
+is_in_user_defined_sound_bank = true
+name = "pickUP"
+id = 3978245845
+guid = "{E4D22EA9-5C43-4DB9-86D4-6FE25D0A40F4}"
+dummy = true

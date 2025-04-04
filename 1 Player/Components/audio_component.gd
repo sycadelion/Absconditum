@@ -8,7 +8,8 @@ class_name AudioComp extends Node
 @onready var voice: AkEvent3D = $"../Head/Camera3D/Voice"
 @onready var feet_cast: RayCast3D = $"../FeetCast"
 
-var Surface: String
+@export var Surface: String
+@export var play_footstep_audio: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,9 +20,13 @@ func _physics_process(_delta: float) -> void:
 	if feet_cast.get_collider() and feet_cast.get_collider().materialName != null:
 		Surface = feet_cast.get_collider().materialName
 
-@rpc("call_local")
-func Play_footstep(_surface:= Surface):
-	Wwise.set_switch("MaterialFeet",_surface,footstep)
+
+func _footstep():
+	play_footstep.rpc()
+
+@rpc("any_peer","call_local")
+func play_footstep():
+	Wwise.set_switch("MaterialFeet",Surface,footstep)
 	if owner.is_on_floor():
 		footstep.post_event()
 

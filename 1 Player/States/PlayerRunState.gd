@@ -1,6 +1,6 @@
 class_name PlayerRunState extends PlayerMovementState
 
-@export var SPEED_MULTI: float = 3.0
+@export var SPEED_MULTI: float = 6.0
 @export var ACCELERATION: float = 0.1
 @export var DECELERATION: float = 0.25
 

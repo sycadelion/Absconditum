@@ -26,6 +26,7 @@ func _ready() -> void:
 	bubble_out.mesh.set_radius(sphereRadius)
 	bubble_in.mesh.set_height(sphereRadius*2)
 	bubble_out.mesh.set_height(sphereRadius*2)
+	play_audio()
 	if not expanded:
 		anim_player.play("expand")
 	

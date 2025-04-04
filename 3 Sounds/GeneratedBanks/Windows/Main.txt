@@ -5,6 +5,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2108779966	Walk			\Default Work Unit\Walk	
 	3038207054	Shoot			\Default Work Unit\Shoot	
 	3554434311	Ammo			\Default Work Unit\Ammo	
+	3978245845	pickUP			\Default Work Unit\pickUP	
 	3991942870	Music			\Default Work Unit\Music	
 	4161132316	Skill			\Default Work Unit\Skill	
 
@@ -126,6 +127,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	794714009	231244__augustsandberg__smith-wesson_02	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\22\{22AF22F1-51CC-EFC6-BA45-765DE56A5293}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gunshots\RifleSemi\231244__augustsandberg__smith-wesson_02		212728
 	809280269	BootsLinoleum_03	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\F7\{F7B253EB-DC1D-5E8B-1A08-2BD912D1B434}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Boots\BootsLinoleum_03		144096
 	844195858	MetalSteps_01	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\2B\{2B72AF00-C15F-1A6F-84B9-F9DF7BD0CE0D}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\HollowMetal\MetalSteps_01		88296
+	850362719	pickup_ammo	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\37\{37668B00-FAD8-345E-76FF-57AAC6D901F3}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Pick_up\pickup_ammo		64072
 	878851868	MetalSteps_03	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\66\{66C09484-993A-91AB-7370-C45BC69845D7}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\HollowMetal\MetalSteps_03		88296
 	889608281	BootsLinoleum_04	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\6D\{6DA8C7A1-80DD-EF94-A51A-996CF2813D11}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Boots\BootsLinoleum_04		144096
 	910657870	231245__augustsandberg__fn-scar-h-7_01	F:\projects\Absconditum\3 Sounds\Wwise Project\Absconditum\.cache\10\{10E7A5EE-2231-2739-5EC4-430CCBA8CCA4}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gunshots\Rifle\231245__augustsandberg__fn-scar-h-7_01		270392

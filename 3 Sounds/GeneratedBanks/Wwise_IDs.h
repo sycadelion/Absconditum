@@ -15,6 +15,7 @@ namespace AK
     {
         static const AkUniqueID AMMO = 3554434311U;
         static const AkUniqueID MUSIC = 3991942870U;
+        static const AkUniqueID PICKUP = 3978245845U;
         static const AkUniqueID PLAYERAUDIO = 1256345528U;
         static const AkUniqueID RELOAD = 456382354U;
         static const AkUniqueID SHOOT = 3038207054U;

@@ -24,6 +24,7 @@
 						<ObjectRef Name="SFX" ID="{04312408-C43F-4AD4-B818-DECF781E2289}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Big_Room" ID="{BDA45880-AFFB-4C92-B1CB-D625CA3527EE}" WorkUnitID="{A08763C2-058D-4751-9ED6-8E1BE853ACAF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Skill" ID="{0EA50E5D-F786-4CDE-A805-EDBB30DFE518}" WorkUnitID="{D1BAD11F-0083-404B-AA79-15730CB6E4DC}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="pickUP" ID="{E4D22EA9-5C43-4DB9-86D4-6FE25D0A40F4}" WorkUnitID="{7F3DAC90-E421-4FAB-AEEB-44CB0FEB024D}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
