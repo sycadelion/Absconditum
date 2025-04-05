@@ -10,9 +10,11 @@ class_name AudioComp extends Node
 
 @export var Surface: String
 @export var play_footstep_audio: bool = false
+var playerOwner
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	playerOwner = owner
 	Surface = "Lino"
 
 func _physics_process(_delta: float) -> void:
@@ -24,10 +26,10 @@ func _physics_process(_delta: float) -> void:
 func _footstep():
 	play_footstep.rpc()
 
-@rpc("any_peer","call_local")
+@rpc("any_peer", "call_local")
 func play_footstep():
 	Wwise.set_switch("MaterialFeet",Surface,footstep)
-	if owner.is_on_floor():
+	if playerOwner.floor:
 		footstep.post_event()
 
 @rpc("call_local")

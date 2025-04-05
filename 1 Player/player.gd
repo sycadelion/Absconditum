@@ -34,6 +34,7 @@ class_name Player extends CharacterBody3D
 #jump vars for landing audio
 var landing: bool = false
 var impact_played: bool = false
+var floor: bool = true
 var playerList
 
 var sens:float = GameManager.sensitivity
@@ -88,7 +89,8 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("reload"):
 		weapon_manger.reload.rpc()
 	elif event.is_action_pressed("test"):
-		$CanvasLayer/HUD/Fps.visible = not $CanvasLayer/HUD/Fps.visible
+		#$CanvasLayer/HUD/Fps.visible = not $CanvasLayer/HUD/Fps.visible
+		audio_comp.play_footstep.rpc()
 
 func _physics_process(_delta: float) -> void:
 	if owner_id != multiplayer.get_unique_id(): 
@@ -100,11 +102,13 @@ func _physics_process(_delta: float) -> void:
 	Health_Label.text = str(health_comp.health)
 	
 	if is_on_floor():
+		floor = true
 		if landing and !impact_played:
 			audio_comp.Play_land.rpc()
 			landing= false
 			impact_played = true
 	else:
+		floor = false
 		if !landing:
 			landing = true
 	

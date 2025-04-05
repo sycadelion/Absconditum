@@ -28,13 +28,13 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	if Spawned:
 		if body.is_in_group("Players"):
 			if HealthDrop:
-				if body.health_comp.health != body.health_comp.MAX_HEALTH and Spawned:
+				if body.health_comp.health != body.health_comp.MAX_HEALTH:
 					health_icon.hide()
-					body.health_comp.Heal_self.rpc()
+					body.health_comp.Heal_self()
 					play_audio.rpc()
 					Spawned = false
 			else:
-				if body.weapon_manger.Current_weapon.Reserve_ammo != body.weapon_manger.Current_weapon.Max_reserve and Spawned:
+				if body.weapon_manger.Current_weapon.Reserve_ammo != body.weapon_manger.Current_weapon.Max_reserve:
 					ammo_icon.hide()
 					body.weapon_manger.refill_ammo.rpc()
 					play_audio()

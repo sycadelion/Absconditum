@@ -53,9 +53,9 @@ replication_config = SubResource("SceneReplicationConfig_p1462")
 
 [node name="pickup_Audio" type="AkEvent3D" parent="." index="6"]
 event = ExtResource("6_d64os")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.965377, 0)
 
 [node name="Area3D" type="Area3D" parent="pickup_Audio" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.151, 0)
 collision_layer = 512
 collision_mask = 512
 

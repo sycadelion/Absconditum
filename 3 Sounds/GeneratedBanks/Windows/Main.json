@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{9B9BB11E-F8B2-4541-BC2B-42D2D9A82CF8}",
     "Language": "SFX",
-    "Hash": "{34EB7E30-52A5-19F6-1246-4CF900D70915}",
+    "Hash": "{761C97C0-8268-66C8-26A8-3DD0034F3921}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -634,6 +634,7 @@
       "Name": "Ammo",
       "ObjectPath": "\\Events\\Default Work Unit\\Ammo",
       "GUID": "{8390F816-397E-4A3F-9DCA-D0F764C99F1C}",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.8737415",
       "DurationMax": "1.3932426",
@@ -713,7 +714,7 @@
       "Name": "PlayerAudio",
       "ObjectPath": "\\Events\\Default Work Unit\\PlayerAudio",
       "GUID": "{90163899-6434-4758-83D0-BF16752D4064}",
-      "MaxAttenuation": "40",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "1.5",
       "DurationMax": "1.5",
@@ -882,6 +883,7 @@
       "Name": "Shoot",
       "ObjectPath": "\\Events\\Default Work Unit\\Shoot",
       "GUID": "{CEB512F3-2A96-476F-BF95-C309FCB953DE}",
+      "MaxAttenuation": "300",
       "DurationType": "OneShot",
       "DurationMin": "0.7497959",
       "DurationMax": "1.5795981",
@@ -1059,7 +1061,7 @@
       "Name": "Walk",
       "ObjectPath": "\\Events\\Default Work Unit\\Walk",
       "GUID": "{BF8C47E3-7FB7-4A96-9087-30E26825A77B}",
-      "MaxAttenuation": "40",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.5",
       "DurationMax": "0.75",
@@ -1522,6 +1524,6 @@
     ]
    }
   ],
-  "FileHash": "{6E3C68DF-D80E-9A0E-CE98-8FC5172C265A}"
+  "FileHash": "{E9FDA257-56B3-41FB-4719-A68702661751}"
  }
 }

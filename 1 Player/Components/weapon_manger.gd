@@ -116,7 +116,7 @@ func refill_ammo():
 	else:
 		Current_weapon.Reserve_ammo = Current_weapon.Max_reserve + Current_weapon.Reload_ammo + 1
 
-@rpc("call_local")
+@rpc("any_peer","call_local")
 func respawn_ammo():
 	if Player.owner_id != multiplayer.get_unique_id(): 
 		return
