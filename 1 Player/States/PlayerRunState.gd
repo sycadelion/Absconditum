@@ -7,6 +7,7 @@ class_name PlayerRunState extends PlayerMovementState
 @rpc("call_local")
 func Enter():
 	PLAYER.anim_tree["parameters/FallAndFloor/transition_request"] = "Move"
+	SPEED_MULTI = OnlineMang.onlineComp.matchSettings.player_sprint
 
 func Update(delta: float):
 	PLAYER.update_gravity(delta)

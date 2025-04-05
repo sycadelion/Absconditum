@@ -109,20 +109,20 @@ MatchSetting = true
 [node name="HSeparator4" type="HSeparator" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+[node name="JumpHeight" type="CenterContainer" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="GridContainer" type="GridContainer" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer/CenterContainer"]
+[node name="GridContainer" type="GridContainer" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer/JumpHeight"]
 layout_mode = 2
 columns = 2
 
-[node name="JumpHeight" type="Label" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer/CenterContainer/GridContainer"]
+[node name="JumpHeight" type="Label" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer/JumpHeight/GridContainer"]
 layout_mode = 2
 text = "Jump Height :"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="JumpHeight_text" type="Label" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer/CenterContainer/GridContainer"]
+[node name="JumpHeight_text" type="Label" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer/JumpHeight/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 horizontal_alignment = 1
@@ -137,6 +137,37 @@ MatchSetting = true
 layout_mode = 2
 
 [node name="HSeparator" type="Label" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="sprint" type="CenterContainer" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer/sprint"]
+layout_mode = 2
+columns = 2
+
+[node name="JumpHeight" type="Label" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer/sprint/GridContainer"]
+layout_mode = 2
+text = "Sprint Multi :"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sprint_text" type="Label" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer/sprint/GridContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprintslider" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer" instance=ExtResource("2_1d8gl")]
+layout_mode = 2
+settingsVar = "player_sprint"
+minV = 2
+maxV = 6
+MatchSetting = true
+
+[node name="HSeparator6" type="HSeparator" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator2" type="Label" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="Skills" type="PanelContainer" parent="GridContainer"]

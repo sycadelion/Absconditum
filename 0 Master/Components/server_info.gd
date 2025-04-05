@@ -3,7 +3,7 @@ extends Node
 @export var weapon_resouces: Array[WeaponResource]
 @export var Weapon_list = {}
 
-@export var matchSettings: Dictionary = {"skill_Cooldown":5,"skill1_radius":10,"player_Speed":5,"player_jump":5}
+@export var matchSettings: Dictionary = {"skill_Cooldown":5,"skill1_radius":10,"player_Speed":5,"player_jump":5, "player_sprint": 3}
 var testingString = "wow look it does work"
 
 func _ready() -> void:

@@ -12,13 +12,14 @@ var setValue: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if not is_audio and not gunSetting:
-		setValue = GameManager.get(settingsVar)
-	elif is_audio:
-		setValue = Wwise.get_rtpc_value_id(bus_index,null)
+	update_text()
 	value = setValue
 	min_value = minV
 	max_value = maxV
+
+func _process(delta: float) -> void:
+	update_text()
+	value = setValue
 
 func _on_value_changed(valueVar: float) -> void:
 	if not is_audio and not MatchSetting and not gunSetting:
@@ -33,7 +34,14 @@ func _on_value_changed(valueVar: float) -> void:
 			pass
 			#OnlineMang.serverInfo.Weapon_list[settingsVar][gunSettingVar] = int(valueVar)
 
-
+func update_text():
+	if not is_audio and not gunSetting and not MatchSetting:
+		setValue = GameManager.get(settingsVar)
+	elif is_audio:
+		setValue = Wwise.get_rtpc_value_id(bus_index,null)
+	elif MatchSetting:
+		if OnlineMang.serverInfo:
+			setValue = OnlineMang.serverInfo.matchSettings[settingsVar]
 
 func _on_mouse_exited() -> void:
 	self.release_focus()

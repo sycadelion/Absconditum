@@ -4,6 +4,7 @@ extends Control
 @onready var skill_radius: Label = %Skill_radius_text
 @onready var movement_speed: Label = %MovementSpeed_text
 @onready var jump_height: Label = %JumpHeight_text
+@onready var sprint_text: Label = $GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer/sprint/GridContainer/sprint_text
 @onready var gun_dropdown: OptionButton = %GunDropdown
 
 @onready var damage_set: HSlider = $GridContainer/Guns/CenterContainer/MarginContainer/GridContainer/VBoxContainer/DamageSet
@@ -30,6 +31,7 @@ func _ready() -> void:
 		skill_radius.text = str(OnlineMang.serverInfo.matchSettings.skill1_radius)
 		movement_speed.text = str(OnlineMang.serverInfo.matchSettings.player_Speed)
 		jump_height.text = str(OnlineMang.serverInfo.matchSettings.player_jump)
+		sprint_text.text = str(OnlineMang.serverInfo.matchSettings.player_sprint)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -40,6 +42,7 @@ func _process(_delta: float) -> void:
 		skill_radius.text = str(OnlineMang.serverInfo.matchSettings.skill1_radius)
 		movement_speed.text = str(OnlineMang.serverInfo.matchSettings.player_Speed)
 		jump_height.text = str(OnlineMang.serverInfo.matchSettings.player_jump)
+		sprint_text.text = str(OnlineMang.serverInfo.matchSettings.player_sprint)
 		
 		damage_set.settingsVar = str(OnlineMang.serverInfo.Weapon_list[gun_dropdown.get_item_text(gun_dropdown.selected)])
 		damage_set.gunSettingVar = "Damage"

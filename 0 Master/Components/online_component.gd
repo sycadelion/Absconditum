@@ -14,7 +14,7 @@ var players = {}
 var weaponList = {}
 
 var testStringPlease: String
-var player_info = {"name": GameManager.UserName, "kills": 0, "deaths": 0, "current_weapon": 0, "weapon_slot1": 0, "weapon_slot2": 0}
+var player_info = {"name": GameManager.UserName, "kills": 0, "deaths": 0}
 
 
 
