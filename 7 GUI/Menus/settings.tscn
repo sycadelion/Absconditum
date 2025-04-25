@@ -228,6 +228,7 @@ layout_mode = 2
 theme_override_constants/separation = 20
 
 [node name="Graphics" type="PanelContainer" parent="GridContainer"]
+visible = false
 custom_minimum_size = Vector2(0, 388)
 layout_mode = 2
 
@@ -342,53 +343,33 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Keybinds" type="PanelContainer" parent="GridContainer"]
-visible = false
 custom_minimum_size = Vector2(0, 388)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/Keybinds"]
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/Keybinds"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/Keybinds/MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="GridContainer/Keybinds/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="GridContainer/Keybinds/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "currently Unable to Rebind
+size_flags_vertical = 3
 
-
-
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="Movement" type="Label" parent="GridContainer/Keybinds/VBoxContainer"]
+[node name="ActionList" type="VBoxContainer" parent="GridContainer/Keybinds/MarginContainer/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Movement : W A S D"
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="Shoot" type="Label" parent="GridContainer/Keybinds/VBoxContainer"]
+[node name="ResetButton" type="Button" parent="GridContainer/Keybinds/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Shoot : Mouse 1"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Chamber" type="Label" parent="GridContainer/Keybinds/VBoxContainer"]
-layout_mode = 2
-text = "Chamber Bullet : Mouse 2"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="grenade" type="Label" parent="GridContainer/Keybinds/VBoxContainer"]
-layout_mode = 2
-text = "Throw Reveal Grenade : F"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Fps" type="Label" parent="GridContainer/Keybinds/VBoxContainer"]
-layout_mode = 2
-text = "FPS counter : F1"
-horizontal_alignment = 1
-vertical_alignment = 1
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_font_sizes/font_size = 14
+text = "Reset to Default"
 
 [node name="User" type="PanelContainer" parent="GridContainer"]
 visible = false
@@ -475,9 +456,9 @@ theme_override_constants/separation = 20
 
 [node name="BackButton" type="PanelContainer" parent="."]
 layout_mode = 2
-offset_left = -300.5
+offset_left = -150.0
 offset_top = 204.0
-offset_right = 300.5
+offset_right = 150.0
 offset_bottom = 320.0
 grow_horizontal = 2
 
@@ -527,6 +508,7 @@ event = ExtResource("4_p0ldj")
 [connection signal="item_selected" from="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/PaletteSelc/palette_button" to="." method="_on_palette_button_item_selected"]
 [connection signal="mouse_entered" from="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/PaletteSelc/palette_button" to="." method="mouse_hover"]
 [connection signal="pressed" from="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/PaletteSelc/palette_button" to="." method="mouse_click"]
+[connection signal="pressed" from="GridContainer/Keybinds/MarginContainer/VBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="focus_entered" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/player_name" to="." method="_on_player_name_focus_entered"]
 [connection signal="focus_exited" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/player_name" to="." method="_on_player_name_focus_exited"]
 [connection signal="mouse_entered" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/player_name" to="." method="mouse_hover"]
