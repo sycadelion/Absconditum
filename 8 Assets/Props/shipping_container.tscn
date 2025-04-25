@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cluct2lg48t5f"]
+
+[ext_resource type="PackedScene" uid="uid://dkhv2u5ml4c4r" path="res://8 Assets/Models/Shipping container.glb" id="1_4o1j6"]
+[ext_resource type="Script" uid="uid://ywjj5jyr5g0o" path="res://5 Levels/objMaterial.gd" id="2_w5m0p"]
+
+[node name="Shipping container" instance=ExtResource("1_4o1j6")]
+
+[node name="StaticBody3D" parent="Hitbox" index="0"]
+script = ExtResource("2_w5m0p")
+materialName = "HollowMetal"
+
+[node name="Container" type="AkGeometry" parent="Hitbox" index="1"]
+enable_diffraction = true
+enable_diffraction_on_boundary_edges = true

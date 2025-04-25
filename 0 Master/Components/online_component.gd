@@ -125,7 +125,7 @@ func player_died(killer,killed):
 		GameManager.PLAYER.killfeed.send_message.rpc("Environment",killed_name)
 	elif killer == -2:
 		if GameManager.PLAYER:
-			GameManager.PLAYER.killfeed.send_message.rpc(killed_name, "Connected")
+			GameManager.PLAYER.killfeed.send_message.rpc("Connected",killed_name)
 	else:
 		var Killer_name = players[killer].name
 		players[killer].kills += 1

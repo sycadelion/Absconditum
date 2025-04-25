@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bglvj405a8scx"]
+[gd_scene load_steps=15 format=3 uid="uid://bglvj405a8scx"]
 
 [ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu.tres" id="1_talt2"]
 [ext_resource type="Script" uid="uid://f8mlw7kacjfj" path="res://7 GUI/Menus/settings.gd" id="2_supjv"]
@@ -6,6 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://d321ejt6bigvh" path="res://8 Assets/Palettes/curiosities-8x.png" id="3_h00h5"]
 [ext_resource type="WwiseEvent" uid="uid://bpc3mfvfm1yrq" path="res://Wwise/resources/Event/{1D0D8EA8-D697-496F-AEEA-239402382028}.tres" id="4_p0ldj"]
 [ext_resource type="Texture2D" uid="uid://b5rv4mmsvj7w7" path="res://8 Assets/Palettes/slso8-8x.png" id="4_sblu0"]
+[ext_resource type="Texture2D" uid="uid://dd641nsi4p7cm" path="res://8 Assets/Palettes/ammo-8-8x.png" id="4_yts5q"]
+[ext_resource type="Texture2D" uid="uid://c2qtn7pkamwwp" path="res://8 Assets/Palettes/berry-nebula-8x.png" id="5_3tawr"]
+[ext_resource type="Texture2D" uid="uid://calnrpnyf28ea" path="res://8 Assets/Palettes/custodian-8-8x.png" id="7_g3bvt"]
+[ext_resource type="Texture2D" uid="uid://bc01wtpc7pm5t" path="res://8 Assets/Palettes/dream-haze-8-8x.png" id="8_vxcmy"]
+[ext_resource type="Texture2D" uid="uid://bm50k4r0hbgnh" path="res://8 Assets/Palettes/gothic-bit-8x.png" id="9_gsmc5"]
+[ext_resource type="Texture2D" uid="uid://opdctpd3ea3u" path="res://8 Assets/Palettes/hortensia-diamond-8x.png" id="10_fxf3f"]
+[ext_resource type="Texture2D" uid="uid://0i6uodjhwi33" path="res://8 Assets/Palettes/justparchment8-8x.png" id="11_wajwc"]
+[ext_resource type="Texture2D" uid="uid://cjskki3wugmip" path="res://8 Assets/Palettes/waverator-8x.png" id="12_dhnrr"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -18,7 +26,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_talt2")
 script = ExtResource("2_supjv")
-palettes = [ExtResource("3_h00h5"), ExtResource("4_sblu0")]
+palettes = [ExtResource("4_sblu0"), ExtResource("4_yts5q"), ExtResource("5_3tawr"), ExtResource("3_h00h5"), ExtResource("7_g3bvt"), ExtResource("8_vxcmy"), ExtResource("9_gsmc5"), ExtResource("10_fxf3f"), ExtResource("11_wajwc"), ExtResource("12_dhnrr")]
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
@@ -220,7 +228,6 @@ layout_mode = 2
 theme_override_constants/separation = 20
 
 [node name="Graphics" type="PanelContainer" parent="GridContainer"]
-visible = false
 custom_minimum_size = Vector2(0, 388)
 layout_mode = 2
 
@@ -333,14 +340,9 @@ layout_mode = 2
 
 [node name="palette_button" type="OptionButton" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/PaletteSelc"]
 layout_mode = 2
-selected = 0
-item_count = 2
-popup/item_0/icon = ExtResource("3_h00h5")
-popup/item_0/id = 0
-popup/item_1/icon = ExtResource("4_sblu0")
-popup/item_1/id = 1
 
 [node name="Keybinds" type="PanelContainer" parent="GridContainer"]
+visible = false
 custom_minimum_size = Vector2(0, 388)
 layout_mode = 2
 

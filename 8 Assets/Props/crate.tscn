@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdwm34nbbtc5m"]
+
+[ext_resource type="PackedScene" uid="uid://caj74nv5rrutq" path="res://8 Assets/Models/crate.glb" id="1_48gyq"]
+[ext_resource type="Script" uid="uid://ywjj5jyr5g0o" path="res://5 Levels/objMaterial.gd" id="2_hvcjy"]
+
+[node name="crate" instance=ExtResource("1_48gyq")]
+
+[node name="StaticBody3D" parent="Crate" index="0"]
+script = ExtResource("2_hvcjy")
+materialName = "Wood"
+
+[node name="Crate" type="AkGeometry" parent="Wwise" index="0"]
+enable_diffraction = true
+enable_diffraction_on_boundary_edges = true

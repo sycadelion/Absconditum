@@ -6,9 +6,7 @@
 [ext_resource type="Material" uid="uid://d0pvmiwy55gkj" path="res://8 Assets/Images/blank_mat.tres" id="3_fdipf"]
 [ext_resource type="Script" uid="uid://ljcmwjikxtp7" path="res://1 Player/States/PlayerIdleState.gd" id="3_ix7v3"]
 [ext_resource type="Script" uid="uid://bs43hw5nhhqx6" path="res://1 Player/States/PlayerWalkState.gd" id="4_525u1"]
-[ext_resource type="PackedScene" uid="uid://bnrhdm2pom8cm" path="res://1 Player/Model/crossbow.tscn" id="4_abpq6"]
 [ext_resource type="Script" uid="uid://bpn43mfrvkkb1" path="res://1 Player/States/PlayerRunState.gd" id="5_0iglv"]
-[ext_resource type="PackedScene" uid="uid://cr1br4blceokm" path="res://1 Player/Weapons/crossbow_Shader.tscn" id="5_bmnt7"]
 [ext_resource type="Texture2D" uid="uid://pao6524wf303" path="res://addons/kenney_particle_pack/smoke_08.png" id="5_q41oh"]
 [ext_resource type="Script" uid="uid://c4urkupki16kx" path="res://1 Player/States/PlayerShootState.gd" id="6_fngw5"]
 [ext_resource type="Texture2D" uid="uid://68kjn6suxq5a" path="res://addons/kenney_particle_pack/smoke_04.png" id="6_oop84"]
@@ -72,6 +70,12 @@ flip_faces = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ulbgw"]
 size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7n4gc"]
+shading_mode = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1koqu"]
+shading_mode = 0
 
 [sub_resource type="Gradient" id="Gradient_hotdi"]
 offsets = PackedFloat32Array(0, 0.236364, 1)
@@ -1492,10 +1496,10 @@ visible = false
 script = null
 
 [node name="Mag" parent="Head/Camera3D/Hand2/Salvation2_typeN" index="0"]
-material_override = null
+material_override = SubResource("StandardMaterial3D_7n4gc")
 
 [node name="Salvation_001" parent="Head/Camera3D/Hand2/Salvation2_typeN" index="1"]
-material_override = null
+material_override = SubResource("StandardMaterial3D_1koqu")
 
 [node name="Trauma_typeN" parent="Head/Camera3D/Hand2" instance=ExtResource("11_cghwp")]
 transform = Transform3D(-7.23998e-07, 0, 0.2, 0, 0.2, 0, -0.2, 0, -7.23998e-07, 0.51685, -0.64943, -0.056298)
@@ -1504,14 +1508,6 @@ script = null
 
 [node name="Cube_003" parent="Head/Camera3D/Hand2/Trauma_typeN" index="0"]
 material_override = null
-
-[node name="crossbow_viewmodel" parent="Head/Camera3D" instance=ExtResource("4_abpq6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.462046, -0.714712, -0.248098)
-visible = false
-
-[node name="crossbow_shader" parent="Head/Camera3D" instance=ExtResource("5_bmnt7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.462046, -0.714712, -0.248098)
-visible = false
 
 [node name="MuzzleFlash" type="GPUParticles3D" parent="Head/Camera3D"]
 unique_name_in_owner = true
@@ -1557,11 +1553,6 @@ collision_mask = 512
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera3D/Voice/Area3D"]
 shape = SubResource("BoxShape3D_1ggn5")
-
-[node name="Flashlight" type="SpotLight3D" parent="Head/Camera3D"]
-visible = false
-spot_range = 7.9396
-spot_angle = 63.8852
 
 [node name="FeetCast" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.341633, 0)

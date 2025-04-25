@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bht1pkjsnbcln"
-path.s3tc="res://.godot/imported/Barrel_Barrel.png-b6014b4cddbd2b7a7cf1f9914dd5e20e.s3tc.ctex"
+uid="uid://b7srat5woiehb"
+path.s3tc="res://.godot/imported/Shipping container_container.png-072eca40f0a3c3b4f0826635a58c1474.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "d2f84064ecc0773598dffc1e103591f3"
+"md5": "e61b87108227202e19d3e06cfe73e647"
 }
 
 [deps]
 
-source_file="res://8 Assets/Models/Barrel_Barrel.png"
-dest_files=["res://.godot/imported/Barrel_Barrel.png-b6014b4cddbd2b7a7cf1f9914dd5e20e.s3tc.ctex"]
+source_file="res://8 Assets/Models/Shipping container_container.png"
+dest_files=["res://.godot/imported/Shipping container_container.png-072eca40f0a3c3b4f0826635a58c1474.s3tc.ctex"]
 
 [params]
 

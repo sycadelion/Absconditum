@@ -23,8 +23,13 @@ var Text_Focused = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	GameManager.palette = palettes[palette_button.selected]
 	var index = 0
+	
+	for f in palettes:
+		palette_button.add_icon_item(palettes[index],"")
+		index += 1
+	GameManager.palette = palettes[palette_button.selected]
+	
 	#adds list of resolutions
 	for r in SettingsManager.resolutions_dic:
 		%resoDrop.add_item(r,index)

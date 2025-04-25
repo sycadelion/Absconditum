@@ -10,7 +10,7 @@ extends Node3D
 
 
 func _ready() -> void:
-	$ItemSpawnPoint/StaticBody3D.materialName = materialName
+	$collisionMesh/StaticBody3D.materialName = materialName
 	if HealthDrop:
 		ammo_icon.hide()
 		health_icon.show()

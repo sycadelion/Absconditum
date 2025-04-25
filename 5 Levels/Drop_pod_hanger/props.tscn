@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqqs8qxveolx3"]
+
+[ext_resource type="PackedScene" uid="uid://bhduxadeknllw" path="res://8 Assets/Props/barrel.tscn" id="1_e4ogx"]
+[ext_resource type="PackedScene" uid="uid://cluct2lg48t5f" path="res://8 Assets/Props/shipping_container.tscn" id="2_fn3s8"]
+[ext_resource type="PackedScene" uid="uid://bdwm34nbbtc5m" path="res://8 Assets/Props/crate.tscn" id="3_fn3s8"]
+[ext_resource type="PackedScene" uid="uid://bu0fhn02fxjtm" path="res://8 Assets/Props/metal_sheet.tscn" id="4_fo2rc"]
+
+[node name="Props" type="Node3D"]
+
+[node name="Barrel" parent="." instance=ExtResource("1_e4ogx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.7924, 0, 0)
+
+[node name="Barrel2" parent="." instance=ExtResource("1_e4ogx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.821, 0, -2.37264)
+
+[node name="Barrel3" parent="." instance=ExtResource("1_e4ogx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.0133, 0, -1.03229)
+
+[node name="Shipping container" parent="." instance=ExtResource("2_fn3s8")]
+transform = Transform3D(0.245933, 0, 0.969287, 0, 1, 0, -0.969287, 0, 0.245933, 36.3413, 0, 3.59502)
+
+[node name="Shipping container2" parent="." instance=ExtResource("2_fn3s8")]
+transform = Transform3D(-0.879034, 0, 0.476759, 0, 1, 0, -0.476759, 0, -0.879034, 35.231, 0, -8.99419)
+
+[node name="crate" parent="." instance=ExtResource("3_fn3s8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.6983, 0, -0.257573)
+
+[node name="crate2" parent="." instance=ExtResource("3_fn3s8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.6983, 0, -1.5174)
+
+[node name="crate3" parent="." instance=ExtResource("3_fn3s8")]
+transform = Transform3D(0.915628, 0, 0.402028, 0, 1, 0, -0.402028, 0, 0.915628, 29.6983, 1.03124, -0.959438)
+
+[node name="Metal_sheet" parent="." instance=ExtResource("4_fo2rc")]
+transform = Transform3D(0.400399, -0.545037, 0.736624, -0.0389327, 0.793031, 0.607936, -0.915513, -0.272096, 0.29631, 28.9632, 0, 3.67986)

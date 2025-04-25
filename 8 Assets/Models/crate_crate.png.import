@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bht1pkjsnbcln"
-path.s3tc="res://.godot/imported/Barrel_Barrel.png-b6014b4cddbd2b7a7cf1f9914dd5e20e.s3tc.ctex"
+uid="uid://bdqc5rp3xo1mu"
+path.s3tc="res://.godot/imported/crate_crate.png-36342954ba45b017dc0ca8e6999225c4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "d2f84064ecc0773598dffc1e103591f3"
+"md5": "942f8306907a96f8779536f42eaa3ad2"
 }
 
 [deps]
 
-source_file="res://8 Assets/Models/Barrel_Barrel.png"
-dest_files=["res://.godot/imported/Barrel_Barrel.png-b6014b4cddbd2b7a7cf1f9914dd5e20e.s3tc.ctex"]
+source_file="res://8 Assets/Models/crate_crate.png"
+dest_files=["res://.godot/imported/crate_crate.png-36342954ba45b017dc0ca8e6999225c4.s3tc.ctex"]
 
 [params]
 

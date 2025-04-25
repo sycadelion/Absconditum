@@ -10,7 +10,7 @@
 [ext_resource type="WwiseAuxBus" uid="uid://chdq4cvfbqh4h" path="res://Wwise/resources/Aux Bus/{BDA45880-AFFB-4C92-B1CB-D625CA3527EE}.tres" id="7_2q5xx"]
 [ext_resource type="WwiseAuxBus" uid="uid://d31bi64c126h7" path="res://Wwise/resources/Aux Bus/{473BA46A-C8E9-40A4-AC90-E207E8CA32FA}.tres" id="8_ece8c"]
 [ext_resource type="PackedScene" uid="uid://nxibb70kqrmn" path="res://8 Assets/Props/item_spawn_point.tscn" id="10_hj0wa"]
-[ext_resource type="PackedScene" uid="uid://bhduxadeknllw" path="res://8 Assets/Props/barrel.tscn" id="11_ew54u"]
+[ext_resource type="PackedScene" uid="uid://bqqs8qxveolx3" path="res://5 Levels/Drop_pod_hanger/props.tscn" id="11_ew54u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2q5xx"]
 shader = ExtResource("3_ew54u")
@@ -23,12 +23,12 @@ shader_parameter/dither_size = 2
 sky_material = ExtResource("1_fm5q2")
 
 [sub_resource type="Environment" id="Environment_2q5xx"]
-background_mode = 2
-background_color = Color(0.203922, 0.113725, 0, 1)
+background_mode = 1
 sky = SubResource("Sky_8f814")
+ambient_light_source = 2
 ambient_light_color = Color(0.154876, 0.154876, 0.154876, 1)
+ambient_light_energy = 2.0
 tonemap_mode = 2
-glow_enabled = true
 fog_light_color = Color(0.57, 0.343995, 0.2223, 1)
 fog_sun_scatter = 0.14
 fog_density = 0.2311
@@ -79,7 +79,8 @@ render_target_update_mode = 4
 environment = SubResource("Environment_2q5xx")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.966425, 1.12315e-08, -0.256947, 0.256947, -4.22438e-08, 0.966425, 0, -1, -4.37114e-08, -6, 4, 0)
+transform = Transform3D(0.803286, 2.60343e-08, -0.595594, 0.595594, -3.51128e-08, 0.803286, 6.42581e-16, -1, -4.37114e-08, -12.1038, 4.7774, 0)
+sky_mode = 1
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="SubViewportContainer/SubViewport" groups=["Spawner"]]
 spawn_path = NodePath("../Players")
@@ -132,14 +133,8 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -52.90
 [node name="SpawnPoint13" parent="SubViewportContainer/SubViewport/Spawn_points" instance=ExtResource("3_ku60f")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -52.9031, 14.3551, 25.4324)
 
-[node name="SpawnPoint14" parent="SubViewportContainer/SubViewport/Spawn_points" instance=ExtResource("3_ku60f")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -52.9031, 20.2425, 0.274902)
-
 [node name="SpawnPoint15" parent="SubViewportContainer/SubViewport/Spawn_points" instance=ExtResource("3_ku60f")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -45.6724, 7.82345, 67.9353)
-
-[node name="SpawnPoint16" parent="SubViewportContainer/SubViewport/Spawn_points" instance=ExtResource("3_ku60f")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.539011, 0.956946, 0.317714)
 
 [node name="Spawning Cam" type="Camera3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(-3.72577e-08, -0.52296, 0.852357, -2.28593e-08, 0.852357, 0.52296, -1, 1.77636e-15, -4.37114e-08, 45.7677, 17, 0)
@@ -148,6 +143,7 @@ transform = Transform3D(-3.72577e-08, -0.52296, 0.852357, -2.28593e-08, 0.852357
 visible = false
 
 [node name="Spawn Screen" parent="SubViewportContainer/SubViewport/Ingame Stuff" instance=ExtResource("6_46imq")]
+offset_bottom = -180.0
 
 [node name="Big_Room" type="AkRoom" parent="SubViewportContainer/SubViewport"]
 aux_bus = ExtResource("7_2q5xx")
@@ -256,48 +252,9 @@ debug_color = Color(0, 0.395517, 0.163556, 0.42)
 [node name="Item Spawners" type="Node3D" parent="SubViewportContainer/SubViewport"]
 
 [node name="Item_SpawnPoint" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4531, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04309, 0, 0)
 
 [node name="Item_SpawnPoint2" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.6205, 6.29896, -11.6252)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.7576, 20.0081, 0)
 
-[node name="Item_SpawnPoint3" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.4191, 6.30822, 9.0965)
-
-[node name="Item_SpawnPoint4" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5299, 0, 19.9243)
-
-[node name="Item_SpawnPoint5" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.3842, 0, -18.3195)
-
-[node name="Item_SpawnPoint6" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.1297, 20.0096, 1.80632)
-
-[node name="Item_SpawnPoint7" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13777, 0.355501, 45.4746)
-
-[node name="Item_SpawnPoint8" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9393, 3.40428, 71.3799)
-
-[node name="Item_SpawnPoint9" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12052, 0.372382, -48.2768)
-
-[node name="Item_SpawnPoint10" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0013, 3.37089, -70.6201)
-
-[node name="Item_SpawnPoint11" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9025, 13.9941, 28.8627)
-
-[node name="Item_SpawnPoint12" parent="SubViewportContainer/SubViewport/Item Spawners" instance=ExtResource("10_hj0wa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9025, 13.9941, -29.0022)
-
-[node name="Barrel" parent="SubViewportContainer/SubViewport" instance=ExtResource("11_ew54u")]
-transform = Transform3D(0.244207, 0, -0.969723, 0, 1, 0, 0.969723, 0, 0.244207, 31.7924, 0, 0)
-
-[node name="Barrel2" parent="SubViewportContainer/SubViewport" instance=ExtResource("11_ew54u")]
-transform = Transform3D(-0.88188, 0, 0.471474, 0, 1, 0, -0.471474, 0, -0.88188, 31.7924, 0, 0.801469)
-
-[node name="Barrel3" parent="SubViewportContainer/SubViewport" instance=ExtResource("11_ew54u")]
-transform = Transform3D(0.884141, 0, -0.46722, 0, 1, 0, 0.46722, 0, 0.884141, 31.7924, 1.17575, 0.425956)
-
-[editable path="SubViewportContainer/SubViewport/Ingame Stuff/Spawn Screen"]
+[node name="Props" parent="SubViewportContainer/SubViewport" instance=ExtResource("11_ew54u")]

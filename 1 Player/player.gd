@@ -15,7 +15,6 @@ class_name Player extends CharacterBody3D
 @onready var state_machine: StateMachine = %StateMachine
 
 @onready var camera: Camera3D = $Head/Camera3D
-@onready var flashlight: SpotLight3D = $Head/Camera3D/Flashlight
 @onready var head: Node3D = $Head
 @onready var anim_player: AnimationPlayer = %AnimationPlayer
 @onready var anim_tree: AnimationTree = $AnimationTree
@@ -53,8 +52,7 @@ func _ready() -> void:
 		camera.add_child(listner_node)
 		GameManager.PLAYER = self
 		camera.make_current()
-		bodyInvert.visible = false
-		flashlight.visible = true
+		bodyInvert.hide()
 		hud.visible = true
 		hand.visible = false
 		hand_2.visible = true
@@ -67,7 +65,6 @@ func _ready() -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	else:
 		camera.current = false
-		flashlight.visible = false
 		bodyInvert.visible = true
 		hand.visible = true
 
@@ -88,8 +85,10 @@ func _input(event: InputEvent) -> void:
 		pause.pause(owner_id)
 	elif event.is_action_pressed("reload"):
 		weapon_manger.reload.rpc()
-	elif event.is_action_pressed("test"):
+	elif event.is_action_pressed("FPS"):
 		$CanvasLayer/HUD/Fps.visible = not $CanvasLayer/HUD/Fps.visible
+	elif event.is_action_pressed("testAction"):
+		print(str(OnlineMang.onlineComp.players))
 
 func _physics_process(_delta: float) -> void:
 	if owner_id != multiplayer.get_unique_id(): 

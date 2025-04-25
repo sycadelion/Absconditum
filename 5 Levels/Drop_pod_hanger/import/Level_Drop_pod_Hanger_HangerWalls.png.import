@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bht1pkjsnbcln"
-path.s3tc="res://.godot/imported/Barrel_Barrel.png-b6014b4cddbd2b7a7cf1f9914dd5e20e.s3tc.ctex"
+uid="uid://cj6c6kmfj6hs8"
+path.s3tc="res://.godot/imported/Level_Drop_pod_Hanger_HangerWalls.png-f2be1ac77eae178095bcc5dfd6f4cc26.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "d2f84064ecc0773598dffc1e103591f3"
+"md5": "f1f5de800f62411686e80e777d334a6c"
 }
 
 [deps]
 
-source_file="res://8 Assets/Models/Barrel_Barrel.png"
-dest_files=["res://.godot/imported/Barrel_Barrel.png-b6014b4cddbd2b7a7cf1f9914dd5e20e.s3tc.ctex"]
+source_file="res://5 Levels/Drop_pod_hanger/import/Level_Drop_pod_Hanger_HangerWalls.png"
+dest_files=["res://.godot/imported/Level_Drop_pod_Hanger_HangerWalls.png-f2be1ac77eae178095bcc5dfd6f4cc26.s3tc.ctex"]
 
 [params]
 

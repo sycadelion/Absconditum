@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bht1pkjsnbcln"
-path.s3tc="res://.godot/imported/Barrel_Barrel.png-b6014b4cddbd2b7a7cf1f9914dd5e20e.s3tc.ctex"
+uid="uid://0m3hcadwb5mf"
+path.s3tc="res://.godot/imported/Metal_sheet_sheet.png-72c491e478e1d77908b8093451e3a13f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "d2f84064ecc0773598dffc1e103591f3"
+"md5": "f5aec7de70a50aec30be0effe07efb4c"
 }
 
 [deps]
 
-source_file="res://8 Assets/Models/Barrel_Barrel.png"
-dest_files=["res://.godot/imported/Barrel_Barrel.png-b6014b4cddbd2b7a7cf1f9914dd5e20e.s3tc.ctex"]
+source_file="res://8 Assets/Models/Metal_sheet_sheet.png"
+dest_files=["res://.godot/imported/Metal_sheet_sheet.png-72c491e478e1d77908b8093451e3a13f.s3tc.ctex"]
 
 [params]
 

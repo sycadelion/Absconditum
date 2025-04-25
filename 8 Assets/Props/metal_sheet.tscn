@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu0fhn02fxjtm"]
+
+[ext_resource type="PackedScene" uid="uid://ck3hkrvdwb8o0" path="res://8 Assets/Models/Metal_sheet.glb" id="1_c1oms"]
+[ext_resource type="Script" uid="uid://ywjj5jyr5g0o" path="res://5 Levels/objMaterial.gd" id="2_gag0a"]
+
+[node name="Metal_sheet" instance=ExtResource("1_c1oms")]
+
+[node name="StaticBody3D" parent="Hitbox" index="0"]
+script = ExtResource("2_gag0a")
+materialName = "LowMetal"
+
+[node name="Sheet" type="AkGeometry" parent="Hitbox" index="1"]
+enable_diffraction = true
+enable_diffraction_on_boundary_edges = true
