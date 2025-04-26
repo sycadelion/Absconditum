@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://djvacfear8kal"]
+
+[ext_resource type="Script" uid="uid://bkwrd6opc56av" path="res://7 GUI/Menus/Menu Elements/audio_slider.gd" id="1_bm2ep"]
+[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu.tres" id="1_o0jyr"]
+
+[node name="AudioSlider" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_o0jyr")
+script = ExtResource("1_bm2ep")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -167.5
+offset_right = 167.5
+offset_bottom = 51.0
+grow_horizontal = 2
+
+[node name="Text" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/Text"]
+layout_mode = 2
+columns = 2
+
+[node name="Audio Bus Label" type="Label" parent="VBoxContainer/Text/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BusEdit" type="LineEdit" parent="VBoxContainer/Text/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "100"
+alignment = 1
+max_length = 3
+context_menu_enabled = false
+shortcut_keys_enabled = false
+flat = true
+select_all_on_focus = true
+
+[node name="VolSlider" type="HSlider" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[connection signal="focus_entered" from="VBoxContainer/Text/GridContainer/BusEdit" to="." method="_on_bus_edit_focus_entered"]
+[connection signal="focus_exited" from="VBoxContainer/Text/GridContainer/BusEdit" to="." method="_on_bus_edit_focus_exited"]
+[connection signal="text_changed" from="VBoxContainer/Text/GridContainer/BusEdit" to="." method="_on_bus_edit_text_changed"]
+[connection signal="drag_ended" from="VBoxContainer/VolSlider" to="." method="_on_vol_slider_drag_ended"]
+[connection signal="drag_started" from="VBoxContainer/VolSlider" to="." method="_on_drag_started"]
+[connection signal="mouse_exited" from="VBoxContainer/VolSlider" to="." method="_on_mouse_exited"]

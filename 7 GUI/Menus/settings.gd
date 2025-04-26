@@ -29,6 +29,9 @@ func _ready() -> void:
 	for f in palettes:
 		palette_button.add_icon_item(palettes[index],"")
 		index += 1
+	var load_palette_var = ConfigFileHandler.load_graphic_settings()
+	if load_palette_var.palette:
+		palette_button.select(load_palette_var.palette)
 	GameManager.palette = palettes[palette_button.selected]
 	
 	#adds list of resolutions
@@ -67,10 +70,6 @@ func _on_player_name_text_changed(new_text: String) -> void:
 func update_text():
 	player_name.text = GameManager.UserName
 	mouse_sens.text = str(GameManager.sensitivity)
-	audio_master.text = str(GameManager.master_audio)
-	audio_music.text = str(GameManager.music_audio)
-	audio_sfx.text = str(GameManager.sfx_audio)
-	audio_foot.text = str(GameManager.foot_audio)
 
 
 func _audio_pressed() -> void:
@@ -143,6 +142,7 @@ func mouse_click():
 
 func _on_palette_button_item_selected(index: int) -> void:
 	GameManager.palette = palettes[index]
+	ConfigFileHandler.save_graphic_settings("palette", index)
 
 
 func _on_player_name_focus_entered() -> void:

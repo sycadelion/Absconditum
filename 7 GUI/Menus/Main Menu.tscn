@@ -119,22 +119,6 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
-[node name="SettingSlider2" parent="Settings/GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer" index="3"]
-step = 0.1
-tick_count = 10
-
-[node name="SettingSlider3" parent="Settings/GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer" index="6"]
-step = 0.1
-tick_count = 10
-
-[node name="SettingSlider4" parent="Settings/GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer" index="9"]
-step = 0.1
-tick_count = 10
-
-[node name="SettingSlider5" parent="Settings/GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer" index="12"]
-step = 0.1
-tick_count = 10
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_vaxh2")

@@ -24,23 +24,17 @@ var hitscan:bool = false
 
 #customize game settings:
 var sensitivity: float = 5
-var master_audio:float = 0
-var music_audio:float = 0
-var sfx_audio:float = 0
-var foot_audio:float = 0
-var menu_audio:float = 0
+var MasterVol:int = 0
+var MusicVol: int = 0
+var SFXVol: int = 0
+var FootVol: int = 0
+var MenuVol: int = 0
 var palette
 
 func _ready() -> void:
 	pass
 
-func _process(_delta: float) -> void:
-	if Engine.get_process_frames() % 5 == 0:
-		master_audio = Wwise.get_rtpc_value("MasterVol",null)
-		music_audio = Wwise.get_rtpc_value("MusicVol",null)
-		sfx_audio = Wwise.get_rtpc_value("SFXVol",null)
-		foot_audio = Wwise.get_rtpc_value("FootVol",null)
-		menu_audio = Wwise.get_rtpc_value("MenuVol",null)
+
 
 func spawn_point_rng():
 	randomize()
@@ -54,11 +48,11 @@ func _notification(what: int) -> void:
 		ConfigFileHandler.save_user_settings("name",GameManager.UserName)
 		ConfigFileHandler.save_user_settings("save_version",GameManager.Save_version)
 		ConfigFileHandler.save_mouse_settings("sensitivity", sensitivity)
-		ConfigFileHandler.save_audio_settings("master_audio",master_audio)
-		ConfigFileHandler.save_audio_settings("music_audio",music_audio)
-		ConfigFileHandler.save_audio_settings("sfx_audio",sfx_audio)
-		ConfigFileHandler.save_audio_settings("foot_audio",foot_audio)
-		ConfigFileHandler.save_audio_settings("menu_audio",menu_audio)
+		ConfigFileHandler.save_audio_settings("master_audio",MasterVol)
+		ConfigFileHandler.save_audio_settings("music_audio",MusicVol)
+		ConfigFileHandler.save_audio_settings("sfx_audio",SFXVol)
+		ConfigFileHandler.save_audio_settings("foot_audio",FootVol)
+		ConfigFileHandler.save_audio_settings("menu_audio",MenuVol)
 		ConfigFileHandler.save_graphic_settings("resolution",SettingsManager.current_res)
 		ConfigFileHandler.save_graphic_settings("screen_focus",SettingsManager.screen_focus)
 		ConfigFileHandler.save_graphic_settings("fullscreen",SettingsManager.FullscreenBool)

@@ -38,16 +38,14 @@ var screen_focus: int = 0:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
-	GameManager.master_audio = Wwise.get_rtpc_value("MasterVol", null)
-	GameManager.foot_audio = Wwise.get_rtpc_value("FootVol", null)
-	GameManager.sfx_audio = Wwise.get_rtpc_value("SFXVol", null)
-	GameManager.music_audio = Wwise.get_rtpc_value("MusicVol", null)
-	GameManager.menu_audio = Wwise.get_rtpc_value("MenuVol", null)
-	
 	if FileAccess.file_exists(save_path):
 		load_settings()
 	else:
+		GameManager.master_audio = Wwise.get_rtpc_value("MasterVol", null)
+		GameManager.foot_audio = Wwise.get_rtpc_value("FootVol", null)
+		GameManager.sfx_audio = Wwise.get_rtpc_value("SFXVol", null)
+		GameManager.music_audio = Wwise.get_rtpc_value("MusicVol", null)
+		GameManager.menu_audio = Wwise.get_rtpc_value("MenuVol", null)
 		screen_focus = DisplayServer.get_primary_screen()
 		GameManager.sensitivity = 5
 
@@ -59,11 +57,11 @@ func load_settings():
 		
 	GameManager.UserName = user_settings.name
 	GameManager.sensitivity = mouse_settings.sensitivity
-	GameManager.master_audio = audio_settings.master_audio
-	GameManager.music_audio = audio_settings.music_audio
-	GameManager.sfx_audio = audio_settings.sfx_audio
-	GameManager.foot_audio = audio_settings.foot_audio
-	GameManager.menu_audio = audio_settings.menu_audio
+	GameManager.MasterVol = audio_settings.master_audio
+	GameManager.MusicVol = audio_settings.music_audio
+	GameManager.SFXVol = audio_settings.sfx_audio
+	GameManager.FootVol = audio_settings.foot_audio
+	GameManager.MenuVol = audio_settings.menu_audio
 	screen_focus = graphic_settings.screen_focus
 	current_res = graphic_settings.resolution
 	FullscreenBool = graphic_settings.fullscreen
