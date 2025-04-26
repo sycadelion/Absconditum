@@ -58,10 +58,15 @@ func load_settings():
 	GameManager.UserName = user_settings.name
 	GameManager.sensitivity = mouse_settings.sensitivity
 	GameManager.MasterVol = audio_settings.master_audio
+	Wwise.set_rtpc_value("MasterVol",audio_settings.master_audio,null)
 	GameManager.MusicVol = audio_settings.music_audio
+	Wwise.set_rtpc_value("MusicVol",audio_settings.music_audio,null)
 	GameManager.SFXVol = audio_settings.sfx_audio
+	Wwise.set_rtpc_value("SFXVol",audio_settings.sfx_audio,null)
 	GameManager.FootVol = audio_settings.foot_audio
+	Wwise.set_rtpc_value("FootVol",audio_settings.foot_audio,null)
 	GameManager.MenuVol = audio_settings.menu_audio
+	Wwise.set_rtpc_value("MenuVol",audio_settings.menu_audio,null)
 	screen_focus = graphic_settings.screen_focus
 	current_res = graphic_settings.resolution
 	FullscreenBool = graphic_settings.fullscreen

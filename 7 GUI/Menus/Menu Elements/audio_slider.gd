@@ -13,6 +13,7 @@ var pauseValues = false
 func _ready() -> void:
 	if bus_edit:
 		audio_bus_label.text = Label_Text + ": "
+		bus_edit.text = str(GameManager.get(audio_bus_index))
 		vol_slider.value = GameManager.get(audio_bus_index)
 
 func _process(delta: float) -> void:
