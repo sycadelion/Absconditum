@@ -1,7 +1,7 @@
 extends Node
 
 const LOCAL_HOST = "127.0.0.1"
-const promptObj = preload("res://7 GUI/Menus/prompt.tscn")
+const promptObj = preload("uid://di0pgx52tsecd")
 var PLAYER: Player
 
 var host_mode = false

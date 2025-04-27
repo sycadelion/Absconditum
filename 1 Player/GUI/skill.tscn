@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://ci6rly7mcj6vl"]
 
-[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu.tres" id="1_g8fyt"]
+[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu Elements/Menu Tres/Menu.tres" id="1_g8fyt"]
 [ext_resource type="Script" uid="uid://cinc3kwgxtvny" path="res://1 Player/GUI/skill.gd" id="1_jxm3t"]
 [ext_resource type="Texture2D" uid="uid://cf5y43vnwdb3m" path="res://8 Assets/Images/Free-Skill-32x32-Icons-for-Cyberpunk-Game/2 Frames/Frame_14.png" id="3_spgjb"]
 [ext_resource type="Texture2D" uid="uid://dah1f5fipmxg8" path="res://8 Assets/Images/Free-Skill-32x32-Icons-for-Cyberpunk-Game/1 Icons/14/Skillicon14_01.png" id="4_vam00"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d4ckpg8arvmqx"]
 
-[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu.tres" id="1_cxiog"]
+[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu Elements/Menu Tres/Menu.tres" id="1_cxiog"]
 
 [node name="Spawn Screen" type="Control"]
 layout_mode = 3

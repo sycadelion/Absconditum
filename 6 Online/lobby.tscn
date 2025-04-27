@@ -1,22 +1,15 @@
 [gd_scene load_steps=5 format=3 uid="uid://cdaty1tj8c305"]
 
 [ext_resource type="Script" uid="uid://k05m2141b4lw" path="res://6 Online/multiplayer_lobby.gd" id="1_lp11c"]
-[ext_resource type="PackedScene" uid="uid://wlpkvyggn3ra" path="res://7 GUI/error_prompt.tscn" id="3_rpgj8"]
-[ext_resource type="PackedScene" uid="uid://b7kqgr0bkm3s6" path="res://7 GUI/background_container.tscn" id="3_ul4ju"]
-[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu.tres" id="5_1bx7n"]
+[ext_resource type="PackedScene" uid="uid://dg4328t83xlwk" path="res://7 GUI/Menus/Menu Elements/main_menu_background.tscn" id="2_ip2w5"]
+[ext_resource type="PackedScene" uid="uid://wlpkvyggn3ra" path="res://7 GUI/Menus/Prompt/error_prompt.tscn" id="3_rpgj8"]
+[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu Elements/Menu Tres/Menu.tres" id="5_1bx7n"]
 
 [node name="Lobby" type="Node" groups=["Lobby"]]
 process_mode = 3
 script = ExtResource("1_lp11c")
 
-[node name="Background_container" parent="." instance=ExtResource("3_ul4ju")]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="MainMenu_Background" parent="." instance=ExtResource("2_ip2w5")]
 
 [node name="Level" type="Node" parent="."]
 
@@ -33,10 +26,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -60.5
-offset_top = -20.0
-offset_right = 60.5
-offset_bottom = 20.0
+offset_left = 396.0
+offset_top = -126.5
+offset_right = 640.0
+offset_bottom = 126.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_1bx7n")

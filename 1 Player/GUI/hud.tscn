@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://c0wl72hwaa31r"]
 
 [ext_resource type="Texture2D" uid="uid://c2bu67hqj86j0" path="res://addons/kenney_particle_pack/circle_05.png" id="1_i4x1t"]
-[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu.tres" id="1_m4xgf"]
+[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu Elements/Menu Tres/Menu.tres" id="1_m4xgf"]
 [ext_resource type="Script" uid="uid://cujhe3nuo5vm4" path="res://1 Player/GUI/hud.gd" id="2_w8eom"]
 [ext_resource type="PackedScene" uid="uid://ci6rly7mcj6vl" path="res://1 Player/GUI/skill.tscn" id="2_xbtso"]
 [ext_resource type="Script" uid="uid://dgkavh4t5h318" path="res://1 Player/GUI/fps.gd" id="3_ywnm1"]

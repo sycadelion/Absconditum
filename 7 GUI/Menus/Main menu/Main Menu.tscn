@@ -1,0 +1,168 @@
+[gd_scene load_steps=13 format=3 uid="uid://1vtabgmdqbya"]
+
+[ext_resource type="Script" uid="uid://dkmriobqrw3jy" path="res://7 GUI/Menus/Main menu/main_menu.gd" id="1_r4jl4"]
+[ext_resource type="FontFile" uid="uid://bt3eis200qlni" path="res://addons/NotJamFontPack/Not Jam Glasgow 13/Not Jam Glasgow 13.ttf" id="2_u8cqs"]
+[ext_resource type="PackedScene" uid="uid://cdaty1tj8c305" path="res://6 Online/lobby.tscn" id="3_ic32f"]
+[ext_resource type="PackedScene" uid="uid://dg4328t83xlwk" path="res://7 GUI/Menus/Menu Elements/main_menu_background.tscn" id="4_ekl4n"]
+[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu Elements/Menu Tres/Menu.tres" id="6_x13m3"]
+[ext_resource type="PackedScene" uid="uid://bglvj405a8scx" path="res://7 GUI/Menus/Settings Menu/settings.tscn" id="6_yrws1"]
+[ext_resource type="PackedScene" uid="uid://cwd15gx5hshw5" path="res://7 GUI/Menus/Match Settings/match_settings.tscn" id="7_jslx7"]
+[ext_resource type="PackedScene" uid="uid://ibr5tw3jo2xn" path="res://7 GUI/Menus/Main menu/disconnected_from_server.tscn" id="8_3wo6v"]
+[ext_resource type="WwiseEvent" uid="uid://dk2wdc7661f3o" path="res://Wwise/resources/Event/{53037DEB-F63C-4710-8072-54EFD294BCB0}.tres" id="9_sjt0m"]
+[ext_resource type="WwiseEvent" uid="uid://bpc3mfvfm1yrq" path="res://Wwise/resources/Event/{1D0D8EA8-D697-496F-AEEA-239402382028}.tres" id="10_sbu0f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekl4n"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vaxh2"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_x13m3")
+script = ExtResource("1_r4jl4")
+GAME_SCENE = ExtResource("3_ic32f")
+
+[node name="MainMenu_Background" parent="." instance=ExtResource("4_ekl4n")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameTitle" type="PanelContainer" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -344.5
+offset_top = 32.0
+offset_right = 344.5
+offset_bottom = 143.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ekl4n")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/GameTitle"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/GameTitle/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.524336, 0, 0.0730928, 1)
+theme_override_fonts/normal_font = ExtResource("2_u8cqs")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center][pulse freq=.2 color=#00000009 ease=-2.0][outline_size=9]Absconditum[/outline_size][/pulse][/center]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Menu" type="PanelContainer" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 339.5
+offset_top = -220.0
+offset_right = 640.5
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_x13m3")
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Menu"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Menu/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VSplitContainer" type="VSplitContainer" parent="CanvasLayer/Menu/CenterContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Host" type="Button" parent="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer"]
+layout_mode = 2
+text = "Host"
+
+[node name="Join" type="Button" parent="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer"]
+layout_mode = 2
+text = "Join"
+
+[node name="Settings" type="Button" parent="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="Quit" type="Button" parent="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit
+"
+
+[node name="Match_Settings" parent="CanvasLayer" instance=ExtResource("7_jslx7")]
+unique_name_in_owner = true
+visible = false
+offset_left = 429.0
+offset_top = -13.0
+offset_right = 429.0
+offset_bottom = -13.0
+
+[node name="Settings" parent="CanvasLayer" instance=ExtResource("6_yrws1")]
+unique_name_in_owner = true
+visible = false
+offset_left = 339.0
+offset_top = 40.0
+offset_right = 339.0
+offset_bottom = 40.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+root_node = NodePath("../../root/@EditorNode@21277/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/MainMenu")
+libraries = {
+&"": SubResource("AnimationLibrary_vaxh2")
+}
+
+[node name="Disconnected_from_server" parent="CanvasLayer" instance=ExtResource("8_3wo6v")]
+unique_name_in_owner = true
+visible = false
+offset_left = -155.0
+offset_top = -25.0
+offset_right = -155.0
+offset_bottom = -25.0
+
+[node name="AkListener2D" type="AkListener2D" parent="CanvasLayer"]
+
+[node name="Music" type="AkEvent2D" parent="CanvasLayer"]
+event = ExtResource("9_sjt0m")
+trigger_on = 2
+stop_on = 3
+unique_name_in_owner = true
+
+[node name="UiAudio" type="AkEvent2D" parent="CanvasLayer"]
+event = ExtResource("10_sbu0f")
+unique_name_in_owner = true
+
+[connection signal="mouse_entered" from="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Host" to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Host" to="." method="_on_host_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Join" to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Join" to="." method="_on_join_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Settings" to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Quit" to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Match_Settings/Back_host/MarginContainer/CenterContainer/GridContainer/Match_Back_button" to="." method="_on_match_back_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Match_Settings/Back_host/MarginContainer/CenterContainer/GridContainer/Host_game_button" to="." method="_on_host_game_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Settings/BackButton/Settings_Back_Button" to="." method="_on_settings_back_button_pressed"]
+[connection signal="music_sync_exit" from="CanvasLayer/Music" to="." method="_on_music_music_sync_exit"]
+
+[editable path="CanvasLayer/Match_Settings"]
+[editable path="CanvasLayer/Settings"]

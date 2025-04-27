@@ -1,11 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://ddut4ym5suydp"]
+[gd_scene load_steps=21 format=3 uid="uid://ddut4ym5suydp"]
 
-[ext_resource type="Material" uid="uid://ys5y4m34ptf6" path="res://4 Resources/Shaders/Skybox_mat.tres" id="1_fm5q2"]
 [ext_resource type="Script" uid="uid://78x7jvl31pcx" path="res://5 Levels/Hub/hub.gd" id="1_xthv6"]
 [ext_resource type="PackedScene" uid="uid://c33psuu1qtqd3" path="res://5 Levels/Drop_pod_hanger/import/drop_pod_hanger.tscn" id="2_7rrye"]
 [ext_resource type="PackedScene" uid="uid://f7itocgajf8o" path="res://1 Player/player.tscn" id="2_iocvr"]
 [ext_resource type="Shader" uid="uid://cjdb02g73oelo" path="res://4 Resources/Shaders/Grad_dither.gdshader" id="3_ew54u"]
 [ext_resource type="PackedScene" uid="uid://btea2veyjc17u" path="res://6 Online/SpawnPoint.tscn" id="3_ku60f"]
+[ext_resource type="Texture2D" uid="uid://gqkomw06bdn7" path="res://8 Assets/HDRIs/ice_planet_close.hdr" id="4_ew54u"]
 [ext_resource type="PackedScene" uid="uid://d4ckpg8arvmqx" path="res://6 Online/spawn_screen.tscn" id="6_46imq"]
 [ext_resource type="WwiseAuxBus" uid="uid://chdq4cvfbqh4h" path="res://Wwise/resources/Aux Bus/{BDA45880-AFFB-4C92-B1CB-D625CA3527EE}.tres" id="7_2q5xx"]
 [ext_resource type="WwiseAuxBus" uid="uid://d31bi64c126h7" path="res://Wwise/resources/Aux Bus/{473BA46A-C8E9-40A4-AC90-E207E8CA32FA}.tres" id="8_ece8c"]
@@ -16,18 +16,19 @@
 shader = ExtResource("3_ew54u")
 shader_parameter/enabled = true
 shader_parameter/dithering = true
-shader_parameter/colors = 8
+shader_parameter/colors = 16
 shader_parameter/dither_size = 2
 
-[sub_resource type="Sky" id="Sky_8f814"]
-sky_material = ExtResource("1_fm5q2")
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ag3dr"]
+panorama = ExtResource("4_ew54u")
+
+[sub_resource type="Sky" id="Sky_ew54u"]
+sky_material = SubResource("PanoramaSkyMaterial_ag3dr")
 
 [sub_resource type="Environment" id="Environment_2q5xx"]
-background_mode = 1
-sky = SubResource("Sky_8f814")
+background_mode = 2
+sky = SubResource("Sky_ew54u")
 ambient_light_source = 2
-ambient_light_color = Color(0.154876, 0.154876, 0.154876, 1)
-ambient_light_energy = 2.0
 tonemap_mode = 2
 fog_light_color = Color(0.57, 0.343995, 0.2223, 1)
 fog_sun_scatter = 0.14

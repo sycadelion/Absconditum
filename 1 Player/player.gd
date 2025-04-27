@@ -64,6 +64,7 @@ func _ready() -> void:
 		JUMP_VELOCITY = OnlineMang.onlineComp.matchSettings.player_jump
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	else:
+		hand_2.queue_free()
 		camera.current = false
 		bodyInvert.visible = true
 		hand.visible = true

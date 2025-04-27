@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://c88q8w1byb10p"]
+
+[ext_resource type="Texture2D" uid="uid://dejvxpqjy6fis" path="res://addons/kenney_fantasy-ui-borders/PNG/Default/Panel/panel-025.png" id="1_832do"]
+
+[resource]
+texture = ExtResource("1_832do")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+modulate_color = Color(0.205222, 6.01634e-08, 0.0900418, 1)

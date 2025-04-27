@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://ser6du4tr2cu"]
 
-[ext_resource type="Script" path="res://1 Player/GUI/pause.gd" id="1_ag0r8"]
-[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu.tres" id="1_s755f"]
-[ext_resource type="PackedScene" uid="uid://bglvj405a8scx" path="res://7 GUI/Menus/settings.tscn" id="3_i0jyf"]
+[ext_resource type="Script" uid="uid://deimshr0mluvu" path="res://1 Player/GUI/pause.gd" id="1_ag0r8"]
+[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu Elements/Menu Tres/Menu.tres" id="1_s755f"]
+[ext_resource type="PackedScene" uid="uid://bglvj405a8scx" path="res://7 GUI/Menus/Settings Menu/settings.tscn" id="3_i0jyf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xouvt"]
 bg_color = Color(0, 0, 0, 0.65098)

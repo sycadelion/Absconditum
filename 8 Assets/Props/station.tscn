@@ -1,0 +1,357 @@
+[gd_scene load_steps=8 format=3 uid="uid://dvgw4u10u65rs"]
+
+[ext_resource type="PackedScene" uid="uid://dvafk87c2i3jw" path="res://8 Assets/Models/station.glb" id="1_dkyti"]
+
+[sub_resource type="Animation" id="Animation_dkyti"]
+resource_name = "Lights"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OmniLights/red:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.633333, 0.866667, 1.26667, 1.56667, 2.46667, 2.76667, 3.66667, 4.06667, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false, true, false, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OmniLights/Green:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.433333, 0.966667, 1.1, 1.86667, 2.16667, 2.96667, 3.36667, 4.6, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false, true, false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("OmniLights2/red:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("OmniLights2/Green:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("OmniLights3/red:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.633333, 0.866667, 1.26667, 1.56667, 2.46667, 2.76667, 3.66667, 4.06667, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false, true, false, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("OmniLights3/Green:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.433333, 0.966667, 1.1, 1.86667, 2.16667, 2.96667, 3.36667, 4.6, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false, true, false, true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("OmniLights4/red:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("OmniLights4/Green:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_yurc8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OmniLights/red:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OmniLights/Green:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("OmniLights2/red:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("OmniLights2/Green:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("OmniLights3/red:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("OmniLights3/Green:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("OmniLights4/red:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("OmniLights4/Green:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_amhkg"]
+_data = {
+&"Lights": SubResource("Animation_dkyti"),
+&"RESET": SubResource("Animation_yurc8")
+}
+
+[sub_resource type="Animation" id="Animation_mcha1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_amhkg"]
+resource_name = "spin"
+length = 10.0
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o2w0k"]
+_data = {
+&"RESET": SubResource("Animation_mcha1"),
+&"spin": SubResource("Animation_amhkg")
+}
+
+[node name="station" instance=ExtResource("1_dkyti")]
+
+[node name="SpotLights" type="Node3D" parent="." index="4"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="SpotLights" index="0"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 6)
+spot_range = 10.0276
+spot_attenuation = -1.14
+spot_angle = 51.7245
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="SpotLights" index="1"]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 0, -6)
+spot_range = 10.0276
+spot_attenuation = -1.14
+spot_angle = 51.7245
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SpotLights" index="2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, -2.62268e-07)
+spot_range = 10.0276
+spot_attenuation = -1.14
+spot_angle = 51.7245
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="SpotLights" index="3"]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 6, 0, 2.62268e-07)
+spot_range = 10.0276
+spot_attenuation = -1.14
+spot_angle = 51.7245
+
+[node name="OmniLights" type="Node3D" parent="." index="5"]
+
+[node name="red" type="OmniLight3D" parent="OmniLights" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16008, 2.14896, 2.19539)
+visible = false
+light_color = Color(1, 0, 0, 1)
+omni_range = 9.72708
+omni_attenuation = -1.137
+
+[node name="Green" type="OmniLight3D" parent="OmniLights" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.65729, 1.93927, 2.66814)
+visible = false
+light_color = Color(0.123, 0.82, 0, 1)
+omni_range = 9.72708
+omni_attenuation = -1.137
+
+[node name="OmniLights2" type="Node3D" parent="." index="6"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="red" type="OmniLight3D" parent="OmniLights2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16008, 2.14896, 2.19539)
+visible = false
+light_color = Color(1, 0, 0, 1)
+omni_range = 9.72708
+omni_attenuation = -1.137
+
+[node name="Green" type="OmniLight3D" parent="OmniLights2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.65729, 1.93927, 2.66814)
+visible = false
+light_color = Color(0.123, 0.82, 0, 1)
+omni_range = 9.72708
+omni_attenuation = -1.137
+
+[node name="OmniLights3" type="Node3D" parent="." index="7"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="red" type="OmniLight3D" parent="OmniLights3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16008, 2.14896, 2.19539)
+visible = false
+light_color = Color(1, 0, 0, 1)
+omni_range = 9.72708
+omni_attenuation = -1.137
+
+[node name="Green" type="OmniLight3D" parent="OmniLights3" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.65729, 1.93927, 2.66814)
+visible = false
+light_color = Color(0.123, 0.82, 0, 1)
+omni_range = 9.72708
+omni_attenuation = -1.137
+
+[node name="OmniLights4" type="Node3D" parent="." index="8"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="red" type="OmniLight3D" parent="OmniLights4" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16008, 2.14896, 2.19539)
+visible = false
+light_color = Color(1, 0, 0, 1)
+omni_range = 9.72708
+omni_attenuation = -1.137
+
+[node name="Green" type="OmniLight3D" parent="OmniLights4" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.65729, 1.93927, 2.66814)
+visible = false
+light_color = Color(0.123, 0.82, 0, 1)
+omni_range = 9.72708
+omni_attenuation = -1.137
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="9"]
+libraries = {
+&"": SubResource("AnimationLibrary_amhkg")
+}
+autoplay = "Lights"
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="10"]
+libraries = {
+&"": SubResource("AnimationLibrary_o2w0k")
+}
+autoplay = "spin"
+speed_scale = 0.5

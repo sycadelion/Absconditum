@@ -1,0 +1,437 @@
+[gd_scene load_steps=17 format=3 uid="uid://bglvj405a8scx"]
+
+[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu Elements/Menu Tres/Menu.tres" id="1_talt2"]
+[ext_resource type="Script" uid="uid://f8mlw7kacjfj" path="res://7 GUI/Menus/Settings Menu/settings.gd" id="2_supjv"]
+[ext_resource type="PackedScene" uid="uid://cyol5v5lpw78x" path="res://7 GUI/Menus/Menu Elements/setting_slider.tscn" id="3_gs1v7"]
+[ext_resource type="Texture2D" uid="uid://d321ejt6bigvh" path="res://8 Assets/Palettes/curiosities-8x.png" id="3_h00h5"]
+[ext_resource type="WwiseEvent" uid="uid://bpc3mfvfm1yrq" path="res://Wwise/resources/Event/{1D0D8EA8-D697-496F-AEEA-239402382028}.tres" id="4_p0ldj"]
+[ext_resource type="Texture2D" uid="uid://b5rv4mmsvj7w7" path="res://8 Assets/Palettes/slso8-8x.png" id="4_sblu0"]
+[ext_resource type="Texture2D" uid="uid://dd641nsi4p7cm" path="res://8 Assets/Palettes/ammo-8-8x.png" id="4_yts5q"]
+[ext_resource type="Texture2D" uid="uid://c2qtn7pkamwwp" path="res://8 Assets/Palettes/berry-nebula-8x.png" id="5_3tawr"]
+[ext_resource type="Texture2D" uid="uid://calnrpnyf28ea" path="res://8 Assets/Palettes/custodian-8-8x.png" id="7_g3bvt"]
+[ext_resource type="Texture2D" uid="uid://bc01wtpc7pm5t" path="res://8 Assets/Palettes/dream-haze-8-8x.png" id="8_vxcmy"]
+[ext_resource type="Texture2D" uid="uid://bm50k4r0hbgnh" path="res://8 Assets/Palettes/gothic-bit-8x.png" id="9_gsmc5"]
+[ext_resource type="Texture2D" uid="uid://opdctpd3ea3u" path="res://8 Assets/Palettes/hortensia-diamond-8x.png" id="10_fxf3f"]
+[ext_resource type="Texture2D" uid="uid://0i6uodjhwi33" path="res://8 Assets/Palettes/justparchment8-8x.png" id="11_wajwc"]
+[ext_resource type="Texture2D" uid="uid://cjskki3wugmip" path="res://8 Assets/Palettes/waverator-8x.png" id="12_dhnrr"]
+[ext_resource type="PackedScene" uid="uid://djvacfear8kal" path="res://7 GUI/Menus/Menu Elements/audio_slider.tscn" id="13_vxcmy"]
+[ext_resource type="Script" uid="uid://0kjdqdebk8f7" path="res://7 GUI/Menus/Settings Menu/keybind_component.gd" id="15_3tawr"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_talt2")
+script = ExtResource("2_supjv")
+palettes = [ExtResource("4_sblu0"), ExtResource("4_yts5q"), ExtResource("5_3tawr"), ExtResource("3_h00h5"), ExtResource("7_g3bvt"), ExtResource("8_vxcmy"), ExtResource("9_gsmc5"), ExtResource("10_fxf3f"), ExtResource("11_wajwc"), ExtResource("12_dhnrr")]
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.5
+offset_top = -320.0
+offset_right = 300.5
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
+[node name="Menu" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer/Menu"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Audio" type="Button" parent="GridContainer/Menu/HBoxContainer"]
+layout_mode = 2
+text = "Audio"
+
+[node name="Graphics" type="Button" parent="GridContainer/Menu/HBoxContainer"]
+layout_mode = 2
+text = "Graphics"
+
+[node name="Keybinds" type="Button" parent="GridContainer/Menu/HBoxContainer"]
+layout_mode = 2
+text = "Keybinds"
+
+[node name="User" type="Button" parent="GridContainer/Menu/HBoxContainer"]
+layout_mode = 2
+text = "User"
+
+[node name="Audio" type="PanelContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(0, 388)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="GridContainer/Audio"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/Audio/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/Audio/CenterContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="AudioSettings" type="Label" parent="GridContainer/Audio/CenterContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Audio Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="GridContainer/Audio/CenterContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="GridContainer/Audio/CenterContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 260)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/Audio/CenterContainer/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 50
+
+[node name="Master AudioSlider" parent="GridContainer/Audio/CenterContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("13_vxcmy")]
+layout_mode = 2
+Label_Text = "Master"
+audio_bus_index = "MasterVol"
+
+[node name="Music AudioSlider" parent="GridContainer/Audio/CenterContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("13_vxcmy")]
+layout_mode = 2
+Label_Text = "Music"
+audio_bus_index = "MusicVol"
+
+[node name="SFX AudioSlider2" parent="GridContainer/Audio/CenterContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("13_vxcmy")]
+layout_mode = 2
+Label_Text = "SFX"
+audio_bus_index = "SFXVol"
+
+[node name="Foot AudioSlider3" parent="GridContainer/Audio/CenterContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("13_vxcmy")]
+layout_mode = 2
+Label_Text = "Foot"
+audio_bus_index = "FootVol"
+
+[node name="Menu AudioSlider" parent="GridContainer/Audio/CenterContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("13_vxcmy")]
+layout_mode = 2
+Label_Text = "Menu"
+audio_bus_index = "MenuVol"
+
+[node name="Graphics" type="PanelContainer" parent="GridContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 388)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="GridContainer/Graphics"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/Graphics/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer/Graphics/CenterContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Title" type="MarginContainer" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Title"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Title/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Graphic Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Title/VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="ResolutionText" type="Label" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Resolution : "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResolutionSelect" type="CenterContainer" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="resoDrop" type="OptionButton" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/ResolutionSelect"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+allow_reselect = true
+
+[node name="HSeparator" type="HSeparator" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="fullscreenText" type="Label" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Fullscreen : "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FullscreenButton" type="CenterContainer" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="FullscreenCheck" type="CheckButton" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/FullscreenButton"]
+unique_name_in_owner = true
+layout_mode = 2
+icon_alignment = 1
+
+[node name="HSeparator3" type="HSeparator" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="PrimaryScreenText" type="Label" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Primary Display : "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PrimarySelect" type="CenterContainer" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="PrimaryDrop" type="OptionButton" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/PrimarySelect"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+allow_reselect = true
+
+[node name="HSeparator5" type="HSeparator" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="HSeparator6" type="HSeparator" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="PaletteLabel" type="Label" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Palette : "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PaletteSelc" type="CenterContainer" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="palette_button" type="OptionButton" parent="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/PaletteSelc"]
+layout_mode = 2
+
+[node name="Keybinds" type="PanelContainer" parent="GridContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 388)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/Keybinds"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/Keybinds/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer/Keybinds/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LabelActions" type="Label" parent="GridContainer/Keybinds/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Actions"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Spacer" type="Control" parent="GridContainer/Keybinds/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LabelKeys" type="Label" parent="GridContainer/Keybinds/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Keys"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="HSeparator" type="HSeparator" parent="GridContainer/Keybinds/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="GridContainer/Keybinds/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 220)
+layout_mode = 2
+
+[node name="ActionList" type="VBoxContainer" parent="GridContainer/Keybinds/MarginContainer/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="HSeparator2" type="HSeparator" parent="GridContainer/Keybinds/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ResetButton" type="Button" parent="GridContainer/Keybinds/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_font_sizes/font_size = 14
+text = "Reset to Default"
+
+[node name="User" type="PanelContainer" parent="GridContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 388)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="GridContainer/User"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/User/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer/User/CenterContainer/MarginContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="UserSettings" type="Label" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "User Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Username" type="Label" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+text = "Username"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="player_name" type="LineEdit" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+placeholder_text = "Enter Name"
+alignment = 1
+max_length = 15
+
+[node name="HSeparator2" type="HSeparator" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="MouseSens" type="Label" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Mouse Sensitivity "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sensText" type="LineEdit" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "100"
+alignment = 1
+max_length = 3
+context_menu_enabled = false
+shortcut_keys_enabled = false
+flat = true
+select_all_on_focus = true
+
+[node name="SettingSlider" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer" instance=ExtResource("3_gs1v7")]
+layout_mode = 2
+step = 0.01
+value = 0.0
+settingsVar = "sensitivity"
+maxV = 10
+
+[node name="HSeparator3" type="HSeparator" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="BackButton" type="PanelContainer" parent="."]
+layout_mode = 2
+offset_left = -150.0
+offset_top = 204.0
+offset_right = 150.0
+offset_bottom = 320.0
+grow_horizontal = 2
+
+[node name="Settings_Back_Button" type="Button" parent="BackButton"]
+layout_mode = 2
+text = "Back"
+
+[node name="MenuAudio" type="AkEvent2D" parent="."]
+event = ExtResource("4_p0ldj")
+
+[node name="KeybindComponent" type="Control" parent="."]
+anchors_preset = 0
+script = ExtResource("15_3tawr")
+
+[connection signal="mouse_entered" from="GridContainer/Menu/HBoxContainer/Audio" to="." method="mouse_hover"]
+[connection signal="pressed" from="GridContainer/Menu/HBoxContainer/Audio" to="." method="_audio_pressed"]
+[connection signal="mouse_entered" from="GridContainer/Menu/HBoxContainer/Graphics" to="." method="mouse_hover"]
+[connection signal="pressed" from="GridContainer/Menu/HBoxContainer/Graphics" to="." method="_graphics_pressed"]
+[connection signal="mouse_entered" from="GridContainer/Menu/HBoxContainer/Keybinds" to="." method="mouse_hover"]
+[connection signal="pressed" from="GridContainer/Menu/HBoxContainer/Keybinds" to="." method="_keybinds_pressed"]
+[connection signal="mouse_entered" from="GridContainer/Menu/HBoxContainer/User" to="." method="mouse_hover"]
+[connection signal="pressed" from="GridContainer/Menu/HBoxContainer/User" to="." method="_user_pressed"]
+[connection signal="item_selected" from="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/ResolutionSelect/resoDrop" to="." method="_change_resolution"]
+[connection signal="mouse_entered" from="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/ResolutionSelect/resoDrop" to="." method="mouse_hover"]
+[connection signal="pressed" from="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/ResolutionSelect/resoDrop" to="." method="mouse_click"]
+[connection signal="mouse_entered" from="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/FullscreenButton/FullscreenCheck" to="." method="mouse_hover"]
+[connection signal="toggled" from="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/FullscreenButton/FullscreenCheck" to="." method="_on_fullscreen_check_toggled"]
+[connection signal="item_selected" from="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/PrimarySelect/PrimaryDrop" to="." method="_change_screen"]
+[connection signal="mouse_entered" from="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/PrimarySelect/PrimaryDrop" to="." method="mouse_hover"]
+[connection signal="pressed" from="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/PrimarySelect/PrimaryDrop" to="." method="mouse_click"]
+[connection signal="item_selected" from="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/PaletteSelc/palette_button" to="." method="_on_palette_button_item_selected"]
+[connection signal="mouse_entered" from="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/PaletteSelc/palette_button" to="." method="mouse_hover"]
+[connection signal="pressed" from="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/PaletteSelc/palette_button" to="." method="mouse_click"]
+[connection signal="pressed" from="GridContainer/Keybinds/MarginContainer/VBoxContainer/ResetButton" to="KeybindComponent" method="_on_reset_button_pressed"]
+[connection signal="focus_entered" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/player_name" to="." method="_on_player_name_focus_entered"]
+[connection signal="focus_exited" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/player_name" to="." method="_on_player_name_focus_exited"]
+[connection signal="mouse_entered" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/player_name" to="." method="mouse_hover"]
+[connection signal="text_changed" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/player_name" to="." method="_on_player_name_text_changed"]
+[connection signal="text_submitted" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/player_name" to="." method="_on_player_name_text_submitted"]
+[connection signal="focus_entered" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/sensText" to="." method="_on_edit_focus_entered"]
+[connection signal="focus_exited" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/sensText" to="." method="_on_edit_focus_exited"]
+[connection signal="text_submitted" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/sensText" to="." method="_on_edit_text_submitted"]
+[connection signal="changed" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/SettingSlider" to="." method="mouse_click"]
+[connection signal="mouse_entered" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/SettingSlider" to="." method="mouse_hover"]

@@ -1,0 +1,363 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwd15gx5hshw5"]
+
+[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu Elements/Menu Tres/Menu.tres" id="1_4jy3i"]
+[ext_resource type="PackedScene" uid="uid://cyol5v5lpw78x" path="res://7 GUI/Menus/Menu Elements/setting_slider.tscn" id="2_1d8gl"]
+[ext_resource type="Script" uid="uid://cqgd72c58who" path="res://7 GUI/Menus/Match Settings/game_settings.gd" id="2_21xgj"]
+
+[node name="Game_Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_4jy3i")
+script = ExtResource("2_21xgj")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.0
+offset_top = -58.0
+offset_right = 206.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
+[node name="Buttons" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer/Buttons"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Player" type="Button" parent="GridContainer/Buttons/HBoxContainer"]
+layout_mode = 2
+text = "Players"
+
+[node name="Skill" type="Button" parent="GridContainer/Buttons/HBoxContainer"]
+layout_mode = 2
+text = "Skills"
+
+[node name="Gun" type="Button" parent="GridContainer/Buttons/HBoxContainer"]
+layout_mode = 2
+text = "Guns"
+
+[node name="Player" type="PanelContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(0, 388)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="GridContainer/Player"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/Player/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer/Player/CenterContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Player" type="Label" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+text = "Player Settings"
+horizontal_alignment = 1
+
+[node name="HSeparator3" type="HSeparator" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Movement" type="CenterContainer" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Movement"]
+layout_mode = 2
+columns = 2
+
+[node name="MovementSpeed" type="Label" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Movement/GridContainer"]
+layout_mode = 2
+text = "Movement Speed :"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MovementSpeed_text" type="Label" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Movement/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MoveSlider" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer" instance=ExtResource("2_1d8gl")]
+layout_mode = 2
+settingsVar = "player_Speed"
+MatchSetting = true
+
+[node name="HSeparator4" type="HSeparator" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="JumpHeight" type="CenterContainer" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer/JumpHeight"]
+layout_mode = 2
+columns = 2
+
+[node name="JumpHeight" type="Label" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer/JumpHeight/GridContainer"]
+layout_mode = 2
+text = "Jump Height :"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="JumpHeight_text" type="Label" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer/JumpHeight/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="JumpSlider" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer" instance=ExtResource("2_1d8gl")]
+layout_mode = 2
+settingsVar = "player_jump"
+MatchSetting = true
+
+[node name="HSeparator5" type="HSeparator" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="Label" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="sprint" type="CenterContainer" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer/sprint"]
+layout_mode = 2
+columns = 2
+
+[node name="JumpHeight" type="Label" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer/sprint/GridContainer"]
+layout_mode = 2
+text = "Sprint Multi :"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sprint_text" type="Label" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer/sprint/GridContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprintslider" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer" instance=ExtResource("2_1d8gl")]
+layout_mode = 2
+settingsVar = "player_sprint"
+minV = 2
+maxV = 6
+MatchSetting = true
+
+[node name="HSeparator6" type="HSeparator" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator2" type="Label" parent="GridContainer/Player/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Skills" type="PanelContainer" parent="GridContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 388)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="GridContainer/Skills"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/Skills/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer/Skills/CenterContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/Skills/CenterContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+
+[node name="SkillSettings" type="Label" parent="GridContainer/Skills/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+text = "Skill 1 Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="GridContainer/Skills/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="GridContainer/Skills/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Cooldown" type="CenterContainer" parent="GridContainer/Skills/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer/Skills/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Cooldown"]
+layout_mode = 2
+columns = 2
+
+[node name="Skill_CD" type="Label" parent="GridContainer/Skills/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Cooldown/GridContainer"]
+layout_mode = 2
+text = "Skill Cooldown :"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Skill_CD_Text" type="Label" parent="GridContainer/Skills/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Cooldown/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CDSlider" parent="GridContainer/Skills/CenterContainer/MarginContainer/GridContainer/VBoxContainer" instance=ExtResource("2_1d8gl")]
+layout_mode = 2
+settingsVar = "skill_Cooldown"
+MatchSetting = true
+
+[node name="HSeparator4" type="HSeparator" parent="GridContainer/Skills/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="GridContainer/Skills/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="radius" type="CenterContainer" parent="GridContainer/Skills/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer/Skills/CenterContainer/MarginContainer/GridContainer/VBoxContainer/radius"]
+layout_mode = 2
+columns = 2
+
+[node name="Skill_radius" type="Label" parent="GridContainer/Skills/CenterContainer/MarginContainer/GridContainer/VBoxContainer/radius/GridContainer"]
+layout_mode = 2
+text = "Skill Radius :"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Skill_radius_text" type="Label" parent="GridContainer/Skills/CenterContainer/MarginContainer/GridContainer/VBoxContainer/radius/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RadiusSlider" parent="GridContainer/Skills/CenterContainer/MarginContainer/GridContainer/VBoxContainer" instance=ExtResource("2_1d8gl")]
+layout_mode = 2
+settingsVar = "skill1_radius"
+MatchSetting = true
+
+[node name="HSeparator5" type="HSeparator" parent="GridContainer/Skills/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="Label" parent="GridContainer/Skills/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Guns" type="PanelContainer" parent="GridContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 388)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="GridContainer/Guns"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/Guns/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer/Guns/CenterContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/Guns/CenterContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer/Guns/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Gun Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Blank" type="Label" parent="GridContainer/Guns/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="GridContainer/Guns/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GunDropdown" type="OptionButton" parent="GridContainer/Guns/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="GridContainer/Guns/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Damage" type="CenterContainer" parent="GridContainer/Guns/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer/Guns/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Damage"]
+layout_mode = 2
+columns = 2
+
+[node name="Damage" type="Label" parent="GridContainer/Guns/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Damage/GridContainer"]
+layout_mode = 2
+text = "Damage : "
+
+[node name="Damage_text" type="Label" parent="GridContainer/Guns/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Damage/GridContainer"]
+layout_mode = 2
+
+[node name="DamageSet" parent="GridContainer/Guns/CenterContainer/MarginContainer/GridContainer/VBoxContainer" instance=ExtResource("2_1d8gl")]
+layout_mode = 2
+gunSetting = true
+
+[node name="Back_host" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -136.0
+offset_top = 244.0
+offset_right = 136.0
+offset_bottom = 380.0
+grow_horizontal = 2
+scale = Vector2(0.9, 0.9)
+pivot_offset = Vector2(136, 68)
+
+[node name="MarginContainer" type="MarginContainer" parent="Back_host"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Back_host/MarginContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Back_host/MarginContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+columns = 2
+
+[node name="Match_Back_button" type="Button" parent="Back_host/MarginContainer/CenterContainer/GridContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="Host_game_button" type="Button" parent="Back_host/MarginContainer/CenterContainer/GridContainer"]
+layout_mode = 2
+text = "Host"
+
+[connection signal="pressed" from="GridContainer/Buttons/HBoxContainer/Player" to="." method="_on_playerMenu_pressed"]
+[connection signal="pressed" from="GridContainer/Buttons/HBoxContainer/Skill" to="." method="_on_skillMenu_pressed"]
+[connection signal="pressed" from="GridContainer/Buttons/HBoxContainer/Gun" to="." method="_on_gunMenu_pressed"]

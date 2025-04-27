@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d2ljcqlo87l2j"]
 
-[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu.tres" id="1_idt8j"]
+[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu Elements/Menu Tres/Menu.tres" id="1_idt8j"]
 [ext_resource type="Script" uid="uid://dl1k8xxd0mluk" path="res://1 Player/GUI/kill_feed.gd" id="1_u24lv"]
 
 [node name="KillFeed" type="Control"]

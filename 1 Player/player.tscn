@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://f7itocgajf8o"]
+[gd_scene load_steps=76 format=3 uid="uid://f7itocgajf8o"]
 
 [ext_resource type="Script" uid="uid://cf0owk1iydspc" path="res://1 Player/player.gd" id="1_4ht6w"]
 [ext_resource type="Script" uid="uid://bg6to2usmqm5q" path="res://4 Resources/States/StateMachine.gd" id="2_6egf1"]
@@ -16,9 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://c4juwh1tsimcx" path="res://1 Player/Weapons/malice_type_m.tscn" id="9_2r2es"]
 [ext_resource type="PackedScene" uid="uid://d2ljcqlo87l2j" path="res://1 Player/GUI/kill_feed.tscn" id="10_7uef7"]
 [ext_resource type="Script" uid="uid://cjbee27b6itpm" path="res://1 Player/Components/skill_1_comp.gd" id="10_elnv3"]
-[ext_resource type="PackedScene" uid="uid://dr380cr6se6rc" path="res://1 Player/Weapons/salvation_2_type_n.tscn" id="10_vg1fo"]
 [ext_resource type="PackedScene" uid="uid://d3bhlb6x0ro8f" path="res://1 Player/Weapons/Skill1_Scene.tscn" id="11_7l2ie"]
-[ext_resource type="PackedScene" uid="uid://b0oppry2iydfe" path="res://1 Player/Weapons/trauma_type_n.tscn" id="11_cghwp"]
 [ext_resource type="Script" uid="uid://dedfq2hei2r88" path="res://1 Player/Components/bullet_proj_comp.gd" id="11_no44j"]
 [ext_resource type="PackedScene" uid="uid://da5fc0sh7rdo8" path="res://1 Player/Weapons/BulletProj.tscn" id="12_qi8gg"]
 [ext_resource type="WwiseEvent" uid="uid://b3hn2bx8rqd7j" path="res://Wwise/resources/Event/{CEB512F3-2A96-476F-BF95-C309FCB953DE}.tres" id="12_rvfjf"]
@@ -71,11 +69,18 @@ flip_faces = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_ulbgw"]
 size = Vector3(0.5, 0.5, 0.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7n4gc"]
-shading_mode = 0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1koqu"]
-shading_mode = 0
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7n4gc"]
+render_priority = 0
+shader = ExtResource("8_ulbgw")
+shader_parameter/enabled = false
+shader_parameter/spherePos = Vector3(0, 0, 0)
+shader_parameter/borderColor = Color(0.810186, 0, 0.150926, 1)
+shader_parameter/borderSize = 0.0
+shader_parameter/sphereRadius = 0.0
+shader_parameter/noiseSpeed = 0.0
+shader_parameter/noiseStrength = 0.0
+shader_parameter/noiseSize = 0.0
+shader_parameter/invertCut = false
 
 [sub_resource type="Gradient" id="Gradient_hotdi"]
 offsets = PackedFloat32Array(0, 0.236364, 1)
@@ -390,202 +395,58 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Head/Camera3D/Hand/Salvation2_typeN:visible")
+tracks/9/path = NodePath("Head/Camera3D/Hand2:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector3(0, 0.00823993, 0)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Head/Camera3D/Hand/Salvation2_typeN:rotation")
+tracks/10/path = NodePath("Head/Camera3D/Hand2:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 1.5708, 0)]
+"values": [Vector3(0.000377573, 0, 0)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Head/Camera3D/Hand/Salvation2_typeN:position")
+tracks/11/path = NodePath("Head/Camera3D/Hand2/Malice_typeM:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.469697, -0.497225, -0.323395)]
+"values": [Vector3(0.38927, -0.434237, 0.130601)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Head/Camera3D/Hand/Trauma_typeN:position")
+tracks/12/path = NodePath("Head/Camera3D/Hand2/Malice_typeM:rotation")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.51685, -0.64943, -0.056298)]
+"values": [Vector3(0, 1.5708, 0)]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Head/Camera3D/Hand/Trauma_typeN:rotation")
+tracks/13/path = NodePath("Head/Camera3D/Hand2/Malice_typeM:visible")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 1.5708, 0)]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("Head/Camera3D/Hand/Trauma_typeN:visible")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("Head/Camera3D/Hand2:position")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0.00823993, 0)]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("Head/Camera3D/Hand2:rotation")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.000377573, 0, 0)]
-}
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("Head/Camera3D/Hand2/Salvation2_typeN:visible")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("Head/Camera3D/Hand2/Salvation2_typeN:position")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.469697, -0.497225, -0.323395)]
-}
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("Head/Camera3D/Hand2/Salvation2_typeN:rotation")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 1.5708, 0)]
-}
-tracks/20/type = "value"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("Head/Camera3D/Hand2/Trauma_typeN:position")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.51685, -0.64943, -0.056298)]
-}
-tracks/21/type = "value"
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/path = NodePath("Head/Camera3D/Hand2/Trauma_typeN:rotation")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 1.5708, 0)]
-}
-tracks/22/type = "value"
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/path = NodePath("Head/Camera3D/Hand2/Trauma_typeN:visible")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/23/type = "value"
-tracks/23/imported = false
-tracks/23/enabled = true
-tracks/23/path = NodePath("Head/Camera3D/Hand2/Malice_typeM:position")
-tracks/23/interp = 1
-tracks/23/loop_wrap = true
-tracks/23/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.38927, -0.434237, 0.130601)]
-}
-tracks/24/type = "value"
-tracks/24/imported = false
-tracks/24/enabled = true
-tracks/24/path = NodePath("Head/Camera3D/Hand2/Malice_typeM:rotation")
-tracks/24/interp = 1
-tracks/24/loop_wrap = true
-tracks/24/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 1.5708, 0)]
-}
-tracks/25/type = "value"
-tracks/25/imported = false
-tracks/25/enabled = true
-tracks/25/path = NodePath("Head/Camera3D/Hand2/Malice_typeM:visible")
-tracks/25/interp = 1
-tracks/25/loop_wrap = true
-tracks/25/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -649,155 +510,11 @@ tracks/3/keys = {
 resource_name = "Salvation_equip"
 length = 0.5
 step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Head/Camera3D/Hand/Salvation2_typeN:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.03, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Head/Camera3D/Hand/Salvation2_typeN:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.171153, 1.97942, -1.01389), Vector3(0, 1.5708, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Head/Camera3D/Hand/Salvation2_typeN:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.469697, -0.497225, -0.323395), Vector3(0.469697, -0.497225, -0.323395)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Head/Camera3D/Hand2/Salvation2_typeN:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.03, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Head/Camera3D/Hand2/Salvation2_typeN:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.171153, 1.97942, -1.01389), Vector3(0, 1.5708, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Head/Camera3D/Hand2/Salvation2_typeN:rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.469697, -0.497225, -0.323395), Vector3(0.469697, -0.497225, -0.323395)]
-}
 
 [sub_resource type="Animation" id="Animation_llvb0"]
 resource_name = "Salvation_unequip"
 length = 0.5
 step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Head/Camera3D/Hand/Salvation2_typeN:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.469697, -0.497225, -0.323395), Vector3(0.469697, -0.497225, -0.323395)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Head/Camera3D/Hand/Salvation2_typeN:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 1.5708, 0), Vector3(0.171153, 1.97942, -1.01389)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Head/Camera3D/Hand/Salvation2_typeN:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.45),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Head/Camera3D/Hand2/Salvation2_typeN:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.469697, -0.497225, -0.323395), Vector3(0.469697, -0.497225, -0.323395)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Head/Camera3D/Hand2/Salvation2_typeN:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 1.5708, 0), Vector3(0.171153, 1.97942, -1.01389)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Head/Camera3D/Hand2/Salvation2_typeN:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.45),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
 
 [sub_resource type="Animation" id="Animation_hsecg"]
 resource_name = "Take_out"
@@ -806,155 +523,11 @@ resource_name = "Take_out"
 resource_name = "Trauma_equip"
 length = 0.5
 step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Head/Camera3D/Hand/Trauma_typeN:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.51685, -0.64943, -0.056298), Vector3(0.51685, -0.64943, -0.056298)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Head/Camera3D/Hand/Trauma_typeN:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.21737, 2.10387, -0.709705), Vector3(0, 1.5708, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Head/Camera3D/Hand/Trauma_typeN:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Head/Camera3D/Hand2/Trauma_typeN:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.51685, -0.64943, -0.056298), Vector3(0.51685, -0.64943, -0.056298)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Head/Camera3D/Hand2/Trauma_typeN:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.21737, 2.10387, -0.709705), Vector3(0, 1.5708, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Head/Camera3D/Hand2/Trauma_typeN:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, true]
-}
 
 [sub_resource type="Animation" id="Animation_7h1qu"]
 resource_name = "Trauma_unequip"
 length = 0.5
 step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Head/Camera3D/Hand/Trauma_typeN:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.51685, -0.64943, -0.056298), Vector3(0.51685, -0.64943, -0.056298)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Head/Camera3D/Hand/Trauma_typeN:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 1.5708, 0), Vector3(0.21737, 2.10387, -0.709705)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Head/Camera3D/Hand/Trauma_typeN:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.48),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Head/Camera3D/Hand2/Trauma_typeN:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.51685, -0.64943, -0.056298), Vector3(0.51685, -0.64943, -0.056298)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Head/Camera3D/Hand2/Trauma_typeN:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 1.5708, 0), Vector3(0.21737, 2.10387, -0.709705)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Head/Camera3D/Hand2/Trauma_typeN:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.48),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
 
 [sub_resource type="Animation" id="Animation_qkman"]
 resource_name = "death"
@@ -1437,16 +1010,6 @@ transform = Transform3D(-1.81e-06, 0, 0.5, 0, 0.5, 0, -0.5, 0, -1.81e-06, 0.3892
 visible = false
 script = null
 
-[node name="Salvation2_typeN" parent="Head/Camera3D/Hand" instance=ExtResource("10_vg1fo")]
-transform = Transform3D(-7.23998e-07, 0, 0.2, 0, 0.2, 0, -0.2, 0, -7.23998e-07, 0.469697, -0.497225, -0.323395)
-visible = false
-script = null
-
-[node name="Trauma_typeN" parent="Head/Camera3D/Hand" instance=ExtResource("11_cghwp")]
-transform = Transform3D(-7.23998e-07, 0, 0.2, 0, 0.2, 0, -0.2, 0, -7.23998e-07, 0.51685, -0.64943, -0.056298)
-visible = false
-script = null
-
 [node name="GunAudio" type="AkEvent3D" parent="Head/Camera3D/Hand"]
 event = ExtResource("12_rvfjf")
 unique_name_in_owner = true
@@ -1488,26 +1051,7 @@ visible = false
 script = null
 
 [node name="Cube_001" parent="Head/Camera3D/Hand2/Malice_typeM" index="0"]
-material_override = null
-
-[node name="Salvation2_typeN" parent="Head/Camera3D/Hand2" instance=ExtResource("10_vg1fo")]
-transform = Transform3D(-7.23998e-07, 0, 0.2, 0, 0.2, 0, -0.2, 0, -7.23998e-07, 0.469697, -0.497225, -0.323395)
-visible = false
-script = null
-
-[node name="Mag" parent="Head/Camera3D/Hand2/Salvation2_typeN" index="0"]
-material_override = SubResource("StandardMaterial3D_7n4gc")
-
-[node name="Salvation_001" parent="Head/Camera3D/Hand2/Salvation2_typeN" index="1"]
-material_override = SubResource("StandardMaterial3D_1koqu")
-
-[node name="Trauma_typeN" parent="Head/Camera3D/Hand2" instance=ExtResource("11_cghwp")]
-transform = Transform3D(-7.23998e-07, 0, 0.2, 0, 0.2, 0, -0.2, 0, -7.23998e-07, 0.51685, -0.64943, -0.056298)
-visible = false
-script = null
-
-[node name="Cube_003" parent="Head/Camera3D/Hand2/Trauma_typeN" index="0"]
-material_override = null
+material_override = SubResource("ShaderMaterial_7n4gc")
 
 [node name="MuzzleFlash" type="GPUParticles3D" parent="Head/Camera3D"]
 unique_name_in_owner = true
@@ -1649,6 +1193,4 @@ shape = SubResource("BoxShape3D_ulbgw")
 
 [editable path="Head/Camera3D/Hand/Malice_typeM"]
 [editable path="Head/Camera3D/Hand2/Malice_typeM"]
-[editable path="Head/Camera3D/Hand2/Salvation2_typeN"]
-[editable path="Head/Camera3D/Hand2/Trauma_typeN"]
 [editable path="CanvasLayer/HUD"]
