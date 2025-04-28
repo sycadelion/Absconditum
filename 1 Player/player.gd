@@ -36,7 +36,7 @@ var impact_played: bool = false
 var floor: bool = true
 var playerList
 
-var sens:float = GameManager.sensitivity
+var sens:float = SettingsManager.MouseSensitivity
 var owner_id: int = 1
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var AudioRay: bool = false
@@ -59,7 +59,7 @@ func _ready() -> void:
 		Health_bar.max_value = health_comp.MAX_HEALTH
 		Health_bar.value = health_comp.health
 		Health_Label.text = str(health_comp.health)
-		sens = GameManager.sensitivity / 1000
+		sens = SettingsManager.MouseSensitivity / 1000
 		SPEED = OnlineMang.onlineComp.matchSettings.player_Speed
 		JUMP_VELOCITY = OnlineMang.onlineComp.matchSettings.player_jump
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -96,7 +96,7 @@ func _physics_process(_delta: float) -> void:
 		return
 	if self.global_position.y <= -15:
 		health_comp.receive_damage(health_comp.MAX_HEALTH,-1)
-	sens = GameManager.sensitivity / 1000
+	sens = SettingsManager.MouseSensitivity / 1000
 	Health_bar.value = health_comp.health
 	Health_Label.text = str(health_comp.health)
 	

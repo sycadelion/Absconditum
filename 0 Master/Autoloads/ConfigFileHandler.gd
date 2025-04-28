@@ -7,20 +7,20 @@ var config = ConfigFile.new()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if !FileAccess.file_exists(save_path):
-		GameManager.emptyConfig = true
+		SettingsManager.emptyConfig = true
 		set_defaults()
 		config.save(save_path)
 	else:
 		config.load(save_path)
 		var save_ver = ConfigFileHandler.load_user_settings()
-		if save_ver.save_version != GameManager.Save_version:
+		if save_ver.save_version != SettingsManager.Save_version:
 			config.clear()
-			GameManager.emptyConfig = true
+			SettingsManager.emptyConfig = true
 			set_defaults()
 			config.save(save_path)
 			config.load(save_path)
 		else:
-			GameManager.emptyConfig = false
+			SettingsManager.emptyConfig = false
 			return
 
 func save_mouse_settings(key: String, value):
@@ -96,14 +96,19 @@ func load_keybinding():
 	return keybindings
 
 func set_defaults():
-	config.set_value("User","name",GameManager.UserName)
-	config.set_value("User","save_version",GameManager.Save_version)
+	config.set_value("User","name",SettingsManager.UserName)
+	config.set_value("User","save_version",SettingsManager.Save_version)
 	config.set_value("Mouse","sensitivity",5)
-	config.set_value("Audio","master_audio",GameManager.master_audio)
-	config.set_value("Audio","music_audio",GameManager.music_audio)
-	config.set_value("Audio","sfx_audio",GameManager.sfx_audio)
-	config.set_value("Audio","foot_audio",GameManager.foot_audio)
-	config.set_value("Audio","menu_audio",GameManager.menu_audio)
+	config.set_value("Audio","master_audio",SettingsManager.MasterVol)
+	config.set_value("Audio","music_audio",SettingsManager.MusicVol)
+	config.set_value("Audio","sfx_audio",SettingsManager.SFXVol)
+	config.set_value("Audio","foot_audio",SettingsManager.FootVol)
+	config.set_value("Audio","menu_audio",SettingsManager.MenuVol)
 	config.set_value("Graphic","resolution",SettingsManager.resolutions_dic.get("1280 x 720 - 16:9"))
 	config.set_value("Graphic","fullscreen",false)
 	config.set_value("Graphic","screen_focus",DisplayServer.get_primary_screen())
+	config.set_value("Graphic","palette",0)
+	for action in SettingsManager.input_actions:
+		var events = InputMap.action_get_events(action)
+		if events.size() > 0:
+			ConfigFileHandler.save_keybinding(action,events[0])

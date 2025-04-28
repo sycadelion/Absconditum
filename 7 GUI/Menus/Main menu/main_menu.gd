@@ -1,7 +1,8 @@
 extends Control
 
-@onready var anim_player: AnimationPlayer = $AnimationPlayer
+@onready var anim_player: AnimationPlayer = $CanvasLayer/AnimationPlayer
 @onready var ui_audio: AkEvent2D = %UiAudio
+@onready var canvas_layer: CanvasLayer = $CanvasLayer
 
 var settings: bool = false
 var Matchsettings: bool = false
@@ -12,13 +13,13 @@ func _ready() -> void:
 	GameManager.paused = false
 	GameManager.host_mode = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	if GameManager.emptyConfig:
-		GameManager.fire_prompt("Your Settings Have Been Reset",self)
+	if SettingsManager.emptyConfig:
+		GameManager.fire_prompt("Your Settings Have Been Reset",canvas_layer)
 		
 func _on_host_pressed() -> void:
 	_on_click()
-	if GameManager.UserName == "":
-		GameManager.fire_prompt("Please enter a user name first under user settings",self)
+	if SettingsManager.UserName == "":
+		GameManager.fire_prompt("Please enter a user name first under user settings",canvas_layer)
 	else:
 		SceneLoad.Load_Component(SceneLoad.Server_info)
 		%Match_Settings.show()
@@ -26,8 +27,8 @@ func _on_host_pressed() -> void:
 
 func _on_join_pressed() -> void:
 	_on_click()
-	if GameManager.UserName == "":
-		GameManager.fire_prompt("Please enter a user name first under user settings",self)
+	if SettingsManager.UserName == "":
+		GameManager.fire_prompt("Please enter a user name first under user settings",canvas_layer)
 	else:
 		SceneLoad.Change_Scene(GAME_SCENE)
 

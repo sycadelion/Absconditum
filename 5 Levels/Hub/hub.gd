@@ -68,4 +68,4 @@ func delete_player(id):
 
 func update_enviro():
 	var enviro:Environment = $SubViewportContainer/SubViewport/WorldEnvironment.environment
-	enviro.adjustment_color_correction = GameManager.palette
+	enviro.adjustment_color_correction = SettingsManager.ChosenPalette

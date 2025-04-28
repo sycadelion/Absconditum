@@ -1,14 +1,8 @@
 extends Control
 
 @onready var menu_audio: AkEvent2D = $MenuAudio
-@export var palettes = []
 @export var edit_name: bool = true
-@onready var audio_master: LineEdit = $"GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Master Text/GridContainer/MasterEdit"
-@onready var audio_music: LineEdit = $"GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Music Text/GridContainer/MusicEdit"
-@onready var audio_sfx: LineEdit = $"GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/SFX Text/GridContainer/SFXEdit"
-@onready var audio_foot: LineEdit = $"GridContainer/Audio/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Foot Text/GridContainer/FootEdit"
-@onready var player_name: LineEdit = $GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/player_name
-@onready var mouse_sens: LineEdit = %sensText
+@onready var player_name: LineEdit = $GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Username/player_name
 @onready var palette_button: OptionButton = $GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/PaletteSelc/palette_button
 
 #menus
@@ -24,15 +18,14 @@ var Text_Focused = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	await SettingsManager
 	var index = 0
 	
-	for f in palettes:
-		palette_button.add_icon_item(palettes[index],"")
+	for f in SettingsManager.palettes:
+		palette_button.add_icon_item(SettingsManager.palettes[index],"")
 		index += 1
-	var load_palette_var = ConfigFileHandler.load_graphic_settings()
-	if load_palette_var.palette:
-		palette_button.select(load_palette_var.palette)
-	GameManager.palette = palettes[palette_button.selected]
+	palette_button.selected = SettingsManager.ChosenPaletteIndex
+	SettingsManager.ChosenPalette = SettingsManager.palettes[palette_button.selected]
 	
 	#adds list of resolutions
 	for r in SettingsManager.resolutions_dic:
@@ -45,7 +38,7 @@ func _ready() -> void:
 		%PrimaryDrop.add_item("Screen " + str(d+1),index)
 		index += 1
 	
-	player_name.text = GameManager.UserName
+	player_name.text = SettingsManager.UserName
 	player_name.editable = edit_name
 	active_menu = audio
 	audio.show()
@@ -64,12 +57,11 @@ func _process(_delta: float) -> void:
 
 
 func _on_player_name_text_changed(new_text: String) -> void:
-	GameManager.UserName = new_text
+	SettingsManager.UserName = new_text
 
 
 func update_text():
-	player_name.text = GameManager.UserName
-	mouse_sens.text = str(GameManager.sensitivity)
+	player_name.text = SettingsManager.UserName
 
 
 func _audio_pressed() -> void:
@@ -119,6 +111,7 @@ func _check_settings():
 	#%ModeDrop.selected = SettingsManager.screen_mod
 	%PrimaryDrop.selected = SettingsManager.screen_focus
 	%FullscreenCheck.button_pressed = SettingsManager.FullscreenBool
+	palette_button.selected = SettingsManager.ChosenPaletteIndex
 
 
 func _on_fullscreen_check_toggled(toggled_on: bool) -> void:
@@ -141,7 +134,8 @@ func mouse_click():
 
 
 func _on_palette_button_item_selected(index: int) -> void:
-	GameManager.palette = palettes[index]
+	SettingsManager.ChosenPalette = SettingsManager.palettes[index]
+	SettingsManager.ChosenPaletteIndex = index
 	ConfigFileHandler.save_graphic_settings("palette", index)
 
 
@@ -153,5 +147,6 @@ func _on_player_name_focus_exited() -> void:
 	Text_Focused = false
 
 
-func _on_player_name_text_submitted(_new_text: String) -> void:
+func _on_player_name_text_submitted(new_text: String) -> void:
 	Text_Focused = false
+	SettingsManager.UserName = new_text

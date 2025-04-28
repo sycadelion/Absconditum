@@ -846,33 +846,57 @@ script = ExtResource("2_3kp6s")
 [node name="StaticBody3D" parent="Step_003" index="0"]
 script = ExtResource("2_3kp6s")
 
+[node name="Plane" parent="." index="128"]
+visible = false
+
 [node name="plane" type="AkGeometry" parent="Plane" index="0"]
 enable_diffraction = true
 enable_diffraction_on_boundary_edges = true
+
+[node name="Cube" parent="." index="129"]
+visible = false
 
 [node name="Cube" type="AkGeometry" parent="Cube" index="0"]
 enable_diffraction = true
 enable_diffraction_on_boundary_edges = true
 
+[node name="Cube_001" parent="." index="130"]
+visible = false
+
 [node name="cube1" type="AkGeometry" parent="Cube_001" index="0"]
 enable_diffraction = true
 enable_diffraction_on_boundary_edges = true
+
+[node name="Cube_002" parent="." index="131"]
+visible = false
 
 [node name="cube2" type="AkGeometry" parent="Cube_002" index="0"]
 enable_diffraction = true
 enable_diffraction_on_boundary_edges = true
 
+[node name="dropod" parent="." index="132"]
+visible = false
+
 [node name="Droppod" type="AkGeometry" parent="dropod" index="0"]
 enable_diffraction = true
 enable_diffraction_on_boundary_edges = true
+
+[node name="Plane_001" parent="." index="133"]
+visible = false
 
 [node name="plane1" type="AkGeometry" parent="Plane_001" index="0"]
 enable_diffraction = true
 enable_diffraction_on_boundary_edges = true
 
+[node name="Plane_002" parent="." index="134"]
+visible = false
+
 [node name="plane2" type="AkGeometry" parent="Plane_002" index="0"]
 enable_diffraction = true
 enable_diffraction_on_boundary_edges = true
+
+[node name="Cube_003" parent="." index="135"]
+visible = false
 
 [node name="cube3" type="AkGeometry" parent="Cube_003" index="0"]
 enable_diffraction = true

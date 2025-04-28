@@ -17,7 +17,7 @@ func _ready() -> void:
 	min_value = minV
 	max_value = maxV
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	update_text()
 	value = setValue
 

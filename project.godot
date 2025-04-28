@@ -43,14 +43,14 @@ buses/default_bus_layout=""
 
 [autoload]
 
-GameManager="*res://0 Master/Autoloads/GameManager.gd"
-OnlineMang="*res://0 Master/Autoloads/OnlineManager.gd"
-ConfigFileHandler="*res://0 Master/Autoloads/ConfigFileHandler.gd"
 SceneLoad="*res://0 Master/Autoloads/scene_loader.tscn"
+GameManager="*res://0 Master/Autoloads/GameManager.gd"
+ConfigFileHandler="*res://0 Master/Autoloads/ConfigFileHandler.gd"
+SettingsManager="*res://0 Master/Components/settings_load.tscn"
+OnlineMang="*res://0 Master/Autoloads/OnlineManager.gd"
 LineDrawer="*res://0 Master/Autoloads/LineDrawer.gd"
 RoomGen="*res://0 Master/Autoloads/Roomcode_gen.gd"
 WwiseRuntimeManager="*res://addons/Wwise/runtime/wwise_runtime_manager.gd"
-SettingsManager="*res://0 Master/Autoloads/SettingsManager.gd"
 
 [display]
 

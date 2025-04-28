@@ -5,6 +5,6 @@ var enviro:Environment
 func _ready() -> void:
 	enviro = $SubViewportContainer/SubViewport/WorldEnvironment.environment
 
-func _process(delta: float) -> void:
-	if GameManager.palette:
-		enviro.adjustment_color_correction = GameManager.palette
+func _process(_delta: float) -> void:
+	if SettingsManager.ChosenPalette:
+		enviro.adjustment_color_correction = SettingsManager.ChosenPalette

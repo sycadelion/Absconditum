@@ -1,19 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://bglvj405a8scx"]
+[gd_scene load_steps=8 format=3 uid="uid://bglvj405a8scx"]
 
 [ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu Elements/Menu Tres/Menu.tres" id="1_talt2"]
 [ext_resource type="Script" uid="uid://f8mlw7kacjfj" path="res://7 GUI/Menus/Settings Menu/settings.gd" id="2_supjv"]
-[ext_resource type="PackedScene" uid="uid://cyol5v5lpw78x" path="res://7 GUI/Menus/Menu Elements/setting_slider.tscn" id="3_gs1v7"]
-[ext_resource type="Texture2D" uid="uid://d321ejt6bigvh" path="res://8 Assets/Palettes/curiosities-8x.png" id="3_h00h5"]
 [ext_resource type="WwiseEvent" uid="uid://bpc3mfvfm1yrq" path="res://Wwise/resources/Event/{1D0D8EA8-D697-496F-AEEA-239402382028}.tres" id="4_p0ldj"]
-[ext_resource type="Texture2D" uid="uid://b5rv4mmsvj7w7" path="res://8 Assets/Palettes/slso8-8x.png" id="4_sblu0"]
-[ext_resource type="Texture2D" uid="uid://dd641nsi4p7cm" path="res://8 Assets/Palettes/ammo-8-8x.png" id="4_yts5q"]
-[ext_resource type="Texture2D" uid="uid://c2qtn7pkamwwp" path="res://8 Assets/Palettes/berry-nebula-8x.png" id="5_3tawr"]
-[ext_resource type="Texture2D" uid="uid://calnrpnyf28ea" path="res://8 Assets/Palettes/custodian-8-8x.png" id="7_g3bvt"]
-[ext_resource type="Texture2D" uid="uid://bc01wtpc7pm5t" path="res://8 Assets/Palettes/dream-haze-8-8x.png" id="8_vxcmy"]
-[ext_resource type="Texture2D" uid="uid://bm50k4r0hbgnh" path="res://8 Assets/Palettes/gothic-bit-8x.png" id="9_gsmc5"]
-[ext_resource type="Texture2D" uid="uid://opdctpd3ea3u" path="res://8 Assets/Palettes/hortensia-diamond-8x.png" id="10_fxf3f"]
-[ext_resource type="Texture2D" uid="uid://0i6uodjhwi33" path="res://8 Assets/Palettes/justparchment8-8x.png" id="11_wajwc"]
-[ext_resource type="Texture2D" uid="uid://cjskki3wugmip" path="res://8 Assets/Palettes/waverator-8x.png" id="12_dhnrr"]
+[ext_resource type="PackedScene" uid="uid://01b6u1xndvif" path="res://7 GUI/Menus/Settings Menu/username.tscn" id="4_yp1wg"]
+[ext_resource type="PackedScene" uid="uid://bbb0gur602cw7" path="res://7 GUI/Menus/Settings Menu/mouse_sens.tscn" id="4_yrfh3"]
 [ext_resource type="PackedScene" uid="uid://djvacfear8kal" path="res://7 GUI/Menus/Menu Elements/audio_slider.tscn" id="13_vxcmy"]
 [ext_resource type="Script" uid="uid://0kjdqdebk8f7" path="res://7 GUI/Menus/Settings Menu/keybind_component.gd" id="15_3tawr"]
 
@@ -28,7 +19,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_talt2")
 script = ExtResource("2_supjv")
-palettes = [ExtResource("4_sblu0"), ExtResource("4_yts5q"), ExtResource("5_3tawr"), ExtResource("3_h00h5"), ExtResource("7_g3bvt"), ExtResource("8_vxcmy"), ExtResource("9_gsmc5"), ExtResource("10_fxf3f"), ExtResource("11_wajwc"), ExtResource("12_dhnrr")]
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
@@ -70,6 +60,7 @@ layout_mode = 2
 text = "User"
 
 [node name="Audio" type="PanelContainer" parent="GridContainer"]
+visible = false
 custom_minimum_size = Vector2(0, 388)
 layout_mode = 2
 
@@ -323,8 +314,9 @@ layout_mode = 2
 columns = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(500, 260)
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 50
 
 [node name="UserSettings" type="Label" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
 layout_mode = 2
@@ -333,58 +325,11 @@ text = "User Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+[node name="Username" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer" instance=ExtResource("4_yp1wg")]
 layout_mode = 2
-theme_override_constants/separation = 20
 
-[node name="Username" type="Label" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
+[node name="MouseSens" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer" instance=ExtResource("4_yrfh3")]
 layout_mode = 2
-text = "Username"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="player_name" type="LineEdit" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-placeholder_text = "Enter Name"
-alignment = 1
-max_length = 15
-
-[node name="HSeparator2" type="HSeparator" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="GridContainer" type="GridContainer" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
-layout_mode = 2
-columns = 2
-
-[node name="MouseSens" type="Label" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer"]
-layout_mode = 2
-text = "Mouse Sensitivity "
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="sensText" type="LineEdit" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-placeholder_text = "100"
-alignment = 1
-max_length = 3
-context_menu_enabled = false
-shortcut_keys_enabled = false
-flat = true
-select_all_on_focus = true
-
-[node name="SettingSlider" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer" instance=ExtResource("3_gs1v7")]
-layout_mode = 2
-step = 0.01
-value = 0.0
-settingsVar = "sensitivity"
-maxV = 10
-
-[node name="HSeparator3" type="HSeparator" parent="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 20
 
 [node name="BackButton" type="PanelContainer" parent="."]
 layout_mode = 2
@@ -425,13 +370,9 @@ script = ExtResource("15_3tawr")
 [connection signal="mouse_entered" from="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/PaletteSelc/palette_button" to="." method="mouse_hover"]
 [connection signal="pressed" from="GridContainer/Graphics/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/PaletteSelc/palette_button" to="." method="mouse_click"]
 [connection signal="pressed" from="GridContainer/Keybinds/MarginContainer/VBoxContainer/ResetButton" to="KeybindComponent" method="_on_reset_button_pressed"]
-[connection signal="focus_entered" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/player_name" to="." method="_on_player_name_focus_entered"]
-[connection signal="focus_exited" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/player_name" to="." method="_on_player_name_focus_exited"]
-[connection signal="mouse_entered" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/player_name" to="." method="mouse_hover"]
-[connection signal="text_changed" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/player_name" to="." method="_on_player_name_text_changed"]
-[connection signal="text_submitted" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/player_name" to="." method="_on_player_name_text_submitted"]
-[connection signal="focus_entered" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/sensText" to="." method="_on_edit_focus_entered"]
-[connection signal="focus_exited" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/sensText" to="." method="_on_edit_focus_exited"]
-[connection signal="text_submitted" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/GridContainer/sensText" to="." method="_on_edit_text_submitted"]
-[connection signal="changed" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/SettingSlider" to="." method="mouse_click"]
-[connection signal="mouse_entered" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/SettingSlider" to="." method="mouse_hover"]
+[connection signal="focus_entered" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Username/player_name" to="." method="_on_player_name_focus_entered"]
+[connection signal="focus_exited" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Username/player_name" to="." method="_on_player_name_focus_exited"]
+[connection signal="text_changed" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Username/player_name" to="." method="_on_player_name_text_changed"]
+[connection signal="text_submitted" from="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Username/player_name" to="." method="_on_player_name_text_submitted"]
+
+[editable path="GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Username"]

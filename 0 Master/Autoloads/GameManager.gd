@@ -8,11 +8,6 @@ var host_mode = false
 var mouseCap = true
 var disconnected = false
 var paused = false
-var UserName: String
-
-#game version only changing for save files
-var Save_version: int = 2
-var emptyConfig: bool = true
 
 #customize match settings:
 var skill_Cooldown = 5
@@ -21,15 +16,6 @@ var player_Speed = 5
 var player_jump = 5
 var hitscan:bool = false
 
-
-#customize game settings:
-var sensitivity: float = 5
-var MasterVol:int = 0
-var MusicVol: int = 0
-var SFXVol: int = 0
-var FootVol: int = 0
-var MenuVol: int = 0
-var palette
 
 func _ready() -> void:
 	pass
@@ -45,14 +31,14 @@ func spawn_point_rng():
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
-		ConfigFileHandler.save_user_settings("name",GameManager.UserName)
-		ConfigFileHandler.save_user_settings("save_version",GameManager.Save_version)
-		ConfigFileHandler.save_mouse_settings("sensitivity", sensitivity)
-		ConfigFileHandler.save_audio_settings("master_audio",MasterVol)
-		ConfigFileHandler.save_audio_settings("music_audio",MusicVol)
-		ConfigFileHandler.save_audio_settings("sfx_audio",SFXVol)
-		ConfigFileHandler.save_audio_settings("foot_audio",FootVol)
-		ConfigFileHandler.save_audio_settings("menu_audio",MenuVol)
+		ConfigFileHandler.save_user_settings("name",SettingsManager.UserName)
+		ConfigFileHandler.save_user_settings("save_version",SettingsManager.Save_version)
+		ConfigFileHandler.save_mouse_settings("sensitivity", SettingsManager.MouseSensitivity)
+		ConfigFileHandler.save_audio_settings("master_audio",SettingsManager.MasterVol)
+		ConfigFileHandler.save_audio_settings("music_audio",SettingsManager.MusicVol)
+		ConfigFileHandler.save_audio_settings("sfx_audio",SettingsManager.SFXVol)
+		ConfigFileHandler.save_audio_settings("foot_audio",SettingsManager.FootVol)
+		ConfigFileHandler.save_audio_settings("menu_audio",SettingsManager.MenuVol)
 		ConfigFileHandler.save_graphic_settings("resolution",SettingsManager.current_res)
 		ConfigFileHandler.save_graphic_settings("screen_focus",SettingsManager.screen_focus)
 		ConfigFileHandler.save_graphic_settings("fullscreen",SettingsManager.FullscreenBool)

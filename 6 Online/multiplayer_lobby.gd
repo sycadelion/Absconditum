@@ -4,7 +4,7 @@ var level_scene: PackedScene = preload("res://5 Levels/Drop_pod_hanger/Level_Dro
 @onready var level_container: Node = $Level
 @onready var ip_line_edit: LineEdit = $Multiplayer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/IPLineEdit
 @onready var lobby_ui: CanvasLayer = $Multiplayer
-@onready var background_container: Control = $Background_container
+@onready var background_container: Node3D = $MainMenu_Background
 
 func _ready() -> void:
 	multiplayer.connection_failed.connect(_on_connection_failed)
@@ -38,6 +38,7 @@ func change_level(scene):
 		level_container.remove_child(c)
 		c.queue_free()
 	level_container.add_child(scene.instantiate())
+	background_container.queue_free()
 
 func _on_connection_failed():
 	$Multiplayer/ErrorPrompt.visible = true

@@ -166,3 +166,4 @@ unique_name_in_owner = true
 
 [editable path="CanvasLayer/Match_Settings"]
 [editable path="CanvasLayer/Settings"]
+[editable path="CanvasLayer/Settings/GridContainer/User/CenterContainer/MarginContainer/GridContainer/VBoxContainer/Username"]
