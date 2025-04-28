@@ -9,7 +9,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("OmniLights/red:visible")
+tracks/0/path = NodePath("Dark1:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -21,7 +21,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("OmniLights/Green:visible")
+tracks/1/path = NodePath("Light1:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -33,174 +33,30 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("OmniLights2/red:visible")
+tracks/2/path = NodePath("Dark2:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.233333, 0.333333, 1.03333, 1.16667, 2.3, 2.43333, 3.43333, 3.56667, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [false]
+"values": [true, false, true, false, true, false, true, false, false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("OmniLights2/Green:visible")
+tracks/3/path = NodePath("Light2:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("OmniLights3/red:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.633333, 0.866667, 1.26667, 1.56667, 2.46667, 2.76667, 3.66667, 4.06667, 5),
+"times": PackedFloat32Array(0, 0.566667, 0.666667, 1.36667, 1.5, 2.63333, 2.76667, 3.76667, 3.9, 5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [false, true, false, true, false, true, false, true, false, false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("OmniLights3/Green:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.433333, 0.966667, 1.1, 1.86667, 2.16667, 2.96667, 3.36667, 4.6, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, true, false, true, false, true, false, true, false, true, false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("OmniLights4/red:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("OmniLights4/Green:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_yurc8"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("OmniLights/red:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("OmniLights/Green:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("OmniLights2/red:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("OmniLights2/Green:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("OmniLights3/red:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("OmniLights3/Green:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("OmniLights4/red:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("OmniLights4/Green:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_amhkg"]
 _data = {
@@ -278,70 +134,14 @@ spot_angle = 51.7245
 
 [node name="OmniLights" type="Node3D" parent="." index="5"]
 
-[node name="red" type="OmniLight3D" parent="OmniLights" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16008, 2.14896, 2.19539)
-visible = false
-light_color = Color(1, 0, 0, 1)
-omni_range = 9.72708
-omni_attenuation = -1.137
-
-[node name="Green" type="OmniLight3D" parent="OmniLights" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.65729, 1.93927, 2.66814)
-visible = false
-light_color = Color(0.123, 0.82, 0, 1)
-omni_range = 9.72708
-omni_attenuation = -1.137
-
 [node name="OmniLights2" type="Node3D" parent="." index="6"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-
-[node name="red" type="OmniLight3D" parent="OmniLights2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16008, 2.14896, 2.19539)
-visible = false
-light_color = Color(1, 0, 0, 1)
-omni_range = 9.72708
-omni_attenuation = -1.137
-
-[node name="Green" type="OmniLight3D" parent="OmniLights2" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.65729, 1.93927, 2.66814)
-visible = false
-light_color = Color(0.123, 0.82, 0, 1)
-omni_range = 9.72708
-omni_attenuation = -1.137
 
 [node name="OmniLights3" type="Node3D" parent="." index="7"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
-[node name="red" type="OmniLight3D" parent="OmniLights3" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16008, 2.14896, 2.19539)
-visible = false
-light_color = Color(1, 0, 0, 1)
-omni_range = 9.72708
-omni_attenuation = -1.137
-
-[node name="Green" type="OmniLight3D" parent="OmniLights3" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.65729, 1.93927, 2.66814)
-visible = false
-light_color = Color(0.123, 0.82, 0, 1)
-omni_range = 9.72708
-omni_attenuation = -1.137
-
 [node name="OmniLights4" type="Node3D" parent="." index="8"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
-
-[node name="red" type="OmniLight3D" parent="OmniLights4" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16008, 2.14896, 2.19539)
-visible = false
-light_color = Color(1, 0, 0, 1)
-omni_range = 9.72708
-omni_attenuation = -1.137
-
-[node name="Green" type="OmniLight3D" parent="OmniLights4" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.65729, 1.93927, 2.66814)
-visible = false
-light_color = Color(0.123, 0.82, 0, 1)
-omni_range = 9.72708
-omni_attenuation = -1.137
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="9"]
 libraries = {
@@ -355,3 +155,111 @@ libraries = {
 }
 autoplay = "spin"
 speed_scale = 0.5
+
+[node name="Dark1" type="Node3D" parent="." index="11"]
+visible = false
+
+[node name="red" type="OmniLight3D" parent="Dark1" index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.19539, 2.14896, -2.16008)
+light_color = Color(0.499822, 0, 0.141043, 1)
+light_energy = 3.0
+omni_range = 3.0
+omni_attenuation = -1.137
+
+[node name="red2" type="OmniLight3D" parent="Dark1" index="1"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.16008, 2.14896, -2.19539)
+light_color = Color(0.499822, 0, 0.141043, 1)
+light_energy = 3.0
+omni_range = 3.0
+omni_attenuation = -1.137
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Dark1" index="2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.17562, 3.84168, -2.18711)
+light_color = Color(0.499822, 0, 0.141043, 1)
+light_energy = 3.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Dark1" index="3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.21557, 3.96912, 2.173)
+light_color = Color(0.499822, 0, 0.141043, 1)
+light_energy = 3.0
+
+[node name="Dark2" type="Node3D" parent="." index="12"]
+visible = false
+
+[node name="red" type="OmniLight3D" parent="Dark2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16008, 2.14896, 2.19539)
+light_color = Color(0.499822, 0, 0.141043, 1)
+light_energy = 3.0
+omni_range = 3.0
+omni_attenuation = -1.137
+
+[node name="red2" type="OmniLight3D" parent="Dark2" index="1"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.19539, 2.14896, 2.16008)
+light_color = Color(0.499822, 0, 0.141043, 1)
+light_energy = 3.0
+omni_range = 3.0
+omni_attenuation = -1.137
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Dark2" index="2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.19099, 3.84168, 2.18893)
+light_color = Color(0.499822, 0, 0.141043, 1)
+light_energy = 3.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Dark2" index="3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.15533, 3.84168, -2.18688)
+light_color = Color(0.499822, 0, 0.141043, 1)
+light_energy = 3.0
+
+[node name="Light1" type="Node3D" parent="." index="13"]
+visible = false
+
+[node name="Green" type="OmniLight3D" parent="Light1" index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.66814, 1.93927, -2.65729)
+light_color = Color(0.0904055, 0.495514, 9.62615e-08, 1)
+light_energy = 3.0
+omni_range = 3.0
+omni_attenuation = -1.137
+
+[node name="Green2" type="OmniLight3D" parent="Light1" index="1"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.66814, 1.93927, 2.65729)
+light_color = Color(0.0904055, 0.495514, 9.62615e-08, 1)
+light_energy = 3.0
+omni_range = 3.0
+omni_attenuation = -1.137
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Light1" index="2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.78835, 3.30121, -2.72594)
+light_color = Color(0.0904055, 0.495514, 9.62615e-08, 1)
+light_energy = 3.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Light1" index="3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.62923, 3.42866, 2.63232)
+light_color = Color(0.0904055, 0.495514, 9.62615e-08, 1)
+light_energy = 3.0
+
+[node name="Light2" type="Node3D" parent="." index="14"]
+visible = false
+
+[node name="Green" type="OmniLight3D" parent="Light2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.65729, 1.93927, 2.66814)
+light_color = Color(0.0904055, 0.495514, 9.62615e-08, 1)
+light_energy = 3.0
+omni_range = 3.0
+omni_attenuation = -1.137
+
+[node name="Green2" type="OmniLight3D" parent="Light2" index="1"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.65729, 1.93927, -2.66814)
+light_color = Color(0.0904055, 0.495514, 9.62615e-08, 1)
+light_energy = 3.0
+omni_range = 3.0
+omni_attenuation = -1.137
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Light2" index="2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.68102, 3.30121, 2.63401)
+light_color = Color(0.0904055, 0.495514, 9.62615e-08, 1)
+light_energy = 3.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Light2" index="3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.64611, 3.30121, -2.66196)
+light_color = Color(0.0904055, 0.495514, 9.62615e-08, 1)
+light_energy = 3.0

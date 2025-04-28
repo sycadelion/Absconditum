@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dg4328t83xlwk"]
+[gd_scene load_steps=14 format=3 uid="uid://dg4328t83xlwk"]
 
 [ext_resource type="Script" uid="uid://dv4sc5elaydum" path="res://7 GUI/Menus/Menu Elements/main_menu_background.gd" id="1_6g1et"]
 [ext_resource type="Shader" uid="uid://cjdb02g73oelo" path="res://4 Resources/Shaders/Grad_dither.gdshader" id="1_tlf0w"]
 [ext_resource type="Texture2D" uid="uid://gqkomw06bdn7" path="res://8 Assets/HDRIs/ice_planet_close.hdr" id="2_6g1et"]
+[ext_resource type="Shader" uid="uid://b2uv31n0scg6y" path="res://4 Resources/Shaders/retroization.gdshader" id="3_xl6ht"]
 [ext_resource type="PackedScene" uid="uid://dvgw4u10u65rs" path="res://8 Assets/Props/station.tscn" id="4_e23qn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e23qn"]
@@ -11,6 +12,20 @@ shader_parameter/enabled = true
 shader_parameter/dithering = true
 shader_parameter/colors = 16
 shader_parameter/dither_size = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5da78"]
+shader = ExtResource("3_xl6ht")
+shader_parameter/bits_per_channel = 1.0
+shader_parameter/dither_strength = 0.1
+shader_parameter/bloom_threshold = 1.0
+shader_parameter/bloom_intensity = 0.0
+shader_parameter/pixelation = 700.0
+shader_parameter/color_relaxation = 0.0
+shader_parameter/relaxation_color = Vector3(1, 1, 1)
+shader_parameter/threshold_r = 1.0
+shader_parameter/threshold_g = 1.0
+shader_parameter/threshold_b = 1.0
+shader_parameter/threshold_color = Vector3(1, 1, 1)
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xl6ht"]
 panorama = ExtResource("2_6g1et")
@@ -22,6 +37,8 @@ sky_material = SubResource("PanoramaSkyMaterial_xl6ht")
 background_mode = 2
 sky = SubResource("Sky_8f814")
 ambient_light_source = 2
+ambient_light_color = Color(0.366595, 0.366595, 0.366595, 1)
+ambient_light_energy = 2.0
 tonemap_mode = 2
 fog_light_color = Color(0.57, 0.343995, 0.2223, 1)
 fog_sun_scatter = 0.14
@@ -32,6 +49,67 @@ volumetric_fog_albedo = Color(0.2754, 0.054, 0.3, 1)
 volumetric_fog_emission = Color(0.276803, 0.137464, 0.273613, 1)
 volumetric_fog_length = 10.0
 adjustment_enabled = true
+
+[sub_resource type="Animation" id="Animation_xl6ht"]
+resource_name = "ScreenStart"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/Retroizer/ColorRect:material:shader_parameter/pixelation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4, 1.4),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [1.0, 700.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/Retroizer/ColorRect:material:shader_parameter/bits_per_channel")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 8.0]
+}
+
+[sub_resource type="Animation" id="Animation_5da78"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/Retroizer/ColorRect:material:shader_parameter/pixelation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [700.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/Retroizer/ColorRect:material:shader_parameter/bits_per_channel")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hcd5b"]
+_data = {
+&"RESET": SubResource("Animation_5da78"),
+&"ScreenStart": SubResource("Animation_xl6ht")
+}
 
 [node name="MainMenu_Background" type="Node3D"]
 script = ExtResource("1_6g1et")
@@ -51,6 +129,16 @@ handle_input_locally = false
 size = Vector2i(1280, 720)
 render_target_update_mode = 4
 
+[node name="Retroizer" type="CanvasLayer" parent="SubViewportContainer/SubViewport"]
+
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport/Retroizer"]
+material = SubResource("ShaderMaterial_5da78")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
 environment = SubResource("Environment_5da78")
 
@@ -66,3 +154,9 @@ transform = Transform3D(0.986512, -0.152936, -0.0583455, 0.163688, 0.921715, 0.3
 
 [node name="station" parent="SubViewportContainer/SubViewport/Node3D" instance=ExtResource("4_e23qn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.3058, -5.69275, 7.72715)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_hcd5b")
+}
+autoplay = "ScreenStart"

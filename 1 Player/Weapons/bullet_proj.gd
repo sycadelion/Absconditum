@@ -6,7 +6,7 @@ var playerID: int
 
 @export var _bullet_mesh: MeshInstance3D
 @export var _bullet_life_time: float = 1
-@export var _bullet_speed: float = 50
+@export var _bullet_speed: float = 100
 @export var _bullet_dmg: int = 1
 var velocity = Vector3.ZERO
 var hit = false

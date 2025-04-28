@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://1vtabgmdqbya"]
+[gd_scene load_steps=12 format=3 uid="uid://1vtabgmdqbya"]
 
 [ext_resource type="Script" uid="uid://dkmriobqrw3jy" path="res://7 GUI/Menus/Main menu/main_menu.gd" id="1_r4jl4"]
 [ext_resource type="FontFile" uid="uid://bt3eis200qlni" path="res://addons/NotJamFontPack/Not Jam Glasgow 13/Not Jam Glasgow 13.ttf" id="2_u8cqs"]
@@ -12,8 +12,6 @@
 [ext_resource type="WwiseEvent" uid="uid://bpc3mfvfm1yrq" path="res://Wwise/resources/Event/{1D0D8EA8-D697-496F-AEEA-239402382028}.tres" id="10_sbu0f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekl4n"]
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_vaxh2"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -67,9 +65,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 339.5
+offset_left = 238.5
 offset_top = -220.0
-offset_right = 640.5
+offset_right = 539.5
 offset_bottom = 220.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -89,16 +87,17 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer"]
+custom_minimum_size = Vector2(146, 0)
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Host" type="Button" parent="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer"]
+[node name="Solo" type="Button" parent="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer"]
 layout_mode = 2
-text = "Host"
+text = "Play"
 
-[node name="Join" type="Button" parent="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer"]
+[node name="Multiplayer" type="Button" parent="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer"]
 layout_mode = 2
-text = "Join"
+text = "Multiplayer"
 
 [node name="Settings" type="Button" parent="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer"]
 layout_mode = 2
@@ -112,24 +111,18 @@ text = "Quit
 [node name="Match_Settings" parent="CanvasLayer" instance=ExtResource("7_jslx7")]
 unique_name_in_owner = true
 visible = false
-offset_left = 429.0
+offset_left = 380.0
 offset_top = -13.0
-offset_right = 429.0
+offset_right = 380.0
 offset_bottom = -13.0
 
 [node name="Settings" parent="CanvasLayer" instance=ExtResource("6_yrws1")]
 unique_name_in_owner = true
 visible = false
-offset_left = 339.0
+offset_left = 246.0
 offset_top = 40.0
-offset_right = 339.0
+offset_right = 246.0
 offset_bottom = 40.0
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
-root_node = NodePath("../../root/@EditorNode@21277/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/MainMenu")
-libraries = {
-&"": SubResource("AnimationLibrary_vaxh2")
-}
 
 [node name="Disconnected_from_server" parent="CanvasLayer" instance=ExtResource("8_3wo6v")]
 unique_name_in_owner = true
@@ -151,10 +144,54 @@ unique_name_in_owner = true
 event = ExtResource("10_sbu0f")
 unique_name_in_owner = true
 
-[connection signal="mouse_entered" from="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Host" to="." method="_on_mouse_entered"]
-[connection signal="pressed" from="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Host" to="." method="_on_host_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Join" to="." method="_on_mouse_entered"]
-[connection signal="pressed" from="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Join" to="." method="_on_join_pressed"]
+[node name="MultiplayerMenu" type="PanelContainer" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 279.0
+offset_top = -144.0
+offset_right = 495.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_x13m3")
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/MultiplayerMenu"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MultiplayerMenu/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VSplitContainer" type="VSplitContainer" parent="CanvasLayer/MultiplayerMenu/CenterContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MultiplayerMenu/CenterContainer/MarginContainer/VSplitContainer"]
+custom_minimum_size = Vector2(146, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Host" type="Button" parent="CanvasLayer/MultiplayerMenu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Host"
+
+[node name="Join" type="Button" parent="CanvasLayer/MultiplayerMenu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer"]
+layout_mode = 2
+text = "Join"
+
+[node name="Back" type="Button" parent="CanvasLayer/MultiplayerMenu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer"]
+layout_mode = 2
+text = "Return"
+
+[connection signal="pressed" from="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Multiplayer" to="." method="_on_multiplayer_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Settings" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Quit" to="." method="_on_mouse_entered"]
@@ -163,6 +200,11 @@ unique_name_in_owner = true
 [connection signal="pressed" from="CanvasLayer/Match_Settings/Back_host/MarginContainer/CenterContainer/GridContainer/Host_game_button" to="." method="_on_host_game_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Settings/BackButton/Settings_Back_Button" to="." method="_on_settings_back_button_pressed"]
 [connection signal="music_sync_exit" from="CanvasLayer/Music" to="." method="_on_music_music_sync_exit"]
+[connection signal="mouse_entered" from="CanvasLayer/MultiplayerMenu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Host" to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/MultiplayerMenu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Host" to="." method="_on_host_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/MultiplayerMenu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Join" to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/MultiplayerMenu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="CanvasLayer/MultiplayerMenu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Back" to="." method="_on_MultiBack_pressed"]
 
 [editable path="CanvasLayer/Match_Settings"]
 [editable path="CanvasLayer/Settings"]

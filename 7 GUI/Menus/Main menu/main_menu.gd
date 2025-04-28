@@ -1,8 +1,9 @@
 extends Control
 
-@onready var anim_player: AnimationPlayer = $CanvasLayer/AnimationPlayer
 @onready var ui_audio: AkEvent2D = %UiAudio
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
+@onready var multiplayer_menu: PanelContainer = %MultiplayerMenu
+@onready var MultiBack: Button = $CanvasLayer/MultiplayerMenu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Back
 
 var settings: bool = false
 var Matchsettings: bool = false
@@ -23,7 +24,7 @@ func _on_host_pressed() -> void:
 	else:
 		SceneLoad.Load_Component(SceneLoad.Server_info)
 		%Match_Settings.show()
-		%Menu.hide()
+		multiplayer_menu.hide()
 
 func _on_join_pressed() -> void:
 	_on_click()
@@ -74,3 +75,13 @@ func _on_click() -> void:
 
 func _on_music_music_sync_exit(_data: Dictionary) -> void:
 	%Music.post_event()
+
+
+func _on_MultiBack_pressed() -> void:
+	multiplayer_menu.hide()
+	%Menu.show()
+
+
+func _on_multiplayer_pressed() -> void:
+	%Menu.hide()
+	multiplayer_menu.show()
