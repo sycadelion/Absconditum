@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=4 uid="uid://d3bhlb6x0ro8f"]
+[gd_scene load_steps=15 format=3 uid="uid://d3bhlb6x0ro8f"]
 
 [ext_resource type="Script" uid="uid://bgtfk7mcp1sfo" path="res://4 Resources/Shaders/Shader Scripts/sphereSDF.gd" id="1_t28a6"]
 [ext_resource type="PackedScene" uid="uid://ct1bv07ecl3vk" path="res://1 Player/Model/grenade.tscn" id="2_pxuyo"]
-[ext_resource type="Shader" uid="uid://dedi187ubsflk" path="res://4 Resources/Shaders/SphereField.gdshader" id="3_shc4d"]
+[ext_resource type="Shader" uid="uid://bt32bx42u42lq" path="res://4 Resources/Shaders/BubbleWithCollision.gdshader" id="3_230v6"]
 [ext_resource type="WwiseEvent" uid="uid://bhq7qwjnhvura" path="res://Wwise/resources/Event/{5703BB24-BD9C-48BE-902D-F00553BB8BBB}.tres" id="4_2yio7"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cofcj"]
@@ -13,22 +13,30 @@ bounce = 0.4
 radius = 0.16624
 height = 0.968326
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rhqut"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_230v6"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("3_shc4d")
-shader_parameter/color = Color(0, 0.513726, 0.329412, 1)
+shader = ExtResource("3_230v6")
+shader_parameter/color1 = Color(1, 1, 1, 0.1)
+shader_parameter/color2 = Color(0.255659, 0.255659, 0.255659, 1)
+shader_parameter/threshold = 0.2
 shader_parameter/fresnel_sharpness = 1.0
-shader_parameter/impact_points = PackedVector4Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-shader_parameter/impact_size = 0.0
-shader_parameter/impact_falloff_sharpness = 1.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_wmhj5"]
 resource_local_to_scene = true
-material = SubResource("ShaderMaterial_rhqut")
+material = SubResource("ShaderMaterial_230v6")
 flip_faces = true
 radius = 10.0
 height = 20.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rhqut"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_230v6")
+shader_parameter/color1 = Color(1, 1, 1, 0.1)
+shader_parameter/color2 = Color(1, 1, 1, 1)
+shader_parameter/threshold = 0.2
+shader_parameter/fresnel_sharpness = 1.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_mduu6"]
 resource_local_to_scene = true
