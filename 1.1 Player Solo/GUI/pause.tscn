@@ -1,0 +1,148 @@
+[gd_scene load_steps=5 format=3 uid="uid://cppjlx0njvuwi"]
+
+[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu Elements/Menu Tres/Menu.tres" id="1_lsm6t"]
+[ext_resource type="Script" uid="uid://deimshr0mluvu" path="res://1 Player/GUI/pause.gd" id="2_5vnh1"]
+[ext_resource type="PackedScene" uid="uid://bglvj405a8scx" path="res://7 GUI/Menus/Settings Menu/settings.tscn" id="3_hi4nh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xouvt"]
+bg_color = Color(0, 0, 0, 0.65098)
+
+[node name="Pause" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lsm6t")
+script = ExtResource("2_5vnh1")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xouvt")
+
+[node name="MenuTitle" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -33.5
+offset_right = 33.5
+offset_bottom = 33.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuTitle"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="PauseText" type="Label" parent="MenuTitle/MarginContainer"]
+layout_mode = 2
+text = "Paused
+"
+
+[node name="Buttons" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -56.5
+offset_right = 70.0
+offset_bottom = 56.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Buttons"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="ResumeButton" type="Button" parent="Buttons/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="SettingButton" type="Button" parent="Buttons/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="Buttons/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Leave Game"
+
+[node name="QuitWindowsButton" type="Button" parent="Buttons/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Exit to Desktop"
+
+[node name="Settings_menu" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Settings" parent="Settings_menu" instance=ExtResource("3_hi4nh")]
+layout_mode = 1
+offset_left = -20.0
+offset_right = 20.0
+edit_name = false
+
+[node name="Roomcode" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Roomcode"]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Roomcode/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="roomcode_label" type="Label" parent="Roomcode/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Roomcode"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Code" type="TextEdit" parent="Roomcode/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Place"
+editable = false
+
+[connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/SettingButton" to="." method="_on_setting_button_pressed"]
+[connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/QuitWindowsButton" to="." method="_on_quit_windows_button_pressed"]
+[connection signal="pressed" from="Settings_menu/Settings/BackButton/Settings_Back_Button" to="." method="_on_settings_back_button_pressed"]
+
+[editable path="Settings_menu/Settings"]

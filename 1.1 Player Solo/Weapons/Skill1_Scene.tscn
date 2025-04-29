@@ -1,0 +1,142 @@
+[gd_scene load_steps=15 format=3 uid="uid://cr4lq7d2w8w7k"]
+
+[ext_resource type="Script" uid="uid://bgtfk7mcp1sfo" path="res://4 Resources/Shaders/Shader Scripts/sphereSDF.gd" id="1_jagmw"]
+[ext_resource type="PackedScene" uid="uid://ct1bv07ecl3vk" path="res://1 Player/Model/grenade.tscn" id="2_2rs6f"]
+[ext_resource type="Shader" uid="uid://bt32bx42u42lq" path="res://4 Resources/Shaders/BubbleWithCollision.gdshader" id="3_y512l"]
+[ext_resource type="WwiseEvent" uid="uid://bhq7qwjnhvura" path="res://Wwise/resources/Event/{5703BB24-BD9C-48BE-902D-F00553BB8BBB}.tres" id="4_4gblt"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cofcj"]
+resource_local_to_scene = true
+bounce = 0.4
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u6yqv"]
+radius = 0.16624
+height = 0.968326
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_230v6"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_y512l")
+shader_parameter/color1 = Color(1, 1, 1, 0.1)
+shader_parameter/color2 = Color(0.255659, 0.255659, 0.255659, 1)
+shader_parameter/threshold = 0.2
+shader_parameter/fresnel_sharpness = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_wmhj5"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_230v6")
+flip_faces = true
+radius = 10.0
+height = 20.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rhqut"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_y512l")
+shader_parameter/color1 = Color(1, 1, 1, 0.1)
+shader_parameter/color2 = Color(1, 1, 1, 1)
+shader_parameter/threshold = 0.2
+shader_parameter/fresnel_sharpness = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_mduu6"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_rhqut")
+radius = 10.0
+height = 20.0
+
+[sub_resource type="Animation" id="Animation_fyja7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:sphereRadius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_njaer"]
+resource_name = "expand"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:sphereRadius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 10.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5gylt"]
+_data = {
+&"RESET": SubResource("Animation_fyja7"),
+&"expand": SubResource("Animation_njaer")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_230v6"]
+size = Vector3(0.2, 0.2, 0.2)
+
+[node name="Skill1_Scene" type="RigidBody3D"]
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_cofcj")
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_jagmw")
+noiseSize = 2.0
+noiseSpeed = 0.9
+noiseStrength = 0.5
+borderSize = 0.038
+borderColor = Color(0.992157, 0.109804, 0.592157, 1)
+
+[node name="Grenade" parent="." instance=ExtResource("2_2rs6f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.509223, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00870293, 0)
+shape = SubResource("CapsuleShape3D_u6yqv")
+
+[node name="Bubble_in" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("SphereMesh_wmhj5")
+
+[node name="Bubble_out" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("SphereMesh_mduu6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5gylt")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="Area_col" type="CollisionShape3D" parent="Area3D"]
+
+[node name="AkEvent3D" type="AkEvent3D" parent="."]
+event = ExtResource("4_4gblt")
+
+[node name="Area3D" type="Area3D" parent="AkEvent3D"]
+collision_layer = 512
+collision_mask = 512
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AkEvent3D/Area3D"]
+shape = SubResource("BoxShape3D_230v6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

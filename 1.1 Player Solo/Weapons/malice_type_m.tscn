@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b707ncv28k0bf"]
+
+[ext_resource type="PackedScene" uid="uid://bxs6at26ch0so" path="res://8 Assets/Models/Malice_typeM.glb" id="1_wqfrh"]
+[ext_resource type="Script" uid="uid://cui0wm2k8trsu" path="res://1 Player/Weapons/WeaponShaderEnable.gd" id="2_mo6w2"]
+[ext_resource type="Shader" uid="uid://dew15oesvk6o6" path="res://4 Resources/Shaders/cut_sphere.gdshader" id="3_osex4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eev6t"]
+render_priority = 0
+shader = ExtResource("3_osex4")
+shader_parameter/enabled = true
+shader_parameter/spherePos = Vector3(0, 0, 0)
+shader_parameter/borderColor = Color(0.810186, 0, 0.150926, 1)
+shader_parameter/borderSize = 0.0
+shader_parameter/sphereRadius = 0.0
+shader_parameter/noiseSpeed = 0.0
+shader_parameter/noiseStrength = 0.0
+shader_parameter/noiseSize = 0.0
+shader_parameter/invertCut = false
+
+[node name="Malice_typeM" node_paths=PackedStringArray("object1") instance=ExtResource("1_wqfrh")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("2_mo6w2")
+object1 = NodePath("Cube_001")
+
+[node name="Cube_001" parent="." index="0" groups=["VisibleObjectsShader"]]
+material_override = SubResource("ShaderMaterial_eev6t")

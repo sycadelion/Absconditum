@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://bay1c5jobxxge"]
+
+[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu Elements/Menu Tres/Menu.tres" id="1_ucl58"]
+[ext_resource type="Script" uid="uid://cinc3kwgxtvny" path="res://1 Player/GUI/skill.gd" id="2_1rsue"]
+[ext_resource type="Texture2D" uid="uid://cf5y43vnwdb3m" path="res://8 Assets/Images/Free-Skill-32x32-Icons-for-Cyberpunk-Game/2 Frames/Frame_14.png" id="3_lmcvx"]
+[ext_resource type="Texture2D" uid="uid://dah1f5fipmxg8" path="res://8 Assets/Images/Free-Skill-32x32-Icons-for-Cyberpunk-Game/1 Icons/14/Skillicon14_01.png" id="4_3ff6q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5ybk"]
+bg_color = Color(0.196267, 0.1035, 0.23, 0.898039)
+
+[node name="Skill" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ucl58")
+script = ExtResource("2_1rsue")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -91.0
+offset_right = 92.0
+offset_bottom = -1.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Sprite2D2" type="Sprite2D" parent="PanelContainer/MarginContainer"]
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("3_lmcvx")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="PanelContainer/MarginContainer"]
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("4_3ff6q")
+centered = false
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_x5ybk")
+max_value = 700.0
+step = 1.0
+fill_mode = 3
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 7.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

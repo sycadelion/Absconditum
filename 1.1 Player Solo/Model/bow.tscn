@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct8iswrv5qdik"]
+
+[ext_resource type="PackedScene" uid="uid://i7mco1nsfwmc" path="res://8 Assets/Models/bow.glb" id="1_6cpbr"]
+[ext_resource type="Material" uid="uid://gsnjhl57qwdk" path="res://4 Resources/Shaders/player_shader_mat.tres" id="2_10eo5"]
+
+[node name="bow" instance=ExtResource("1_6cpbr")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="Bow" parent="." index="0"]
+material_override = ExtResource("2_10eo5")
+
+[node name="Bowstring" parent="." index="1"]
+material_override = ExtResource("2_10eo5")
+
+[node name="Decor" parent="." index="2"]
+material_override = ExtResource("2_10eo5")
+
+[node name="Bow_invert" parent="." index="3"]
+material_override = ExtResource("2_10eo5")
+
+[node name="Bowstring_invert" parent="." index="4"]
+material_override = ExtResource("2_10eo5")
+
+[node name="Decor_invert" parent="." index="5"]
+material_override = ExtResource("2_10eo5")

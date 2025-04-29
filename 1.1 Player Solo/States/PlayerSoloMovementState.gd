@@ -1,4 +1,4 @@
-class_name PlayerMovementState extends State
+class_name PlayerSoloMovementState extends State
 
 var PLAYER: PlayerSolo
 var ANIMATION: AnimationPlayer

@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://1vtabgmdqbya"]
+[gd_scene load_steps=16 format=3 uid="uid://1vtabgmdqbya"]
 
 [ext_resource type="Script" uid="uid://dkmriobqrw3jy" path="res://7 GUI/Menus/Main menu/main_menu.gd" id="1_r4jl4"]
 [ext_resource type="FontFile" uid="uid://bt3eis200qlni" path="res://addons/NotJamFontPack/Not Jam Glasgow 13/Not Jam Glasgow 13.ttf" id="2_u8cqs"]
 [ext_resource type="PackedScene" uid="uid://cdaty1tj8c305" path="res://6 Online/lobby.tscn" id="3_ic32f"]
+[ext_resource type="PackedScene" uid="uid://cs6q13gwp8vln" path="res://5 Levels/SafeHouse/SafeHouse.tscn" id="4_4nifb"]
 [ext_resource type="PackedScene" uid="uid://dg4328t83xlwk" path="res://7 GUI/Menus/Menu Elements/main_menu_background.tscn" id="4_ekl4n"]
 [ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu Elements/Menu Tres/Menu.tres" id="6_x13m3"]
 [ext_resource type="PackedScene" uid="uid://bglvj405a8scx" path="res://7 GUI/Menus/Settings Menu/settings.tscn" id="6_yrws1"]
@@ -12,6 +13,91 @@
 [ext_resource type="WwiseEvent" uid="uid://bpc3mfvfm1yrq" path="res://Wwise/resources/Event/{1D0D8EA8-D697-496F-AEEA-239402382028}.tres" id="10_sbu0f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekl4n"]
+
+[sub_resource type="Animation" id="Animation_4nifb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Menu:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Menu:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(878.5, 140)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Menu:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 0.1)]
+}
+
+[sub_resource type="Animation" id="Animation_ekl4n"]
+resource_name = "startup"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Menu:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 0.879954, 0.966667, 1.04029, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.422171), Color(1, 1, 1, 0.137255), Color(1, 1, 1, 0.600325), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Menu:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.496286, 0.5, 0.866667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(878.5, 140), Vector2(878.5, 336), Vector2(878.5, 140)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Menu:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.498195, 0.866667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 0.1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_omasy"]
+_data = {
+&"RESET": SubResource("Animation_4nifb"),
+&"startup": SubResource("Animation_ekl4n")
+}
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -23,6 +109,7 @@ grow_vertical = 2
 theme = ExtResource("6_x13m3")
 script = ExtResource("1_r4jl4")
 GAME_SCENE = ExtResource("3_ic32f")
+SOLO_GAME_SCENE = ExtResource("4_4nifb")
 
 [node name="MainMenu_Background" parent="." instance=ExtResource("4_ekl4n")]
 
@@ -60,6 +147,7 @@ autowrap_mode = 0
 
 [node name="Menu" type="PanelContainer" parent="CanvasLayer"]
 unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -71,6 +159,7 @@ offset_right = 539.5
 offset_bottom = 220.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1, 0.1)
 theme = ExtResource("6_x13m3")
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Menu"]
@@ -191,6 +280,13 @@ text = "Join"
 layout_mode = 2
 text = "Return"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_omasy")
+}
+autoplay = "startup"
+
+[connection signal="pressed" from="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Solo" to="." method="_on_solo_pressed"]
 [connection signal="pressed" from="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Multiplayer" to="." method="_on_multiplayer_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Settings" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/Menu/CenterContainer/MarginContainer/VSplitContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]

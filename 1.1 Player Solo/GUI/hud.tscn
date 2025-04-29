@@ -1,0 +1,299 @@
+[gd_scene load_steps=9 format=3 uid="uid://yf3xgjmkqfic"]
+
+[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu Elements/Menu Tres/Menu.tres" id="1_uwhyp"]
+[ext_resource type="Script" uid="uid://cujhe3nuo5vm4" path="res://1 Player/GUI/hud.gd" id="2_1fdai"]
+[ext_resource type="PackedScene" uid="uid://ci6rly7mcj6vl" path="res://1 Player/GUI/skill.tscn" id="3_rdbgt"]
+[ext_resource type="Script" uid="uid://dgkavh4t5h318" path="res://1 Player/GUI/fps.gd" id="4_csdfm"]
+[ext_resource type="Texture2D" uid="uid://c2bu67hqj86j0" path="res://addons/kenney_particle_pack/circle_05.png" id="5_bnm0a"]
+[ext_resource type="Texture2D" uid="uid://dmfdum33w0jls" path="res://8 Assets/Images/malice.png" id="6_brcx5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q1jip"]
+bg_color = Color(0.15, 0.15, 0.15, 0.545098)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5ayb"]
+bg_color = Color(1, 0, 0, 1)
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_uwhyp")
+script = ExtResource("2_1fdai")
+
+[node name="Skill" parent="." instance=ExtResource("3_rdbgt")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_left = -2.0
+offset_top = 1.0
+offset_right = -2.0
+offset_bottom = 1.0
+grow_horizontal = 1
+grow_vertical = 0
+
+[node name="Fps" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 4.0
+offset_top = 6.0
+offset_right = 44.0
+offset_bottom = 29.0
+text = "FPS: "
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_csdfm")
+
+[node name="Crosshair" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Crosshair"]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 512.0
+scale = Vector2(0.07, 0.07)
+mouse_filter = 2
+texture = ExtResource("5_bnm0a")
+
+[node name="HealthBar" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HealthBar"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -173.0
+offset_right = 66.0
+grow_vertical = 0
+
+[node name="ProgressBar" type="ProgressBar" parent="HealthBar/PanelContainer"]
+layout_direction = 1
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_q1jip")
+theme_override_styles/fill = SubResource("StyleBoxFlat_s5ayb")
+step = 1.0
+fill_mode = 3
+show_percentage = false
+
+[node name="HealthText" type="Label" parent="HealthBar/PanelContainer"]
+custom_minimum_size = Vector2(1, 0)
+layout_mode = 2
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="WeaponRoot" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Weapon1" type="Control" parent="WeaponRoot"]
+anchors_preset = 0
+offset_left = -9.0
+offset_top = -10.0
+offset_right = 31.0
+offset_bottom = 30.0
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="WeaponRoot/Weapon1"]
+layout_mode = 0
+offset_left = -172.0
+offset_top = -39.0
+offset_right = 50.0
+offset_bottom = 50.0
+
+[node name="weapon1_image" type="TextureRect" parent="WeaponRoot/Weapon1/PanelContainer"]
+layout_mode = 2
+texture = ExtResource("6_brcx5")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="AmmoCount" type="Label" parent="WeaponRoot/Weapon1"]
+layout_mode = 0
+offset_left = -154.0
+offset_top = -21.0
+offset_right = -114.0
+offset_bottom = 36.0
+text = "256"
+
+[node name="Slot" type="Label" parent="WeaponRoot/Weapon1"]
+visible = false
+layout_mode = 0
+offset_left = -158.0
+offset_top = -21.0
+offset_right = -142.0
+offset_bottom = -4.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.470588)
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Weapon2" type="Control" parent="WeaponRoot"]
+visible = false
+anchors_preset = 0
+offset_left = 14.0
+offset_top = -78.0
+offset_right = 54.0
+offset_bottom = -38.0
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="WeaponRoot/Weapon2"]
+layout_mode = 0
+offset_left = -172.0
+offset_top = -39.0
+offset_right = 50.0
+offset_bottom = 50.0
+
+[node name="weapon2_image" type="TextureRect" parent="WeaponRoot/Weapon2/PanelContainer"]
+layout_mode = 2
+expand_mode = 1
+
+[node name="AmmoCount" type="Label" parent="WeaponRoot/Weapon2"]
+layout_mode = 0
+offset_left = -154.0
+offset_top = -21.0
+offset_right = -114.0
+offset_bottom = 36.0
+text = "256"
+vertical_alignment = 2
+
+[node name="Slot" type="Label" parent="WeaponRoot/Weapon2"]
+layout_mode = 0
+offset_left = -158.0
+offset_top = -21.0
+offset_right = -142.0
+offset_bottom = -4.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.470588)
+theme_override_font_sizes/font_size = 12
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AmmoType_A" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Loaded" type="Label" parent="AmmoType_A"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = -31.5
+offset_right = 64.0
+offset_bottom = 25.5
+grow_vertical = 2
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AmmoType_M" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -9.0
+offset_right = 20.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Chambered" type="Label" parent="AmmoType_M"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -11.0
+offset_right = 15.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1
+"
+horizontal_alignment = 1
+
+[node name="plus sign" type="Label" parent="AmmoType_M"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 22.0
+offset_top = -32.5
+offset_right = 62.0
+offset_bottom = 24.5
+grow_vertical = 2
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mag" type="Label" parent="AmmoType_M"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 28.5
+offset_top = -11.5
+offset_right = 37.5
+offset_bottom = 5.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1

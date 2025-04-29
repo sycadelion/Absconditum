@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3qk7ebi5ya36"]
+
+[ext_resource type="Theme" uid="uid://cboyxbggkvdoj" path="res://7 GUI/Menus/Menu Elements/Menu Tres/Menu.tres" id="1_3ckax"]
+[ext_resource type="Script" uid="uid://dl1k8xxd0mluk" path="res://1 Player/GUI/kill_feed.gd" id="2_dumj1"]
+
+[node name="KillFeed" type="Control"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+theme = ExtResource("1_3ckax")
+script = ExtResource("2_dumj1")
+
+[node name="ChatBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = -40.0
+offset_right = -40.0
+grow_horizontal = 0

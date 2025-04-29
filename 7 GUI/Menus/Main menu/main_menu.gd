@@ -9,6 +9,7 @@ var settings: bool = false
 var Matchsettings: bool = false
 
 @export var GAME_SCENE: PackedScene
+@export var SOLO_GAME_SCENE: PackedScene
 
 func _ready() -> void:
 	GameManager.paused = false
@@ -85,3 +86,7 @@ func _on_MultiBack_pressed() -> void:
 func _on_multiplayer_pressed() -> void:
 	%Menu.hide()
 	multiplayer_menu.show()
+
+
+func _on_solo_pressed() -> void:
+	SceneLoad.Change_Scene(SOLO_GAME_SCENE)

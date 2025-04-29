@@ -71,6 +71,7 @@ enabled=PackedStringArray()
 folder_colors={
 "res://0 Master/": "gray",
 "res://1 Player/": "green",
+"res://1.1 Player Solo/": "green",
 "res://3 Sounds/": "orange",
 "res://4 Resources/": "gray",
 "res://5 Levels/": "blue",
