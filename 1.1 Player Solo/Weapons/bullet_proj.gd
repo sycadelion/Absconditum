@@ -1,4 +1,4 @@
-class_name BulletProj extends Node3D
+class_name BulletProjSolo extends Node3D
 
 var max_distance: float
 var _bullet_mesh_height: float

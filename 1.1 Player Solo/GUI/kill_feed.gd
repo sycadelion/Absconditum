@@ -1,4 +1,4 @@
-class_name KillFeed extends Control
+class_name KillFeedSolo extends Control
 
 const MESSAGE = preload("res://1 Player/GUI/message.tscn")
 @onready var chat_box: VBoxContainer = $ChatBox

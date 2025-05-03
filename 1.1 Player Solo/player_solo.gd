@@ -19,6 +19,7 @@ class_name PlayerSolo extends CharacterBody3D
 @onready var bodyInvert: MeshInstance3D = $Player_Body2
 @onready var hud: Control = $CanvasLayer/HUD
 @onready var pause: Control = $CanvasLayer/Pause
+@onready var inventory: Control = $CanvasLayer/Inventory
 @onready var Health_bar: ProgressBar = $CanvasLayer/HUD/HealthBar/PanelContainer/ProgressBar
 @onready var Health_Label: Label = $CanvasLayer/HUD/HealthBar/PanelContainer/HealthText
 
@@ -33,7 +34,7 @@ var floor: bool = true
 
 var sens:float = SettingsManager.MouseSensitivity
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
-
+var inventory_open = false
 
 
 
@@ -58,6 +59,15 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("reload"):
 		pass
 		#weapon_manger.reload.rpc()
+	elif  event.is_action_pressed("Inventory") and not GameManager.paused:
+		if inventory_open:
+			inventory_open = false
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			inventory.hide()
+		else:
+			inventory_open = true
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			inventory.show()
 	elif event.is_action_pressed("FPS"):
 		$CanvasLayer/HUD/Fps.visible = not $CanvasLayer/HUD/Fps.visible
 	elif event.is_action_pressed("testAction"):
