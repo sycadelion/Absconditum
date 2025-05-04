@@ -22,8 +22,8 @@
 [ext_resource type="Script" uid="uid://cev1nojgpax86" path="res://1.1 Player Solo/Components/audio_component.gd" id="17_asdkn"]
 [ext_resource type="Script" uid="uid://dyo77to88m58b" path="res://1.1 Player Solo/Components/health_component.gd" id="18_dv1je"]
 [ext_resource type="Script" uid="uid://baxo6thy668s4" path="res://1.1 Player Solo/Components/bullet_proj_comp.gd" id="19_6j5l7"]
-[ext_resource type="PackedScene" uid="uid://dqi15shj2p0rk" path="res://1.1 Player Solo/GUI/Inventory/Inventory.tscn" id="20_wx654"]
 [ext_resource type="Script" uid="uid://ch2csxxnpm2ou" path="res://1.1 Player Solo/Components/skill_1_comp.gd" id="20_x5fbq"]
+[ext_resource type="PackedScene" uid="uid://du2j2xdy7mth6" path="res://1.1 Player Solo/Components/inventory_component.tscn" id="21_soogo"]
 [ext_resource type="WwiseEvent" uid="uid://bd3fbawv0fm0b" path="res://Wwise/resources/Event/{BF8C47E3-7FB7-4A96-9087-30E26825A77B}.tres" id="23_aeqeu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_736cw"]
@@ -730,8 +730,7 @@ vertical_alignment = 1
 [node name="Pause" parent="CanvasLayer" instance=ExtResource("14_626s5")]
 script = ExtResource("16_soogo")
 
-[node name="Inventory" parent="CanvasLayer" instance=ExtResource("20_wx654")]
-visible = false
+[node name="Inventory_Component" parent="CanvasLayer" instance=ExtResource("21_soogo")]
 
 [node name="Audio_Component" type="Node" parent="."]
 script = ExtResource("17_asdkn")

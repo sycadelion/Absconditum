@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://du2j2xdy7mth6"]
+
+[ext_resource type="PackedScene" uid="uid://dqi15shj2p0rk" path="res://1.1 Player Solo/GUI/Inventory/Inventory.tscn" id="1_3p8va"]
+[ext_resource type="Script" uid="uid://bp0euc6svqhv" path="res://1.1 Player Solo/Components/inventory_component.gd" id="1_v0gb0"]
+
+[node name="Inventory_Component" type="Node"]
+script = ExtResource("1_v0gb0")
+
+[node name="PlayerInventory" parent="." instance=ExtResource("1_3p8va")]
+visible = false
+
+[node name="LootInventory" parent="." instance=ExtResource("1_3p8va")]
+visible = false
+offset_left = 466.0
+offset_right = 466.0
+slots = 8

@@ -22,6 +22,7 @@ class_name PlayerSolo extends CharacterBody3D
 @onready var inventory: Control = $CanvasLayer/Inventory
 @onready var Health_bar: ProgressBar = $CanvasLayer/HUD/HealthBar/PanelContainer/ProgressBar
 @onready var Health_Label: Label = $CanvasLayer/HUD/HealthBar/PanelContainer/HealthText
+@onready var inventory_component: Node = $CanvasLayer/Inventory_Component
 
 #guns
 @onready var hand: Node3D = $Head/Camera3D/Hand
@@ -63,11 +64,11 @@ func _input(event: InputEvent) -> void:
 		if inventory_open:
 			inventory_open = false
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-			inventory.hide()
+			inventory_component.emit_signal("inventoryToggle")
 		else:
 			inventory_open = true
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-			inventory.show()
+			inventory_component.emit_signal("inventoryToggle")
 	elif event.is_action_pressed("FPS"):
 		$CanvasLayer/HUD/Fps.visible = not $CanvasLayer/HUD/Fps.visible
 	elif event.is_action_pressed("testAction"):
